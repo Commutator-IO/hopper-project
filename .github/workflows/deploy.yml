@@ -38,6 +38,26 @@ jobs:
       - run: git diff --exit-code src/content/catalogue.ts
       - run: npm run render
       - run: npm run tei
+
+      # Tectonic, pinned, for the transcript PDFs. A static musl binary from
+      # the project's own releases rather than a piped install script or the
+      # whole of TeX Live: 20 MB against 500, and a version somebody chose.
+      - name: Install Tectonic
+        run: |
+          curl -fsSL --proto '=https' --tlsv1.2 \
+            https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.17.0/tectonic-0.17.0-x86_64-unknown-linux-musl.tar.gz \
+            | tar -xz -C /usr/local/bin tectonic
+          tectonic --version
+      # Tectonic fetches the TeX packages it needs on first use. Cached, or a
+      # deploy spends a minute downloading longtable every time.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-bundle-${{ hashFiles('transcripts/preamble/*.sty') }}
+          restore-keys: tectonic-bundle-
+      # Fails on an overfull box, which in a transcription hides content.
+      - run: npm run pdf
+
       - run: npm run build
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}

@@ -291,7 +291,14 @@ npm install && npm run dev
 
 `xmllint` is optional (it checks the TEI); a LaTeX engine with `fontspec` is
 needed only to compile transcript PDFs (`brew install tectonic`). Neither is
-needed to browse the archive or to read a transcript beside its sheet.
+needed to browse the archive or to read a transcript beside its sheet — the
+deploy builds the PDFs with a pinned Tectonic and offers them for download.
+
+`npm run pdf` **fails on an overfull box**, because a line running past the
+right margin in a transcription hides content. That check is why ruled tables
+declare prose columns as `Y{0.34}` rather than `l`: a table of natural-width
+columns overflows the page while TeX stays completely silent, which is how
+Book I's first compile produced a truncated table with a clean log.
 
 ## Credit and limits
 

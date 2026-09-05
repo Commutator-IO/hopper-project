@@ -16,10 +16,34 @@
 % fails loudly, which is the wanted behaviour: a silently wrong rendering is
 % worse than none.
 
-\ProvidesPackage{hopper}[2026/09/05 Transcriptions of the Hopper artist's ledgers]
+% \ProvidesFile, not \ProvidesPackage: the transcriptions pull this in with
+% \input{../preamble/hopper} rather than \usepackage, and \ProvidesPackage in
+% an \input-ed file makes LaTeX warn on every compile that it "requested
+% package `'" and got `hopper'. A warning nobody can act on is a warning
+% everybody learns to scroll past, which is how the real ones get missed.
+\ProvidesFile{hopper.sty}[2026/09/05 Transcriptions of the Hopper artist's ledgers]
 
 \usepackage{array}
+% longtable, not tabularx: a leaf of thirty-one exhibition lines must break
+% across pages, and tabularx cannot be wrapped in an environment of our own —
+% it scans the source for a literal \end{tabularx} and dies on \end{ledgertable}
+% with « File ended while scanning use of \TX@get@body ». longtable has no such
+% scan, and the wrapping column type below does the job tabularx's X would.
 \usepackage{longtable}
+
+% A wrapping column, `Y{0.3}` being three tenths of the measure.
+%
+% Prose columns must be declared this way and not as `l`. A table of `l`
+% columns is set to its natural width, which can be wider than the page, and
+% TeX issues **no warning at all** because nothing ever asked the row to fit:
+% the first compile of Book I produced a page whose right-hand column ran off
+% the paper with a clean log. A fixed-width column wraps, and if it still
+% cannot fit, TeX says so — which is what `npm run pdf` then refuses to build
+% over.
+%
+% The fractions in one table should come to about 0.85; the rest goes to the
+% short columns and to the inter-column space.
+\newcolumntype{Y}[1]{>{\raggedright\arraybackslash}p{#1\linewidth}}
 \usepackage[english]{babel}
 \usepackage{fontspec}
 \usepackage{geometry}
@@ -176,8 +200,14 @@
 % drawing would be writing a new document: the sketch is on the site, one pane
 % away, at the resolution the Whitney publishes, and prose about it competes
 % with looking at it. Leave the argument empty where nothing is written.
+% The mark is drawn rather than set from a symbol font: there is no
+% mathematics anywhere in this archive, so no maths package is loaded, and
+% $\square$ would be an undefined control sequence — which is exactly how it
+% failed the first time the PDFs were compiled.
+\newcommand{\sketchmark}{\raisebox{0.15ex}{\color{gray!50!black}%
+  \tikz[baseline]{\draw[line width=0.4pt] (0,0) rectangle (1.1ex,1.1ex);}}}
 \newcommand{\sketch}[1]{\par\smallskip\noindent
-  {\small\color{gray!50!black}$\square$~\textsf{ink sketch}%
+  {\small\color{gray!50!black}\sketchmark~\textsf{ink sketch}%
    \ifx\relax#1\relax\else\ --- #1\fi}\par\smallskip}
 
 % Something printed and pasted to the leaf — a reproduction cut from a
@@ -199,12 +229,30 @@
 % transcribed as a table and rendered as one, on screen and on paper, from one
 % source.
 %
-% #1 is the column specification, ordinary LaTeX (`llrr`). The first row is
-% the header. A cell she left blank is left blank; a cell that cannot be read
-% takes \ill{}. `longtable` because a leaf of thirty-one exhibition lines does
-% not fit a page and a table that silently truncates is worse than no table.
+% #1 is the column specification; #2 is the header row, `&`-separated like any
+% other. A cell she left blank is left blank; a cell that cannot be read takes
+% \ill{}.
+%
+% **Use `Y{...}` for any column that can hold a sentence** — an exhibition, a
+% dealer's terms, a note — and `l`, `r` or `c` only for dates, figures and
+% short names. See the note on \newcolumntype{Y} above for why that is not a
+% matter of taste.
+%
+% The header row is emitted **bare**, between rules, and is deliberately not
+% wrapped in \textbf{}. It cannot be: an `&` inside a braced group is not an
+% alignment tab, so `\textbf{Date & Exhibitions}` fails at the first header
+% with « Forbidden control sequence found while scanning use of
+% \check@nocorr@ » — which is TeX saying, at some distance, that the tabs are
+% in the wrong place. Rules carry the header instead, which is how a scholarly
+% table sets one anyway. (The reading view has no such constraint and renders
+% the same row as <th>.)
 \newenvironment{ledgertable}[2]
-  {\par\smallskip\small\begin{longtable}{#1}\textbf{#2}\\*\hline\endhead}
+  {\par\smallskip\small
+   \begin{longtable}{#1}
+   \hline
+   #2 \\
+   \hline
+   \endhead}
   {\end{longtable}\par\smallskip}
 
 % --- Title ------------------------------------------------------------------

@@ -320,13 +320,24 @@ construct. Extending the subset means extending `scripts/render.mjs`,
 #### The ledger table
 
 ```latex
-\begin{ledgertable}{llll}{Date & accepted / Refused & Exhibitions & Received}
+\begin{ledgertable}{Y{0.12}lY{0.34}Y{0.22}}{Date & accepted / Refused & Exhibitions & Received}
 Jan. 28, 21 & A & Print Makers Ex., Los Angeles & \ill{} \\
 Nov. 10, 21 & R & Bklyn. Soc. of Etchers & \uncertain{12.60} \\
 \end{ledgertable}
 ```
 
 - The first argument is the column specification; the second is the header row.
+- **Any column that can hold a sentence takes `Y{fraction}`**, a wrapping
+  column that many hundredths of the measure wide. `l`, `r` and `c` are for
+  dates, figures and short names *and their headings* — « accepted / Refused »
+  is longer than any cell beneath it and will overflow a column sized for
+  « Inv. ». The fractions in one table should come to about 0.85.
+- This is not typographic fussiness. A table of `l` columns is set to its
+  natural width, which can be wider than the page, and **TeX issues no warning
+  at all** because nothing asked the row to fit — the first compile of Book I
+  produced a page whose right-hand column ran off the paper with a clean log.
+  `npm run pdf` now refuses to finish on an overfull box, and a fixed-width
+  column is what makes that check able to see anything.
 - A cell she left blank is **left blank**. A cell that cannot be read takes
   `\ill{}`. The two are different and the difference matters.
 - A `&` inside a cell must be escaped `\&` — the splitter respects the escape,
@@ -367,7 +378,9 @@ Two mechanical checks before the human one:
   the safe direction, and it still misreports the leaf;
 - read the last table in the file first. Attention degrades towards the end of
   a pass, and the last table is where a dropped `&` shows up as a whole column
-  shifted left.
+  shifted left;
+- `npm run pdf` must print no overfull box. It fails if it finds one, and it
+  names the lines: widen a `Y{}` column, or narrow its neighbour.
 
 ## What not to do
 
