@@ -6,9 +6,8 @@ derive it again at the cost of the attention it was meant to save.
 **This narrows a field of candidates and settles nothing.** Where the sheet
 will not support what is written here, the sheet wins and `\ill{}` stands.
 
-Written from Book I, batch 1 (sheets 1–12) and batch 2 (sheets 13–24),
-5 September 2026, Opus 5. Add to it after every batch; say which batch taught
-you what.
+Written from Book I, batches 1 to 4 (sheets 1–48), 5–6 September 2026, Opus 5.
+Add to it after every batch; say which batch taught you what.
 
 ---
 
@@ -143,6 +142,42 @@ Below the resale band the leaf usually runs **two parallel columns**, and they
 are not one sequence: the right-hand run continues the left in time but was
 written later, in another ink, and its dates do not pair with the left's. Two
 tables, and a note.
+
+## The ruling stops matching what she writes
+
+*(batches 3 and 4)* On a short leaf she often keeps writing after the columns
+have stopped meaning anything. Leaf 39 puts the amount in the « accepted or
+Refused » column for its second and third rows; leaf 44 abandons the ruling
+altogether and sets four separate plates down the leaf with gaps between them.
+
+**Transcribe what is in the cell, not what the heading says should be there**,
+and note the mismatch once. Silently moving a figure into the column where it
+belongs would be correcting her bookkeeping.
+
+## Three spellings of one gallery
+
+*(batch 4)* The Brown-Robertson Galleries appear as `Brown Robertson`
+(leaf 17, leaf 43), `Brown Robinson` (leaf 32, leaf 41). Add to the standing
+list: `Shadow Land` in two words on leaf 38 against `Shadowland` on leaves 6
+and 8; `Les Poilhus` on leaf 41 against `Les Poillus` in the index; `Les Deux
+Pigeon` singular on leaf 40 against the plural in the index; `Cape Anne` for
+Cape Ann; `Meyer Graefe` for Julius Meier-Graefe; `Sortieing`.
+
+## Not every leaf is a work's record
+
+*(batch 4)* Three kinds of leaf turn up that are not a plate's ledger, and each
+needs saying rather than forcing into the usual shape:
+
+- **a consignment receipt.** Leaf 35: eleven etchings F. R. took from the
+  studio on 27 May 1951, listed by name, with a disposal beside only one.
+- **valuations.** Leaf 44 lists seven drawings given to the Philadelphia Museum
+  with a valuation each, forty times the sale prices around them. They are not
+  prices and must not be read as any.
+- **descriptions of somebody else's pictures.** The two loose sheets between
+  leaves 44 and 45 describe Hopper watercolours in John Taylor Spaulding's
+  collection for the 1948 Boston memorial show — « Mast is left, centre; heavy
+  rugs hang over the side in foreground, cables » — with no prices anywhere.
+  The plainest sight in Book I of what her descriptive habit was for.
 
 ## What the clippings do
 

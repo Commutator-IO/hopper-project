@@ -195,13 +195,20 @@ npm run manifest    # tell the site which files now exist
 The `.tex` under `transcripts/` is the source of record and the only thing
 versioned. HTML, PDF and TEI are derived, and rebuilt.
 
-**Two batches are transcribed so far — Book I, batches 1 and 2: twenty-four
-sheets from the front cover to leaf 16, read under Opus 5 on 5 September
-2026.** Batch 1 is the front matter, Jo Hopper's index and the first two
-etchings; batch 2 is the etchings proper — Night Shadows, East Side Interior,
-The Cat Boat, The Rail Road, The Locomotive, The Monhegan Boat — six plates
-across eleven leaves, with about four hundred ruled entries between them. None
-of it has been checked sheet by sheet by a person.
+**Four batches are transcribed so far — Book I, batches 1 to 4: forty-eight of
+its 117 sheets, the front cover to leaf 44, read under Opus 5 on 5 and
+6 September 2026.** That is the whole plate-by-plate record: the front matter
+and Jo Hopper's index, then every etching from Evening Wind to the four small
+plates gathered on leaf 44, with something over a thousand ruled entries
+between them. From leaf 45 the volume becomes running lists — notes and
+explanations, one-man shows, the oils and watercolours by year, current
+exhibitions, reviews, photographs, prizes, gifts and a chronology — and those
+are batches 5 to 10, not yet begun.
+
+None of it has been checked sheet by sheet by a person. Batches 1 and 2 each
+had a context of their own; batches 3 and 4 shared one, and say so in their
+header, because the skill asks for a fresh context per batch and they did not
+get it.
 
 ### The critical apparatus is the point
 
