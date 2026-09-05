@@ -2,6 +2,7 @@ import { Page } from './components/Frame.tsx';
 import { BOOKS, TOTAL_SHEETS, ledgersOf, sheetCountOf } from './content/books.ts';
 import { LEDGERS } from './content/catalogue.ts';
 import { BATCH_SIZE, useManifest } from './lib/batches.ts';
+import { url } from './lib/base.ts';
 
 export function HomePage() {
   const manifest = useManifest();
@@ -72,7 +73,7 @@ export function HomePage() {
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {BOOKS.map((b) => (
-            <a key={b.key} href={b.path} className="card group p-5 transition hover:border-brand-400">
+            <a key={b.key} href={url(b.path)} className="card group p-5 transition hover:border-brand-400">
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="font-serif text-lg text-ink-900 group-hover:text-brand-700">
                   {b.title}
@@ -142,7 +143,7 @@ export function HomePage() {
             Gail Levin’s catalogue raisonné and her biography of Hopper worked from these very
             books. Anything this site appears to discover is, in the first instance, probably in
             Levin already; the{' '}
-            <a href="/method/" className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">
+            <a href={url('/method/')} className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">
               method page
             </a>{' '}
             says how that prior is handled rather than leaving it implied.

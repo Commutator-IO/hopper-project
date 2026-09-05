@@ -4,6 +4,7 @@ import { BOOKS, UNPLACED } from './content/books.ts';
 import { BATCH_SIZE, batchCount, batchState, useManifest } from './lib/batches.ts';
 import { STATES, tally, type State } from './lib/progress.ts';
 import { STATE_COLOURS } from './components/Reader.tsx';
+import { url } from './lib/base.ts';
 
 /**
  * How the reading is done, what it costs, and what it does not claim.
@@ -202,7 +203,7 @@ export function MethodPage() {
             {BOOKS.map((b) => (
               <tr key={b.key} className="border-b border-ink-200">
                 <td className="py-2">
-                  <a href={b.path} className="text-brand-700 hover:underline">
+                  <a href={url(b.path)} className="text-brand-700 hover:underline">
                     {b.title}
                   </a>
                 </td>

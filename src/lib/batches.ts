@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { url } from './base.ts';
 import { shownState, type State } from './progress.ts';
 import type { Edition, LedgerKey, Manifest, Sheet, TranscriptEntry } from './types.ts';
 
@@ -96,7 +97,7 @@ export const collectionUrl = (collection: number) =>
   `https://resourcespace.whitney.org/pages/search.php?search=%21collection${collection}`;
 
 export const transcriptUrl = (ledger: string, k: number, edition: Edition, ext: string) =>
-  `/transcripts/${ledger}/${batchName(k)}.${edition}.${ext}`;
+  url(`/transcripts/${ledger}/${batchName(k)}.${edition}.${ext}`);
 
 /**
  * The same, for an edition whose unit is the whole ledger.
@@ -111,7 +112,7 @@ export const transcriptUrl = (ledger: string, k: number, edition: Edition, ext: 
  * says nothing about which of the six books it holds.
  */
 export const ledgerTranscriptUrl = (ledger: string, edition: Edition, ext: string) =>
-  `/transcripts/${ledger}/${ledger}.${edition}.${ext}`;
+  url(`/transcripts/${ledger}/${ledger}.${edition}.${ext}`);
 
 /** The ledger-wide artifacts, if this book has any. */
 export const ledgerEntry = (m: Manifest | null, ledger: string): TranscriptEntry | undefined =>
@@ -153,7 +154,7 @@ export function useManifest(): Manifest | null {
   const [m, setM] = useState<Manifest | null>(null);
   useEffect(() => {
     let live = true;
-    fetch('/transcripts/manifest.json')
+    fetch(url('/transcripts/manifest.json'))
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => live && setM(j))
       .catch(() => {});

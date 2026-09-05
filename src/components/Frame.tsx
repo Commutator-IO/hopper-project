@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BOOKS } from '../content/books.ts';
+import { isCurrent, url } from '../lib/base.ts';
 
 /**
  * Header and footer, shared by every page.
@@ -14,11 +15,6 @@ const OTHER_PAGES: { path: string; label: string }[] = [
   { path: '/method/', label: 'Method & progress' },
   { path: '/contribute/', label: 'Contribute' },
 ];
-
-function isCurrent(path: string, here: string): boolean {
-  const h = here.endsWith('/') ? here : `${here}/`;
-  return path === h;
-}
 
 export function Header({ path }: { path: string }) {
   const [open, setOpen] = useState(false);
@@ -42,7 +38,7 @@ export function Header({ path }: { path: string }) {
   return (
     <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/93 backdrop-blur-md backdrop-saturate-150">
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-2.5">
-        <a href="/" className="flex min-w-0 items-center gap-2.5">
+        <a href={url('/')} className="flex min-w-0 items-center gap-2.5">
           <Mark />
           <span className="min-w-0 truncate text-[13px] font-semibold tracking-tight text-ink-900">
             Hopper Ledgers
@@ -53,7 +49,7 @@ export function Header({ path }: { path: string }) {
           {links.map((l) => (
             <a
               key={l.path}
-              href={l.path}
+              href={url(l.path)}
               aria-current={isCurrent(l.path, path) ? 'page' : undefined}
               className={`rounded-full px-2.5 py-1 transition ${
                 isCurrent(l.path, path)
@@ -83,7 +79,7 @@ export function Header({ path }: { path: string }) {
           ].map((l) => (
             <a
               key={l.path}
-              href={l.path}
+              href={url(l.path)}
               className="block rounded px-2 py-1.5 text-[14px] text-ink-700 hover:bg-ink-100"
             >
               {l.label}
@@ -136,7 +132,7 @@ export function Footer() {
           and its whole claim.
         </p>
         <p className="mt-4">
-          <a href="/method/" className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">
+          <a href={url('/method/')} className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">
             Method &amp; progress
           </a>
           {' · '}

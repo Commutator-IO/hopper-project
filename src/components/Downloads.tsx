@@ -1,4 +1,5 @@
 import { editionUrl, servedByLedger } from '../lib/batches.ts';
+import { url } from '../lib/base.ts';
 import type { Edition, Manifest } from '../lib/types.ts';
 
 /**
@@ -60,7 +61,7 @@ export function Downloads({
           title={f.title}
           href={
             f.ext === 'csv'
-              ? `/records/${ledger}.csv`
+              ? url(`/records/${ledger}.csv`)
               : editionUrl(manifest, ledger, batch, edition, f.ext)
           }
           download

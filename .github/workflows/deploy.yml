@@ -23,6 +23,13 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      # Reads the repository's Pages configuration and reports where the site
+      # will actually be served from: `/` when a custom domain is set,
+      # `/hopper-project` when it is not. Deriving it beats hard-coding it,
+      # because the two cases differ by one DNS record and the wrong one
+      # produces a page that returns 200 with every asset 404.
+      - id: pages
+        uses: actions/configure-pages@v5
       - run: npm ci
       # The generated data is rebuilt rather than trusted: a catalogue.ts that
       # had drifted from harvest/ would be caught here rather than by a reader
@@ -34,6 +41,8 @@ jobs:
       - run: npm run tei
       - run: npm run records
       - run: npm run build
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
