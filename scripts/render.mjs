@@ -51,6 +51,103 @@ const CATALOGUE = (() => {
   return new Map(rows.map((r) => [r.ref, r]));
 })();
 
+/* -------------------------------------------------------------- where to look */
+
+/**
+ * Where a work named on a leaf can be looked at, from `npm run works`.
+ *
+ * This is the answer to the one thing the site cannot do. The right pane shows
+ * the sheet, and on the sheet is Edward Hopper's ink memorandum of the work,
+ * an inch across; what it is a memorandum *of* is not here and cannot be —
+ * the works are in copyright, and holding an image would break the only
+ * promise the project makes. So a title that a museum with a public API holds
+ * gets a link to that museum's own record, which serves its own picture.
+ *
+ * Absent when `works.json` has not been built, and then nothing links and
+ * nothing breaks: this is an enrichment, and a transcription is not less true
+ * without it.
+ */
+const WORKS = (() => {
+  try {
+    const w = JSON.parse(readFileSync(resolve(root, 'src/content/works.json'), 'utf8'));
+    return { byKey: new Map(w.works.map((x) => [x.key, x])), aliases: w.aliases ?? {} };
+  } catch {
+    return null;
+  }
+})();
+
+/** The same normalisation `scripts/works.mjs` uses. Kept in step by hand. */
+const workKey = (title) =>
+  title
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/^(the|a|an)\s+/, '')
+    .replace(/[^a-z0-9 ]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+/**
+ * The work a title names, if any museum here holds one under it.
+ *
+ * The title arrives as the leaf writes it, apparatus and all, so the marks are
+ * stripped first — but only the marks. A title that was read doubtfully still
+ * looks itself up, because `\uncertain{Aux Fortifications}` is a reading of
+ * « Aux Fortifications », and refusing to link it would hide the very
+ * identification a reader wants to check.
+ */
+function findWork(rawTitle) {
+  if (!WORKS) return null;
+  const plainTitle = rawTitle
+    .replace(/\\ill\{\}|\\ill\b/g, '')
+    .replace(/\\(uncertain|add|struck|emph|textit|textbf|texttt)\{/g, '{')
+    .replace(/\\hand\{[a-z]+\}\{/g, '{')
+    .replace(/\\quad|\\qquad/g, ' ')
+    .replace(/[{}]/g, '')
+    .trim();
+  // A leaf writes the title and then the size on one line. Only the part
+  // before a measurement is the title.
+  const cut = plainTitle.split(/\s{2,}|\s\d+\s*[x\u00d7]\s*\d/)[0].trim();
+  let k = workKey(cut);
+  const alias = WORKS.aliases[k];
+  if (alias) k = alias.to;
+  const work = WORKS.byKey.get(k);
+  if (!work) return null;
+  return { work, via: alias ?? null };
+}
+
+/**
+ * The link cluster shown beside a work's heading.
+ *
+ * Small, and it says what it is: these are places the work can be seen, not a
+ * claim that the impression the row concerns is the one held there. An entry
+ * assembled across two house titles, or reached through a judged alias, says
+ * so — those are the joins a reader would otherwise cite as facts.
+ */
+function workLinks(found) {
+  if (!found) return '';
+  const { work, via } = found;
+  const soft =
+    via?.mapping === 'likely' ||
+    work.mapping === 'likely' ||
+    (work.alsoTitled ?? []).some((a) => a.mapping === 'likely');
+  const why = [
+    via ? `identified with “${work.title}” — ${via.mapping}: ${via.why}` : null,
+    ...(work.alsoTitled ?? []).map((a) => `also catalogued as “${a.title}” — ${a.mapping}: ${a.why}`),
+  ].filter(Boolean).join(' · ');
+  return (
+    `<span class="works"${why ? ` title="${esc(why)}"` : ''}>` +
+    `<span class="works-tag">see the work${soft ? ' *' : ''}</span>` +
+    work.holdings
+      .map(
+        (h) =>
+          `<a href="${esc(h.url)}" target="_blank" rel="noreferrer" ` +
+          `title="${esc(h.institution)}">${esc(h.short)}</a>`,
+      )
+      .join('') +
+    '</span>'
+  );
+}
+
 /* -------------------------------------------------------------------- parse */
 
 class TexError extends Error {
@@ -338,6 +435,18 @@ function render(src, file, meta) {
     return got;
   };
 
+  /** N brace groups read without consuming, for a lookup that needs the source. */
+  const peek = (n) => {
+    const got = [];
+    let j = i;
+    for (let k = 0; k < n; k++) {
+      const [g, next] = group(src, j, file, line);
+      got.push(g);
+      j = next;
+    }
+    return got;
+  };
+
   /** N brace groups from the main scan, raw. */
   const raw = (n) => {
     const got = [];
@@ -440,8 +549,11 @@ function render(src, file, meta) {
       }
       envs.push({ env, line });
       if (env === 'record') {
+        const [rawTitle] = peek(1);
         const [title] = args(1);
-        out.push(`<section class="record"><h4>${title}</h4><dl>`);
+        out.push(
+          `<section class="record"><h4>${title}${workLinks(findWork(rawTitle))}</h4><dl>`,
+        );
       } else if (env === 'summary') {
         out.push('<section class="summary"><h2>Summary</h2>');
       } else {
@@ -569,9 +681,10 @@ function render(src, file, meta) {
         break;
       }
       case 'work': {
+        const [raw] = peek(1);
         const [t] = args(1);
         flush();
-        out.push(`<h4 class="work">${t}</h4>`);
+        out.push(`<h4 class="work">${t}${workLinks(findWork(raw))}</h4>`);
         break;
       }
       case 'keywords': {
@@ -670,6 +783,17 @@ table.ledger td { border-bottom: 1px solid var(--rule); padding: .3rem .5rem .3r
 .keywords { font-size: .8rem; color: var(--dim); font-style: italic; }
 .keywords span { font-style: normal; font-weight: 600; letter-spacing: .07em;
   text-transform: uppercase; font-size: .68rem; }
+.works { margin-left: .55rem; white-space: nowrap; font-weight: 400; }
+.works-tag {
+  font: 600 .62rem/1 ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--dim); margin-right: .35rem;
+}
+.works a {
+  font: 500 .7rem/1 ui-sans-serif, system-ui, sans-serif; color: var(--add);
+  text-decoration: none; border: 1px solid var(--rule); border-radius: 999px;
+  padding: .12rem .4rem; margin-right: .25rem;
+}
+.works a:hover { border-color: var(--add); }
 .record { margin: 1.2rem 0; }
 .record h4 { margin: 0 0 .3rem; font-size: .95rem; }
 .record dl { display: grid; grid-template-columns: 8.5rem 1fr; gap: .1rem .8rem; margin: 0;
@@ -727,6 +851,14 @@ function page(meta, html) {
     <span class="ill">[&hellip;]</span> illegible, and never guessed &middot;
     <span class="add">[bracketed]</span> supplied by the editor &middot;
     <del>struck</del> crossed out in the book
+  </div>
+  <div class="legend">
+    <span class="works-tag" style="margin:0">see the work</span> links to a museum record for a
+    work of that title, checked by <code>npm run works</code> against the museum's own API. It
+    does not claim that the impression a row concerns is the one held there &mdash; these are
+    editions of a hundred, and the rows are the record of their dispersal. A
+    <strong>*</strong> marks an identification that is a judgement rather than a spelling:
+    hover it for the reason.
   </div>
 </header>
 ${html}

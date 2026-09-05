@@ -147,6 +147,7 @@ whichever model happened to be selected.
 | [`/tag-hopper`](.claude/skills/tag-hopper/SKILL.md) | the ledger's tags — the `\keywords{}` line closing the summary |
 
 ```bash
+npm run works       # → the verified museum links (external APIs; not run in CI)
 npm run render      # transcripts/*.tex → the reading views the left pane shows
 npm run records     # the record edition → CSV and JSON-LD
 npm run tei         # → a TEI P5 file per transcription
@@ -223,6 +224,55 @@ written, prices are never converted and never adjusted, and "Les Deux Pigeon"
 and "Les Poillus" stay misspelled because the misspelling is Hopper's and is
 how the entry is found.
 
+### Seeing the work
+
+The one thing this site cannot show is the work itself. The right pane has the
+sheet, and on the sheet is Edward Hopper's ink memorandum of a painting or a
+plate, drawn an inch across; what it is a memorandum *of* is not here and
+cannot be, because holding an image of a work in copyright would break the only
+promise the project makes.
+
+So every work title that a museum with a public API holds carries a **see the
+work** link beside it, to that museum's own record, which serves its own
+picture. `npm run works` builds the index by querying the Metropolitan Museum
+of Art and the Art Institute of Chicago and keeping only objects whose artist
+field their catalogue gives as `Edward Hopper` — so no URL here was typed from
+memory, and re-running it drops a link that has rotted rather than leaving it
+in the site being wrong. Twenty-three of the twenty-seven etching plates listed
+on Book I's first leaf are linked; the four that are not are not held under
+those titles at either museum, and are left blank rather than guessed.
+
+The Whitney holds far more Hopper than either and is **not** in the index:
+`whitney.org` publishes no API, and its collection listing ignores every search
+parameter — `?q=`, `?filter=`, `?search=`, `?keyword=` all return the same
+thirty works. A link built on a parameter the server ignores would take a
+reader somewhere else, which is worse than no link.
+
+Two limits are stated on every reading view rather than left implied:
+
+- **A link does not say the row you are reading concerns that copy.** These are
+  editions of a hundred, sold to a dozen institutions over forty years, and the
+  ledger's rows are the record of exactly that dispersal. It says only that a
+  work of this title is there and can be looked at.
+- **An identification that is a judgement is marked with a `*`**, and hovering
+  gives the reason. Matching normalises three things and three only — a leading
+  article, an ampersand, and case — so « Cow & Rocks » finds « Cow and Rocks »
+  on its own. Anything beyond that is declared by hand in
+  [`src/content/work-aliases.json`](src/content/work-aliases.json) with a
+  `mapping` of `certain` or `likely`: « Night in the L Train » is *likely* the
+  plate both museums catalogue as « Night on the El Train », and saying so is
+  not the same as knowing it.
+
+The links reach the JSON-LD too, as `sameAs`, with the same caveat written into
+the dataset's own description.
+
+It is worth seeing what the rule does on Book I leaf 4. The transcription's
+`\work{}` there reads `Night in \ill{}` — the title is under a pasted clipping
+— so nothing links, because nothing was read. The *record* edition names it,
+having taken the title from leaf 1's index where the transcription may not, and
+its heading carries the links. The same title, two editions, and the difference
+between them is the whole apparatus working.
+
 ### The TEI export
 
 `npm run tei` writes `batch-NN.en.xml` beside each transcription's HTML and the
@@ -247,6 +297,8 @@ well-formed with `xmllint` when it is installed.
 | `harvest/` | The Whitney's listing, taken in a browser and committed — 504 lines |
 | `src/content/catalogue.ts` | The archive — 6 ledgers, 504 sheets — generated, never hand-edited |
 | `src/content/books.json` | The six reading books, generated from spans and then edited by hand |
+| `src/content/works.json` | Where a work named on a leaf can be looked at — generated, every URL retrieved |
+| `src/content/work-aliases.json` | The title identifications that are ours, each with how far to trust it |
 | `transcripts/status.json` | The three states no file can prove — `running`, `checked`, `skipped` |
 | `src/components/FacsimilePane.tsx` | The right pane: the Whitney's image, zoomable, sheet-anchored |
 | `src/components/TranscriptPane.tsx` | The left pane: the transcript in its own frame, reporting the sheet being read |
@@ -256,6 +308,7 @@ well-formed with `xmllint` when it is installed.
 | `scripts/render.mjs` | LaTeX subset → the reading view, and the checks that make it strict |
 | `scripts/records.mjs` | The record edition → CSV and JSON-LD |
 | `scripts/tei.mjs` | The transcription → TEI P5 |
+| `scripts/works.mjs` | Queries the Met and the Art Institute for works the ledgers name |
 
 ### Why the transcript pane is an iframe
 

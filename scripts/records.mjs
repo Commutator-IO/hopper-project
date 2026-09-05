@@ -91,6 +91,43 @@ function value(raw) {
 
 const RANK = { read: 0, partial: 1, uncertain: 2 };
 
+/**
+ * Where a work of this title can be looked at, from `npm run works`.
+ *
+ * Carried into the JSON-LD as `sameAs`, which is the field a consumer of this
+ * dataset would follow, and it is worth being exact about what it asserts: a
+ * museum holds a work under this title, not that the row's transaction
+ * concerns that copy. The `description` on each record says so in words,
+ * because `sameAs` alone would invite the stronger reading.
+ */
+const WORKS = (() => {
+  try {
+    const w = JSON.parse(
+      readFileSync(resolve(root, 'src/content/works.json'), 'utf8'),
+    );
+    return { byKey: new Map(w.works.map((x) => [x.key, x])), aliases: w.aliases ?? {} };
+  } catch {
+    return null;
+  }
+})();
+
+const workKey = (t) =>
+  t
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/^(the|a|an)\s+/, '')
+    .replace(/[^a-z0-9 ]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+function sameAs(title) {
+  if (!WORKS || !title) return undefined;
+  let k = workKey(title);
+  if (WORKS.aliases[k]) k = WORKS.aliases[k].to;
+  const w = WORKS.byKey.get(k);
+  return w ? w.holdings.map((h) => h.url) : undefined;
+}
+
 function parse(text, ledger) {
   const rows = [];
   let sheet = null;
@@ -212,7 +249,9 @@ for (const dir of readdirSync(src, { withFileTypes: true })) {
         description:
           'First-pass machine transcription, unchecked against the sheets by a person. ' +
           'Empty fields are fields the leaf does not carry, never defaults. ' +
-          'Prices and dates are as written and are never normalised.',
+          'Prices and dates are as written and are never normalised. ' +
+          'sameAs links a museum record for a work of the same title, verified against that ' +
+          "museum's API; it does not assert that this row's transaction concerns that copy.",
         hasPart: rows.map((r) => ({
           '@type': 'CreativeWork',
           identifier: r.id,
@@ -221,6 +260,9 @@ for (const dir of readdirSync(src, { withFileTypes: true })) {
           size: r.size || undefined,
           dateCreated: r.date || undefined,
           isBasedOn: `https://resourcespace.whitney.org/pages/view.php?ref=${r.ref}`,
+          // A museum holds a work of this title and serves a picture of it.
+          // Not a claim about which impression the ledger's row concerns.
+          sameAs: sameAs(r.title),
           // Not `offers`: these are not offers, they are what a ledger records
           // about a past transaction, in the words the ledger uses.
           disambiguatingDescription: [

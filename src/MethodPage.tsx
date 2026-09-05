@@ -172,6 +172,60 @@ export function MethodPage() {
       </section>
 
       <section className="border-b border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">Seeing the work</h2>
+        <div className="mt-3 max-w-3xl space-y-3 text-[14.5px] leading-relaxed text-ink-700">
+          <p>
+            The one thing this site cannot show is the work itself. The right pane has the sheet,
+            and on the sheet is Edward Hopper’s ink memorandum of a painting or a plate, drawn an
+            inch across; what it is a memorandum <em>of</em> is not here and cannot be, because
+            holding an image of a work in copyright would break the only promise the project
+            makes.
+          </p>
+          <p>
+            So a work title that a museum with a public API holds carries a{' '}
+            <strong>see the work</strong> link beside it, to that museum’s own record.{' '}
+            <code className="font-mono text-[13px]">npm run works</code> builds the index by
+            querying the Metropolitan Museum of Art and the Art Institute of Chicago and keeping
+            only objects whose artist field their catalogue gives as <em>Edward Hopper</em> — so
+            no URL here was typed from memory, and re-running it drops a link that has rotted
+            rather than leaving it in the site being wrong.
+          </p>
+          <p>
+            The Whitney holds far more Hopper than either and is deliberately absent:{' '}
+            <code className="font-mono text-[13px]">whitney.org</code> publishes no API, and its
+            collection listing ignores every search parameter tried — the same thirty works come
+            back each time. A link built on a parameter the server ignores would take a reader
+            somewhere else, which is worse than no link.
+          </p>
+        </div>
+        <div className="mt-4 max-w-3xl space-y-4 text-[14.5px] leading-relaxed text-ink-700">
+          <Diff title="A link does not say the row concerns that copy">
+            These are editions of a hundred, sold to a dozen institutions over forty years, and
+            the ledger’s rows are the record of exactly that dispersal. The link says a work of
+            this title is there and can be looked at, and nothing stronger. The same caveat is
+            written into the JSON-LD, where the links travel as{' '}
+            <code className="font-mono text-[13px]">sameAs</code>.
+          </Diff>
+          <Diff title="An identification that is a judgement is marked">
+            Matching normalises three things and three only — a leading article, an ampersand,
+            case — so “Cow &amp; Rocks” finds “Cow and Rocks” unaided. Everything beyond that is
+            declared by hand with a <code className="font-mono text-[13px]">mapping</code> of{' '}
+            <em>certain</em> or <em>likely</em>, and a <strong>*</strong> on the link says which.
+            “Night in the L Train” is <em>likely</em> the plate both museums catalogue as “Night
+            on the El Train”; saying so is not the same as knowing it.
+          </Diff>
+          <Diff title="What the two editions do differently, on one leaf">
+            On Book I leaf 4 the plate’s title is under a pasted clipping, so the transcription
+            reads <code className="font-mono text-[13px]">\work&#123;Night in \ill&#123;&#125;&#125;</code>{' '}
+            and links nothing — nothing was read. The record edition names it, having taken the
+            title from leaf 1’s index where the transcription may not, and its heading carries the
+            links. Same title, two editions, and the difference between them is the apparatus
+            working.
+          </Diff>
+        </div>
+      </section>
+
+      <section className="border-b border-ink-200 py-8">
         <h2 className="font-serif text-2xl text-ink-900">The prior, stated</h2>
         <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-700">
           Gail Levin catalogued Hopper’s work from these books and wrote his biography from them.

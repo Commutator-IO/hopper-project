@@ -280,6 +280,21 @@ dimension — and never a description of the drawing. The drawing is one pane
 away at the resolution the Whitney publishes, and prose about it competes with
 looking at it. Leave the argument empty where nothing is written.
 
+#### The work links write themselves
+
+A `\work{…}` heading picks up a **see the work** link automatically, from
+`src/content/works.json`, whenever the Met or the Art Institute holds a work
+under that title. **Never put a URL in a transcription**, and never adjust a
+title so that it will match — the title is what the leaf says, and a title that
+does not match simply gets no link.
+
+The lookup takes the title as written, strips the apparatus, and stops at a
+measurement, so `\work{Evening Wind\quad 7 x 8 3/8"}` finds Evening Wind. A
+title that is genuinely unread finds nothing: on Book I leaf 4 the plate's name
+is under a clipping, so the transcription reads `\work{Night in \ill{}}` and
+links nothing, while the record edition — which may take the title from the
+index — links it. That difference is correct and should not be smoothed away.
+
 #### The permitted LaTeX subset
 
 `scripts/render.mjs` understands a subset, **deliberately**: a converter that

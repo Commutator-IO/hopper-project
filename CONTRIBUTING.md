@@ -31,6 +31,7 @@ that read the sheets.
 After a pass:
 
 ```bash
+npm run works       # refresh the museum links; hits external APIs, so not in CI
 npm run render      # fails loudly on anything outside the subset
 npm run records     # only after /record-hopper
 npm run tei
@@ -50,6 +51,23 @@ in the output if it is allowed through:
 | sheets out of the order the book is bound in | the photograph would turn backwards as the reader scrolls forward |
 | a macro outside the permitted subset | a converter that accepts everything mangles what it does not understand |
 | a file with no `\watermark{}` | it would claim, by silence, a legal status it does not have |
+
+## The museum links
+
+`\work{…}` and `\begin{record}{…}` headings pick up a **see the work** link
+automatically, from `src/content/works.json`. Do not add links by hand and do
+not put a URL in a transcription: the index is built by `npm run works`, which
+retrieves every one of them from the Met's and the Art Institute's public APIs
+and checks the artist field, so a link in the site is a link somebody's server
+actually returned.
+
+If a title should match and does not, the fix is an entry in
+`src/content/work-aliases.json` with a `mapping` — `certain` for a slip of the
+pen, `likely` for a judgement — and a `why` that a stranger could argue with.
+It is not a change to the normalisation rule: that rule handles a leading
+article, an ampersand and case, and a rule clever enough to join « Les Deux
+Pigeons » to « The Two Pigeons » on its own would also join things that are not
+the same.
 
 ## House rules
 

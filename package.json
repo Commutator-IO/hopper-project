@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "catalogue": "node scripts/catalogue.mjs",
     "books": "node scripts/books.mjs",
+    "works": "node scripts/works.mjs",
     "mirror": "node scripts/mirror.mjs",
     "render": "node scripts/render.mjs",
     "manifest": "node scripts/manifest.mjs",

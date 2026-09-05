@@ -114,6 +114,15 @@ column; `\ill{}` marks it `partial`. That is why the marks must be kept rather
 than resolved — the column that says how much to trust a row is built from
 them.
 
+## The work links
+
+A `record` block's title picks up **see the work** links automatically, the
+same way a `\work{}` heading does, and they reach the JSON-LD as `sameAs`. The
+record edition is allowed to name a work the transcription could not — from an
+index, from a continuation leaf — and that is often what makes the link appear.
+Say so in `\field{note}` when it happens: a reader should be able to tell a
+title that was read from one that was joined.
+
 ## What not to do
 
 - **Never complete a field from knowledge of Hopper.** Not the year of a plate,

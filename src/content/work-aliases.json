@@ -1,0 +1,20 @@
+[
+  {
+    "from": "Les Deux Pigeon",
+    "to": "Les Deux Pigeons",
+    "mapping": "certain",
+    "why": "Leaf 40's descriptor writes the singular and leaf 1's index the plural, of one plate. A slip of the pen, not two works. Both spellings stay as written in the transcription; this only makes the link work from either."
+  },
+  {
+    "from": "The Two Pigeons",
+    "to": "Les Deux Pigeons",
+    "mapping": "likely",
+    "why": "The Art Institute catalogues the 1920 plate under an English title where the Met and the Hoppers use the French. Same date, same medium, and the Hoppers' own title is the French one. A judgement, not a slip."
+  },
+  {
+    "from": "Night in the L Train",
+    "to": "Night on the El Train",
+    "mapping": "likely",
+    "why": "The ledger's title for the plate at leaf 30; both the Met and the Art Institute catalogue a 1918 etching as 'Night on the El Train'. The elevated railway is the same railway, but the two titles are not the same words and this is our identification, not theirs."
+  }
+]

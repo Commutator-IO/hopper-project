@@ -1,0 +1,761 @@
+{
+  "generated": "2026-09-05T20:04:37.273Z",
+  "sources": [
+    {
+      "institution": "The Metropolitan Museum of Art",
+      "api": "https://collectionapi.metmuseum.org/public/collection/v1"
+    },
+    {
+      "institution": "Art Institute of Chicago",
+      "api": "https://api.artic.edu/api/v1"
+    }
+  ],
+  "note": "Every URL here was retrieved by scripts/works.mjs and its artist field checked against \"Edward Hopper\". A link says a work of this title is held there and can be looked at; it does not say that the ledger row you are reading concerns that copy.",
+  "aliases": {
+    "les deux pigeon": {
+      "to": "les deux pigeons",
+      "mapping": "certain",
+      "why": "Leaf 40's descriptor writes the singular and leaf 1's index the plural, of one plate. A slip of the pen, not two works. Both spellings stay as written in the transcription; this only makes the link work from either."
+    },
+    "two pigeons": {
+      "to": "les deux pigeons",
+      "mapping": "likely",
+      "why": "The Art Institute catalogues the 1920 plate under an English title where the Met and the Hoppers use the French. Same date, same medium, and the Hoppers' own title is the French one. A judgement, not a slip."
+    },
+    "night in the l train": {
+      "to": "night on the el train",
+      "mapping": "likely",
+      "why": "The ledger's title for the plate at leaf 30; both the Met and the Art Institute catalogue a 1918 etching as 'Night on the El Train'. The elevated railway is the same railway, but the two titles are not the same words and this is our identification, not theirs."
+    }
+  },
+  "works": [
+    {
+      "key": "corner",
+      "title": "A Corner",
+      "date": "1919",
+      "medium": "Etching on ivory wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50049",
+          "url": "https://www.artic.edu/artworks/50049",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "american landscape",
+      "title": "American Landscape",
+      "date": "1920",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366208",
+          "url": "https://www.metmuseum.org/art/collection/search/366208",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50109",
+          "url": "https://www.artic.edu/artworks/50109",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "attic in nyack hopper house",
+      "title": "Attic in Nyack (Hopper House)",
+      "date": "1899",
+      "medium": "Charcoal on cream wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "247761",
+          "url": "https://www.artic.edu/artworks/247761",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "aux fortifications",
+      "title": "Aux Fortifications",
+      "date": "1923",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366209",
+          "url": "https://www.metmuseum.org/art/collection/search/366209",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50115",
+          "url": "https://www.artic.edu/artworks/50115",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "barn and silo vermont",
+      "title": "Barn and Silo, Vermont",
+      "date": "1927",
+      "medium": "Watercolor, and brush and black ink over charcoal on paper",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "481211",
+          "url": "https://www.metmuseum.org/art/collection/search/481211",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "cat boat",
+      "title": "Cat Boat",
+      "date": "1922",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366217",
+          "url": "https://www.metmuseum.org/art/collection/search/366217",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50087",
+          "url": "https://www.artic.edu/artworks/50087",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "church of san esteban",
+      "title": "Church of San Esteban",
+      "date": "1946",
+      "medium": "Watercolor over graphite on paper",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "488273",
+          "url": "https://www.metmuseum.org/art/collection/search/488273",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "coast guard station two lights maine",
+      "title": "Coast Guard Station, Two Lights, Maine",
+      "date": "1927",
+      "medium": "Watercolor over charcoal on paper",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "481213",
+          "url": "https://www.metmuseum.org/art/collection/search/481213",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "cow and rocks",
+      "title": "Cow and Rocks",
+      "date": "1918",
+      "medium": "Etching on ivory wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50075",
+          "url": "https://www.artic.edu/artworks/50075",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "d and r g locomotive",
+      "title": "D. & R.G. Locomotive",
+      "date": "1925",
+      "medium": "Watercolor and graphite on paper",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "488969",
+          "url": "https://www.metmuseum.org/art/collection/search/488969",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "east side interior",
+      "title": "East Side Interior",
+      "date": "1922",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366204",
+          "url": "https://www.metmuseum.org/art/collection/search/366204",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "8353",
+          "url": "https://www.artic.edu/artworks/8353",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "evening wind",
+      "title": "Evening Wind",
+      "date": "1921",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366211",
+          "url": "https://www.metmuseum.org/art/collection/search/366211",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "36038",
+          "url": "https://www.artic.edu/artworks/36038",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "folly beach charleston south carolina",
+      "title": "Folly Beach, Charleston, South Carolina",
+      "date": "1929",
+      "medium": "Watercolor, gouache, and charcoal on paper",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "481209",
+          "url": "https://www.metmuseum.org/art/collection/search/481209",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "from williamsburg bridge",
+      "title": "From Williamsburg Bridge",
+      "date": "1928",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "487834",
+          "url": "https://www.metmuseum.org/art/collection/search/487834",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "girl on a bridge",
+      "title": "Girl on a Bridge",
+      "date": "1923",
+      "medium": "Etching on ivory wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50100",
+          "url": "https://www.artic.edu/artworks/50100",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "gloucester mansions",
+      "title": "Gloucester Mansions",
+      "date": "1923",
+      "medium": "Watercolor, over graphite, on ivory wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "14749",
+          "url": "https://www.artic.edu/artworks/14749",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "house by a river",
+      "title": "House by a River",
+      "date": "1919",
+      "medium": "Etching on off-white wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50085",
+          "url": "https://www.artic.edu/artworks/50085",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "house of the foghorn i",
+      "title": "House of the Foghorn, I",
+      "date": "1927",
+      "medium": "Watercolor, gouache, and graphite on paper",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "488919",
+          "url": "https://www.metmuseum.org/art/collection/search/488919",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "house tops",
+      "title": "House Tops",
+      "date": "1921",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366214",
+          "url": "https://www.metmuseum.org/art/collection/search/366214",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50106",
+          "url": "https://www.artic.edu/artworks/50106",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "interior",
+      "title": "Interior",
+      "date": "1925",
+      "medium": "Watercolor with touches of gouache, over graphite, on ivory wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "14752",
+          "url": "https://www.artic.edu/artworks/14752",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "les deux pigeons",
+      "title": "Les Deux Pigeons",
+      "date": "1920",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366210",
+          "url": "https://www.metmuseum.org/art/collection/search/366210",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50094",
+          "url": "https://www.artic.edu/artworks/50094",
+          "openImage": false
+        }
+      ],
+      "alsoTitled": [
+        {
+          "title": "The Two Pigeons",
+          "mapping": "likely",
+          "why": "The Art Institute catalogues the 1920 plate under an English title where the Met and the Hoppers use the French. Same date, same medium, and the Hoppers' own title is the French one. A judgement, not a slip."
+        }
+      ],
+      "mapping": "likely"
+    },
+    {
+      "key": "night in the park",
+      "title": "Night in the Park",
+      "date": "1921",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366212",
+          "url": "https://www.metmuseum.org/art/collection/search/366212",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50103",
+          "url": "https://www.artic.edu/artworks/50103",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "night on the el train",
+      "title": "Night on the El Train",
+      "date": "1918",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366215",
+          "url": "https://www.metmuseum.org/art/collection/search/366215",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50091",
+          "url": "https://www.artic.edu/artworks/50091",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "night shadows",
+      "title": "Night Shadows",
+      "date": "1921",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366206",
+          "url": "https://www.metmuseum.org/art/collection/search/366206",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50097",
+          "url": "https://www.artic.edu/artworks/50097",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "nighthawks",
+      "title": "Nighthawks",
+      "date": "1942",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "111628",
+          "url": "https://www.artic.edu/artworks/111628",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "office in a small city",
+      "title": "Office in a Small City",
+      "date": "1953",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "488730",
+          "url": "https://www.metmuseum.org/art/collection/search/488730",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "railroad crossing",
+      "title": "Railroad Crossing",
+      "date": "1923",
+      "medium": "Drypoint",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366218",
+          "url": "https://www.metmuseum.org/art/collection/search/366218",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50078",
+          "url": "https://www.artic.edu/artworks/50078",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "road mender",
+      "title": "Road-Mender",
+      "date": "1906/07",
+      "medium": "Watercolor, with touches of gouache, over graphite, on cream wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "14758",
+          "url": "https://www.artic.edu/artworks/14758",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "saltillo mansion",
+      "title": "Saltillo Mansion",
+      "date": "1943",
+      "medium": "Watercolor over graphite on paper",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "488165",
+          "url": "https://www.metmuseum.org/art/collection/search/488165",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "streetwalker",
+      "title": "Streetwalker",
+      "date": "1906/07",
+      "medium": "Watercolor, with touches of gouache, over graphite, on cream wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "14757",
+          "url": "https://www.artic.edu/artworks/14757",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "summer twilight",
+      "title": "Summer Twilight",
+      "date": "1920",
+      "medium": "Etching on off-white wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50054",
+          "url": "https://www.artic.edu/artworks/50054",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "tables for ladies",
+      "title": "Tables for Ladies",
+      "date": "1930",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "487695",
+          "url": "https://www.metmuseum.org/art/collection/search/487695",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "bull fight",
+      "title": "The Bull Fight",
+      "date": "c. 1917",
+      "medium": "Etching on white wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50072",
+          "url": "https://www.artic.edu/artworks/50072",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "henry ford",
+      "title": "The Henry Ford",
+      "date": "1923",
+      "medium": "Etching on ivory wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50112",
+          "url": "https://www.artic.edu/artworks/50112",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "lighthouse",
+      "title": "The Lighthouse",
+      "date": "1923",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366207",
+          "url": "https://www.metmuseum.org/art/collection/search/366207",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "30516",
+          "url": "https://www.artic.edu/artworks/30516",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "lighthouse at two lights",
+      "title": "The Lighthouse at Two Lights",
+      "date": "1929",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "489258",
+          "url": "https://www.metmuseum.org/art/collection/search/489258",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "locomotive",
+      "title": "The Locomotive",
+      "date": "1923",
+      "medium": "Etching and drypoint on white wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50064",
+          "url": "https://www.artic.edu/artworks/50064",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "lonely house",
+      "title": "The Lonely House",
+      "date": "1923",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366216",
+          "url": "https://www.metmuseum.org/art/collection/search/366216",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50061",
+          "url": "https://www.artic.edu/artworks/50061",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "monhegan boat",
+      "title": "The Monhegan Boat",
+      "date": "1918",
+      "medium": "Etching on white wove paper",
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50080",
+          "url": "https://www.artic.edu/artworks/50080",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "railroad",
+      "title": "The Railroad",
+      "date": "1922",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366219",
+          "url": "https://www.metmuseum.org/art/collection/search/366219",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50069",
+          "url": "https://www.artic.edu/artworks/50069",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "train and bathers",
+      "title": "Train and Bathers",
+      "date": "1920",
+      "medium": "Etching",
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366213",
+          "url": "https://www.metmuseum.org/art/collection/search/366213",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50052",
+          "url": "https://www.artic.edu/artworks/50052",
+          "openImage": false
+        }
+      ]
+    }
+  ]
+}
