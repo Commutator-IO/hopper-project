@@ -46,6 +46,23 @@ const dir = resolve(root, 'public/transcripts');
  * TEI too: a deposited file where half the punctuation is TeX shorthand is a
  * file whose consumer has to know TeX.
  */
+/**
+ * The escapes LaTeX spells with a non-letter, and the only ones permitted.
+ *
+ * `\%` `\$` `\&` `\#` `\_` print the character; `\\` is a line break;
+ * `\ ` is a space. Everything else spelt `\<punctuation>` — `\,` `\;` `\!`
+ * and the rest of TeX's spacing commands — is **refused**, and that is the
+ * point of listing them.
+ *
+ * They were being let through silently. The subset check matches
+ * `\[a-zA-Z]+`, so `\,` never looked like a command at all and fell to the
+ * plain-text path, which printed it: a plate measured `7"x8\,3/8"` reached the
+ * site reading `7"x8\,3/8"`. A converter that accepted everything would
+ * silently mangle what it did not understand — the whole reason for having a
+ * subset — and this was that failure, in the one place nobody was looking.
+ */
+const ESCAPES = new Set(['%', '$', '&', '#', '_', '\\', ' ', '{', '}']);
+
 const xml = (s) =>
   s
     .replace(/&/g, '&amp;')
@@ -100,6 +117,10 @@ function inline(s) {
     }
     const m = /^\\([a-zA-Z]+)/.exec(s.slice(i));
     if (!m) {
+      const c = s[i + 1] ?? '';
+      if (!ESCAPES.has(c)) {
+        throw new Error(`tei: \\${c} is outside the permitted subset`);
+      }
       o += xml(s.slice(i + 1, i + 2));
       i += 2;
       continue;
@@ -250,6 +271,10 @@ function convert(tex, meta) {
     }
     const m = /^\\([a-zA-Z]+)\*?/.exec(s.slice(i));
     if (!m) {
+      const c = s[i + 1] ?? '';
+      if (!ESCAPES.has(c)) {
+        throw new Error(`tei: \\${c} is outside the permitted subset`);
+      }
       para.push(xml(s.slice(i + 1, i + 2)));
       i += 2;
       continue;

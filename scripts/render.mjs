@@ -180,6 +180,23 @@ const esc = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 /** LaTeX text conventions that survive into the reading view. */
+/**
+ * The escapes LaTeX spells with a non-letter, and the only ones permitted.
+ *
+ * `\%` `\$` `\&` `\#` `\_` print the character; `\\` is a line break;
+ * `\ ` is a space. Everything else spelt `\<punctuation>` — `\,` `\;` `\!`
+ * and the rest of TeX's spacing commands — is **refused**, and that is the
+ * point of listing them.
+ *
+ * They were being let through silently. The subset check matches
+ * `\[a-zA-Z]+`, so `\,` never looked like a command at all and fell to the
+ * plain-text path, which printed it: a plate measured `7"x8\,3/8"` reached the
+ * site reading `7"x8\,3/8"`. A converter that accepted everything would
+ * silently mangle what it did not understand — the whole reason for having a
+ * subset — and this was that failure, in the one place nobody was looking.
+ */
+const ESCAPES = new Set(['%', '$', '&', '#', '_', '\\', ' ', '{', '}']);
+
 function plain(s) {
   return esc(s)
     .replace(/\\%/g, '%')
@@ -380,6 +397,10 @@ function render(src, file, meta) {
       }
       const m = /^\\([a-zA-Z]+)\*?/.exec(s.slice(j));
       if (!m) {
+        const c = s[j + 1] ?? '';
+        if (!ESCAPES.has(c)) {
+          throw new TexError(file, line, `\\${c} is outside the permitted subset`);
+        }
         o += plain(s.slice(j, j + 2));
         j += 2;
         continue;
@@ -480,6 +501,10 @@ function render(src, file, meta) {
 
     const m = /^\\([a-zA-Z]+)(\*?)/.exec(src.slice(i));
     if (!m) {
+      const c = src[i + 1] ?? '';
+      if (!ESCAPES.has(c)) {
+        throw new TexError(file, line, `\\${c} is outside the permitted subset`);
+      }
       para.push(plain(src.slice(i, i + 2)));
       i += 2;
       continue;

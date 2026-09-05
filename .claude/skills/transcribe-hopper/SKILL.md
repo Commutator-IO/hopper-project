@@ -310,6 +310,11 @@ Allowed: `\section` `\subsection` · paragraphs separated by a blank line ·
 break · `itemize` `enumerate` `quote` · `ledgertable` · `\keywords` · the ten
 macros above.
 
+The only escapes spelt with a non-letter are `\%` `\$` `\&` `\#` `\_`,
+`\\` for a line break, and `\ ` for a space. **TeX's spacing commands are
+refused** — no `\,`, no `\;`, no `\!`. Use `\quad` where a gap is needed
+and a plain space otherwise: a plate is `7"x8 3/8"`.
+
 Not allowed, and this is not an oversight: **mathematics**. There is none in
 these books. A fraction is written `2/3`.
 
