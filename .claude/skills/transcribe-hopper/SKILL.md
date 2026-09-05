@@ -199,7 +199,12 @@ npm run tiles -- book-i 9 --grid 2x3
 ```
 
 This writes `archives/tiles/book-i/9/` — overlapping crops at twice size, plus
-`tiles.json` with the rectangles. It exists because choosing crop rectangles is
+`tiles.json` with the rectangles. It needs ImageMagick (`brew install
+imagemagick`) and **has no fallback on purpose**: it used to fall back to macOS
+`sips`, which silently ignores `--cropOffset` and crops from the *centre*, so
+every tile was the middle of the sheet under a filename claiming otherwise.
+Better no tool than one that lies about which part of the leaf you are looking
+at. It exists because choosing crop rectangles is
 not reading: the difference between 16.66 and 16.60 is a few dozen pixels, and
 a pass that spends its attention on coordinates has less left for the hand.
 **Tile any leaf carrying a ruled table.** The whole-sheet view is enough for

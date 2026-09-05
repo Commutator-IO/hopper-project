@@ -15,8 +15,8 @@
  *   npm run tiles -- book-i 9          # by position in the book
  *   npm run tiles -- book-i 9 --grid 3x4
  *
- * Needs `sips`, which every macOS has, or ImageMagick's `magick` anywhere
- * else. Neither is needed to read the site.
+ * Needs ImageMagick (`brew install imagemagick`). Not needed to read the site —
+ * only to transcribe. There is deliberately no fallback; see below.
  */
 import { readdirSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -56,25 +56,42 @@ const has = (c) => {
     return false;
   }
 };
-const tool = has('magick') ? 'magick' : has('sips') ? 'sips' : null;
+/**
+ * ImageMagick, and **only** ImageMagick.
+ *
+ * This used to fall back to macOS `sips`, and the fallback was worse than
+ * nothing: `sips -c h w --cropOffset y x` silently ignores the offset and
+ * crops from the *centre* of the image. Every tile it produced was the middle
+ * of the sheet under a filename claiming otherwise, and `tiles.json` recorded
+ * rectangles that described nothing. Verified by probe: with and without
+ * `--cropOffset 0 0` the two outputs are byte-identical.
+ *
+ * A transcriber magnifying « the top left of leaf 6 » and getting the middle of
+ * leaf 6 has been handed a false document, and nothing on screen says so. That
+ * is the one failure this project refuses everywhere else, so the fallback is
+ * gone rather than fixed: better no tool than a tool that lies about which part
+ * of the sheet you are looking at.
+ */
+const tool = has('magick') ? 'magick' : null;
 if (!tool) {
-  process.stderr.write('tiles: needs ImageMagick (magick) or macOS sips\n');
+  process.stderr.write(
+    'tiles: needs ImageMagick.\n' +
+      '  brew install imagemagick     (macOS)\n' +
+      '  apt install imagemagick      (Debian/Ubuntu)\n' +
+      '\n' +
+      'macOS sips is deliberately NOT used as a fallback: it ignores\n' +
+      '--cropOffset and crops from the centre, so every tile would be the\n' +
+      'middle of the sheet under a filename claiming otherwise.\n',
+  );
   process.exit(1);
 }
 
 const size = (() => {
-  if (tool === 'magick') {
-    const [w, h] = execFileSync('magick', ['identify', '-format', '%w %h', srcPath])
-      .toString()
-      .split(' ')
-      .map(Number);
-    return { w, h };
-  }
-  const out = execFileSync('sips', ['-g', 'pixelWidth', '-g', 'pixelHeight', srcPath]).toString();
-  return {
-    w: Number(/pixelWidth:\s*(\d+)/.exec(out)[1]),
-    h: Number(/pixelHeight:\s*(\d+)/.exec(out)[1]),
-  };
+  const [w, h] = execFileSync('magick', ['identify', '-format', '%w %h', srcPath])
+    .toString()
+    .split(' ')
+    .map(Number);
+  return { w, h };
 })();
 
 const out = resolve(root, 'archives/tiles', ledger, String(seq));
@@ -98,33 +115,18 @@ for (let r = 0; r < grid.rows; r++) {
     const y = Math.min(Math.round(r * th * (1 - OVERLAP)), Math.max(0, size.h - th));
     const name = `r${r + 1}c${c + 1}.jpg`;
     rects.push({ name, x, y, w: tw, h: th });
-    if (tool === 'magick') {
-      execFileSync('magick', [
-        srcPath,
-        '-crop',
-        `${tw}x${th}+${x}+${y}`,
-        '+repage',
-        // Upscaled on the way out: the tile is the thing being read, and a
-        // 646-pixel-wide crop shown at its own size is no easier to read than
-        // the whole sheet was.
-        '-resize',
-        '200%',
-        resolve(out, name),
-      ]);
-    } else {
-      execFileSync('sips', [
-        '-c',
-        String(th),
-        String(tw),
-        '--cropOffset',
-        String(y),
-        String(x),
-        srcPath,
-        '--out',
-        resolve(out, name),
-      ]);
-      execFileSync('sips', ['-Z', String(Math.round(Math.max(tw, th) * 2)), resolve(out, name)]);
-    }
+    execFileSync('magick', [
+      srcPath,
+      '-crop',
+      `${tw}x${th}+${x}+${y}`,
+      '+repage',
+      // Upscaled on the way out: the tile is the thing being read, and a
+      // 646-pixel-wide crop shown at its own size is no easier to read than
+      // the whole sheet was.
+      '-resize',
+      '200%',
+      resolve(out, name),
+    ]);
   }
 }
 

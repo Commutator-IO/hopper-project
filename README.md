@@ -159,7 +159,9 @@ npm run tiles  -- book-i 9 --grid 2x3
 Files land in `archives/`, outside `public/` so a build can never carry them,
 and git-ignored so a commit never can. `tiles` cuts a sheet into overlapping
 crops at twice size, because choosing crop rectangles is not reading: the
-difference between 16.66 and 16.60 is a few dozen pixels.
+difference between 16.66 and 16.60 is a few dozen pixels. It needs ImageMagick
+and has no fallback — macOS `sips` silently ignores a crop offset and returns
+the centre of the image, which is worse than no tool at all.
 
 ## Transcription
 
