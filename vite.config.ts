@@ -35,12 +35,37 @@ import tailwindcss from '@tailwindcss/vite';
  * `docs/relay.md` says what it would have to do. Until then, building one
  * would be adding a hop between a reader and a museum for no reason.
  */
+/**
+ * Where this build is rooted, as an **absolute** path, always.
+ *
+ * `actions/configure-pages` reports the site's base path, and for a site at the
+ * root of a custom domain it reports the **empty string**. Handing that to Vite
+ * is not the same as handing it `/`: Vite reads an empty base as a request for
+ * *relative* asset URLs, and emits `./assets/…` at the root and `../assets/…`
+ * one level down. Those happen to resolve — and everything else does not.
+ *
+ * That is the trap, and it cost a blank page on hopper.commutator.io to find.
+ * `import.meta.env.BASE_URL` becomes `./`, so `src/lib/base.ts` builds
+ * `./transcripts/manifest.json`, which from `/book-i/` resolves to
+ * `/book-i/transcripts/manifest.json` and 404s. The page's own assets load, the
+ * manifest does not, and nothing in the console says why.
+ *
+ * So an empty, absent or dot-relative value all mean the root here, and a
+ * project-site path is given the slashes it needs at both ends.
+ */
+function baseFromEnv(): string {
+  const raw = (process.env.BASE_PATH ?? '').trim();
+  if (raw === '' || raw === '.' || raw === './' || raw === '/') return '/';
+  const withLeading = raw.startsWith('/') ? raw : `/${raw}`;
+  return withLeading.endsWith('/') ? withLeading : `${withLeading}/`;
+}
+
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   // GitHub Pages serves a project site under /<repo>/; the deploy workflow
   // fills BASE_PATH in that case. Published on the custom domain
   // hopper.commutator.io, the root is correct.
-  base: process.env.BASE_PATH ?? '/',
+  base: baseFromEnv(),
   build: {
     rollupOptions: {
       // One HTML entry per tab. Hosting is static: /book-iv/ is served from
