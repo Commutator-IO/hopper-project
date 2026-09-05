@@ -331,7 +331,9 @@ Nov. 10, 21 & R & Bklyn. Soc. of Etchers & \uncertain{12.60} \\
   column that many hundredths of the measure wide. `l`, `r` and `c` are for
   dates, figures and short names *and their headings* — « accepted / Refused »
   is longer than any cell beneath it and will overflow a column sized for
-  « Inv. ». The fractions in one table should come to about 0.85.
+  « Inv. ». Leave about 0.03 of the measure per column for the gutters: five columns can
+  share 0.85, six can share 0.80. Getting it wrong is not a guessing game —
+  `npm run pdf` reports the overfull box and how many points too wide.
 - This is not typographic fussiness. A table of `l` columns is set to its
   natural width, which can be wider than the page, and **TeX issues no warning
   at all** because nothing asked the row to fit — the first compile of Book I

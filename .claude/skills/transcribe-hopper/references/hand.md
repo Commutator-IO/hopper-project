@@ -6,8 +6,9 @@ derive it again at the cost of the attention it was meant to save.
 **This narrows a field of candidates and settles nothing.** Where the sheet
 will not support what is written here, the sheet wins and `\ill{}` stands.
 
-Written from Book I, batch 1 (sheets 1–12), 5 September 2026, Opus 5. Add to it
-after every batch; say which batch taught you what.
+Written from Book I, batch 1 (sheets 1–12) and batch 2 (sheets 13–24),
+5 September 2026, Opus 5. Add to it after every batch; say which batch taught
+you what.
 
 ---
 
@@ -65,6 +66,13 @@ the inconsistency is transcribed:
   `Halpert`.
 - **Vicery Atkins & Torey** — for Vickery, Atkins & Torrey, San Francisco.
   Misspelled on the leaf. Leave it.
+- **Crowninshield** — Frank Crowninshield. Spelt three ways across Book I:
+  `Crowninshield` on leaves 6 and 10, `Cromwinshield` on leaf 12. All stay.
+- **Grace Horn's Coffee House** *(leaf 16)* — the Gloucester tea room was Grace
+  Horne's. As written.
+- **Shicago** *(leaf 8)* — for Chicago, once, on the Logan Prize line.
+- **Cuninham**, **Kleeman**, **Milch**, **Babcock**, **H. V. Allison**,
+  **Sidney Phillips**, **E. P. Jennings**, **Zigrosser** — all recur.
 - **Zigrosser** — Carl Zigrosser, Philadelphia Museum.
 - **Mrs. Albert Sterner**, **Mrs. Mario Sterner** — both forms appear.
 
@@ -118,6 +126,24 @@ placed, `\hand{unidentified}`.
   assert that the row below repeats the row above in every column, which is
   what the marks mean on some leaves and not on others.
 
+## The column headings change from leaf to leaf
+
+*(batch 2)* She rules and names her columns per leaf, and the schemes differ.
+Leaf 6 has three headings — « Date / accepted Refused / Exhibitions » — and
+then, halfway down, a **second heading band** for the resale block: « Sold by /
+to whom / amt. rec'd minus Com. / Date of check rec'd ». Leaf 8 rules six and
+names them all: « Date / accepted Refused / Exhibitions / Sales / Rec'd /
+Payment rec'd Date ». Leaf 10 names six differently: « … Amt. rec'd / When ».
+
+**Transcribe the headings she wrote, per leaf, and do not normalise them into
+one scheme.** Where a leaf changes shape halfway down, that is a second
+`ledgertable` and a `\note{}` saying so — not a wider first one.
+
+Below the resale band the leaf usually runs **two parallel columns**, and they
+are not one sequence: the right-hand run continues the left in time but was
+written later, in another ink, and its dates do not pair with the left's. Two
+tables, and a note.
+
 ## What the clippings do
 
 Halftone reproductions are pasted or hinged over the **top third** of several
@@ -132,6 +158,17 @@ because the second is information about the transaction and the first is
 information about the photograph.
 
 Some clippings are hinged rather than pasted, and the Whitney photographed the
-same opening twice — once with the clipping down and once turned back. The two
+same leaf twice — once with the clipping down and once turned back. The two
 states together establish which leaf it is attached to, and neither does alone.
-That is worth a `\note{}` and is not worth more.
+
+*(batch 2)* **When that happens, transcribe the table once, at the sheet where
+it is legible.** Leaf 9 is the case: sheet 18226 has the Pittsburgh clipping
+lying over fifteen rows, and sheet 17703 — which the Whitney calls « Page 9 -
+Verso », though what it photographs is the recto again — shows them. The
+clipping and a note go on the first; the table goes on the second. Transcribing
+both would double every figure in the manifest.
+
+The clipping on leaf 9 is also the only thing in either batch that **dates
+itself**: *Pittsburgh Sun-Telegraph*, 14 March 1937, naming the Carnegie
+exhibition of 32 oils, 53 watercolors and 11 etchings. The eleven are the group
+the Carnegie bought in June 1949 for \$300, which four separate leaves record.

@@ -193,9 +193,13 @@ npm run manifest    # tell the site which files now exist
 The `.tex` under `transcripts/` is the source of record and the only thing
 versioned. HTML, PDF and TEI are derived, and rebuilt.
 
-**One batch is transcribed so far — Book I, batch 1: twelve sheets from the
-front cover to leaf 5, read under Opus 5 on 5 September 2026.** None of it has
-been checked sheet by sheet by a person.
+**Two batches are transcribed so far — Book I, batches 1 and 2: twenty-four
+sheets from the front cover to leaf 16, read under Opus 5 on 5 September
+2026.** Batch 1 is the front matter, Jo Hopper's index and the first two
+etchings; batch 2 is the etchings proper — Night Shadows, East Side Interior,
+The Cat Boat, The Rail Road, The Locomotive, The Monhegan Boat — six plates
+across eleven leaves, with about four hundred ruled entries between them. None
+of it has been checked sheet by sheet by a person.
 
 ### The critical apparatus is the point
 

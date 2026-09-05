@@ -41,8 +41,10 @@
 % cannot fit, TeX says so — which is what `npm run pdf` then refuses to build
 % over.
 %
-% The fractions in one table should come to about 0.85; the rest goes to the
-% short columns and to the inter-column space.
+% Leave about 0.03 of the measure per column for the inter-column space: five
+% columns can share 0.85, six can share 0.80. Getting it wrong is not a
+% guessing game — `npm run pdf` reports the overfull box and how many points
+% too wide it is.
 \newcolumntype{Y}[1]{>{\raggedright\arraybackslash}p{#1\linewidth}}
 \usepackage[english]{babel}
 \usepackage{fontspec}
