@@ -51,7 +51,6 @@ export function issueUrl({ ledger, ledgerTitle, batch, ref, leaf }: ReportContex
     `**Sheet** ${ref ? `ref ${ref}` : '<which sheet?>'}${
       leaf === null ? ' (unnumbered)' : leaf ? `, leaf ${leaf}` : ''
     }`,
-    '**Edition** transcription (`.en`) / record edition (`.rec`) — delete one',
     '',
     '### What the reading says',
     '',

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BOOKS } from '../content/books.ts';
+import { LEDGERS } from '../content/catalogue.ts';
 import { isCurrent, url } from '../lib/base.ts';
 
 /**
@@ -11,8 +11,9 @@ import { isCurrent, url } from '../lib/base.ts';
  */
 
 const OTHER_PAGES: { path: string; label: string }[] = [
-  { path: '/archive/', label: 'All six ledgers' },
-  { path: '/method/', label: 'Method & progress' },
+  { path: '/archive/', label: 'All sheets' },
+  { path: '/timeline/', label: 'Timeline' },
+  { path: '/method/', label: 'Method' },
   { path: '/contribute/', label: 'Contribute' },
 ];
 
@@ -30,8 +31,12 @@ export function Header({ path }: { path: string }) {
 
   // The folded-out menu has room for the full titles; only the inline row is
   // short of space.
+  // The six volumes, in the Whitney's order, and then the standing pages.
+  // There is no thematic grouping here and there should not be: the Hoppers
+  // numbered the books, and a second organisation laid over theirs would only
+  // ever be ours.
   const links = [
-    ...BOOKS.map((b) => ({ path: b.path, label: b.navTitle ?? b.title })),
+    ...LEDGERS.map((l) => ({ path: `/${l.id}/`, label: l.short })),
     ...OTHER_PAGES,
   ];
 
@@ -74,7 +79,7 @@ export function Header({ path }: { path: string }) {
       {open && (
         <nav className="border-t border-ink-200 bg-white px-5 py-2 lg:hidden">
           {[
-            ...BOOKS.map((b) => ({ path: b.path, label: b.title })),
+            ...LEDGERS.map((l) => ({ path: `/${l.id}/`, label: l.title })),
             ...OTHER_PAGES,
           ].map((l) => (
             <a
@@ -134,6 +139,10 @@ export function Footer() {
         <p className="mt-4">
           <a href={url('/method/')} className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">
             Method &amp; progress
+          </a>
+          {' · '}
+          <a href={url('/timeline/')} className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">
+            Timeline
           </a>
           {' · '}
           <a href="https://github.com/Commutator-IO/hopper-project" className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">

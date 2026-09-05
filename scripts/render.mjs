@@ -243,7 +243,6 @@ const INLINE = {
 
 const BLOCK_CMD = new Set([
   'sheet',
-  'sheetrange',
   'note',
   'marginal',
   'sketch',
@@ -253,26 +252,12 @@ const BLOCK_CMD = new Set([
   'section',
   'subsection',
   'item',
-  'field',
 ]);
 
-const ENVIRONMENTS = new Set([
-  'itemize',
-  'enumerate',
-  'quote',
-  'summary',
-  'ledgertable',
-  'record',
-]);
+const ENVIRONMENTS = new Set(['itemize', 'enumerate', 'quote', 'ledgertable']);
 
 const OPEN = { itemize: '<ul>', enumerate: '<ol>', quote: '<blockquote>' };
-const CLOSE = {
-  itemize: '</ul>',
-  enumerate: '</ol>',
-  quote: '</blockquote>',
-  summary: '</section>',
-  record: '</dl></section>',
-};
+const CLOSE = { itemize: '</ul>', enumerate: '</ol>', quote: '</blockquote>' };
 
 
 /**
@@ -548,17 +533,7 @@ function render(src, file, meta) {
         continue;
       }
       envs.push({ env, line });
-      if (env === 'record') {
-        const [rawTitle] = peek(1);
-        const [title] = args(1);
-        out.push(
-          `<section class="record"><h4>${title}${workLinks(findWork(rawTitle))}</h4><dl>`,
-        );
-      } else if (env === 'summary') {
-        out.push('<section class="summary"><h2>Summary</h2>');
-      } else {
-        out.push(OPEN[env]);
-      }
+      out.push(OPEN[env]);
       continue;
     }
 
@@ -610,42 +585,6 @@ function render(src, file, meta) {
         );
         break;
       }
-      case 'sheetrange': {
-        // Two resource refs, checked like `\sheet`'s. The record edition
-        // regroups by work and no single sheet lines up with one of its
-        // blocks, so a sheet-by-sheet anchor would be false — but an anchor on
-        // the *first* sheet of the run is true, and it is what lets the
-        // facsimile follow this edition too. Refs rather than leaf numbers,
-        // because a leaf number is ambiguous across six volumes and a ref is
-        // not.
-        const [fromRaw, toRaw] = raw(2);
-        flush();
-        const pair = [fromRaw, toRaw].map((r) => {
-          const ref = Number(r.trim());
-          const rec = CATALOGUE.get(ref);
-          if (!rec) throw new TexError(file, line, `\\sheetrange{${r}} - no such resource ref`);
-          if (rec.ledger !== meta.ledger) {
-            throw new TexError(
-              file,
-              line,
-              `\\sheetrange{${ref}} belongs to ${rec.ledger}, not ${meta.ledger}`,
-            );
-          }
-          return rec;
-        });
-        const label =
-          pair[0].leaf === null || pair[1].leaf === null
-            ? `sheets ${pair[0].seq}\u2013${pair[1].seq}`
-            : pair[0].leaf === pair[1].leaf
-              ? `leaf ${pair[0].leaf}`
-              : `leaves ${pair[0].leaf}\u2013${pair[1].leaf}`;
-        out.push(
-          `<div class="sheet sheet-range" id="sheet-${pair[0].ref}" data-ref="${pair[0].ref}" ` +
-            `data-seq="${pair[0].seq}"><span class="sheet-leaf">${label}</span>` +
-            `<span class="sheet-ref">ref ${pair[0].ref}\u2013${pair[1].ref}</span></div>`,
-        );
-        break;
-      }
       case 'section':
       case 'subsection': {
         const [t] = args(1);
@@ -691,11 +630,6 @@ function render(src, file, meta) {
         const [t] = args(1);
         flush();
         out.push(`<p class="keywords"><span>Keywords</span> ${t}</p>`);
-        break;
-      }
-      case 'field': {
-        const [k, v] = args(2);
-        out.push(`<dt>${k}</dt><dd>${v}</dd>`);
         break;
       }
       case 'item': {
@@ -746,8 +680,6 @@ p { margin: 0 0 .85rem; }
   letter-spacing: .06em; text-transform: uppercase; scroll-margin-top: 1rem;
 }
 .sheet-ref { margin-left: auto; opacity: .6; }
-.sheet-range { font: 500 .72rem/1 ui-sans-serif, system-ui, sans-serif; color: var(--dim);
-  margin: 1.4rem 0 .4rem; letter-spacing: .06em; text-transform: uppercase; }
 .uncertain { border-bottom: 1px solid var(--uncertain); color: var(--uncertain); }
 .ill { color: var(--ill); }
 .add { color: var(--add); }
@@ -776,10 +708,6 @@ table.ledger th { text-align: left; border-bottom: 1.5px solid var(--ink);
 .quad2 { width: 2.6em; }
 table.ledger td { border-bottom: 1px solid var(--rule); padding: .3rem .5rem .3rem 0;
   vertical-align: top; }
-.summary { background: #f3f1ea; border: 1px solid var(--rule); padding: 1rem 1.2rem;
-  margin: 0 0 1.8rem; }
-.summary h2 { margin-top: 0; font-size: .82rem; letter-spacing: .09em; text-transform: uppercase;
-  color: var(--dim); }
 .keywords { font-size: .8rem; color: var(--dim); font-style: italic; }
 .keywords span { font-style: normal; font-weight: 600; letter-spacing: .07em;
   text-transform: uppercase; font-size: .68rem; }
@@ -794,19 +722,11 @@ table.ledger td { border-bottom: 1px solid var(--rule); padding: .3rem .5rem .3r
   padding: .12rem .4rem; margin-right: .25rem;
 }
 .works a:hover { border-color: var(--add); }
-.record { margin: 1.2rem 0; }
-.record h4 { margin: 0 0 .3rem; font-size: .95rem; }
-.record dl { display: grid; grid-template-columns: 8.5rem 1fr; gap: .1rem .8rem; margin: 0;
-  font-size: .87rem; }
-.record dt { font: 600 .68rem/1.6 ui-sans-serif, system-ui, sans-serif; letter-spacing: .06em;
-  text-transform: uppercase; color: var(--dim); }
-.record dd { margin: 0; }
 blockquote { margin: .8rem 0 .8rem 1.2rem; color: var(--dim); }
 ul, ol { margin: 0 0 .85rem; padding-left: 1.3rem; }
 @media (prefers-color-scheme: dark) {
   :root { --ink: #e8e6e0; --dim: #9a978f; --rule: #3a3833; --paper: #171614;
           --uncertain: #d9b558; --ill: #e0796d; --add: #7fb2e0; --accent: #d99b93; }
-  .summary { background: #201f1c; }
 }
 `;
 

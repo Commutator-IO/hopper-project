@@ -268,21 +268,6 @@ function convert(tex, meta) {
       );
       continue;
     }
-    if (name === 'sheetrange') {
-      const [from, a] = group(s, i);
-      const [to, b] = group(s, a);
-      i = b;
-      flush();
-      // Not a <pb/>: the record edition regroups by work, and asserting a page
-      // break at a point no page breaks would be a false statement in a file
-      // meant for deposit. A milestone says "this run is drawn from these
-      // sheets" and claims no more.
-      out.push(
-        `<milestone unit="sheets" spanTo="#sheet-${to.trim()}" ` +
-          `facs="https://resourcespace.whitney.org/pages/view.php?ref=${from.trim()}"/>`,
-      );
-      continue;
-    }
     if (name === 'note' || name === 'marginal') {
       const [t, a] = group(s, i);
       i = a;
@@ -366,20 +351,6 @@ function convert(tex, meta) {
         );
         continue;
       }
-      if (env === 'record') {
-        if (name === 'end') {
-          out.push('</div>');
-          continue;
-        }
-        const [t, b] = group(s, i);
-        i = b;
-        out.push(`<div type="record"><head>${inline(t)}</head>`);
-        continue;
-      }
-      if (env === 'summary') {
-        out.push(name === 'begin' ? '<div type="summary">' : '</div>');
-        continue;
-      }
       const LIST = { itemize: 'list', enumerate: 'list', quote: 'quote' };
       if (LIST[env]) {
         if (name === 'begin') {
@@ -401,13 +372,6 @@ function convert(tex, meta) {
       closeItem();
       if (lists.length) lists[lists.length - 1] = true;
       out.push('<item>');
-      continue;
-    }
-    if (name === 'field') {
-      const [k, a] = group(s, i);
-      const [v, b] = group(s, a);
-      i = b;
-      out.push(`<label>${xml(k)}</label><desc>${inline(v)}</desc>`);
       continue;
     }
     // Inline macro: hand it back to the inline converter with its arguments.

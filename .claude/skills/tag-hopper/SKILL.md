@@ -1,19 +1,19 @@
 ---
 name: tag-hopper
-description: Writes or revises the `\keywords{}` line that closes a record edition's summary — the single source of a ledger's tags on the archive page. Use when someone asks to tag a ledger or a batch, to fix its keywords, or to make a run of leaves findable.
+description: Writes or revises the `\keywords{}` line that closes a transcription — the single source of a ledger's tags on the site. Use when someone asks to tag a ledger or a batch, to fix its keywords, or to make a run of leaves findable.
 ---
 
 # Tagging a ledger
 
 **Pin Opus 5 (`claude-opus-5`).**
 
-A ledger's tags have exactly one source: the `\keywords{}` line closing the
-summary of its record edition. There is no tags file, and there must not be —
-a tag that could be written without reading the leaves would eventually
-describe leaves nobody has read.
+A ledger's tags have exactly one source: the `\keywords{}` line closing each of
+its transcriptions. There is no tags file, and there must not be — a tag that
+could be written without reading the leaves would eventually describe leaves
+nobody has read.
 
-So this skill never runs first. It runs on a ledger that already has a record
-edition, and it edits one line of it.
+So this skill never runs first. It runs on a batch that is already transcribed,
+and it edits one line of it.
 
 ```latex
 \keywords{etchings, Frank K. M. Rehn, Frederick Keppel, Weyhe, Brooklyn Society

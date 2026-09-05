@@ -1,6 +1,6 @@
 ---
 name: transcribe-hopper
-description: Transcribes a batch of twelve digitised sheets from the Edward and Josephine Hopper artist's ledgers (Whitney Museum of American Art, 96.208–96.213) into clean LaTeX with a critical apparatus — what was read, what was guessed, what is illegible, and whose hand wrote it. Use whenever someone asks to transcribe, read, decipher or put into LaTeX any sheets of the Hopper ledgers, or names a ledger book, a batch, a leaf, or one of the reading books (etchings, paintings, late work, accounts, dealers, apparatus). Transcription only — the record edition has its own skill, /record-hopper, which runs on the transcription this one produces. Also covers revisions — correcting a reading, filling a skipped sheet.
+description: Transcribes a batch of twelve digitised sheets from the Edward and Josephine Hopper artist's ledgers (Whitney Museum of American Art, 96.208–96.213) into clean LaTeX with a critical apparatus — what was read, what was guessed, what is illegible, and whose hand wrote it. Use whenever someone asks to transcribe, read, decipher or put into LaTeX any sheets of the Hopper ledgers, or names a volume (Book I to Book V, Dealers/Etchings), a batch, a leaf or a resource ref. There is one edition and this skill produces it; /tag-hopper revises the keywords line that closes it. Also covers revisions — correcting a reading, filling a skipped sheet.
 ---
 
 # Transcribing a batch from the Hopper ledgers
@@ -42,13 +42,15 @@ For **one batch of twelve sheets**, one file:
 
 | File | Contents |
 |---|---|
-| `transcripts/<ledger>/batch-NN.en.tex` | The transcription — the sheets as written, with the apparatus |
+| `transcripts/<ledger>/batch-NN.tex` | The transcription — the sheets as written, with the apparatus |
 
-One further edition derives from it, with its own skill, run afterwards:
-
-| Skill | Produces |
-|---|---|
-| `/record-hopper <ledger>` | `batch-NN.rec.tex` — a summary, then each entry as a structured record |
+There is **no second edition**, and that is deliberate. The Grothendieck
+workbench this method comes from carries a modernised reading beside each
+transcription, because a page of 1962 mathematics is genuinely hard to read in
+1962's notation. A ledger needs no such pass: Jo Hopper's English is plain, her
+columns are already a table, and « 30 - 1/3 » means today what it meant in
+1927. So the transcription is the edition, and the `\keywords{}` line that tags
+a ledger lives in it.
 
 Then:
 
@@ -68,9 +70,11 @@ figure here is a sale, at a price nobody paid, to a buyer who never bought —
 and it will be cited, because a table looks like data in a way that prose does
 not. `\ill{}` exists so that never happens. Use it.
 
-**The editions stay separate, and this skill produces exactly one.** No summary
-opens the transcription; no normalisation creeps into it. Somebody reading the
-transcription wants the sheets.
+**No summary opens the transcription, and no normalisation creeps into it.**
+Somebody reading it wants the sheets. The one thing in the file that is not on
+the paper is the `\keywords{}` line at the end, and it earns its place: a
+reader looking for Keppel needs some way in, and a tag written by whoever read
+the sheets is the only kind that cannot describe unread ones.
 
 **One batch per pass, one batch per conversation.** Past twelve of these leaves
 the quality of reading degrades towards the end with nothing to signal it, and
@@ -292,8 +296,8 @@ The lookup takes the title as written, strips the apparatus, and stops at a
 measurement, so `\work{Evening Wind\quad 7 x 8 3/8"}` finds Evening Wind. A
 title that is genuinely unread finds nothing: on Book I leaf 4 the plate's name
 is under a clipping, so the transcription reads `\work{Night in \ill{}}` and
-links nothing, while the record edition — which may take the title from the
-index — links it. That difference is correct and should not be smoothed away.
+links nothing. **Do not reach for leaf 1's index to fill it in** — the blank is
+correct, because nothing was read there.
 
 #### The permitted LaTeX subset
 
@@ -303,8 +307,8 @@ silently mangled ledger is a table of numbers that look right.
 
 Allowed: `\section` `\subsection` · paragraphs separated by a blank line ·
 `\emph` `\textbf` `\textit` `\texttt` · `\quad` `\qquad` · `\\` for a line
-break · `itemize` `enumerate` `quote` · `summary` · `ledgertable` · `record`
-with `\field` · the eleven macros above.
+break · `itemize` `enumerate` `quote` · `ledgertable` · `\keywords` · the ten
+macros above.
 
 Not allowed, and this is not an oversight: **mathematics**. There is none in
 these books. A fraction is written `2/3`.
@@ -333,7 +337,20 @@ Nov. 10, 21 & R & Bklyn. Soc. of Etchers & \uncertain{12.60} \\
   `\add{}` and say so in a `\note{}`. Inventing a heading silently is inventing
   a claim about what the column means.
 
-### 3. Check
+### 3. Close with the keywords, then check
+
+The last thing in the file, before `\end{document}`:
+
+```latex
+\keywords{etchings, Frank K. M. Rehn, Frederick Keppel, Brooklyn Society of
+Etchers, museum purchases, exhibition history}
+```
+
+Comma-separated, and **the single source of the ledger's tags** — there is no
+tags file, so no tag can describe sheets nobody has read. Six to twelve terms
+for a batch: dealers, exhibiting societies, media, places, the kind of
+transaction. No years (the date range is metadata already) and no "Edward
+Hopper" (every sheet would carry it). `/tag-hopper` revises the line.
 
 ```bash
 npm run render && npm run tei && npm run manifest
@@ -369,8 +386,7 @@ Two mechanical checks before the human one:
 ## Revising a batch
 
 Corrections go in the `.tex`, never in the HTML, the PDF or the TEI, which are
-derived and rebuilt. A correction to a reading is also a correction to the
-record edition: take both files up together, or they drift.
+derived and rebuilt.
 
 `transcripts/status.json` carries the three states no file can prove —
 `running`, `checked`, `skipped`, keyed `<ledger>#<batch>`. Only tick `checked`

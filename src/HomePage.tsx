@@ -1,6 +1,5 @@
 import { Page } from './components/Frame.tsx';
-import { BOOKS, TOTAL_SHEETS, ledgersOf, sheetCountOf } from './content/books.ts';
-import { LEDGERS } from './content/catalogue.ts';
+import { LEDGERS, BY_LEDGER, SHEETS } from './content/catalogue.ts';
 import { BATCH_SIZE, useManifest } from './lib/batches.ts';
 import { url } from './lib/base.ts';
 
@@ -17,14 +16,14 @@ export function HomePage() {
         </h1>
         <p className="mt-5 max-w-3xl text-[16px] leading-relaxed text-ink-700">
           A reading and transcription workbench for the six artist’s ledgers at the Whitney
-          Museum of American Art — {TOTAL_SHEETS} digitised sheets, 1907 to 1967. Every
+          Museum of American Art — {SHEETS.length} digitised sheets, 1907 to 1967. Every
           transcription sits beside the photograph it came from, so that any reading can be
           checked against the hand it was read out of, on one screen.
         </p>
 
         <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
           <Stat n={LEDGERS.length} label="ledger books" />
-          <Stat n={TOTAL_SHEETS} label="digitised sheets" />
+          <Stat n={SHEETS.length} label="digitised sheets" />
           <Stat n={read} label="sheets transcribed" />
           <Stat n={BATCH_SIZE} label="sheets to a batch" />
         </dl>
@@ -65,38 +64,36 @@ export function HomePage() {
       </section>
 
       <section className="border-b border-ink-200 py-10">
-        <h2 className="font-serif text-2xl text-ink-900">Six ways in</h2>
+        <h2 className="font-serif text-2xl text-ink-900">The six volumes</h2>
         <p className="prose-note mt-1.5 max-w-3xl">
-          Three of these reproduce a volume exactly; three are threads drawn across the archive
-          by us. Each page says which at its head, because citing “the Apparatus” does not commit
-          you to the same thing as citing 96.208.
+          As the Hoppers numbered them and the Whitney accessioned them, 96.208 to 96.213. There
+          is no thematic regrouping anywhere on this site: they filed their work in six books, and
+          a second organisation laid over theirs would only ever be ours.
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {BOOKS.map((b) => (
-            <a key={b.key} href={url(b.path)} className="card group p-5 transition hover:border-brand-400">
+          {LEDGERS.map((l) => (
+            <a
+              key={l.id}
+              href={url(`/${l.id}/`)}
+              className="card group flex flex-col p-5 transition hover:border-brand-400"
+            >
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="font-serif text-lg text-ink-900 group-hover:text-brand-700">
-                  {b.title}
+                  {l.short}
                 </h3>
-                <span className="shrink-0 text-[11.5px] text-ink-400">{b.period}</span>
+                <span className="shrink-0 text-[11.5px] text-ink-400">{l.date}</span>
               </div>
-              <p className="prose-note mt-2">{b.subtitle}</p>
+              <p className="prose-note mt-2 line-clamp-4 flex-1">{l.about}</p>
               <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px]">
-                <span
-                  className={`rounded-full px-2 py-0.5 ${
-                    b.archiveUnit
-                      ? 'bg-relu-100 text-relu-700'
-                      : 'bg-encours-100 text-encours-700'
-                  }`}
-                >
-                  {b.archiveUnit ? 'the archive’s grouping' : 'our grouping'}
+                <span className="font-mono text-ink-500">{l.objectNumber}</span>
+                <span className="tabular text-ink-500">
+                  {(BY_LEDGER.get(l.id) ?? []).length} sheets
                 </span>
-                <span className="tabular text-ink-500">{sheetCountOf(b)} sheets</span>
-                <span className="text-ink-400">
-                  {ledgersOf(b)
-                    .map((l) => l.ledger.short)
-                    .join(' · ')}
-                </span>
+                {(manifest?.read?.[l.id] ?? 0) > 0 && (
+                  <span className="rounded-full bg-brand-100 px-2 py-0.5 text-brand-700">
+                    {manifest?.read?.[l.id]} transcribed
+                  </span>
+                )}
               </div>
             </a>
           ))}

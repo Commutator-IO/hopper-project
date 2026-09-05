@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { url } from './base.ts';
 import { shownState, type State } from './progress.ts';
-import type { Edition, LedgerKey, Manifest, Sheet, TranscriptEntry } from './types.ts';
+import type { LedgerKey, Manifest, Sheet } from './types.ts';
 
 /**
  * The twelve-sheet batch, shared by the reading panes and by the skill.
@@ -92,62 +92,26 @@ export type SheetSize = 'col' | 'thm' | 'pre';
 export const sheetPageUrl = (ref: number) =>
   `https://resourcespace.whitney.org/pages/view.php?ref=${ref}`;
 
+/**
+ * The Whitney's own catalogue record for the volume.
+ *
+ * Distinct from the ResourceSpace collection: that is the digitisation, sheet
+ * by sheet, and this is the object — 96.208 to 96.213 — with its accession,
+ * its measurements and its credit line. A reader citing a ledger should cite
+ * this.
+ */
+export const whitneyWorkUrl = (work: number) => `https://whitney.org/collection/works/${work}`;
+
 /** The collection as the Whitney presents it, for the ledger's own credit line. */
 export const collectionUrl = (collection: number) =>
   `https://resourcespace.whitney.org/pages/search.php?search=%21collection${collection}`;
 
-export const transcriptUrl = (ledger: string, k: number, edition: Edition, ext: string) =>
-  url(`/transcripts/${ledger}/${batchName(k)}.${edition}.${ext}`);
+export const transcriptUrl = (ledger: string, k: number, ext: string) =>
+  url(`/transcripts/${ledger}/${batchName(k)}.${ext}`);
 
-/**
- * The same, for an edition whose unit is the whole ledger.
- *
- * Book IV's record edition is the case that forced this: it is one running
- * account from 1913 to 1967, its page totals carried forward across every
- * batch boundary, and a record edition cut at sheet 12 would state balances
- * that are true of no page in the book.
- *
- * The file repeats the ledger's slug rather than saying `ledger`, because
- * these are offered as downloads and `ledger.rec.pdf` in a downloads folder
- * says nothing about which of the six books it holds.
- */
-export const ledgerTranscriptUrl = (ledger: string, edition: Edition, ext: string) =>
-  url(`/transcripts/${ledger}/${ledger}.${edition}.${ext}`);
-
-/** The ledger-wide artifacts, if this book has any. */
-export const ledgerEntry = (m: Manifest | null, ledger: string): TranscriptEntry | undefined =>
-  m?.ledgers?.[ledger];
-
-/** Whether a given edition of a batch is served by the ledger-wide file. */
-export function servedByLedger(
-  m: Manifest | null,
-  ledger: string,
-  edition: Edition,
-  ext: 'html' | 'tex' | 'pdf' | 'xml',
-): boolean {
-  return (ledgerEntry(m, ledger)?.[ext] ?? []).includes(edition);
-}
-
-/**
- * Where a batch's edition actually lives.
- *
- * The ledger-wide file wins when it exists, because it is the one that covers
- * the sheets in view; the per-batch file is the fallback. Every link to a
- * reading view or a download goes through here, so the two namings cannot
- * drift apart — they did once, and a record edition of all 161 sheets of Book
- * IV was reported as "1 of 14 batches".
- */
-export function editionUrl(
-  m: Manifest | null,
-  ledger: string,
-  k: number,
-  edition: Edition,
-  ext: 'html' | 'tex' | 'pdf' | 'xml',
-): string {
-  return servedByLedger(m, ledger, edition, ext)
-    ? ledgerTranscriptUrl(ledger, edition, ext)
-    : transcriptUrl(ledger, k, edition, ext);
-}
+/** What exists for a batch, or nothing. */
+export const entryOf = (m: Manifest | null, ledger: string, k: number) =>
+  m?.transcripts?.[batchId(ledger, k)];
 
 /** The manifest, fetched once. `null` until it arrives, and on any failure. */
 export function useManifest(): Manifest | null {
@@ -176,17 +140,8 @@ export function useManifest(): Manifest | null {
  */
 export function batchState(m: Manifest | null, ledger: string, k: number): State {
   const key = batchId(ledger, k);
-  const per = m?.transcripts?.[key];
-  const whole = m?.ledgers?.[ledger];
-  const hasEdition = (e: Edition) =>
-    (per?.tex ?? []).includes(e) ||
-    (per?.html ?? []).includes(e) ||
-    (whole?.tex ?? []).includes(e) ||
-    (whole?.html ?? []).includes(e);
-  return shownState(m?.declared?.[key], {
-    transcribed: hasEdition('en'),
-    recorded: hasEdition('rec'),
-  });
+  const e = m?.transcripts?.[key];
+  return shownState(m?.declared?.[key], { transcribed: Boolean(e?.tex || e?.html) });
 }
 
 /** The sheets of one batch, in reading order. */

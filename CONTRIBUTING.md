@@ -33,7 +33,6 @@ After a pass:
 ```bash
 npm run works       # refresh the museum links; hits external APIs, so not in CI
 npm run render      # fails loudly on anything outside the subset
-npm run records     # only after /record-hopper
 npm run tei
 npm run manifest
 ```
@@ -54,8 +53,7 @@ in the output if it is allowed through:
 
 ## The museum links
 
-`\work{…}` and `\begin{record}{…}` headings pick up a **see the work** link
-automatically, from `src/content/works.json`. Do not add links by hand and do
+A `\work{…}` heading picks up a **see the work** link automatically, from `src/content/works.json`. Do not add links by hand and do
 not put a URL in a transcription: the index is built by `npm run works`, which
 retrieves every one of them from the Met's and the Art Institute's public APIs
 and checks the artist field, so a link in the site is a link somebody's server

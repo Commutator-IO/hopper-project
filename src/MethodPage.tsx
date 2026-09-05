@@ -1,6 +1,5 @@
 import { Page } from './components/Frame.tsx';
 import { LEDGERS, BY_LEDGER, SHEETS } from './content/catalogue.ts';
-import { BOOKS, UNPLACED } from './content/books.ts';
 import { BATCH_SIZE, batchCount, batchState, useManifest } from './lib/batches.ts';
 import { STATES, tally, type State } from './lib/progress.ts';
 import { STATE_COLOURS } from './components/Reader.tsx';
@@ -27,7 +26,6 @@ export function MethodPage() {
   });
   const t = tally(batches);
   const read = Object.values(manifest?.read ?? {}).reduce((a, b) => a + b, 0);
-  const records = Object.values(manifest?.records ?? {}).reduce((a, b) => a + b, 0);
 
   return (
     <Page path="/method/">
@@ -46,7 +44,6 @@ export function MethodPage() {
           <Stat n={SHEETS.length} label="sheets in the archive" />
           <Stat n={read} label="sheets transcribed" />
           <Stat n={t.sheetsChecked} label="sheets checked by a person" />
-          <Stat n={records} label="records extracted" />
           <Stat n={t.total} label="batches in all" />
         </dl>
 
@@ -135,13 +132,21 @@ export function MethodPage() {
             fraction — the commissions run “25 – 1/3” and the figures “16.66” — none of which can
             be skimmed and any one of which is wrong if it is guessed.
           </Diff>
-          <Diff title="The second edition is records, not a modernisation">
-            Grothendieck’s manuscripts get a modernised mathematical reading. A ledger is already
-            a table, and what it wants is to become one: the record edition restates each entry as
-            a structured record — work, medium, size, date, price, buyer, dealer — which{' '}
-            <code className="font-mono text-[13px]">npm run records</code> extracts to CSV and
-            JSON-LD. Every field is empty when the leaf does not carry it, and no field is ever
-            completed from knowledge of Hopper.
+          <Diff title="One edition, not two">
+            Grothendieck’s manuscripts get a second pass that restates the mathematics in current
+            notation, because a page of 1962 mathematics is genuinely hard to read in 1962’s
+            notation. A ledger needs no such pass: Jo Hopper’s English is plain, her columns are
+            already a table, and “30 – 1/3” means today what it meant in 1927. A second edition
+            here would have been a second artifact to keep in step, paying for itself in nothing.
+            So the transcription is the edition, and a file is{' '}
+            <code className="font-mono text-[13px]">batch-NN.tex</code> with no register in its
+            name.
+          </Diff>
+          <Diff title="No grouping of ours, anywhere">
+            The archive’s six volumes are the site’s six pages. Three of the reading books an
+            earlier version offered were threads we had drawn across the volumes, and each had to
+            announce at its head whose grouping it was — which is honest, and still a second
+            organisation laid over one that already had an author.
           </Diff>
           <Diff title="The inventory is harvested by a person, once">
             Montpellier’s inventory can be read by a script. The Whitney’s HTML pages sit behind a
@@ -214,13 +219,13 @@ export function MethodPage() {
             “Night in the L Train” is <em>likely</em> the plate both museums catalogue as “Night
             on the El Train”; saying so is not the same as knowing it.
           </Diff>
-          <Diff title="What the two editions do differently, on one leaf">
-            On Book I leaf 4 the plate’s title is under a pasted clipping, so the transcription
-            reads <code className="font-mono text-[13px]">\work&#123;Night in \ill&#123;&#125;&#125;</code>{' '}
-            and links nothing — nothing was read. The record edition names it, having taken the
-            title from leaf 1’s index where the transcription may not, and its heading carries the
-            links. Same title, two editions, and the difference between them is the apparatus
-            working.
+          <Diff title="A blank is an answer">
+            On Book I leaf 4 the plate&rsquo;s title is under a pasted clipping, so the
+            transcription reads <code className="font-mono text-[13px]">\work&#123;Night in
+            \ill&#123;&#125;&#125;</code> and links nothing. The plate is named in the index four
+            leaves earlier, and the transcription does not reach for it: nothing was read{' '}
+            <em>there</em>, and a link would say otherwise. A reader who wants the identification
+            can make it from the index, which is transcribed too.
           </Diff>
         </div>
       </section>
@@ -239,41 +244,39 @@ export function MethodPage() {
       </section>
 
       <section className="py-8">
-        <h2 className="font-serif text-2xl text-ink-900">The books, and what they leave out</h2>
+        <h2 className="font-serif text-2xl text-ink-900">The six volumes</h2>
         <p className="prose-note mt-1.5 max-w-3xl">
-          Overlap between books is expected — Book III’s front lists belong to two threads, and
-          deleting them from one would be a claim that they do not. A sheet belonging to{' '}
-          <em>no</em> book is the failure worth counting, so it is counted.
+          The archive’s organisation is the site’s organisation. An earlier version of this
+          project offered six reading “books” — three reproducing a volume and three drawn across
+          volumes by us — each having to announce at its head whose grouping it was. The Hoppers
+          numbered their books and the Whitney accessioned them; a second organisation laid over
+          that would only ever have been ours, and every URL here would have named something the
+          museum cannot be asked about.
         </p>
         <table className="mt-5 w-full max-w-3xl text-[13.5px]">
           <thead>
             <tr className="border-b border-ink-300 text-left text-[11.5px] uppercase tracking-wider text-ink-400">
-              <th className="py-1.5">Book</th>
-              <th className="py-1.5">Grouping</th>
+              <th className="py-1.5">Volume</th>
+              <th className="py-1.5">Accession</th>
+              <th className="py-1.5">Dated</th>
               <th className="py-1.5 text-right">Sheets</th>
+              <th className="py-1.5 text-right">Transcribed</th>
             </tr>
           </thead>
           <tbody>
-            {BOOKS.map((b) => (
-              <tr key={b.key} className="border-b border-ink-200">
+            {LEDGERS.map((l) => (
+              <tr key={l.id} className="border-b border-ink-200">
                 <td className="py-2">
-                  <a href={url(b.path)} className="text-brand-700 hover:underline">
-                    {b.title}
+                  <a href={url(`/${l.id}/`)} className="text-brand-700 hover:underline">
+                    {l.title}
                   </a>
                 </td>
-                <td className="py-2 text-ink-600">
-                  {b.archiveUnit ? `the archive’s (${b.archiveUnit})` : 'ours'}
-                </td>
-                <td className="py-2 text-right tabular">
-                  {b.sections.reduce((s, x) => s + x.sheets.length, 0)}
-                </td>
+                <td className="py-2 font-mono text-[12px] text-ink-600">{l.objectNumber}</td>
+                <td className="py-2 text-ink-600">{l.date}</td>
+                <td className="py-2 text-right tabular">{(BY_LEDGER.get(l.id) ?? []).length}</td>
+                <td className="py-2 text-right tabular">{manifest?.read?.[l.id] ?? 0}</td>
               </tr>
             ))}
-            <tr>
-              <td className="py-2 text-ink-500">Sheets in no book</td>
-              <td />
-              <td className="py-2 text-right tabular text-ink-500">{UNPLACED.length}</td>
-            </tr>
           </tbody>
         </table>
       </section>

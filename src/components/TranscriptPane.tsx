@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { editionUrl } from '../lib/batches.ts';
-import type { Edition, Manifest } from '../lib/types.ts';
+import { entryOf, transcriptUrl } from '../lib/batches.ts';
+import type { Manifest } from '../lib/types.ts';
 
 /**
  * The left pane: the transcript, in a frame of its own, reporting the sheet
@@ -29,7 +29,6 @@ export function TranscriptPane({
   manifest,
   ledger,
   batch,
-  edition,
   /** Called with a resource ref as the reader scrolls. */
   onSheet,
   /** The sheet the pane should scroll to, when the reader picks one. */
@@ -38,21 +37,12 @@ export function TranscriptPane({
   manifest: Manifest | null;
   ledger: string;
   batch: number;
-  edition: Edition;
   onSheet: (ref: number) => void;
   goto: number | undefined;
 }) {
   const frame = useRef<HTMLIFrameElement>(null);
-  const src = useMemo(
-    () => editionUrl(manifest, ledger, batch, edition, 'html'),
-    [manifest, ledger, batch, edition],
-  );
-
-  const has = useMemo(() => {
-    const per = manifest?.transcripts?.[`${ledger}#${batch}`];
-    const whole = manifest?.ledgers?.[ledger];
-    return (per?.html ?? []).includes(edition) || (whole?.html ?? []).includes(edition);
-  }, [manifest, ledger, batch, edition]);
+  const src = useMemo(() => transcriptUrl(ledger, batch, 'html'), [ledger, batch]);
+  const has = Boolean(entryOf(manifest, ledger, batch)?.html);
 
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
@@ -76,13 +66,10 @@ export function TranscriptPane({
     return (
       <div className="grid h-full place-items-center bg-white p-8 text-center">
         <div className="max-w-sm">
-          <p className="text-[14px] text-ink-700">
-            No {edition === 'en' ? 'transcription' : 'record edition'} for this batch yet.
-          </p>
+          <p className="text-[14px] text-ink-700">No transcription for this batch yet.</p>
           <p className="prose-note mt-2">
-            {edition === 'rec'
-              ? 'The record edition is made from the transcription, never from the photograph — so it cannot exist before one does.'
-              : 'The sheets are on the right, at the resolution the Whitney publishes. Transcribing a batch is one pass of the /transcribe-hopper skill.'}
+            The sheets are on the right, at the resolution the Whitney publishes. Transcribing a
+            batch is one pass of the <code className="font-mono">/transcribe-hopper</code> skill.
           </p>
         </div>
       </div>

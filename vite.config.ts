@@ -43,19 +43,20 @@ export default defineConfig({
   base: process.env.BASE_PATH ?? '/',
   build: {
     rollupOptions: {
-      // One HTML entry per tab. Hosting is static: /accounts/ is served from
+      // One HTML entry per tab. Hosting is static: /book-iv/ is served from
       // its own index.html, with no client-side router and no redirect trick.
       // A URL opened on one batch still works in six months, which matters
       // when a transcription stretches over months.
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
-        etchings: resolve(import.meta.dirname, 'etchings/index.html'),
-        paintings: resolve(import.meta.dirname, 'paintings/index.html'),
-        lateWork: resolve(import.meta.dirname, 'late-work/index.html'),
-        accounts: resolve(import.meta.dirname, 'accounts/index.html'),
+        bookI: resolve(import.meta.dirname, 'book-i/index.html'),
+        bookII: resolve(import.meta.dirname, 'book-ii/index.html'),
+        bookIII: resolve(import.meta.dirname, 'book-iii/index.html'),
+        bookIV: resolve(import.meta.dirname, 'book-iv/index.html'),
+        bookV: resolve(import.meta.dirname, 'book-v/index.html'),
         dealers: resolve(import.meta.dirname, 'dealers/index.html'),
-        apparatus: resolve(import.meta.dirname, 'apparatus/index.html'),
         archive: resolve(import.meta.dirname, 'archive/index.html'),
+        timeline: resolve(import.meta.dirname, 'timeline/index.html'),
         method: resolve(import.meta.dirname, 'method/index.html'),
         contribute: resolve(import.meta.dirname, 'contribute/index.html'),
       },

@@ -52,11 +52,8 @@
 % The Whitney's accession number for the physical volume — 96.208 … 96.213.
 % This is what a citation of the object cites.
 \newcommand{\objectnumber}[1]{\gdef\hopObject{#1}}
-% The batch, when the file covers one. A record edition may instead take the
-% whole ledger — the unit its argument runs in, since Book IV's totals carry
-% forward across every batch boundary — and then there is no batch to name:
-% leaving \batch out drops the « (batch N) » rather than printing a number
-% that would be false.
+% The batch this file covers. Leaving it out drops the « (batch N) » from the
+% title block rather than printing a number that would be false.
 \newcommand{\batch}[1]{\gdef\hopBatch{#1}}
 \newcommand{\sheets}[2]{\gdef\hopFirst{#1}\gdef\hopLast{#2}}
 
@@ -80,24 +77,17 @@
 \gdef\hopLedger{?}\gdef\hopLedgerTitle{}\gdef\hopObject{}\gdef\hopBatch{}%
 \gdef\hopFirst{?}\gdef\hopLast{?}\gdef\hopDating{}\gdef\hopWatermark{}
 
-% --- The summary ------------------------------------------------------------
-%
-% It opens the record edition, under the heading « Summary », and is set small.
-% Not an ornament: it is the one passage that is not a record, and a reader
-% must be able to recognise it before having read it — then skip it if the
-% material is familiar, or stop there if it is not.
-
-\newenvironment{summary}
-  {\small\setlength{\parskip}{0.45em}}
-  {\par\medskip\hrule\medskip}
-
 % --- Keywords ---------------------------------------------------------------
 %
-% Closing the record edition's summary: the vocabulary under which to search
-% for what these leaves record — dealers, exhibiting societies, media, places.
+% Closing a transcription: the vocabulary under which to search for what these
+% leaves record — dealers, exhibiting societies, media, places.
 % `npm run manifest` extracts them to tag the whole ledger. This line is the
 % single source of the tags; there is no tags file, so no tag can describe
 % leaves nobody has read.
+%
+% It is the one thing in the file that is not on the paper, and it earns its
+% place: a reader looking for Keppel needs some way in, and a tag written by
+% whoever read the sheets is the only kind that cannot describe unread ones.
 \newcommand{\keywords}[1]{\par\smallskip\noindent
   {\footnotesize\textsc{Keywords} --- \textit{#1}}\par}
 
@@ -123,16 +113,6 @@
 \newcommand{\sheet}[2]{%
   \marginnote{\footnotesize\color{gray!70}\textsf{\ifx\relax#2\relax---\else#2\fi}}%
   \label{sheet:#1}\ignorespaces}
-
-% The record edition's coarser counterpart: which sheets a section is drawn
-% from, since that edition regroups by work and no single sheet lines up with
-% one of its blocks. Placed first inside the same block as a \section*{}, it
-% drives the same side-by-side scrolling — the facsimile jumps to the
-% section's first sheet once and holds there, which is honest about what this
-% edition can promise and no more.
-\newcommand{\sheetrange}[2]{%
-  \marginnote{\footnotesize\color{gray!70}\textsf{#1--#2}}%
-  \ignorespaces}
 
 % --- The critical apparatus -------------------------------------------------
 
@@ -226,24 +206,6 @@
 \newenvironment{ledgertable}[2]
   {\par\smallskip\small\begin{longtable}{#1}\textbf{#2}\\*\hline\endhead}
   {\end{longtable}\par\smallskip}
-
-% --- The record edition's records -------------------------------------------
-%
-% One block per work, per payment, per exhibition — whatever the leaf's unit
-% is. `npm run records` reads exactly these and writes the CSV and the JSON-LD,
-% so the environment is the interface and nothing else may be extracted from
-% the prose.
-%
-% Every field is **absent when the leaf does not carry it**. No field is
-% completed from knowledge of Hopper, ever: a record whose price came from a
-% scholar's memory rather than from the page is indistinguishable, six months
-% on, from one that was read.
-\newenvironment{record}[1]
-  {\par\medskip\noindent{\bfseries #1}\par\nopagebreak
-   \begin{list}{}{\setlength{\leftmargin}{2em}\setlength{\itemsep}{0pt}}}
-  {\end{list}\par\smallskip}
-
-\newcommand{\field}[2]{\item[]{\footnotesize\textsc{#1}}\quad #2}
 
 % --- Title ------------------------------------------------------------------
 

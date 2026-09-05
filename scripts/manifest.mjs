@@ -33,12 +33,8 @@ const read = (p, fallback) => {
 const declared = read(resolve(root, 'transcripts/status.json'), {});
 
 const transcripts = {};
-const ledgers = {};
 const tags = {};
 const readCount = {};
-const records = {};
-
-const EXT = { html: 'html', tex: 'tex', pdf: 'pdf', xml: 'xml' };
 
 if (existsSync(out)) {
   for (const dir of readdirSync(out, { withFileTypes: true })) {
@@ -48,15 +44,11 @@ if (existsSync(out)) {
     if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
     const ledger = dir.name;
     for (const f of readdirSync(resolve(out, ledger))) {
-      // `batch-03.en.html`, or `book-iv.rec.pdf` for a ledger-wide edition.
-      const m = /^(.+)\.(en|rec)\.(html|tex|pdf|xml)$/.exec(f);
+      const m = /^batch-(\d+)\.(html|tex|pdf|xml)$/.exec(f);
       if (!m) continue;
-      const [, stem, edition, ext] = m;
-      const batch = /^batch-(\d+)$/.exec(stem);
-      const target = batch ? transcripts : ledgers;
-      const key = batch ? `${ledger}#${Number(batch[1])}` : ledger;
-      const e = (target[key] ??= { html: [], tex: [], pdf: [], xml: [] });
-      if (!e[EXT[ext]].includes(edition)) e[EXT[ext]].push(edition);
+      const key = `${ledger}#${Number(m[1])}`;
+      const e = (transcripts[key] ??= { html: false, tex: false, pdf: false, xml: false });
+      e[m[2]] = true;
     }
   }
 }
@@ -70,15 +62,12 @@ if (existsSync(out)) {
  * sheet photographed only to record that it came loose — none of those get a
  * `\sheet{}`, and the gap is the only record that they were passed over.
  *
- * Counted from the `.en` files alone. The record edition covers the same
- * sheets from the same transcription, so adding its marks would double every
- * figure.
  */
 const seen = new Map();
 for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : []) {
   if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
   for (const f of readdirSync(resolve(out, dir.name))) {
-    if (!f.endsWith('.en.tex')) continue;
+    if (!f.endsWith('.tex')) continue;
     const src = readFileSync(resolve(out, dir.name, f), 'utf8');
     if (!seen.has(dir.name)) seen.set(dir.name, new Set());
     const set = seen.get(dir.name);
@@ -88,16 +77,16 @@ for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : 
 for (const [ledger, set] of seen) readCount[ledger] = set.size;
 
 /**
- * Tags, from the `\keywords{}` line closing each record edition's summary.
+ * Tags, from the `\keywords{}` line each transcription carries.
  *
  * The single source, and there is deliberately no tags file: a tag can only
- * exist because somebody wrote a summary after reading the sheets, so no tag
- * can describe material nobody has read.
+ * exist because somebody wrote it after reading the sheets, so no tag can
+ * describe material nobody has read.
  */
 for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : []) {
   if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
   for (const f of readdirSync(resolve(out, dir.name))) {
-    if (!f.endsWith('.rec.tex')) continue;
+    if (!f.endsWith('.tex')) continue;
     const src = readFileSync(resolve(out, dir.name, f), 'utf8');
     for (const m of src.matchAll(/\\keywords\{([^}]*)\}/g)) {
       const set = new Set(tags[dir.name] ?? []);
@@ -111,33 +100,19 @@ for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : 
   }
 }
 
-/** Extracted records, counted from what `npm run records` wrote. */
-const recDir = resolve(root, 'public/records');
-if (existsSync(recDir)) {
-  for (const f of readdirSync(recDir)) {
-    const m = /^(.+)\.csv$/.exec(f);
-    if (!m) continue;
-    const lines = readFileSync(resolve(recDir, f), 'utf8').trim().split('\n');
-    records[m[1]] = Math.max(0, lines.length - 1);
-  }
-}
-
 const manifest = {
   batchSize: BATCH_SIZE,
   generated: new Date().toISOString(),
   transcripts,
-  ledgers,
   declared,
   tags,
   read: readCount,
-  records,
 };
 
 writeFileSync(resolve(out, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 
 process.stdout.write(
-  `manifest: ${Object.keys(transcripts).length} batch file set(s), ` +
-    `${Object.keys(ledgers).length} ledger-wide, ` +
+  `manifest: ${Object.keys(transcripts).length} batch(es), ` +
     `${Object.values(readCount).reduce((a, b) => a + b, 0)} sheets transcribed, ` +
-    `${Object.values(records).reduce((a, b) => a + b, 0)} records\n`,
+    `${Object.keys(tags).length} ledger(s) tagged\n`,
 );

@@ -37,7 +37,7 @@ export function ContributePage() {
       <section className="border-b border-ink-200 py-8">
         <h2 className="font-serif text-2xl text-ink-900">Transcribe a batch</h2>
         <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-700">
-          Two skills, run in order, installed under{' '}
+          One edition, and two skills, installed under{' '}
           <code className="font-mono text-[13px]">.claude/skills/</code>:
         </p>
         <table className="mt-4 w-full max-w-3xl text-[13.5px]">
@@ -48,8 +48,8 @@ export function ContributePage() {
                 'the transcription — the sheets as written, with the apparatus and the two hands kept apart',
               ],
               [
-                '/record-hopper',
-                'the record edition — a summary, then each entry as a structured record, made from the transcription and never from the photograph',
+                '/tag-hopper',
+                'the ledger’s tags — the \\keywords{} line closing a transcription, which is their only source',
               ],
             ].map(([cmd, what]) => (
               <tr key={cmd} className="border-b border-ink-200 align-top">
@@ -68,7 +68,6 @@ npm run dev                            # the site
 
 # after a pass
 npm run render      # transcripts/*.tex -> the reading views; fails loudly
-npm run records     # the record edition -> CSV and JSON-LD
 npm run manifest    # tell the site which files now exist`}
         </pre>
 

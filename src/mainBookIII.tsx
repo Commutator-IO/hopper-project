@@ -5,6 +5,6 @@ import { LedgerPage } from './LedgerPage.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <LedgerPage id="dealers" />
+    <LedgerPage id="book-iii" />
   </StrictMode>,
 );

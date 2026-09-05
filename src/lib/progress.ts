@@ -8,9 +8,9 @@
  *
  * Two sources, and the difference between them is the whole design:
  *
- * — **Observed.** Whether a transcription exists, and whether a record edition
- *   exists, are facts about files. `npm run manifest` reads them, so `drafted`
- *   and `recorded` are never written down anywhere and cannot go stale.
+ * — **Observed.** Whether a transcription exists is a fact about a file.
+ *   `npm run manifest` reads it, so `drafted` is never written down anywhere
+ *   and cannot go stale.
  * — **Declared.** Whether a pass is in flight; whether a person has sat with
  *   the photograph and gone sheet by sheet; whether a batch was judged to hold
  *   nothing to transcribe — no file can show any of that. Those three live in
@@ -21,7 +21,7 @@
  * does one that lets a machine pass wear a person's name.
  */
 
-export type State = 'todo' | 'running' | 'drafted' | 'recorded' | 'checked' | 'skipped';
+export type State = 'todo' | 'running' | 'drafted' | 'checked' | 'skipped';
 
 /** What may be written in `transcripts/status.json` — the rest is observed. */
 export type DeclaredState = 'running' | 'checked' | 'skipped';
@@ -37,11 +37,6 @@ export const STATES: { key: State; label: string; help: string }[] = [
     key: 'drafted',
     label: 'Drafted',
     help: 'The transcription exists — read from the files, not declared.',
-  },
-  {
-    key: 'recorded',
-    label: 'Records extracted',
-    help: 'A record edition exists, so the transcription has been read again — by machine.',
   },
   {
     key: 'checked',
@@ -62,16 +57,14 @@ const RANK: Record<State, number> = {
   todo: 0,
   running: 1,
   drafted: 2,
-  recorded: 3,
-  checked: 4,
+  checked: 3,
   // Skipped is a decision, not a stage: nothing overrides it, and it overrides
   // nothing.
-  skipped: 4,
+  skipped: 3,
 };
 
 export interface Evidence {
   transcribed: boolean;
-  recorded: boolean;
 }
 
 /**
@@ -82,11 +75,7 @@ export interface Evidence {
  * `skipped` records a decision the presence of a file does not undo.
  */
 export function shownState(declared: DeclaredState | undefined, evidence: Evidence): State {
-  const observed: State = evidence.recorded
-    ? 'recorded'
-    : evidence.transcribed
-      ? 'drafted'
-      : 'todo';
+  const observed: State = evidence.transcribed ? 'drafted' : 'todo';
   if (!declared) return observed;
   return RANK[declared] >= RANK[observed] ? declared : observed;
 }
@@ -103,7 +92,6 @@ export function tally(batches: { state: State; sheets: number }[]): Tally {
     todo: 0,
     running: 0,
     drafted: 0,
-    recorded: 0,
     checked: 0,
     skipped: 0,
   };

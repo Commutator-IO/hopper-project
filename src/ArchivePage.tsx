@@ -2,8 +2,8 @@ import { useMemo, useState } from 'react';
 import { Page } from './components/Frame.tsx';
 import { BatchGrid, Reader, useReader } from './components/Reader.tsx';
 import { LEDGERS, BY_LEDGER } from './content/catalogue.ts';
-import { UNPLACED } from './content/books.ts';
-import { batchOfSeq, collectionUrl, sheetUrl } from './lib/batches.ts';
+import { batchOfSeq, collectionUrl, sheetUrl, whitneyWorkUrl } from './lib/batches.ts';
+import { url } from './lib/base.ts';
 import type { Sheet, SheetKind } from './lib/types.ts';
 
 /**
@@ -56,7 +56,7 @@ export function ArchivePage() {
   return (
     <Page path="/archive/">
       <header className="border-b border-ink-200 py-10">
-        <h1 className="font-serif text-3xl text-ink-900">All six ledgers</h1>
+        <h1 className="font-serif text-3xl text-ink-900">All sheets</h1>
         <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-ink-700">
           The archive as the Whitney holds it: six volumes, 96.208 to 96.213, in the order the
           sheets were photographed. Every descriptor below is the Whitney’s own sentence,
@@ -87,13 +87,6 @@ export function ArchivePage() {
         </div>
       </header>
 
-      {UNPLACED.length > 0 && (
-        <div className="mt-6 rounded-card border border-alerte-200 bg-alerte-50 px-4 py-3 text-[13px] text-alerte-700">
-          {UNPLACED.length} sheet{UNPLACED.length === 1 ? '' : 's'} belong to no reading book.
-          That is a gap in the books, not in the archive — the sheets are all here.
-        </div>
-      )}
-
       {LEDGERS.map((ledger) => {
         const all = BY_LEDGER.get(ledger.id) ?? [];
         const shown = all.filter(match);
@@ -110,12 +103,26 @@ export function ArchivePage() {
                 {shown.length === all.length ? `${all.length} sheets` : `${shown.length} of ${all.length}`}
               </span>
               <a
+                href={url(`/${ledger.id}/`)}
+                className="text-[12px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+              >
+                open the volume
+              </a>
+              <a
+                href={whitneyWorkUrl(ledger.whitneyWork)}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[12px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+              >
+                catalogue record ↗
+              </a>
+              <a
                 href={collectionUrl(ledger.collection)}
                 target="_blank"
                 rel="noreferrer"
                 className="text-[12px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
               >
-                at the Whitney ↗
+                sheets at the Whitney ↗
               </a>
             </div>
 
@@ -141,7 +148,7 @@ export function ArchivePage() {
                   <button
                     key={t}
                     onClick={() => setQ(t)}
-                    title="Extracted from the record edition's summary — the only source of tags here"
+                    title="From the \keywords{} line of a transcription — the only source of tags here, so no tag can describe a sheet nobody has read"
                     className="rounded-full bg-brand-50 px-2 py-0.5 text-[11.5px] text-brand-700 transition hover:bg-brand-100"
                   >
                     {t}
@@ -203,8 +210,6 @@ export function ArchivePage() {
         <Reader
           manifest={r.manifest}
           open={r.openBatch}
-          edition={r.edition}
-          setEdition={r.setEdition}
           sheet={r.sheet}
           onSheet={r.onSheet}
           goto={r.goto}

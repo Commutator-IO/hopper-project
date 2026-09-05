@@ -35,30 +35,59 @@ it came out of, on one screen, without a second window.
 
 ## The site
 
+The archive's organisation is the site's organisation. The Hoppers filed their
+work in six books and numbered them; the Whitney accessioned those six as
+96.208 to 96.213 and digitised them in order. There is **no thematic
+regrouping anywhere here** — an earlier version of this project offered six
+reading "books", three of them threads drawn across the volumes by us, each
+having to announce at its head whose grouping it was. That was honest and it
+was still a second organisation laid over one that already had an author, and
+it meant every URL named something the museum could not be asked about.
+
 | Page | Contents |
 |---|---|
-| [`/`](https://hopper.commutator.io/) | What these books are, and the six ways in |
-| [`/etchings/`](https://hopper.commutator.io/etchings/) | **The Etchings** — Book I opened plate by plate, 1915–1928 *(our grouping)* |
-| [`/paintings/`](https://hopper.commutator.io/paintings/) | **The Paintings** — Book II entire, 1907–1962 *(the archive's grouping)* |
-| [`/late-work/`](https://hopper.commutator.io/late-work/) | **The Late Work** — Book III entire, 1924–1967 *(the archive's grouping)* |
-| [`/accounts/`](https://hopper.commutator.io/accounts/) | **The Account Book** — Book IV entire: every payment received, 1913–1967 *(the archive's grouping)* |
-| [`/dealers/`](https://hopper.commutator.io/dealers/) | **Dealers and Prints** — the two thin books filed by dealer *(our grouping)* |
-| [`/apparatus/`](https://hopper.commutator.io/apparatus/) | **Jo Hopper's Apparatus** — the leaves that record no work at all *(our grouping)* |
-| [`/archive/`](https://hopper.commutator.io/archive/) | All six ledgers, in the Whitney's order, searchable |
+| [`/`](https://hopper.commutator.io/) | What these books are |
+| [`/book-i/`](https://hopper.commutator.io/book-i/) | **Book I** · 96.208 · 1913–1963 — the etchings plate by plate, and the running lists behind them |
+| [`/book-ii/`](https://hopper.commutator.io/book-ii/) | **Book II** · 96.209 · 1907–1962 — the paintings, one to an opening, with the record sketches |
+| [`/book-iii/`](https://hopper.commutator.io/book-iii/) | **Book III** · 96.210 · 1924–1967 — the late work, and the lists kept in front of it |
+| [`/book-iv/`](https://hopper.commutator.io/book-iv/) | **Book IV** · 96.211 · 1913–1967 — every payment received, without a gap, for fifty-four years |
+| [`/book-v/`](https://hopper.commutator.io/book-v/) | **Book V** · 96.212 · 1953–1963 — an index, loans, drawings, and the Rehn receipts of 1953 |
+| [`/dealers/`](https://hopper.commutator.io/dealers/) | **Dealers/Etchings** · 96.213 · 1921–1951 — indexed by dealer rather than by work |
+| [`/archive/`](https://hopper.commutator.io/archive/) | All 504 sheets, searchable across the six |
+| [`/timeline/`](https://hopper.commutator.io/timeline/) | Hopper's life beside the dated leaves — every entry sourced |
 | [`/method/`](https://hopper.commutator.io/method/) | How the reading is done, what it costs, what it does not claim |
 
-Three of the six reproduce a volume exactly and three are threads drawn across
-the archive by us. Each page says which at its head, because citing "the
-Apparatus" does not commit you to the same thing as citing 96.208.
+Every volume page links to the Whitney's own catalogue record for the object,
+so a citation from here is a citation the museum can answer.
 
-**Jo Hopper's Apparatus is the one to look at first if you only look at one.**
-Scattered through three volumes, its leaves read as clerical residue: an index,
-a *Whereabouts* list, running tallies of prizes and museum purchases, eight
-leaves of reviews cross-referenced in both directions, a Gifts page, a
-chronology on a back flyleaf. Taken together they are the most interesting
-document in the archive, because they are not a record of Edward Hopper's work
-but of Josephine Hopper's — she is the one who decided what about a painting
-was worth writing down, and these are the leaves where that decision is visible.
+**Book IV is the one to open if you only open one.** It is a pocket book, 7½ by
+4¾ inches, with no sketches and no anecdote: one column of dates, one of payers
+and one of sums, kept without a gap from 15 November 1913 to 23 March 1967. Its
+first decade is all illustration work — *Adventure*, *Everybody's*, the *Wells
+Fargo Messenger*, Morse Dry Dock — which is the part of Hopper's working life
+the paintings books do not record at all. It is also the only volume the
+Whitney dated leaf by leaf, which is what lets the timeline point into it.
+
+## The timeline
+
+Reading a dated leaf, one keeps wanting to know what year it is *in*: that the
+Rehn entries begin in November 1924 because Rehn took him on that autumn, that
+the etchings stop because the printmaking did, that Book IV's last entry is
+three months before he died. None of that is on the sheets, and looking it up
+breaks the reading. So [`/timeline/`](https://hopper.commutator.io/timeline/)
+holds it, under two rules:
+
+- **every event names the source that states it**, linked, and nothing is
+  written from memory. Where two sources disagree — the date he took the top
+  floor at 3 Washington Square North is the live case — the disagreement is
+  printed rather than settled by quietly picking one;
+- **the link into the archive is derived, never asserted.** A year lists the
+  sheets whose *own Whitney descriptor* names it, which in practice means
+  Book IV. A volume's date range is not spread over its leaves to make the
+  page look fuller.
+
+It is a reminder for reading these ledgers and not a biography. Gail Levin's is
+the biography, and it was written from these very books.
 
 ## Nothing of the archive is stored, anywhere
 
@@ -134,34 +163,39 @@ difference between 16.66 and 16.60 is a few dozen pixels.
 
 ## Transcription
 
-Two editions, one skill each, run in order — plus a third for the ledger's
-tags. All under `.claude/skills/`. They accept Fable 5.1, Fable 5 or Opus 5 and
-**refuse any other model**, and each file's header records the one that read the
-sheets, so a batch's provenance stays a fact about the file rather than about
-whichever model happened to be selected.
+**One edition**, and that is worth saying plainly because the project this
+method comes from carries two. Grothendieck's manuscripts get a second pass
+that restates the mathematics in current notation, and it is real work: a page
+of 1962 mathematics is genuinely hard to read in 1962's notation. A ledger
+needs no such pass. Jo Hopper's English is plain, her columns are already a
+table, and « 30 – 1/3 » means today exactly what it meant in 1927. A second
+edition here would have been a second artifact to keep in step, paying for
+itself in nothing — so a file is `batch-NN.tex`, with no register in its name.
+
+Two skills under `.claude/skills/`. They accept Fable 5.1, Fable 5 or Opus 5
+and **refuse any other model**, and each file's header records the one that
+read the sheets, so a batch's provenance stays a fact about the file rather
+than about whichever model happened to be selected.
 
 | Skill | Produces |
 |---|---|
 | [`/transcribe-hopper`](.claude/skills/transcribe-hopper/SKILL.md) | the transcription — the sheets as written, with the apparatus and the two hands kept apart |
-| [`/record-hopper`](.claude/skills/record-hopper/SKILL.md) | the record edition — a summary, then every entry as a structured record |
-| [`/tag-hopper`](.claude/skills/tag-hopper/SKILL.md) | the ledger's tags — the `\keywords{}` line closing the summary |
+| [`/tag-hopper`](.claude/skills/tag-hopper/SKILL.md) | the ledger's tags — the `\keywords{}` line closing a transcription |
 
 ```bash
 npm run works       # → the verified museum links (external APIs; not run in CI)
 npm run render      # transcripts/*.tex → the reading views the left pane shows
-npm run records     # the record edition → CSV and JSON-LD
 npm run tei         # → a TEI P5 file per transcription
 npm run pdf         # → the PDFs the download buttons offer
 npm run manifest    # tell the site which files now exist
 ```
 
 The `.tex` under `transcripts/` is the source of record and the only thing
-versioned. HTML, PDF, TEI and CSV are derived, and rebuilt.
+versioned. HTML, PDF and TEI are derived, and rebuilt.
 
 **One batch is transcribed so far — Book I, batch 1: twelve sheets from the
-front cover to leaf 5, read under Opus 5 on 5 September 2026, with its record
-edition and twenty-seven extracted records.** None of it has been checked sheet
-by sheet by a person.
+front cover to leaf 5, read under Opus 5 on 5 September 2026.** None of it has
+been checked sheet by sheet by a person.
 
 ### The critical apparatus is the point
 
@@ -203,76 +237,6 @@ the Whitney's own descriptor, sheets transcribed out of order, and a file with
 no `\watermark{}`. Every one of those failures is invisible in the output if it
 is allowed through.
 
-### The record edition, and why it is not a translation
-
-The Grothendieck workbench gives each manuscript a *modernised reading* — the
-mathematics restated in current notation. A ledger wants something else,
-because it is already a table: the record edition restates each entry as a
-structured record — title, medium, size, date, price, buyer, dealer,
-exhibition — which `npm run records` extracts to `public/records/<ledger>.csv`
-and a JSON-LD file whose every row links back to the Whitney's record for the
-sheet it was read from.
-
-Every field is **empty when the leaf does not carry it**. Empty is not zero,
-not a guess, and never the value from the row above. A `certainty` column
-carries `read`, `partial` or `uncertain`, built from the apparatus marks, so
-that anyone building on this can sort the shaky rows to the top — which is the
-whole reason for carrying the marks that far.
-
-Nothing is normalised: "Fall 1923" stays "Fall 1923", `7 x 8 3/8"` stays as
-written, prices are never converted and never adjusted, and "Les Deux Pigeon"
-and "Les Poillus" stay misspelled because the misspelling is Hopper's and is
-how the entry is found.
-
-### Seeing the work
-
-The one thing this site cannot show is the work itself. The right pane has the
-sheet, and on the sheet is Edward Hopper's ink memorandum of a painting or a
-plate, drawn an inch across; what it is a memorandum *of* is not here and
-cannot be, because holding an image of a work in copyright would break the only
-promise the project makes.
-
-So every work title that a museum with a public API holds carries a **see the
-work** link beside it, to that museum's own record, which serves its own
-picture. `npm run works` builds the index by querying the Metropolitan Museum
-of Art and the Art Institute of Chicago and keeping only objects whose artist
-field their catalogue gives as `Edward Hopper` — so no URL here was typed from
-memory, and re-running it drops a link that has rotted rather than leaving it
-in the site being wrong. Twenty-three of the twenty-seven etching plates listed
-on Book I's first leaf are linked; the four that are not are not held under
-those titles at either museum, and are left blank rather than guessed.
-
-The Whitney holds far more Hopper than either and is **not** in the index:
-`whitney.org` publishes no API, and its collection listing ignores every search
-parameter — `?q=`, `?filter=`, `?search=`, `?keyword=` all return the same
-thirty works. A link built on a parameter the server ignores would take a
-reader somewhere else, which is worse than no link.
-
-Two limits are stated on every reading view rather than left implied:
-
-- **A link does not say the row you are reading concerns that copy.** These are
-  editions of a hundred, sold to a dozen institutions over forty years, and the
-  ledger's rows are the record of exactly that dispersal. It says only that a
-  work of this title is there and can be looked at.
-- **An identification that is a judgement is marked with a `*`**, and hovering
-  gives the reason. Matching normalises three things and three only — a leading
-  article, an ampersand, and case — so « Cow & Rocks » finds « Cow and Rocks »
-  on its own. Anything beyond that is declared by hand in
-  [`src/content/work-aliases.json`](src/content/work-aliases.json) with a
-  `mapping` of `certain` or `likely`: « Night in the L Train » is *likely* the
-  plate both museums catalogue as « Night on the El Train », and saying so is
-  not the same as knowing it.
-
-The links reach the JSON-LD too, as `sameAs`, with the same caveat written into
-the dataset's own description.
-
-It is worth seeing what the rule does on Book I leaf 4. The transcription's
-`\work{}` there reads `Night in \ill{}` — the title is under a pasted clipping
-— so nothing links, because nothing was read. The *record* edition names it,
-having taken the title from leaf 1's index where the transcription may not, and
-its heading carries the links. The same title, two editions, and the difference
-between them is the whole apparatus working.
-
 ### The TEI export
 
 `npm run tei` writes `batch-NN.en.xml` beside each transcription's HTML and the
@@ -296,8 +260,8 @@ well-formed with `xmllint` when it is installed.
 |---|---|
 | `harvest/` | The Whitney's listing, taken in a browser and committed — 504 lines |
 | `src/content/catalogue.ts` | The archive — 6 ledgers, 504 sheets — generated, never hand-edited |
-| `src/content/books.json` | The six reading books, generated from spans and then edited by hand |
 | `src/content/works.json` | Where a work named on a leaf can be looked at — generated, every URL retrieved |
+| `src/content/life.json` | The timeline — every event with the source that states it |
 | `src/content/work-aliases.json` | The title identifications that are ours, each with how far to trust it |
 | `transcripts/status.json` | The three states no file can prove — `running`, `checked`, `skipped` |
 | `src/components/FacsimilePane.tsx` | The right pane: the Whitney's image, zoomable, sheet-anchored |
@@ -306,7 +270,6 @@ well-formed with `xmllint` when it is installed.
 | `scripts/mirror.mjs` | Downloads sheets for transcription — not for reading |
 | `scripts/tiles.mjs` | Cuts a sheet into overlapping crops, so a figure can be looked at |
 | `scripts/render.mjs` | LaTeX subset → the reading view, and the checks that make it strict |
-| `scripts/records.mjs` | The record edition → CSV and JSON-LD |
 | `scripts/tei.mjs` | The transcription → TEI P5 |
 | `scripts/works.mjs` | Queries the Met and the Art Institute for works the ledgers name |
 

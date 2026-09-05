@@ -15,9 +15,15 @@ const root = resolve(import.meta.dirname, '..');
 const dist = resolve(root, 'dist');
 const SITE = 'https://hopper.commutator.io';
 
-const books = JSON.parse(readFileSync(resolve(root, 'src/content/books.json'), 'utf8'));
+// The six volumes, read off the generated catalogue so a new one cannot be
+// forgotten here.
+const ledgers = [
+  ...readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8').matchAll(
+    /^    id: '([\w-]+)',$/gm,
+  ),
+].map((m) => `/${m[1]}/`);
 
-const paths = ['/', ...books.map((b) => b.path), '/archive/', '/method/', '/contribute/'];
+const paths = ['/', ...ledgers, '/archive/', '/timeline/', '/method/', '/contribute/'];
 
 const today = new Date().toISOString().slice(0, 10);
 

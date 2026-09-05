@@ -30,6 +30,9 @@ const root = resolve(import.meta.dirname, '..');
 const LEDGERS = [
   {
     id: 'book-i',
+    about:
+      "The etchings, one plate to a leaf, and then the running lists that grew behind them. Leaves 2 to 44 record the prints — a halftone of the plate hinged at the head, Edward Hopper's title and plate size in drawn lettering, and beneath them thirty or forty ruled lines in Jo Hopper's hand running from the first jury of 1921 into the 1960s. From leaf 45 the book changes character: notes and explanations, one-man shows, the oils and Paris watercolours by year, six leaves of current exhibitions, reviews and reproductions cross-referenced in both directions, photographs, prizes, gifts, and a chronology on the back flyleaf.",
+    whitneyWork: 11014,
     collection: 1052,
     title: 'Artist’s ledger — Book I',
     short: 'Book I',
@@ -43,6 +46,9 @@ const LEDGERS = [
   },
   {
     id: 'book-ii',
+    about:
+      "The paintings, one to an opening: Edward Hopper's ink record sketch of the finished canvas, and opposite it Jo Hopper's description — often several sentences of anecdote about people he would not discuss — with the size, the date, the price and the buyer. The Whitney's descriptors for this volume name the work without quotation marks, which is why its sheet captions carry no quoted line.",
+    whitneyWork: 11015,
     collection: 1064,
     title: 'Artist’s ledger — Book II',
     short: 'Book II',
@@ -61,6 +67,9 @@ const LEDGERS = [
   },
   {
     id: 'book-iii',
+    about:
+      "The last of the three work books, and the one that runs to Hopper's death. Fifteen leaves of running lists stand at the front rather than the back — Whereabouts, Prizes and Museum Purchases, eight leaves of Reviews and Reproductions, Gifts, One Man Shows — then the works from Hotel Lobby to Sun in an Empty Room, then watercolours from Mexico, Wyoming and Cape Cod, and at the tail two more Whereabouts leaves and five of Memoranda. This is the latest hand in the archive.",
+    whitneyWork: 9022,
     collection: 1085,
     title: 'Artist’s ledger — Book III',
     short: 'Book III',
@@ -79,6 +88,9 @@ const LEDGERS = [
   },
   {
     id: 'book-iv',
+    about:
+      "A pocket book, 7½ by 4¾ inches, the smallest of the six and by some distance the most continuous. No sketches and no anecdote: one column of dates, one of payers and one of sums, kept without a gap from 15 November 1913 to 23 March 1967. The early leaves are all illustration work — Adventure, Everybody's, the Wells Fargo Messenger, Morse Dry Dock — which is the part of Hopper's working life the paintings books do not record at all. It is the only volume the Whitney dated leaf by leaf, so its sheets carry years.",
+    whitneyWork: 11016,
     collection: 1097,
     title: 'Artist’s ledger — Book IV',
     short: 'Book IV',
@@ -91,6 +103,9 @@ const LEDGERS = [
   },
   {
     id: 'book-v',
+    about:
+      "Sixteen sheets, the smallest set in the archive and among the latest: an index by letter, a page of loans, a dozen leaves of drawings, and three leaves of receipts from the Rehn Gallery for the etchings sold in October 1953.",
+    whitneyWork: 11017,
     collection: 1111,
     title: 'Artist’s ledger — Book V',
     short: 'Book V',
@@ -103,6 +118,9 @@ const LEDGERS = [
   },
   {
     id: 'dealers',
+    about:
+      "Indexed by whose hands the work was in, not by which work it was. Keppel, Kraushaar, Kennedy, the Downtown Gallery, the Weyhe Book Shop, Vickery Atkins & Torrey each get a leaf, and the prints move down it. Its leaves are numbered from 51 — the volume was begun in the middle of a book already partly used — and two of them are written across the page rather than down it, and were photographed turned.",
+    whitneyWork: 11018,
     collection: 1112,
     title: 'Artist’s ledger — Dealers/Etchings',
     short: 'Dealers/Etchings',
@@ -183,6 +201,32 @@ function quoted(d) {
   return [...d.matchAll(/"([^"]+)"/g)].map((m) => m[1]);
 }
 
+/**
+ * The years a sheet's own descriptor names.
+ *
+ * Book IV is the reason this exists and is nearly the only book it applies to:
+ * its descriptors open with the span the leaf covers — « 1924, January 18 -
+ * March 4 [p. 67, …] » — because the volume is a running account and the
+ * cataloguer had a date to give. Nothing else in the archive is dated at the
+ * sheet, so for the other five books this is usually empty, and empty is the
+ * honest answer rather than the volume's range copied down onto every leaf.
+ *
+ * Only years that appear **before the first bracket** are taken. A year inside
+ * the quoted incipit is a date Jo Hopper wrote inside the entry, which is a
+ * different claim from the leaf's own span, and mixing the two would put a
+ * leaf under a year the cataloguer never assigned it.
+ */
+function years(descriptor) {
+  const head = descriptor.split('[')[0];
+  const span = /^(\d{4})\s*-\s*(\d{4})/.exec(head.trim());
+  if (span) {
+    const [a, b] = [Number(span[1]), Number(span[2])];
+    return b >= a && b - a < 12 ? Array.from({ length: b - a + 1 }, (_, i) => a + i) : [a, b];
+  }
+  const one = /^(\d{4})\b/.exec(head.trim());
+  return one ? [Number(one[1])] : [];
+}
+
 const sheets = [];
 for (const l of LEDGERS) {
   const file = resolve(root, 'harvest', `collection-${l.collection}.txt`);
@@ -204,6 +248,7 @@ for (const l of LEDGERS) {
       spread,
       kind: kind(descriptor),
       quoted: quoted(descriptor),
+      years: years(descriptor),
     });
   });
 }
@@ -228,6 +273,7 @@ export const LEDGERS: Ledger[] = [
 ${LEDGERS.map(
   (l) => `  {
     id: ${q(l.id)},
+    whitneyWork: ${l.whitneyWork},
     collection: ${l.collection},
     title: ${q(l.title)},
     short: ${q(l.short)},
@@ -236,7 +282,8 @@ ${LEDGERS.map(
     medium: ${q(l.medium)},
     extendedMedium: ${q(l.extendedMedium)},
     dimensions: ${q(l.dimensions)},
-    credit: ${q(l.credit)},${l.quotedBare ? '\n    quotedBare: true,' : ''}
+    credit: ${q(l.credit)},
+    about: ${q(l.about)},${l.quotedBare ? '\n    quotedBare: true,' : ''}
     sheets: ${sheets.filter((s) => s.ledger === l.id).length},
   },`,
 ).join('\n')}
@@ -250,7 +297,7 @@ ${sheets
         s.leaf === null ? 'null' : s.leaf
       }, spread: ${s.spread === null ? 'null' : s.spread}, kind: ${q(s.kind)}, quoted: [${s.quoted
         .map(q)
-        .join(', ')}], descriptor: ${q(s.descriptor)} },`,
+        .join(', ')}], years: [${s.years.join(', ')}], descriptor: ${q(s.descriptor)} },`,
   )
   .join('\n')}
 ];
@@ -267,8 +314,10 @@ export const LEDGER_BY_ID = new Map<string, Ledger>(LEDGERS.map((l) => [l.id, l]
 writeFileSync(resolve(root, 'src/content/catalogue.ts'), out);
 
 const named = sheets.filter((s) => s.leaf !== null).length;
+const dated = sheets.filter((s) => s.years.length).length;
 process.stdout.write(
   `catalogue: ${LEDGERS.length} ledgers, ${sheets.length} sheets\n` +
     `  with a leaf number written on the paper  ${named}\n` +
-    `  unnumbered (covers, flyleaves, insertions) ${sheets.length - named}\n`,
+    `  unnumbered (covers, flyleaves, insertions) ${sheets.length - named}\n` +
+    `  whose descriptor names a year             ${dated}\n`,
 );

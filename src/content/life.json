@@ -1,0 +1,185 @@
+{
+  "note": "Edward Hopper's life, kept to what a named source states. Every entry carries the source that says it and a link to that page; nothing here is written from memory, and where two sources disagree the entry says so rather than choosing quietly. This is a reminder for somebody reading a dated ledger leaf — not a biography, and not a substitute for one.",
+  "sources": {
+    "whitney-artist": {
+      "name": "Whitney Museum of American Art, artist page",
+      "url": "https://whitney.org/artists/621"
+    },
+    "whitney-hoppers": {
+      "name": "Whitney Museum of American Art, “The Hoppers and the Whitney”",
+      "url": "https://whitney.org/research/the-hoppers-and-the-whitney"
+    },
+    "whitney-guide": {
+      "name": "Whitney Museum of American Art, teacher guide, “About the Artist”",
+      "url": "https://whitney.org/education/schools-educators/k-12/teaching-materials/teacher-guides/hopper-new-york/about"
+    },
+    "whitney-jo": {
+      "name": "Whitney Museum of American Art, Josephine Nivison Hopper",
+      "url": "https://whitney.org/artists/1911"
+    }
+  },
+  "events": [
+    {
+      "year": 1858,
+      "what": "The house in Nyack that his maternal grandparents built — Hopper’s home until 1910.",
+      "source": "whitney-hoppers"
+    },
+    {
+      "year": 1882,
+      "date": "22 July",
+      "what": "Born in Nyack, New York, thirty miles up the Hudson from Manhattan.",
+      "source": "whitney-guide",
+      "key": true
+    },
+    {
+      "year": 1899,
+      "what": "Begins commuting into the city to study at the New York School of Illustrating.",
+      "source": "whitney-artist"
+    },
+    {
+      "year": 1900,
+      "what": "Enrols at the New York School of Art; studies under William Merritt Chase, and prefers the classes of Robert Henri and Kenneth Hayes Miller.",
+      "source": "whitney-artist",
+      "key": true
+    },
+    {
+      "year": 1906,
+      "what": "Begins supporting himself as a commercial artist and illustrator — work he will go on doing for about twenty years. The first three decades of Book IV are its record.",
+      "source": "whitney-guide",
+      "key": true
+    },
+    {
+      "year": 1906,
+      "what": "First of three extended stays in Paris, the last of them in 1910; he begins painting out of doors.",
+      "source": "whitney-artist"
+    },
+    {
+      "year": 1910,
+      "what": "Last of the Paris visits. Nyack ceases to be his primary residence.",
+      "source": "whitney-hoppers"
+    },
+    {
+      "year": 1913,
+      "what": "Sells his first canvas, at the Armory Show.",
+      "source": "whitney-guide",
+      "key": true
+    },
+    {
+      "year": 1913,
+      "what": "Moves to the apartment at 3 Washington Square North where he will live and work until his death. The inside front cover of Book I gives that address.",
+      "source": "whitney-artist",
+      "key": true
+    },
+    {
+      "year": 1915,
+      "what": "Begins the printmaking that runs into the early 1920s — the etchings that fill the first forty leaves of Book I.",
+      "source": "whitney-artist",
+      "key": true
+    },
+    {
+      "year": 1915,
+      "what": "Josephine Verstille Nivison joins the Washington Square Players.",
+      "source": "whitney-hoppers"
+    },
+    {
+      "year": 1920,
+      "what": "First solo show, at the Whitney Studio Club. He is thirty-seven.",
+      "source": "whitney-hoppers",
+      "key": true
+    },
+    {
+      "year": 1922,
+      "what": "In Gloucester, Massachusetts, meets Josephine Verstille Nivison.",
+      "source": "whitney-artist"
+    },
+    {
+      "year": 1924,
+      "date": "9 July",
+      "what": "Marries Jo Nivison. From here she keeps the record: “Recorded by Jo N Hopper (Mrs. Edward Hopper) at time each work is finished, or before it leaves studio.”",
+      "source": "whitney-artist",
+      "key": true
+    },
+    {
+      "year": 1924,
+      "what": "The Frank K. M. Rehn Galleries begin to represent him, and go on doing so for the rest of his career. “Frank K. M. Rehn” first appears in Book IV in November of this year and then recurs for forty years.",
+      "source": "whitney-artist",
+      "key": true
+    },
+    {
+      "year": 1928,
+      "what": "The Whitney Studio Club closes, to make way for the Whitney Museum of American Art.",
+      "source": "whitney-hoppers"
+    },
+    {
+      "year": 1930,
+      "what": "“Early Sunday Morning” is acquired within months of being finished, and becomes part of the Museum’s founding collection.",
+      "source": "whitney-artist",
+      "key": true
+    },
+    {
+      "year": 1931,
+      "what": "The Whitney Museum of American Art opens, and first acquires his work.",
+      "source": "whitney-artist"
+    },
+    {
+      "year": 1932,
+      "what": "Included in the first Whitney Biennial, and in twenty-nine further Biennials and Annuals down to 1965.",
+      "source": "whitney-hoppers",
+      "key": true
+    },
+    {
+      "year": 1934,
+      "what": "Builds a second home and studio on Cape Cod, and keeps it for the rest of his life. The Truro and South Truro watercolours in Books I and III begin here.",
+      "source": "whitney-artist",
+      "key": true
+    },
+    {
+      "year": 1942,
+      "what": "“Nighthawks”, his most acclaimed composition.",
+      "source": "whitney-artist",
+      "key": true
+    },
+    {
+      "year": 1950,
+      "what": "The Whitney organises his second career retrospective. Leaf 2 of Book I is headed with a note of it.",
+      "source": "whitney-hoppers",
+      "key": true
+    },
+    {
+      "year": 1964,
+      "what": "A second Whitney retrospective in his lifetime, organised by Lloyd Goodrich — a lifelong friend, and the donor of three of these six ledgers.",
+      "source": "whitney-hoppers",
+      "key": true
+    },
+    {
+      "year": 1965,
+      "what": "Last of the Whitney Biennials and Annuals he takes part in.",
+      "source": "whitney-hoppers"
+    },
+    {
+      "year": 1967,
+      "date": "May",
+      "what": "Dies in the studio at 3 Washington Square North. Book IV’s final entry is dated 23 March.",
+      "source": "whitney-guide",
+      "key": true
+    },
+    {
+      "year": 1968,
+      "what": "Jo Hopper dies ten months after Edward, having been hospitalised. Their artistic holdings — nearly three thousand items — are bequeathed to the Whitney.",
+      "source": "whitney-hoppers",
+      "key": true
+    },
+    {
+      "year": 1995,
+      "what": "The Whitney publishes the catalogue raisonné, twenty years in the making. It was made from these books.",
+      "source": "whitney-hoppers",
+      "key": true
+    }
+  ],
+  "disputed": [
+    {
+      "about": "When he took the top floor of 3 Washington Square North",
+      "what": "The Whitney's artist page says he lived and worked in the same Washington Square apartment from 1913 until his death; other chronologies give 1929 for a move to the top floor of the building. Both may describe the same tenancy at different scales. Only the Whitney's wording is used above, because mixing two sources into one sentence is how a date nobody stated gets published."
+    }
+  ]
+}

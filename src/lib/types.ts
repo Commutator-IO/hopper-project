@@ -23,6 +23,10 @@ export interface Ledger {
   extendedMedium: string;
   dimensions: string;
   credit: string;
+  /** The Whitney's own catalogue record for the volume, on whitney.org. */
+  whitneyWork: number;
+  /** What this volume is, in a paragraph — written from its own sheets. */
+  about: string;
   /**
    * Its descriptors name works **without quotation marks**, so `Sheet.quoted`
    * is empty or misleading for this book. See `scripts/catalogue.mjs`.
@@ -68,6 +72,15 @@ export interface Sheet {
    * and **the listing does not say which**. Never render these as titles.
    */
   quoted: string[];
+  /**
+   * The years the sheet's own descriptor names, before its first bracket.
+   *
+   * Almost always empty, and Book IV is why it is not always: that volume is a
+   * running account, so the Whitney dated its leaves. Nothing else in the
+   * archive is dated at the sheet, and an empty list is the honest answer
+   * rather than the volume's range copied onto every leaf of it.
+   */
+  years: number[];
   /** The Whitney's File or Component Descriptor, verbatim and unshortened. */
   descriptor: string;
 }
@@ -75,80 +88,23 @@ export interface Sheet {
 export type SheetKind = 'cover' | 'front-matter' | 'leaf' | 'verso' | 'inserted';
 
 /**
- * A *book* — this site's unit of reading, which is not the archive's.
+ * There is **one** edition here, and that is the interesting difference.
  *
- * The archive files by volume, and a volume is not a subject. What a reader
- * wants is a run: the etchings and their exhibition histories, the oils of the
- * late thirties, the money coming in month by month from 1913 to 1967. Some of
- * those runs are a whole ledger and some cut across one. A book names the run
- * and says where the grouping came from — `archiveUnit` points at the ledger
- * when the two coincide, and is `null` when the grouping is ours.
+ * The Grothendieck workbench this method comes from carries two: the
+ * transcription, and a modernised reading that restates the mathematics in
+ * current notation. The second exists because a page of 1962 mathematics is
+ * genuinely hard to read in 1962's notation, and the restatement is real work.
  *
- * Saying which is not politeness. Citing "the Etchings notebook" does not
- * commit you to the same thing as citing 96.208, and a reader must be able to
- * tell the two apart without opening the code.
+ * A ledger needs no such pass. Jo Hopper's English is plain, her columns are
+ * already a table, and « 30 - 1/3 » means today exactly what it meant in 1927.
+ * A second edition here would have been a second artifact to keep in step,
+ * paying for itself in nothing. So the transcription is the edition, the
+ * `\keywords{}` line that tags a ledger lives in it, and a file is
+ * `batch-NN.tex` with no register in its name.
  */
-export interface Book {
-  key: BookKey;
-  path: string;
-  title: string;
-  /** A shorter label for the header row, which is tight at `lg`. Falls back to `title`. */
-  navTitle?: string;
-  /** One line: what this book holds, and why these sheets. */
-  subtitle: string;
-  period: string;
-  /** The ledger this book reproduces exactly, or `null` where the grouping is ours. */
-  archiveUnit: LedgerKey | null;
-  /** What was kept and on whose authority — printed at the head of the page. */
-  rationale: string;
-  /**
-   * This book is the one being worked through now.
-   *
-   * Not a claim that any sheet of it is transcribed — that is read off the
-   * files. The weaker and still useful fact that it is spoken for, so the
-   * whole-archive figure does not paint it the colour of the four hundred
-   * sheets nobody has opened.
-   */
-  inProgress?: boolean;
-  sections: BookSection[];
-}
-
-export interface BookSection {
-  title: string;
-  /** What this section holds, and what to know before entering it. */
-  intro: string;
-  /** Resource refs, in reading order. */
-  sheets: number[];
-}
-
-export type BookKey =
-  | 'etchings'
-  | 'paintings'
-  | 'late-work'
-  | 'accounts'
-  | 'dealers'
-  | 'apparatus';
-
-/**
- * Which register a transcript is written in.
- *
- * Two, and the order is the order of distance from the sheet.
- *
- * `en` is what is on the paper — Jo Hopper's words, her spelling, her columns,
- * with the critical apparatus saying what was read and what was not.
- *
- * `rec` is the *record edition*: the same sheet restated as the thing a ledger
- * exists to be, a set of records — one per work, per payment, per exhibition —
- * in current cataloguing vocabulary, opening with a summary for someone who
- * has not met the material. It works from the transcription and never from the
- * photograph, because two independent readings of the same hand would diverge
- * and nothing would say which was right.
- *
- * Both are in English. The Hoppers wrote English; there is no second language
- * here to keep in step, which is one fewer artifact than the Grothendieck
- * project this method comes from has to maintain.
- */
-export type Edition = 'en' | 'rec';
+export const EDITIONS_NOTE =
+  'One edition. See the comment above; there is no type here because there is ' +
+  'nothing to choose between.';
 
 /** Everything present locally, written by `npm run manifest`. */
 export interface Manifest {
@@ -158,15 +114,6 @@ export interface Manifest {
   /** Transcript artifacts under `public/transcripts/`, keyed `<ledger>#<batch>`. */
   transcripts: Record<string, TranscriptEntry>;
   /**
-   * Artifacts whose unit is the ledger rather than the batch, keyed by ledger.
-   *
-   * The record edition sometimes takes a whole book: Book IV is one continuous
-   * account from 1913 to 1967 and its running totals cross every batch
-   * boundary, so a record edition cut at sheet 12 would report balances that
-   * are true of nothing.
-   */
-  ledgers?: Record<string, TranscriptEntry>;
-  /**
    * States no file can prove, from `transcripts/status.json`.
    *
    * Keyed `<ledger>#<batch>`. Only the three: `running`, `checked`, `skipped`.
@@ -174,12 +121,12 @@ export interface Manifest {
    */
   declared: Record<string, 'running' | 'checked' | 'skipped'>;
   /**
-   * Subject tags per ledger, extracted from the `\keywords{}` line closing each
-   * record edition's summary.
+   * Subject tags per ledger, from the `\keywords{}` line each transcription
+   * carries.
    *
-   * There is deliberately no tags file. A tag has exactly one source — a
-   * summary somebody wrote after reading the sheets — so no tag can ever
-   * describe material nobody has read.
+   * There is deliberately no tags file. A tag has exactly one source — a line
+   * somebody wrote after reading the sheets — so no tag can ever describe
+   * material nobody has read.
    */
   tags?: Record<string, string[]>;
   /**
@@ -190,75 +137,16 @@ export interface Manifest {
    * was.
    */
   read?: Record<string, number>;
-  /**
-   * Work records extracted from the transcriptions by `npm run records`, per
-   * ledger. The count, not the records — the records themselves are the CSV
-   * and the JSON-LD, which are large and are downloads rather than page data.
-   */
-  records?: Record<string, number>;
 }
 
-/** Keyed by `<ledger>#<batch>`. */
+/** Which artifacts exist for a batch. Keyed `<ledger>#<batch>`. */
 export interface TranscriptEntry {
-  /** Editions with a rendered HTML reading view. */
-  html: Edition[];
-  /** Editions with a downloadable LaTeX source. */
-  tex: Edition[];
-  /** Editions with a compiled PDF. */
-  pdf: Edition[];
-  /** Editions with a TEI P5 export, derived from the `.tex` by `npm run tei`. */
-  xml?: Edition[];
-}
-
-/**
- * One work record, as `npm run records` extracts it from a transcription.
- *
- * This is the shape the ledger was always in — Jo Hopper ruled the columns
- * herself — and the whole reason a ledger repays transcription differently
- * from a manuscript: the text is already a table, and a table can be searched,
- * summed and joined to a catalogue raisonné, which prose cannot.
- *
- * Every field is **null when the sheet does not carry it**, and no field is
- * ever completed from knowledge of Hopper. A record whose price came from a
- * scholar's memory rather than from the page would be indistinguishable from
- * one that was read, which is the failure this whole apparatus exists to
- * prevent.
- */
-export interface WorkRecord {
-  /** `book-i#2#1` — ledger, leaf, and position on the leaf. */
-  id: string;
-  ledger: LedgerKey;
-  /** The sheet the record was read from, so it can be checked in one click. */
-  ref: number;
-  /** The leaf number written on the paper, where there is one. */
-  leaf: number | null;
-  /** The work's title, exactly as the page gives it — spelling included. */
-  title: string | null;
-  /** The medium as the page words it: « Oils », « Watercolor », « Etching ». */
-  medium: string | null;
-  /** Dimensions as written — `7 × 8 3/8"`, unconverted. */
-  size: string | null;
-  /** The date the page gives, unnormalised. « Fall 1923 » stays « Fall 1923 ». */
-  date: string | null;
-  /** Price as written, dollar sign and all. Never converted, never adjusted. */
-  price: string | null;
-  /** Who bought it, as named on the page. */
-  buyer: string | null;
-  /** The dealer taking the commission, where the page separates the two. */
-  dealer: string | null;
-  /** Whether the sheet carries Edward Hopper's ink sketch of this work. */
-  sketch: boolean;
-  /** The transcriber's note, where the record needed one. */
-  note: string | null;
-  /**
-   * Certainty of the whole record.
-   *
-   * `read` every field came off the page · `partial` at least one field was
-   * illegible and is null · `uncertain` at least one field is a doubtful
-   * reading. Sorting on this is how a user finds what needs a second pair of
-   * eyes.
-   */
-  certainty: 'read' | 'partial' | 'uncertain';
+  html: boolean;
+  /** The LaTeX source — the only thing versioned; everything else is derived. */
+  tex: boolean;
+  pdf: boolean;
+  /** The TEI P5 export, derived from the `.tex` by `npm run tei`. */
+  xml: boolean;
 }
 
 /**
@@ -275,10 +163,11 @@ export interface WorkRecord {
  * finds surprising is in Levin already, and an entry that has not been checked
  * against her says `unsearched` rather than implying otherwise.
  *
- * `ours` is the field that keeps the edition honest. The record edition
- * normalises what the page leaves loose and joins entries the page keeps
- * apart; where it did, the finding is partly ours and not the ledger's, and
- * hiding that would be claiming a finding for a line nobody wrote.
+ * `ours` is the field that keeps the edition honest. A transcription joins
+ * what the leaves keep apart — an entry continued three leaves on, a title
+ * taken from an index — and where it did, the finding is partly ours and not
+ * the ledger's. Hiding that would be claiming a finding for a line nobody
+ * wrote.
  */
 export interface Finding {
   id: string;

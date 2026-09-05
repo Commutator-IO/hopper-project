@@ -13,7 +13,7 @@ import {
 import { BY_LEDGER, LEDGER_BY_ID } from '../content/catalogue.ts';
 import { issueUrl } from '../lib/report.ts';
 import type { State } from '../lib/progress.ts';
-import type { Edition, Ledger, Manifest, Sheet } from '../lib/types.ts';
+import type { Ledger, Manifest, Sheet } from '../lib/types.ts';
 
 /**
  * The two-pane reader, shared by every book and by the archive.
@@ -34,7 +34,6 @@ export const STATE_COLOURS: Record<State, string> = {
   todo: 'bg-ink-200 text-ink-600',
   running: 'bg-encours-200 text-encours-700',
   drafted: 'bg-brand-100 text-brand-700',
-  recorded: 'bg-brand-200 text-brand-800',
   checked: 'bg-relu-200 text-relu-700',
   skipped: 'bg-alerte-100 text-alerte-700',
 };
@@ -54,16 +53,10 @@ export interface OpenBatch {
  * and a project whose unit of work is a batch needs the batch to have an
  * address.
  *
- * A third segment may name the edition — `#book-i/3/rec`. Optional, and no
- * link written here uses it, so the short form stays the one people copy; what
- * needs it is a link arriving from elsewhere, where saying « this ledger has a
- * record edition » and landing the reader on the transcription would be a
- * broken promise.
  */
 export function useReader() {
   const manifest = useManifest();
   const [open, setOpen] = useState<{ ledger: string; batch: number } | null>(null);
-  const [edition, setEdition] = useState<Edition>('en');
   const [sheet, setSheet] = useState<number | undefined>(undefined);
   const [goto, setGoto] = useState<number | undefined>(undefined);
 
@@ -71,21 +64,17 @@ export function useReader() {
 
   useEffect(() => {
     const readHash = () => {
-      const h = /^#([\w-]+)\/(\d+)(?:\/(en|rec))?$/.exec(location.hash);
+      const h = /^#([\w-]+)\/(\d+)$/.exec(location.hash);
       setOpen(h ? { ledger: h[1], batch: Number(h[2]) } : null);
-      // Only when the fragment says so: leaving it alone otherwise keeps the
-      // toggle where the reader put it as they move between batches.
-      if (h?.[3]) setEdition(h[3] as Edition);
     };
     readHash();
     addEventListener('hashchange', readHash);
     return () => removeEventListener('hashchange', readHash);
   }, []);
 
-  const goToBatch = useCallback((ledger: string, batch: number, ed?: Edition) => {
-    history.replaceState(null, '', `#${ledger}/${batch}${ed ? `/${ed}` : ''}`);
+  const goToBatch = useCallback((ledger: string, batch: number) => {
+    history.replaceState(null, '', `#${ledger}/${batch}`);
     setOpen({ ledger, batch });
-    if (ed) setEdition(ed);
     setSheet(undefined);
     setGoto(undefined);
   }, []);
@@ -106,8 +95,6 @@ export function useReader() {
   return {
     manifest,
     openBatch,
-    edition,
-    setEdition,
     sheet,
     onSheet,
     goto,
@@ -120,8 +107,6 @@ export function useReader() {
 interface ReaderProps {
   manifest: Manifest | null;
   open: OpenBatch;
-  edition: Edition;
-  setEdition: (e: Edition) => void;
   sheet: number | undefined;
   onSheet: (ref: number) => void;
   goto: number | undefined;
@@ -132,8 +117,6 @@ interface ReaderProps {
 export function Reader({
   manifest,
   open,
-  edition,
-  setEdition,
   sheet,
   onSheet,
   goto,
@@ -179,25 +162,7 @@ export function Reader({
           {state}
         </span>
 
-        {/* The two editions. Both tabs are always shown, including for a batch
-            that has neither: a tab that appears only once its file exists
-            leaves a reader unable to tell « not made yet » from « does not
-            exist as a kind of thing ». */}
-        <div className="ml-auto flex items-center gap-1 rounded-full border border-ink-200 p-0.5">
-          {(['en', 'rec'] as Edition[]).map((e) => (
-            <button
-              key={e}
-              onClick={() => setEdition(e)}
-              className={`rounded-full px-2.5 py-0.5 text-[12px] transition ${
-                edition === e ? 'bg-ink-900 text-white' : 'text-ink-600 hover:text-ink-900'
-              }`}
-            >
-              {e === 'en' ? 'Transcription' : 'Records'}
-            </button>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-1">
+        <div className="ml-auto flex items-center gap-1">
           <button
             disabled={batch === 1}
             onClick={() => location.assign(`#${ledger.id}/${batch - 1}`)}
@@ -214,7 +179,7 @@ export function Reader({
           </button>
         </div>
 
-        <Downloads manifest={manifest} ledger={ledger.id} batch={batch} edition={edition} />
+        <Downloads manifest={manifest} ledger={ledger.id} batch={batch} />
 
         <a
           href={issueUrl({
@@ -239,7 +204,6 @@ export function Reader({
             manifest={manifest}
             ledger={ledger.id}
             batch={batch}
-            edition={edition}
             onSheet={onSheet}
             goto={goto}
           />
