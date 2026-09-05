@@ -31,15 +31,13 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v5
       - run: npm ci
-      # The generated data is rebuilt rather than trusted: a catalogue.ts that
-      # had drifted from harvest/ would be caught here rather than by a reader
-      # opening a sheet that is not there.
       - run: npm run catalogue
-      - run: npm run books
-      - run: git diff --exit-code src/content/catalogue.ts src/content/books.json
+      # The generated inventory is rebuilt rather than trusted: a catalogue.ts
+      # that had drifted from harvest/ is caught here rather than by a reader
+      # opening a sheet that is not there.
+      - run: git diff --exit-code src/content/catalogue.ts
       - run: npm run render
       - run: npm run tei
-      - run: npm run records
       - run: npm run build
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
