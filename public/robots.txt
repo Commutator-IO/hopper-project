@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hopper.commutator.io/sitemap.xml

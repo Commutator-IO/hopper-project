@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Safety net for static hosting: after a redeploy, a cached page may
+      // reference an asset whose hashed name has changed, which shows up as a
+      // blank page. Detect the load failure and reload once - a reload
+      // revalidates the HTML and picks up the right names.
+      (function () {
+        try {
+          addEventListener(
+            'error',
+            function (e) {
+              var el = e.target;
+              var u = el && (el.src || el.href);
+              if (u && /\/assets\//.test(u) && !sessionStorage.getItem('assetReload')) {
+                sessionStorage.setItem('assetReload', '1');
+                location.reload();
+              }
+            },
+            true,
+          );
+          addEventListener('load', function () {
+            sessionStorage.removeItem('assetReload');
+          });
+        } catch (_) {}
+      })();
+    </script>
+    <title>The Late Work — Hopper Ledgers</title>
+    <meta name="description" content="Book III entire: Hotel Lobby to Sun in an Empty Room, and the running lists kept in front of them." />
+    <meta property="og:title" content="The Late Work — Hopper Ledgers" />
+    <meta property="og:description" content="Book III entire: Hotel Lobby to Sun in an Empty Room, and the running lists kept in front of them." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hopper.commutator.io/late-work/" />
+    <link rel="canonical" href="https://hopper.commutator.io/late-work/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/mainLateWork.tsx"></script>
+  </body>
+</html>

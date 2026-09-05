@@ -1,0 +1,117 @@
+16761|Front cover
+17616|Inside front cover
+16305|Clipping [printed image of the artist, hinged to inside front cover]
+16250|Title page
+17993|Verso of title page
+16540|Inside front cover, Title page
+17474|Inside front cover, Title page - Verso
+16800|Page 1 [index]
+16853|Page 2 ["Evening Wind"]
+17443|Page 3
+16759|Page 4 ["Night in the Park"]
+18401|Page 5
+16548|Page 6 ["Night Shadows"]
+16439|Page 7
+17539|Page 8 ["East Side Interior"]
+18226|Page 9
+17703|Page 9 - Verso
+17627|Page 10 ["The Cat Boat"]
+17367|Page 11
+16218|Page 12 ["The Railroad"]
+16163|Page 13
+16553|Page 14 ["The Locomotive"]
+16914|Page 15 ["The Locomotive" cont.]
+18263|Page 16 ["The Monhegan Boat"]
+18368|Page 17 ["The Monhegan Boat" cont.]
+17168|Page 18 ["House by a River"]
+16563|Page 20 ["Maine Coast"]
+16779|Page 22 ["Aux Fortifications"]
+18414|Page 24 ["Railroad Crossing"]
+17265|Page 26 ["The Lonely House"]
+17959|Page 27 [clipping of "The Lonely House" adhered to p. 27]
+18500|Page 28 ["American Landscape"]
+18395|Page 28 ["American Landscape"] - Verso
+18042|Page 29
+16799|Page 30 ["Night in the L Train"]
+16428|Page 32 ["House Tops"]
+17904|Page 34 ["Girl on a Bridge"]
+16466|Page 35
+17260|Page 36 ["Cow and Rocks"]
+16162|Page 38 ["Train and Bathers"]
+17533|Page 39 ["The Henry Ford"]
+17668|Page 40 ["Les Deux Pigeon"]
+18062|Page 41 ["Les Poillus"]
+16860|Page 42 ["Summer Twilight"]
+16638|Page 43 ["The Bull Fight"]
+18288|Page 44 [multiple works]
+17322|Loose sheet between pages 44-45 [recto]
+16982|Loose sheet between pages 44-45 [verso]
+16318|Page 45 ["Notes, Explanations..."]
+16320|Page 46 ["Notes, Explanations..." cont.]
+18539|Page 47 ["Set of 11 etchings bought by Carnegie Institute..."]
+16312|Page 48 ["From p. 49..." cont.]
+17717|Page 49 ["One Man Shows or small groups..."]
+17490|Page 50 ["Oils/ Paris Paintings..."]
+16708|Page 51 ["Paris watercolors..."]
+18056|Page 52 ["Oils..." multiple works]
+18323|Page 53 [multiple works]
+17852|Page 53 [multiple works] - Verso
+16522|Page 54 [multiple works]
+17525|Page 55 [multiple works]
+18392|Page 56 [multiple works]
+17751|Page 57 ["Oils 1928-29..."]
+18424|Page 57 ["Oils 1928-29..."] - Verso
+18297|Page 58 ["Oils 1929,30..."]
+18455|Page 59 ["Oils 1930..."]
+16991|Page 59 ["Oils 1930..."] - Verso
+17062|Page 58, Page 59 ["Oils 1929,1930..."]
+17411|Page 58, Page 59 ["Oils 1929,1930..."] - Verso
+16299|Page 60 ["Watercolors at Rehn Gallery..."]
+17622|Page 61 ["Fall 1923..."]
+17089|Page 62 ["Watercolor con. 1924-25..."]
+18104|Page 63 ["Early Paris caractatures + 1926..."]
+16704|Page 64 ["Watercolors, con. 1926..."]
+18051|Loose photograph between pages 64-65 ["Manhattan Bridge Entrance"]
+17242|Loose photograph between pages 64-65 ["Manhattan Bridge Entrance"] - Verso
+16448|Page 65 ["Watercolors con. 1926,'27..."]
+17992|Page 66 ["Watercolors 1927..."]
+16820|Page 66 ["Watercolors 1927..."] - Verso
+17040|Page 67 ["Watercolors 1928. Gloucester..."]
+18277|Page 68 ["Watercolors 1928 Gloucester cont. 1928..."]
+16592|Page 69 ["Charleston, S.C. April, May 1929..."]
+18337|Page of thumbnail ink drawings [adhered to p. 69]
+16348|Page 70 ["Watercolors Summer 1929..."]
+17836|Page 71 ["Summer 1929..."]
+16955|Page 71 ["Summer 1929..."] - Verso
+18117|Page 72 ["Watercolors 1929..."]
+18145|Page 73 ["Beginning of Cape Cod pictures 1930..."]
+17216|Page 74 ["Watercolors Summer 1930 South Truro - cont..."]
+16910|Page 75 ["Watercolors 1930 + 1931..."]
+17138|Page 75 ["Watercolors 1930 + 1931..."] - Verso
+17740|Page 76 ["Etchings at the Rehn Gallery..."]
+18222|Page 77 ["Set of etchings belonging to S. Hopper..."]
+17206|Page 78 ["Continued Summer 1931 South Truro..."]
+17175|Page 79 ["1931 Cape Cod..."]
+17529|Page 80 ["From p. 59/ Oils..."]
+18310|Page 81 [multiple works]
+16758|Page 80, Page 81 ["From p. 59/ Oils...", multiple works]
+18391|Page 84 ["Current Exhibitions..."]
+17162|Page 85 [current exhibitions cont.]
+18282|Page 84, Page 85 ["Current Exhibitions..."]
+18293|Page 86 [current exhibitions cont.]
+18189|Page 87 [current exhibitions cont.]
+16752|Page 88 [current exhibitions cont.]
+18152|Page 89 [current exhibitions cont.]
+17334|Page 90 [reviews and reproductions, continued from p. 93]
+16331|Page 91 [reproductions continued from p. 90]
+16807|Page 92 ["Photographs..."]
+17429|Page 93 [photographs cont.]
+17837|Page 94 ["Prizes, Museum Purchases..."]
+16884|Page 95 [prizes and museum purchases cont.]
+16426|Page 96 [reviews and reproductions continued from p. 97]
+17710|Page 97 [reproductions continued from p. 98]
+18065|Page 98 [reproductions and reviews continued from p. 97]
+17911|Page 99 ["Gifts..."]
+17174|Page 100 ["Hopper Monograph..."]
+17234|Back flyleaf [chronology]
+18495|Back cover

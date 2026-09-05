@@ -1,0 +1,51 @@
+% SPECIMEN - not a reading of any sheet.
+%
+% This file exists to show the shape of a transcription and to make the
+% rendering chain checkable end to end. It transcribes nothing: the words are
+% invented, and the two resource refs are Book I's front cover and its leaf 2
+% only so that the renderer's archive check has something real to check
+% against. Never place a file like this under a ledger's own directory - six
+% months on, nothing would distinguish it from a reading.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/hopper}
+
+\ledger{book-i}
+\ledgertitle{Artist's ledger --- Book I (SPECIMEN)}
+\objectnumber{96.208}
+\batch{0}
+\sheets{1}{9}
+\dating{1913--1963}
+\watermark{Specimen --- transcribes nothing}
+
+\begin{document}
+
+\section{The apparatus, shown once}
+
+\sheet{16761}{}
+A sheet with no number written on it takes an empty second argument, and the
+reading view prints \emph{unnumbered} rather than inventing one. An illegible
+word is \ill{}, a doubtful reading \uncertain{Weyhe}, an editorial addition
+\add{Gallery}, and something struck out in the book \struck{\$18}.
+
+\note{this is the transcriber's note, and it is ours}
+\marginal{this is a note written in the book, and it is theirs}
+
+\sheet{16853}{2}
+\hand{edward}{Evening Wind \quad 7 x 8 3/8"} --- then, in the other hand,
+\hand{jo}{a description of what the plate shows, and of what it cost.}
+
+\sketch{}
+\clipping{EVENING WIND / Etching by Edward Hopper / Worcester Art Museum, 1954-55}
+
+\begin{ledgertable}{llrl}{Date & Exhibition & Price & Received}
+Jan. 28, 21 & Print Makers Ex., Los Angeles & & \\
+May 3, 21 & Weyhe's Book Shop & & \\
+Nov. 10, 21 & Bklyn. Soc. of Etchers & \ill{} & \uncertain{12.60} \\
+\end{ledgertable}
+
+\begin{itemize}
+  \item a list, where the leaf makes one;
+  \item and a second item.
+\end{itemize}
+
+\end{document}

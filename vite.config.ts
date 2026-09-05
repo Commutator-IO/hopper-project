@@ -1,0 +1,67 @@
+import { defineConfig } from 'vite';
+import { resolve } from 'node:path';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+
+/**
+ * There is no proxy here, and that is the interesting part.
+ *
+ * The Grothendieck workbench this project is modelled on needs a relay — a
+ * real Node process, deployed on its own hostname — because a browser cannot
+ * fetch Montpellier's scans at all: `X-Frame-Options: SAMEORIGIN`, no CORS
+ * headers, and a certificate that expired in December 2025. Every one of those
+ * is enforced by the browser against the remote origin, so the request has to
+ * be made server-side or not at all.
+ *
+ * None of it applies to the Whitney. Measured on 5 September 2026, against
+ * `resourcespace.whitney.org/pages/download.php`:
+ *
+ * — a cross-origin `GET` is answered, and the server **echoes whatever
+ *   `Origin` it is sent** into `Access-Control-Allow-Origin`, so even `fetch`
+ *   is permitted from this site;
+ * — the certificate is a current Let's Encrypt one;
+ * — there is no referer check;
+ * — `Range` is honoured, `206` with a correct `Content-Range`.
+ *
+ * The only restriction in force is `Content-Security-Policy: frame-ancestors
+ * 'self'`, which forbids putting the response in an `<iframe>` — and an image
+ * belongs in an `<img>`, which that header does not govern. So the facsimile
+ * pane points straight at the Whitney's own file, in development and in
+ * production alike, and nothing of the archive passes through this repository
+ * at any point.
+ *
+ * If that ever changes — if the Whitney restricts `Origin` to its own site —
+ * the fix is a relay of the kind the parent project already has, and
+ * `docs/relay.md` says what it would have to do. Until then, building one
+ * would be adding a hop between a reader and a museum for no reason.
+ */
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  // GitHub Pages serves a project site under /<repo>/; the deploy workflow
+  // fills BASE_PATH in that case. Published on the custom domain
+  // hopper.commutator.io, the root is correct.
+  base: process.env.BASE_PATH ?? '/',
+  build: {
+    rollupOptions: {
+      // One HTML entry per tab. Hosting is static: /accounts/ is served from
+      // its own index.html, with no client-side router and no redirect trick.
+      // A URL opened on one batch still works in six months, which matters
+      // when a transcription stretches over months.
+      input: {
+        main: resolve(import.meta.dirname, 'index.html'),
+        etchings: resolve(import.meta.dirname, 'etchings/index.html'),
+        paintings: resolve(import.meta.dirname, 'paintings/index.html'),
+        lateWork: resolve(import.meta.dirname, 'late-work/index.html'),
+        accounts: resolve(import.meta.dirname, 'accounts/index.html'),
+        dealers: resolve(import.meta.dirname, 'dealers/index.html'),
+        apparatus: resolve(import.meta.dirname, 'apparatus/index.html'),
+        archive: resolve(import.meta.dirname, 'archive/index.html'),
+        method: resolve(import.meta.dirname, 'method/index.html'),
+        contribute: resolve(import.meta.dirname, 'contribute/index.html'),
+      },
+    },
+  },
+  server: {
+    port: process.env.PORT ? Number(process.env.PORT) : 5173,
+  },
+});

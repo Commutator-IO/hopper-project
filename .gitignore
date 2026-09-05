@@ -1,0 +1,17 @@
+node_modules
+dist
+*.tsbuildinfo
+.DS_Store
+
+# Nothing of the archive is stored, and this is the line that enforces it.
+# `npm run mirror` writes sheets into archives/ for a transcriber to read; they
+# are the Whitney's images and they never enter a commit or a build.
+archives/
+*.jpg
+*.jpeg
+*.png
+!public/favicon.svg
+
+# Derived from transcripts/*.tex, and rebuilt: the .tex is the source of record.
+public/transcripts/
+public/records/

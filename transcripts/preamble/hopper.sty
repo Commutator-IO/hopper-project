@@ -1,0 +1,284 @@
+% The preamble shared by every transcription of the Hopper artist's ledgers.
+%
+% It rests on one idea, taken whole from the Grothendieck workbench this
+% method comes from: **uncertainty compounds, it does not resolve.** A
+% transcription that smooths over a doubtful figure has destroyed the only
+% thing it was made for — a reader must be able to tell, at every point, what
+% was on the leaf and what was supplied.
+%
+% A ledger sharpens that. In a manuscript of mathematics an invented word is a
+% wrong word. Here an invented figure is a *sale that did not happen*, at a
+% price nobody paid, to a buyer who never bought — and it will be cited,
+% because a table looks like data in a way that prose does not.
+%
+% The same commands are recognised by `scripts/render.mjs`, which produces the
+% site's reading view. A macro added here must be added there too, or rendering
+% fails loudly, which is the wanted behaviour: a silently wrong rendering is
+% worse than none.
+
+\ProvidesPackage{hopper}[2026/09/05 Transcriptions of the Hopper artist's ledgers]
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[english]{babel}
+\usepackage{fontspec}
+\usepackage{geometry}
+\geometry{a4paper,margin=25mm,marginparwidth=28mm}
+\usepackage{marginnote}
+\usepackage{xcolor}
+\usepackage{tikz}
+% ulem, not soul. `soul`'s \st and \ul are built on a character-by-character
+% scan that XeLaTeX's font machinery breaks: the document fails with an
+% undefined control sequence rather than degrading. `normalem` stops it
+% hijacking \emph, which the transcriptions use for underlining of Jo Hopper's
+% own.
+\usepackage[normalem]{ulem}
+% ulem sets each underlined word in a box TeX can neither hyphenate nor break
+% after, so a paragraph dense in \uncertain{} readings can reach a state where
+% no legal breakpoint exists. \emergencystretch lets TeX loosen it on a third
+% pass instead of overrunning: an overfull line in a transcription hides
+% content.
+\setlength{\emergencystretch}{3em}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=black,pdfborder={0 0 0}}
+
+% --- Batch metadata ---------------------------------------------------------
+% Taken as they stand by the rendering script, which shows them at the head of
+% the reading view. They fix what the file claims to cover: without them a
+% transcription floats unmoored in an archive of five hundred sheets.
+
+\newcommand{\ledger}[1]{\gdef\hopLedger{#1}}
+\newcommand{\ledgertitle}[1]{\gdef\hopLedgerTitle{#1}}
+% The Whitney's accession number for the physical volume — 96.208 … 96.213.
+% This is what a citation of the object cites.
+\newcommand{\objectnumber}[1]{\gdef\hopObject{#1}}
+% The batch, when the file covers one. A record edition may instead take the
+% whole ledger — the unit its argument runs in, since Book IV's totals carry
+% forward across every batch boundary — and then there is no batch to name:
+% leaving \batch out drops the « (batch N) » rather than printing a number
+% that would be false.
+\newcommand{\batch}[1]{\gdef\hopBatch{#1}}
+\newcommand{\sheets}[2]{\gdef\hopFirst{#1}\gdef\hopLast{#2}}
+
+% The Whitney's date range for the volume, copied verbatim from its resource
+% record — never inferred here, never narrowed to the years this batch
+% happens to cover.
+\newcommand{\dating}[1]{\gdef\hopDating{#1}}
+
+% The legal notice, printed in the title block and repeated as a diagonal
+% watermark on every page of the PDF.
+%
+% This is not boilerplate and it is not optional. The ledgers are © Heirs of
+% Josephine N. Hopper, licensed by the Artists Rights Society; the Whitney
+% records the object rights as transferred to the Museum. A transcription
+% reproduces Josephine Hopper's text. Every file must therefore say what it is
+% on its own face, not only in a README that does not travel with the PDF.
+% A file without this line gets no watermark, so omitting it is visible in the
+% output rather than silent.
+\newcommand{\watermark}[1]{\gdef\hopWatermark{#1}}
+
+\gdef\hopLedger{?}\gdef\hopLedgerTitle{}\gdef\hopObject{}\gdef\hopBatch{}%
+\gdef\hopFirst{?}\gdef\hopLast{?}\gdef\hopDating{}\gdef\hopWatermark{}
+
+% --- The summary ------------------------------------------------------------
+%
+% It opens the record edition, under the heading « Summary », and is set small.
+% Not an ornament: it is the one passage that is not a record, and a reader
+% must be able to recognise it before having read it — then skip it if the
+% material is familiar, or stop there if it is not.
+
+\newenvironment{summary}
+  {\small\setlength{\parskip}{0.45em}}
+  {\par\medskip\hrule\medskip}
+
+% --- Keywords ---------------------------------------------------------------
+%
+% Closing the record edition's summary: the vocabulary under which to search
+% for what these leaves record — dealers, exhibiting societies, media, places.
+% `npm run manifest` extracts them to tag the whole ledger. This line is the
+% single source of the tags; there is no tags file, so no tag can describe
+% leaves nobody has read.
+\newcommand{\keywords}[1]{\par\smallskip\noindent
+  {\footnotesize\textsc{Keywords} --- \textit{#1}}\par}
+
+% --- The anchor -------------------------------------------------------------
+
+% The sheet begins here. Two arguments, and both are needed.
+%
+% #1 is the Whitney's **resource ref** — 16853 — which is the sheet's whole
+% address: it is what the image URL is built from and what turns the facsimile
+% as the transcript is scrolled. #2 is the number **written on the paper**, or
+% empty where nobody wrote one, which is the case for every cover, flyleaf,
+% index and loose insertion — about one sheet in nine.
+%
+% Keeping both is the whole of the numbering problem in this archive. Three
+% sequences overlap: the Hoppers' own leaf numbers, the Whitney's order of
+% photographs, and the resource refs, which are in no order at all. Only the
+% first is citable and only the third is addressable, so a transcription that
+% recorded one of them would be either uncitable or unopenable.
+%
+% `scripts/render.mjs` checks #2 against what `scripts/catalogue.mjs` parsed
+% out of the Whitney's descriptor and fails on a disagreement, because a
+% mistyped leaf number silently moves an entry to another year.
+\newcommand{\sheet}[2]{%
+  \marginnote{\footnotesize\color{gray!70}\textsf{\ifx\relax#2\relax---\else#2\fi}}%
+  \label{sheet:#1}\ignorespaces}
+
+% The record edition's coarser counterpart: which sheets a section is drawn
+% from, since that edition regroups by work and no single sheet lines up with
+% one of its blocks. Placed first inside the same block as a \section*{}, it
+% drives the same side-by-side scrolling — the facsimile jumps to the
+% section's first sheet once and holds there, which is honest about what this
+% edition can promise and no more.
+\newcommand{\sheetrange}[2]{%
+  \marginnote{\footnotesize\color{gray!70}\textsf{#1--#2}}%
+  \ignorespaces}
+
+% --- The critical apparatus -------------------------------------------------
+
+% Illegible: never guessed. On a ledger leaf this is most often a figure, and
+% a guessed figure is a fabricated transaction.
+\newcommand{\ill}{\textcolor{red!60!black}{[\,\ldots\,]}}
+
+% A doubtful reading: the word or figure is given, and flagged as uncertain.
+%
+% Underlining belongs to this macro and to nothing else. Jo Hopper underlines
+% her own headings --- « Etchings », « Etching Plates », « Early oil » --- and
+% those are set with \emph{} instead, because a reader must be able to tell a
+% doubtful reading from her emphasis at a glance and the two cannot both be
+% underlines. Which of them keeps the underline is decided by consequence: an
+% emphasis shown as italic loses nothing, and a doubtful figure shown as a
+% certain one loses everything.
+\newcommand{\uncertain}[1]{\uline{#1}}
+
+% An editorial addition — an expanded abbreviation, an implied dollar sign.
+\newcommand{\add}[1]{\textcolor{blue!50!black}{[#1]}}
+
+% Struck out in the book. Jo Hopper struck a great deal: a price revised, a
+% buyer who withdrew, an exhibition that fell through. What she crossed out is
+% part of the record and often the more interesting half of it.
+\newcommand{\struck}[1]{\sout{#1}}
+
+% The transcriber's note. Ours, not theirs.
+\newcommand{\note}[1]{\par\smallskip{\small\color{gray!60!black}\textit{[#1]}}\par\smallskip}
+
+% A marginal note **of theirs**, distinct from the body — and distinct from
+% \note{} for exactly the reason \note{} exists.
+\newcommand{\marginal}[1]{\par\smallskip\noindent\hspace{1em}%
+  {\small\color{gray!60!black}#1}\par\smallskip}
+
+% --- What is particular to this archive -------------------------------------
+
+% Whose hand wrote it.
+%
+% This macro has no counterpart in the Grothendieck preamble, and it is the
+% single most important thing in this one. These books were written by two
+% people and annotated by more. Edward Hopper drew the work and wrote its
+% title and size; Josephine Nivison Hopper wrote everything else — the
+% descriptions, the anecdotes about people he refused to discuss, the prices,
+% the buyers, the columns; and later hands, curatorial and unidentified, added
+% to the leaves after 1967.
+%
+% A transcription that flattens the three has destroyed the archive's chief
+% documentary value, which is that it records *two* working lives and the
+% division of labour between them. #1 is `edward`, `jo`, `later` or
+% `unidentified`; `unidentified` is the right answer far more often than a
+% transcriber's confidence suggests, and it is not a failure to use it.
+\newcommand{\hand}[2]{%
+  \ifx\relax#1\relax#2\else
+    \textcolor{gray!55!black}{\footnotesize\textsf{[#1]}}\,#2%
+  \fi}
+
+% Edward Hopper's ink record sketch stands here.
+%
+% The argument is **what is inscribed on or beside the sketch** — a title, a
+% dimension, a note — and never a description of the image. Describing the
+% drawing would be writing a new document: the sketch is on the site, one pane
+% away, at the resolution the Whitney publishes, and prose about it competes
+% with looking at it. Leave the argument empty where nothing is written.
+\newcommand{\sketch}[1]{\par\smallskip\noindent
+  {\small\color{gray!50!black}$\square$~\textsf{ink sketch}%
+   \ifx\relax#1\relax\else\ --- #1\fi}\par\smallskip}
+
+% Something printed and pasted to the leaf — a reproduction cut from a
+% catalogue, a review, a dealer's label. The argument transcribes its printed
+% text. These are the only places in the archive where the words are nobody's
+% handwriting, and they date the leaf, which handwriting does not.
+\newcommand{\clipping}[1]{\par\smallskip\noindent
+  {\small\color{gray!50!black}\textsf{[clipping]}\ #1}\par\smallskip}
+
+% A work's block opens here, under the title **exactly as the leaf gives it** —
+% « Les Deux Pigeon » and « Les Poillus » stay misspelled, because the
+% misspelling is Hopper's and is how the entry is found.
+\newcommand{\work}[1]{\par\medskip\noindent{\bfseries #1}\par\nopagebreak\smallskip}
+
+% --- The ruled table --------------------------------------------------------
+%
+% Jo Hopper ruled these columns herself and kept them for forty years; the
+% table is not a presentation of the content, it *is* the content. So it is
+% transcribed as a table and rendered as one, on screen and on paper, from one
+% source.
+%
+% #1 is the column specification, ordinary LaTeX (`llrr`). The first row is
+% the header. A cell she left blank is left blank; a cell that cannot be read
+% takes \ill{}. `longtable` because a leaf of thirty-one exhibition lines does
+% not fit a page and a table that silently truncates is worse than no table.
+\newenvironment{ledgertable}[2]
+  {\par\smallskip\small\begin{longtable}{#1}\textbf{#2}\\*\hline\endhead}
+  {\end{longtable}\par\smallskip}
+
+% --- The record edition's records -------------------------------------------
+%
+% One block per work, per payment, per exhibition — whatever the leaf's unit
+% is. `npm run records` reads exactly these and writes the CSV and the JSON-LD,
+% so the environment is the interface and nothing else may be extracted from
+% the prose.
+%
+% Every field is **absent when the leaf does not carry it**. No field is
+% completed from knowledge of Hopper, ever: a record whose price came from a
+% scholar's memory rather than from the page is indistinguishable, six months
+% on, from one that was read.
+\newenvironment{record}[1]
+  {\par\medskip\noindent{\bfseries #1}\par\nopagebreak
+   \begin{list}{}{\setlength{\leftmargin}{2em}\setlength{\itemsep}{0pt}}}
+  {\end{list}\par\smallskip}
+
+\newcommand{\field}[2]{\item[]{\footnotesize\textsc{#1}}\quad #2}
+
+% --- Title ------------------------------------------------------------------
+
+% The watermark is drawn on the shipout background so it sits under the text of
+% every page, diagonal and light enough to leave the record readable.
+\AddToHook{shipout/background}{%
+  \ifx\hopWatermark\empty\else
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[rotate=52, scale=3.4, align=center, text=gray!18,
+            font=\sffamily\bfseries]
+        at (current page.center) {\hopWatermark};
+    \end{tikzpicture}%
+  \fi}
+
+\AtBeginDocument{%
+  \begin{center}
+    {\large\bfseries Edward and Josephine Hopper --- \hopLedgerTitle}\\[2pt]
+    \ifx\hopObject\empty\else
+      {\small Whitney Museum of American Art, \hopObject}\\[4pt]
+    \fi
+    {\small sheets \hopFirst--\hopLast
+      \ifx\hopBatch\empty\else\ (batch \hopBatch)\fi}\\[2pt]
+    \ifx\hopDating\empty\else
+      {\small\color{gray!60!black}The Whitney's dating: \hopDating}\\[2pt]
+    \fi
+    \ifx\hopWatermark\empty\else
+      {\small\bfseries\color{red!45!gray}\hopWatermark}\\[2pt]
+    \fi
+    {\footnotesize\color{gray!60!black}Transcribed from the digitised sheets published by the
+     Whitney Museum of American Art.\\
+     \textcopyright{} Heirs of Josephine N. Hopper, licensed by Artists Rights Society (ARS),
+     New York.\\
+     Uncertain readings are underlined, illegible passages marked [\,\ldots\,],
+     editorial additions bracketed.}
+  \end{center}
+  \vspace{1em}}
+
+\endinput

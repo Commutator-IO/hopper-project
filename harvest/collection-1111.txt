@@ -1,0 +1,16 @@
+18504|Front cover
+16748|Page ABCDE [index]
+18522|Page JKLM [loans]
+16775|Page 1 [images and text]
+18017|Page 3 [images and text]
+16689|Page 5 [images and text]
+18118|Page 6 [list of unidentified drawings]
+17426|Page 7 [images and text]
+17499|Page 9 [images]
+18161|Page 11 [images and text]
+16409|Page 13 [images and text]
+17084|Page 15 [images and text]
+16364|Page 51 ["Etchings at Rehn Gallery, Oct. 28, 1953..."]
+17886|Page 52 ["Copy of receipts from Rehn Gal..."]
+17721|Page 53 ["Purchase of Etchings of Edward Hopper..."]
+16652|Back cover
