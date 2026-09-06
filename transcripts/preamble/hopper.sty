@@ -257,6 +257,66 @@
    \endhead}
   {\end{longtable}\par\smallskip}
 
+% --- The appendix of notes --------------------------------------------------
+%
+% Everything above the appendix is on the paper. Nothing in it is.
+%
+% A note says what a named source says about a work these leaves record --- what
+% the holding museum measures the canvas at, which other leaf carries the other
+% half of a transaction --- and it is the only prose in the file that a reader
+% cannot check against the photograph. On the site that is handled by putting
+% the note beside a link to its source; on paper a link is not enough, because
+% a PDF outlives the site it was downloaded from and travels away from it. So
+% every claim here prints its source in full, name and address both, and every
+% note prints the day it was written and what wrote it.
+%
+% The appendix is assembled by `scripts/pdf.mjs` from
+% `src/content/work-notes.json` at compile time and is in no `.tex` file. That
+% is the point of it. The transcription is the edition; a note is a later and
+% weaker kind of writing *about* the edition, and keeping the two in one source
+% file would eventually put a sentence somebody inferred inside the document
+% whose whole claim on a reader is that nothing in it was inferred.
+%
+% Only the notes on works this batch's leaves name are printed, so the appendix
+% follows the batch rather than repeating the archive, and a batch that has
+% earned no notes yet gets no appendix at all --- which is a true statement
+% about how much has been checked, and the same statement `work-notes.json`
+% makes by being nearly empty.
+
+% A URL is the one string in this archive that can run a hundred characters
+% without a space in it, and an overfull box fails the build here because in a
+% transcription an overfull box hides content. So the appendix tells TeX where
+% a URL may break and sets its apparatus ragged right, rather than leaving the
+% line to overrun in a file nobody recompiles.
+\def\UrlBreaks{\do\/\do\-\do\.\do\_\do\?\do\&\do\=\do\+}
+\Urlmuskip=0mu plus 1mu
+
+\newcommand{\notesappendix}{\clearpage
+  \par\noindent{\large\bfseries Notes on the works}\par\smallskip
+  \noindent{\footnotesize\color{gray!60!black}\raggedright
+    Not on the paper, and not part of the transcription. Each note below
+    concerns a work named on a leaf of this batch and says what a named source
+    says about it --- a museum's own catalogue record, or another leaf of these
+    ledgers. Every sentence carries the source that states it, printed with its
+    address so that it can be followed from a copy of this file alone. Where a
+    ledger and a museum disagree the disagreement is printed rather than
+    resolved.\par}\par\medskip}
+
+% One work: the title as the leaves give it, then the note.
+\newcommand{\worknote}[2]{\par\medskip\noindent{\bfseries #1}\par\nopagebreak
+  \smallskip\noindent #2\par}
+
+% One claim under it: what is asserted, and who asserts it.
+\newcommand{\workclaim}[2]{\par\smallskip\noindent
+  {\footnotesize\color{gray!60!black}\raggedright\hangindent=1.6em\hangafter=0
+   \hspace{1em}#1\ --- #2\par}}
+
+% Who wrote the note and when, closing the block. A note is a model's reading
+% of retrieved records and is weaker evidence than anything above it; the file
+% records that rather than letting the appendix pass for the edition.
+\newcommand{\worknoteby}[2]{\par\smallskip\noindent
+  {\scriptsize\color{gray!55!black}\hspace{1em}Written #1 by #2.\par}\par\smallskip}
+
 % --- Title ------------------------------------------------------------------
 
 % The watermark is drawn on the shipout background so it sits under the text of
