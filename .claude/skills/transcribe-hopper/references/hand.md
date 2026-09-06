@@ -6,8 +6,12 @@ derive it again at the cost of the attention it was meant to save.
 **This narrows a field of candidates and settles nothing.** Where the sheet
 will not support what is written here, the sheet wins and `\ill{}` stands.
 
-Written from Book I, batches 1 to 6 (sheets 1–72), 5–6 September 2026, Opus 5.
-Add to it after every batch; say which batch taught you what.
+Written from Book I, batches 1 to 6 (sheets 1–72) and Book II, batch 2
+(sheets 13–24), 5–6 September 2026, Opus 5. What follows is the two hands
+themselves, then the habits of Book I's leaves, then a section for Book II —
+which is not shaped like Book I, and whose differences are the part worth
+knowing before opening it. Add to it after every batch; say which batch taught
+you what.
 
 ---
 
@@ -376,3 +380,118 @@ cross-reference.
 house », where the word is as likely « cutie »; and « (Kepple show) », where
 the letters will support « Keppe » as readily. Both stand as `\uncertain{}`.
 Leaf 59's restaurant cashier, « Anna Popalgopalos », is a third.
+
+---
+
+# Book II
+
+*(Book II batch 2, sheets 13–24, read 6 September 2026, Opus 5. Book II batch 3
+was transcribed first, in its own conversation, and what it states about itself
+is marked as its finding rather than this pass's.)*
+
+## The leaf numbers are printed, and that changes what a missing one means
+
+**Book II's leaves are numbered by the stationer, not by the Hoppers.** Every
+leaf carries its number in blue type at the outer corner — right on a recto,
+left on a verso. In Book I a leaf without a number is a leaf nobody wrote a
+number on, and `\sheet{ref}{}` is the honest record of that; in Book II a leaf
+without one would be a cover or a flyleaf, because the printing does not skip.
+
+The consequence for a batch is that **the leaf numbers run odd**: 11, 13, 15,
+17 and so on, because the even leaves are blank versos the Whitney did not
+photograph. A batch of twelve sheets therefore spans about twenty-one leaves.
+Do not read the gaps as missing sheets — nothing is missing, and the reader's
+« leaves 11–31 » beside « sheets 13–24 » is correct.
+
+**A verso in the sequence is a verso somebody wrote on**, and it is worth
+looking at before assuming it continues the leaf before it. Leaf 14 carries
+what happened in 1950 and 1951 to the picture whose 1936 record stands on leaf
+15 opposite. Bound order and chronological order run opposite ways across that
+opening, exactly as they do at Book I's leaves 46/47 and 48/49. Transcribe in
+bound order and let a `\note{}` say so.
+
+## The title block migrates, and the drift is chronological
+
+Within batch 2 alone, three arrangements in eleven leaves:
+
+- **leaves 11 to 19** — title, date and size at the top left, Edward Hopper's
+  record drawing below them;
+- **leaves 21 to 25** — the drawing on the left, the title block beside it on
+  the right;
+- **leaves 27 to 31** — the title written underneath the drawing.
+
+Nothing about what she records changes; only where she starts. **Read the head
+of the leaf before assuming where the title is**, and do not take a drawing at
+the top of a leaf as meaning the title was not written.
+
+## There is no ruled table, and the sale line is not prose either
+
+Batch 3 established this and batch 2 confirms it across another twelve sheets:
+Book II has no ruled table with headings anywhere. A leaf is one work — title,
+size, date, several sentences of description, one sale line — with the drawing
+beside it. The sale lines do fall into consistent columns down the leaf, so
+they are set as headerless `ledgertable` rows; she wrote no headings and none
+is supplied.
+
+**Where a sale has a second act it gets a second table**, not a wider first
+one. Leaf 25 is the case: the Art Institute buys Compartment C in 1938, returns
+it in 1942 in part payment for Night Hawks, and Watson buys it in 1943 for less
+than it first fetched. Three events, two tables and two paragraphs between
+them.
+
+## She corrects above the line, not in the margin
+
+Batch 3's convention, and batch 2 needs it twenty-one times. A word written
+above the line takes a `\marginal{}` after the passage, naming the words it
+stands over — `\marginal{terra cotta \quad --- above « dull Cocoa Color »}`.
+The two cases are not the same and both occur on one leaf (19): « terra cotta »
+stands over words that are struck, « circular » over words that are not.
+
+## Her ordinal mark
+
+A raised double stroke, used both for « 1st / 2nd / 3rd » and for a day of the
+month — « Mar. 27'' », « 3'' Biennial », « 1'' horse ». Batch 3 set it as `''`
+and batch 2 follows. Inches are a plain `"`: `17"x19"`.
+
+## Two spellings of one word on one leaf, twice in one batch
+
+This is the Book II habit that most needs guarding against, because the second
+spelling looks like a transcription error in your own file:
+
+- **`Corcaran`** then **`Corcoran`**, three lines apart *(leaf 17)* — the
+  first has an « a » where the second has an « o », and both are legible.
+- **`traffic`** then **`trafic`**, twelve lines apart *(leaf 15)*.
+- **`Whipporwill`** in the title she rejected, **`whippoorwill`** four words
+  later *(leaf 31)*.
+- **`sienna`** *(leaf 15)* against **`seinna`** *(leaf 21)*.
+
+## More spellings, all as written
+
+*(batch 2)* `mattle` for metal, `Ballustrade` twice and `pannel` *(leaf 19)*,
+`broach` for brooch *(leaf 13)*, `uneffected` *(leaf 11)*, `ordnamented`
+*(leaf 27)*, `phalanyx` and `Britanica` *(leaf 31)*, `mit` for mitt
+*(leaf 21)*, `veridian` — confirming batch 3, which found it twice —
+*(leaf 25)*, `Mae West effect` *(leaf 19)*, `Mad. Sq. Garden` *(leaf 21)*.
+
+## Readings that would not settle
+
+*(batch 2)* Five, all left as `\uncertain{}`:
+
+- **`risiks`** *(leaf 27)*, in « dark red plush chairs where color risiks » —
+  the word has two dotted i's and makes no sense with any of them.
+- **`Zerty's`** *(leaf 31)*, the owner of the car the dog sat in, in blue ink.
+- **`Fornet`** *(leaf 31)*, the canvas maker, where every other leaf in the
+  batch says Winton or Belgian.
+- **`storees`** *(leaf 15)* against « storeys » — the letter that separates
+  them is one this hand does not distinguish, and she writes « lower story »
+  on the same line.
+- **`greyish`** *(leaf 13)*, a pencil insertion before « Blue dress ».
+
+## What a cancellation costs here
+
+Six illegible marks in batch 2 and **not one of them is under paper** —
+nothing is pasted to any leaf of it. Five are her own cancellations, scribbled
+over rather than struck through once, and one is an erased pencil line. That
+is worth knowing before reaching for the tiles: a mark that will not resolve at
+2× will not resolve at 5× either, because there is nothing under the ink to
+resolve.
