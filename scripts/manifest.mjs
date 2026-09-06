@@ -15,6 +15,7 @@
  */
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { keywordTerms, parseKeyword } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const out = resolve(root, 'public/transcripts');
@@ -82,22 +83,50 @@ for (const [ledger, set] of seen) readCount[ledger] = set.size;
  * The single source, and there is deliberately no tags file: a tag can only
  * exist because somebody wrote it after reading the sheets, so no tag can
  * describe material nobody has read.
+ *
+ * Two things are kept that an earlier version threw away, and both were the
+ * reason the tags could not be used for anything.
+ *
+ * **The batch.** The terms used to be merged into one `Set` per volume, which
+ * reduced « Fogg Art Museum » to the claim that it applies somewhere in the
+ * seventy-two sheets of Book II — of which twelve are read. A tag has to name
+ * the batches it came out of or it names nowhere, and a reader clicking it has
+ * nowhere to be taken.
+ *
+ * **The facet.** `parseKeyword` splits `museum:Fogg Art Museum` into its two
+ * halves. Twenty-four terms in one flat pile mixed places, museums, dealers,
+ * people and features of the document with nothing to separate them; grouped,
+ * the same twenty-four are a finding aid. A term that declares no facet keeps
+ * `facet: null` and is grouped under its own heading rather than guessed at.
  */
 for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : []) {
   if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
   for (const f of readdirSync(resolve(out, dir.name))) {
-    if (!f.endsWith('.tex')) continue;
+    const fm = /^batch-(\d+)\.tex$/.exec(f);
+    if (!fm) continue;
+    const batch = Number(fm[1]);
     const src = readFileSync(resolve(out, dir.name, f), 'utf8');
+    const byLabel = (tags[dir.name] ??= new Map());
     for (const m of src.matchAll(/\\keywords\{([^}]*)\}/g)) {
-      const set = new Set(tags[dir.name] ?? []);
       // The line wraps in the source, and a keyword split across two lines
       // arrived as « E.\nWeyhe » and sorted under E rather than beside the
-      // other dealers.
-      const line = m[1].replace(/\s+/g, ' ');
-      for (const t of line.split(',').map((s) => s.trim()).filter(Boolean)) set.add(t);
-      tags[dir.name] = [...set].sort();
+      // other dealers. `keywordTerms` re-flattens the whitespace first.
+      for (const term of keywordTerms(m[1])) {
+        const { facet, label } = parseKeyword(term);
+        const e = byLabel.get(label) ?? { tag: label, facet, batches: [] };
+        // The first batch to declare a facet fixes it. A later batch leaving
+        // the same term bare does not erase what an earlier reading knew.
+        if (e.facet === null && facet !== null) e.facet = facet;
+        if (!e.batches.includes(batch)) e.batches.push(batch);
+        byLabel.set(label, e);
+      }
     }
   }
+}
+for (const [ledger, byLabel] of Object.entries(tags)) {
+  tags[ledger] = [...byLabel.values()]
+    .map((e) => ({ ...e, batches: e.batches.sort((a, b) => a - b) }))
+    .sort((a, b) => a.tag.localeCompare(b.tag));
 }
 
 const manifest = {

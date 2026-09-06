@@ -35,6 +35,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { keywordTerms, parseKeyword } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const dir = resolve(root, 'public/transcripts');
@@ -336,9 +337,17 @@ function convert(tex, meta) {
       i = a;
       flush();
       out.push(
-        `<list type="keywords">${t
-          .split(',')
-          .map((k) => `<item>${xml(k.trim())}</item>`)
+        // TEI keeps the facet rather than dropping it: `@type` on the item is
+        // exactly where a controlled vocabulary belongs, and a consumer that
+        // ignores it still reads the term. An undeclared facet emits no
+        // attribute, which is not the same as declaring an empty one.
+        `<list type="keywords">${keywordTerms(t)
+          .map((k) => parseKeyword(k))
+          .map(({ facet, label }) =>
+            facet
+              ? `<item type="${xml(facet)}">${xml(label)}</item>`
+              : `<item>${xml(label)}</item>`,
+          )
           .join('')}</list>`,
       );
       continue;

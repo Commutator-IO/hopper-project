@@ -146,12 +146,17 @@ export function ArchivePage() {
                 <span className="text-[11px] uppercase tracking-wider text-ink-400">Tags</span>
                 {(r.manifest?.tags?.[ledger.id] ?? []).map((t) => (
                   <button
-                    key={t}
-                    onClick={() => setQ(t)}
-                    title="From the \keywords{} line of a transcription — the only source of tags here, so no tag can describe a sheet nobody has read"
+                    key={t.tag}
+                    onClick={() => setQ(t.tag)}
+                    title={
+                      `${t.facet ? `${t.facet} · ` : ''}written in ` +
+                      `${t.batches.length === 1 ? 'batch' : 'batches'} ${t.batches.join(', ')}` +
+                      ' — from the \\keywords{} line of a transcription, the only source of' +
+                      ' tags here, so no tag can describe a sheet nobody has read'
+                    }
                     className="rounded-full bg-brand-50 px-2 py-0.5 text-[11.5px] text-brand-700 transition hover:bg-brand-100"
                   >
-                    {t}
+                    {t.tag}
                   </button>
                 ))}
               </div>

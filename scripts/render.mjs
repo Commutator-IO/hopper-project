@@ -22,7 +22,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
 import { resolve, basename, dirname } from 'node:path';
-import { workKey } from './lib/ledger.mjs';
+import { keywordTerms, parseKeyword, workKey } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 
@@ -645,7 +645,14 @@ function render(src, file, meta) {
       case 'keywords': {
         const [t] = args(1);
         flush();
-        out.push(`<p class="keywords"><span>Keywords</span> ${t}</p>`);
+        // The facet is an index device, not part of the reading: a reader of
+        // the transcription wants « Cape Cod », not « place:Cape Cod ». It is
+        // kept in the source, where the person who read the sheets declared
+        // it, and shown on the ledger page where it does some work.
+        const terms = keywordTerms(t)
+          .map((k) => parseKeyword(k).label)
+          .join(', ');
+        out.push(`<p class="keywords"><span>Keywords</span> ${terms}</p>`);
         break;
       }
       case 'item': {

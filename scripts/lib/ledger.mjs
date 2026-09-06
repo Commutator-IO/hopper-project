@@ -355,3 +355,63 @@ function parseFile(path, ledger, batch) {
 
   return { ledger, batch, path, sheets, works, looseRows };
 }
+
+/* ------------------------------------------------------------ keywords */
+
+/**
+ * The facets a `\keywords{}` term may declare, in the order a reader wants
+ * them: what the work is, where it was made, who handled it, who bought it,
+ * where it ended up, and what the leaves themselves do.
+ *
+ * A closed set, and deliberately small. The point of facetting is that a
+ * reader can find the museums without reading past the places; a vocabulary
+ * that grows a facet per term is the flat list again with extra punctuation.
+ */
+export const FACETS = [
+  'medium',
+  'place',
+  'work',
+  'person',
+  'dealer',
+  'collection',
+  'society',
+  'publication',
+  'prize',
+  'feature',
+];
+
+/**
+ * One keyword, split into its facet and its label.
+ *
+ * The facet is declared in the transcription — `place:Cape Cod` — and never
+ * guessed from the string, for the same reason the tag itself is not: only
+ * somebody who read the sheets knows whether « Randolph » is a dealer or a
+ * buyer, and « Corcoran Gallery » is a museum while « Downtown Gallery » is
+ * not. A string test would get both wrong.
+ *
+ * `collection` rather than `museum` because the buyers here are not all
+ * museums: the Library of Congress, the New York Public Library and Hamilton
+ * College bought prints on the same leaves as the Metropolitan did, and a
+ * facet that excluded them would push three real purchasers into the bare
+ * group for no reason but their names.
+ *
+ * **A term may decline to declare one**, and that is a permitted answer rather
+ * than a defect. Where the reading does not settle what a name was, the term
+ * arrives with `facet: null` and the site groups it under a heading that says
+ * so. Forcing a facet would put a guess into the index, which is the one thing
+ * the index is for not doing.
+ */
+export function parseKeyword(term) {
+  const m = /^([a-z]+):\s*(.+)$/.exec(term.trim());
+  if (!m || !FACETS.includes(m[1])) return { facet: null, label: term.trim() };
+  return { facet: m[1], label: m[2].trim() };
+}
+
+/** The terms of a `\keywords{}` argument, in source order. */
+export function keywordTerms(arg) {
+  return arg
+    .replace(/\s+/g, ' ')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+}

@@ -107,6 +107,33 @@ export const EDITIONS_NOTE =
   'nothing to choose between.';
 
 /** Everything present locally, written by `npm run manifest`. */
+/** One subject tag, with the facet it declared and the batches it came from. */
+export interface Tag {
+  tag: string;
+  facet: Facet | null;
+  batches: number[];
+}
+
+/**
+ * The facets a keyword may declare, in the order the ledger page shows them:
+ * what the work is, where it was made, who handled it, who bought it, where it
+ * ended up, and what the leaves do as documents.
+ *
+ * Kept in step with `FACETS` in `scripts/lib/ledger.mjs`, which is what the
+ * manifest is built against.
+ */
+export type Facet =
+  | 'medium'
+  | 'place'
+  | 'work'
+  | 'person'
+  | 'dealer'
+  | 'collection'
+  | 'society'
+  | 'publication'
+  | 'prize'
+  | 'feature';
+
 export interface Manifest {
   /** Sheets per batch. Twelve — see `src/lib/batches.ts` for why that number. */
   batchSize: number;
@@ -127,8 +154,14 @@ export interface Manifest {
    * There is deliberately no tags file. A tag has exactly one source — a line
    * somebody wrote after reading the sheets — so no tag can ever describe
    * material nobody has read.
+   *
+   * Each tag names the batches it was written in, which is what makes it
+   * usable: without them a tag asserts only that it applies somewhere in a
+   * volume of seventy-two sheets, of which twelve may be read, and a reader
+   * clicking it has nowhere to go. `facet` is declared in the transcription
+   * and is `null` where the reading did not settle what a name was.
    */
-  tags?: Record<string, string[]>;
+  tags?: Record<string, Tag[]>;
   /**
    * Sheets actually transcribed per ledger, counted from the `\sheet{}` marks.
    *
