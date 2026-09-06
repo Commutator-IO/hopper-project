@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T16:06:32.922Z",
+  "generated": "2026-09-06T17:20:36.556Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf. Book II rules no columns at all, and it needs the other half of the same rule: a leaf there is one work with one sale line — buyer, price and the cut, the cheque, the date — so the date is in the last column and never in the first. It is read there only on a leaf that rules nothing, only where the first column dates nothing, and only where the last cell holds a date and nothing besides.",
@@ -8,13 +8,13 @@
       "book-i",
       "book-ii"
     ],
-    "batches": 13,
-    "sheets": 152,
+    "batches": 14,
+    "sheets": 164,
     "note": "Only the volumes and batches listed. Everything unread contributes nothing, and every figure here moves as batches land."
   },
   "arithmetic": {
-    "checkable": 34,
-    "agree": 31,
+    "checkable": 37,
+    "agree": 34,
     "disagree": 3,
     "note": "Where a row states one sale and one receipt, the receipt is compared with price less commission. A disagreement is reported, never corrected: it most often means a figure was misread, and it points at the row to go back to."
   },
@@ -156,10 +156,10 @@
     },
     {
       "year": 1938,
-      "sales": 10,
-      "gross": 4240,
-      "commission": 1398.33,
-      "net": 2841.67,
+      "sales": 11,
+      "gross": 4990,
+      "commission": 1648.33,
+      "net": 3341.67,
       "disagreements": 0,
       "received": 0
     },
@@ -183,19 +183,19 @@
     },
     {
       "year": 1941,
-      "sales": 2,
-      "gross": 60,
-      "commission": 20,
-      "net": 40,
+      "sales": 3,
+      "gross": 420,
+      "commission": 140,
+      "net": 280,
       "disagreements": 0,
       "received": 266.67
     },
     {
       "year": 1942,
-      "sales": 1,
-      "gross": 30,
-      "commission": 10,
-      "net": 20,
+      "sales": 2,
+      "gross": 780,
+      "commission": 260,
+      "net": 520,
       "disagreements": 0,
       "received": 0
     },
@@ -210,10 +210,10 @@
     },
     {
       "year": 1944,
-      "sales": 1,
-      "gross": 100,
-      "commission": 33.33,
-      "net": 66.67,
+      "sales": 2,
+      "gross": 850,
+      "commission": 283.33,
+      "net": 566.67,
       "disagreements": 0,
       "received": 0
     },
@@ -263,6 +263,15 @@
       "received": 0
     },
     {
+      "year": 1952,
+      "sales": 1,
+      "gross": 750,
+      "commission": 250,
+      "net": 500,
+      "disagreements": 0,
+      "received": 0
+    },
+    {
       "year": 1953,
       "sales": 8,
       "gross": 1000,
@@ -273,37 +282,37 @@
     },
     {
       "year": 1954,
-      "sales": 1,
-      "gross": 30,
-      "commission": 10,
-      "net": 20,
+      "sales": 2,
+      "gross": 780,
+      "commission": 260,
+      "net": 520,
       "disagreements": 0,
       "received": 0
     },
     {
       "year": 1955,
-      "sales": 2,
-      "gross": 500,
-      "commission": 166.66,
-      "net": 333.34,
+      "sales": 4,
+      "gross": 1400,
+      "commission": 466.66,
+      "net": 933.34,
       "disagreements": 0,
       "received": 0
     },
     {
       "year": 1956,
-      "sales": 7,
-      "gross": 6360,
-      "commission": 2120.01,
-      "net": 4239.99,
+      "sales": 8,
+      "gross": 6860,
+      "commission": 2286.68,
+      "net": 4573.32,
       "disagreements": 0,
       "received": 866.67
     },
     {
       "year": 1957,
-      "sales": 10,
-      "gross": 320,
-      "commission": 106.67,
-      "net": 213.33,
+      "sales": 14,
+      "gross": 3470,
+      "commission": 1156.67,
+      "net": 2313.33,
       "disagreements": 0,
       "received": 666.67
     },
@@ -419,132 +428,138 @@
     },
     {
       "year": 1938,
-      "accrued": 2841.67,
+      "accrued": 3341.67,
       "received": 0,
-      "outstanding": 26448.61
+      "outstanding": 26948.61
     },
     {
       "year": 1939,
       "accrued": 1666.67,
       "received": 0,
-      "outstanding": 28115.28
+      "outstanding": 28615.28
     },
     {
       "year": 1940,
       "accrued": 2454.67,
       "received": 666.67,
-      "outstanding": 29903.28
+      "outstanding": 30403.28
     },
     {
       "year": 1941,
-      "accrued": 40,
+      "accrued": 280,
       "received": 266.67,
-      "outstanding": 29676.61
+      "outstanding": 30416.61
     },
     {
       "year": 1942,
-      "accrued": 20,
+      "accrued": 520,
       "received": 0,
-      "outstanding": 29696.61
+      "outstanding": 30936.61
     },
     {
       "year": 1943,
       "accrued": 640,
       "received": 0,
-      "outstanding": 30336.61
+      "outstanding": 31576.61
     },
     {
       "year": 1944,
-      "accrued": 66.67,
+      "accrued": 566.67,
       "received": 0,
-      "outstanding": 30403.28
+      "outstanding": 32143.28
     },
     {
       "year": 1945,
       "accrued": 586.66,
       "received": 0,
-      "outstanding": 30989.94
+      "outstanding": 32729.94
     },
     {
       "year": 1946,
       "accrued": 0,
       "received": 266.67,
-      "outstanding": 30723.27
+      "outstanding": 32463.27
     },
     {
       "year": 1947,
       "accrued": 86.66,
       "received": 300,
-      "outstanding": 30509.93
+      "outstanding": 32249.93
     },
     {
       "year": 1949,
       "accrued": 400,
       "received": 0,
-      "outstanding": 30909.93
+      "outstanding": 32649.93
     },
     {
       "year": 1950,
       "accrued": 953.33,
       "received": 1033.34,
-      "outstanding": 30829.92
+      "outstanding": 32569.92
     },
     {
       "year": 1951,
       "accrued": 2886.67,
       "received": 0,
-      "outstanding": 33716.59
+      "outstanding": 35456.59
+    },
+    {
+      "year": 1952,
+      "accrued": 500,
+      "received": 0,
+      "outstanding": 35956.59
     },
     {
       "year": 1953,
       "accrued": 666.66,
       "received": 500,
-      "outstanding": 33883.25
+      "outstanding": 36123.25
     },
     {
       "year": 1954,
-      "accrued": 20,
+      "accrued": 520,
       "received": 0,
-      "outstanding": 33903.25
+      "outstanding": 36643.25
     },
     {
       "year": 1955,
-      "accrued": 333.34,
+      "accrued": 933.34,
       "received": 0,
-      "outstanding": 34236.59
+      "outstanding": 37576.59
     },
     {
       "year": 1956,
-      "accrued": 4239.99,
+      "accrued": 4573.32,
       "received": 866.67,
-      "outstanding": 37609.91
+      "outstanding": 41283.24
     },
     {
       "year": 1957,
-      "accrued": 213.33,
+      "accrued": 2313.33,
       "received": 666.67,
-      "outstanding": 37156.57
+      "outstanding": 42929.9
     },
     {
       "year": 1958,
       "accrued": 3000,
       "received": 1800,
-      "outstanding": 38356.57
+      "outstanding": 44129.9
     },
     {
       "year": 1961,
       "accrued": 196.67,
       "received": 0,
-      "outstanding": 38553.24
+      "outstanding": 44326.57
     },
     {
       "year": 1962,
       "accrued": 0,
       "received": 2666.66,
-      "outstanding": 35886.58
+      "outstanding": 41659.91
     }
   ],
-  "receivableNote": "What was owed to the Hoppers at the end of each year on the sales this archive can see. A sale is accrued in the year of the leaf's date column and discharged in the year its receipt names. 35886.58 of net has no receipt date to discharge it. Most of that is Book II, whose leaves write one date to a sale and do not separate the day the work went out from the day the cheque came: the one date is booked at the sale, and no payment is invented out of it. The rest is a statement about how much has been read and not about whether Hopper was paid.",
+  "receivableNote": "What was owed to the Hoppers at the end of each year on the sales this archive can see. A sale is accrued in the year of the leaf's date column and discharged in the year its receipt names. 41659.91 of net has no receipt date to discharge it. Most of that is Book II, whose leaves write one date to a sale and do not separate the day the work went out from the day the cheque came: the one date is booked at the sale, and no payment is invented out of it. The rest is a statement about how much has been read and not about whether Hopper was paid.",
   "works": [
     {
       "title": "Dauphinée House",
@@ -812,6 +827,30 @@
       ]
     },
     {
+      "title": "White River at Sharon",
+      "net": 600,
+      "gross": 900,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Windy Day",
+      "net": 600,
+      "gross": 900,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
       "title": "Shore Acres",
       "net": 500,
       "gross": 750,
@@ -896,6 +935,78 @@
       ]
     },
     {
+      "title": "Mouth of Pamet - Full Tide",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1938
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Cottages at N. Truro",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Crossing at Eastham",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1952
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Oregon Coast",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1944
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Shoshone Cliffs, Wy",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1954
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Cobb House",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1942
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
       "title": "New York Restaurant",
       "net": 450,
       "gross": 500,
@@ -944,6 +1055,18 @@
       ]
     },
     {
+      "title": "Bob Slater's Hill",
+      "net": 400,
+      "gross": 600,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
       "title": "Apartment Houses",
       "net": 340,
       "gross": 400,
@@ -962,6 +1085,30 @@
       "sales": 1,
       "years": [
         1949
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Near the Back Shore",
+      "net": 333.33,
+      "gross": 500,
+      "sales": 1,
+      "years": [
+        1956
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "House at San Mateo. Calif",
+      "net": 333.33,
+      "gross": 500,
+      "sales": 1,
+      "years": [
+        1955
       ],
       "ledgers": [
         "book-ii"
@@ -1060,6 +1207,30 @@
       "sales": 1,
       "years": [
         1934
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Sugar Maple",
+      "net": 266.67,
+      "gross": 400,
+      "sales": 1,
+      "years": [
+        1955
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Vermont Sugar House",
+      "net": 240,
+      "gross": 360,
+      "sales": 1,
+      "years": [
+        1941
       ],
       "ledgers": [
         "book-ii"
@@ -1196,7 +1367,7 @@
       ]
     }
   ],
-  "worksNote": "129 of 299 sale rows name a work at all — the rest carry a price on a line that names no title — so this is a floor that moves with every batch transcribed, and a work absent from it may simply be on a leaf nobody has read.",
+  "worksNote": "142 of 312 sale rows name a work at all — the rest carry a price on a line that names no title — so this is a floor that moves with every batch transcribed, and a work absent from it may simply be on a leaf nobody has read.",
   "duplicates": {
     "count": 1,
     "note": "The same sale written into two volumes, counted once. Collapsed before every total on this page, not only before the ranking. Matched on title, price and the commission written, and only across different volumes: within one volume a repeated price is a repeated sale of an edition. Reported so the collapse can be argued with rather than trusted.",
@@ -6325,10 +6496,231 @@
       "ref": "16355",
       "work": "House With a Rain Barrel",
       "section": "Leaf 44: Watercolors 1936"
+    },
+    {
+      "year": 1956,
+      "yearFrom": "date column, last in the row",
+      "gross": 500,
+      "rateWritten": "1/3",
+      "commission": 166.67,
+      "net": 333.33,
+      "receiptWritten": 333.3333333333333,
+      "receiptYear": null,
+      "check": "agrees",
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "45",
+      "ref": "17871",
+      "work": "Near the Back Shore",
+      "section": "Leaf 45: Spindley Locusts, Mountain Meadow, Near the Back Shore"
+    },
+    {
+      "year": 1938,
+      "yearFrom": "date column, last in the row",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "47",
+      "ref": "16877",
+      "work": "Mouth of Pamet - Full Tide",
+      "section": "Leaf 47: Route 14, Shacks at Pamet Head, Mouth of Pamet River"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "date column, last in the row",
+      "gross": 900,
+      "rateWritten": "1/3",
+      "commission": 300,
+      "net": 600,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "49",
+      "ref": "17688",
+      "work": "White River at Sharon",
+      "section": "Leaf 49: Gravel Bar, White River at Royalton, White River at Sharon"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "date column, last in the row",
+      "gross": 900,
+      "rateWritten": "1/3",
+      "commission": 300,
+      "net": 600,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "51",
+      "ref": "17958",
+      "work": "Windy Day",
+      "section": "Leaf 51: First Branch of White River, Windy Day, Vermont Sugar House"
+    },
+    {
+      "year": 1941,
+      "yearFrom": "date column, last in the row",
+      "gross": 360,
+      "rateWritten": "1/3",
+      "commission": 120,
+      "net": 240,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "51",
+      "ref": "17958",
+      "work": "Vermont Sugar House",
+      "section": "Leaf 51: First Branch of White River, Windy Day, Vermont Sugar House"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "date column, last in the row",
+      "gross": 600,
+      "rateWritten": "1/3",
+      "commission": 200,
+      "net": 400,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "53",
+      "ref": "18064",
+      "work": "Bob Slater's Hill",
+      "section": "Leaf 53: Bob Slater's Hill, Sugar Maple, Rain on River"
+    },
+    {
+      "year": 1955,
+      "yearFrom": "date column, last in the row",
+      "gross": 400,
+      "rateWritten": "1/3",
+      "commission": 133.33,
+      "net": 266.67,
+      "receiptWritten": 266.6666666666667,
+      "receiptYear": null,
+      "check": "agrees",
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "53",
+      "ref": "18064",
+      "work": "Sugar Maple",
+      "section": "Leaf 53: Bob Slater's Hill, Sugar Maple, Rain on River"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "date column, last in the row",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "55",
+      "ref": "17435",
+      "work": "Cottages at N. Truro",
+      "section": "Leaf 55: Cottages at N. Truro, Crossing at Eastham"
+    },
+    {
+      "year": 1952,
+      "yearFrom": "date column, last in the row",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "55",
+      "ref": "17435",
+      "work": "Crossing at Eastham",
+      "section": "Leaf 55: Cottages at N. Truro, Crossing at Eastham"
+    },
+    {
+      "year": 1944,
+      "yearFrom": "date column, last in the row",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "57",
+      "ref": "17261",
+      "work": "Oregon Coast",
+      "section": "Leaf 57: Oregon Coast, Shoshone Cliffs, House at San Mateo"
+    },
+    {
+      "year": 1954,
+      "yearFrom": "date column, last in the row",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "57",
+      "ref": "17261",
+      "work": "Shoshone Cliffs, Wy",
+      "section": "Leaf 57: Oregon Coast, Shoshone Cliffs, House at San Mateo"
+    },
+    {
+      "year": 1955,
+      "yearFrom": "date column, last in the row",
+      "gross": 500,
+      "rateWritten": "1/3",
+      "commission": 166.67,
+      "net": 333.33,
+      "receiptWritten": 333.3333333333333,
+      "receiptYear": null,
+      "check": "agrees",
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "57",
+      "ref": "17261",
+      "work": "House at San Mateo. Calif",
+      "section": "Leaf 57: Oregon Coast, Shoshone Cliffs, House at San Mateo"
+    },
+    {
+      "year": 1942,
+      "yearFrom": "date column, last in the row",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 4,
+      "leaf": "58",
+      "ref": "17780",
+      "work": "Cobb House",
+      "section": "Leaf 58: 4 Dead Trees, Cobb House, with the fold-out"
     }
   ],
   "unparsed": {
-    "count": 142,
+    "count": 148,
     "sample": [
       {
         "reason": "the date column of this leaf dates the exhibition, not the sale — the sale has no date of its own, only the date its cheque cleared",

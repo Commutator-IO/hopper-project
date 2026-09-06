@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T16:27:46.569Z",
+  "generated": "2026-09-06T17:21:35.192Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -850,6 +850,26 @@
       ]
     },
     {
+      "key": "4 dead trees",
+      "title": "4 Dead Trees",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "58",
+          "ref": "17780"
+        }
+      ]
+    },
+    {
       "key": "5 a m",
       "title": "5 A.M",
       "museumTitle": null,
@@ -1080,6 +1100,26 @@
       ]
     },
     {
+      "key": "bob slater s hill",
+      "title": "Bob Slater's Hill",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "53",
+          "ref": "18064"
+        }
+      ]
+    },
+    {
       "key": "bootleggers",
       "title": "Bootleggers",
       "museumTitle": null,
@@ -1260,6 +1300,26 @@
       ]
     },
     {
+      "key": "cobb house",
+      "title": "Cobb House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "58",
+          "ref": "17780"
+        }
+      ]
+    },
+    {
       "key": "cold storage plant",
       "title": "Cold Storage Plant",
       "museumTitle": null,
@@ -1320,6 +1380,26 @@
       ]
     },
     {
+      "key": "cottages at n truro",
+      "title": "Cottages at N. Truro",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "55",
+          "ref": "17435"
+        }
+      ]
+    },
+    {
       "key": "cottages at wellfleet",
       "title": "Cottages at Wellfleet",
       "museumTitle": null,
@@ -1364,6 +1444,26 @@
           "batch": 4,
           "leaf": "36",
           "ref": "17260"
+        }
+      ]
+    },
+    {
+      "key": "crossing at eastham",
+      "title": "Crossing at Eastham",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "55",
+          "ref": "17435"
         }
       ]
     },
@@ -1538,6 +1638,26 @@
       ]
     },
     {
+      "key": "first branch of white river",
+      "title": "First Branch of White River",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "51",
+          "ref": "17958"
+        }
+      ]
+    },
+    {
       "key": "french 6 day rider",
       "title": "French 6 day Rider",
       "museumTitle": null,
@@ -1602,6 +1722,26 @@
           "batch": 5,
           "leaf": "54",
           "ref": "16522"
+        }
+      ]
+    },
+    {
+      "key": "gravel bar white river",
+      "title": "Gravel Bar, White River",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "49",
+          "ref": "17688"
         }
       ]
     },
@@ -1730,6 +1870,26 @@
           "batch": 3,
           "leaf": "36",
           "ref": "17694"
+        }
+      ]
+    },
+    {
+      "key": "house at san mateo calif",
+      "title": "House at San Mateo. Calif",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1941,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "57",
+          "ref": "17261"
         }
       ]
     },
@@ -2272,6 +2432,46 @@
       ]
     },
     {
+      "key": "mountain meadow",
+      "title": "Mountain Meadow",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "45",
+          "ref": "17871"
+        }
+      ]
+    },
+    {
+      "key": "mouth of pamet full tide",
+      "title": "Mouth of Pamet - Full Tide",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "47",
+          "ref": "16877"
+        }
+      ]
+    },
+    {
       "key": "mrs scott s house",
       "title": "Mrs. Scott's House",
       "museumTitle": null,
@@ -2308,6 +2508,26 @@
           "batch": 2,
           "leaf": "27",
           "ref": "16621"
+        }
+      ]
+    },
+    {
+      "key": "near the back shore",
+      "title": "Near the Back Shore",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "45",
+          "ref": "17871"
         }
       ]
     },
@@ -2509,6 +2729,26 @@
       ]
     },
     {
+      "key": "oregon coast",
+      "title": "Oregon Coast",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1941,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "57",
+          "ref": "17261"
+        }
+      ]
+    },
+    {
       "key": "pamet river road",
       "title": "Pamet River Road",
       "museumTitle": null,
@@ -2629,6 +2869,66 @@
       ]
     },
     {
+      "key": "rain on river",
+      "title": "Rain on River",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "53",
+          "ref": "18064"
+        }
+      ]
+    },
+    {
+      "key": "route 14 vermont",
+      "title": "Route 14, Vermont",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1937,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "46",
+          "ref": "17205"
+        }
+      ]
+    },
+    {
+      "key": "route 14 vt",
+      "title": "Route 14, Vt",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "47",
+          "ref": "16877"
+        }
+      ]
+    },
+    {
       "key": "ryder house",
       "title": "Ryder House",
       "museumTitle": null,
@@ -2685,6 +2985,26 @@
           "batch": 4,
           "leaf": "44",
           "ref": "18288"
+        }
+      ]
+    },
+    {
+      "key": "shacks at pamet head",
+      "title": "Shacks at Pamet Head",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "47",
+          "ref": "16877"
         }
       ]
     },
@@ -2749,6 +3069,26 @@
       ]
     },
     {
+      "key": "shoshone cliffs wy",
+      "title": "Shoshone Cliffs, Wy",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1941,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "57",
+          "ref": "17261"
+        }
+      ]
+    },
+    {
       "key": "south truro church",
       "title": "South Truro Church",
       "museumTitle": null,
@@ -2765,6 +3105,46 @@
           "batch": 6,
           "leaf": "59",
           "ref": "16991"
+        }
+      ]
+    },
+    {
+      "key": "spindley locusts",
+      "title": "Spindley Locusts",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "45",
+          "ref": "17871"
+        }
+      ]
+    },
+    {
+      "key": "sugar maple",
+      "title": "Sugar Maple",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "53",
+          "ref": "18064"
         }
       ]
     },
@@ -3174,6 +3554,26 @@
       ]
     },
     {
+      "key": "toward boston",
+      "title": "Toward Boston",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "46",
+          "ref": "17205"
+        }
+      ]
+    },
+    {
       "key": "train and bathers",
       "title": "Train & Bathers",
       "museumTitle": "Train and Bathers",
@@ -3249,6 +3649,26 @@
       ]
     },
     {
+      "key": "vermont sugar house",
+      "title": "Vermont Sugar House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "51",
+          "ref": "17958"
+        }
+      ]
+    },
+    {
       "key": "water color house with mansard roof",
       "title": "Water color --- House with Mansard Roof",
       "museumTitle": null,
@@ -3269,6 +3689,46 @@
       ]
     },
     {
+      "key": "white river at royalton",
+      "title": "White River at Royalton",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1937,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "49",
+          "ref": "17688"
+        }
+      ]
+    },
+    {
+      "key": "white river at sharon",
+      "title": "White River at Sharon",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "49",
+          "ref": "17688"
+        }
+      ]
+    },
+    {
       "key": "williamsburg bridge",
       "title": "Williamsburg Bridge",
       "museumTitle": null,
@@ -3285,6 +3745,26 @@
           "batch": 5,
           "leaf": "55",
           "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "windy day",
+      "title": "Windy Day",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 4,
+          "leaf": "51",
+          "ref": "17958"
         }
       ]
     },
