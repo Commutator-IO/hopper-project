@@ -6,7 +6,7 @@ derive it again at the cost of the attention it was meant to save.
 **This narrows a field of candidates and settles nothing.** Where the sheet
 will not support what is written here, the sheet wins and `\ill{}` stands.
 
-Written from Book I, batches 1 to 4 (sheets 1–48), 5–6 September 2026, Opus 5.
+Written from Book I, batches 1 to 5 (sheets 1–60), 5–6 September 2026, Opus 5.
 Add to it after every batch; say which batch taught you what.
 
 ---
@@ -207,3 +207,80 @@ The clipping on leaf 9 is also the only thing in either batch that **dates
 itself**: *Pittsburgh Sun-Telegraph*, 14 March 1937, naming the Carnegie
 exhibition of 32 oils, 53 watercolors and 11 etchings. The eleven are the group
 the Carnegie bought in June 1949 for \$300, which four separate leaves record.
+
+## From leaf 45 the leaf stops being a work's record
+
+*(batch 5)* Book I changes character at leaf 45 and does not change back. What
+follows the plate-by-plate record is running lists --- notes and explanations,
+one-man shows by year, collections of etchings by owner, then the oils and the
+Paris pictures. Two consequences for a pass:
+
+- **The columns lose their names.** Leaves 2 to 44 rule and head their columns;
+  leaves 45 to 55 rule them and head almost none. Supply a heading in `\add{}`
+  only where the column's sense is not in doubt --- the date, the
+  accepted / Refused / Invited mark, the exhibitions --- and leave a run of
+  bare titles unheaded rather than inventing a word for it. Say once per batch
+  which headings were supplied.
+- **The prices jump an order of magnitude.** A plate sold for $18 to $50; the
+  oils on leaves 52 to 55 sell at $400 to $1500 and one resells at $2250 in
+  1957. A figure that looks impossible against the etchings leaves is probably
+  right.
+
+**One leaf explains rather than records.** Leaf 45 gives two hundred words on
+why Ex Lax was briefly retitled Es Lax, and on the discrepancy between two
+photographs of it that this created. There is no table on it at all.
+
+## The leaves do not always run forwards
+
+*(batch 5)* Leaf 46 opens « Continued from p. 47 » and leaf 48 opens « From
+p. 49 ». In both pairs the recto was filled first and the facing verso used for
+the overflow, so the text runs 47 → 46 and 49 → 48. **Transcribe them in the
+order they are bound and say so in a `\note{}`.** Reordering them into reading
+order would be silent editorial work on the binding.
+
+## Turning a clipping back can cover something else
+
+*(batch 5)* Batch 2 established that where the Whitney photographed a hinged
+clipping twice, the table is transcribed at the sheet where it is legible.
+Leaf 53 is the case that breaks the rule: on sheet 18323 the New York Pavements
+halftone lies flat over the whole Bootleggers block, and on sheet 17852 it has
+been turned back to the *left*, where it lands on the date column of the same
+block. **Neither photograph shows the leaf whole, and the dates exist in
+neither.** Fragments of four of them show at the fore-edge and are not enough
+to date a row.
+
+So: give both sheets a `\sheet{}`, transcribe once at whichever shows more,
+and let the `\note{}` say what each photograph hides. Do not assume that a
+second photograph of a hinged leaf completes the first.
+
+## More spellings, and a name corrected in pencil
+
+*(batch 5)* All as written, all left alone:
+
+- **`Courrier Gal.`** *(leaf 48)* --- the Currier Gallery of Art, Manchester.
+- **`Main Coast`** *(leaf 47)* --- against `Maine Coast` on leaf 46, four
+  lines of the same volume apart.
+- **`Brittish Mus.`** *(leaf 47)*, **`Bienale di Venezia`** and **`Hotel
+  Loby`** *(leaf 49)*, **`Blackwells Is.`** *(leaf 49)*.
+- **`Sargent de ville`**, **`Le Terassier`**, **`Type de Belleville`**
+  *(leaf 51)* --- add to `Caracatures`, which leaf 51 also spells that way.
+- **`Two on the Isle`** *(leaf 55)*, with **`Aisle`** written above it later in
+  pencil and a ditto mark after. Her own description on the same line reads
+  « man in isle » and is untouched. Transcribe the title as the ink gives it
+  and the correction as a `\marginal{}`; a work link that does not match is the
+  correct outcome.
+- **`Vietor`** --- Geo. Vietor, who bought Sailing out of the 1913 Armory
+  Show. Leaves 45 and 52 both give it this way. Not Victor.
+- **`Sheaffer`** *(leaf 54, the Automat buyer)* against **`Sheafer`** three
+  lines below for what is plainly the same family, and **`Sheaffer`** again on
+  leaf 55. All three stay.
+
+**Crowninshield gains a fourth and fifth form.** Leaf 47 carries the name twice
+and the two are not obviously the same spelling; the medial vowels in this hand
+cannot be told apart. `\uncertain{}` both, and note once that they cannot be
+settled --- do not quietly regularise them to the standing forms on leaves 6,
+10 and 12.
+
+**Sheeler is unreadable rather than doubtful** *(leaf 49)*: the name runs into
+the gutter and the photograph stops before it ends. `Shiel\ill{}` is the whole
+of what is there.
