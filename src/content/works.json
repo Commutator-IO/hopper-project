@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T17:21:35.192Z",
+  "generated": "2026-09-06T18:26:35.400Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -973,6 +973,26 @@
       ]
     },
     {
+      "key": "american village",
+      "title": "American Village",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "70",
+          "ref": "16290"
+        }
+      ]
+    },
+    {
       "key": "apartment houses",
       "title": "Apartment Houses",
       "museumTitle": null,
@@ -995,6 +1015,26 @@
           "batch": 5,
           "leaf": "52",
           "ref": "18056"
+        }
+      ]
+    },
+    {
+      "key": "apres midi de juin",
+      "title": "Apres Midi de Juin",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "61",
+          "ref": "16607"
         }
       ]
     },
@@ -1127,7 +1167,7 @@
       "medium": null,
       "held": false,
       "holdings": [],
-      "ledgerYear": null,
+      "ledgerYear": 1924,
       "ledgerDisagrees": false,
       "notLaterThan": null,
       "namedIn": [
@@ -1136,6 +1176,32 @@
           "batch": 5,
           "leaf": "53",
           "ref": "17852"
+        },
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "71",
+          "ref": "17170"
+        }
+      ]
+    },
+    {
+      "key": "bridge on the seine",
+      "title": "Bridge on the Seine",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "61",
+          "ref": "16607"
         }
       ]
     },
@@ -1528,6 +1594,26 @@
       ]
     },
     {
+      "key": "east river",
+      "title": "East River",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1929,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "73",
+          "ref": "18356"
+        }
+      ]
+    },
+    {
       "key": "east side interior",
       "title": "East Side Interior",
       "museumTitle": null,
@@ -1579,6 +1665,26 @@
           "batch": 1,
           "leaf": "5",
           "ref": "17555"
+        }
+      ]
+    },
+    {
+      "key": "ecluse de la monnaie",
+      "title": "Ecluse de La Monnaie",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "61",
+          "ref": "16607"
         }
       ]
     },
@@ -2117,6 +2223,26 @@
       ]
     },
     {
+      "key": "ile saint louis",
+      "title": "Ile Saint Louis",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1909,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "62",
+          "ref": "17311"
+        }
+      ]
+    },
+    {
       "key": "jenness house iii",
       "title": "Jenness House (III)",
       "museumTitle": null,
@@ -2213,6 +2339,126 @@
           "batch": 3,
           "leaf": "36",
           "ref": "17694"
+        }
+      ]
+    },
+    {
+      "key": "le louvre et la s ine",
+      "title": "Le Louvre et la Sëine",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "60",
+          "ref": "17885"
+        }
+      ]
+    },
+    {
+      "key": "le parc de saint cloud",
+      "title": "Le Parc de Saint Cloud",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "60",
+          "ref": "17885"
+        }
+      ]
+    },
+    {
+      "key": "le pavillon de flore",
+      "title": "Le Pavillon de Flore",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "62",
+          "ref": "17311"
+        }
+      ]
+    },
+    {
+      "key": "le pont des arts",
+      "title": "Le Pont des Arts",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1907,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "60",
+          "ref": "17885"
+        }
+      ]
+    },
+    {
+      "key": "le pont royal",
+      "title": "Le Pont Royal",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1909,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "63",
+          "ref": "16919"
+        }
+      ]
+    },
+    {
+      "key": "le quai des grands augustins",
+      "title": "Le Quai des Grands Augustins",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "63",
+          "ref": "16919"
         }
       ]
     },
@@ -2428,6 +2674,26 @@
           "batch": 2,
           "leaf": "29",
           "ref": "16933"
+        }
+      ]
+    },
+    {
+      "key": "moonlight interior",
+      "title": "Moonlight Interior",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1920,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "70",
+          "ref": "16290"
         }
       ]
     },
@@ -2669,6 +2935,26 @@
       ]
     },
     {
+      "key": "notre dame de paris",
+      "title": "Notre Dame de Paris",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "62",
+          "ref": "17311"
+        }
+      ]
+    },
+    {
       "key": "nude in a chair",
       "title": "Nude in a Chair",
       "museumTitle": null,
@@ -2829,6 +3115,26 @@
       ]
     },
     {
+      "key": "rail road train",
+      "title": "Rail Road Train",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1908,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "69",
+          "ref": "17789"
+        }
+      ]
+    },
+    {
       "key": "railroad crossing drypoint",
       "title": "Railroad Crossing - drypoint",
       "museumTitle": null,
@@ -2956,7 +3262,7 @@
       "medium": null,
       "held": false,
       "holdings": [],
-      "ledgerYear": null,
+      "ledgerYear": 1913,
       "ledgerDisagrees": false,
       "notLaterThan": null,
       "namedIn": [
@@ -2965,6 +3271,12 @@
           "batch": 5,
           "leaf": "52",
           "ref": "18056"
+        },
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "68",
+          "ref": "16468"
         }
       ]
     },
@@ -3506,6 +3818,26 @@
       ]
     },
     {
+      "key": "macarthurs home",
+      "title": "The MacArthurs' Home",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1939,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "77",
+          "ref": "17681"
+        }
+      ]
+    },
+    {
       "key": "monhegan boat",
       "title": "The Monhegan Boat",
       "museumTitle": null,
@@ -3605,6 +3937,26 @@
           "batch": 4,
           "leaf": "38",
           "ref": "16162"
+        }
+      ]
+    },
+    {
+      "key": "tramp steamer",
+      "title": "Tramp Steamer",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 5,
+          "leaf": "68",
+          "ref": "16468"
         }
       ]
     },

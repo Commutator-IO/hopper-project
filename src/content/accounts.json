@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T17:20:36.556Z",
+  "generated": "2026-09-06T18:26:42.699Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf. Book II rules no columns at all, and it needs the other half of the same rule: a leaf there is one work with one sale line — buyer, price and the cut, the cheque, the date — so the date is in the last column and never in the first. It is read there only on a leaf that rules nothing, only where the first column dates nothing, and only where the last cell holds a date and nothing besides.",
@@ -8,13 +8,13 @@
       "book-i",
       "book-ii"
     ],
-    "batches": 14,
-    "sheets": 164,
+    "batches": 15,
+    "sheets": 176,
     "note": "Only the volumes and batches listed. Everything unread contributes nothing, and every figure here moves as batches land."
   },
   "arithmetic": {
-    "checkable": 37,
-    "agree": 34,
+    "checkable": 40,
+    "agree": 37,
     "disagree": 3,
     "note": "Where a row states one sale and one receipt, the receipt is compared with price less commission. A disagreement is reported, never corrected: it most often means a figure was misread, and it points at the row to go back to."
   },
@@ -174,10 +174,10 @@
     },
     {
       "year": 1940,
-      "sales": 13,
-      "gross": 3682,
-      "commission": 1227.33,
-      "net": 2454.67,
+      "sales": 14,
+      "gross": 6182,
+      "commission": 2060.66,
+      "net": 4121.34,
       "disagreements": 0,
       "received": 666.67
     },
@@ -300,10 +300,10 @@
     },
     {
       "year": 1956,
-      "sales": 8,
-      "gross": 6860,
-      "commission": 2286.68,
-      "net": 4573.32,
+      "sales": 9,
+      "gross": 10860,
+      "commission": 3620.01,
+      "net": 7239.99,
       "disagreements": 0,
       "received": 866.67
     },
@@ -324,6 +324,15 @@
       "net": 3000,
       "disagreements": 0,
       "received": 1800
+    },
+    {
+      "year": 1960,
+      "sales": 1,
+      "gross": 2300,
+      "commission": 766.67,
+      "net": 1533.33,
+      "disagreements": 0,
+      "received": 0
     },
     {
       "year": 1961,
@@ -440,126 +449,132 @@
     },
     {
       "year": 1940,
-      "accrued": 2454.67,
+      "accrued": 4121.34,
       "received": 666.67,
-      "outstanding": 30403.28
+      "outstanding": 32069.95
     },
     {
       "year": 1941,
       "accrued": 280,
       "received": 266.67,
-      "outstanding": 30416.61
+      "outstanding": 32083.28
     },
     {
       "year": 1942,
       "accrued": 520,
       "received": 0,
-      "outstanding": 30936.61
+      "outstanding": 32603.28
     },
     {
       "year": 1943,
       "accrued": 640,
       "received": 0,
-      "outstanding": 31576.61
+      "outstanding": 33243.28
     },
     {
       "year": 1944,
       "accrued": 566.67,
       "received": 0,
-      "outstanding": 32143.28
+      "outstanding": 33809.95
     },
     {
       "year": 1945,
       "accrued": 586.66,
       "received": 0,
-      "outstanding": 32729.94
+      "outstanding": 34396.61
     },
     {
       "year": 1946,
       "accrued": 0,
       "received": 266.67,
-      "outstanding": 32463.27
+      "outstanding": 34129.94
     },
     {
       "year": 1947,
       "accrued": 86.66,
       "received": 300,
-      "outstanding": 32249.93
+      "outstanding": 33916.6
     },
     {
       "year": 1949,
       "accrued": 400,
       "received": 0,
-      "outstanding": 32649.93
+      "outstanding": 34316.6
     },
     {
       "year": 1950,
       "accrued": 953.33,
       "received": 1033.34,
-      "outstanding": 32569.92
+      "outstanding": 34236.59
     },
     {
       "year": 1951,
       "accrued": 2886.67,
       "received": 0,
-      "outstanding": 35456.59
+      "outstanding": 37123.26
     },
     {
       "year": 1952,
       "accrued": 500,
       "received": 0,
-      "outstanding": 35956.59
+      "outstanding": 37623.26
     },
     {
       "year": 1953,
       "accrued": 666.66,
       "received": 500,
-      "outstanding": 36123.25
+      "outstanding": 37789.92
     },
     {
       "year": 1954,
       "accrued": 520,
       "received": 0,
-      "outstanding": 36643.25
+      "outstanding": 38309.92
     },
     {
       "year": 1955,
       "accrued": 933.34,
       "received": 0,
-      "outstanding": 37576.59
+      "outstanding": 39243.26
     },
     {
       "year": 1956,
-      "accrued": 4573.32,
+      "accrued": 7239.99,
       "received": 866.67,
-      "outstanding": 41283.24
+      "outstanding": 45616.58
     },
     {
       "year": 1957,
       "accrued": 2313.33,
       "received": 666.67,
-      "outstanding": 42929.9
+      "outstanding": 47263.24
     },
     {
       "year": 1958,
       "accrued": 3000,
       "received": 1800,
-      "outstanding": 44129.9
+      "outstanding": 48463.24
+    },
+    {
+      "year": 1960,
+      "accrued": 1533.33,
+      "received": 0,
+      "outstanding": 49996.57
     },
     {
       "year": 1961,
       "accrued": 196.67,
       "received": 0,
-      "outstanding": 44326.57
+      "outstanding": 50193.24
     },
     {
       "year": 1962,
       "accrued": 0,
       "received": 2666.66,
-      "outstanding": 41659.91
+      "outstanding": 47526.58
     }
   ],
-  "receivableNote": "What was owed to the Hoppers at the end of each year on the sales this archive can see. A sale is accrued in the year of the leaf's date column and discharged in the year its receipt names. 41659.91 of net has no receipt date to discharge it. Most of that is Book II, whose leaves write one date to a sale and do not separate the day the work went out from the day the cheque came: the one date is booked at the sale, and no payment is invented out of it. The rest is a statement about how much has been read and not about whether Hopper was paid.",
+  "receivableNote": "What was owed to the Hoppers at the end of each year on the sales this archive can see. A sale is accrued in the year of the leaf's date column and discharged in the year its receipt names. 47526.58 of net has no receipt date to discharge it. Most of that is Book II, whose leaves write one date to a sale and do not separate the day the work went out from the day the cheque came: the one date is booked at the sale, and no payment is invented out of it. The rest is a statement about how much has been read and not about whether Hopper was paid.",
   "works": [
     {
       "title": "Dauphinée House",
@@ -592,6 +607,18 @@
       "sales": 1,
       "years": [
         1958
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "« Bootleggers »",
+      "net": 2666.67,
+      "gross": 4000,
+      "sales": 1,
+      "years": [
+        1956
       ],
       "ledgers": [
         "book-ii"
@@ -640,6 +667,30 @@
       "sales": 1,
       "years": [
         1939
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "The MacArthurs' Home",
+      "net": 1666.67,
+      "gross": 2500,
+      "sales": 1,
+      "years": [
+        1940
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Tramp Steamer",
+      "net": 1533.33,
+      "gross": 2300,
+      "sales": 1,
+      "years": [
+        1960
       ],
       "ledgers": [
         "book-ii"
@@ -1367,7 +1418,7 @@
       ]
     }
   ],
-  "worksNote": "142 of 312 sale rows name a work at all — the rest carry a price on a line that names no title — so this is a floor that moves with every batch transcribed, and a work absent from it may simply be on a leaf nobody has read.",
+  "worksNote": "145 of 315 sale rows name a work at all — the rest carry a price on a line that names no title — so this is a floor that moves with every batch transcribed, and a work absent from it may simply be on a leaf nobody has read.",
   "duplicates": {
     "count": 1,
     "note": "The same sale written into two volumes, counted once. Collapsed before every total on this page, not only before the ranking. Matched on title, price and the commission written, and only across different volumes: within one volume a repeated price is a repeated sale of an edition. Reported so the collapse can be argued with rather than trusted.",
@@ -6717,10 +6768,61 @@
       "ref": "17780",
       "work": "Cobb House",
       "section": "Leaf 58: 4 Dead Trees, Cobb House, with the fold-out"
+    },
+    {
+      "year": 1960,
+      "yearFrom": "date column, last in the row",
+      "gross": 2300,
+      "rateWritten": "1/3",
+      "commission": 766.67,
+      "net": 1533.33,
+      "receiptWritten": 1533.3333333333333,
+      "receiptYear": null,
+      "check": "agrees",
+      "ledger": "book-ii",
+      "batch": 5,
+      "leaf": "68",
+      "ref": "16468",
+      "work": "Tramp Steamer",
+      "section": "Leaf 68: Sailing, Tramp Steamer"
+    },
+    {
+      "year": 1956,
+      "yearFrom": "date column, last in the row",
+      "gross": 4000,
+      "rateWritten": "1/3",
+      "commission": 1333.33,
+      "net": 2666.67,
+      "receiptWritten": 2666.6666666666665,
+      "receiptYear": null,
+      "check": "agrees",
+      "ledger": "book-ii",
+      "batch": 5,
+      "leaf": "71",
+      "ref": "17170",
+      "work": "« Bootleggers »",
+      "section": "Leaf 71: Bootleggers"
+    },
+    {
+      "year": 1940,
+      "yearFrom": "date column, last in the row",
+      "gross": 2500,
+      "rateWritten": "1/3",
+      "commission": 833.33,
+      "net": 1666.67,
+      "receiptWritten": 1666.6666666666667,
+      "receiptYear": null,
+      "check": "agrees",
+      "ledger": "book-ii",
+      "batch": 5,
+      "leaf": "77",
+      "ref": "17681",
+      "work": "The MacArthurs' Home",
+      "section": "Leaf 77: The MacArthurs' Home"
     }
   ],
   "unparsed": {
-    "count": 148,
+    "count": 151,
     "sample": [
       {
         "reason": "the date column of this leaf dates the exhibition, not the sale — the sale has no date of its own, only the date its cheque cleared",
