@@ -36,6 +36,28 @@ discarded. Say what the comparison showed — disagreements over a figure, a
 passage one model guessed and the other flagged — and do not declare a winner
 from a single batch.
 
+## Arguments
+
+```
+/transcribe-hopper <volume> <batch>
+```
+
+The volume may be given either way, and both mean the same thing:
+
+| Form | Example | Covers |
+|---|---|---|
+| the volume's number | `/transcribe-hopper 1 6` | Books I to V only |
+| the volume's id | `/transcribe-hopper book-i 6` | all six, Dealers/Etchings included |
+
+**Dealers/Etchings has no number**, so it takes the id: `/transcribe-hopper
+dealers 2`. The ids are `book-i`, `book-ii`, `book-iii`, `book-iv`, `book-v`,
+`dealers` — the same strings the site uses in its URLs, so the command for any
+batch can be read straight off the reader's own address bar.
+
+The batch is 1-based and each is twelve sheets: batch 3 of Book II is sheets 25
+to 36. The reader prints the exact command for a batch that has no
+transcription yet.
+
 ## What this produces
 
 For **one batch of twelve sheets**, one file:

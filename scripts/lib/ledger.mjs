@@ -102,6 +102,36 @@ export const titleOf = (rawWorkArg) => {
 export const isReadTitle = (rawWorkArg) =>
   !/\\ill\b/.test(rawWorkArg) && titleOf(rawWorkArg).length > 1;
 
+/**
+ * The year a `\work{}` heading states, if it states one.
+ *
+ * Edward wrote the plate's date into the title line on nine of Book I's
+ * leaves — « The Lonely House.\qquad 8"x10"\qquad 1922. » — and `titleOf`
+ * cuts it away with the size. It is the artist's own date for his own work and
+ * belongs in the index beside the museums', including where the two differ.
+ */
+export const statedYearOf = (rawWorkArg) => {
+  const m = /\b(19[0-6]\d)\b/.exec(plainOf(rawWorkArg));
+  return m ? Number(m[1]) : null;
+};
+
+/**
+ * The year a date cell states — the permissive rule, for the date column only.
+ */
+export const yearInCell = (cell) => {
+  const s = String(cell ?? '').trim();
+  if (!s) return null;
+  const four = /\b(1[89]\d\d|20\d\d)\b/.exec(s);
+  if (four) {
+    const y = Number(four[1]);
+    return y >= 1900 && y <= 1970 ? y : null;
+  }
+  const two = /^'?(\d{2})\.?$/.exec(s) ?? /[,']\s*'?(\d{2})\b/.exec(s);
+  if (!two) return null;
+  const y = 1900 + Number(two[1]);
+  return y >= 1900 && y <= 1970 ? y : null;
+};
+
 /* ------------------------------------------------------------ brace matching */
 
 /**
@@ -300,6 +330,7 @@ function parseFile(path, ledger, batch) {
         title: titleOf(a.body),
         key: workKey(titleOf(a.body)),
         read: isReadTitle(a.body),
+        statedYear: statedYearOf(a.body),
         rows: [],
       };
       works.push(work);

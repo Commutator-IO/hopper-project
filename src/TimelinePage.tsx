@@ -46,11 +46,31 @@ interface IndexedWork {
   date: string | null;
   medium: string | null;
   held: boolean;
+  ledgerYear: number | null;
+  ledgerDisagrees: boolean;
+  notLaterThan: number | null;
   holdings: { institution: string; short: string; url: string }[];
   namedIn: { ledger: string; batch: number; leaf: string | null; ref: string }[];
 }
 
 const WORKS = (worksData as unknown as { index: IndexedWork[] }).index;
+
+interface TranscribedYear {
+  year: number;
+  leaves: { ledger: string; batch: number; leaf: string; ref: number; rows: number }[];
+}
+
+/**
+ * Years the transcribed leaves themselves record.
+ *
+ * Distinct from the sheets below them, which are dated by the Whitney's own
+ * descriptor and are therefore Book IV and nothing else — its cataloguer had a
+ * date for every leaf of a running account, and Book I's descriptors name no
+ * year at all. These are read out of the transcriptions, so they appear only
+ * where somebody has done the reading.
+ */
+const TRANSCRIBED = (worksData as unknown as { transcribedYears: TranscribedYear[] })
+  .transcribedYears;
 
 const NOTES = (
   workNotes as unknown as {
@@ -115,6 +135,7 @@ export function TimelinePage() {
       ...LIFE.events.map((e) => e.year),
       ...byYear.keys(),
       ...worksByYear.keys(),
+      ...TRANSCRIBED.map((t) => t.year),
     ]);
     return [...set].sort((a, b) => a - b);
   }, [byYear, worksByYear]);
@@ -136,10 +157,22 @@ export function TimelinePage() {
           than resolved.
         </p>
         <p className="prose-note mt-3 max-w-3xl">
-          A year also lists the sheets whose <em>own</em> Whitney descriptor names it. That is
-          nearly all Book IV: it is a running account, so the cataloguer had a date for each
-          leaf. The other five volumes are dated at the volume and not at the sheet, and a
-          volume’s range is not spread over its leaves here to make the page look fuller.
+          A year lists two different kinds of leaf, and the difference is worth knowing.{' '}
+          <span className="rounded-full border border-relu-200 bg-relu-50 px-1.5 py-px text-relu-700">
+            green
+          </span>{' '}
+          leaves are <strong>transcribed</strong>: somebody read the sheet, and the year is one
+          Jo Hopper wrote in its own date column. Those appear only where the reading has been
+          done, which today means Book I.{' '}
+          <span className="rounded-full border border-ink-200 px-1.5 py-px text-ink-700">
+            grey
+          </span>{' '}
+          leaves are dated by the Whitney’s <em>own</em> descriptor, without anyone here reading
+          anything — and that is Book IV and nothing else, because it is a running account and
+          its cataloguer had a date for every leaf. Book I’s descriptors say « Page 56 [multiple
+          works] » and name no year, which is why none of its 117 sheets appears in grey however
+          much of it is transcribed. A volume’s range is never spread over its leaves to make the
+          page look fuller.
         </p>
       </header>
 
@@ -188,7 +221,9 @@ export function TimelinePage() {
           const events = LIFE.events.filter((e) => e.year === y);
           const sheets = byYear.get(y) ?? [];
           const madeThisYear = worksByYear.get(y) ?? [];
-          if (!events.length && !sheets.length && !madeThisYear.length) return null;
+          const recorded = TRANSCRIBED.find((t) => t.year === y)?.leaves ?? [];
+          if (!events.length && !sheets.length && !madeThisYear.length && !recorded.length)
+            return null;
           return (
             <div
               key={y}
@@ -236,7 +271,7 @@ export function TimelinePage() {
                       return (
                         <a
                           key={w.key}
-                          href={url(`/${at.ledger}/#${at.ledger}/${at.batch}`)}
+                          href={url(`/${at.ledger}/#${at.ledger}/${at.batch}/${at.ref}`)}
                           title={`${w.medium ?? ''}${w.medium ? ' — ' : ''}named on ${w.namedIn
                             .map((n) => `${n.ledger} leaf ${n.leaf}`)
                             .join(', ')}`}
@@ -246,6 +281,30 @@ export function TimelinePage() {
                         </a>
                       );
                     })}
+                  </div>
+                )}
+
+                {recorded.length > 0 && (
+                  <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                    <span className="text-[11px] uppercase tracking-wider text-ink-400">
+                      {recorded.length} transcribed {recorded.length === 1 ? 'leaf' : 'leaves'}{' '}
+                      with an entry dated {y}
+                    </span>
+                    {recorded.slice(0, 12).map((l) => (
+                      <a
+                        key={`${l.ledger}-${l.ref}`}
+                        href={url(`/${l.ledger}/#${l.ledger}/${l.batch}/${l.ref}`)}
+                        title={`${l.rows} row${l.rows === 1 ? '' : 's'} dated ${y} — opens the leaf`}
+                        className="rounded-full border border-relu-200 bg-relu-50 px-2 py-0.5 text-[11.5px] text-relu-700 transition hover:border-relu-400"
+                      >
+                        {LEDGERS.find((g) => g.id === l.ledger)?.short} leaf {l.leaf}
+                      </a>
+                    ))}
+                    {recorded.length > 12 && (
+                      <span className="text-[11.5px] text-ink-400">
+                        and {recorded.length - 12} more
+                      </span>
+                    )}
                   </div>
                 )}
 
@@ -259,7 +318,7 @@ export function TimelinePage() {
                       return (
                         <a
                           key={s.ref}
-                          href={url(`/${s.ledger}/#${s.ledger}/${batchOfSeq(s.seq)}`)}
+                          href={url(`/${s.ledger}/#${s.ledger}/${batchOfSeq(s.seq)}/${s.ref}`)}
                           title={s.descriptor}
                           className="rounded-full border border-ink-200 px-2 py-0.5 text-[11.5px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
                         >
@@ -293,8 +352,24 @@ export function TimelinePage() {
           clipping is not a work. {WORKS.filter((w) => w.date).length} are dated, and the date is
           always the museum’s, never the leaf’s — a leaf’s date column is the day a work went to
           a dealer or a jury, which is often a decade off the year it was made. The
-          {' '}{WORKS.filter((w) => !w.date).length} the rest are undated here and stay that way
-          until a source dates them.
+          {' '}Of the rest, {WORKS.filter((w) => !w.date && w.ledgerYear).length} carries a date
+          written on the leaf in Edward Hopper’s own hand (marked <span className="text-brand-700">*</span>),
+          and {WORKS.filter((w) => !w.date && !w.ledgerYear && w.notLaterThan).length} carry a
+          bound rather than a date — <span className="text-ink-400">≤</span> means the work was
+          made no later than that year, because it is the earliest year the ledger records
+          anything happening to it, and a plate cannot be sold before it is cut. The remaining{' '}
+          {WORKS.filter((w) => !w.date && !w.ledgerYear && !w.notLaterThan).length} have nothing
+          and stay that way.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">
+          <strong className="font-semibold text-ink-700">What is deliberately not done here:</strong>{' '}
+          reading a date off the leaves either side. Book I’s etchings section is not in
+          chronological order — across the twenty works on leaves 2 to 44 that a museum dates, the
+          correlation between leaf number and year of making is r&nbsp;=&nbsp;−0.33, and leaf 16
+          is 1918 sitting between 1923 and 1919. Interpolating from neighbours would produce
+          confident wrong answers. The bound produces only what cannot fail to be true, and it was
+          checked against every work here whose museum date is known: all of them satisfy it, and
+          several are exact.
         </p>
         <ul className="mt-4 grid gap-x-6 gap-y-1 sm:grid-cols-2">
           {WORKS.map((w) => {
@@ -304,13 +379,46 @@ export function TimelinePage() {
                 key={w.key}
                 className="flex items-baseline gap-2 border-b border-ink-100 py-1.5 text-[13.5px]"
               >
-                <span className="w-10 shrink-0 tabular text-ink-400">
-                  {yearOfDate(w.date) ?? '—'}
+                {/* Four different things, and the column shows which is which.
+                    A museum's date is a date. The leaf's own is a date in
+                    Edward's hand. « ≤ » is a bound, not a date — the earliest
+                    year the ledger records anything happening to the work, so
+                    it cannot have been made later. A dash is a dash. */}
+                <span
+                  className="w-14 shrink-0 tabular text-[12.5px]"
+                  title={
+                    yearOfDate(w.date)
+                      ? `${w.date} — the holding museum's date`
+                      : w.ledgerYear
+                        ? `${w.ledgerYear} — written on the leaf in Edward Hopper's hand`
+                        : w.notLaterThan
+                          ? `Made no later than ${w.notLaterThan}: the earliest year the ledger ` +
+                            `records anything happening to this work. A bound, not a date.`
+                          : 'No source dates it and the ledger records no dated activity for it'
+                  }
+                >
+                  {yearOfDate(w.date) ? (
+                    <span className="text-ink-500">{yearOfDate(w.date)}</span>
+                  ) : w.ledgerYear ? (
+                    <span className="text-brand-700">{w.ledgerYear}*</span>
+                  ) : w.notLaterThan ? (
+                    <span className="text-ink-400">≤{w.notLaterThan}</span>
+                  ) : (
+                    <span className="text-ink-300">—</span>
+                  )}
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="text-ink-900">{w.title}</span>
                   {w.museumTitle && (
                     <span className="text-ink-400"> · {w.museumTitle}</span>
+                  )}
+                  {w.ledgerDisagrees && (
+                    <span
+                      title={`The leaf says ${w.ledgerYear}; the museum says ${w.date}. Both stand.`}
+                      className="ml-1.5 rounded-full bg-encours-100 px-1.5 py-px text-[10px] uppercase tracking-wide text-encours-700"
+                    >
+                      leaf {w.ledgerYear}
+                    </span>
                   )}
                   {note && (
                     <span
@@ -326,7 +434,7 @@ export function TimelinePage() {
                       <span key={`${n.ledger}-${n.ref}`}>
                         {i > 0 && ', '}
                         <a
-                          href={url(`/${n.ledger}/#${n.ledger}/${n.batch}`)}
+                          href={url(`/${n.ledger}/#${n.ledger}/${n.batch}/${n.ref}`)}
                           title={`Open ${n.ledger} at the batch holding leaf ${n.leaf ?? n.ref}`}
                           className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
                         >
@@ -389,7 +497,7 @@ export function TimelinePage() {
                             );
                             return (
                               <a
-                                href={url(`/${lg}/#${lg}/${at?.batch ?? 1}`)}
+                                href={url(`/${lg}/#${lg}/${at?.batch ?? 1}${at ? `/${at.ref}` : ''}`)}
                                 className="whitespace-nowrap text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
                               >
                                 {lg} leaf {lf} →

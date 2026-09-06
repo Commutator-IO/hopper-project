@@ -57,7 +57,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { readTranscripts, workKey } from './lib/ledger.mjs';
+import { readTranscripts, workKey, yearInCell } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 
@@ -279,16 +279,27 @@ for (const file of readTranscripts(root)) {
     if (!w.read) continue;
     let k = w.key;
     if (aliasIndex[k]) k = aliasIndex[k].to;
-    if (!named.has(k)) named.set(k, { key: k, title: w.title, namedIn: [] });
+    if (!named.has(k))
+      named.set(k, { key: k, title: w.title, namedIn: [], statedYear: null, earliest: null });
     const n = named.get(k);
     if (w.title.length < n.title.length) n.title = w.title;
     n.namedIn.push({ ledger: w.ledger, batch: w.batch, leaf: w.leaf, ref: w.ref });
+    // The date Edward wrote into the title line, where he wrote one.
+    if (w.statedYear !== null) n.statedYear = Math.min(n.statedYear ?? 9999, w.statedYear);
+    // The earliest year the ledger records anything happening to *this work* —
+    // not to its leaf. A leaf carries several works, and taking the leaf's
+    // earliest bounded 7" Ave. Shops at 1929 when Early Sunday Morning is 1930.
+    for (const r of w.rows) {
+      const y = yearInCell(r.plain[0]);
+      if (y !== null) n.earliest = Math.min(n.earliest ?? 9999, y);
+    }
   }
 }
 
 const index = [...named.values()]
   .map((n) => {
     const held = works.get(n.key) ?? null;
+    const museumYear = held?.date ? Number(/\b(1[89]\d\d)\b/.exec(held.date)?.[1]) || null : null;
     return {
       key: n.key,
       // The ledger's title is the one a reader of these leaves has in hand, so
@@ -299,10 +310,75 @@ const index = [...named.values()]
       medium: held?.medium ?? null,
       held: Boolean(held),
       holdings: held?.holdings ?? [],
+      /**
+       * The year the leaf itself gives, in Edward's hand, where it gives one.
+       * Observed, not inferred, and printed even where it differs from the
+       * museum's — three of the eight that can be compared differ by a year,
+       * and that disagreement is worth more than either number alone.
+       */
+      ledgerYear: n.statedYear,
+      ledgerDisagrees:
+        n.statedYear !== null && museumYear !== null && n.statedYear !== museumYear,
+      /**
+       * A bound, not a date: the earliest year the ledger records anything
+       * happening to this work. A plate cannot be sold before it is cut, so
+       * the work was made no later than this.
+       *
+       * This is the only inference in the index and it is a valid one, which
+       * is why it is here and why interpolating from neighbouring leaves is
+       * not. Book I's etchings section is not in chronological order — the
+       * correlation between leaf number and year of making, over the twenty
+       * works on leaves 2 to 44 that a museum dates, is r = -0.33, and leaf 16
+       * is 1918 sitting between 1923 and 1919. Reading a date off the leaves
+       * either side would produce confident wrong answers. This bound instead
+       * says only what cannot fail to be true, and it was checked against every
+       * work here whose museum date is known: all of them satisfy it, several
+       * exactly.
+       */
+      notLaterThan: held?.date ? null : n.earliest,
       namedIn: n.namedIn,
     };
   })
   .sort((a, b) => a.title.localeCompare(b.title));
+
+/**
+ * Which transcribed leaves record activity in which year.
+ *
+ * The timeline already lights up the sheets whose *Whitney descriptor* names a
+ * year, and that is Book IV and nothing else: 157 of its 161 sheets are dated
+ * by the cataloguer, because it is a running account and every leaf had a date
+ * to give. Book I's descriptors say « Page 56 [multiple works] » and name no
+ * year at all, so none of its 117 sheets has ever appeared on that page —
+ * however much of it has been transcribed.
+ *
+ * That is now a fixable gap rather than a fact about the archive. Once a leaf
+ * is transcribed its dates are on the page in Jo Hopper's hand, and this reads
+ * them back: a leaf appears under every year its own date column names. It is
+ * derived from the transcriptions and grows only as batches land, which is the
+ * point — the timeline should show what has been read.
+ */
+const leafYears = new Map();
+for (const file of readTranscripts(root)) {
+  for (const rows of [...file.works.map((w) => w.rows), file.looseRows]) {
+    for (const r of rows) {
+      if (!r.leaf || !r.ref) continue;
+      const y = yearInCell(r.plain[0]);
+      if (y === null) continue;
+      if (!leafYears.has(y)) leafYears.set(y, new Map());
+      const m = leafYears.get(y);
+      const k = `${r.ledger}/${r.ref}`;
+      if (!m.has(k))
+        m.set(k, { ledger: r.ledger, batch: r.batch, leaf: r.leaf, ref: Number(r.ref), rows: 0 });
+      m.get(k).rows++;
+    }
+  }
+}
+const transcribedYears = [...leafYears.entries()]
+  .sort((a, b) => a[0] - b[0])
+  .map(([year, m]) => ({
+    year,
+    leaves: [...m.values()].sort((a, b) => Number(a.leaf) - Number(b.leaf)),
+  }));
 
 const out = {
   generated: new Date().toISOString(),
@@ -323,14 +399,30 @@ const out = {
    * never claim a work nobody has read.
    */
   index,
+  /**
+   * Years the transcribed leaves themselves record, with the leaves that
+   * record them. Derived from `transcripts/`, so it covers only what has been
+   * read — unlike the Whitney's own sheet dating, which covers only Book IV.
+   */
+  transcribedYears,
 };
 
 writeFileSync(resolve(root, 'src/content/works.json'), JSON.stringify(out, null, 2) + '\n');
 
 const dated = index.filter((w) => w.date).length;
+const ledgerDated = index.filter((w) => !w.date && w.ledgerYear).length;
+const bounded = index.filter((w) => !w.date && !w.ledgerYear && w.notLaterThan).length;
+const disagree = index.filter((w) => w.ledgerDisagrees);
 process.stdout.write(
   `works: ${out.works.length} titles held, ${holdings.length} holdings, ` +
     `${Object.keys(aliasIndex).length} aliases\n` +
     `index: ${index.length} works named in the transcriptions, ` +
-    `${dated} dated by a museum, ${index.length - dated} undated\n`,
+    `${dated} dated by a museum, ${ledgerDated} dated only by the leaf, ` +
+    `${bounded} bounded « no later than », ` +
+    `${index.length - dated - ledgerDated - bounded} with neither\n` +
+    (disagree.length
+      ? `       leaf and museum disagree on ${disagree.length}: ` +
+        disagree.map((w) => `${w.title} (leaf ${w.ledgerYear}, museum ${w.date})`).join('; ') +
+        '\n'
+      : ''),
 );

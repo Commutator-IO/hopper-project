@@ -63,19 +63,24 @@ export function useReader() {
 
   useEffect(() => {
     const readHash = () => {
-      const h = /^#([\w-]+)\/(\d+)$/.exec(location.hash);
+      // `#book-i/6` opens the batch; `#book-i/6/18297` opens it and scrolls the
+      // transcript to that sheet. The third part is the ResourceSpace ref,
+      // which is the sheet's only stable address — a leaf number is not one,
+      // because two photographs of a hinged clipping carry the same leaf.
+      const h = /^#([\w-]+)\/(\d+)(?:\/(\d+))?$/.exec(location.hash);
       setOpen(h ? { ledger: h[1], batch: Number(h[2]) } : null);
+      setGoto(h && h[3] ? Number(h[3]) : undefined);
     };
     readHash();
     addEventListener('hashchange', readHash);
     return () => removeEventListener('hashchange', readHash);
   }, []);
 
-  const goToBatch = useCallback((ledger: string, batch: number) => {
-    history.replaceState(null, '', `#${ledger}/${batch}`);
+  const goToBatch = useCallback((ledger: string, batch: number, ref?: number) => {
+    history.replaceState(null, '', `#${ledger}/${batch}${ref ? `/${ref}` : ''}`);
     setOpen({ ledger, batch });
     setSheet(undefined);
-    setGoto(undefined);
+    setGoto(ref);
   }, []);
 
   const close = useCallback(() => {

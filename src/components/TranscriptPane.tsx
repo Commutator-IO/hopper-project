@@ -63,13 +63,29 @@ export function TranscriptPane({
   }, [goto]);
 
   if (!has) {
+    // The exact command, not the name of the skill. The ledger id is the same
+    // string the site uses in its own URLs, and it is the form that works for
+    // all six volumes — Dealers/Etchings has no number.
+    const command = `/transcribe-hopper ${ledger} ${batch}`;
     return (
       <div className="grid h-full place-items-center bg-white p-8 text-center">
-        <div className="max-w-sm">
+        <div className="max-w-md">
           <p className="text-[14px] text-ink-700">No transcription for this batch yet.</p>
           <p className="prose-note mt-2">
-            The sheets are on the right, at the resolution the Whitney publishes. Transcribing a
-            batch is one pass of the <code className="font-mono">/transcribe-hopper</code> skill.
+            The sheets are on the right, at the resolution the Whitney publishes. Transcribing
+            this batch is one pass of the transcribe-hopper skill, with these arguments:
+          </p>
+          <button
+            type="button"
+            onClick={() => navigator.clipboard?.writeText(command)}
+            title="Copy this command"
+            className="mt-3 w-full rounded-card border border-ink-200 bg-ink-50 px-3 py-2 font-mono text-[13px] text-ink-800 transition hover:border-brand-400 hover:text-brand-700"
+          >
+            {command}
+          </button>
+          <p className="prose-note mt-2">
+            Twelve sheets, one pass, one conversation. Past twelve the quality of reading degrades
+            towards the end with nothing to signal it.
           </p>
         </div>
       </div>

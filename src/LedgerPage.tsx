@@ -141,8 +141,7 @@ export function LedgerPage({ id }: { id: LedgerKey }) {
             <button
               key={s.ref}
               onClick={() => {
-                r.goToBatch(id, batchOfSeq(s.seq));
-                r.setGoto(s.ref);
+                r.goToBatch(id, batchOfSeq(s.seq), s.ref);
               }}
               className="card group overflow-hidden text-left transition hover:border-brand-400"
             >
