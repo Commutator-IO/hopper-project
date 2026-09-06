@@ -630,7 +630,128 @@ named, which is what lets a reader tell the two apart.
 
 *(Book II batch 2, sheets 13–24, read 6 September 2026, Opus 5. Book II batch 3
 was transcribed first, in its own conversation, and what it states about itself
-is marked as its finding rather than this pass's.)*
+is marked as its finding rather than this pass's. Batch 4, sheets 37–48, was
+read on 6 September 2026 on Opus 5 and stands first below, because what it
+found changes what a Book II leaf can be expected to hold.)*
+
+## At leaf 45 the leaf stops holding one work, and the prose stops being prose
+
+*(batch 4)* Batches 1, 2 and 3 all found the same leaf: one work, a title, a
+size, ten or fifteen sentences about who is in the picture and what they are
+thinking, one sale line. **From leaf 45 a leaf holds two or three works and
+gives each of them four or five lines** — title, size, colour, buyer, cheque.
+The anecdote is gone and what replaces it is a colour inventory: « Sky dappled
+grey. Trees darkish green masses except patch of green L. centre. Hill pinkish
+earth. » Nothing is being withheld; the subject has changed from oils to
+watercolours and this is what she records about a watercolour.
+
+**Some of them get no description at all.** Leaf 51 is three works — First
+Branch of White River, Windy Day, Vermont Sugar House — and carries not one
+word of colour: a title, a size, a buyer and a figure, three times over. Do not
+go looking for the description on the facing leaf; there isn't one.
+
+## The odd-only foliation is intermittent, and batch 4 settles it
+
+*(batch 4)* Batch 2 found leaves running 11, 13, 15 and inferred blank versos;
+batch 1 found 2, 3, 4, 5, 6, 7 consecutive and warned that the pattern is
+acquired rather than structural. Batch 4 holds **both inside twelve sheets**:
+45, 46, 47 consecutive, then 49, 51, 53, 55, 57 odd, then 58. Leaf 46 is a
+verso somebody wrote on and 48, 50, 52, 54 and 56 were not photographed. So the
+foliation is not a rule anywhere in this volume — read the printed numbers off
+the sheets and do not predict them.
+
+## An empty drawing box is a cross-reference, not a missing drawing
+
+*(batch 4)* Leaf 47 heads its first work with a ruled drawing box containing no
+drawing and the line « See opposite page for pictures » written inside it. The
+box is not blank because Edward Hopper did not draw the work. It is blank
+because the drawing is on a loose sheet, and the loose sheet says so.
+
+**Book II has a second series of record drawings, in pencil, on detached
+sheets.** Sheets 17036 and 16499 are bifolia of buff paper, photographed open,
+carrying six of his drawings in pencil rather than ink — two and four — each
+captioned by Jo Hopper with the title, the size and, four times, the page of
+the volume where the entry stands: « Book II p. 47 », « Book II p. 49 » three
+times. They are the only place several of these drawings exist. Sheet 17379 is
+a third, hinged rather than loose, carrying an ink drawing of The Captain's
+House and dating it to Gloucester, about 1924 — fifteen years out of place
+among the leaves it sits between.
+
+**Give these `\sketch{}` like any other**, and note that they are pencil: the
+converter's own label reads « ink sketch » and it is hard-coded.
+
+## The loose sheet and the leaf contradict each other, and both are right
+
+*(batch 4)* This is the reason the detached sheets are worth the attention, and
+the reason not to prefer either reading. Route 14, Vermont went to a benefit
+auction in January 1940:
+
+- **the benefit** — leaf 47 says « Blind Auction for Finish Relief », sheet
+  17036 says « Given to Polish Relief »;
+- **the buyer** — leaf 47 says « Phillip Goodwin » and then « Philip Goodwin »
+  four words later, leaf 46 says « Goodwin », sheet 17036 says « Bqt. by
+  architect — Goodman? Philip », with her own query mark;
+- **what happened next** — only sheet 17036 has it: « who sold it to Maynard
+  Walker, who sold it to John Clancy ».
+
+Leaf 46 then adds, in a heavier pencil that is not hers, « Acquired by John
+Clancy from Maynard Walker Spring 1956 ». Four sources, four spellings, one
+picture. Transcribe all of them and choose between none.
+
+## A struck alternative title can be a cross-reference too
+
+*(batch 4)* Leaf 45's third work is « Near the Back Shore », with « (Lousy
+Shacks) » beside it ringed in pencil, struck through in the same pencil, and
+« not p. 47 » written above it. « Lousy Shacks » is the alternative title of
+Shacks at Pamet Head, which stands on leaf 47 — somebody read both leaves,
+found the same nickname on two different pictures, and cancelled it on one.
+Give the cancellation and the pencil line, and let the note say what it points
+at.
+
+## More spellings, all as written
+
+*(batch 4)* `Rockyfellow Centre` for Rockefeller and `Finish Relief` for Finnish
+*(leaf 47)*, `Parish Art Museum` for the Parrish *(leaf 45)*, `ocre` twice
+*(leaves 46, 49)*, `creepin'` *(leaf 49)*, `floconeux` against batch 3's
+`floconneuse` *(leaf 58)*, `gray` and `grey` four words apart on one line
+*(leaf 57)*, `Bqt.` for bought *(sheet 17036)*.
+
+## Readings that would not settle
+
+*(batch 4)* Nine, all left as `\uncertain{}` or `\ill{}`:
+
+- **`Cahners`** and **`Santuit`** *(leaf 45)*, the buyer of Spindley Locusts and
+  her town — the surname is written once and then corrected above the line with
+  « ners », which is what makes the base word unreadable.
+- **`Frank R. Piccarello`** *(leaf 46)*, in the heavy late pencil, the only
+  place the name occurs.
+- **`Trustee`** *(leaf 46)*, in « Trustee of Mod. Art Mus. » — the capital has
+  the loop of a G.
+- **`not`** *(leaf 49)*, in « hill top dark green. not in shadow », where the
+  middle letter has no bowl.
+- **`blues`** *(leaf 49)*, struck and written over itself.
+- **`Zierler`** *(leaf 53)*, the buyer of Sugar Maple.
+- **`floconeux`** *(leaf 58)*.
+- **`side St.`** *(sheet 17379)*, in « Back of Our Lady of Good Voyage on side
+  St. »
+
+**Both `\ill{}` marks in the batch are her own cancellations** — the word in
+quotation marks under « Jos. Butler. Youngstown, O. » on leaf 57, the figure
+after « Gloucester 1924 » on sheet 17379. Nothing in these twelve sheets is
+pasted down, so no `\ill{}` here means « under paper » and no second photograph
+would help.
+
+## A figure that does not reconcile, again
+
+*(batch 4)* Leaf 45 books Spindley Locusts at « 2550. - 1/3 = 1660. » Two
+thirds of 2550 is 1700. Neither figure is doubtful on the sheet. Transcribe
+both and say in a `\note{}` that they do not meet — the accounts script checks
+this arithmetic itself and reports rather than corrects, so the note is for the
+reader of the leaf, not for the script.
+
+---
+
+*(batch 2, below.)*
 
 ## The leaf numbers are printed, and that changes what a missing one means
 
