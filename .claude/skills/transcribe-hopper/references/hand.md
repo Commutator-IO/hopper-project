@@ -630,9 +630,118 @@ named, which is what lets a reader tell the two apart.
 
 *(Book II batch 2, sheets 13–24, read 6 September 2026, Opus 5. Book II batch 3
 was transcribed first, in its own conversation, and what it states about itself
-is marked as its finding rather than this pass's. Batch 4, sheets 37–48, was
-read on 6 September 2026 on Opus 5 and stands first below, because what it
-found changes what a Book II leaf can be expected to hold.)*
+is marked as its finding rather than this pass's. Batches 4 and 5, sheets
+37–60, were read on 6 September 2026 on Opus 5 and stand first below, because
+what they found changes what a Book II leaf can be expected to hold.)*
+
+## The volume goes backwards, and the dates on a leaf are not its date
+
+*(batch 5)* Batch 4 ended in the watercolours of 1936 to 1942. Leaf 60 opens
+« Paris - Early Oils 1907 - 1910 » and the next nine leaves are early work —
+the Paris canvases of 1907 and 1909, then the American oils of 1908 to 1914.
+**Do not read a run of leaves as a chronology and do not expect the batch after
+a batch to continue its years.** These are leaves written up decades late, and
+she says so in her query marks: « 1907? », « 1909? », « 1913 or before »,
+« bet. 1920-23 », « ± 1908 ».
+
+## Four leaves in a row can carry no money at all
+
+*(batch 5)* Leaves 60 to 63 are three record drawings to a leaf with a title, a
+size, a year and one sentence about how pale the paint is — nine pictures, no
+buyer, no price, no date of sale. The only transactions on them are two gifts
+to herself in 1957. Book I's batch 8 found ten such leaves; this is the Book II
+case, and it is not a defect in the record or a sign that a column was missed.
+Leaf 63 rules a third drawing box at the foot and leaves it empty, with nothing
+written beside it — unlike leaf 47's empty box in batch 4, this one is not a
+cross-reference to anything.
+
+## She writes in pencil first, rubs it out, and inks over it
+
+*(batch 5)* This is the batch's most useful finding and the easiest to mistake
+for damage. On leaves 60 and 62 every title was set down in pencil, erased and
+written again in ink, and the erasure is still legible — above leaf 60's first
+title a whole erased « Le Louvre et la Seine » survives, *without* the
+diaeresis the inked title carries. Leaf 69 has two erased copies of « 1913
+Corner Saloon See p. 87 », one under the heading and one inside an empty
+drawing box; leaf 77 has an erased « Dec 21st 1939 » beside the inked
+« Dec. 21'', 39. » **An erasure that can be read is transcribed, with a note
+saying it was rubbed out** — it is not `\ill{}` and it is not `\struck{}`, and
+the pencil and the ink often disagree.
+
+## An exhibition checklist indexes the volume it sits in
+
+*(batch 5)* Leaf 74 is the Rehn Gallery's « Edward Hopper 1907-1914 » of
+January 1941 — the one ruled table with headings this pass found anywhere in
+Book II, and the heading is one word, « Oils. » Its right-hand column carries
+page references back into the same book (« Page 68 », « See p. 69 »,
+« Page 70 », « See page 87 »), so it can be used to find the leaf a picture's
+own entry stands on. **Its annotations were added over fifteen years**: a 1941
+checklist records a sale of December 1951 and a delivery of 1955. Read the
+right-hand column as later than the row it sits against, and note that one
+annotation there straddles two rows — the Squam Light sale is written between
+the Blackwell's Island and Squam Light lines, and leaf 69 settles which it
+belongs to.
+
+## The checklist and the leaf disagree about sizes, dates and spellings
+
+*(batch 5)* Four disagreements inside twelve sheets, each between leaf 74 and
+the leaf the picture's own entry stands on: Le Louvre et la Sëine is
+23 1/2 x 28 3/4 on leaf 60 and 23 1/2 x 28 1/2 on leaf 74; American Village is
+1913 on leaf 70 and 1912 on leaf 74; Le Pavillon de Flore on leaf 62 is Le
+Pavillion de Flore on leaf 74; and she writes « Sëine » with a diaeresis on
+leaf 60 and « Seine » without one on leaf 62 and on leaf 74. As with batch 4's
+Route 14, transcribe all of them and choose between none.
+
+## Two leaves can list the same body of work and barely overlap
+
+*(batch 5)* Leaf 74's « Sketches pp. 60 - 63 » gives nine Paris canvases; leaf
+75's « Canvases in Nyack » gives fourteen more, unframed, all 24"x29", and only
+two titles occur on both lists. They are different pictures with similar names
+— Notre Dame de Paris against Notre Dame No. 2, Pavillon de Flore against
+Pavillon de Flore in the Spring. **Do not collapse them and do not assume a
+title on one list is the picture on the other.**
+
+## More spellings, all as written
+
+*(batch 5)* `cell capitals` where « all capitals » is meant *(leaf 60)*,
+`Pittsburg` without the h and `Laurence Fleishman` for Lawrence Fleischman
+*(leaf 68)*, `Bartlet Hayes` *(leaf 69)*, `Corrier Gallery` for the Currier
+*(leaf 71)*, `Germaine` for Germain and `Pavillion` *(leaf 74)*, `gypsey`
+*(leaf 75)*, `Apres Midi de Juin` unaccented *(leaf 61)*. Her `±` for « about »
+is everywhere in this batch, and on leaf 70 it stands inside a title's date
+parenthesis: « (1913 or ± Improvised) ».
+
+## Readings that would not settle
+
+*(batch 5)* Eight, all left as `\uncertain{}`:
+
+- **`Pease`** *(leaves 69 and 74)*, the buyer of Squam Light at the Whitney
+  retrospective — written twice, in two hands' worth of years apart, and the
+  terminal is her open-loop `s` both times.
+- **`Pioneer`** *(leaf 69)*, in « 1'' Light Pioneer by E.H. »
+- **`Christopher`** *(leaf 69)*, the street beside El Station.
+- **`met March 59.`** *(leaf 70)*, closing the Herbert Goldstone pencil line.
+- **`1914`** *(leaf 74)*, Corner Saloon's year — a 3 and a 4 written one over
+  the other, and the head of leaf 69 says 1913.
+- **`Bet.`** *(leaf 74)*, in the left-margin « Bet. '20 + 23? » against
+  Moonlight Interior, which leaf 70 writes out as « bet. 1920-23 ».
+- **`stacked`** *(leaf 74)*, in the struck pencil above the heading.
+- **`Canvases`** *(leaf 75)*, whose « es » is a raised mark rather than letters.
+
+**All three `\ill{}` marks in the batch are her own cancellations** — after
+« Squam Light » and after « El Station » on leaf 69, after « Roof » on leaf
+71. Nothing in these twelve sheets is pasted down, so no `\ill{}` here means
+« under paper ».
+
+## Full-width bands again, and how wide
+
+*(batch 5)* Leaf 74's table read cleanly at `-crop 1160x480+110+y` on a
+1316 × 2000 sheet, resized 175%, five bands stepping 350px — the overlap is
+what lets a row that falls on a seam be read whole from the band below. The
+same leaf needed a separate narrow crop of the left margin, because the
+year-brackets against the pencil list sit outside x=110. Individual doubtful
+words went to 400–900% single-word crops, and above about 700% the JPEG stops
+adding anything.
 
 ## At leaf 45 the leaf stops holding one work, and the prose stops being prose
 
