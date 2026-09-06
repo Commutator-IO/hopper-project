@@ -223,6 +223,12 @@
       "retrieved": "2026-09-06",
       "via": "collectionapi.metmuseum.org"
     },
+    "whitney-70-1188": {
+      "name": "Whitney Museum of American Art, Blackwell's Island, accession 70.1188",
+      "url": "https://whitney.org/collection/works/5899",
+      "retrieved": "2026-09-06",
+      "via": "whitney.org/api"
+    },
     "whitney-guide": {
       "name": "Whitney Museum of American Art, teacher guide, “About the Artist”",
       "url": "https://whitney.org/education/schools-educators/k-12/teaching-materials/teacher-guides/hopper-new-york/about",
@@ -277,8 +283,12 @@
       "model": "claude-opus-5"
     },
     "blackwell s island": {
-      "note": "Both ledgers carry this canvas and each sends the reader to the other: Book I leaf 57 writes « See Book II p. 35 », and Book II leaf 35 writes « See Book I p. 57 » and, in pencil at the edge, « This listed in Book I ». They give the same size and the same sale — 2500 less a third, 19 December 1929 — one as « 1666.67 » and the other as « 1666 2/3 », and they part over the buyer’s name, which Book I writes « Wm. Russell Allen » and then « Wm. C. Russell Allan » and Book II « Russel Allen ». On how it passed to Christopher Tunnard, Book I says a nephew acquired it and Book II « son-in-law or nephew ».",
+      "note": "The Whitney's Blackwell's Island is a different canvas from this one: it is dated 1911 and its image measures 24 x 29 in., where both leaves here head the picture « Blackwell's Island - 35 x 60 » and Book II leaf 35 dates the painting « Nov. 20'', 28 ». The link and the year beside this entry are a title match and nothing stronger. Both ledgers carry this canvas and each sends the reader to the other: Book I leaf 57 writes « See Book II p. 35 », and Book II leaf 35 writes « See Book I p. 57 » and, in pencil at the edge, « This listed in Book I ». They give the same size and the same sale — 2500 less a third, 19 December 1929 — one as « 1666.67 » and the other as « 1666 2/3 », and they part over the buyer’s name, which Book I writes « Wm. Russell Allen » and then « Wm. C. Russell Allan » and Book II « Russel Allen ». On how it passed to Christopher Tunnard, Book I says a nephew acquired it and Book II « son-in-law or nephew ».",
       "claims": [
+        {
+          "says": "The Whitney Museum of American Art holds a Blackwell's Island, oil on canvas, dated 1911, overall 24 3/8 × 29 5/16 in. (61.9 × 74.5 cm) and image 24 × 29 in. (61 × 73.7 cm), accession 70.1188, Josephine N. Hopper Bequest.",
+          "source": "whitney-70-1188"
+        },
         {
           "says": "Book I leaf 57 heads « Blackwell's Island - 35 x 60 », books « Nov. 20, 28  Mr. Wm. Russell Allen of Boston - about Feb. or Mar.  2500 - 1/3 Com.  1666.67  Dec. 19, 29 », then « Wm. C. Russell Allan - Later acquired by nephew » and « See Book II p. 35.  Mr & Mrs. Christopher Tunnard, architect (city planning), 257 Rock Road, New Haven, Conn. »",
           "source": "ledger:book-i/57"
