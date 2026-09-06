@@ -153,6 +153,10 @@ export function Footer() {
           <a href="https://resourcespace.whitney.org/pages/collections_featured.php?parent=1116" className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">
             The ledgers at the Whitney ↗
           </a>
+          {' · '}
+          <a href="https://www.commutator.io" className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600">
+            Commutator ↗
+          </a>
         </p>
       </div>
     </footer>

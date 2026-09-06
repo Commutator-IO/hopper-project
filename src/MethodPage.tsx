@@ -32,9 +32,17 @@ export function MethodPage() {
       <header className="border-b border-ink-200 py-10">
         <h1 className="font-serif text-3xl text-ink-900">Method &amp; progress</h1>
         <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-ink-700">
-          Adapted, nearly whole, from the workbench built for the Grothendieck fonds at
-          Montpellier. What changed, changed because these are different objects — and the
-          differences are set out below rather than smoothed over.
+          How these leaves are read, what the reading records, and how much of it is done.
+          Adapted, nearly whole, from a{' '}
+          <a
+            href="https://grothendieck.commutator.io"
+            target="_blank"
+            rel="noreferrer"
+            className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+          >
+            workbench built for another manuscript archive
+          </a>
+          ; what changed, changed because a ledger is not a manuscript.
         </p>
       </header>
 
@@ -99,7 +107,7 @@ export function MethodPage() {
               ['\\struck{…}', 'struck out in the book. Jo Hopper struck a great deal, and a crossing-out is often the more interesting half of an entry'],
               ['\\note{…}', 'the transcriber’s note — ours'],
               ['\\marginal{…}', 'a marginal note in the book — theirs'],
-              ['\\hand{edward|jo|later|unidentified}{…}', 'whose hand wrote it. No counterpart in the Grothendieck preamble, and the most important macro in this one'],
+              ['\\hand{edward|jo|later|unidentified}{…}', 'whose hand wrote it. These books were written by two people and annotated by more, and a transcription that flattened the three would destroy what they chiefly record'],
               ['\\sketch{…}', 'Edward Hopper’s ink record drawing stands here. The argument is what is written on it, never a description of it'],
               ['\\clipping{…}', 'something printed and pasted to the leaf; the argument transcribes its printed text'],
               ['ledgertable', 'the ruled columns. Jo Hopper ruled them herself; the table is not a presentation of the content, it is the content'],
@@ -113,45 +121,36 @@ export function MethodPage() {
         </table>
       </section>
 
+      {/* Four decisions that are not obvious from the code, kept because a
+          reader checking a reading deserves to know how the sheet in front of
+          them got here and what may be done with it. */}
       <section className="border-b border-ink-200 py-8">
-        <h2 className="font-serif text-2xl text-ink-900">What differs from the parent project</h2>
+        <h2 className="font-serif text-2xl text-ink-900">Decisions worth stating</h2>
         <div className="mt-4 max-w-3xl space-y-4 text-[14.5px] leading-relaxed text-ink-700">
-          <Diff title="No relay, and the reason is measured">
-            Montpellier sends <code className="font-mono text-[13px]">X-Frame-Options</code>, no
-            CORS headers, and a certificate that expired in December 2025, so a browser cannot
-            fetch its scans at all and a deployed Node process has to do it instead. The Whitney’s
-            server answers cross-origin, echoes the <code className="font-mono text-[13px]">Origin</code>{' '}
-            it is sent, holds a current certificate and applies no referer check. Only framing is
-            forbidden, and an image belongs in an <code className="font-mono text-[13px]">&lt;img&gt;</code>.
-            Building a relay here would be adding a hop between a reader and a museum for no
-            reason.
+          <Diff title="The images are fetched from the museum, not through us">
+            The Whitney’s server answers cross-origin, echoes the{' '}
+            <code className="font-mono text-[13px]">Origin</code> it is sent, holds a current
+            certificate and applies no referer check. Only framing is forbidden, and an image
+            belongs in an <code className="font-mono text-[13px]">&lt;img&gt;</code> anyway. So
+            every photograph on this site is loaded from the museum that made it, and there is no
+            relay in between: nothing is cached here, nothing is re-served, and a reader’s
+            browser talks to the Whitney directly.
           </Diff>
-          <Diff title="Twelve sheets to a batch, not twenty pages">
-            A page of Grothendieck is prose and formulae read once through. A ledger leaf is a
-            ruled table forty lines deep, and every line carries a date, a place, a price and a
-            fraction — the commissions run “25 – 1/3” and the figures “16.66” — none of which can
-            be skimmed and any one of which is wrong if it is guessed.
-          </Diff>
-          <Diff title="One edition, not two">
-            Grothendieck’s manuscripts get a second pass that restates the mathematics in current
-            notation, because a page of 1962 mathematics is genuinely hard to read in 1962’s
-            notation. A ledger needs no such pass: Jo Hopper’s English is plain, her columns are
-            already a table, and “30 – 1/3” means today what it meant in 1927. A second edition
-            here would have been a second artifact to keep in step, paying for itself in nothing.
-            So the transcription is the edition, and a file is{' '}
-            <code className="font-mono text-[13px]">batch-NN.tex</code> with no register in its
-            name.
+          <Diff title="Twelve sheets to a batch">
+            A ledger leaf is a ruled table forty lines deep, and every line carries a date, a
+            place, a price and a fraction — the commissions run “25 – 1/3” and the figures
+            “16.66” — none of which can be skimmed and any one of which is wrong if it is
+            guessed. Twelve is what one pass of sustained attention actually covers.
           </Diff>
           <Diff title="No grouping of ours, anywhere">
-            The archive’s six volumes are the site’s six pages. Three of the reading books an
-            earlier version offered were threads we had drawn across the volumes, and each had to
+            The archive’s six volumes are the site’s six pages. An earlier version offered
+            reading books that were threads we had drawn across the volumes, and each had to
             announce at its head whose grouping it was — which is honest, and still a second
             organisation laid over one that already had an author.
           </Diff>
           <Diff title="The inventory is harvested by a person, once">
-            Montpellier’s inventory can be read by a script. The Whitney’s HTML pages sit behind a
-            JavaScript bot-check, which this project does not impersonate. So the listing is taken
-            in a browser with the snippet in{' '}
+            The Whitney’s HTML pages sit behind a JavaScript bot-check, which this project does
+            not impersonate. So the listing is taken in a browser with the snippet in{' '}
             <code className="font-mono text-[13px]">scripts/harvest.js</code> and committed to{' '}
             <code className="font-mono text-[13px]">harvest/</code> — which has the side benefit
             that the inventory this site rests on is reviewable in a diff. The images themselves
@@ -159,18 +158,12 @@ export function MethodPage() {
             open, and <code className="font-mono text-[13px]">robots.txt</code>’s ten-second crawl
             delay is honoured by <code className="font-mono text-[13px]">npm run mirror</code>.
           </Diff>
-          <Diff title="One language, and it is English">
-            Grothendieck wrote French, and that project keeps two French editions in step. The
-            Hoppers wrote English. There is no translation to maintain, which is one artifact
-            fewer.
-          </Diff>
-          <Diff title="A copyright that is live, not historical">
-            The fonds at Montpellier is under copyright too, but these ledgers are © Heirs of
-            Josephine N. Hopper, licensed by Artists Rights Society, and the Whitney records the
-            object rights as transferred to the Museum. A transcription reproduces Josephine
-            Hopper’s text. Every file carries{' '}
+          <Diff title="The copyright is live, and the watermark cannot be dropped">
+            These ledgers are © Heirs of Josephine N. Hopper, licensed by Artists Rights Society,
+            and the Whitney records the object rights as transferred to the Museum. A
+            transcription reproduces Josephine Hopper’s text. Every file carries{' '}
             <code className="font-mono text-[13px]">\watermark&#123;&#125;</code> and the renderer{' '}
-            <em>refuses to build a file without it</em>, so the declaration cannot be dropped by
+            <em>refuses to build a file without it</em>, so the declaration cannot be lost by
             accident.
           </Diff>
         </div>
