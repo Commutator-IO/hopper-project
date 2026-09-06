@@ -632,7 +632,160 @@ named, which is what lets a reader tell the two apart.
 was transcribed first, in its own conversation, and what it states about itself
 is marked as its finding rather than this pass's. Batches 4 and 5, sheets
 37–60, were read on 6 September 2026 on Opus 5 and stand first below, because
-what they found changes what a Book II leaf can be expected to hold.)*
+what they found changes what a Book II leaf can be expected to hold. Batch 6,
+sheets 61–72, closed the volume on 6 September 2026 on Opus 5 and stands first,
+because where a volume ends is the thing a pass most needs told in advance.)*
+
+## Where Book II ends
+
+*(batch 6)* The volume closes at **leaf 99**, an index headed « Photographs - by
+Peter Julie » — three columns of titles, Oils, Water Colors and Etchings, with
+no money on it anywhere and a note of the Museum of Modern Art's 1933 portrait
+photograph of Hopper at the foot. As on Book I's leaves 84 to 93, **a title here
+is cited rather than recorded, so no `\work{}` opens on it**; the works index
+took exactly the ten works of leaves 79 to 97 from this batch and nothing off
+leaf 99, which is the outcome to check for. The **back cover**, sheet 17319,
+carries nothing but the stationer's blind-stamped ornament and takes no
+`\sheet{}`, so Book II finishes at 71 transcribed sheets of 72 — the same
+arithmetic as Book I's 116 of 117, and for the same reason.
+
+The leaf names the photographer twice and spells him two ways on that one leaf:
+**`Peter Julie`** in the heading, **`Juley`** at the foot. Book I's batch 9 found
+that pair a leaf apart across leaves 92 and 93; here both forms are eight inches
+apart on one sheet.
+
+## The batch after a backwards batch can run forwards
+
+*(batch 6)* Batch 5 warned against reading a run of leaves as a chronology,
+having found the volume jump back thirty years to the Paris canvases. Batch 6 is
+the other case and the warning still holds, because **you cannot tell which you
+are in until you read the heads**: leaves 79 to 97 are eleven oils finished
+between February 1940 and April 1942, laid down in the order they were painted,
+and only leaf 87 breaks it — Corner Saloon, painted 1913, entered here because
+1941 is when it sold. That leaf is the one batch 5's leaf 74 points at with
+« See page 87 », so the checklist's page column works as an index in both
+directions.
+
+Leaf 87 also settles a date batch 5 could not: leaf 74 gives Corner Saloon's
+year as a 3 and a 4 written one over the other and batch 5 left it
+`\uncertain{1914}`. Leaf 87 says « Painted 1913 » plainly, and the head of leaf
+69 agrees. **All three readings stand as written** — the point is that the
+volume answers its own questions if you read to the end of it, not that one
+should now be corrected.
+
+## The paint formula is the most reliable field in the volume
+
+*(batch 6)* Batch 1 found the formula standing beside the title and warned it is
+neither description nor marginal. Batch 6 has it on **ten leaves out of ten**,
+and its shape does not vary: Blockx and Winsor & Newton colors, then a named
+white, then the oil, then the canvas. What varies is worth reading rather than
+skimming, because it is the only place these leaves record a change — the white
+is Blockx Silver White seven times, **W & N Zinc white** for Night Hawks and
+**W & N Flake white** for Dawn in Pennsylvania; the oil is poppy every time but
+Dawn in Pennsylvania, which is **linseed**; and the canvases run Belgian double
+prime, Winton, and **English linen with domestic priming** for Night Hawks.
+
+**Leaf 89 strikes out a canvas maker and it is a name batch 2 left open.** Batch
+2 read `Fornet` on leaf 31 and marked it uncertain; leaf 89 writes the same word
+struck through, and at 8× the letters give **`Foinet`**. Offered as the better
+reading of the two, not as a correction to batch 2 — both leaves stay as each
+writes it.
+
+## The erased pencil takes the whole head, not just the title
+
+*(batch 6)* Batch 5 found her writing a title in pencil, rubbing it out and
+inking over it. On leaves 91 and 97 the erasure is much larger: **the title, the
+size, the finishing date and the entire paint formula** were drafted in pencil,
+erased, and written again in ink, and the pencil is still legible under and
+around the ink across the head of the leaf. Leaf 87 has an erased « Corner
+Saloon » above the inked title that can be read; leaf 89 has an erased line
+above its title that cannot, and is `\ill{}` rather than transcribed. So the
+habit is not confined to titles, and an erasure is worth a contrast pass before
+it is written off.
+
+## A record drawing can be on a sheet stuck to the leaf, with nothing under it
+
+*(batch 6)* Batch 4 found Book II's detached pencil record drawings on loose
+bifolia. **Leaf 83 is the third arrangement: the Gas drawing is on a separate
+sheet of paper adhered across the head of the leaf**, with « 26 x 40 » in pencil
+below the drawing and its own edges showing at the top and at the fore-edge.
+Give it `\sketch{}` with what is written on it, as usual.
+
+What matters for the apparatus is what it covers. It lies over the strip where
+the five leaves after it all carry a pencil year — and **that is not enough to
+write `\ill{}`**, because nothing establishes that a year was ever written on
+this leaf. There is no second photograph. The honest record is a `\note{}`
+saying what the sheet covers and that nothing settles what is under it; an
+`\ill{}` there would assert a heading exists.
+
+## Two commissions one day apart, and only one of them is arithmetic
+
+*(batch 6)* Book I's batch 7 and Book II's batch 4 both met a figure that would
+not reconcile. This batch has the cleanest instance yet, because the control is
+four leaves away: leaf 81 books Kansas City at **« 1275 - 1/3 = 850 »**, which is
+exactly two thirds, and leaf 85 books Mrs. Rand at **« 1250 - 1/3 = 850 »**,
+where two thirds is 833 1/3. Both cheques are dated Dec. 29, 47 and every figure
+is unambiguous at 7×. The pull to read the second as 1275 because the first is
+1275 is very strong and is exactly what to resist. `npm run accounts` does not
+catch this pair — it checks only rows where its parser finds one price and one
+receipt in the columns it knows — so the `\note{}` is the whole of the record.
+
+## Her interlineation is still doing the work
+
+*(batch 6)* Confirming batches 2, 3 and Book I's batch 8, and worth restating
+because this batch has fourteen of them and three change what a sentence says:
+« ground » over a struck « pavement » on leaf 83, « restaurant » over a struck
+« shop » on leaf 95, « paler » over a struck « straw turned reddish » on leaf 83.
+Where the words below are struck the interlineation replaces them; where they
+are not it glosses them. **Both go in `\marginal{}` naming the words they stand
+over**, which is the only thing that lets a reader tell the two apart.
+
+## More spellings, all as written
+
+*(batch 6)*
+
+- **`Confidentatly Yours`** *(leaf 79)*, in quotation marks beside Office at
+  Night, with « Room 1005. »
+- **`mahogony`**, **`pebbled grass panes`** for glass, and **`Belgium canvas`**
+  *(leaf 79)* against **`Belgian`** on leaves 81, 85 and 91.
+- **`Nilo Green`** *(leaf 97)* for Nile green — the terminal is an unambiguous
+  o, not her open-loop s.
+- **`cheery wood counter`** for cherry and **`beek`** for beak *(leaf 95)*;
+  **`ocre`** *(leaf 95)* — confirming batch 4.
+- **`Ada S. Garret Prize`** *(leaf 95)* with one t, for the Art Institute's
+  Garrett prize.
+- **`Van Wyke Brooks`** *(leaf 91)* for Van Wyck Brooks.
+- **`cellas`** for cellars and **`slatey`** *(leaves 93, 85)*; **`greyish`**,
+  **`blueish`**, **`greeny`** and **`gray`** and **`grey`** on the same leaves.
+- **`Lilly Appartment`**, **`Macombs Bridge`**, **`Light house at Two Lights`**,
+  **`Cape Cod After noon`** *(leaf 99)*, all set as the leaf spaces them;
+  **`2 On the Aisle`** — the tangle of Book I's leaves 55, 86, 93 and 98, here
+  with the Aisle spelling.
+- **`Baptismal Font, Charleston`** *(leaf 87)* against Book I's flyleaf, which
+  writes Charlestown twice for two different places.
+
+## Readings that would not settle
+
+*(batch 6)* Three, and all three are figures or a year rather than a name, which
+is unusual for this volume:
+
+- **`1945`** *(leaf 91)* — the pencil year at the head is five strokes, an
+  upright then figures supporting 1945, and every entry below it is of 1941 or
+  1942. The stray upright is not offered as a digit.
+- **`Univer.`** *(leaf 85)*, opening the second of the two late pencil lines
+  about which Arizona university owns House by a Road — the lines are ringed
+  « Not the same Univs » in her own margin, so her doubt and the transcriber's
+  sit on the same two lines.
+- the **two figures of the Walker Art Center line** *(leaf 79)*, both written
+  one over another and both `\ill{}`. « 1000 » stands clear above the second of
+  them and is given as a `\marginal{}` — **which is not the same as reading the
+  figure**, and the difference is the whole of why the row is not simply booked
+  at 1500 - 1/3 = 1000 like the struck pencil line above it.
+
+**All six `\ill{}` marks in the batch are her own cancellations or overwritings**
+— nothing in these twelve sheets is pasted down except leaf 83's drawing sheet,
+which covers no writing that can be shown to exist. A mark that will not resolve
+at 2× will not resolve at 9× either, and this batch tried.
 
 ## The volume goes backwards, and the dates on a leaf are not its date
 
