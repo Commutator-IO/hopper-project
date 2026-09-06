@@ -1,11 +1,215 @@
 {
-  "_comment": "Per-work notes, keyed exactly as src/content/works.json keys its index. Written by /modernize-hopper, one work at a time, from named sources only. Every claim carries a source key that resolves in \"sources\" below; a note with no source is not a note. Nothing here is derived from a ledger row \u2014 the rows are on the sheets and the site shows them \u2014 and nothing is written from memory.",
+  "_comment": "Per-work notes, keyed exactly as src/content/works.json keys its index. Written by /modernize-hopper, one work at a time, from named sources only. Every claim carries a source key that resolves in \"sources\" below; a note with no source is not a note. Nothing here is derived from a ledger row — the rows are on the sheets and the site shows them — and nothing is written from memory.",
   "sources": {
+    "aic-1923-305": {
+      "name": "Art Institute of Chicago, East Side Interior, accession 1923.305",
+      "url": "https://www.artic.edu/artworks/8353",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1939-2082": {
+      "name": "Art Institute of Chicago, The Evening Wind, accession 1939.2082",
+      "url": "https://www.artic.edu/artworks/36038",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-141": {
+      "name": "Art Institute of Chicago, A Corner, accession 1944.141",
+      "url": "https://www.artic.edu/artworks/50049",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-142": {
+      "name": "Art Institute of Chicago, Train and Bathers, accession 1944.142",
+      "url": "https://www.artic.edu/artworks/50052",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-143": {
+      "name": "Art Institute of Chicago, Summer Twilight, accession 1944.143",
+      "url": "https://www.artic.edu/artworks/50054",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-145": {
+      "name": "Art Institute of Chicago, The Lonely House, accession 1944.145",
+      "url": "https://www.artic.edu/artworks/50061",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-146": {
+      "name": "Art Institute of Chicago, The Locomotive, accession 1944.146",
+      "url": "https://www.artic.edu/artworks/50064",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-148": {
+      "name": "Art Institute of Chicago, The Bull Fight, accession 1944.148",
+      "url": "https://www.artic.edu/artworks/50072",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-149": {
+      "name": "Art Institute of Chicago, Cow and Rocks, accession 1944.149",
+      "url": "https://www.artic.edu/artworks/50075",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-151": {
+      "name": "Art Institute of Chicago, The Monhegan Boat, accession 1944.151",
+      "url": "https://www.artic.edu/artworks/50080",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-152": {
+      "name": "Art Institute of Chicago, House by a River, accession 1944.152",
+      "url": "https://www.artic.edu/artworks/50085",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-153": {
+      "name": "Art Institute of Chicago, The Cat Boat, accession 1944.153",
+      "url": "https://www.artic.edu/artworks/50087",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-154": {
+      "name": "Art Institute of Chicago, Night on the El Train, accession 1944.154",
+      "url": "https://www.artic.edu/artworks/50091",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-155": {
+      "name": "Art Institute of Chicago, The Two Pigeons, accession 1944.155",
+      "url": "https://www.artic.edu/artworks/50094",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-156": {
+      "name": "Art Institute of Chicago, Night Shadows, accession 1944.156",
+      "url": "https://www.artic.edu/artworks/50097",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-157": {
+      "name": "Art Institute of Chicago, Girl on a Bridge, accession 1944.157",
+      "url": "https://www.artic.edu/artworks/50100",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-159": {
+      "name": "Art Institute of Chicago, House Tops, accession 1944.159",
+      "url": "https://www.artic.edu/artworks/50106",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-160": {
+      "name": "Art Institute of Chicago, American Landscape, accession 1944.160",
+      "url": "https://www.artic.edu/artworks/50109",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-161": {
+      "name": "Art Institute of Chicago, The Henry Ford, accession 1944.161",
+      "url": "https://www.artic.edu/artworks/50112",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
+    "aic-1944-162": {
+      "name": "Art Institute of Chicago, Aux Fortifications, accession 1944.162",
+      "url": "https://www.artic.edu/artworks/50115",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
     "cma-1931-2647": {
       "name": "Cleveland Museum of Art, Hills, South Truro, accession 1931.2647",
       "url": "https://clevelandart.org/art/1931.2647",
       "retrieved": "2026-09-06",
       "via": "openaccess-api.clevelandart.org"
+    },
+    "cma-1958-382": {
+      "name": "Cleveland Museum of Art, The Locomotive, accession 1958.382",
+      "url": "https://clevelandart.org/art/1958.382",
+      "retrieved": "2026-09-06",
+      "via": "openaccess-api.clevelandart.org"
+    },
+    "cma-1959-298": {
+      "name": "Cleveland Museum of Art, Night Shadows, accession 1959.298",
+      "url": "https://clevelandart.org/art/1959.298",
+      "retrieved": "2026-09-06",
+      "via": "openaccess-api.clevelandart.org"
+    },
+    "met-25-31": {
+      "name": "The Metropolitan Museum of Art, accession lot 25.31 — fifteen Edward Hopper etchings numbered 25.31.1 to 25.31.15, every one credited Harris Brisbane Dick Fund, 1925. The link is 25.31.15, The Railroad, the last of the lot.",
+      "url": "https://www.metmuseum.org/art/collection/search/366219",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org, objects 366204 to 366219, all fifteen retrieved"
+    },
+    "met-366204": {
+      "name": "The Metropolitan Museum of Art, East Side Interior, accession 25.31.1, object 366204",
+      "url": "https://www.metmuseum.org/art/collection/search/366204",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366206": {
+      "name": "The Metropolitan Museum of Art, Night Shadows, accession 25.31.2, object 366206",
+      "url": "https://www.metmuseum.org/art/collection/search/366206",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366208": {
+      "name": "The Metropolitan Museum of Art, American Landscape, accession 25.31.4, object 366208",
+      "url": "https://www.metmuseum.org/art/collection/search/366208",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366209": {
+      "name": "The Metropolitan Museum of Art, Aux Fortifications, accession 25.31.5, object 366209",
+      "url": "https://www.metmuseum.org/art/collection/search/366209",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366210": {
+      "name": "The Metropolitan Museum of Art, Les Deux Pigeons, accession 25.31.6, object 366210",
+      "url": "https://www.metmuseum.org/art/collection/search/366210",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366211": {
+      "name": "The Metropolitan Museum of Art, Evening Wind, accession 25.31.7, object 366211",
+      "url": "https://www.metmuseum.org/art/collection/search/366211",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366213": {
+      "name": "The Metropolitan Museum of Art, Train and Bathers, accession 25.31.9, object 366213",
+      "url": "https://www.metmuseum.org/art/collection/search/366213",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366214": {
+      "name": "The Metropolitan Museum of Art, House Tops, accession 25.31.10, object 366214",
+      "url": "https://www.metmuseum.org/art/collection/search/366214",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366215": {
+      "name": "The Metropolitan Museum of Art, Night on the El Train, accession 25.31.11, object 366215",
+      "url": "https://www.metmuseum.org/art/collection/search/366215",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366216": {
+      "name": "The Metropolitan Museum of Art, The Lonely House, accession 25.31.12, object 366216",
+      "url": "https://www.metmuseum.org/art/collection/search/366216",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-366217": {
+      "name": "The Metropolitan Museum of Art, Cat Boat, accession 25.31.13, object 366217",
+      "url": "https://www.metmuseum.org/art/collection/search/366217",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
     },
     "met-487695": {
       "name": "The Metropolitan Museum of Art, Tables for Ladies, object 487695",
@@ -15,8 +219,198 @@
     }
   },
   "notes": {
+    "american landscape": {
+      "note": "Leaf 28’s row for 8 May 1925 is followed by a second: an impression handed to E. P. Jennings as his commission on the Metropolitan purchase, with a dash where the money would go. The Met’s impression is 25.31.4, dated 1920 as the leaf’s heading is, at a plate of 7 5/16 x 12 3/8 in. against the leaf’s 7 1/2\" x 12 1/2\".",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1920, Plate: 7 5/16 x 12 3/8 in. (18.5 x 31.4 cm), accession 25.31.4, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366208"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as American Landscape, etching on white wove paper, dated 1920, Plate: 18.7 × 31.5 cm (7 3/8 × 12 7/16 in.); Sheet: 26.5 × 38.5 cm (10 7/16 × 15 3/16 in.), accession 1944.160, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-160"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 28 heads the plate « American Landscape.  7 1/2\" x 12 1/2\"  1920 », records « Bought by Metropolitan Museum of Art - group price » at $10, and on the next line « this print was Commission to E. P. Jennings on Metrop. Mus. purchase », June 1925.",
+          "source": "ledger:book-i/28"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "aux fortifications": {
+      "note": "Leaf 22 gives « size of plate 12\"x15\" », which rounds up both museums’ measurements — the Art Institute’s 11 13/16 × 14 15/16 in. and the Met’s 11 3/4 x 14 3/4. Both date it 1923, and Chicago calls it etching and drypoint where the leaf gives only the size. The Met’s impression is 25.31.5, from the lot the row of 8 May 1925 books at the group price of $10.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1923, Plate: 11 3/4 x 14 3/4 in. (29.9 x 37.5 cm), accession 25.31.5, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366209"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as Aux Fortifications, etching and drypoint on white wove paper, dated 1923, Image/plate: 30 × 37.9 cm (11 13/16 × 14 15/16 in.); Sheet: 37 × 46.2 cm (14 5/8 × 18 1/4 in.), accession 1944.162, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-162"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 22 heads the plate « Aux Fortifications  size of plate 12\"x15\" » and writes « Bought by Metrop. Museum - group price » at $10 on 8 May 1925.",
+          "source": "ledger:book-i/22"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "bull fight": {
+      "note": "The Art Institute dates it « c. 1917 », an approximation; leaf 43 heads the plate with a size, « 5\" x 7\" », and no year at all. Chicago’s plate measures 4 7/8 × 6 15/16 in., and the leaf’s earliest row is an acceptance by the Chicago Society of Etchers at the Art Institute, 7 February 1920.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as The Bull Fight, etching on white wove paper, dated c. 1917, Image/plate: 12.3 × 17.5 cm (4 7/8 × 6 15/16 in.); Sheet: 23.4 × 28.8 cm (9 1/4 × 11 3/8 in.), accession 1944.148, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-148"
+        },
+        {
+          "says": "Book I leaf 43 heads the plate « The Bull Fight  5\" x 7\" » and opens its table with « Feb. 7, 20  A  Chicago Society of Etchers, Art Inst. »",
+          "source": "ledger:book-i/43"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "cat boat": {
+      "note": "The leaf heads it « The Cat Boat  8\"x10\"  1922 »; both museums date it 1922 and both measure the plate a shade under, at 7 13/16 x 9 13/16 and 7 7/8 × 9 7/8 in. Its row of 8 May 1925 writes the Metropolitan sale as « $18 group price » with $10 received — the list price and the lot price on one line — and the impression is 25.31.13.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1922, Plate: 7 13/16 x 9 13/16 in. (19.9 x 25 cm), accession 25.31.13, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366217"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as The Cat Boat, etching on off-white wove paper, dated 1922, Plate: 20 × 25 cm (7 7/8 × 9 7/8 in.); Sheet: 28 × 32.7 cm (11 1/16 × 12 7/8 in.), accession 1944.153, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-153"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 10 heads the plate « The Cat Boat  8\"x10\"  1922 » and writes « Bought by Metrop. Museum - $18 group price », $10 received 8 May 1925.",
+          "source": "ledger:book-i/10"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "corner": {
+      "note": "Leaf 44 gives « A Corner  3 1/4 x 4 » and the Art Institute’s plate is 3 1/4 × 3 15/16 in. — the height exact, the width rounded up by a sixteenth. Chicago dates it 1919; the leaf gives no year, and its first row is the Chicago Society of Etchers at the Art Institute, 7 February 1920, with $10 received on 8 April 1925.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as A Corner, etching on ivory wove paper, dated 1919, Plate: 8.2 × 10 cm (3 1/4 × 3 15/16 in.); Sheet: 19.1 × 20.4 cm (7 9/16 × 8 1/16 in.), accession 1944.141, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-141"
+        },
+        {
+          "says": "Book I leaf 44 heads the plate « A Corner  3 1/4 x 4 » and its first row reads « Feb. 7, 20  A  Chicago Soc. of Etchers, Art Inst. » with $10 received 8 April 1925.",
+          "source": "ledger:book-i/44"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "cow and rocks": {
+      "note": "Leaf 36 writes « 7\" x 8\" plate size », saying what the figures measure, against the Art Institute’s 6 15/16 × 7 7/8 in. Chicago dates it 1918, two years before the leaf’s earliest row — a refusal by the Chicago Society of Etchers on 7 February 1920 — and the leaf gives no year of its own.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as Cow and Rocks, etching on ivory wove paper, dated 1918, Image/plate: 17.5 × 20 cm (6 15/16 × 7 7/8 in.); Sheet: 27.2 × 28.3 cm (10 3/4 × 11 3/16 in.), accession 1944.149, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-149"
+        },
+        {
+          "says": "Book I leaf 36 heads the plate « Cow & Rocks  7\" x 8\" plate size. » and opens its table with « Feb. 7, 20  R  Chicago Society of Etchers, Art Inst. »",
+          "source": "ledger:book-i/36"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "east side interior": {
+      "note": "Leaf 8 books the Chicago Society of Etchers’ award of 23 February 1923 as « Logan Prize - not purchase », $25, and the line beneath it records two prints sold through the Society for $28.80. The Art Institute’s impression is accession 1923.305, credited to the Mr. and Mrs. Frank G. Logan Purchase Prize Fund and taken in that year; which of those two lines it came in on is not settled by either record. The Met’s impression is 25.31.1, the first number of the 1925 lot the leaf books at $10 on 8 May.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as East Side Interior, etching with drypoint on off-white wove paper, dated 1922, Plate: 20.2 × 25.2 cm (8 × 9 15/16 in.); Sheet: 33.5 × 36 cm (13 1/4 × 14 3/16 in.), accession 1923.305, Mr. and Mrs. Frank G. Logan Purchase Prize Fund.",
+          "source": "aic-1923-305"
+        },
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1922, Plate: 7 7/8 x 9 7/8 in. (20 x 25.1 cm), accession 25.31.1, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366204"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 8 writes « Feb. 23, 23  A  Chicago Soc. of Etchers.  Logan Prize - not purchase » at $25, and on the next line « Sale = $18 - Com. Shicago Soc. », 2 prints, $28.80.",
+          "source": "ledger:book-i/8"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "evening wind": {
+      "note": "The Art Institute measures its impression’s plate at 7 × 8 3/8 in., which is leaf 2’s heading to the sixteenth; the Met’s own impression comes out a little smaller, at 6 15/16 x 8 1/4. The leaf’s row for May 1925 — bought by the Metropolitan through E. Jennings, $10 received on 8 May — is the artist’s side of accession 25.31.7, one of fifteen Hopper etchings the museum took in a single 1925 lot.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1921, Plate: 6 15/16 x 8 1/4 in. (17.6 x 21 cm), accession 25.31.7, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366211"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as The Evening Wind, etching on ivory wove paper, dated 1921, Plate: 17.7 × 21.2 cm (7 × 8 3/8 in.); Sheet: 24.2 × 28.2 cm (9 9/16 × 11 1/8 in.), accession 1939.2082, Anonymous Fund.",
+          "source": "aic-1939-2082"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 2 heads the plate « Evening Wind  7 x 8 3/8\" » and records « Bought by Metropolitan Museum - thru E. Jennings » at $10, received 8 May 1925.",
+          "source": "ledger:book-i/2"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "girl on a bridge": {
+      "note": "Leaf 34 heads it « Girl on a Bridge  7\"x9\"  1923 » and the Art Institute dates its impression 1923, measuring the plate 6 15/16 × 8 15/16 in. — the leaf’s figures rounded up in both directions.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as Girl on a Bridge, etching on ivory wove paper, dated 1923, Image/plate: 17.5 × 22.6 cm (6 15/16 × 8 15/16 in.); Sheet: 30.5 × 26.1 cm (12 1/16 × 10 5/16 in.), accession 1944.157, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-157"
+        },
+        {
+          "says": "Book I leaf 34 heads the plate « Girl on a Bridge  7\"x9\"  1923 ».",
+          "source": "ledger:book-i/34"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "henry ford": {
+      "note": "Leaf 39 gives the plate as « 12\" x 15\" » and the Art Institute measures its impression at 11 13/16 × 14 7/8 in. Chicago dates it 1923; the leaf carries no year and only three rows, the first a refusal by the Brooklyn Society of Etchers on 5 October 1925.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as The Henry Ford, etching on ivory wove paper, dated 1923, Image/plate: 30 × 37.7 cm (11 13/16 × 14 7/8 in.); Sheet: 35.1 × 43.8 cm (13 7/8 × 17 1/4 in.), accession 1944.161, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-161"
+        },
+        {
+          "says": "Book I leaf 39 heads the plate « The Henry Ford  12\" x 15\" » and opens with « Oct. 5, 25  R  Bklyn. Soc. Etchers, Bklyn. Mus. »",
+          "source": "ledger:book-i/39"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
     "hills south truro": {
-      "note": "Cleveland dates the canvas 1930 and accessioned it in 1931 \u2014 its number, 1931.2647, carries the year \u2014 which is the sale Book I leaf 59 writes as \u00ab Cleveland Museum. Nov. 9, 31 \u00bb at 2000 less a third. The ledger and the museum are independent records of one transaction, and they agree.",
+      "note": "Cleveland dates the canvas 1930 and accessioned it in 1931 — its number, 1931.2647, carries the year — which is the sale Book I leaf 59 writes as « Cleveland Museum. Nov. 9, 31 » at 2000 less a third. The ledger and the museum are independent records of one transaction, and they agree.",
       "claims": [
         {
           "says": "Cleveland Museum of Art holds it, oil on canvas, dated 1930, accession 1931.2647, Hinman B. Hurlbut Collection.",
@@ -30,8 +424,183 @@
       "written": "2026-09-06",
       "model": "claude-opus-5"
     },
+    "house by a river": {
+      "note": "Leaf 18 heads the plate « House by a River  7\"x8\"  1920 » and the Art Institute dates its impression 1919. The leaf’s earliest row is the Touchstone Galleries, 17 October 1920, which is consistent with either year and settles neither.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as House by a River, etching on off-white wove paper, dated 1919, Image/plate: 17.5 × 20.1 cm (6 15/16 × 7 15/16 in.); Sheet: 25.3 × 28.6 cm (10 × 11 5/16 in.), accession 1944.152, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-152"
+        },
+        {
+          "says": "Book I leaf 18 heads the plate « House by a River  7\"x8\"  1920 » and opens its table with « Oct. 17, 20  A  Touchstone Galleries ».",
+          "source": "ledger:book-i/18"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "house tops": {
+      "note": "Both museums put the plate at 14.8 × 19.9 cm and render that in inches differently — 5 13/16 x 7 13/16 at the Met, 5 7/8 × 7 7/8 in Chicago — where leaf 32 gives a flat « 6\"x8\" ». Its Metropolitan row of 8 May 1925 is five months before the Brooklyn Museum bought an impression out of the Society of Etchers show at $15 less 15%, and the Met’s is 25.31.10.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1921, Plate: 5 13/16 x 7 13/16 in. (14.8 x 19.9 cm), accession 25.31.10, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366214"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as House Tops, etching on white wove paper, dated 1921, Plate: 14.8 × 19.9 cm (5 7/8 × 7 7/8 in.); Sheet: 25.2 × 29.3 cm (9 15/16 × 11 9/16 in.), accession 1944.159, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-159"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 32 heads the plate « House Tops.  6\"x8\" », writes « Bought by Metropolitan Museum - group price » at $10 on 8 May 1925, and on 5 October 1925 « $15 - 15% bought by Mus. » at the Brooklyn Museum, $12.75 received 14 January 1926.",
+          "source": "ledger:book-i/32"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "les deux pigeons": {
+      "note": "The Met catalogues the French title the leaf writes and the Art Institute an English The Two Pigeons; the site links all three through declared aliases. Both museums date it 1920 and put the plate near 21.2 × 25 cm against the leaf’s « 8 1/2\" x 10\" ». The Met’s impression is 25.31.6, from the 8 May 1925 lot the leaf books at $10.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1920, Plate: 8 3/8 x 9 7/8 in. (21.2 x 25.1 cm), accession 25.31.6, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366210"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as The Two Pigeons, etching on off-white wove paper, dated 1920, Image/plate: 21.3 × 25 cm (8 7/16 × 9 7/8 in.); Sheet: 29 × 32.8 cm (11 7/16 × 12 15/16 in.), accession 1944.155, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-155"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 40 heads the plate « Les Deux Pigeon  8 1/2\" x 10\" » and writes « Bought by Metropolitan Museum of Art - group price » at $10, received 8 May 1925.",
+          "source": "ledger:book-i/40"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "locomotive": {
+      "note": "Leaf 14 heads the plate « The Locomotive  1922 »; the Art Institute and Cleveland both date it 1923. The leaf’s own earliest row is the National Academy of Design, 1 November 1923, which sits with the museums rather than with the heading above it — and neither record settles the year.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as The Locomotive, etching and drypoint on white wove paper, dated 1923, Plate: 20.1 × 25.2 cm (7 15/16 × 9 15/16 in.); Sheet: 28.6 × 33.6 cm (11 5/16 × 13 1/4 in.), accession 1944.146, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-146"
+        },
+        {
+          "says": "The Cleveland Museum of Art holds an impression, etching, dated 1923, accession 1958.382, Gift of William Ellery Greene for the Lucy S. Greene Collection.",
+          "source": "cma-1958-382"
+        },
+        {
+          "says": "Book I leaf 14 heads the plate « The Locomotive  1922 » and opens its table with « Nov. 1, 23  A  N. A. D. »",
+          "source": "ledger:book-i/14"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "lonely house": {
+      "note": "Leaf 26 heads the plate « The Lonely House.  8\"x10\"  1922 »; the Met and the Art Institute both date it 1923. The leaf’s earliest row is a refusal by the Brooklyn Society of Etchers on 24 October 1922, a date the museums’ year does not accommodate, and the disagreement stands. The same leaf writes the Metropolitan purchase « May 5, 25 » against the « May 8 » of its own received column.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1923, Plate: 7 13/16 x 9 13/16 in. (19.9 x 25 cm), accession 25.31.12, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366216"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as The Lonely House, etching and drypoint on white wove paper, dated 1923, Plate: 19.9 × 25 cm (7 7/8 × 9 7/8 in.); Sheet: 29 × 33.8 cm (11 7/16 × 13 5/16 in.), accession 1944.145, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-145"
+        },
+        {
+          "says": "Book I leaf 26 heads the plate « The Lonely House.  8\"x10\"  1922 », opens with « Oct. 24, 22  R  Bklyn. Soc. of Etchers », and dates the Metropolitan purchase « May 5, 25 » with « May 8, 25 » in the received column.",
+          "source": "ledger:book-i/26"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "monhegan boat": {
+      "note": "The leaf gives the plate as « 7\"x9\" » and no year; Chicago dates its impression 1918 and measures 6 15/16 × 8 7/8 in. Leaf 16’s first sale is to the State Library, Los Angeles, at $18, $16.20 received on 17 May 1920, and its twelve rows stop in April 1926 — eighteen years before the Print and Drawing Club gave the Art Institute this impression.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as The Monhegan Boat, etching on white wove paper, dated 1918, Image/plate: 17.5 × 22.5 cm (6 15/16 × 8 7/8 in.); Sheet: 24.2 × 29.8 cm (9 9/16 × 11 3/4 in.), accession 1944.151, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-151"
+        },
+        {
+          "says": "Book I leaf 16 heads the plate « The Monhegan Boat  7\"x9\" », records a sale to the State Library, Los Angeles at $18 with $16.20 received on 17 May 1920, and ends with the St. Botolph’s Club show of 12 April 1926.",
+          "source": "ledger:book-i/16"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "night on the el train": {
+      "note": "The leaf calls it « Night in the L Train » where both museums catalogue Night on the El Train; the site links the two through a declared alias, and the identification is this archive’s rather than either museum’s. Both date it 1918 and put the plate near 7 3/8 x 7 13/16 in. against the leaf’s 7 1/2\" x 8\". The Met’s impression is 25.31.11, from the 8 May 1925 lot the leaf books at $10.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1918, Plate: 7 3/8 x 7 13/16 in. (18.7 x 19.9 cm), accession 25.31.11, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366215"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as Night on the El Train, etching on off-white wove paper, dated 1918, Plate: 18.8 × 20.1 cm (7 7/16 × 7 15/16 in.); Sheet: 26.3 × 29.7 cm (10 3/8 × 11 3/4 in.), accession 1944.154, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-154"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 30 heads the plate « Night in the L Train  7 1/2\" x 8\". » and writes « Bought by Metropolitan Mus. - group price » at $10 on 8 May 1925.",
+          "source": "ledger:book-i/30"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "night shadows": {
+      "note": "Leaf 6 heads the plate « Night Shadows  7\"x8 3/8\"  1921 » and all three museums that hold an impression date it 1921. The Met’s is 25.31.2, from the lot the leaf books at $10 on 8 May 1925; Chicago’s came from the Print and Drawing Club in 1944 and Cleveland’s as a gift from Mrs. Malcolm L. McBride in 1959, both long after the leaf’s last row.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1921, Plate: 6 7/8 x 8 3/16 in. (17.4 x 20.8 cm), accession 25.31.2, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366206"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as Night Shadows, etching on white wove paper, dated 1921, Plate: 17.5 × 21 cm (6 15/16 × 8 5/16 in.); Sheet: 25.6 × 28 cm (10 1/8 × 11 1/16 in.), accession 1944.156, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-156"
+        },
+        {
+          "says": "The Cleveland Museum of Art holds an impression, etching, dated 1921, accession 1959.298, Gift of Mrs. Malcolm L. McBride.",
+          "source": "cma-1959-298"
+        },
+        {
+          "says": "Book I leaf 6 heads the plate « Night Shadows  7\"x8 3/8\"  1921 », records « Bought by Metropolitan Mus. (Wm. Ivans) group price » at $10 on 8 May 1925, and ends in November 1927.",
+          "source": "ledger:book-i/6"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "summer twilight": {
+      "note": "Leaf 42 gives « 8 1/2\" x 10\" » and the Art Institute measures 8 7/16 × 9 15/16 in., dating it 1920 where the leaf gives no year. The leaf’s second row is not a sale: Weyhe presented an impression to « Meyer Graefe », with a dash in the amount column.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds an impression as Summer Twilight, etching on off-white wove paper, dated 1920, Image/plate: 21.3 × 25.1 cm (8 7/16 × 9 15/16 in.); Sheet: 28.8 × 32.4 cm (11 3/8 × 12 13/16 in.), accession 1944.143, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-143"
+        },
+        {
+          "says": "Book I leaf 42 heads the plate « Summer Twilight  8 1/2\" x 10\" » and records « Weyhe presented to Meyer Graefe » with a dash where the amount would stand.",
+          "source": "ledger:book-i/42"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
     "tables for ladies": {
-      "note": "The Met gives the canvas as 48 1/4 by 60 3/8 inches, which is the \u00ab 4 x 5 ft. \u00bb of Book I leaf 59 to within an inch \u2014 the leaf's rounding, not a different picture. It was bought with the George A. Hearn Fund in 1931; the leaf puts the cheque at 3 June 1931, on a price of 4500 less a third.",
+      "note": "The Met gives the canvas as 48 1/4 by 60 3/8 inches, which is the « 4 x 5 ft. » of Book I leaf 59 to within an inch — the leaf's rounding, not a different picture. It was bought with the George A. Hearn Fund in 1931; the leaf puts the cheque at 3 June 1931, on a price of 4500 less a third.",
       "claims": [
         {
           "says": "The Metropolitan Museum of Art holds it, oil on canvas, 48 1/4 x 60 3/8 in., dated 1930, acquired 1931 through the George A. Hearn Fund.",
@@ -40,6 +609,29 @@
         {
           "says": "Book I leaf 59 gives the size as 4 x 5 ft. and the sale to the Metropolitan at 4500 less a third, received 3 June 1931.",
           "source": "ledger:book-i/59"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "train and bathers": {
+      "note": "The leaf’s « 8 1/2\" x 10\" » rounds up a plate the Met puts at 8 5/16 x 9 13/16 in. and Chicago at 8 3/8 × 9 7/8; both date it 1920 and the leaf gives no year. Its row of 8 May 1925 is the Metropolitan’s group purchase at $10, and the impression is 25.31.9.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds an impression, etching, dated 1920, Plate: 8 5/16 x 9 13/16 in. (21.1 x 25 cm), accession 25.31.9, Harris Brisbane Dick Fund, 1925.",
+          "source": "met-366213"
+        },
+        {
+          "says": "The Art Institute of Chicago holds an impression as Train and Bathers, etching on white wove paper, dated 1920, Image/plate: 21.2 × 25 cm (8 3/8 × 9 7/8 in.); Sheet: 30.5 × 33.7 cm (12 1/16 × 13 5/16 in.), accession 1944.142, Gift of the Print and Drawing Club.",
+          "source": "aic-1944-142"
+        },
+        {
+          "says": "Accession lot 25.31 is fifteen Edward Hopper etchings, 25.31.1 to 25.31.15, all credited Harris Brisbane Dick Fund, 1925.",
+          "source": "met-25-31"
+        },
+        {
+          "says": "Book I leaf 38 heads the plate « Train & Bathers  8 1/2\" x 10\" » and writes « Bought by Metropolitan Museum - (group price) » at $10, received 8 May 1925.",
+          "source": "ledger:book-i/38"
         }
       ],
       "written": "2026-09-06",
