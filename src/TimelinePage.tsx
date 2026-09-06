@@ -592,16 +592,32 @@ export function TimelinePage() {
         {Object.keys(NOTES.notes).length > 0 && (
           <div className="mt-6 max-w-3xl">
             <h3 className="text-[13.5px] font-semibold text-ink-900">Notes</h3>
+            {/* The note stays open and its apparatus folds away.
+                Which half to hide is not a toss-up. The note is the reading —
+                a few sentences a reader can take in while scrolling — and the
+                claims under it are three or four times its length, so with one
+                note per work the page would eventually be mostly citation. But
+                the citations are what make the note worth having, so they are
+                one click away and never a click plus a page load: the whole of
+                a note's evidence is in the DOM, and `\notesappendix` prints all
+                of it, unfolded, into the batch PDF. */}
             <p className="prose-note mt-1">
               The only prose on this site a reader cannot check by looking at the sheet, so every
-              sentence carries the source that states it.
+              sentence carries the source that states it. Open a note to see them — or read them
+              set out in full at the back of the batch’s PDF, which is where they go when this
+              page is not to hand.
             </p>
             {Object.entries(NOTES.notes).map(([k, n]) => (
-              <div key={k} className="mt-3 rounded-card border border-ink-200 px-4 py-3">
-                <h4 className="text-[13.5px] font-semibold text-ink-900">
-                  {WORKS.find((w) => w.key === k)?.title ?? k}
-                </h4>
-                <p className="mt-1 text-[13.5px] leading-relaxed text-ink-700">{n.note}</p>
+              <details key={k} className="group mt-3 rounded-card border border-ink-200 px-4 py-3">
+                <summary className="cursor-pointer list-none marker:content-none">
+                  <h4 className="text-[13.5px] font-semibold text-ink-900">
+                    {WORKS.find((w) => w.key === k)?.title ?? k}
+                  </h4>
+                  <p className="mt-1 text-[13.5px] leading-relaxed text-ink-700">{n.note}</p>
+                  <span className="prose-note mt-1 inline-block text-brand-700 group-open:hidden">
+                    {n.claims.length} source{n.claims.length === 1 ? '' : 's'} ↓
+                  </span>
+                </summary>
                 <ul className="mt-2">
                   {n.claims.map((c, i) => {
                     const src = NOTES.sources[c.source];
@@ -638,7 +654,7 @@ export function TimelinePage() {
                     );
                   })}
                 </ul>
-              </div>
+              </details>
             ))}
           </div>
         )}
