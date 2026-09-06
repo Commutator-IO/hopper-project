@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T18:26:35.400Z",
+  "generated": "2026-09-06T18:56:01.916Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -830,6 +830,66 @@
   ],
   "index": [
     {
+      "key": "dawn in pennsylvania",
+      "title": "« Dawn in Pennsylvania »",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "97",
+          "ref": "18164"
+        }
+      ]
+    },
+    {
+      "key": "girlie show",
+      "title": "« Girlie Show »",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "89",
+          "ref": "16635"
+        }
+      ]
+    },
+    {
+      "key": "night hawks",
+      "title": "« Night Hawks »",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": 1942,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "95",
+          "ref": "17982"
+        }
+      ]
+    },
+    {
       "key": "11 a m",
       "title": "11 A. M",
       "museumTitle": null,
@@ -1446,6 +1506,26 @@
       ]
     },
     {
+      "key": "corner saloon",
+      "title": "Corner Saloon",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "87",
+          "ref": "18258"
+        }
+      ]
+    },
+    {
       "key": "cottages at n truro",
       "title": "Cottages at N. Truro",
       "museumTitle": null,
@@ -1784,6 +1864,26 @@
       ]
     },
     {
+      "key": "gas",
+      "title": "Gas",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": 1943,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "83",
+          "ref": "18432"
+        }
+      ]
+    },
+    {
       "key": "girl on a bridge",
       "title": "Girl on a Bridge",
       "museumTitle": null,
@@ -2084,6 +2184,26 @@
           "batch": 3,
           "leaf": "18",
           "ref": "17168"
+        }
+      ]
+    },
+    {
+      "key": "house by a road",
+      "title": "House by a Road",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "85",
+          "ref": "17597"
         }
       ]
     },
@@ -2463,6 +2583,26 @@
       ]
     },
     {
+      "key": "lee shore",
+      "title": "Lee Shore",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "93",
+          "ref": "16566"
+        }
+      ]
+    },
+    {
       "key": "les deux pigeons",
       "title": "Les Deux Pigeon",
       "museumTitle": "Les Deux Pigeons",
@@ -2514,6 +2654,26 @@
           "batch": 4,
           "leaf": "41",
           "ref": "18062"
+        }
+      ]
+    },
+    {
+      "key": "light battery at gettysburg",
+      "title": "Light Battery at Gettysburg",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "81",
+          "ref": "16658"
         }
       ]
     },
@@ -2995,6 +3155,26 @@
       ]
     },
     {
+      "key": "office at night",
+      "title": "Office at Night",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": 1948,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "79",
+          "ref": "16494"
+        }
+      ]
+    },
+    {
       "key": "oils sail boat or sailing",
       "title": "Oils --- Sail Boat or Sailing --- ±",
       "museumTitle": null,
@@ -3231,6 +3411,26 @@
           "batch": 4,
           "leaf": "47",
           "ref": "16877"
+        }
+      ]
+    },
+    {
+      "key": "route 6 thru eastham",
+      "title": "Route 6 thru Eastham",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "91",
+          "ref": "17270"
         }
       ]
     },
@@ -6372,6 +6572,13 @@
           "leaf": "44",
           "ref": 18288,
           "rows": 2
+        },
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "95",
+          "ref": 17982,
+          "rows": 2
         }
       ]
     },
@@ -6411,6 +6618,13 @@
           "batch": 5,
           "leaf": "54",
           "ref": 16522,
+          "rows": 1
+        },
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "83",
+          "ref": 18432,
           "rows": 1
         }
       ]
@@ -6475,6 +6689,13 @@
           "batch": 2,
           "leaf": "7",
           "ref": 16439,
+          "rows": 1
+        },
+        {
+          "ledger": "book-ii",
+          "batch": 6,
+          "leaf": "79",
+          "ref": 16494,
           "rows": 1
         }
       ]
