@@ -961,3 +961,151 @@ before \@newline was complete », naming a line some way past the real one. It
 happens whenever a leaf's grouping mark is transcribed as a square bracket at
 the head of a line. `npm run render` does not see it and `npm run pdf` does, so
 **build the PDF before believing a batch is finished.**
+
+---
+
+## The money is where nobody would look for it
+
+*(Book I, batch 10)* Batch 9 reported ten consecutive leaves with no money on
+them and inferred that the index apparatus at the back of Book I is outside the
+accounts. Leaves 94 to 100 keep that up for six more leaves — prizes, museum
+purchases, gifts, reviews — and then leaf 100 breaks it. **Two full accounts are
+written sideways across the right two thirds of that leaf**, turned ninety
+degrees so the book must be laid on its side: the expenses of the Rehn
+exhibition of February 1927 (advertising, window signs, photographs, four kinds
+of frame, \$342.49) and a settlement with F. Rehn of 4 November for \$1452.68.
+They are the last money in Book I and a whole-sheet pass at the Whitney's `pre`
+size reads them as a vertical smudge at the fore-edge.
+
+So: **before calling a leaf moneyless, rotate anything running vertically.**
+`magick <sheet> -crop WxH+X+Y +repage -rotate -90 -resize 320%` is the whole
+technique, and the crop is worth taking twice — once narrow to find where the
+block starts, once wide enough to carry the item column and the figure column in
+one image, because splitting a sideways account across two crops re-associates
+the figures by eye and that is the error `\ill{}` exists to prevent. Leaf 100
+carries the sideways text from x≈660 to x≈1180 of a 1262-pixel sheet, and the
+first crop taken (880 to 1180) got the heading and lost half the items.
+
+## The ink underline comes back, and it is not batch 9's red pencil
+
+*(batch 10)* Batch 9 found a red pencil underlining every exhibiting
+institution on leaves 84 to 91 and left it untranscribed. Leaves 94 and 95 look
+identical at whole-sheet size and are not: the underline there is **the same
+brown ink she is writing with**, and it takes the institution *and* the title —
+« Art Institute Chicago » and « East Side Interior » on one line, some ninety
+times in two leaves. A saturation test settles it in one command
+(`-modulate 100,300`): her ink and her underline separate from a pencil at 3×
+saturation and do not separate from each other.
+
+It is still a finding device rather than emphasis, and at that density
+transcribing it would `\emph{}` half the leaf, so batch 10 records it once in a
+`\note{}` at the head of the leaf and keeps `\emph{}` for the headings — which
+is what batch 9 reserved it for and the reason holds either way. **What changes
+is that you cannot infer the register from the leaf's appearance; check the
+colour before deciding which rule applies.**
+
+## Three leaves that run backwards, and say so themselves
+
+*(batch 10)* Batch 5 found leaves 46/47 and 48/49 running recto-then-verso. The
+Reviews leaves do it across three: leaf 96 opens « Continued from p. 97 »,
+leaf 97 opens « Continued from p. 98 », leaf 98 closes « Cont. p. 97 ». The run
+reads 98 → 97 → 96 and **ends where it looks as though it begins**. Transcribe
+in bound order and let the `\note{}` carry the direction; a reader who meets
+leaf 96 first needs telling, because unlike the batch 5 pairs there is no facing
+opening to make it obvious.
+
+## Her query mark is a standing feature, not an occasional one
+
+*(batch 10)* Batch 8 met « (spelling?) » on leaf 74 and treated it as a one-off.
+Batch 10 has four in eight leaves: « Roofs ? / Sattillo. » (leaf 95), « (Mar.
+1st ?) » (leaf 96), « a set of etchings (12?) » (leaf 99), « T.V. Ad ? » (back
+flyleaf). **Where she queries something, her query is transcribed and the
+reading beside it is `\uncertain{}` if the strokes warrant it and plain if they
+do not.** Her doubt and the transcriber's are different facts and both belong on
+the page.
+
+She also corrects *below* the line here, not only above it: leaf 97 writes
+« Christian Science Moridor » and sets « Monitor » underneath. Book II batch 1
+found the only other instance (« ca » under « Alloted »). Both stay, and the
+`\marginal{}` should say which side of the line the correction is on, because
+above and below are the only thing distinguishing a gloss from a repair.
+
+## One critic, three spellings, none of them his
+
+*(batch 10)* Royal Cortissoz of the Tribune is named three times and spelt
+differently each time: **`Cortisez`** (leaf 97), a form on leaf 98 that will not
+settle at 6× and is left `\uncertain{}`, and **`Cortisoz`** nine lines below it
+on that same leaf. This is the Corcaran/Corcoran habit of Book II turning up in
+Book I, and the rule is the same — do not quietly regularise the doubtful one to
+the legible ones, because then the leaf appears to agree with itself.
+
+`Les Poilus` does it across two leaves: **`Poiltus`** (leaf 98), **`Poilus`**
+twice (leaf 99), against `Poilhus` (leaf 41) and `Poillus` (the leaf 1 index).
+Four forms in one volume.
+
+## More spellings, all as written
+
+*(batch 10)*
+
+- **`Attheneum`** *(leaf 95)* — a **fifth** form of the Wadsworth, against
+  `Antheneum`, `Athenaeum` (batch 7) and `Atheneum` (batch 8).
+- **`Parnasous`** *(leaf 96)* against **`Parnasus`** *(leaf 97)*, for Parnassus.
+- **`Aniversity`** *(leaf 96)* for Anniversary; **`Belleton Index`** *(leaf 96)*
+  for the Bulletin Index; **`Ourtime`** *(leaf 96)* written as one word.
+- **`Philips Academy`** *(leaf 95)* eleven lines below **`Phillips Andover
+  Academy`** on the same leaf.
+- **`Sattillo`** *(leaf 95)* against **`Saltillo`** *(leaf 100 in pencil, and
+  the back flyleaf twice)* — and batch 9's `Sortillo` / `Sortilla`. The flyleaf
+  is the only place she spells it right.
+- **`Copywrite`** *(leaf 100)* for copyright; **`Don Juixote`** *(leaf 99)*;
+  **`Virgel Barker`** *(leaf 98)*; **`Williamsburgh Bridge`** *(leaf 95)*.
+- **`Rockyneck`** *(back flyleaf)* as one word; **`Toppsfield`** *(flyleaf)* —
+  confirming batch 7; **`Hotel Loby`** *(leaf 95)* — confirming batch 5;
+  **`Fog Museum`** *(leaf 94)* — confirming batches 6 and 7; **`Osgord`**
+  *(leaf 99)* — confirming batches 5, 6 and 7; **`Caractatures`** *(leaf 98)* —
+  confirming batch 6; **`Pittsburg`** *(leaf 97, leaf 99)* without the h against
+  **`Pittsburgh`** *(leaf 95)*.
+- **`Charlestown, N.H.`** and **`Charlestown, S.C.`** *(back flyleaf)*, four
+  lines apart, for what the entries around them make one place.
+- **`John Alden Jewell`** *(leaf 98)* for the critic leaves 96 and 97 both call
+  Edward Alden Jewell; **`Malcom Salomen`** then **`Malcom Salomon`**
+  *(leaf 98)*; **`Allister`** then **`Alister McClellan`** *(leaf 99)*, in two
+  entries she herself marks « repeated (above) ».
+- **`2 on the Aisle`** and **`Two on the Isle`** three lines apart *(leaf 98)* —
+  the tangle of leaves 55, 86 and 93, now on a single leaf.
+
+## Readings that would not settle
+
+*(batch 10)* The batch's `\uncertain{}` are almost all names, and one is worth
+carrying forward as a method note:
+
+- **`The \ill{}` / `The Corrida` / `The Corrida`** *(leaf 99)* — one title
+  written three times, for three Museum of Modern Art custodians on one day in
+  December 1933, and no two of the three are alike. The first ends in a
+  descender that neither candidate has and is left `\ill{}`; the other two are
+  offered with the doubt marked. **Do not settle a repeated word by majority**:
+  three attempts at a name she was unsure of are three readings, not three votes.
+- **`Cortissey`** *(leaf 98)*, **`Kruas`** *(flyleaf, the 1960 award)*,
+  **`Arispa`** *(flyleaf, the place in Saltillo)*, **`Alfa`/`Anfa`** *(flyleaf,
+  Monterrey)*, **`Pallows, Oregon`** *(flyleaf)*, **`Thedore Siecama`**
+  *(leaf 100)*, **`Maurice A. Dunlang`** *(leaves 99, 100)*, **`Mour Mus.`**
+  *(leaf 99)*, **`Enid Buhre - Sweeders`** *(leaf 100)*, **`Bea. Marston`**
+  *(leaf 99)*, **`deed`** *(flyleaf, « Bought hill, deed Oct. 1'' 33 »)*.
+
+**Every illegible mark in this batch is her own**, and that is worth knowing
+before reaching for a second photograph: nothing is pasted to any leaf of it.
+Eight are words she scribbled over or figures written one on another, and two
+are the last lines of the back flyleaf, a soft pencil laid over an earlier
+pencil, which do not resolve at 6× and never will.
+
+## Where Book I ends
+
+*(batch 10)* The volume closes on the **back flyleaf**, sheet 17234, headed
+« Summer whereabouts » — a year-by-year chronology from 1923 to 1963 in a soft
+pencil, two columns, added to over forty years. It is the latest hand in the
+volume and the only place in it where she writes down where the two of them
+were rather than what was sold. The years 1957 to 1959 are simply not written:
+the right-hand column runs 1956, then 1960. The **back cover**, sheet 18495,
+carries nothing but the stationer's blind-stamped ornament and takes no
+`\sheet{}` at all, which is why Book I finishes at 116 transcribed sheets of
+117 rather than 117 of 117.
