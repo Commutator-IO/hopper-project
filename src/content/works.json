@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-05T20:04:37.273Z",
+  "generated": "2026-09-06T05:47:10.643Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -8,6 +8,10 @@
     {
       "institution": "Art Institute of Chicago",
       "api": "https://api.artic.edu/api/v1"
+    },
+    {
+      "institution": "Cleveland Museum of Art",
+      "api": "https://openaccess-api.clevelandart.org/api"
     }
   ],
   "note": "Every URL here was retrieved by scripts/works.mjs and its artist field checked against \"Edward Hopper\". A link says a work of this title is held there and can be looked at; it does not say that the ledger row you are reading concerns that copy.",
@@ -305,6 +309,21 @@
       ]
     },
     {
+      "key": "hills south truro",
+      "title": "Hills, South Truro",
+      "date": "1930",
+      "medium": "oil on canvas",
+      "holdings": [
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "172954",
+          "url": "https://clevelandart.org/art/1931.2647",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "house by a river",
       "title": "House by a River",
       "date": "1919",
@@ -402,6 +421,21 @@
       "mapping": "likely"
     },
     {
+      "key": "lighthouse village also known as cape elizabeth",
+      "title": "Lighthouse Village (also known as Cape Elizabeth)",
+      "date": "1929",
+      "medium": "watercolor with gouache over graphite",
+      "holdings": [
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "173965",
+          "url": "https://clevelandart.org/art/1930.851",
+          "openImage": true
+        }
+      ]
+    },
+    {
       "key": "night in the park",
       "title": "Night in the Park",
       "date": "1921",
@@ -419,6 +453,13 @@
           "short": "AIC",
           "id": "50103",
           "url": "https://www.artic.edu/artworks/50103",
+          "openImage": false
+        },
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "148328",
+          "url": "https://clevelandart.org/art/1975.52",
           "openImage": false
         }
       ]
@@ -464,6 +505,13 @@
           "id": "50097",
           "url": "https://www.artic.edu/artworks/50097",
           "openImage": false
+        },
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "135764",
+          "url": "https://clevelandart.org/art/1959.298",
+          "openImage": false
         }
       ]
     },
@@ -493,6 +541,21 @@
           "short": "Met",
           "id": "488730",
           "url": "https://www.metmuseum.org/art/collection/search/488730",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "portrait of dick magee",
+      "title": "Portrait of Dick Magee",
+      "date": "1952",
+      "medium": "charcoal on wove paper",
+      "holdings": [
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "74875",
+          "url": "https://clevelandart.org/art/2018.1074",
           "openImage": false
         }
       ]
@@ -673,6 +736,13 @@
           "id": "50064",
           "url": "https://www.artic.edu/artworks/50064",
           "openImage": false
+        },
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "135374",
+          "url": "https://clevelandart.org/art/1958.382",
+          "openImage": false
         }
       ]
     },
@@ -754,6 +824,1352 @@
           "id": "50052",
           "url": "https://www.artic.edu/artworks/50052",
           "openImage": false
+        }
+      ]
+    }
+  ],
+  "index": [
+    {
+      "key": "11 a m",
+      "title": "11 A. M",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "54",
+          "ref": "16522"
+        }
+      ]
+    },
+    {
+      "key": "7 ave shops",
+      "title": "7\" Ave. Shops",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "58",
+          "ref": "18297"
+        }
+      ]
+    },
+    {
+      "key": "corner",
+      "title": "A Corner",
+      "museumTitle": null,
+      "date": "1919",
+      "medium": "Etching on ivory wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50049",
+          "url": "https://www.artic.edu/artworks/50049",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "44",
+          "ref": "18288"
+        }
+      ]
+    },
+    {
+      "key": "american landscape",
+      "title": "American Landscape",
+      "museumTitle": null,
+      "date": "1920",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366208",
+          "url": "https://www.metmuseum.org/art/collection/search/366208",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50109",
+          "url": "https://www.artic.edu/artworks/50109",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "28",
+          "ref": "18395"
+        }
+      ]
+    },
+    {
+      "key": "apartment houses",
+      "title": "Apartment Houses",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "45",
+          "ref": "16318"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "52",
+          "ref": "18056"
+        }
+      ]
+    },
+    {
+      "key": "aux fortifications",
+      "title": "Aux Fortifications",
+      "museumTitle": null,
+      "date": "1923",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366209",
+          "url": "https://www.metmuseum.org/art/collection/search/366209",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50115",
+          "url": "https://www.artic.edu/artworks/50115",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "22",
+          "ref": "16779"
+        }
+      ]
+    },
+    {
+      "key": "bay window",
+      "title": "Bay Window",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "44",
+          "ref": "18288"
+        }
+      ]
+    },
+    {
+      "key": "blackwell s island",
+      "title": "Blackwell's Island",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "57",
+          "ref": "18424"
+        }
+      ]
+    },
+    {
+      "key": "bootleggers",
+      "title": "Bootleggers",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "53",
+          "ref": "17852"
+        }
+      ]
+    },
+    {
+      "key": "capt ed staples",
+      "title": "Capt. Ed Staples",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "55",
+          "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "capt upton s house",
+      "title": "Capt. Upton's House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "55",
+          "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "coast guard station at two lights and beach",
+      "title": "Coast Guard Station at Two Lights & beach",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "58",
+          "ref": "18297"
+        }
+      ]
+    },
+    {
+      "key": "corn hill truro",
+      "title": "Corn Hill, Truro",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "59",
+          "ref": "16991"
+        }
+      ]
+    },
+    {
+      "key": "cow and rocks",
+      "title": "Cow & Rocks",
+      "museumTitle": "Cow and Rocks",
+      "date": "1918",
+      "medium": "Etching on ivory wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50075",
+          "url": "https://www.artic.edu/artworks/50075",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "36",
+          "ref": "17260"
+        }
+      ]
+    },
+    {
+      "key": "don quixote",
+      "title": "Don Quixote",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "44",
+          "ref": "18288"
+        }
+      ]
+    },
+    {
+      "key": "east side interior",
+      "title": "East Side Interior",
+      "museumTitle": null,
+      "date": "1922",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366204",
+          "url": "https://www.metmuseum.org/art/collection/search/366204",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "8353",
+          "url": "https://www.artic.edu/artworks/8353",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "8",
+          "ref": "17539"
+        }
+      ]
+    },
+    {
+      "key": "evening wind",
+      "title": "Evening Wind",
+      "museumTitle": null,
+      "date": "1921",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366211",
+          "url": "https://www.metmuseum.org/art/collection/search/366211",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "36038",
+          "url": "https://www.artic.edu/artworks/36038",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853"
+        }
+      ]
+    },
+    {
+      "key": "ex lax",
+      "title": "Ex Lax",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "55",
+          "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "girl on a bridge",
+      "title": "Girl on a Bridge",
+      "museumTitle": null,
+      "date": "1923",
+      "medium": "Etching on ivory wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50100",
+          "url": "https://www.artic.edu/artworks/50100",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "34",
+          "ref": "17904"
+        }
+      ]
+    },
+    {
+      "key": "gloucester street",
+      "title": "Gloucester Street",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "54",
+          "ref": "16522"
+        }
+      ]
+    },
+    {
+      "key": "hills south truro",
+      "title": "Hills, South Truro",
+      "museumTitle": null,
+      "date": "1930",
+      "medium": "oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "172954",
+          "url": "https://clevelandart.org/art/1931.2647",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "59",
+          "ref": "16991"
+        }
+      ]
+    },
+    {
+      "key": "hodgkin s house",
+      "title": "Hodgkin's House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "57",
+          "ref": "18424"
+        }
+      ]
+    },
+    {
+      "key": "house at tarrytown",
+      "title": "House at Tarrytown",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "44",
+          "ref": "18288"
+        }
+      ]
+    },
+    {
+      "key": "house by a railroad",
+      "title": "House by a Railroad",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "52",
+          "ref": "18056"
+        }
+      ]
+    },
+    {
+      "key": "house by a river",
+      "title": "House by a River",
+      "museumTitle": null,
+      "date": "1919",
+      "medium": "Etching on off-white wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50085",
+          "url": "https://www.artic.edu/artworks/50085",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "18",
+          "ref": "17168"
+        }
+      ]
+    },
+    {
+      "key": "house by an inlet",
+      "title": "House by an Inlet",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "58",
+          "ref": "18297"
+        }
+      ]
+    },
+    {
+      "key": "house tops",
+      "title": "House Tops",
+      "museumTitle": null,
+      "date": "1921",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366214",
+          "url": "https://www.metmuseum.org/art/collection/search/366214",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50106",
+          "url": "https://www.artic.edu/artworks/50106",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "32",
+          "ref": "16428"
+        }
+      ]
+    },
+    {
+      "key": "les deux pigeons",
+      "title": "Les Deux Pigeon",
+      "museumTitle": "Les Deux Pigeons",
+      "date": "1920",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366210",
+          "url": "https://www.metmuseum.org/art/collection/search/366210",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50094",
+          "url": "https://www.artic.edu/artworks/50094",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "40",
+          "ref": "17668"
+        }
+      ]
+    },
+    {
+      "key": "les poilhus",
+      "title": "Les Poilhus",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "41",
+          "ref": "18062"
+        }
+      ]
+    },
+    {
+      "key": "light house at two lights",
+      "title": "Light House at Two Lights",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "58",
+          "ref": "18297"
+        }
+      ]
+    },
+    {
+      "key": "light house hill",
+      "title": "Light House Hill",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "55",
+          "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "maine coast",
+      "title": "Maine Coast",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "20",
+          "ref": "16563"
+        }
+      ]
+    },
+    {
+      "key": "new york pavements",
+      "title": "New York Pavements",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "52",
+          "ref": "18056"
+        }
+      ]
+    },
+    {
+      "key": "new york restaurant",
+      "title": "New York Restaurant",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "52",
+          "ref": "18056"
+        }
+      ]
+    },
+    {
+      "key": "night on the el train",
+      "title": "Night in the L Train",
+      "museumTitle": "Night on the El Train",
+      "date": "1918",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366215",
+          "url": "https://www.metmuseum.org/art/collection/search/366215",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50091",
+          "url": "https://www.artic.edu/artworks/50091",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "30",
+          "ref": "16799"
+        }
+      ]
+    },
+    {
+      "key": "night shadows",
+      "title": "Night Shadows",
+      "museumTitle": null,
+      "date": "1921",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366206",
+          "url": "https://www.metmuseum.org/art/collection/search/366206",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50097",
+          "url": "https://www.artic.edu/artworks/50097",
+          "openImage": false
+        },
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "135764",
+          "url": "https://clevelandart.org/art/1959.298",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "6",
+          "ref": "16548"
+        }
+      ]
+    },
+    {
+      "key": "night windows",
+      "title": "Night Windows",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "57",
+          "ref": "18424"
+        }
+      ]
+    },
+    {
+      "key": "nude in a chair",
+      "title": "Nude in a Chair",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "44",
+          "ref": "18288"
+        }
+      ]
+    },
+    {
+      "key": "oils sail boat or sailing",
+      "title": "Oils --- Sail Boat or Sailing --- ±",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "45",
+          "ref": "16318"
+        }
+      ]
+    },
+    {
+      "key": "paris paintings",
+      "title": "Paris Paintings",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "50",
+          "ref": "17490"
+        }
+      ]
+    },
+    {
+      "key": "paris watercolors",
+      "title": "Paris Watercolors",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "51",
+          "ref": "16708"
+        }
+      ]
+    },
+    {
+      "key": "railroad crossing drypoint",
+      "title": "Railroad Crossing - drypoint",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "24",
+          "ref": "18414"
+        }
+      ]
+    },
+    {
+      "key": "railroad sunset",
+      "title": "Railroad Sunset",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "58",
+          "ref": "18297"
+        }
+      ]
+    },
+    {
+      "key": "sailing",
+      "title": "Sailing",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "52",
+          "ref": "18056"
+        }
+      ]
+    },
+    {
+      "key": "self portrait",
+      "title": "Self Portrait",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "44",
+          "ref": "18288"
+        }
+      ]
+    },
+    {
+      "key": "south truro church",
+      "title": "South Truro Church",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "59",
+          "ref": "16991"
+        }
+      ]
+    },
+    {
+      "key": "summer twilight",
+      "title": "Summer Twilight",
+      "museumTitle": null,
+      "date": "1920",
+      "medium": "Etching on off-white wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50054",
+          "url": "https://www.artic.edu/artworks/50054",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "42",
+          "ref": "16860"
+        }
+      ]
+    },
+    {
+      "key": "sunday or hoboken facade",
+      "title": "Sunday --- or Hoboken Facade",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "52",
+          "ref": "18056"
+        }
+      ]
+    },
+    {
+      "key": "tables for ladies",
+      "title": "Tables for Ladies",
+      "museumTitle": null,
+      "date": "1930",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "487695",
+          "url": "https://www.metmuseum.org/art/collection/search/487695",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "59",
+          "ref": "16991"
+        }
+      ]
+    },
+    {
+      "key": "automat",
+      "title": "The Automat",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "54",
+          "ref": "16522"
+        }
+      ]
+    },
+    {
+      "key": "bull fight",
+      "title": "The Bull Fight",
+      "museumTitle": null,
+      "date": "c. 1917",
+      "medium": "Etching on white wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50072",
+          "url": "https://www.artic.edu/artworks/50072",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "43",
+          "ref": "16638"
+        }
+      ]
+    },
+    {
+      "key": "cat boat",
+      "title": "The Cat Boat",
+      "museumTitle": "Cat Boat",
+      "date": "1922",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366217",
+          "url": "https://www.metmuseum.org/art/collection/search/366217",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50087",
+          "url": "https://www.artic.edu/artworks/50087",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "10",
+          "ref": "17627"
+        }
+      ]
+    },
+    {
+      "key": "city",
+      "title": "The City",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "54",
+          "ref": "16522"
+        }
+      ]
+    },
+    {
+      "key": "henry ford",
+      "title": "The Henry Ford",
+      "museumTitle": null,
+      "date": "1923",
+      "medium": "Etching on ivory wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50112",
+          "url": "https://www.artic.edu/artworks/50112",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "39",
+          "ref": "17533"
+        }
+      ]
+    },
+    {
+      "key": "locomotive",
+      "title": "The Locomotive",
+      "museumTitle": null,
+      "date": "1923",
+      "medium": "Etching and drypoint on white wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50064",
+          "url": "https://www.artic.edu/artworks/50064",
+          "openImage": false
+        },
+        {
+          "institution": "Cleveland Museum of Art",
+          "short": "CMA",
+          "id": "135374",
+          "url": "https://clevelandart.org/art/1958.382",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "14",
+          "ref": "16553"
+        }
+      ]
+    },
+    {
+      "key": "lonely house",
+      "title": "The Lonely House",
+      "museumTitle": null,
+      "date": "1923",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366216",
+          "url": "https://www.metmuseum.org/art/collection/search/366216",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50061",
+          "url": "https://www.artic.edu/artworks/50061",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "26",
+          "ref": "17265"
+        }
+      ]
+    },
+    {
+      "key": "monhegan boat",
+      "title": "The Monhegan Boat",
+      "museumTitle": null,
+      "date": "1918",
+      "medium": "Etching on white wove paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50080",
+          "url": "https://www.artic.edu/artworks/50080",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "16",
+          "ref": "18263"
+        }
+      ]
+    },
+    {
+      "key": "rail road",
+      "title": "The Rail Road",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "12",
+          "ref": "16218"
+        }
+      ]
+    },
+    {
+      "key": "train and bathers",
+      "title": "Train & Bathers",
+      "museumTitle": "Train and Bathers",
+      "date": "1920",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366213",
+          "url": "https://www.metmuseum.org/art/collection/search/366213",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50052",
+          "url": "https://www.artic.edu/artworks/50052",
+          "openImage": false
+        }
+      ],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "38",
+          "ref": "16162"
+        }
+      ]
+    },
+    {
+      "key": "two on the isle",
+      "title": "Two on the Isle",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "55",
+          "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "water color house with mansard roof",
+      "title": "Water color --- House with Mansard Roof",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "45",
+          "ref": "16318"
+        }
+      ]
+    },
+    {
+      "key": "williamsburg bridge",
+      "title": "Williamsburg Bridge",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "55",
+          "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "yonkers",
+      "title": "Yonkers",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "53",
+          "ref": "17852"
         }
       ]
     }

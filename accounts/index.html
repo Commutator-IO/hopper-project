@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          addEventListener('error', function (e) {
+            var el = e.target; var u = el && (el.src || el.href);
+            if (u && /\/assets\//.test(u) && !sessionStorage.getItem('assetReload')) {
+              sessionStorage.setItem('assetReload', '1'); location.reload();
+            }
+          }, true);
+          addEventListener('load', function () { sessionStorage.removeItem('assetReload'); });
+        } catch (_) {}
+      })();
+    </script>
+    <title>Accounts | Hopper Ledgers</title>
+    <meta name="description" content="What the transcribed leaves record in sales, year by year, on the accrual basis — a floor under a number nobody knows yet." />
+    <meta property="og:title" content="Accounts | Hopper Ledgers" />
+    <meta property="og:description" content="What the transcribed leaves record in sales, year by year, on the accrual basis — a floor under a number nobody knows yet." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hopper.commutator.io/accounts/" />
+    <link rel="canonical" href="https://hopper.commutator.io/accounts/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/mainAccounts.tsx"></script>
+  </body>
+</html>

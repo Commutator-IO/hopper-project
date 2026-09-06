@@ -2,6 +2,8 @@ import { useMemo } from 'react';
 import { Page } from './components/Frame.tsx';
 import { LEDGERS, SHEETS } from './content/catalogue.ts';
 import life from './content/life.json';
+import worksData from './content/works.json';
+import workNotes from './content/work-notes.json';
 import { batchOfSeq } from './lib/batches.ts';
 import { url } from './lib/base.ts';
 
@@ -37,6 +39,35 @@ interface LifeEvent {
   key?: boolean;
 }
 
+interface IndexedWork {
+  key: string;
+  title: string;
+  museumTitle: string | null;
+  date: string | null;
+  medium: string | null;
+  held: boolean;
+  holdings: { institution: string; short: string; url: string }[];
+  namedIn: { ledger: string; batch: number; leaf: string | null; ref: string }[];
+}
+
+const WORKS = (worksData as unknown as { index: IndexedWork[] }).index;
+
+const NOTES = (
+  workNotes as unknown as {
+    sources: Record<string, { name: string; url: string }>;
+    notes: Record<
+      string,
+      { note: string; claims: { says: string; source: string }[] }
+    >;
+  }
+);
+
+/** The four-figure year a museum's date string states, if it states one. */
+const yearOfDate = (d: string | null): number | null => {
+  const m = d ? /\b(1[89]\d\d|20\d\d)\b/.exec(d) : null;
+  return m ? Number(m[1]) : null;
+};
+
 const LIFE = life as unknown as {
   note: string;
   sources: Record<string, { name: string; url: string }>;
@@ -58,10 +89,35 @@ export function TimelinePage() {
     return m;
   }, []);
 
+  /**
+   * Works indexed by the year a museum dates them to.
+   *
+   * The museum's date, never the leaf's. A leaf's date column is the day a
+   * work went to a dealer or a jury, which is not the year it was made and is
+   * often a decade off it — Book I leaf 60 books the 1923 Gloucester
+   * watercolours in October 1924. A work no museum here holds has no year and
+   * appears only in the index below, undated.
+   */
+  const worksByYear = useMemo(() => {
+    const m = new Map<number, IndexedWork[]>();
+    for (const w of WORKS) {
+      const y = yearOfDate(w.date);
+      if (y === null) continue;
+      const list = m.get(y) ?? [];
+      list.push(w);
+      m.set(y, list);
+    }
+    return m;
+  }, []);
+
   const years = useMemo(() => {
-    const set = new Set<number>([...LIFE.events.map((e) => e.year), ...byYear.keys()]);
+    const set = new Set<number>([
+      ...LIFE.events.map((e) => e.year),
+      ...byYear.keys(),
+      ...worksByYear.keys(),
+    ]);
     return [...set].sort((a, b) => a - b);
-  }, [byYear]);
+  }, [byYear, worksByYear]);
 
   const span = useMemo(() => {
     const lo = years[0];
@@ -131,7 +187,8 @@ export function TimelinePage() {
         {years.map((y) => {
           const events = LIFE.events.filter((e) => e.year === y);
           const sheets = byYear.get(y) ?? [];
-          if (!events.length && !sheets.length) return null;
+          const madeThisYear = worksByYear.get(y) ?? [];
+          if (!events.length && !sheets.length && !madeThisYear.length) return null;
           return (
             <div
               key={y}
@@ -168,6 +225,30 @@ export function TimelinePage() {
                   );
                 })}
 
+                {madeThisYear.length > 0 && (
+                  <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
+                    <span className="text-[11px] uppercase tracking-wider text-ink-400">
+                      {madeThisYear.length} work{madeThisYear.length === 1 ? '' : 's'} the ledgers
+                      name, dated {y} by a museum
+                    </span>
+                    {madeThisYear.map((w) => {
+                      const at = w.namedIn[0];
+                      return (
+                        <a
+                          key={w.key}
+                          href={url(`/${at.ledger}/#${at.ledger}/${at.batch}`)}
+                          title={`${w.medium ?? ''}${w.medium ? ' — ' : ''}named on ${w.namedIn
+                            .map((n) => `${n.ledger} leaf ${n.leaf}`)
+                            .join(', ')}`}
+                          className="rounded-full border border-brand-200 bg-brand-50 px-2 py-0.5 text-[11.5px] text-brand-800 transition hover:border-brand-400 hover:bg-brand-100"
+                        >
+                          {w.title}
+                        </a>
+                      );
+                    })}
+                  </div>
+                )}
+
                 {sheets.length > 0 && (
                   <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
                     <span className="text-[11px] uppercase tracking-wider text-ink-400">
@@ -198,6 +279,134 @@ export function TimelinePage() {
             </div>
           );
         })}
+      </section>
+
+      {/* The index of works, which is a different list from « what these museums
+          hold »: a title is here because a transcribed leaf carries it, and for
+          no other reason. It grows as batches land. */}
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">Works the ledgers name</h2>
+        <p className="prose-note mt-2 max-w-3xl">
+          {WORKS.length} works, read out of the transcribed leaves themselves — a title is here
+          because a leaf carries it in a <code>\work{'{}'}</code>, and for no other reason. Four
+          titles in Book I are refused for being holes rather than names: an initial under a
+          clipping is not a work. {WORKS.filter((w) => w.date).length} are dated, and the date is
+          always the museum’s, never the leaf’s — a leaf’s date column is the day a work went to
+          a dealer or a jury, which is often a decade off the year it was made. The
+          {' '}{WORKS.filter((w) => !w.date).length} the rest are undated here and stay that way
+          until a source dates them.
+        </p>
+        <ul className="mt-4 grid gap-x-6 gap-y-1 sm:grid-cols-2">
+          {WORKS.map((w) => {
+            const note = NOTES.notes[w.key];
+            return (
+              <li
+                key={w.key}
+                className="flex items-baseline gap-2 border-b border-ink-100 py-1.5 text-[13.5px]"
+              >
+                <span className="w-10 shrink-0 tabular text-ink-400">
+                  {yearOfDate(w.date) ?? '—'}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="text-ink-900">{w.title}</span>
+                  {w.museumTitle && (
+                    <span className="text-ink-400"> · {w.museumTitle}</span>
+                  )}
+                  {note && (
+                    <span
+                      title={note.note}
+                      className="ml-1.5 rounded-full bg-relu-100 px-1.5 py-px text-[10px] uppercase tracking-wide text-relu-700"
+                    >
+                      note
+                    </span>
+                  )}
+                  <span className="ml-1 text-[11.5px] text-ink-400">
+                    {' · '}
+                    {w.namedIn.map((n, i) => (
+                      <span key={`${n.ledger}-${n.ref}`}>
+                        {i > 0 && ', '}
+                        <a
+                          href={url(`/${n.ledger}/#${n.ledger}/${n.batch}`)}
+                          title={`Open ${n.ledger} at the batch holding leaf ${n.leaf ?? n.ref}`}
+                          className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+                        >
+                          {n.leaf ? `leaf ${n.leaf}` : `ref ${n.ref}`}
+                        </a>
+                      </span>
+                    ))}
+                  </span>
+                </span>
+                {w.holdings.map((h) => (
+                  <a
+                    key={h.short}
+                    href={h.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    title={h.institution}
+                    className="shrink-0 text-[11px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+                  >
+                    {h.short}
+                  </a>
+                ))}
+              </li>
+            );
+          })}
+        </ul>
+        {Object.keys(NOTES.notes).length > 0 && (
+          <div className="mt-6 max-w-3xl">
+            <h3 className="text-[13.5px] font-semibold text-ink-900">Notes</h3>
+            <p className="prose-note mt-1">
+              The only prose on this site a reader cannot check by looking at the sheet, so every
+              sentence carries the source that states it.
+            </p>
+            {Object.entries(NOTES.notes).map(([k, n]) => (
+              <div key={k} className="mt-3 rounded-card border border-ink-200 px-4 py-3">
+                <h4 className="text-[13.5px] font-semibold text-ink-900">
+                  {WORKS.find((w) => w.key === k)?.title ?? k}
+                </h4>
+                <p className="mt-1 text-[13.5px] leading-relaxed text-ink-700">{n.note}</p>
+                <ul className="mt-2">
+                  {n.claims.map((c, i) => {
+                    const src = NOTES.sources[c.source];
+                    return (
+                      <li key={i} className="text-[12px] leading-relaxed text-ink-500">
+                        {c.says}{' '}
+                        {src ? (
+                          <a
+                            href={src.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            title={src.name}
+                            className="whitespace-nowrap text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+                          >
+                            source ↗
+                          </a>
+                        ) : c.source.startsWith('ledger:') ? (
+                          (() => {
+                            const [lg, lf] = c.source.slice(7).split('/');
+                            const at = WORKS.find((w) => w.key === k)?.namedIn.find(
+                              (n) => n.ledger === lg && n.leaf === lf,
+                            );
+                            return (
+                              <a
+                                href={url(`/${lg}/#${lg}/${at?.batch ?? 1}`)}
+                                className="whitespace-nowrap text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+                              >
+                                {lg} leaf {lf} →
+                              </a>
+                            );
+                          })()
+                        ) : (
+                          <span className="text-ink-400">[{c.source}]</span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="border-t border-ink-200 py-8">

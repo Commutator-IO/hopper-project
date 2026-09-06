@@ -1,0 +1,297 @@
+import { useMemo } from 'react';
+import { Page } from './components/Frame.tsx';
+import accountsData from './content/accounts.json';
+import { url } from './lib/base.ts';
+
+/**
+ * The sales the transcriptions record, gathered by year.
+ *
+ * ## What this page is careful not to be
+ *
+ * It is not Edward Hopper's income, and the coverage line says so before any
+ * figure appears. Six batches of one volume are transcribed out of forty-two
+ * across six, so every number here is a **floor under a number nobody knows
+ * yet**. A total without its denominator is exactly the kind of thing that
+ * gets quoted, and a table looks like data in a way that prose does not.
+ *
+ * ## Why the rows that could not be read are on the page
+ *
+ * Because they are the most interesting thing on it. `scripts/accounts.mjs`
+ * refuses to date a sale from anything but the leaf's own date column, and on
+ * the etchings leaves that column dates the *exhibition* — so most etching
+ * sales have no accrual date at all, only the day the cheque cleared. Hiding
+ * that would leave a tidy table that quietly omits half the archive. Showing
+ * it turns a gap into a finding: the oils can be accounted on the accrual
+ * basis and the etchings cannot, and the ledger's own ruling is the reason.
+ *
+ * Nothing on this page is computed from anything but the `.tex` files.
+ */
+
+interface Year {
+  year: number;
+  sales: number;
+  gross: number;
+  commission: number;
+  net: number;
+  disagreements: number;
+}
+
+interface Unparsed {
+  reason: string;
+  ledger: string;
+  leaf: string | null;
+  work: string | null;
+  row: string[];
+}
+
+const A = accountsData as unknown as {
+  basis: string;
+  note: string;
+  limit: string;
+  coverage: { ledgersTranscribed: string[]; batches: number; sheets: number; note: string };
+  arithmetic: { checkable: number; agree: number; disagree: number; note: string };
+  years: Year[];
+  receivable: { year: number; accrued: number; received: number; outstanding: number }[];
+  receivableNote: string;
+  entries: { year: number; leaf: string | null; work: string | null; gross: number; rateWritten: string; net: number; check: string | null; receiptWritten: number | null }[];
+  unparsed: { count: number; sample: Unparsed[] };
+};
+
+const money = (n: number) =>
+  n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+export function AccountsPage() {
+  const totals = useMemo(
+    () =>
+      A.years.reduce(
+        (t, y) => ({
+          sales: t.sales + y.sales,
+          gross: t.gross + y.gross,
+          commission: t.commission + y.commission,
+          net: t.net + y.net,
+        }),
+        { sales: 0, gross: 0, commission: 0, net: 0 },
+      ),
+    [],
+  );
+
+  const peak = useMemo(() => Math.max(...A.years.map((y) => y.gross)), []);
+
+  return (
+    <Page path="/accounts/">
+      <header className="border-b border-ink-200 py-10">
+        <h1 className="font-serif text-3xl text-ink-900">Accounts</h1>
+        <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-ink-700">
+          What the transcribed leaves record in sales, gathered by year, on the accrual basis —
+          booked when the work went out rather than when the cheque cleared. Gross is the price
+          Jo Hopper wrote; the commission is the dealer’s fraction written beside it, recomputed
+          here and checked against the receipt she recorded.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">
+          The date is the leaf’s own first column, and that column is not always the day of sale:
+          on the watercolour leaves it is headed « Date kept at Rehn Gallery » and dates the
+          consignment, on the etchings leaves it dates the exhibition. So this is an account of
+          when work entered the market, which is the nearest thing to a sale date these books
+          keep. Where the column dates something else entirely the row is reported below rather
+          than dated wrongly.
+        </p>
+        <div className="mt-4 max-w-3xl rounded-card border border-alerte-200 bg-alerte-50 px-4 py-3">
+          <p className="text-[13.5px] leading-relaxed text-ink-800">
+            <strong className="font-semibold">This is not Edward Hopper’s income.</strong>{' '}
+            {A.coverage.batches} batches of {A.coverage.ledgersTranscribed.join(', ')} are
+            transcribed — {A.coverage.sheets} sheets of the 504 in the six volumes. Every figure
+            below is a floor under a number nobody knows yet, and it moves as batches land.
+          </p>
+        </div>
+      </header>
+
+      <section className="grid gap-4 border-b border-ink-200 py-6 sm:grid-cols-4">
+        {[
+          { k: 'Sales recorded', v: String(totals.sales) },
+          { k: 'Gross', v: `$${money(totals.gross)}` },
+          { k: 'Dealer commission', v: `$${money(totals.commission)}` },
+          { k: 'Net to the Hoppers', v: `$${money(totals.net)}` },
+        ].map((c) => (
+          <div key={c.k}>
+            <div className="text-[11px] uppercase tracking-wider text-ink-400">{c.k}</div>
+            <div className="font-serif text-2xl tabular text-ink-900">{c.v}</div>
+          </div>
+        ))}
+      </section>
+
+      <section className="py-6">
+        <h2 className="font-serif text-xl text-ink-900">Year by year</h2>
+        <p className="prose-note mt-2 max-w-3xl">
+          The bar is gross, to the same scale throughout. The shape is the archive’s, not a
+          reading of it: the oils sell from 1928, the peak is 1930, and what follows is the
+          Depression arriving in a household’s books.
+        </p>
+        <table className="mt-4 w-full text-[13.5px]">
+          <thead>
+            <tr className="border-b border-ink-300 text-[11px] uppercase tracking-wider text-ink-400">
+              <th className="py-1.5 text-left font-normal">Year</th>
+              <th className="py-1.5 text-right font-normal">Sales</th>
+              <th className="py-1.5 text-right font-normal">Gross</th>
+              <th className="py-1.5 text-right font-normal">Commission</th>
+              <th className="py-1.5 text-right font-normal">Net</th>
+              <th className="w-1/3 py-1.5 text-left font-normal" />
+            </tr>
+          </thead>
+          <tbody>
+            {A.years.map((y) => (
+              <tr key={y.year} className="border-b border-ink-100">
+                <td className="py-1.5 tabular text-ink-900">{y.year}</td>
+                <td className="py-1.5 text-right tabular text-ink-500">{y.sales}</td>
+                <td className="py-1.5 text-right tabular text-ink-900">${money(y.gross)}</td>
+                <td className="py-1.5 text-right tabular text-ink-500">
+                  −${money(y.commission)}
+                </td>
+                <td className="py-1.5 text-right tabular text-ink-900">${money(y.net)}</td>
+                <td className="py-1.5 pl-3">
+                  <span
+                    className="inline-block h-2 rounded-sm bg-brand-400 align-middle"
+                    style={{ width: `${Math.max(1, (y.gross / peak) * 100)}%` }}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">What was owed</h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          A work went to the dealer in one year and the cheque arrived in another, and in between
+          somebody owed the Hoppers money. That gap is the whole difference between an accrual
+          account and a cash one, and on these leaves it is not a rounding: the longest wait in
+          what has been transcribed is a watercolour left at the Rehn Gallery in October 1924 and
+          paid for in June 1962 — thirty-eight years.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">{A.receivableNote}</p>
+        <table className="mt-4 w-full max-w-3xl text-[13.5px]">
+          <thead>
+            <tr className="border-b border-ink-300 text-[11px] uppercase tracking-wider text-ink-400">
+              <th className="py-1.5 text-left font-normal">Year</th>
+              <th className="py-1.5 text-right font-normal">Accrued</th>
+              <th className="py-1.5 text-right font-normal">Received</th>
+              <th className="py-1.5 text-right font-normal">Owed at year end</th>
+            </tr>
+          </thead>
+          <tbody>
+            {A.receivable.map((r) => (
+              <tr key={r.year} className="border-b border-ink-100">
+                <td className="py-1.5 tabular text-ink-900">{r.year}</td>
+                <td className="py-1.5 text-right tabular text-ink-700">${money(r.accrued)}</td>
+                <td className="py-1.5 text-right tabular text-ink-700">
+                  {r.received ? `$${money(r.received)}` : '—'}
+                </td>
+                <td className="py-1.5 text-right tabular text-ink-900">
+                  ${money(r.outstanding)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="prose-note mt-3 max-w-3xl">
+          1931 is the shape of the thing: $232 accrued and $4,280 received, because the cheques
+          for the 1930 canvases arrived after the year that sold them. A cash account would call
+          1931 a good year and an accrual account calls it the collapse. Both are true and they
+          are about different things.
+        </p>
+      </section>
+
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">What the ledgers do not record</h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          <strong className="font-semibold">Costs.</strong> There is no expense column anywhere in
+          the transcribed sheets, because these are sales ledgers: they record what came in.
+          Canvas, paint, copper plates, the printer, the Truro house, the summers at Gloucester,
+          the 1925 journey to Santa Fe, the years in Paris — none of it is costed anywhere on
+          these leaves. Searching all {A.coverage.sheets} transcribed sheets for an outgoing
+          turns up exactly two lines, and one of them is income: a New York State sales tax of $15
+          at one per cent on Night Windows, and an insurance payment of $1,000{' '}
+          <em>received</em> in November 1929.
+        </p>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          So no profit figure can be derived from this archive, and none is shown. The dealer’s
+          commission is the one business cost the ledgers do quantify, and it is a large one: a third of nearly every line and{' '}
+          {((100 * (A.years.reduce((n, y) => n + y.commission, 0))) /
+            A.years.reduce((n, y) => n + y.gross, 0)).toFixed(1)}
+          % of gross across everything read so far. « Net to the Hoppers » above is therefore
+          revenue after commission, not profit, and the difference is every other cost of being a
+          painter.
+        </p>
+        <p className="prose-note mt-3 max-w-3xl">
+          An estimate of the rest would have to come from outside the archive, and that is not
+          this page’s to make. Where a named source states such a figure it belongs in a work’s
+          note, carrying that source — never in a table derived from the sheets, where it would
+          be indistinguishable from something Jo Hopper wrote down.
+        </p>
+      </section>
+
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">What the accrual basis cannot reach</h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">{A.limit}</p>
+        <p className="prose-note mt-3 max-w-3xl">
+          {A.unparsed.count} sale-bearing rows are reported rather than counted. They are listed
+          because a parser that silently skips what it cannot read produces a total that looks
+          complete, and a total that looks complete is the one nobody re-checks.
+        </p>
+        <ul className="mt-4 max-w-3xl">
+          {A.unparsed.sample.map((u, i) => (
+            <li key={i} className="border-b border-ink-100 py-2 text-[12.5px] leading-relaxed">
+              <span className="text-ink-400">
+                {u.ledger} {u.leaf ? `leaf ${u.leaf}` : ''}
+                {u.work ? ` · ${u.work}` : ''}
+              </span>
+              <div className="text-ink-700">{u.row.filter(Boolean).join('  |  ')}</div>
+              <div className="text-ink-400">{u.reason}</div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">Checking her arithmetic against ours</h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          {A.arithmetic.note} Of {A.arithmetic.checkable} rows that state one sale and one
+          receipt, {A.arithmetic.agree} agree and {A.arithmetic.disagree} do not.
+        </p>
+        <ul className="mt-3 max-w-3xl">
+          {A.entries
+            .filter((e) => e.check === 'disagrees')
+            .map((e, i) => (
+              <li key={i} className="border-b border-ink-100 py-2 text-[12.5px] text-ink-700">
+                <span className="text-ink-400">
+                  {e.year} · leaf {e.leaf} {e.work ? `· ${e.work}` : ''}
+                </span>{' '}
+                — {e.gross} less {e.rateWritten} is {money(e.net)}, and she wrote{' '}
+                {e.receiptWritten !== null ? money(e.receiptWritten) : '—'}.
+              </li>
+            ))}
+        </ul>
+        <p className="prose-note mt-3 max-w-3xl">
+          A disagreement is not an error until somebody has looked. Every one of these so far is
+          the ledger being richer than the check: a row that sold two impressions and recorded
+          one receipt for both, a sale paid in two instalments, a third rounded up rather than
+          down. The check earns its place anyway — it is the cheapest thing that would catch a
+          misread digit.
+        </p>
+      </section>
+
+      <section className="border-t border-ink-200 py-8">
+        <p className="prose-note max-w-3xl">
+          {A.note} Rebuilt by <code>npm run accounts</code> from{' '}
+          <a
+            href={url('/method/')}
+            className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+          >
+            the transcriptions
+          </a>{' '}
+          alone, and it changes only when they do.
+        </p>
+      </section>
+    </Page>
+  );
+}

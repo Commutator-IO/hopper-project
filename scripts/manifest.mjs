@@ -8,10 +8,10 @@
  * failure mode of a hand-kept status table is that it drifts optimistic and
  * nobody notices.
  *
- * The exception is `transcripts/status.json`: whether a pass is in flight,
- * whether a person has gone sheet by sheet against the photograph, and whether
- * a batch holds nothing to transcribe are three things no file can show. They
- * are declared there, where a change is a diff somebody can review.
+ * The exception is `transcripts/status.json`: whether a person has gone sheet
+ * by sheet against the photograph, and whether a batch holds nothing to
+ * transcribe, are two things no file can show. They are declared there, where
+ * a change is a diff somebody can review.
  */
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';

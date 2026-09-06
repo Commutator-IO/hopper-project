@@ -32,7 +32,6 @@ import type { Ledger, Manifest, Sheet } from '../lib/types.ts';
 
 export const STATE_COLOURS: Record<State, string> = {
   todo: 'bg-ink-200 text-ink-600',
-  running: 'bg-encours-200 text-encours-700',
   drafted: 'bg-brand-100 text-brand-700',
   checked: 'bg-relu-200 text-relu-700',
   skipped: 'bg-alerte-100 text-alerte-700',

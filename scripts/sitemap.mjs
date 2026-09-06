@@ -23,7 +23,7 @@ const ledgers = [
   ),
 ].map((m) => `/${m[1]}/`);
 
-const paths = ['/', ...ledgers, '/archive/', '/timeline/', '/method/', '/contribute/'];
+const paths = ['/', ...ledgers, '/archive/', '/timeline/', '/accounts/', '/method/', '/contribute/'];
 
 const today = new Date().toISOString().slice(0, 10);
 

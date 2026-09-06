@@ -116,10 +116,10 @@ export interface Manifest {
   /**
    * States no file can prove, from `transcripts/status.json`.
    *
-   * Keyed `<ledger>#<batch>`. Only the three: `running`, `checked`, `skipped`.
+   * Keyed `<ledger>#<batch>`. Only the two: `checked`, `skipped`.
    * Everything else is read off the files themselves.
    */
-  declared: Record<string, 'running' | 'checked' | 'skipped'>;
+  declared: Record<string, 'checked' | 'skipped'>;
   /**
    * Subject tags per ledger, from the `\keywords{}` line each transcription
    * carries.

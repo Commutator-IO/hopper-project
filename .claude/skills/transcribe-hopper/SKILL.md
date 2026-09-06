@@ -413,7 +413,14 @@ Two mechanical checks before the human one:
 Corrections go in the `.tex`, never in the HTML, the PDF or the TEI, which are
 derived and rebuilt.
 
-`transcripts/status.json` carries the three states no file can prove —
-`running`, `checked`, `skipped`, keyed `<ledger>#<batch>`. Only tick `checked`
-if a person really has gone sheet by sheet against the photograph. The site
-verifies nothing; it is a declaration, and it is reviewable in a diff.
+`transcripts/status.json` carries the two states no file can prove —
+`checked`, `skipped`, keyed `<ledger>#<batch>`. Only tick `checked` if a person
+really has gone sheet by sheet against the photograph. `skipped` is for a batch
+judged to hold nothing to transcribe, which the absence of a file cannot
+distinguish from a batch nobody has reached. The site verifies nothing; both
+are declarations, and both are reviewable in a diff.
+
+**A pass in flight is not a state.** `drafted` is read off the files and cannot
+go stale; `running` was a claim about a process, nothing set it false again
+when somebody stopped halfway, and a branch says the same thing and expires by
+itself. Do not reintroduce it.

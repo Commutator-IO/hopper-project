@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run manifest && vite",
-    "build": "npm run manifest && tsc -b && vite build && npm run sitemap",
+    "build": "npm run manifest && npm run notes && tsc -b && vite build && npm run sitemap",
     "lint": "oxlint --deny-warnings",
     "preview": "vite preview",
     "catalogue": "node scripts/catalogue.mjs",
@@ -16,7 +16,9 @@
     "tei": "node scripts/tei.mjs",
     "pdf": "node scripts/pdf.mjs",
     "sitemap": "node scripts/sitemap.mjs",
-    "tiles": "node scripts/tiles.mjs"
+    "tiles": "node scripts/tiles.mjs",
+    "accounts": "node scripts/accounts.mjs",
+    "notes": "node scripts/notes.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",

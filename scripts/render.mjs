@@ -22,6 +22,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
 import { resolve, basename, dirname } from 'node:path';
+import { workKey } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 
@@ -75,16 +76,6 @@ const WORKS = (() => {
     return null;
   }
 })();
-
-/** The same normalisation `scripts/works.mjs` uses. Kept in step by hand. */
-const workKey = (title) =>
-  title
-    .toLowerCase()
-    .replace(/&/g, ' and ')
-    .replace(/^(the|a|an)\s+/, '')
-    .replace(/[^a-z0-9 ]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
 
 /**
  * The work a title names, if any museum here holds one under it.

@@ -1,0 +1,49 @@
+{
+  "_comment": "Per-work notes, keyed exactly as src/content/works.json keys its index. Written by /modernize-hopper, one work at a time, from named sources only. Every claim carries a source key that resolves in \"sources\" below; a note with no source is not a note. Nothing here is derived from a ledger row \u2014 the rows are on the sheets and the site shows them \u2014 and nothing is written from memory.",
+  "sources": {
+    "cma-1931-2647": {
+      "name": "Cleveland Museum of Art, Hills, South Truro, accession 1931.2647",
+      "url": "https://clevelandart.org/art/1931.2647",
+      "retrieved": "2026-09-06",
+      "via": "openaccess-api.clevelandart.org"
+    },
+    "met-487695": {
+      "name": "The Metropolitan Museum of Art, Tables for Ladies, object 487695",
+      "url": "https://www.metmuseum.org/art/collection/search/487695",
+      "retrieved": "2026-09-06",
+      "via": "collectionapi.metmuseum.org"
+    }
+  },
+  "notes": {
+    "hills south truro": {
+      "note": "Cleveland dates the canvas 1930 and accessioned it in 1931 \u2014 its number, 1931.2647, carries the year \u2014 which is the sale Book I leaf 59 writes as \u00ab Cleveland Museum. Nov. 9, 31 \u00bb at 2000 less a third. The ledger and the museum are independent records of one transaction, and they agree.",
+      "claims": [
+        {
+          "says": "Cleveland Museum of Art holds it, oil on canvas, dated 1930, accession 1931.2647, Hinman B. Hurlbut Collection.",
+          "source": "cma-1931-2647"
+        },
+        {
+          "says": "Book I leaf 59 records the sale to the Cleveland Museum, 9 November 1931, at 2000 less one third.",
+          "source": "ledger:book-i/59"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "tables for ladies": {
+      "note": "The Met gives the canvas as 48 1/4 by 60 3/8 inches, which is the \u00ab 4 x 5 ft. \u00bb of Book I leaf 59 to within an inch \u2014 the leaf's rounding, not a different picture. It was bought with the George A. Hearn Fund in 1931; the leaf puts the cheque at 3 June 1931, on a price of 4500 less a third.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds it, oil on canvas, 48 1/4 x 60 3/8 in., dated 1930, acquired 1931 through the George A. Hearn Fund.",
+          "source": "met-487695"
+        },
+        {
+          "says": "Book I leaf 59 gives the size as 4 x 5 ft. and the sale to the Metropolitan at 4500 less a third, received 3 June 1931.",
+          "source": "ledger:book-i/59"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    }
+  }
+}

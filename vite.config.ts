@@ -82,6 +82,7 @@ export default defineConfig({
         dealers: resolve(import.meta.dirname, 'dealers/index.html'),
         archive: resolve(import.meta.dirname, 'archive/index.html'),
         timeline: resolve(import.meta.dirname, 'timeline/index.html'),
+        accounts: resolve(import.meta.dirname, 'accounts/index.html'),
         method: resolve(import.meta.dirname, 'method/index.html'),
         contribute: resolve(import.meta.dirname, 'contribute/index.html'),
       },

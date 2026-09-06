@@ -57,6 +57,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { readTranscripts, workKey } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 
@@ -72,31 +73,12 @@ const json = async (url, headers = {}) => {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /**
- * The comparison key for a title.
- *
- * Institutions and the ledger differ on three things and only three, and each
- * is a matter of house style rather than of identity:
- *
- * — a leading article. The Art Institute has « The Evening Wind » and « The Cat
- *   Boat » where the Met and the ledger have neither;
- * — an ampersand. Jo Hopper writes « Cow & Rocks »; the Art Institute writes
- *   « Cow and Rocks »;
- * — case and punctuation.
- *
- * Everything beyond those three is left to fail, and to be declared by hand in
- * `work-aliases.json` if it is real. « Les Deux Pigeons » and « The Two
- * Pigeons » are the same plate under two house titles, and no normalisation
- * rule should be clever enough to discover that on its own — a rule that could
- * would also silently join things that are not the same.
+ * The comparison key for a title — re-exported from `lib/ledger.mjs`, which is
+ * now the only copy. It used to live here and again in `render.mjs`, the
+ * second under a comment reading « kept in step by hand ». They were in step;
+ * the arrangement was still one edit away from not being.
  */
-export const key = (title) =>
-  title
-    .toLowerCase()
-    .replace(/&/g, ' and ')
-    .replace(/^(the|a|an)\s+/, '')
-    .replace(/[^a-z0-9 ]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+export const key = workKey;
 
 /* ------------------------------------------------------- the Met */
 
@@ -156,9 +138,53 @@ async function aic() {
     }));
 }
 
+/* --------------------------------------------- Cleveland Museum of Art */
+
+/**
+ * Cleveland, added when Book I's oils arrived in batch 6.
+ *
+ * The first four batches of Book I are the etchings, and the Met and the Art
+ * Institute hold those in depth. Batches 5 and 6 turn to the oils and
+ * watercolours, and there the two original sources go quiet — Cleveland does
+ * not. It holds « Hills, South Truro », which Book I leaf 59 records selling
+ * to the Cleveland Museum on 9 November 1931 for 2000 less a third. The
+ * ledger's row and the museum's catalogue are two independent records of one
+ * transaction, and this is the first place in the project where they meet.
+ *
+ * Open, keyless, and — unlike every other candidate tried — it filters
+ * properly: `?artists=Edward Hopper` returns six works and all six are his.
+ * The artist field is checked anyway, on the same principle as the Met's.
+ *
+ * Three others were tried and refused. Harvard requires a key. The Whitney
+ * still publishes no API, so the largest Hopper collection in the world stays
+ * out. The V&A answers without a key and ranks Hopper's etchings first, but
+ * `q_actor` does not actually filter — the same query returns a 1903 poster
+ * and a design for a teaset — and a source whose filter is decorative is the
+ * failure this file already refuses for whitney.org.
+ */
+async function cma() {
+  const d = await json(
+    'https://openaccess-api.clevelandart.org/api/artworks/?artists=Edward%20Hopper&limit=100',
+  );
+  return (d.data ?? [])
+    .filter((x) =>
+      (x.creators ?? []).some((c) => (c.description ?? '').includes('Edward Hopper')),
+    )
+    .map((x) => ({
+      institution: 'Cleveland Museum of Art',
+      short: 'CMA',
+      id: String(x.id),
+      title: x.title,
+      date: x.creation_date ?? null,
+      medium: x.technique ?? x.type ?? null,
+      url: x.url ?? `https://www.clevelandart.org/art/${x.accession_number}`,
+      openImage: (x.share_license_status ?? '').toUpperCase() === 'CC0',
+    }));
+}
+
 /* ------------------------------------------------------------ go */
 
-const holdings = [...(await met()), ...(await aic())];
+const holdings = [...(await met()), ...(await aic()), ...(await cma())];
 
 /**
  * Aliases, hand-declared and committed.
@@ -223,11 +249,67 @@ for (const a of ALIASES) {
   }
 }
 
+/* ------------------------------- what the ledgers actually name */
+
+/**
+ * The index of works, which is a different thing from the list of holdings.
+ *
+ * `works` above is « what these three museums hold by Edward Hopper », and it
+ * contains plenty the ledgers never mention. What a reader of the ledgers
+ * wants is the other list: **every work the transcriptions name**, with a date
+ * where a museum gives one and an honest blank where none does.
+ *
+ * So this is read straight out of the `.tex` files. A title appears here
+ * because a transcribed leaf carries it in a `\work{}`, and nowhere else —
+ * not from a catalogue raisonné and not from memory. Four titles in Book I
+ * are refused for being holes rather than names: `\work{B\ill{}}` on leaf 56
+ * is an initial under a clipping, and `\work{Night in \ill{}}` on leaf 4
+ * stops after three letters. « Night in » would match something if it were
+ * allowed to try, which is exactly why it is not.
+ *
+ * **The date is the museum's, never the leaf's.** A leaf's date column is the
+ * day a work went to the dealer or a jury, which is not the year it was made
+ * and is often a decade off it: Book I leaf 60 books the 1923 Gloucester
+ * watercolours in October 1924. Where no source here holds the work, `date` is
+ * null and stays null.
+ */
+const named = new Map();
+for (const file of readTranscripts(root)) {
+  for (const w of file.works) {
+    if (!w.read) continue;
+    let k = w.key;
+    if (aliasIndex[k]) k = aliasIndex[k].to;
+    if (!named.has(k)) named.set(k, { key: k, title: w.title, namedIn: [] });
+    const n = named.get(k);
+    if (w.title.length < n.title.length) n.title = w.title;
+    n.namedIn.push({ ledger: w.ledger, batch: w.batch, leaf: w.leaf, ref: w.ref });
+  }
+}
+
+const index = [...named.values()]
+  .map((n) => {
+    const held = works.get(n.key) ?? null;
+    return {
+      key: n.key,
+      // The ledger's title is the one a reader of these leaves has in hand, so
+      // it leads; the museum's is kept beside it when the two differ.
+      title: n.title,
+      museumTitle: held && held.title !== n.title ? held.title : null,
+      date: held?.date ?? null,
+      medium: held?.medium ?? null,
+      held: Boolean(held),
+      holdings: held?.holdings ?? [],
+      namedIn: n.namedIn,
+    };
+  })
+  .sort((a, b) => a.title.localeCompare(b.title));
+
 const out = {
   generated: new Date().toISOString(),
   sources: [
     { institution: 'The Metropolitan Museum of Art', api: 'https://collectionapi.metmuseum.org/public/collection/v1' },
     { institution: 'Art Institute of Chicago', api: 'https://api.artic.edu/api/v1' },
+    { institution: 'Cleveland Museum of Art', api: 'https://openaccess-api.clevelandart.org/api' },
   ],
   note:
     'Every URL here was retrieved by scripts/works.mjs and its artist field checked against ' +
@@ -235,11 +317,20 @@ const out = {
     'does not say that the ledger row you are reading concerns that copy.',
   aliases: aliasIndex,
   works: [...works.values()].sort((a, b) => a.title.localeCompare(b.title)),
+  /**
+   * Works the transcriptions name, dated where a museum dates them. Derived
+   * from `transcripts/`, so it grows only as batches are transcribed and can
+   * never claim a work nobody has read.
+   */
+  index,
 };
 
 writeFileSync(resolve(root, 'src/content/works.json'), JSON.stringify(out, null, 2) + '\n');
 
+const dated = index.filter((w) => w.date).length;
 process.stdout.write(
-  `works: ${out.works.length} titles, ${holdings.length} holdings, ` +
-    `${Object.keys(aliasIndex).length} aliases\n`,
+  `works: ${out.works.length} titles held, ${holdings.length} holdings, ` +
+    `${Object.keys(aliasIndex).length} aliases\n` +
+    `index: ${index.length} works named in the transcriptions, ` +
+    `${dated} dated by a museum, ${index.length - dated} undated\n`,
 );

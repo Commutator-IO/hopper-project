@@ -11,28 +11,29 @@
  * — **Observed.** Whether a transcription exists is a fact about a file.
  *   `npm run manifest` reads it, so `drafted` is never written down anywhere
  *   and cannot go stale.
- * — **Declared.** Whether a pass is in flight; whether a person has sat with
- *   the photograph and gone sheet by sheet; whether a batch was judged to hold
- *   nothing to transcribe — no file can show any of that. Those three live in
- *   `transcripts/status.json`, where a change is a diff somebody can review.
+ * — **Declared.** Whether a person has sat with the photograph and gone sheet
+ *   by sheet; whether a batch was judged to hold nothing to transcribe — no
+ *   file can show either. Those two live in `transcripts/status.json`, where a
+ *   change is a diff somebody can review.
+ *
+ * There was a third, `running`, for a pass in flight. It is gone. It was a
+ * claim about a process rather than about an artifact: nothing set it false
+ * again when somebody stopped halfway, so its only reachable states were true
+ * and stale. What it was for — two people transcribing one batch at once — a
+ * branch says better, and a branch expires by itself.
  *
  * A progress table one believes to be automatic and which is not misleads more
  * than it informs; so does one that ignores what it can plainly see; and so
  * does one that lets a machine pass wear a person's name.
  */
 
-export type State = 'todo' | 'running' | 'drafted' | 'checked' | 'skipped';
+export type State = 'todo' | 'drafted' | 'checked' | 'skipped';
 
 /** What may be written in `transcripts/status.json` — the rest is observed. */
-export type DeclaredState = 'running' | 'checked' | 'skipped';
+export type DeclaredState = 'checked' | 'skipped';
 
 export const STATES: { key: State; label: string; help: string }[] = [
   { key: 'todo', label: 'To do', help: 'Nothing exists for this batch yet.' },
-  {
-    key: 'running',
-    label: 'Running',
-    help: 'A pass is in flight. Declared in transcripts/status.json.',
-  },
   {
     key: 'drafted',
     label: 'Drafted',
@@ -55,12 +56,11 @@ export const progressKey = (ledger: string, batch: number) => `${ledger}#${batch
 /** How far along a state is, so evidence and claim can be compared. */
 const RANK: Record<State, number> = {
   todo: 0,
-  running: 1,
-  drafted: 2,
-  checked: 3,
+  drafted: 1,
+  checked: 2,
   // Skipped is a decision, not a stage: nothing overrides it, and it overrides
   // nothing.
-  skipped: 3,
+  skipped: 2,
 };
 
 export interface Evidence {
@@ -90,7 +90,6 @@ export interface Tally {
 export function tally(batches: { state: State; sheets: number }[]): Tally {
   const byState: Record<State, number> = {
     todo: 0,
-    running: 0,
     drafted: 0,
     checked: 0,
     skipped: 0,
