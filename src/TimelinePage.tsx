@@ -82,6 +82,27 @@ interface TranscribedYear {
 const TRANSCRIBED = (worksData as unknown as { transcribedYears: TranscribedYear[] })
   .transcribedYears;
 
+/**
+ * Every transcribed leaf, indexed by `<ledger>/<leaf>`, so a note's `ledger:`
+ * claim can be turned into a link to that sheet.
+ *
+ * The lookup has to be global, and that is the whole point of it. The
+ * strongest notes are the ones that join two sheets — Night Hawks cites leaf
+ * 25, which is Compartment C's leaf and where the Art Institute's part payment
+ * is booked — so resolving a reference against only the noted work's own
+ * `namedIn` would send those citations to the head of the volume instead of to
+ * the leaf they name. `scripts/notes.mjs` already validates them against every
+ * leaf in the archive; this reads them the same way.
+ */
+const LEAVES = new Map<string, { batch: number; ref: string }>();
+for (const w of WORKS) {
+  for (const n of w.namedIn) {
+    if (n.leaf === null) continue;
+    const k = `${n.ledger}/${n.leaf}`;
+    if (!LEAVES.has(k)) LEAVES.set(k, { batch: n.batch, ref: n.ref });
+  }
+}
+
 const NOTES = (
   workNotes as unknown as {
     sources: Record<string, { name: string; url: string }>;
@@ -600,9 +621,7 @@ export function TimelinePage() {
                         ) : c.source.startsWith('ledger:') ? (
                           (() => {
                             const [lg, lf] = c.source.slice(7).split('/');
-                            const at = WORKS.find((w) => w.key === k)?.namedIn.find(
-                              (n) => n.ledger === lg && n.leaf === lf,
-                            );
+                            const at = LEAVES.get(`${lg}/${lf}`);
                             return (
                               <a
                                 href={url(`/${lg}/#${lg}/${at?.batch ?? 1}${at ? `/${at.ref}` : ''}`)}

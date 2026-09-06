@@ -13,6 +13,12 @@
       "retrieved": "2026-09-06",
       "via": "api.artic.edu"
     },
+    "aic-1942-51": {
+      "name": "Art Institute of Chicago, Nighthawks, accession 1942.51",
+      "url": "https://www.artic.edu/artworks/111628",
+      "retrieved": "2026-09-06",
+      "via": "api.artic.edu"
+    },
     "aic-1944-141": {
       "name": "Art Institute of Chicago, A Corner, accession 1944.141",
       "url": "https://www.artic.edu/artworks/50049",
@@ -216,6 +222,11 @@
       "url": "https://www.metmuseum.org/art/collection/search/487695",
       "retrieved": "2026-09-06",
       "via": "collectionapi.metmuseum.org"
+    },
+    "whitney-guide": {
+      "name": "Whitney Museum of American Art, teacher guide, “About the Artist”",
+      "url": "https://whitney.org/education/schools-educators/k-12/teaching-materials/teacher-guides/hopper-new-york/about",
+      "via": "src/content/life.json, which already carries this source for the 1913 entry"
     }
   },
   "notes": {
@@ -265,6 +276,36 @@
       "written": "2026-09-06",
       "model": "claude-opus-5"
     },
+    "blackwell s island": {
+      "note": "Both ledgers carry this canvas and each sends the reader to the other: Book I leaf 57 writes « See Book II p. 35 », and Book II leaf 35 writes « See Book I p. 57 » and, in pencil at the edge, « This listed in Book I ». They give the same size and the same sale — 2500 less a third, 19 December 1929 — one as « 1666.67 » and the other as « 1666 2/3 », and they part over the buyer’s name, which Book I writes « Wm. Russell Allen » and then « Wm. C. Russell Allan » and Book II « Russel Allen ». On how it passed to Christopher Tunnard, Book I says a nephew acquired it and Book II « son-in-law or nephew ».",
+      "claims": [
+        {
+          "says": "Book I leaf 57 heads « Blackwell's Island - 35 x 60 », books « Nov. 20, 28  Mr. Wm. Russell Allen of Boston - about Feb. or Mar.  2500 - 1/3 Com.  1666.67  Dec. 19, 29 », then « Wm. C. Russell Allan - Later acquired by nephew » and « See Book II p. 35.  Mr & Mrs. Christopher Tunnard, architect (city planning), 257 Rock Road, New Haven, Conn. »",
+          "source": "ledger:book-i/57"
+        },
+        {
+          "says": "Book II leaf 35 heads « Blackwell's Island  35 x 60 », says « Painted in N.Y. Studio. Nov. 20'', 28 » and « See Book I p. 57 », books « Bought by Russel Allen of Boston  1929.  2500 - 1/3 Com =  1666 2/3  Dec. 19, 1929 », and adds in pencil « Present owner Christopher Tunnard, architect » who got it because « Russel Allen gone for the abstract in Boston so got rid of this canvas to son-in-law or nephew », with « This listed in Book I » at the left edge.",
+          "source": "ledger:book-ii/35"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "bootleggers": {
+      "note": "The cross-reference is in her hand: Book I leaf 53 heads the canvas « Bootleggers  30 x 38  See Book II, p. 71 », and leaf 71 of Book II is that page, at the same size. Leaf 53 carries five exhibitions between 1925 and 1927 and a line naming Carl Hamilton and three canvases at 3000 in 1928; leaf 71 carries one sale, to the « Corrier Gallery, Manchester, N.H. » at 4000 less a third on 7 April 1956. Neither leaf says how the 1928 line and the 1956 sale stand to one another.",
+      "claims": [
+        {
+          "says": "Book I leaf 53 heads it « Bootleggers   30 x 38   See Book II, p. 71 », lists it invited or shown at the Rehn Gallery and the Brooklyn Museum in 1925, the Tri-National Ex. at Wildenstein's and the St. Botolph's Club in Boston in 1926 and the Rehn Gallery in 1927, and writes « Carl Hamilton of Cal. --- 1928. --- 3 canvases  Bootleggers, 11 A. M., Gloucester St.  3000 ».",
+          "source": "ledger:book-i/53"
+        },
+        {
+          "says": "Book II leaf 71 heads it « « Bootleggers »  30 x 38  1924 or 1925  Painted in Wash. Sq. studio » and books « Corrier Gallery, Manchester, N.H.  4000 - 1/3 =  2666 2/3,  Ap. 7, '56 ».",
+          "source": "ledger:book-ii/71"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
     "bull fight": {
       "note": "The Art Institute dates it « c. 1917 », an approximation; leaf 43 heads the plate with a size, « 5\" x 7\" », and no year at all. Chicago’s plate measures 4 7/8 × 6 15/16 in., and the leaf’s earliest row is an acceptance by the Chicago Society of Etchers at the Art Institute, 7 February 1920.",
       "claims": [
@@ -303,6 +344,25 @@
       "written": "2026-09-06",
       "model": "claude-opus-5"
     },
+    "compartment c": {
+      "note": "The Art Institute bought it in 1938 and gave it back four years later: leaf 25 books the purchase at 1000 less a third on 14 May 1938 and then « Returned by Art Inst. \" C in part payment for Night Hawks. May 19, 42 », which is the 1000 leaf 95 sets against a 3000 canvas. It sold again in June 1943, to Thos. J. Watson through the Grand Central Galleries, at 900 — a hundred less than the museum had paid — and the leaf adds that the Art Institute had changed the original frame.",
+      "claims": [
+        {
+          "says": "Book II leaf 25 heads it « Compartment C  Car 293.  18\"x20\"  Mar. 30, '38 », books « Art Institute, Chicago.  1000 - 1/3 =  666 2/3  May 14, 1938 », then the return of 19 May 1942, then « Thos. J. Watson of International Machine Co. - thru Grand Central Galleries from Rehn Gal. » at « 900 - 1/3 = 600. Jun 19, 43 », with « ( Frame changed again. Art Inst. frame no good. They had changed original frame. »",
+          "source": "ledger:book-ii/25"
+        },
+        {
+          "says": "Book II leaf 95 books the Night Hawks sale of 13 May 1942 as « 3000 + return of Compartment C. 1000 », marginally « in exchange as part payment. »",
+          "source": "ledger:book-ii/95"
+        },
+        {
+          "says": "The Art Institute of Chicago gives Nighthawks the provenance « consigned to Frank Rehn Galleries, 1942; sold to the Art Institute of Chicago, 1942 », accession 1942.51.",
+          "source": "aic-1942-51"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
     "corner": {
       "note": "Leaf 44 gives « A Corner  3 1/4 x 4 » and the Art Institute’s plate is 3 1/4 × 3 15/16 in. — the height exact, the width rounded up by a sixteenth. Chicago dates it 1919; the leaf gives no year, and its first row is the Chicago Society of Etchers at the Art Institute, 7 February 1920, with $10 received on 8 April 1925.",
       "claims": [
@@ -313,6 +373,21 @@
         {
           "says": "Book I leaf 44 heads the plate « A Corner  3 1/4 x 4 » and its first row reads « Feb. 7, 20  A  Chicago Soc. of Etchers, Art Inst. » with $10 received 8 April 1925.",
           "source": "ledger:book-i/44"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "corner saloon": {
+      "note": "Leaf 69 is about Rail Road Train, Squam Light and El Station, and twice carries an erased pencil line belonging to none of them — « Corner Saloon 1913  See p. 87 » — once under the heading and once inside the empty drawing box ruled for Squam Light. Page 87 is that leaf, which dates the picture 1913 and records the Museum of Modern Art buying it out of the Rehn show of early work in January 1941, part in cash and part in two watercolours the museum already had from Mrs. John D. Rockefeller, Jr.",
+      "claims": [
+        {
+          "says": "Book II leaf 69 carries « Corner Saloon -1913-  p. 87  Bk. II. » under its heading and « Corner Saloon 1913  See p. 87. » inside the empty drawing box beside Squam Light, both in erased pencil that can still be read.",
+          "source": "ledger:book-ii/69"
+        },
+        {
+          "says": "Book II leaf 87 heads « Corner Saloon  24 x 29 », says « Painted 1913. Taken to Rehn Gallery Jan. 1941 for show of Early work », and records it « Bought out of Hopper show of Early work, Jan. 1941 - by Museum of Modern Art, with 2 old water colors given some years before by Mrs. John D. Rockefeller, Jr. », at « Amt. rec'd 800 - 1/3 =  533 1/3  Ap. 19, 41 ».",
+          "source": "ledger:book-ii/87"
         }
       ],
       "written": "2026-09-06",
@@ -579,6 +654,44 @@
         {
           "says": "Book I leaf 6 heads the plate « Night Shadows  7\"x8 3/8\"  1921 », records « Bought by Metropolitan Mus. (Wm. Ivans) group price » at $10 on 8 May 1925, and ends in November 1927.",
           "source": "ledger:book-i/6"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "nighthawks": {
+      "note": "The Art Institute measures the canvas at 33 1/8 x 60 in. against leaf 95’s « 33 x 60 », dates it 1942, and gives its provenance as consigned to Rehn and sold to the museum that year — which is the row the leaf writes « May 13, 42 » at 3000 plus the return of Compartment C at 1000, less a third. Leaf 25 is the other end of that exchange: the Art Institute had bought Compartment C in 1938 and hands it back six days after this sale. The prize entered on the leaf for 27 October 1942 falls two days before the Fifty-third Annual opened in Chicago, which the museum’s exhibition history lists this picture in.",
+      "claims": [
+        {
+          "says": "The Art Institute of Chicago holds it, oil on canvas, 84.1 × 152.4 cm (33 1/8 × 60 in.), dated 1942, accession 1942.51, Friends of American Art Collection. Provenance: « The artist, New York; consigned to Frank Rehn Galleries, 1942; sold to the Art Institute of Chicago, 1942. » Its exhibition history opens with the Art Institute’s Fifty-third Annual Exhibition of American Paintings and Sculpture, 29 October to 10 December 1942, cat. 132.",
+          "source": "aic-1942-51"
+        },
+        {
+          "says": "Book II leaf 95 heads it « Night Hawks  33 x 60 », dates it « Finished Jan 21, 1942 », and books « May 13, 42  Chicago Art Institute - 3000 + return of Compartment C. 1000 » at « - Com. 1/3 = 2000 », then « Oct. 27, 42 » the « Ada S. Garret Prize » of $750.",
+          "source": "ledger:book-ii/95"
+        },
+        {
+          "says": "Book II leaf 25 records the Art Institute of Chicago buying Compartment C on 14 May 1938 and « Returned by Art Inst. \" C in part payment for Night Hawks. May 19, 42. »",
+          "source": "ledger:book-ii/25"
+        }
+      ],
+      "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "sailing": {
+      "note": "Both ledgers call this the first canvas he sold, out of the Armory Show of 1913, which is the sale the Whitney’s own chronology puts in that year. They do not agree on the money: Book I leaf 52 writes « Sold at International Armory Show 1913 --- $225 » and then « Sold to Mr. Vietor, 25\" & Mad. Ave.  250 - 10% », where Book II leaf 68 has « ± $250 ». They part again over its reappearance — Book I’s margin says it turned up in the fall of 1949 and was bought in Pittsburg for $1,000, Book II that it came to the Rehn Gallery about 1951 and was resold for $1200 to Mrs. Becky Beal of Pittsburg.",
+      "claims": [
+        {
+          "says": "Hopper sold his first canvas at the Armory Show in 1913.",
+          "source": "whitney-guide"
+        },
+        {
+          "says": "Book I leaf 52 heads « Sailing » and writes « Sold at International Armory Show 1913 --- $225.   1913 », « Sold to Mr. Vietor, 25\" & Mad. Ave.  250 - 10% » with « Sold by Arthur B. Davies » struck, and in the margin « turned up fall 1949  Sold to Mr. [illegible]  Bought in Pittsburg $1,000. »",
+          "source": "ledger:book-i/52"
+        },
+        {
+          "says": "Book II leaf 68 heads « Sailing  1913 or before  24 x 29 » under « Early Oils » and writes « Sold out of famous Armory Show - 1913.  ± $250. », that it was the first canvas of E.H. sold, and « Turned up + brought to Rehn Gal. ± 1951 + resold for $1200. for owner - Bqt. by [Mrs.] Becky Beal, Pittsburg ».",
+          "source": "ledger:book-ii/68"
         }
       ],
       "written": "2026-09-06",

@@ -16,5 +16,11 @@
     "to": "Night on the El Train",
     "mapping": "likely",
     "why": "The ledger's title for the plate at leaf 30; both the Met and the Art Institute catalogue a 1918 etching as 'Night on the El Train'. The elevated railway is the same railway, but the two titles are not the same words and this is our identification, not theirs."
+  },
+  {
+    "from": "Night Hawks",
+    "to": "Nighthawks",
+    "mapping": "certain",
+    "why": "Book II leaf 95 heads the canvas « Night Hawks » at 33 x 60, dates it finished 21 January 1942, and books its sale to the Chicago Art Institute on 13 May 1942; the Art Institute catalogues a 1942 oil of 33 1/8 x 60 in. as « Nighthawks », accession 1942.51, and gives its provenance as consigned to Rehn and sold to the museum in 1942. One canvas and one sale, written in two words on the leaf and in one by the museum."
   }
 ]
