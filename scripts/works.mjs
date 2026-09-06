@@ -18,31 +18,41 @@
  *
  * ## Why it is fetched rather than typed
  *
- * A hand-typed museum URL is a claim nobody verified. Both sources below are
- * public APIs with no key, returning stable object records, so every link in
+ * A hand-typed museum URL is a claim nobody verified. Every source below is a
+ * public API with no key, returning stable object records, so every link in
  * `works.json` is one this script actually retrieved and whose artist field it
  * checked against the string `Edward Hopper`. Re-run it and a link that has
  * rotted disappears rather than sitting in the site being wrong.
  *
- * Verification stops at the API, and that is a real limit worth stating: both
- * museums' *web* front ends refuse automated requests — `artic.edu` answers a
- * Cloudflare challenge and `metmuseum.org` rate-limits — so no script here can
- * confirm that a page renders. What it can confirm is that the object exists,
- * that the museum attributes it to Edward Hopper, and that the URL is the one
- * the museum's own API gives (the Met returns `objectURL` outright; the Art
- * Institute returns `config.website_url`, from which its documented
- * `/artworks/<id>` path is built). Nothing is assembled from memory.
+ * Four of the five give the URL themselves: the Met returns `objectURL`
+ * outright, the Art Institute returns `config.website_url` from which its
+ * documented `/artworks/<id>` path is built, Cleveland returns `url`, and the
+ * V&A's item path takes the `systemNumber` the search returns. The Whitney is
+ * the exception and is worth naming as one — its API gives an id and no URL,
+ * so `/collection/works/<id>` is an *observed* path rather than a supplied
+ * one. It is not left on trust: `whitney()` fetches one such page every run
+ * and fails the build unless the museum's own accession number is on it.
+ *
+ * For the other four, verification stops at the API, and that is a real limit
+ * worth stating: their web front ends refuse automated requests — `artic.edu`
+ * answers a Cloudflare challenge, `metmuseum.org` rate-limits — so no script
+ * here can confirm those pages render. What it can confirm is that the object
+ * exists and that the museum attributes it to Edward Hopper. Nothing is
+ * assembled from memory.
  *
  * | Source | API |
  * |---|---|
  * | The Metropolitan Museum of Art | `collectionapi.metmuseum.org` |
  * | Art Institute of Chicago | `api.artic.edu` |
+ * | Cleveland Museum of Art | `openaccess-api.clevelandart.org` |
+ * | Whitney Museum of American Art | `whitney.org/api` |
+ * | Victoria and Albert Museum | `api.vam.ac.uk` |
  *
- * The Whitney holds far more Hopper than either, and is not here: `whitney.org`
- * publishes no API, and its collection listing ignores every search parameter
- * tried — `?q=`, `?filter=`, `?search=`, `?keyword=` all return the same thirty
- * works. A link built on a parameter the server ignores would take a reader to
- * a page about something else, which is worse than no link.
+ * This file used to say the Whitney published no API and that its listing
+ * ignored every search parameter tried. The second half is true and is now
+ * recorded where it belongs, against the endpoint it describes; the first half
+ * was wrong, and while it stood it kept the largest Hopper collection in the
+ * world out of the index. See `whitney()`.
  *
  * ## What a link does not assert
  *
@@ -155,12 +165,11 @@ async function aic() {
  * properly: `?artists=Edward Hopper` returns six works and all six are his.
  * The artist field is checked anyway, on the same principle as the Met's.
  *
- * Three others were tried and refused. Harvard requires a key. The Whitney
- * still publishes no API, so the largest Hopper collection in the world stays
- * out. The V&A answers without a key and ranks Hopper's etchings first, but
- * `q_actor` does not actually filter — the same query returns a 1903 poster
- * and a design for a teaset — and a source whose filter is decorative is the
- * failure this file already refuses for whitney.org.
+ * Harvard was tried here and refused: it requires a key, and still does.
+ * The Whitney and the V&A were refused too, and both of those refusals have
+ * since turned out to be answerable — not by the museums changing anything,
+ * but by asking them a better question. Each is now a source of its own below,
+ * and each carries the record of what the wrong question returned.
  */
 async function cma() {
   const d = await json(
@@ -182,9 +191,174 @@ async function cma() {
     }));
 }
 
+/* ------------------------- Whitney Museum of American Art */
+
+/**
+ * The Whitney — the museum that holds these ledgers, and the largest Hopper
+ * collection anywhere.
+ *
+ * Its search really is decorative, and that is worth recording so nobody
+ * spends an afternoon on it again: against `whitney.org/api/artworks`, the
+ * parameters `q`, `artist`, `search`, `keyword`, `query`, `term`,
+ * `filter[artist]` and `filter[display_artist_text]` all return the same
+ * `total: 27428` and the same unrelated artists. A link built on any of them
+ * would take a reader to somebody else's painting.
+ *
+ * What filters is the artist's own sub-resource. `/api/artists/621/artworks`
+ * returns 3,151 records and every one is Hopper's. The 621 is not remembered:
+ * `/api/artists/621` is fetched first and its `display_name` checked, so this
+ * throws rather than quietly indexing another artist if the museum renumbers.
+ *
+ * Two things here that neither the Met nor the Art Institute can give. The
+ * artist record carries `ulan_id` 500031212 and `wikidata_id` Q203401, so
+ * identity between museums can be an identifier match rather than a match on
+ * a spelling. And whitney.org answers automated requests with a plain 200 —
+ * no Cloudflare challenge, no rate limit — so unlike either of those two, the
+ * object page it points at can actually be checked. The canary below does
+ * exactly that, because this is the one source whose URL the API does not
+ * supply: the `/collection/works/<id>` path is observed, not given, and an
+ * observed path has earned a test that fails loudly when it stops being true.
+ *
+ * ## Why not all 3,151
+ *
+ * 2,849 of them are classified Drawings, and they are the contents of the
+ * studio — the Josephine N. Hopper Bequest, sketches and studies, most of
+ * which never left the building. The ledgers record works that *went out*:
+ * sold, consigned, exhibited, given. A study that never left cannot be a row
+ * in them, and carrying 2,282 titles into `works.json` to serve a lookup
+ * nobody will make is weight in every browser that loads the site.
+ *
+ * The cut is not by classification, because classification is the wrong cut:
+ * the Whitney files watercolours under Drawings, and « House on Pamet River »,
+ * the 1934 watercolour Book I names, is one of them. So the medium is followed
+ * as well, and the two together are exact. Paintings, prints and watercolours
+ * are 573 records and match all 32 of the works the transcriptions name — the
+ * same 32 that all 3,151 match, at a fifth of the bulk.
+ */
+async function whitney() {
+  const ARTIST = '621';
+  const who = await json(`https://whitney.org/api/artists/${ARTIST}`);
+  const name = who.data?.attributes?.display_name;
+  if (name !== 'Edward Hopper')
+    throw new Error(`whitney: artist ${ARTIST} is now "${name}", not Edward Hopper`);
+
+  const rows = [];
+  for (let page = 1; ; page++) {
+    const d = await json(`https://whitney.org/api/artists/${ARTIST}/artworks?page=${page}`);
+    if (!d.data?.length) break;
+    rows.push(...d.data);
+    if (rows.length >= (d.meta?.total ?? 0)) break;
+    await sleep(120);
+  }
+
+  const kept = rows.filter((r) => {
+    const a = r.attributes;
+    // « Edward Hopper, Guy Pène Du Bois » is a real joint attribution and
+    // belongs here, which is why this is a containment test and not equality.
+    if (!(a.display_artist_text ?? '').includes('Edward Hopper')) return false;
+    return (
+      a.classification === 'Paintings' ||
+      a.classification === 'Prints' ||
+      /watercolor/i.test(a.medium ?? '')
+    );
+  });
+
+  const url = (id) => `https://whitney.org/collection/works/${id}`;
+
+  // The canary. One page, once a run: if the collection path ever changes,
+  // every Whitney link in works.json is wrong at the same moment, and this is
+  // the difference between finding that out here and finding it out from a
+  // reader. It asserts the museum's own accession number is on the page the
+  // id resolves to, so a 200 from a redirect to a search form will not pass.
+  const probe = kept[0];
+  if (probe) {
+    const acc = probe.attributes.accession_number;
+    const r = await fetch(url(probe.id), { headers: { 'User-Agent': UA } });
+    const html = r.ok ? await r.text() : '';
+    if (!r.ok || !acc || !html.includes(acc))
+      throw new Error(
+        `whitney: ${url(probe.id)} no longer shows accession ${acc} ` +
+          `(status ${r.status}); the collection path has changed and every ` +
+          'Whitney link built here would be wrong',
+      );
+  }
+
+  return kept.map((r) => ({
+    institution: 'Whitney Museum of American Art',
+    short: 'Whitney',
+    id: String(r.id),
+    title: r.attributes.title,
+    date: r.attributes.display_date ?? null,
+    medium: r.attributes.medium ?? null,
+    url: url(r.id),
+    // The Whitney publishes no public-domain flag, and Hopper is in copyright
+    // until 2038 regardless. Nothing here embeds an image either way.
+    openImage: false,
+  }));
+}
+
+/* ------------------------------------- Victoria and Albert Museum */
+
+/**
+ * The V&A, refused once for a reason that turned out to be the wrong
+ * parameter rather than the wrong museum.
+ *
+ * `q_actor=Edward Hopper` does not filter — it returns 13,601 records, among
+ * them a poster by « Norman, Hopper & Co. » and a teaset designed by an Albert
+ * Edward Jones. That finding stands and is why free-text actor search is not
+ * used here. But `q_actor` is a search box, not the museum's index of people:
+ * `id_person` is, and `id_person=A6880` returns two records, exact, both
+ * Hopper's. The A6880 was read off the `artistMakerPerson` block of the V&A's
+ * own record for « The Evening Wind », not guessed at.
+ *
+ * Two works is a small return for a source, and they are the right two: « The
+ * Evening Wind » (1921) and « East Side Interior » (1922) are both Book I
+ * plates, and `collection:Victoria and Albert Museum` is tagged on batches 2
+ * and 9. The search result carries no medium, so each object is fetched once
+ * for `materialsAndTechniques`; at two records that costs nothing.
+ */
+async function vam() {
+  const PERSON = 'A6880';
+  const d = await json(
+    `https://api.vam.ac.uk/v2/objects/search?id_person=${PERSON}&page_size=100`,
+  );
+  const out = [];
+  for (const r of d.records ?? []) {
+    // If `id_person` ever degrades into the free-text behaviour `q_actor` has,
+    // this is what catches it rather than letting a teaset into the index.
+    if (!(r._primaryMaker?.name ?? '').includes('Hopper, Edward')) continue;
+    let medium = r.objectType ?? null;
+    try {
+      const full = await json(`https://api.vam.ac.uk/v2/museumobject/${r.systemNumber}`);
+      medium = (full.record ?? full).materialsAndTechniques || medium;
+    } catch {
+      // The search record already carries enough to make the link; the medium
+      // is a nicety and its absence is not a reason to drop the holding.
+    }
+    out.push({
+      institution: 'Victoria and Albert Museum',
+      short: 'V&A',
+      id: r.systemNumber,
+      title: r._primaryTitle,
+      date: r._primaryDate ?? null,
+      medium,
+      url: `https://collections.vam.ac.uk/item/${r.systemNumber}/`,
+      openImage: false,
+    });
+    await sleep(120);
+  }
+  return out;
+}
+
 /* ------------------------------------------------------------ go */
 
-const holdings = [...(await met()), ...(await aic()), ...(await cma())];
+const holdings = [
+  ...(await met()),
+  ...(await aic()),
+  ...(await cma()),
+  ...(await whitney()),
+  ...(await vam()),
+];
 
 /**
  * Aliases, hand-declared and committed.
@@ -386,11 +560,16 @@ const out = {
     { institution: 'The Metropolitan Museum of Art', api: 'https://collectionapi.metmuseum.org/public/collection/v1' },
     { institution: 'Art Institute of Chicago', api: 'https://api.artic.edu/api/v1' },
     { institution: 'Cleveland Museum of Art', api: 'https://openaccess-api.clevelandart.org/api' },
+    { institution: 'Whitney Museum of American Art', api: 'https://whitney.org/api' },
+    { institution: 'Victoria and Albert Museum', api: 'https://api.vam.ac.uk/v2' },
   ],
   note:
-    'Every URL here was retrieved by scripts/works.mjs and its artist field checked against ' +
-    '"Edward Hopper". A link says a work of this title is held there and can be looked at; it ' +
-    'does not say that the ledger row you are reading concerns that copy.',
+    'Every holding here was retrieved by scripts/works.mjs and its artist field checked against ' +
+    '"Edward Hopper". Four of the five sources supply the URL themselves; the Whitney supplies an ' +
+    'id, and the path built from it is checked against the museum\'s own page on every run. ' +
+    'A link says a work of this title is held there and can be looked at; it does not say that ' +
+    'the ledger row you are reading concerns that copy, and where a museum holds several ' +
+    'impressions or versions each is listed separately.',
   aliases: aliasIndex,
   works: [...works.values()].sort((a, b) => a.title.localeCompare(b.title)),
   /**
