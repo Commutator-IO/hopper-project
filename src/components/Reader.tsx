@@ -5,6 +5,7 @@ import { TranscriptPane } from './TranscriptPane.tsx';
 import {
   BATCH_SIZE,
   batchCount,
+  batchOfSeq,
   batchState,
   batchRange,
   sheetsOfBatch,
@@ -44,6 +45,26 @@ export interface OpenBatch {
 }
 
 /**
+ * The sheet a leaf number names, and the batch it falls in.
+ *
+ * A leaf number is what a citation cites — it is the number written on the
+ * paper, in the Hoppers' own hand, and the only one of the three numbering
+ * systems a reader of the book ever sees. So it has to be linkable, even
+ * though it is not an address in the sense `ref` is: the Whitney photographed
+ * several hinged leaves twice, and Book II's leaf 33 is sheets 25 and 26.
+ *
+ * Resolving to the first match is what makes that harmless. The first is the
+ * one bound first — the leaf as the book presents it, clipping down — and the
+ * facsimile pane puts the second beside it, so nothing is hidden by the
+ * choice. A leaf nobody wrote a number on cannot be named this way at all,
+ * which is correct rather than a gap: there is nothing to name it by.
+ */
+export function resolveLeaf(ledger: string, leaf: number): { batch: number; ref: number } | null {
+  const hit = BY_LEDGER.get(ledger)?.find((s) => s.leaf !== null && s.leaf === leaf);
+  return hit ? { batch: batchOfSeq(hit.seq), ref: hit.ref } : null;
+}
+
+/**
  * Everything the reader needs, driven by the URL fragment.
  *
  * `#book-i/3` names the third batch of Book I — what one writes down when
@@ -63,6 +84,25 @@ export function useReader() {
 
   useEffect(() => {
     const readHash = () => {
+      // `#book-ii/leaf-36` opens the leaf the Hoppers numbered 36, wherever it
+      // falls. This is the form to hand somebody, because a leaf number is the
+      // only one of the three numbering systems written on the paper: a batch
+      // is this site's unit of work and a ref is ResourceSpace's, but « leaf
+      // 36 » is what the book itself says and what a citation cites.
+      //
+      // It is spelt `leaf-36` rather than `36` because the batch form already
+      // occupies that slot, and `#book-i/6` cannot mean the sixth batch and the
+      // sixth leaf at once. Resolution is one-way: the leaf is accepted as
+      // input and answered with the canonical batch and ref, so a link that
+      // was shared keeps working even if the batching ever changes.
+      const asLeaf = /^#([\w-]+)\/leaf-(\d+)$/.exec(location.hash);
+      if (asLeaf) {
+        const found = resolveLeaf(asLeaf[1], Number(asLeaf[2]));
+        setOpen(found ? { ledger: asLeaf[1], batch: found.batch } : null);
+        setGoto(found?.ref);
+        setSheet(found?.ref);
+        return;
+      }
       // `#book-i/6` opens the batch; `#book-i/6/18297` opens it and scrolls the
       // transcript to that sheet. The third part is the ResourceSpace ref,
       // which is the sheet's only stable address — a leaf number is not one,
