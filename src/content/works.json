@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T19:57:56.410Z",
+  "generated": "2026-09-06T21:52:32.328Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -9753,6 +9753,46 @@
       ]
     },
     {
+      "key": "double house gloucester",
+      "title": "Double House, Gloucester",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "1",
+          "ref": "16775"
+        }
+      ]
+    },
+    {
+      "key": "drawing of cats",
+      "title": "Drawing of Cats",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "5",
+          "ref": "16689"
+        }
+      ]
+    },
+    {
       "key": "east river",
       "title": "East River",
       "museumTitle": null,
@@ -9959,6 +9999,26 @@
       ]
     },
     {
+      "key": "field and houses eastham",
+      "title": "Field and Houses Eastham",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "5",
+          "ref": "16689"
+        }
+      ]
+    },
+    {
       "key": "first branch of white river",
       "title": "First Branch of White River",
       "museumTitle": null,
@@ -10050,6 +10110,46 @@
           "batch": 4,
           "leaf": "34",
           "ref": "17904"
+        }
+      ]
+    },
+    {
+      "key": "gloucester boats at wharf",
+      "title": "Gloucester Boats at wharf",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "15",
+          "ref": "17084"
+        }
+      ]
+    },
+    {
+      "key": "gloucester house",
+      "title": "Gloucester House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "15",
+          "ref": "17084"
         }
       ]
     },
@@ -10178,6 +10278,26 @@
           "batch": 6,
           "leaf": "57",
           "ref": "18424"
+        }
+      ]
+    },
+    {
+      "key": "house and trees gloucester",
+      "title": "House and Trees, Gloucester",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "3",
+          "ref": "18017"
         }
       ]
     },
@@ -10406,6 +10526,26 @@
       ]
     },
     {
+      "key": "house near eastham",
+      "title": "House near Eastham",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "3",
+          "ref": "18017"
+        }
+      ]
+    },
+    {
       "key": "house on pamet river",
       "title": "House on Pamet River",
       "museumTitle": null,
@@ -10525,6 +10665,66 @@
           "batch": 3,
           "leaf": "36",
           "ref": "17694"
+        }
+      ]
+    },
+    {
+      "key": "house with field in front",
+      "title": "House with Field in Front",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "3",
+          "ref": "18017"
+        }
+      ]
+    },
+    {
+      "key": "houses at gloucester",
+      "title": "Houses at Gloucester",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "5",
+          "ref": "16689"
+        }
+      ]
+    },
+    {
+      "key": "houses on skyline",
+      "title": "Houses on Skyline",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "1",
+          "ref": "16775"
         }
       ]
     },
@@ -11152,6 +11352,26 @@
       ]
     },
     {
+      "key": "my roof",
+      "title": "My Roof",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "15",
+          "ref": "17084"
+        }
+      ]
+    },
+    {
       "key": "n y movie house",
       "title": "N.Y. Movie House",
       "museumTitle": null,
@@ -11168,6 +11388,26 @@
           "batch": 2,
           "leaf": "27",
           "ref": "16621"
+        }
+      ]
+    },
+    {
+      "key": "near eastham",
+      "title": "Near Eastham",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "15",
+          "ref": "17084"
         }
       ]
     },
@@ -11646,6 +11886,26 @@
       ]
     },
     {
+      "key": "rocky field with trees",
+      "title": "Rocky Field with Trees",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "1",
+          "ref": "16775"
+        }
+      ]
+    },
+    {
       "key": "route 14 vermont",
       "title": "Route 14, Vermont",
       "museumTitle": null,
@@ -11944,6 +12204,26 @@
           "batch": 4,
           "leaf": "45",
           "ref": "17871"
+        }
+      ]
+    },
+    {
+      "key": "street scene",
+      "title": "Street Scene",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "5",
+          "ref": "16689"
         }
       ]
     },
@@ -12545,6 +12825,26 @@
       ]
     },
     {
+      "key": "two big trees",
+      "title": "Two Big Trees",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "1",
+          "ref": "16775"
+        }
+      ]
+    },
+    {
       "key": "two on the isle",
       "title": "Two on the Isle",
       "museumTitle": null,
@@ -12681,6 +12981,26 @@
           "batch": 5,
           "leaf": "55",
           "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "willow trees and houses",
+      "title": "Willow Trees and Houses",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-v",
+          "batch": 1,
+          "leaf": "3",
+          "ref": "18017"
         }
       ]
     },
