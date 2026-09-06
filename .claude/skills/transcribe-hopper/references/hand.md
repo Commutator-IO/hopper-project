@@ -6,7 +6,7 @@ derive it again at the cost of the attention it was meant to save.
 **This narrows a field of candidates and settles nothing.** Where the sheet
 will not support what is written here, the sheet wins and `\ill{}` stands.
 
-Written from Book I, batches 1 to 6 (sheets 1–72) and Book II, batch 2
+Written from Book I, batches 1 to 7 (sheets 1–84) and Book II, batch 2
 (sheets 13–24), 5–6 September 2026, Opus 5. What follows is the two hands
 themselves, then the habits of Book I's leaves, then a section for Book II —
 which is not shaped like Book I, and whose differences are the part worth
@@ -380,6 +380,124 @@ cross-reference.
 house », where the word is as likely « cutie »; and « (Kepple show) », where
 the letters will support « Keppe » as readily. Both stand as `\uncertain{}`.
 Leaf 59's restaurant cashier, « Anna Popalgopalos », is a third.
+
+## Eight leaves that do not change subject once
+
+*(batch 7)* Leaves 64 to 71 are one continuous run of watercolours, 1926 to
+1929, and are the most uniform stretch of Book I so far: a delivery date, a
+price, a description, the amount net of Rehn's third, the date the cheque
+cleared. Almost every picture is 14 x 20 and almost every price is 250, 300 or
+400, so the arithmetic of a row is usually checkable against itself — 300 - 1/3
+and 200 stand on the same line. **That regularity is a trap as much as a help.**
+It makes a misread figure look plausible, and it tempts the eye to supply the
+expected 200 where the leaf gives none. Two rows of leaf 64 leave the amount
+column empty and one gives 183.33 where the pattern predicts 200; all three are
+as written.
+
+## A whole-width band beats a tile grid on a ruled leaf
+
+*(batch 7)* Tiling `--grid 2x3` or `2x4` cuts the money columns away from the
+row they belong to, and the pass then has to re-associate them by eye across
+two images — which is exactly the error `\ill{}` exists to prevent. Cropping
+**full-width horizontal bands** (`-crop 1160x600+110+y` at 175% on a
+1270 × 2000 sheet, three or four per leaf) keeps date, description and figures
+on one line of one image, and the alignment is then not a judgement at all.
+Use the tile grid to find what is on the leaf, and bands to read a table.
+
+## « Delivered to Rehn » is the standing head of the watercolour leaves
+
+*(batch 7)* Leaves 64, 65 and 66 all head the delivery column that way, in
+pencil, with « Price » sometimes beside it and « Amt. rec'd. » / « When rec'd. »
+in ink at the right — the same régime batch 6 found at leaf 62's « Delivered at
+Rehns ». Leaf 68 heads one column only, « When payment rec'd. », with
+« rec'd. » written above « payment ». Leaves 67, 69, 70 and 71 head nothing.
+No headings were supplied in `\add{}` anywhere in batch 7.
+
+## A hinged clipping can also cost you the next batch
+
+*(batch 7)* Leaf 66 is the happy case again — the Custom House halftone turns
+back clear of the writing, and the leaf is transcribed whole at the « Verso »
+sheet. **Leaf 71 is the case nobody had met yet: the second photograph falls in
+the next batch.** The Farm at Essex halftone covers two entire blocks of leaf
+71, and the recto-with-clipping-turned-back is sheet 16955, the first sheet of
+batch 8. So before closing a batch, look at the sheet *after* its last one: if
+the twelfth sheet is a leaf with a clipping on it, the photograph that completes
+it may be out of reach, and the note must say so and say what the next batch
+owes.
+
+## A sheet lying on a leaf is not a photograph of that leaf
+
+*(batch 7)* Sheet 18337 is a separate sheet of eleven ink thumbnail drawings
+lying over leaf 69, and the Whitney's descriptor calls it « adhered to p. 69 ».
+It is a document in its own right and is transcribed as one. What shows around
+its edges — leaf 69's heading above, its date column at the left, its money
+column at the fore-edge — is leaf 69 and belongs to leaf 69's transcription.
+The same applies to the two faces of the loose photograph between leaves 64 and
+65: the verso carries four lines of provenance and they agree with the last
+entry of leaf 65, which is a check on both.
+
+## Blue crayon again, and a third register in the date column
+
+*(batch 7)* Batch 6 found blue crayon marking rather than correcting. Batch 7
+finds it doing the same in a place that matters more: the *date column* of
+leaf 64's last four rows carries « Rockland » in blue, which is a place and not
+a date, and leaf 65's foot carries « Painted in N.Y. Studio » below the last
+row and belonging to no row. Read the colour before assuming the column.
+
+## More spellings, all as written
+
+*(batch 7)*
+
+- **`Osgord`** *(leaf 66, twice)* — confirming batches 5 and 6. Never Osgood.
+- **`Antheneum`** *(leaves 64, 66)* against **`Athenaeum`** on leaf 66 itself,
+  eight rows apart, both for the Wadsworth.
+- **`Fog Museum`** *(leaves 64, 66)* for the Fogg, confirming leaf 62.
+- **`Dr. Lisle`** and **`Dr. Lyle`** *(leaf 66)* — the row and the footnote to
+  the same row, for the same man. Both stand.
+- **`Bennett`** then **`Bennet auction`** *(leaves 64, 65)*, one line apart.
+- **`Clancey`** *(leaf 67)* against `Clancy` elsewhere in Book I.
+- **`Spaulding`** struck and rewritten **`Spalding`** two lines below
+  *(leaf 65)*; **`Swan`** in pencil then **`Swann`** in ink *(leaf 68)*.
+- **`Princetown`** *(leaf 64)* against `Princeton` on the same leaf.
+- **`Toppsfield`** *(leaf 69, drawings sheet)* for Topsfield;
+  **`Anisquam`** *(leaf 68)* for Annisquam; **`gorgious`** and **`did'nt`**
+  *(leaf 66)*; **`Schorner's`** *(leaf 64, twice)*; **`boardedup`**
+  *(leaf 65)*.
+- **`Shaffer`** *(leaf 65)*, **`Sheafer`** *(leaves 66, 68)*, **`Sheafer`**
+  again on leaf 69 as **`Leslie Green Sheafer`** — add to the standing Sheaffer
+  tangle of leaves 54 and 55.
+
+## Readings that would not settle
+
+*(batch 7)* Seven, all `\uncertain{}`:
+
+- **`Harry Hessing`** *(leaf 64)*, the 1926 buyer of the Davis House — the
+  medial letters support « Herring » as readily.
+- **`Somerville`** *(leaf 64)*, in blue crayon beside the same row.
+- **`slim`** *(leaf 64)*, in « delicate profile + white slim dock ».
+- **`Maginello`** *(leaf 70)*, the place Rocky Cove is near; nothing on the
+  coast of Cape Elizabeth answers to it.
+- **`Frank Cahn`** and **`p. 325`** *(leaf 70)*, the 1944 auction line, both in
+  faint pencil.
+- **`Met`** *(leaf 71)*, in « now owns. Met of Whitney. June 1956 » — the word
+  carries an abbreviation bar and will support « Mat » or « Md ».
+
+**Three of the batch's illegible marks are her own cancellations** — the two
+struck words opening leaf 67's Adam's House description, the word struck before
+« silhouette » on leaf 70, the word scribbled out after « Henri, Lux, » on leaf
+70 — and none of them recovered at 6×. Two more are words cut by the leaf's own
+edge (the foot of leaf 64, the foot of leaf 71) and one runs into a browned
+strip at leaf 66's fore-edge and is readable in neither photograph of that
+leaf. Everything else marked `\ill{}` in the batch is under the leaf 71
+clipping.
+
+## A figure that does not reconcile is still the figure
+
+*(batch 7)* The drawings sheet records « Bought by Tom Colt - \$73 2/3
+Mar. 28, 1930 » where every neighbouring line of the same sheet is
+« 100 - 1/3 = 66 2/3 ». The 73 is unambiguous at 5×. Transcribe it and say
+nothing about the arithmetic; the temptation to read it as 66 because the
+column does is the whole of what this rule guards against.
 
 ---
 
