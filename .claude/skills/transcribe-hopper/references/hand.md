@@ -6,7 +6,7 @@ derive it again at the cost of the attention it was meant to save.
 **This narrows a field of candidates and settles nothing.** Where the sheet
 will not support what is written here, the sheet wins and `\ill{}` stands.
 
-Written from Book I, batches 1 to 7 (sheets 1–84) and Book II, batch 2
+Written from Book I, batches 1 to 8 (sheets 1–96) and Book II, batch 2
 (sheets 13–24), 5–6 September 2026, Opus 5. What follows is the two hands
 themselves, then the habits of Book I's leaves, then a section for Book II —
 which is not shaped like Book I, and whose differences are the part worth
@@ -498,6 +498,131 @@ Mar. 28, 1930 » where every neighbouring line of the same sheet is
 « 100 - 1/3 = 66 2/3 ». The 73 is unambiguous at 5×. Transcribe it and say
 nothing about the arithmetic; the temptation to read it as 66 because the
 column does is the whole of what this rule guards against.
+
+## A clipping that is pasted, not hinged, ends the enquiry
+
+*(batch 8)* Batches 2, 5, 6 and 7 all found the Whitney photographing a hinged
+clipping twice, and the working rule became: look at the second photograph
+every time. **Leaf 81 is the case where there is no second photograph, and it
+is recognisable before you go looking.** The Camel's Hump halftone is pasted
+flat across the lower two thirds of the leaf — no hinge, no lifted corner, no
+« Verso » sheet anywhere in the sequence — and six lines of pencil at its left
+edge stop dead where it begins. So: **check whether the clipping is hinged
+before promising a reader that the covered rows will turn up.** Where it is
+pasted, the `\ill{}` is final and the note should say so, rather than pointing
+at a sheet that does not exist.
+
+Leaf 75 is the happy case a third time (the halftone turns back clear of the
+writing, the leaf is whole at the « Verso » sheet), so both outcomes are in
+this one batch.
+
+## Paying the previous batch's debt
+
+*(batch 8)* Batch 7 ended on leaf 71 with two blocks under a clipping and said
+the completing photograph was the first sheet of batch 8. It was. The pattern
+that worked: transcribe **only** the blocks that were covered, and put any
+reading that merely completes an already-transcribed entry into a `\note{}`
+rather than into a second table. Leaf 71's Light House Village row is the case
+— « for 400 vs. 500 » and « Cleveland Museum 400 - 1/3 » were under the
+clipping, but the entry itself was given at 17836, so they are recorded in the
+note and the row is not written twice.
+
+## Three registers in twelve sheets
+
+*(batch 8)* Book I stops being one kind of leaf here. Leaves 71 to 75 and 78 to
+79 are the Cape Cod watercolours in batch 7's shape; leaves 76 and 77 cut into
+that run with **seventy-odd rows of \$18 and \$25 etchings at the Rehn
+Gallery**, which belong with the etchings leaves at the front of the book and
+not with the leaves around them; leaves 80 and 81 are **four oils at \$1200 to
+\$5500**, each a block with a large record drawing, two hundred words of
+description and no ruled columns at all. Do not carry one leaf's column scheme
+into the next in this stretch. No headings were supplied in `\add{}` anywhere
+in batch 8; leaf 76 heads « Rec'd. » and « When rec'd. » and nothing else in
+the batch heads anything.
+
+## A running list where she interrogates her own record
+
+*(batch 8)* Leaf 72's foot is headed « Unlisted Water Colors » and is not a
+work's record: it is her trying, in 1957, to match pictures she had just sold
+against titles she never entered. Twice she asks the leaf itself — « Could this
+be Shipyard, Rockland - schooner Butterfly? p. 64 », « Could this be Dune with
+Green Top p. 74 ». **The questions are hers and are transcribed as rows**, not
+turned into transcriber's notes. Add to batch 4's list of leaves that are not a
+plate's ledger.
+
+## Braces are described, never transcribed
+
+*(batch 8)* Confirming batches 3, 5 and 7 and worth stating as a rule, because
+this batch met four of them: `\{` and `\}` are accepted by the parser but
+`render.mjs` does not unescape them, so they reach the reading view as a
+literal backslash-brace. A drawn brace goes in a `\note{}` saying what it
+gathers — leaf 76's « 2 » tied to one receipt for two copies, leaf 77's heading
+braces, leaf 79's brace joining 1923 and 1924 to one « Gloucester ».
+
+## More spellings, all as written
+
+*(batch 8)*
+
+- **`Atheneum`** *(leaf 73)* — a third form of the Wadsworth, against
+  `Antheneum` and `Athenaeum` in batch 7.
+- **`Maguire`** *(leaves 73, 78)* against **`McGuire`** *(leaf 73, last row)*
+  — two spellings of one buyer on one leaf.
+- **`Wheelright`** in pencil then **`Wheelwright`** in ink *(leaf 72)*, four
+  lines apart.
+- **`Sheaffer`** in pencil above **`Sheafer`** in ink *(leaf 75)* — the same
+  line, two spellings, adding to the tangle of leaves 54, 55, 65, 66 and 69.
+- **`Britanica`** *(leaf 75, twice)* for Britannica; **`immitation`**
+  *(leaf 80)*; **`pavellion`** *(leaf 74)*; **`Chiquesset`** *(leaf 79)* for
+  the Chequessett Inn.
+- **`Cape Anne`** *(leaf 79, twice)* — confirming batches 4 and 6.
+- **`Court Hill`** *(leaf 72, twice)* written as one word both times.
+- **`Ferdinand Lane`** and **`Ferdinand Davis`** *(leaf 72)*, three lines
+  apart, for what is plainly one buyer.
+- **`Les Deux Pigeons`** *(leaf 76)* plural, against `Les Deux Pigeon` on
+  leaf 40.
+- **`Fraad`**, **`Mlodinich`**, **`Tiedtke`**, **`Farjeon`**, **`Frondel`**,
+  **`Hydeman`**, **`Spingold`**, **`Neuberger`**, **`Tandler`** — all legible,
+  all new to this list. Farjeon is the commonest name on leaves 76 and 77 and
+  recurs a dozen times.
+
+## Readings that would not settle
+
+*(batch 8)* Nine, all `\uncertain{}`:
+
+- **`Mrs. Arthur Fleishman`** *(leaf 71)*, the 1958 buyer of Shore Acres, in a
+  blunt pencil; the spelling offered is leaf 58's.
+- **`Seoley`** *(leaf 75)*, Leslie Sheafer's street; **`Fannald`** *(leaf 75)*,
+  Clifford Frondel's, in Cambridge.
+- **`Bang`** and **`Mid`** *(leaf 75)*, in the Rich's Barn description.
+- **`Constructors`** *(leaf 75)*, the 1946 Mexican watercolour taken in
+  exchange by the Whitney.
+- **`Cohn Gallery`** *(leaves 80 and 81)* — the same name on two leaves and no
+  clearer on either.
+- **`St. Bo. Joseph's`** *(leaf 76)*, in the left margin beside Amer.
+  Landscape; the leaf uses `St. Bot. Cl.` for the St. Botolph Club four times
+  elsewhere and this may or may not be it.
+- **`Gally`** *(leaf 72)*, in « from Gally Feb. 14, 1957 ».
+- **`Tennure`** *(leaf 74)* — and this one is not the transcriber's doubt but
+  hers: she writes **« (spelling?) »** after the name herself. When she queries
+  a name on the leaf, `\uncertain{}` is the reading and her query is
+  transcribed beside it.
+
+**Two illegible marks are physical rather than graphic**: an ink blot finishing
+a word in leaf 75's Roofs of the Cobb Barn description, and a brown stain over
+the conservator's name in leaf 81's Barber Shop line. Both are `\ill{}` and the
+note says which — a reader needs to know that no photograph will ever recover
+them, as against a word merely faint.
+
+## Her interlineations carry the sense, and the caret is the clue
+
+*(batch 8)* Batch 6 found blue crayon marking rather than correcting; this
+batch finds the pencil interlineation doing real work. « in pink shirt » above
+« reading » on leaf 80, « Roof of » with a caret above « Our house sticking up
+behind trees » on leaf 73, « little » above « of old house » on leaf 78,
+« managed by » above a struck « run by » on leaf 81. **Where there is a caret
+the words belong in the line and change its meaning; where there is none they
+are a later gloss.** Both go in `\marginal{}` with the word they stand over
+named, which is what lets a reader tell the two apart.
 
 ---
 
