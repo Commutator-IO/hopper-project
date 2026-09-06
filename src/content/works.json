@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T09:18:02.917Z",
+  "generated": "2026-09-06T10:13:58.701Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -1140,6 +1140,26 @@
       ]
     },
     {
+      "key": "cape cod sunset",
+      "title": "Cape Cod Sunset",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "4",
+          "ref": "18397"
+        }
+      ]
+    },
+    {
       "key": "capron house",
       "title": "Capron House",
       "museumTitle": null,
@@ -1196,6 +1216,26 @@
           "batch": 5,
           "leaf": "55",
           "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "city roofs",
+      "title": "City Roofs",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "3",
+          "ref": "17965"
         }
       ]
     },
@@ -1328,6 +1368,46 @@
       ]
     },
     {
+      "key": "dauphin e house",
+      "title": "Dauphinée House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "17332"
+        }
+      ]
+    },
+    {
+      "key": "dawn before gettysburg",
+      "title": "Dawn Before Gettysburg",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "4",
+          "ref": "18397"
+        }
+      ]
+    },
+    {
       "key": "don quixote",
       "title": "Don Quixote",
       "museumTitle": null,
@@ -1379,6 +1459,26 @@
           "batch": 2,
           "leaf": "8",
           "ref": "17539"
+        }
+      ]
+    },
+    {
+      "key": "east wind over weehawken",
+      "title": "East Wind over Weehawken",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "5",
+          "ref": "17555"
         }
       ]
     },
@@ -1590,6 +1690,26 @@
           "batch": 6,
           "leaf": "57",
           "ref": "18424"
+        }
+      ]
+    },
+    {
+      "key": "house at dusk",
+      "title": "House at Dusk",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "6",
+          "ref": "17606"
         }
       ]
     },
@@ -2072,6 +2192,26 @@
       ]
     },
     {
+      "key": "macombs dam bridge",
+      "title": "MaCombs Dam Bridge",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "7",
+          "ref": "17970"
+        }
+      ]
+    },
+    {
       "key": "maine coast",
       "title": "Maine Coast",
       "museumTitle": null,
@@ -2128,6 +2268,26 @@
           "batch": 2,
           "leaf": "29",
           "ref": "16933"
+        }
+      ]
+    },
+    {
+      "key": "mrs scott s house",
+      "title": "Mrs. Scott's House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "17332"
         }
       ]
     },
@@ -2469,6 +2629,26 @@
       ]
     },
     {
+      "key": "ryder house",
+      "title": "Ryder House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "3",
+          "ref": "17965"
+        }
+      ]
+    },
+    {
       "key": "sailing",
       "title": "Sailing",
       "museumTitle": null,
@@ -2505,6 +2685,26 @@
           "batch": 4,
           "leaf": "44",
           "ref": "18288"
+        }
+      ]
+    },
+    {
+      "key": "shakespeare at dusk",
+      "title": "Shakespeare at Dusk",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "9",
+          "ref": "18112"
         }
       ]
     },
@@ -2573,6 +2773,26 @@
           "batch": 4,
           "leaf": "42",
           "ref": "16860"
+        }
+      ]
+    },
+    {
+      "key": "sun on prospect st",
+      "title": "Sun on Prospect St",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "4",
+          "ref": "18397"
         }
       ]
     },
