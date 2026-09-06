@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T14:04:50.017Z",
+  "generated": "2026-09-06T15:02:16.226Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -3917,13 +3917,6 @@
           "leaf": "52",
           "ref": 18056,
           "rows": 3
-        },
-        {
-          "ledger": "book-i",
-          "batch": 5,
-          "leaf": "53",
-          "ref": 17852,
-          "rows": 1
         },
         {
           "ledger": "book-i",
