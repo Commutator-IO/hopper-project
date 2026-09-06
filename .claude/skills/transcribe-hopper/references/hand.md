@@ -495,3 +495,101 @@ over rather than struck through once, and one is an erased pencil line. That
 is worth knowing before reaching for the tiles: a mark that will not resolve at
 2× will not resolve at 5× either, because there is nothing under the ink to
 resolve.
+
+---
+
+## The front of Book II is not shaped like the rest of it
+
+*(Book II batch 1, sheets 1–12, read 6 September 2026, Opus 5.)*
+
+**The leaf numbers run consecutively here, not odd.** Batch 2 found the volume
+running 11, 13, 15 and inferred that the even leaves are blank versos the
+Whitney did not photograph. The front of the book does not do that: leaves 2,
+3, 4, 5, 6 and 7 are consecutive, and only leaf 8 is absent. So the odd-only
+pattern is something the volume acquires part way through rather than a fact
+about its foliation — do not use it to predict which leaves a batch will hold.
+
+**The title block does not drift steadily either.** Batch 2 read a
+chronological drift across leaves 11 to 31: title above the drawing, then
+drawing left with the title beside it, then title underneath. Leaves 2 to 9 do
+not lead into that sequence — leaf 2 heads the leaf with the drawing at the
+right, leaf 5 puts the drawing at the left with the block beside it, leaves 6
+and 9 head the leaf again. The drift is real within batch 2 and is not a rule
+for the volume.
+
+## A « Verso » descriptor can be the recto with the clipping turned back
+
+Batch 2 met this once, at leaf 9. Batch 1 meets it twice, and it is worth
+treating as the expected case rather than the surprise:
+
+- **leaf 4** — sheet 16935 has the *Modern Works of Art* halftone lying over
+  the lower right; sheet 18397, which the Whitney calls « [p.4] - Verso », is
+  the same recto with it turned back, showing the Dawn Before Gettysburg
+  drawing, half its description and both its sale lines;
+- **leaf 6** — sheet 17588 has the *House at Dusk* plate over the lower half;
+  sheet 17606, « [p. 6] - Verso », is the recto again with it turned back.
+
+Both were transcribed at the second sheet with the clipping and a note at the
+first, which is batch 2's rule and it held without strain.
+
+**Leaf 7 is the counter-case and the one to expect too.** The Virginia Museum
+bulletin across its foot has no second photograph anywhere in the batch. It
+covers the rest of the description and the whole of the sale, and five
+fragments beyond its right edge — « slightly darker », « a whole. »,
+« ccession to Whitney, », « 1958. » — are all that survive. So look for the
+second photograph every time and assume nothing about finding one.
+
+## Her « ± » means about
+
+A plain plus-minus, twice in this batch: « Ap. 9 ± 1961 » on leaf 3, dating a
+television programme, and « ± 1929 » in the leaf 1 index. It compiles and it is
+transcribed as it stands; it is not a struck plus.
+
+## One frame maker, three initials
+
+The same man frames and repairs these canvases on three leaves of one batch and
+she gives him a different initial each time: **`Watt`** *(leaf 2, ink, the W
+unambiguous)*, **`Matt`** *(leaf 5, « frame repaired by D. Matt »)*, **`Natt`**
+*(leaf 6, in pencil)*. Two are flagged and none is regularised. Add the frame
+maker to the list of things this hand will not settle.
+
+## The paint is recorded as consistently as the sale
+
+Nearly every leaf of this batch carries the formula in her hand, usually in a
+short column beside the title: **zinc white, R. colors** (Rembrandt colors
+where she writes it out), **poppy oil**, and on leaf 9 **thin canvas**. It is
+not a description of the picture and it is not a note — it is a third standing
+field of the record, alongside the size and the date, and it is easy to mistake
+for a marginal.
+
+## More spellings, all as written
+
+*(batch 1)* `Handsom` *(leaf 4)*, `pedistals` and `Colombus` *(leaf 9)*,
+`Slatery` for slatery/slaty grey and `Alloted` — with `ca` written **below**
+the line to make « Allocated », the only correction under the line in the batch
+— *(leaves 6, 3)*, `Arthuro Grassi` *(leaf 4)*, `MaCombs Dam Bridge` against
+the Whitney's « McComb's » *(leaf 7)*, `Dauphinée` with its acute *(leaf 2)*,
+`Kuchne` for the frame maker of leaf 3, `Compo- / sition` broken across a line
+*(leaf 5)*.
+
+## Readings that would not settle
+
+*(batch 1)* Seven, all left as `\uncertain{}` or `\ill{}`:
+
+- **`Seats`** *(leaf 1)*, heading two index lines about early oils; nothing
+  fits the letters and « Sales » does not fit them either.
+- **`House` by an Inlet** *(leaf 1)* — the first word supports « Hence » as
+  readily.
+- **`East \ill{}`** *(leaf 1)* — the second word has no candidate at all.
+- **`marestails`** *(leaf 7)*, in « tiny marestails, not still ».
+- **`Cabo` Studio** *(leaf 5)*, the studio built in 1934.
+- **`Paul Roche's`** *(leaf 4)*, in pencil, running off the fore-edge where the
+  photograph stops — the word after it is not recoverable in either photograph.
+- **`1953`** *(leaf 4)*, « Back in studio 1953 », where the last figure is
+  written over another.
+
+**Two of the batch's illegible marks are her own cancellations** — the word
+under « corner » in the leaf 1 index, the word before « sword » on leaf 4, the
+word before « vase » on leaf 5 — scribbled over rather than struck through, and
+tiling will not recover them. Six of the rest are under the leaf 7 bulletin.
+Nothing else in the batch is pasted down.

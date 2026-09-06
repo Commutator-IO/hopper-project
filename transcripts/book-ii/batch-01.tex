@@ -1,0 +1,626 @@
+% Pass: Opus 5 (claude-opus-5), 2026-09-06 - first pass, unchecked against the
+% sheets by a human.
+%
+% Book II, batch 1: sheets 1 to 12 - the front cover, the inside front cover,
+% the index on leaf 1, and then leaves 2, 3, 4, 5, 6, 7 and 9. Two of the
+% twelve are second photographs of a leaf already in the batch.
+%
+% Six things worth knowing before reading it.
+%
+% The leaf numbers do not run odd at the front of the book. Batch 2 found
+% Book II running 11, 13, 15 and inferred that the even leaves are blank versos
+% the Whitney did not photograph. That does not hold here: leaves 2, 3, 4, 5, 6
+% and 7 are consecutive, and only leaf 8 is missing from the sequence. So the
+% odd-only pattern is something the volume acquires later rather than a fact
+% about its foliation, and « leaves 2-9 » beside « sheets 1-12 » is correct.
+%
+% Two hinged clippings are photographed twice, and the Whitney calls the second
+% photograph a verso. Sheet 18397 is called « [p.4] - Verso » and sheet 17606
+% « [p. 6] - Verso »; what each photographs is the recto again, with the
+% clipping turned back off the text. Batch 2 met this at leaf 9 and set the
+% rule: give both sheets a \sheet{}, transcribe once at the one that shows
+% more, and let the note say what the other hides. Leaves 4 and 6 are
+% transcribed at 18397 and 17606 accordingly.
+%
+% Leaf 7 is the case where there is no second photograph. The Virginia Museum
+% bulletin laid across its foot covers everything below the third line of the
+% description - the rest of the description, the whole of the sale - and
+% nothing in this batch turns it back. Every \ill{} on that leaf is text under
+% paper, and four fragments beyond the clipping's right edge are all that
+% survive of four separate lines.
+%
+% The title block does not drift steadily. Batch 2 read a chronological drift
+% through leaves 11 to 31 - title above the drawing, then drawing left and
+% title right, then title underneath. The front of the book does not lead into
+% that: leaf 2 heads the leaf and puts the drawing at the right, leaf 5 puts
+% the drawing at the left with the block beside it, and leaves 6 and 9 head the
+% leaf again. Read the head of each leaf.
+%
+% The inside front cover carries Book II's own version of the statement Book I
+% makes, and it is shorter: « Recorded by Jo N. Hopper (Mrs. Edward Hopper.)
+% before each work leaves studio. Drawings by Edward Hopper. » It is in her
+% hand, and so is the framed address block above it - which is a difference
+% from Book I, whose cover and title page are drawn lettering that batch 1
+% recorded as unidentified.
+%
+% She writes « ± » for « about », twice: « Ap. 9 ± 1961 » on leaf 3 and
+% « ± 1929 » in the index. The mark is hers and is transcribed as it stands.
+%
+% The subject is the oils of 1932 to 1935 - eleven works from the two South
+% Truro houses of October 1932 through to Shakespeare at Dusk of November 1935
+% - and the paint is recorded as consistently as the sales: zinc white,
+% Rembrandt or « R. » colors, poppy oil, on nearly every leaf. They sell to
+% Huntington Hartford, Randolph Macon Women's College, the National Academy's
+% Ranger Fund, Edward G. Robinson, the Virginia Museum and John Jacob Astor,
+% and one is given away: Cape Cod Sunset went to the person keeping the book.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/hopper}
+
+\ledger{book-ii}
+\ledgertitle{Artist's ledger --- Book II}
+\objectnumber{96.209}
+\batch{1}
+\sheets{1}{12}
+\dating{1907--1962}
+\watermark{Demonstration edition}
+
+\begin{document}
+
+\section{Front cover}
+
+\sheet{17021}{}
+
+\hand{unidentified}{Book II.}
+
+\hand{unidentified}{E Hopper ---\\
+His Work}
+
+\note{the cover is a stationer's journal with a printed ornamental border and
+« C-1040 J » at the foot; the three lines above are written on it in pencil.
+« Book II. » is drawn lettering with a rule under it, and the two lines below
+are in a smaller running hand. Book I's cover carries the same arrangement and
+batch 1 recorded it as unidentified for want of a signed drawing to compare it
+with; the same applies here, and the inside front cover overleaf is in her hand
+and does not settle this one.}
+
+\section{Inside front cover}
+
+\sheet{17362}{}
+
+\hand{jo}{Edward Hopper\\
+3 Washington Square North\\
+New York City\\
+---\\
+His Work.\\
+Vol. II.}
+
+\hand{jo}{Recorded by Jo N. Hopper\\
+(Mrs. Edward Hopper.)\\
+before each work leaves studio.\\
+Drawings by Edward Hopper.}
+
+\marginal{each --- above, between « before » and « work »}
+
+\note{the address block is written inside a hand-drawn frame with bracketed
+corners, in the same ink and hand as the statement below it. Book I's version
+of that statement is longer and names when the record was made --- « at time
+each work is finished, or before it leaves studio » --- and adds « in the 3
+books »; this one does not.}
+
+\section{Leaf 1: index}
+
+\sheet{16974}{1}
+
+\hand{jo}{1932 ---\\
++ some other \emph{entries}}
+
+\hand{jo}{\emph{Oils} \quad p. 2 -- 33\\
+77 -- 97 \quad \struck{(1939)} -- 1942.\\
+* \quad (87 - Corner Saloon 1913) \quad Very Early oils.\\
+French Oils -- p. 60 -- 63\\
+\uncertain{Seats} of Early work (oils) \quad p. 74 --\\
+" \quad " \quad " \quad oil - in Nyack - p. 75.\\
+Water colors \quad p. 36 -- 60.\\
+from 1932 on -\\
+Julie photographs - list - p. 99.\\
+Early water Color 1924 Captain's House. p. 59.}
+
+\marginal{59 --- above « 60 » in « p. 36 -- 60. »}
+
+\hand{jo}{Early Oils -- p. 68 -- 71, \quad Corner Saloon, 1913 p. 87.\\
+Very Early oils.\\
+Early Americans 1907 -- 1914 - p. 69, 68 --\\
+\struck{\ill{}} \quad Corner Saloon. \quad p. 87\\
+Bootleggers p. 71 \quad 1924, \ill{}\\
+\uncertain{House} by an Inlet = Bk III. p. 59\\
+\# Tramp Steamer -- p. 68 \quad very Early.\\
+East \ill{} \quad ± 1929. \quad III. p. 73.}
+
+\marginal{also --- above, after « p. 68 -- 71, »}
+
+\marginal{71 --- above, at the end of « p. 69, 68 -- »}
+
+\marginal{corner --- above the struck word before « Corner Saloon »}
+
+\marginal{I, --- above, after « p. 71 »}
+
+\marginal{1930 --- above « Steamer »}
+
+\hand{jo}{Book II.}
+
+\note{the whole leaf is in pencil, in two columns, and it indexes the volume by
+kind of work rather than by title. « Book II. » stands alone at the middle of
+the leaf, underlined. Three readings will not settle and are marked: the word
+before « of Early work (oils) », where a bracket joins that line to the one
+below it; the first word of « \uncertain{House} by an Inlet », which the
+letters support as readily as « Hence »; and the second word of « East \ill{} »,
+which no candidate fits. Nothing is pasted to this leaf, so neither \ill{} in the second
+column is under paper: the first is a word she struck and wrote « corner »
+over, the second a short mark after « 1924, » that no reading fits. Faint reversed
+show-through from the other side of the leaf is visible at the foot and is not
+transcribed.}
+
+\section{Leaf 2: Dauphinée House, Mrs. Scott's House}
+
+\sheet{17332}{2}
+
+\hand{jo}{\emph{Oils - beginning Summer 1932 - at South Truro, Cape Cod, Mass.}\\
+delivered at Rehn Gallery}
+
+\work{Dauphinée House.}
+
+\hand{jo}{34" x 50"\\
+Oct. 12, 32.}
+
+\hand{jo}{Zinc white\\
+R. colors, poppy oil}
+
+\sketch{}
+
+\hand{jo}{Sky-yellow, tall tree black, tops of trees R. make strip of vivid
+greeny yellow. Extreme R. dead tree grey. Dead grass before house pinky. Side
+of house white weather stained. Roof rests on table planks + these on square
+pilaster like stakes at corners, good New Eng. style. Cerulean shutters
+closed. White stone hitching post R. side of road there before R.R. built.
+R.R. runs across front yard. Landscape seen against the light, white house in
+shadow, or light (sun) gone below dark hill in back. Painted late in afternoon
+thru many changes of light til too dark to see. Peaceful before dark. House
+closed up + for sale. Built by a Capt. Kelly.}
+
+\marginal{white --- above, before « weather stained »}
+
+\marginal{closed. --- above, between « shutters. » and « White »}
+
+\marginal{R. --- above, before « side of road »}
+
+\marginal{(sun) --- above, between « light » and « gone »}
+
+\marginal{dark --- above, before « hill in back »}
+
+\begin{ledgertable}{Y{0.40}Y{0.16}Y{0.12}Y{0.16}}{ & & & }
+Huntington Hartford (Calif.) & 5000 - 1/3 Com. = & 3333 1/3 - & rec'd June 14'', 1956. \\
+\end{ledgertable}
+
+\hand{jo}{New frame - Watt - \$48.}
+
+\work{Mrs. Scott's House}
+
+\hand{jo}{34" x 50"\\
+Oct. 12, 32.}
+
+\hand{jo}{Zinc white\\
+R. colors\\
+Poppy oil}
+
+\sketch{}
+
+\hand{jo}{Late afternoon until dark, hills + house in silhouette against blue
+greeny sky with long strip of white clouds. Late Sept., tall grasses changing
+colors - pink in light. Hills roll for dear life! Field of tall grass in
+foregr. Entirely in light. Glorious!}
+
+\marginal{long --- above, before « strip of white clouds »}
+
+\marginal{tall --- above, before « grasses »}
+
+\hand{jo}{Temple Gold Medal, Philadelphia 1935. Penn. Academy.}
+
+\begin{ledgertable}{Y{0.40}Y{0.16}Y{0.12}Y{0.16}}{ & & & }
+Bought by Randolph Macon Women's College & \$2500 - 1/3 & 1666.67 & Nov. 20'' 1936. \\
+\end{ledgertable}
+
+\note{« ks » is written above the line at the end of « table plan », for want of
+room at the rule that closes the column --- the word is « planks » and it is
+not a correction. « 1932 » and the heading above it are in ink; the dollar sign
+before 2500 is written above and left of the figure, as she sets it throughout
+this batch.}
+
+\section{Leaf 3: City Roofs, Ryder House}
+
+\sheet{17965}{3}
+
+\work{City Roofs -}
+
+\hand{jo}{29 x 36\\
+Oct. 12, 32}
+
+\hand{jo}{Zinc white\\
+R. colors.\\
+Poppy oil}
+
+\hand{jo}{Here in studio.}
+
+\sketch{}
+
+\hand{jo}{from 3 Wash. Sq. N. Walls of 17 Fifth Ave. at R. back - full of
+windows, greyish Tin floor of roofs + tops of sky lights in full light.
+Vertical planes seen against light - chimneys + chimney pots + house over
+stairs up of \#4 - dark reddish shadow side, pink in light.}
+
+\marginal{seen --- above, before « from 3 Wash. Sq. N. »}
+
+\marginal{glass --- above, before « sky lights »}
+
+\marginal{sun --- above, between « full » and « light »}
+
+\hand{jo}{1933 - Summer.}
+
+\work{Ryder House}
+
+\hand{jo}{36 x 50}
+
+\hand{jo}{White house in full sun light, red brick under R. end of house. Red
+chimney. Dense clump of bayberries dark green. Tall grass foreground yellow.
+Fine passage at R. hills + sky. Blue sky - white dense clouds across lower half
+of sky.}
+
+\hand{jo}{Zinc white, R. colors\\
+Poppy oil}
+
+\hand{jo}{Bought from Ranger Fund by National Academy of Design for 3500. - Com.
+1/3 = 2333.34. \quad Check rec'd Mar. 15, 54.\\
+In \uncertain{Kuchne} frame, made for House at Dusk.\\
+Alloted to Boston Mus. of Fine Arts - June 25, 54.}
+
+\marginal{ca --- written below « Alloted », making « Allocated »}
+
+\hand{jo}{Shown in Dr. Brian O'Doherty TV program --- Invitation to Art, the
+Hoppers - Boston Mus. Ap. 9 ± 1961. House used also as background. much Enjoyed
+by grand daughter of Ryder - Mrs. Dorothy Schroeder. of S. Truro}
+
+\note{Edward Hopper's record drawing for City Roofs is on a separate sheet of
+tan paper pasted to the leaf, not drawn on it; nothing is written on it. The
+Ryder House title, its size and the year line above it are in pencil while the
+description below them is in ink. The third letter of the frame maker's name
+will not settle between « c » and « e »; the same maker is named on leaves 2
+and 6 with a different initial each time, and none of the three is regularised
+here. The last paragraph is in pencil and is later than everything above it ---
+it records a 1961 television programme in a book whose entry for this picture
+was written in 1933.}
+
+\section{Leaf 4: Cape Cod Sunset, Sun on Prospect St., Dawn Before Gettysburg (clipping down)}
+
+\sheet{16935}{4}
+
+\clipping{a halftone on tan stock, hinged at its left edge and lying across the
+lower right of the leaf.\\
+Dawn Before Gettysburg, by Hopper.\\
+Illustrations on these pages are from ``Modern Works of Art,'' edited by Alfred
+H. Barr Jr. \quad Norton, \$3.50.}
+
+\note{with the clipping down it covers Edward Hopper's record drawing for Dawn
+Before Gettysburg, the right-hand half of that work's description, the two
+lines that record its sale, and the last lines of the Sun on Prospect St.
+entry. The next sheet is the same recto photographed with the clipping turned
+back, and the leaf is transcribed there.}
+
+\section{Leaf 4: Cape Cod Sunset, Sun on Prospect St., Dawn Before Gettysburg (clipping turned back)}
+
+\sheet{18397}{4}
+
+\work{Cape Cod Sunset.}
+
+\hand{jo}{29 x 36\\
+Jan. 27, 34.}
+
+\hand{jo}{Zinc white\\
+R. colors, poppy oil}
+
+\sketch{}
+
+\hand{jo}{Big white house to R. of canvas, dense mass of trees, small tree,
+green. in back. Yellow sky, narrow strip of red over trees. Front + side of
+house in shadow - but not at all dark. Red chimneys, grass in front pale
+yellow. Side walk at R. lower corner. Tree trunks faintly visible.}
+
+\hand{jo}{Back in studio \uncertain{1953}.}
+
+\hand{jo}{Given to wife, Jo N. Hopper - \qquad 1957.}
+
+\work{Sun on Prospect St.}
+
+\hand{jo}{Gloucester.\\
+28 x 36 \quad Painted in studio from water color\\
+Ap. 16, 34. \quad (painted Jan. or Feb.) in N.Y. Studio}
+
+\sketch{}
+
+\hand{jo}{Expanse of pavement, oil stained down centre. At L: greenish house in
+shadow. 2'' house yellow, greeny blue shutters + chrome (deep) shade on porch.
+Vivid greenish yellow lawn in front of 1'' house., more green in front of 2''.
+2'' bay window on street.. Handsom tree at R. (green). Road turns + house covers
+Portuguese Church, 2 towers show in distance. 2 cars at extreme R. Touring car
+with canvas top}
+
+\hand{jo}{Zinc white. R. colors, poppy oil.}
+
+\begin{ledgertable}{Y{0.34}Y{0.16}Y{0.16}Y{0.18}}{ & & & }
+Edward G. Robinson & Feb 8'', 40 & 1000 - 1/3 = 666 2/3 & Ap. 29, 40. \\
+\end{ledgertable}
+
+\marginal{G. --- above, between « Edward » and « Robinson »}
+
+\work{Dawn Before Gettysburg.}
+
+\hand{jo}{15 x 20 \quad Reproduced in Modern Works \quad Mus. of Mod.
+\quad Nov. 1934.\\
+Ap. 16, 34. \quad (painted late Feb.)}
+
+\marginal{of art - by --- above, between « Modern Works » and « Mus. »}
+
+\marginal{Art --- below « Mod. »}
+
+\sketch{}
+
+\hand{jo}{Pinks in sky above tree \struck{tops}, above this sky flaked with pale
+blue - Sky greyer as it goes left. Trees dark greenish, blueish. Tree at R.
+greenish blackish, more distinct. White house in dull light, white picket fence
+pale blueish. Soldiers, very young in dark blue coats + lighter blue pants.
+Positions, sleepy + fatigues. 2'' from L: fixing shoe, foot sore. Little officer
+with white stripe down pants with \struck{\ill{}} sword. Road pale with pinkish
+cast. Roof dark grey.}
+
+\hand{jo}{(family Steeple chase park, Coney Is.) \quad by Mrs. Tillyou}
+
+\marginal{owns --- above, after « family »}
+
+\hand{jo}{1 Zinc white R.}
+
+\begin{ledgertable}{Y{0.20}Y{0.26}Y{0.24}}{ & & }
+Tillyou & 900 - 1/3 = 600 & Dec. 29, 1937. \\
+\end{ledgertable}
+
+\hand{jo}{Dec. 1936 - presented to Arthuro \uncertain{Grassi}! taken off to
+Italy.}
+
+\hand{jo}{John Clancey took canvas down to purser of boat to deliver present
+after boat sailed. \uncertain{Paul Roche's} \ill{}}
+
+\note{the two paragraphs at the foot are in pencil; the second runs off the
+photograph at the fore-edge and its last word is not recoverable in either
+photograph of this leaf. The struck word before « sword » is under her own
+cancellation and cannot be read. The pencil date « Feb 8'', 40 » stands between
+the buyer's name and the price and is partly erased. Three registers meet on
+the Sun on Prospect St. head: black ink, pencil, and « in N.Y. Studio » in blue.
+« 1 Zinc white R. » stands at the left of the line the Tillyou sale is written
+on and is a paint note, not part of it.}
+
+\section{Leaf 5: East Wind over Weehawken}
+
+\sheet{17555}{5}
+
+\sketch{}
+
+\work{East Wind over Weehawken}
+
+\hand{jo}{34 x 50.\\
+Ap. 16, 34.\\
+(Cold raw weather)}
+
+\hand{jo}{Beautiful sky, blue patch breaking thru at centre top + white at
+right, greyer at left - thin film of pale cloud, diffused at left - broken thru
+at centre top to show blue. Roof at R. - grey green, Composition shingle, roof
+next (centre) grey slate, looks greenish. 1'' house dark blue blackish, pale
+yellow trim balustrade over piazza dull Indian reddish - same more in shadow
+along side + front 1'' flr. railing - White steps + urns. Yellow - pale salmon
+\struck{\ill{}} vase in front yard. Dark grey stone walls, foundations of yards
+both sides of street at corner. Middle house russet, yellow window shades. 3''
+house - dark grey, russet \struck{trim} at top of house + over front porch.
+4'' house, greyish yellow, blackish cornice + porch. Several small figures
+indistinct at extreme left end of street. Dead grass, unmown at R. in both
+yards. Big ``for sale'' sign at R. with red letters ``For Sale'' on white
+ground. Pavement pale blue grey, side walk lighter, more yellow. 3 street
+lamps. 1 at L: not in sketch to R. of telegraph pole in profile. Houses at
+extreme left (a cross street) red roofs, yellow in shadow}
+
+\marginal{trim --- written vertically at the fore-edge, after « pale yellow »}
+
+\marginal{big --- above the struck word before « vase »}
+
+\marginal{front cornices --- above, after « russet »}
+
+\hand{jo}{Zinc white, Rembrandt colors, poppy oil. \quad Such cold raw weather,
+E. H. going over to Jersey to make sketches, could have caught pneumonia, but
+would go.. \quad Painted in front studio. he left rear one in 1932 - Wash. Sq.
+N. 3 (\uncertain{Cabo} Studio built 1934.)}
+
+\begin{ledgertable}{Y{0.26}Y{0.14}Y{0.22}Y{0.22}}{ & & & }
+Penn. Academy & Mar. \uncertain{28}, 52 & 3000. - 2750. - 1/3 = 1833.34 & May 16, 1952. \\
+\end{ledgertable}
+
+\marginal{Mus. discount 12\% --- above, between « 3000. - » and « 2750. »}
+
+\hand{jo}{frame repaired by D. \uncertain{Matt}. \quad Gone to Venice 1952 -
+``4 Americans'' Exhib. summer 52.}
+
+\note{this leaf reverses the arrangement of leaf 2: the record drawing is at the
+left and the title block beside it at the right. The last three lines are in
+pencil. A raised mark stands between « N. » and « 3 » which will support her
+ordinal stroke as readily as an abbreviation for « No. »; the address it gives
+is the one written on the inside front cover. « Composition » is broken across
+the line as « Compo- / sition ». The frame maker is the one named on leaves 2
+and 6.}
+
+\section{Leaf 6: House at Dusk (clipping down)}
+
+\sheet{17588}{6}
+
+\clipping{a plate on heavy white stock, hinged at its left edge and lying over
+the lower half of the leaf.\\
+``House at Dusk,'' Oil, 1935, by Edward Hopper}
+
+\note{with the plate down it covers the right-hand two thirds of the last six
+lines of the description and the whole of the sale block. The next sheet is the
+same recto photographed with the plate turned back, and the leaf is transcribed
+there.}
+
+\section{Leaf 6: House at Dusk (clipping turned back)}
+
+\sheet{17606}{6}
+
+\work{House at Dusk.}
+
+\hand{jo}{House by an Evening Park.\\
+Jan. 9'', 1935.\\
+36 x 50.}
+
+\hand{jo}{1935}
+
+\sketch{}
+
+\hand{jo}{House pewter grey - Specially nice chimneys (see water color
+\struck{Sky} Sky Light at 3 Wash. Sq.) Trees dark green. big tree in centre
+triple green. A few dark streaks in sky over tops of trees. Greeny sky, bluer
+at L. top - palish green yellow at top R. Grass bright green around lamp post.
+Slatery Grey \struck{stone} Flag steps - nice sq. ft. at lower R. corner -
+steps, lamppost + light from lamp post on pavement + grass. Road continues -
+would seem to - under shade of trees. Top corner window bright - greyish
+yellowish white - glimpse of mantel.}
+
+\marginal{lighter --- above, between « triple » and « green »}
+
+\marginal{yellow --- above, before « mantel »}
+
+\hand{jo}{4'' window from corner - girl sitting, light on shoulders + back of
+red chair. 2'' window end of yellow lamp shade showing between curtains.
+\quad 1'', 4'' + 5'' (dim) windows lit. At side 2'' + 4'' lit.\\
+Light in lamp post has just been lit --- it is a summer evening, early; sky
+still light --- Sun gone down back of the trees. It is a park. \quad Lovely
+passage to R. lower corner.}
+
+\hand{jo}{Zinc white, Rembrandt colors, poppy oil.}
+
+\begin{ledgertable}{Y{0.26}Y{0.14}Y{0.16}Y{0.28}}{ & & & }
+Virginia Mus. & May 53. & 4000 - 1/3. & frame by \uncertain{Natt} - \$82.00 \\
+\end{ledgertable}
+
+\hand{jo}{Payment held up by illness of Frank Rehn beginning Sept. 53. Paid by
+Va. Mus. Early 1953. Death of Frank Rehn - Mar. 1956 - no provision in his will
+for payment of this sum.}
+
+\marginal{to painter --- above, between « Payment » and « held up by »}
+
+\hand{jo}{The Virginia Mus. at Richmond, Va. \struck{bought May 1953} - Rec'd
+from John Clancy of the Rehn Gallery: 4000. - 1/3 Com. = 2666 2/3. \quad June
+14, 1956.}
+
+\note{« House at Dusk. » is written in blue crayon and « House by an Evening
+Park. » in pencil under it; the second title is nowhere else in the batch. The
+sale block is in pencil throughout. « Paid by Va. Mus. Early 1953 » stands two
+lines above a payment recorded as received in June 1956 and is left as
+written.}
+
+\section{Leaf 7: MaCombs Dam Bridge}
+
+\sheet{17970}{7}
+
+\hand{jo}{1935}
+
+\work{MaCombs Dam Bridge.}
+
+\hand{jo}{35 x 60\\
+Finished\\
+ap. 14'', 35.\\
+Rehn Gallery\\
+Ap. 22, 35.}
+
+\sketch{}
+
+\hand{jo}{Sky - white with blue strips breaking thru white cloudy sky. Water
+bright blue (light). A grey day, no sun. Bridge grey. Ground dull green.
+Buildings neutral. Little shed at L: near base of bridge, pale yellow, green
+roof. Picture fairly colorful because of extremes of blue water - tiny
+\uncertain{marestails}, not still - bit of dull \ill{}}
+
+\clipping{a leaf from the Virginia Museum's members' bulletin, laid across the
+foot of the leaf, printed in two columns and running from an account of the
+Virginia entry requirements through a Museum fashion evening to a paragraph
+headed GOYA REMINDER. Written on it in pencil, in her hand: « Va. Mus. Feb.
+1953 » and, at the foot, « Purchased. »}
+
+\hand{jo}{\ill{} slightly darker\\
+\ill{} a whole.}
+
+\hand{jo}{\ill{} ccession to Whitney,}
+
+\hand{jo}{\ill{} 1958.}
+
+\note{every \ill{} on this leaf is text under the bulletin, and no photograph in
+this batch turns it back. What is lost is the rest of the description and the
+whole of the sale; the four fragments above are all that show beyond the
+clipping's right edge. The first two are consecutive lines; blank ruled lines
+separate them from the third and the third from the fourth, and they are given
+in the order they stand. « Finished ap. 14'', 35 » is in ink and
+« Rehn Gallery / Ap. 22, 35. » below it is in pencil, so the day the picture
+was finished and the day it went to the gallery are eight days and two sittings
+apart. The figure is 14 and not 22: the numeral is unambiguous at 9x and
+carries her ordinal double stroke, and the 22 belongs to the pencil line
+beneath. A raised mark stands at the end of
+« MaCombs » which will support an apostrophe before or after the s; the leaf
+spells the name this way against the Whitney's own « McComb's ».}
+
+\section{Leaf 9: Shakespeare at Dusk}
+
+\sheet{18112}{9}
+
+\hand{jo}{1935}
+
+\work{Shakespeare at Dusk.}
+
+\hand{jo}{Nov. 21, 35.\\
+17 x 25}
+
+\sketch{}
+
+\hand{jo}{Mall, Central Park \quad about 5 P.M. \quad Nov. dusk with pink glow
+in sky back of trees. Foreground grey pavement, slightly warmed by glow in sky
+overhead (off stage). 2 statues on high pedistals - L: Shakespeare - green; R.
+Colombus not distinct. Foreground R., tall bare tree trunk dark. Foliage across
+middle green + brownish. Red, Electric sign showing thru foliage not well
+explained. Big unlit sign U.S. top of building L. back. No other signs or
+windows lit yet. Silhouette of buildings outside park across back grey blue.}
+
+\marginal{lit --- above, before « Electric sign »}
+
+\marginal{- outside park. --- above, after « showing thru »}
+
+\hand{jo}{Zinc white, Rembrandt colors, poppy oil, thin canvas}
+
+\begin{ledgertable}{Y{0.26}Y{0.14}Y{0.16}Y{0.28}}{ & & & }
+John Jacob Astor & 1000. & Gal. Com. 1/3. & Check rec'd for 666.66 \quad Ap. 11 1944. \\
+\end{ledgertable}
+
+\note{leaf 8 is not in this batch and nothing in the sequence stands between
+leaf 7 and this one. Nothing is pasted to this leaf and there is no
+cancellation on it --- the only leaf of the batch of which both are true.}
+
+\keywords{medium:oils, place:South Truro, place:Cape Cod, place:New York,
+place:Gloucester, place:Central Park, dealer:Frank K. M. Rehn, dealer:John
+Clancy, collection:Virginia Museum, collection:National Academy of Design,
+collection:Boston Museum of Fine Arts, collection:Randolph Macon Women's
+College, person:Huntington Hartford, person:Edward G. Robinson, person:John
+Jacob Astor, person:Brian O'Doherty, prize:Temple Gold Medal,
+publication:Modern Works of Art, feature:record drawings, feature:pasted
+clippings, feature:gifts, feature:frame makers}
+
+\end{document}
