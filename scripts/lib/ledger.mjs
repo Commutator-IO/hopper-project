@@ -116,9 +116,36 @@ export const statedYearOf = (rawWorkArg) => {
 };
 
 /**
- * The year a date cell states — the permissive rule, for the date column only.
+ * A cell that shows, by a month, a season or a four-figure year, that the
+ * column it stands in is dates. Tested against a whole column, never one cell.
  */
-export const yearInCell = (cell) => {
+const DATEISH =
+  /\b(Jan|Feb|Mar|Ap|Apr|May|June?|July?|Aug|Sept?|Oct|Nov|Dec|Spring|Summer|Fall|Winter)\b|\b1[89]\d\d\b/i;
+
+/**
+ * Whether a table's first column is a date column at all.
+ *
+ * `yearInCell`'s two-digit branch reads a lone « 21 » as 1921, which is right
+ * for a date cell and wrong for every other kind of number. Book I leaf 92 is
+ * where that first mattered: the leaf lists William McKillop's negatives by
+ * number, so its first column runs 10, 12, 11, 19, 20., 21, 22, 17, 29, 31 —
+ * and the works index read them as ten years of activity and published five.
+ *
+ * So the branch is allowed only where the column says somewhere that it holds
+ * dates. A column that never does is a column of something else, and its
+ * numbers are left alone. The four-figure branch is unaffected: it needs no
+ * such licence, because « 1931 » in any column is a year.
+ */
+export const isDateColumn = (cells) => cells.some((c) => DATEISH.test(String(c ?? '')));
+
+/**
+ * The year a date cell states — the permissive rule, for the date column only.
+ *
+ * `bareTwoDigit` is that permission: pass the column's own verdict from
+ * `isDateColumn`, so a lone two-figure number is read as a year where the
+ * column is dates and left as a number where it is not.
+ */
+export const yearInCell = (cell, bareTwoDigit = true) => {
   const s = String(cell ?? '').trim();
   if (!s) return null;
   const four = /\b(1[89]\d\d|20\d\d)\b/.exec(s);
@@ -126,7 +153,7 @@ export const yearInCell = (cell) => {
     const y = Number(four[1]);
     return y >= 1900 && y <= 1970 ? y : null;
   }
-  const two = /^'?(\d{2})\.?$/.exec(s) ?? /[,']\s*'?(\d{2})\b/.exec(s);
+  const two = (bareTwoDigit ? /^'?(\d{2})\.?$/.exec(s) : null) ?? /[,']\s*'?(\d{2})\b/.exec(s);
   if (!two) return null;
   const y = 1900 + Number(two[1]);
   return y >= 1900 && y <= 1970 ? y : null;
@@ -254,10 +281,16 @@ function parseFile(path, ledger, batch) {
 
   const pushRows = (spec, header, tableBody) => {
     const target = work ? work.rows : looseRows;
-    for (const raw of rowsOf(tableBody)) {
-      const cells = cellsOf(raw);
-      if (!cells.some((c) => c.trim())) continue;
+    const rows = rowsOf(tableBody)
+      .map((raw) => ({ raw, cells: cellsOf(raw) }))
+      .filter((r) => r.cells.some((c) => c.trim()));
+    // Decided once for the table, not once per row: whether the first column
+    // is dates at all is a fact about the column, and a row in the middle of
+    // it cannot tell on its own. See `isDateColumn`.
+    const dateColumn = isDateColumn(rows.map((r) => plainOf(r.cells[0] ?? '')));
+    for (const { raw, cells } of rows) {
       target.push({
+        dateColumn,
         ledger,
         batch,
         section,

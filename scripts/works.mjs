@@ -290,7 +290,7 @@ for (const file of readTranscripts(root)) {
     // not to its leaf. A leaf carries several works, and taking the leaf's
     // earliest bounded 7" Ave. Shops at 1929 when Early Sunday Morning is 1930.
     for (const r of w.rows) {
-      const y = yearInCell(r.plain[0]);
+      const y = yearInCell(r.plain[0], r.dateColumn);
       if (y !== null) n.earliest = Math.min(n.earliest ?? 9999, y);
     }
   }
@@ -362,7 +362,7 @@ for (const file of readTranscripts(root)) {
   for (const rows of [...file.works.map((w) => w.rows), file.looseRows]) {
     for (const r of rows) {
       if (!r.leaf || !r.ref) continue;
-      const y = yearInCell(r.plain[0]);
+      const y = yearInCell(r.plain[0], r.dateColumn);
       if (y === null) continue;
       if (!leafYears.has(y)) leafYears.set(y, new Map());
       const m = leafYears.get(y);
