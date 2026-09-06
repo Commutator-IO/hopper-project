@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T10:13:58.701Z",
+  "generated": "2026-09-06T14:04:50.017Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -2729,6 +2729,26 @@
       ]
     },
     {
+      "key": "shore acres",
+      "title": "Shore Acres",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "71",
+          "ref": "16955"
+        }
+      ]
+    },
+    {
       "key": "south truro church",
       "title": "South Truro Church",
       "museumTitle": null,
@@ -3310,6 +3330,18 @@
     }
   ],
   "transcribedYears": [
+    {
+      "year": 1914,
+      "leaves": [
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 1
+        }
+      ]
+    },
     {
       "year": 1920,
       "leaves": [
@@ -3913,6 +3945,20 @@
           "leaf": "62",
           "ref": 17089,
           "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "72",
+          "ref": 18117,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "76",
+          "ref": 17740,
+          "rows": 1
         }
       ]
     },
@@ -4238,6 +4284,27 @@
           "leaf": "63",
           "ref": 18104,
           "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "64",
+          "ref": 16704,
+          "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "65",
+          "ref": 16448,
+          "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "76",
+          "ref": 17740,
+          "rows": 2
         }
       ]
     },
@@ -4369,6 +4436,34 @@
           "leaf": "55",
           "ref": 17525,
           "rows": 3
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "65",
+          "ref": 16448,
+          "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "66",
+          "ref": 16820,
+          "rows": 3
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "76",
+          "ref": 17740,
+          "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 6
         }
       ]
     },
@@ -4570,6 +4665,27 @@
           "leaf": "57",
           "ref": 18424,
           "rows": 3
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "67",
+          "ref": 17040,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "68",
+          "ref": 18277,
+          "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 5
         }
       ]
     },
@@ -4715,6 +4831,41 @@
           "leaf": "58",
           "ref": 18297,
           "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "69",
+          "ref": 16592,
+          "rows": 5
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "70",
+          "ref": 16348,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "71",
+          "ref": 17836,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "72",
+          "ref": 18117,
+          "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 2
         }
       ]
     },
@@ -4825,6 +4976,34 @@
           "leaf": "59",
           "ref": 16991,
           "rows": 4
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "72",
+          "ref": 18117,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "73",
+          "ref": 18145,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "74",
+          "ref": 17216,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "75",
+          "ref": 17138,
+          "rows": 1
         }
       ]
     },
@@ -4893,6 +5072,34 @@
           "leaf": "28",
           "ref": 18395,
           "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "75",
+          "ref": 17138,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "78",
+          "ref": 17206,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "79",
+          "ref": 17175,
+          "rows": 3
         }
       ]
     },
@@ -4966,6 +5173,13 @@
           "leaf": "44",
           "ref": 18288,
           "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 2
         }
       ]
     },
@@ -5084,6 +5298,13 @@
           "leaf": "9",
           "ref": 17703,
           "rows": 2
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 2
         }
       ]
     },
@@ -5192,6 +5413,13 @@
           "leaf": "54",
           "ref": 16522,
           "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "72",
+          "ref": 18117,
+          "rows": 1
         }
       ]
     },
@@ -5258,6 +5486,13 @@
           "leaf": "7",
           "ref": 16439,
           "rows": 3
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 1
         }
       ]
     },
@@ -5378,6 +5613,13 @@
           "leaf": "12",
           "ref": 16218,
           "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 1
         }
       ]
     },
@@ -5477,6 +5719,13 @@
           "leaf": "40",
           "ref": 17668,
           "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
+          "rows": 1
         }
       ]
     },
@@ -5549,6 +5798,13 @@
           "batch": 3,
           "leaf": "26",
           "ref": 17265,
+          "rows": 1
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": 18222,
           "rows": 1
         }
       ]
