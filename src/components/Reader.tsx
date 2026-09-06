@@ -131,6 +131,29 @@ export function Reader({
   const all = BY_LEDGER.get(ledger.id) ?? [];
   const total = batchCount(all.length);
   const { first, last } = batchRange(batch, all.length);
+
+  /**
+   * The leaves this batch covers, beside the sheets.
+   *
+   * These are two different numbering systems and they diverge hard: batch 2 of
+   * Book I is sheets 13 to 24 and leaves 6 to 16, because the Whitney's
+   * sequence counts the covers, the flyleaves, the index leaves, the versos and
+   * the odd opening photographed whole, while the Hoppers numbered only the
+   * written leaves. A header that gave the sheet range alone sat above a
+   * transcript headed « Leaf 6 » and read as a bug in the site.
+   *
+   * Sheets with no leaf number written on them — about one in nine — are simply
+   * absent from the range rather than being given one.
+   */
+  const leafRange = (() => {
+    const ls = sheets
+      .map((s) => (s.leaf === null ? null : Number(s.leaf)))
+      .filter((n): n is number => n !== null && Number.isFinite(n));
+    if (!ls.length) return null;
+    const lo = Math.min(...ls);
+    const hi = Math.max(...ls);
+    return lo === hi ? String(lo) : `${lo}–${hi}`;
+  })();
   const state = batchState(manifest, ledger.id, batch);
   const currentSheet = sheets.find((s) => s.ref === sheet) ?? sheets[0];
 
@@ -155,7 +178,8 @@ export function Reader({
         <div className="min-w-0">
           <div className="truncate text-[13px] font-semibold text-ink-900">{ledger.title}</div>
           <div className="text-[11.5px] text-ink-500">
-            sheets {first}–{last} of {all.length} · batch {batch} of {total} ·{' '}
+            sheets {first}–{last} of {all.length}
+            {leafRange && <> · leaves {leafRange}</>} · batch {batch} of {total} ·{' '}
             <span className="font-mono">{ledger.objectNumber}</span>
           </div>
         </div>
@@ -244,11 +268,23 @@ export function BatchGrid({
       {Array.from({ length: n }, (_, i) => i + 1).map((k) => {
         const state = batchState(manifest, ledger.id, k);
         const { first, last } = batchRange(k, all.length);
+        // The leaf range too: the chips are numbered by sheet, and the reader
+        // they open is headed by leaf. Batch 2 of Book I is sheets 13-24 and
+        // leaves 6-16, and only saying so keeps the two from reading as a
+        // contradiction.
+        const ls = sheetsOfBatch(all, k)
+          .map((x) => (x.leaf === null ? null : Number(x.leaf)))
+          .filter((x): x is number => x !== null && Number.isFinite(x));
+        const leaves = ls.length
+          ? Math.min(...ls) === Math.max(...ls)
+            ? ` · leaf ${Math.min(...ls)}`
+            : ` · leaves ${Math.min(...ls)}–${Math.max(...ls)}`
+          : '';
         return (
           <button
             key={k}
             onClick={() => onOpen(k)}
-            title={`Sheets ${first}–${last} — ${state}`}
+            title={`Sheets ${first}–${last}${leaves} — ${state}`}
             className={`rounded-md px-2 py-1 text-[11.5px] tabular transition hover:ring-1 hover:ring-ink-400 ${STATE_COLOURS[state]}`}
           >
             {first}–{last}
