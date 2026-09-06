@@ -34,6 +34,21 @@ interface Year {
   commission: number;
   net: number;
   disagreements: number;
+  /**
+   * Cheques that cleared in this year, whatever year the sale was made — net
+   * of commission, on the same basis as `net`. Written by `accounts.mjs`
+   * alongside the accrual figures and, until the bars were paired, never read.
+   */
+  received: number;
+}
+
+interface Work {
+  title: string;
+  net: number;
+  gross: number;
+  sales: number;
+  years: number[];
+  ledgers: string[];
 }
 
 interface Unparsed {
@@ -51,6 +66,9 @@ const A = accountsData as unknown as {
   coverage: { ledgersTranscribed: string[]; batches: number; sheets: number; note: string };
   arithmetic: { checkable: number; agree: number; disagree: number; note: string };
   years: Year[];
+  works: Work[];
+  worksNote: string;
+  duplicates: { count: number; note: string; sample: { work: string; net: number }[] };
   receivable: { year: number; accrued: number; received: number; outstanding: number }[];
   receivableNote: string;
   entries: { year: number; leaf: string | null; work: string | null; gross: number; rateWritten: string; net: number; check: string | null; receiptWritten: number | null }[];
@@ -75,7 +93,14 @@ export function AccountsPage() {
     [],
   );
 
-  const peak = useMemo(() => Math.max(...A.years.map((y) => y.gross)), []);
+  // One scale for both bars, and it is a net scale on purpose. Gross carries
+  // the dealer's third and `received` does not, so a gross bar drawn beside a
+  // received bar would show every year under-collected by exactly the
+  // commission — an artefact of the two bases, not a fact about the cheques.
+  const peak = useMemo(
+    () => Math.max(...A.years.map((y) => Math.max(y.net, y.received ?? 0))),
+    [],
+  );
 
   return (
     <Page path="/accounts/">
@@ -122,9 +147,21 @@ export function AccountsPage() {
       <section className="py-6">
         <h2 className="font-serif text-xl text-ink-900">Year by year</h2>
         <p className="prose-note mt-2 max-w-3xl">
-          The bar is gross, to the same scale throughout. The shape is the archive’s, not a
-          reading of it: the oils sell from 1928, the peak is 1930, and what follows is the
-          Depression arriving in a household’s books.
+          Two bars to a year, to one scale throughout and both net of the dealer’s commission:
+          the upper is what the year <em>sold</em>, the lower what it{' '}
+          <em>collected</em> — cheques that cleared in that year, whatever year the sale was
+          made. Where the lower bar is the longer, the year was paid for work it did not do:
+          1931 collects $4,280 against $232 sold, because the two big canvases of 1930 were paid
+          for then. The shape is the archive’s, not a reading of it: the oils sell from 1928, the
+          peak is 1930, and what follows is the Depression arriving in a household’s books.
+        </p>
+        <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11.5px] text-ink-500">
+          <span className="flex items-center gap-1.5">
+            <span className="inline-block h-2 w-6 rounded-sm bg-brand-400" /> sold, net
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="inline-block h-2 w-6 rounded-sm bg-ink-300" /> collected
+          </span>
         </p>
         <table className="mt-4 w-full text-[13.5px]">
           <thead>
@@ -149,8 +186,73 @@ export function AccountsPage() {
                 <td className="py-1.5 text-right tabular text-ink-900">${money(y.net)}</td>
                 <td className="py-1.5 pl-3">
                   <span
+                    className="block h-1.5 rounded-sm bg-brand-400"
+                    style={{ width: `${Math.max(y.net > 0 ? 1 : 0, (y.net / peak) * 100)}%` }}
+                    title={`sold ${money(y.net)} net`}
+                  />
+                  <span
+                    className="mt-0.5 block h-1.5 rounded-sm bg-ink-300"
+                    style={{
+                      width: `${Math.max((y.received ?? 0) > 0 ? 1 : 0, ((y.received ?? 0) / peak) * 100)}%`,
+                    }}
+                    title={`collected ${money(y.received ?? 0)}`}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">What each work brought in</h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          The same sales cut by work rather than by year, net of the dealer’s commission. It
+          ranks <em>titles</em>, not objects, and the sales column is the only thing that keeps
+          the two apart: a plate sold twenty-one times at twenty-five dollars and a canvas sold
+          once for three thousand are both one row here.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">
+          {A.worksNote}
+        </p>
+        {A.duplicates.count > 0 && (
+          <p className="prose-note mt-2 max-w-3xl">
+            {A.duplicates.count === 1 ? 'One sale was' : `${A.duplicates.count} sales were`}{' '}
+            written into two volumes and {A.duplicates.count === 1 ? 'is' : 'are'} counted once,
+            here and in every total above —{' '}
+            {A.duplicates.sample.map((d) => d.work).join(', ')}. Jo Hopper cross-referenced{' '}
+            {A.duplicates.count === 1 ? 'it' : 'them'} herself. Left alone,{' '}
+            {A.duplicates.count === 1 ? 'it' : 'they'} would rank at exactly twice what{' '}
+            {A.duplicates.count === 1 ? 'it' : 'they'} fetched.
+          </p>
+        )}
+        <table className="mt-4 w-full text-[13.5px]">
+          <thead>
+            <tr className="border-b border-ink-300 text-[11px] uppercase tracking-wider text-ink-400">
+              <th className="py-1.5 text-left font-normal">Work</th>
+              <th className="py-1.5 text-right font-normal">Sales</th>
+              <th className="py-1.5 text-right font-normal">Years</th>
+              <th className="py-1.5 text-right font-normal">Net</th>
+              <th className="w-1/4 py-1.5 text-left font-normal" />
+            </tr>
+          </thead>
+          <tbody>
+            {A.works.slice(0, 10).map((w) => (
+              <tr key={w.title} className="border-b border-ink-100">
+                <td className="py-1.5 text-ink-900">{w.title}</td>
+                <td className="py-1.5 text-right tabular text-ink-500">{w.sales}</td>
+                <td className="py-1.5 text-right tabular text-ink-500">
+                  {w.years.length === 0
+                    ? '—'
+                    : w.years.length === 1
+                      ? w.years[0]
+                      : `${w.years[0]}–${w.years[w.years.length - 1]}`}
+                </td>
+                <td className="py-1.5 text-right tabular text-ink-900">${money(w.net)}</td>
+                <td className="py-1.5 pl-3">
+                  <span
                     className="inline-block h-2 rounded-sm bg-brand-400 align-middle"
-                    style={{ width: `${Math.max(1, (y.gross / peak) * 100)}%` }}
+                    style={{ width: `${Math.max(1, (w.net / A.works[0].net) * 100)}%` }}
                   />
                 </td>
               </tr>

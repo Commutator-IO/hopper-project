@@ -1,15 +1,16 @@
 {
-  "generated": "2026-09-06T06:06:24.896Z",
+  "generated": "2026-09-06T08:16:57.479Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf.",
   "coverage": {
     "ledgersTranscribed": [
-      "book-i"
+      "book-i",
+      "book-ii"
     ],
-    "batches": 6,
-    "sheets": 72,
-    "note": "Book I only, and only the batches listed. The other five volumes, and the rest of Book I, are not read yet and contribute nothing."
+    "batches": 7,
+    "sheets": 84,
+    "note": "Only the volumes and batches listed. Everything unread contributes nothing, and every figure here moves as batches land."
   },
   "arithmetic": {
     "checkable": 15,
@@ -101,12 +102,12 @@
     },
     {
       "year": 1932,
-      "sales": 1,
-      "gross": 30,
-      "commission": 10,
-      "net": 20,
+      "sales": 2,
+      "gross": 630,
+      "commission": 210,
+      "net": 420,
       "disagreements": 0,
-      "received": 1333.33
+      "received": 1733.33
     },
     {
       "year": 1933,
@@ -119,12 +120,21 @@
     },
     {
       "year": 1934,
-      "sales": 6,
-      "gross": 180,
-      "commission": 60,
-      "net": 120,
+      "sales": 7,
+      "gross": 580,
+      "commission": 193.33,
+      "net": 386.67,
       "disagreements": 0,
-      "received": 0
+      "received": 266.67
+    },
+    {
+      "year": 1935,
+      "sales": 1,
+      "gross": 750,
+      "commission": 250,
+      "net": 500,
+      "disagreements": 0,
+      "received": 500
     },
     {
       "year": 1936,
@@ -328,8 +338,8 @@
     },
     {
       "year": 1932,
-      "accrued": 20,
-      "received": 1333.33,
+      "accrued": 420,
+      "received": 1733.33,
       "outstanding": 6660.22
     },
     {
@@ -340,8 +350,14 @@
     },
     {
       "year": 1934,
-      "accrued": 120,
-      "received": 0,
+      "accrued": 386.67,
+      "received": 266.67,
+      "outstanding": 6816.89
+    },
+    {
+      "year": 1935,
+      "accrued": 500,
+      "received": 500,
       "outstanding": 6816.89
     },
     {
@@ -448,6 +464,392 @@
     }
   ],
   "receivableNote": "What was owed to the Hoppers at the end of each year on the sales this archive can see. A sale is accrued in the year of the leaf's date column and discharged in the year its receipt names. 7196.53 of net never has a receipt date in the transcribed leaves, which is a statement about how much has been read and not about whether Hopper was paid.",
+  "works": [
+    {
+      "title": "Tables for Ladies",
+      "net": 3000,
+      "gross": 4500,
+      "sales": 1,
+      "years": [
+        1930
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Blackwell's Island",
+      "net": 1666.67,
+      "gross": 2500,
+      "sales": 1,
+      "years": [
+        1928
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Light House at Two Lights",
+      "net": 1333.33,
+      "gross": 2000,
+      "sales": 1,
+      "years": [
+        1929
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Corn Hill, Truro",
+      "net": 1333.33,
+      "gross": 2000,
+      "sales": 1,
+      "years": [
+        1930
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Hills, South Truro",
+      "net": 1333.33,
+      "gross": 2000,
+      "sales": 1,
+      "years": [
+        1930
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "South Truro Church",
+      "net": 1200,
+      "gross": 1800,
+      "sales": 1,
+      "years": [
+        1930
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Ex Lax",
+      "net": 1000,
+      "gross": 1500,
+      "sales": 1,
+      "years": [
+        1927
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "The Automat",
+      "net": 800,
+      "gross": 1200,
+      "sales": 1,
+      "years": [
+        1927
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Hodgkin's House",
+      "net": 800,
+      "gross": 1200,
+      "sales": 1,
+      "years": [
+        1928
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Yawl Riding a Swell",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1935
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "New York Restaurant",
+      "net": 450,
+      "gross": 500,
+      "sales": 1,
+      "years": [
+        1925
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "The Cat Boat",
+      "net": 411.68,
+      "gross": 610,
+      "sales": 21,
+      "years": [
+        1927,
+        1928,
+        1929,
+        1930,
+        1931,
+        1934,
+        1936,
+        1938,
+        1940,
+        1942,
+        1953,
+        1954,
+        1956
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Kelly - Jenness House",
+      "net": 400,
+      "gross": 600,
+      "sales": 1,
+      "years": [
+        1932
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "Apartment Houses",
+      "net": 340,
+      "gross": 400,
+      "sales": 1,
+      "years": [
+        1925
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "The Rail Road",
+      "net": 292.49,
+      "gross": 435,
+      "sales": 16,
+      "years": [
+        1927,
+        1929,
+        1930,
+        1938,
+        1940,
+        1945,
+        1950,
+        1957,
+        1961
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "American Landscape",
+      "net": 280.02,
+      "gross": 420,
+      "sales": 15,
+      "years": [
+        1927,
+        1928,
+        1929,
+        1930,
+        1931,
+        1933,
+        1957
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Jenness House (III)",
+      "net": 266.67,
+      "gross": 400,
+      "sales": 1,
+      "years": [
+        1934
+      ],
+      "ledgers": [
+        "book-ii"
+      ]
+    },
+    {
+      "title": "The Lonely House",
+      "net": 201.18,
+      "gross": 298,
+      "sales": 11,
+      "years": [
+        1928,
+        1929,
+        1930,
+        1931,
+        1938,
+        1940,
+        1951,
+        1957
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Night in the L Train",
+      "net": 136,
+      "gross": 204,
+      "sales": 10,
+      "years": [
+        1927,
+        1928,
+        1929,
+        1930,
+        1943,
+        1957
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Train & Bathers",
+      "net": 40.67,
+      "gross": 61,
+      "sales": 3,
+      "years": [
+        1928,
+        1929,
+        1961
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Girl on a Bridge",
+      "net": 36.67,
+      "gross": 55,
+      "sales": 3,
+      "years": [
+        1927,
+        1929,
+        1961
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "The Bull Fight",
+      "net": 36,
+      "gross": 54,
+      "sales": 3,
+      "years": [
+        1928,
+        1929,
+        1940
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Les Deux Pigeon",
+      "net": 32,
+      "gross": 48,
+      "sales": 2,
+      "years": [
+        1927,
+        1961
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Maine Coast",
+      "net": 28.67,
+      "gross": 43,
+      "sales": 2,
+      "years": [
+        1928,
+        1929
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "Cow & Rocks",
+      "net": 28.67,
+      "gross": 43,
+      "sales": 2,
+      "years": [
+        1928,
+        1961
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    },
+    {
+      "title": "House by a River",
+      "net": 24,
+      "gross": 36,
+      "sales": 2,
+      "years": [
+        1928,
+        1931
+      ],
+      "ledgers": [
+        "book-i"
+      ]
+    }
+  ],
+  "worksNote": "104 of 203 sale rows name a work at all — the rest carry a price on a line that names no title — so this is a floor that moves with every batch transcribed, and a work absent from it may simply be on a leaf nobody has read.",
+  "duplicates": {
+    "count": 1,
+    "note": "The same sale written into two volumes, counted once. Collapsed before every total on this page, not only before the ranking. Matched on title, price and the commission written, and only across different volumes: within one volume a repeated price is a repeated sale of an edition. Reported so the collapse can be argued with rather than trusted.",
+    "sample": [
+      {
+        "work": "Blackwell's Island",
+        "gross": 2500,
+        "net": 1666.67,
+        "kept": {
+          "ledger": "book-i",
+          "leaf": "57",
+          "ref": "18424",
+          "year": 1928
+        },
+        "dropped": {
+          "ledger": "book-ii",
+          "leaf": "35",
+          "ref": "16536",
+          "year": 1929
+        }
+      }
+    ]
+  },
   "entries": [
     {
       "year": 1928,
@@ -3848,10 +4250,83 @@
       "ref": "18104",
       "work": null,
       "section": "Leaf 63: Early Paris caractatures, and 1926"
+    },
+    {
+      "year": 1929,
+      "yearFrom": "date column",
+      "gross": 2500,
+      "rateWritten": "1/3",
+      "commission": 833.33,
+      "net": 1666.67,
+      "receiptWritten": null,
+      "receiptYear": 1929,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 3,
+      "leaf": "35",
+      "ref": "16536",
+      "work": "Blackwell's Island",
+      "section": "Leaf 35: Blackwell's Island",
+      "duplicateOf": {
+        "ledger": "book-i",
+        "leaf": "57",
+        "ref": "18424"
+      }
+    },
+    {
+      "year": 1932,
+      "yearFrom": "date column",
+      "gross": 600,
+      "rateWritten": "1/3",
+      "commission": 200,
+      "net": 400,
+      "receiptWritten": null,
+      "receiptYear": 1932,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 3,
+      "leaf": "36",
+      "ref": "17694",
+      "work": "Kelly - Jenness House",
+      "section": "Leaf 36: Watercolors 1932"
+    },
+    {
+      "year": 1934,
+      "yearFrom": "date column",
+      "gross": 400,
+      "rateWritten": "1/3",
+      "commission": 133.33,
+      "net": 266.67,
+      "receiptWritten": null,
+      "receiptYear": 1934,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 3,
+      "leaf": "42",
+      "ref": "17766",
+      "work": "Jenness House (III)",
+      "section": "Leaf 42: Watercolors 1934, continued"
+    },
+    {
+      "year": 1935,
+      "yearFrom": "date column",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": 1935,
+      "check": null,
+      "ledger": "book-ii",
+      "batch": 3,
+      "leaf": "43",
+      "ref": "18440",
+      "work": "Yawl Riding a Swell",
+      "section": "Leaf 43: Watercolors 1935"
     }
   ],
   "unparsed": {
-    "count": 115,
+    "count": 126,
     "sample": [
       {
         "reason": "the date column of this leaf dates the exhibition, not the sale — the sale has no date of its own, only the date its cheque cleared",

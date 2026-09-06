@@ -37,6 +37,16 @@ interface LifeEvent {
   what: string;
   source: string;
   key?: boolean;
+  /**
+   * The two events that bracket everything else. Declared in `life.json`, on
+   * the entry that already carries the source stating it, so the strip's two
+   * rules are drawn from a sourced fact rather than from two years typed into
+   * a component where nothing could check them.
+   *
+   * Not `bound`: this page already uses that word for a date bound — « ≤ 1924 »,
+   * no later than — and the two senses would be read as one.
+   */
+  life?: 'born' | 'died';
 }
 
 interface IndexedWork {
@@ -179,10 +189,15 @@ export function TimelinePage() {
       {/* The strip: one mark per year, so the shape of the record is visible
           before any of it is read. Height is the number of dated sheets. */}
       <section className="border-b border-ink-200 py-6">
-        <div className="flex items-end gap-px overflow-x-auto">
+        <div className="flex items-end gap-px overflow-x-auto pt-6">
           {Array.from({ length: span.hi - span.lo + 1 }, (_, i) => span.lo + i).map((y) => {
             const n = byYear.get(y)?.length ?? 0;
             const ev = LIFE.events.some((e) => e.year === y);
+            // The two rules are read off the life file, where the year carries
+            // the source that states it, rather than typed into this
+            // component. A date written into a chart is a date nobody can
+            // check against anything.
+            const life = LIFE.events.find((e) => e.year === y && e.life)?.life;
             return (
               <a
                 key={y}
@@ -191,6 +206,14 @@ export function TimelinePage() {
                 className="group relative flex w-2 shrink-0 flex-col justify-end"
                 style={{ height: 44 }}
               >
+                {life && (
+                  <>
+                    <span className="pointer-events-none absolute bottom-0 left-0 top-[-22px] w-px bg-ink-400" />
+                    <span className="pointer-events-none absolute left-1 top-[-22px] whitespace-nowrap text-[9.5px] leading-none text-ink-500">
+                      {life === 'born' ? `b. ${y}` : `d. ${y}`}
+                    </span>
+                  </>
+                )}
                 <span
                   className={`w-full rounded-sm ${n ? 'bg-brand-400' : 'bg-ink-200'}`}
                   style={{ height: Math.max(3, Math.min(34, n * 4)) }}
@@ -260,77 +283,100 @@ export function TimelinePage() {
                   );
                 })}
 
-                {madeThisYear.length > 0 && (
-                  <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
-                    <span className="text-[11px] uppercase tracking-wider text-ink-400">
-                      {madeThisYear.length} work{madeThisYear.length === 1 ? '' : 's'} the ledgers
-                      name, dated {y} by a museum
-                    </span>
-                    {madeThisYear.map((w) => {
-                      const at = w.namedIn[0];
-                      return (
-                        <a
-                          key={w.key}
-                          href={url(`/${at.ledger}/#${at.ledger}/${at.batch}/${at.ref}`)}
-                          title={`${w.medium ?? ''}${w.medium ? ' — ' : ''}named on ${w.namedIn
-                            .map((n) => `${n.ledger} leaf ${n.leaf}`)
-                            .join(', ')}`}
-                          className="rounded-full border border-brand-200 bg-brand-50 px-2 py-0.5 text-[11.5px] text-brand-800 transition hover:border-brand-400 hover:bg-brand-100"
+                {/* One spine for the three runs. They used to set the label
+                    inline with the chips, so each row began at a different x
+                    and the block read as a paragraph of pills; a fixed label
+                    column lines the chips up and lets the eye go down them.
+                    The year is in the gutter already, so the labels no longer
+                    repeat it. */}
+                {(madeThisYear.length > 0 || recorded.length > 0 || sheets.length > 0) && (
+                  <div className="mt-2 grid gap-x-4 gap-y-2.5 sm:grid-cols-[6.5rem_1fr]">
+                    {madeThisYear.length > 0 && (
+                      <>
+                        <div
+                          title={`Works the ledgers name that a museum dates to ${y}`}
+                          className="text-[11px] uppercase tracking-wider text-ink-400 sm:pt-1 sm:text-right"
                         >
-                          {w.title}
-                        </a>
-                      );
-                    })}
-                  </div>
-                )}
-
-                {recorded.length > 0 && (
-                  <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-                    <span className="text-[11px] uppercase tracking-wider text-ink-400">
-                      {recorded.length} transcribed {recorded.length === 1 ? 'leaf' : 'leaves'}{' '}
-                      with an entry dated {y}
-                    </span>
-                    {recorded.slice(0, 12).map((l) => (
-                      <a
-                        key={`${l.ledger}-${l.ref}`}
-                        href={url(`/${l.ledger}/#${l.ledger}/${l.batch}/${l.ref}`)}
-                        title={`${l.rows} row${l.rows === 1 ? '' : 's'} dated ${y} — opens the leaf`}
-                        className="rounded-full border border-relu-200 bg-relu-50 px-2 py-0.5 text-[11.5px] text-relu-700 transition hover:border-relu-400"
-                      >
-                        {LEDGERS.find((g) => g.id === l.ledger)?.short} leaf {l.leaf}
-                      </a>
-                    ))}
-                    {recorded.length > 12 && (
-                      <span className="text-[11.5px] text-ink-400">
-                        and {recorded.length - 12} more
-                      </span>
+                          {madeThisYear.length} work{madeThisYear.length === 1 ? '' : 's'}
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {madeThisYear.map((w) => {
+                            const at = w.namedIn[0];
+                            return (
+                              <a
+                                key={w.key}
+                                href={url(`/${at.ledger}/#${at.ledger}/${at.batch}/${at.ref}`)}
+                                title={`${w.medium ?? ''}${w.medium ? ' — ' : ''}named on ${w.namedIn
+                                  .map((n) => `${n.ledger} leaf ${n.leaf}`)
+                                  .join(', ')}`}
+                                className="rounded-full border border-brand-200 bg-brand-50 px-2 py-0.5 text-[11.5px] text-brand-800 transition hover:border-brand-400 hover:bg-brand-100"
+                              >
+                                {w.title}
+                              </a>
+                            );
+                          })}
+                        </div>
+                      </>
                     )}
-                  </div>
-                )}
 
-                {sheets.length > 0 && (
-                  <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-                    <span className="text-[11px] uppercase tracking-wider text-ink-400">
-                      {sheets.length} sheet{sheets.length === 1 ? '' : 's'} dated to {y}
-                    </span>
-                    {sheets.slice(0, 10).map((s) => {
-                      const ledger = LEDGERS.find((l) => l.id === s.ledger);
-                      return (
-                        <a
-                          key={s.ref}
-                          href={url(`/${s.ledger}/#${s.ledger}/${batchOfSeq(s.seq)}/${s.ref}`)}
-                          title={s.descriptor}
-                          className="rounded-full border border-ink-200 px-2 py-0.5 text-[11.5px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
+                    {recorded.length > 0 && (
+                      <>
+                        <div
+                          title={`Leaves somebody has transcribed that carry an entry Jo Hopper dated ${y}`}
+                          className="text-[11px] uppercase tracking-wider text-ink-400 sm:pt-1 sm:text-right"
                         >
-                          {ledger?.short}
-                          {s.leaf !== null && ` leaf ${s.leaf}`}
-                        </a>
-                      );
-                    })}
-                    {sheets.length > 10 && (
-                      <span className="text-[11.5px] text-ink-400">
-                        and {sheets.length - 10} more
-                      </span>
+                          {recorded.length} read
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {recorded.slice(0, 12).map((l) => (
+                            <a
+                              key={`${l.ledger}-${l.ref}`}
+                              href={url(`/${l.ledger}/#${l.ledger}/${l.batch}/${l.ref}`)}
+                              title={`${l.rows} row${l.rows === 1 ? '' : 's'} dated ${y} — opens the leaf`}
+                              className="rounded-full border border-relu-200 bg-relu-50 px-2 py-0.5 text-[11.5px] text-relu-700 transition hover:border-relu-400"
+                            >
+                              {LEDGERS.find((g) => g.id === l.ledger)?.short} leaf {l.leaf}
+                            </a>
+                          ))}
+                          {recorded.length > 12 && (
+                            <span className="self-center text-[11.5px] text-ink-400">
+                              and {recorded.length - 12} more
+                            </span>
+                          )}
+                        </div>
+                      </>
+                    )}
+
+                    {sheets.length > 0 && (
+                      <>
+                        <div
+                          title={`Sheets the Whitney's own descriptor dates to ${y}, with nobody here having read them`}
+                          className="text-[11px] uppercase tracking-wider text-ink-400 sm:pt-1 sm:text-right"
+                        >
+                          {sheets.length} catalogued
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {sheets.slice(0, 10).map((s) => {
+                            const ledger = LEDGERS.find((l) => l.id === s.ledger);
+                            return (
+                              <a
+                                key={s.ref}
+                                href={url(`/${s.ledger}/#${s.ledger}/${batchOfSeq(s.seq)}/${s.ref}`)}
+                                title={s.descriptor}
+                                className="rounded-full border border-ink-200 px-2 py-0.5 text-[11.5px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
+                              >
+                                {ledger?.short}
+                                {s.leaf !== null && ` leaf ${s.leaf}`}
+                              </a>
+                            );
+                          })}
+                          {sheets.length > 10 && (
+                            <span className="self-center text-[11.5px] text-ink-400">
+                              and {sheets.length - 10} more
+                            </span>
+                          )}
+                        </div>
+                      </>
                     )}
                   </div>
                 )}
@@ -338,6 +384,68 @@ export function TimelinePage() {
             </div>
           );
         })}
+      </section>
+
+      {/* Why the strip stops at 1995, which is otherwise the one year on it
+          that has nothing to do with either Hopper. */}
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">Catalogue raisonné</h2>
+        <p className="mt-2 max-w-3xl text-[15px] leading-relaxed text-ink-700">
+          The strip above ends in 1995 and not at either death, because that is the year the
+          Whitney published Hopper’s catalogue raisonné — “a project twenty years in the
+          making,” by the museum’s own account. It is the reason these six books matter beyond
+          themselves: the standard listing of what Edward Hopper made was assembled while Jo
+          Hopper’s own listing sat in the archive, and the research behind it became the Edward
+          and Josephine Hopper Research Collection, “compiled by Whitney curators while preparing
+          exhibitions of Hopper’s work and the Hopper Catalogue Raisonné.”
+        </p>
+        <p className="prose-note mt-3 max-w-3xl">
+          Two things about that are worth keeping in view while reading a leaf.
+        </p>
+        <dl className="mt-3 max-w-3xl space-y-3 text-[14px] leading-relaxed text-ink-700">
+          <div>
+            <dt className="font-medium text-ink-900">
+              These six did not come with the bequest.
+            </dt>
+            <dd className="mt-0.5 text-ink-700">
+              Nearly three thousand items reached the Whitney when Jo Hopper died in 1968. The
+              ledgers are not credited to that: four of the six read “Gift of Lloyd Goodrich” —
+              the friend who organised the 1964 retrospective — and two were purchased, one with
+              funds from an anonymous donor. Those credit lines are the museum’s and are printed
+              unchanged beside each volume. <em>When</em> the six were accessioned is not
+              something these pages state, and their numbers are not read here as a date.
+            </dd>
+          </div>
+          <div>
+            <dt className="font-medium text-ink-900">The compiler is not named on these pages.</dt>
+            <dd className="mt-0.5 text-ink-700">
+              The Whitney’s account says when the catalogue raisonné appeared and how long it
+              took, and does not say who compiled it. The gap is left standing rather than filled
+              in from elsewhere, on the same rule as every date above: this page states what a
+              named source states, and a name supplied from memory would be the one thing it
+              refuses. Worth noticing, on a site whose whole method is marking which hand wrote
+              what.
+            </dd>
+          </div>
+        </dl>
+        <p className="prose-note mt-4 max-w-3xl">
+          The Whitney has since published images of all six ledger books — “documenting his
+          career” — which is what this site reads.{' '}
+          {['whitney-hoppers', 'whitney-resources'].map((k, i) => (
+            <span key={k}>
+              {i > 0 && ' · '}
+              <a
+                href={LIFE.sources[k].url}
+                target="_blank"
+                rel="noreferrer"
+                title={LIFE.sources[k].name}
+                className="whitespace-nowrap text-[11.5px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+              >
+                source ↗
+              </a>
+            </span>
+          ))}
+        </p>
       </section>
 
       {/* The index of works, which is a different list from « what these museums

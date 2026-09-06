@@ -47,7 +47,7 @@
  */
 import { writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { readTranscripts } from './lib/ledger.mjs';
+import { readTranscripts, workKey } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 
@@ -285,10 +285,71 @@ for (const file of files) {
   }
 }
 
+/* ------------------------------------------ the same sale, twice */
+
+/**
+ * Sales recorded in two volumes, collapsed to one.
+ *
+ * Book II is the first volume to make this necessary and every volume after it
+ * will make it worse: the Hoppers kept more than one book, and a work that
+ * mattered got written into both. Blackwell's Island is the case that found
+ * it — Book I leaf 57 and Book II leaf 35 record the same 2500 less a third to
+ * Russel Allen, and Jo Hopper says so herself on the second leaf, « See Book I
+ * p. 57 » and « This listed in Book I ».
+ *
+ * Left alone that sale would rank first in any table of works by revenue, at
+ * exactly twice what it fetched. **An invented figure is a transaction that
+ * did not happen**, and one arrived at by adding is no better than one arrived
+ * at by misreading a digit.
+ *
+ * The rule is deliberately narrow: same work title, same gross, same
+ * commission written, recorded in *different* volumes. Two volumes agreeing on
+ * a title and a price to the dollar are recording one event; within a volume
+ * nothing is collapsed, because an etching edition really does sell at
+ * twenty-five dollars over and over on one leaf. Every collapse is reported in
+ * `duplicates` so it can be argued with, and the year kept is the earlier of
+ * the two — which is the one that says when the work left the studio.
+ */
+const dupKey = (e) => `${workKey(e.work ?? '')}|${e.gross}|${e.rateWritten ?? ''}`;
+const duplicates = [];
+const deduped = [];
+{
+  const byKey = new Map();
+  for (const e of entries) {
+    if (!e.work) {
+      deduped.push(e);
+      continue;
+    }
+    const k = dupKey(e);
+    const prior = byKey.get(k);
+    if (prior && prior.ledger !== e.ledger) {
+      const [keep, drop] = prior.year <= e.year ? [prior, e] : [e, prior];
+      duplicates.push({
+        work: e.work,
+        gross: e.gross,
+        net: e.net,
+        kept: { ledger: keep.ledger, leaf: keep.leaf, ref: keep.ref, year: keep.year },
+        dropped: { ledger: drop.ledger, leaf: drop.leaf, ref: drop.ref, year: drop.year },
+      });
+      // `entries` keeps every row — nothing is dropped from the record — but
+      // the one not counted says so, so a reader of the JSON can see why the
+      // rows and the totals differ.
+      drop.duplicateOf = { ledger: keep.ledger, leaf: keep.leaf, ref: keep.ref };
+      if (keep !== prior) {
+        deduped[deduped.indexOf(prior)] = keep;
+        byKey.set(k, keep);
+      }
+      continue;
+    }
+    if (!prior) byKey.set(k, e);
+    deduped.push(e);
+  }
+}
+
 /* ------------------------------------------------------------ tally */
 
 const byYear = new Map();
-for (const e of entries) {
+for (const e of deduped) {
   if (!byYear.has(e.year))
     byYear.set(e.year, { year: e.year, sales: 0, gross: 0, commission: 0, net: 0, disagreements: 0 });
   const y = byYear.get(e.year);
@@ -318,7 +379,7 @@ for (const e of entries) {
  */
 const cash = new Map();
 let neverReceived = 0;
-for (const e of entries) {
+for (const e of deduped) {
   if (e.receiptYear === null) {
     neverReceived += e.net;
     continue;
@@ -352,7 +413,55 @@ const receivable = allYears.map((year) => {
   };
 });
 
-const checked = entries.filter((e) => e.check !== null);
+
+/**
+ * Works by what they brought in, net of commission.
+ *
+ * Two things have to be said on the page beside it or the ranking lies.
+ *
+ * **It ranks titles, not objects.** The Cat Boat is one etching plate sold
+ * twenty-one times at twenty-five dollars; Tables for Ladies is one canvas
+ * sold once for four and a half thousand. Both are one row here, and `sales`
+ * is the column that tells them apart — a reader who ignores it will read an
+ * edition as a masterpiece and the other way round.
+ *
+ * **It is a floor and it moves.** Half the sale rows carry no work at all,
+ * because the leaf puts the price on a line that names no title, and the
+ * archive is a seventh read. Every batch transcribed changes this table, which
+ * is the point of publishing it rather than a reason not to.
+ */
+const byWork = new Map();
+for (const e of deduped) {
+  if (!e.work || !e.net) continue;
+  const k = workKey(e.work);
+  const w = byWork.get(k) ?? {
+    title: e.work,
+    net: 0,
+    gross: 0,
+    sales: 0,
+    years: [],
+    ledgers: new Set(),
+  };
+  w.net += e.net;
+  w.gross += e.gross;
+  w.sales += 1;
+  if (e.year && !w.years.includes(e.year)) w.years.push(e.year);
+  w.ledgers.add(e.ledger);
+  byWork.set(k, w);
+}
+const works = [...byWork.values()]
+  .map((w) => ({
+    ...w,
+    net: Number(w.net.toFixed(2)),
+    gross: Number(w.gross.toFixed(2)),
+    years: w.years.sort((a, b) => a - b),
+    ledgers: [...w.ledgers].sort(),
+  }))
+  .sort((a, b) => b.net - a.net);
+
+const attributed = deduped.filter((e) => e.work && e.net).length;
+
+const checked = deduped.filter((e) => e.check !== null);
 const disagree = checked.filter((e) => e.check === 'disagrees');
 
 const out = {
@@ -375,8 +484,8 @@ const out = {
     batches: files.length,
     sheets: files.reduce((n, f) => n + f.sheets.length, 0),
     note:
-      'Book I only, and only the batches listed. The other five volumes, and the rest of Book I, ' +
-      'are not read yet and contribute nothing.',
+      'Only the volumes and batches listed. Everything unread contributes nothing, and every ' +
+      'figure here moves as batches land.',
   },
   arithmetic: {
     checkable: checked.length,
@@ -396,6 +505,24 @@ const out = {
     Number(neverReceived.toFixed(2)) +
     ' of net never has a receipt date in the transcribed leaves, which is a statement about how ' +
     'much has been read and not about whether Hopper was paid.',
+  works,
+  worksNote:
+    attributed +
+    ' of ' +
+    deduped.length +
+    ' sale rows name a work at all — the rest carry a price on a line that names no title — so ' +
+    'this is a floor that moves with every batch transcribed, and a work absent from it may ' +
+    'simply be on a leaf nobody has read.',
+  duplicates: {
+    count: duplicates.length,
+    note:
+      'The same sale written into two volumes, counted once. Collapsed before every total on ' +
+      'this page, not only before the ranking. ' +
+      'Matched on title, price and the commission written, and only across different volumes: ' +
+      'within one volume a repeated price is a repeated sale of an edition. Reported so the ' +
+      'collapse can be argued with rather than trusted.',
+    sample: duplicates,
+  },
   entries,
   unparsed: {
     count: unparsed.length,
@@ -408,9 +535,10 @@ writeFileSync(resolve(root, 'src/content/accounts.json'), JSON.stringify(out, nu
 const tGross = years.reduce((n, y) => n + y.gross, 0);
 const tNet = years.reduce((n, y) => n + y.net, 0);
 process.stdout.write(
-  `accounts: ${entries.length} sales across ${years.length} years ` +
+  `accounts: ${deduped.length} sales counted of ${entries.length} rows, across ${years.length} years ` +
     `(${years[0]?.year}–${years[years.length - 1]?.year})\n` +
     `          gross ${tGross.toFixed(2)}, commission ${(tGross - tNet).toFixed(2)}, net ${tNet.toFixed(2)}\n` +
     `          arithmetic checkable on ${checked.length}, ${disagree.length} disagree\n` +
+    `          ${works.length} work(s) named, ${duplicates.length} cross-volume duplicate(s) collapsed\n` +
     `          ${unparsed.length} sale-bearing row(s) with no year, reported not dropped\n`,
 );

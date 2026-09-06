@@ -16,6 +16,10 @@
     "whitney-jo": {
       "name": "Whitney Museum of American Art, Josephine Nivison Hopper",
       "url": "https://whitney.org/artists/1911"
+    },
+    "whitney-resources": {
+      "name": "Whitney Museum of American Art, “Edward and Josephine Hopper Resources”",
+      "url": "https://whitney.org/research/edward-and-josephine-hopper-resources"
     }
   },
   "events": [
@@ -29,7 +33,8 @@
       "date": "22 July",
       "what": "Born in Nyack, New York, thirty miles up the Hudson from Manhattan.",
       "source": "whitney-guide",
-      "key": true
+      "key": true,
+      "life": "born"
     },
     {
       "year": 1899,
@@ -147,7 +152,7 @@
     },
     {
       "year": 1964,
-      "what": "A second Whitney retrospective in his lifetime, organised by Lloyd Goodrich — a lifelong friend, and the donor of three of these six ledgers.",
+      "what": "A second Whitney retrospective in his lifetime, organised by Lloyd Goodrich — a lifelong friend, and the donor of four of these six ledgers.",
       "source": "whitney-hoppers",
       "key": true
     },
@@ -161,7 +166,8 @@
       "date": "May",
       "what": "Dies in the studio at 3 Washington Square North. Book IV’s final entry is dated 23 March.",
       "source": "whitney-guide",
-      "key": true
+      "key": true,
+      "life": "died"
     },
     {
       "year": 1968,
