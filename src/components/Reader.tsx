@@ -69,7 +69,15 @@ export function useReader() {
       // because two photographs of a hinged clipping carry the same leaf.
       const h = /^#([\w-]+)\/(\d+)(?:\/(\d+))?$/.exec(location.hash);
       setOpen(h ? { ledger: h[1], batch: Number(h[2]) } : null);
-      setGoto(h && h[3] ? Number(h[3]) : undefined);
+      const ref = h && h[3] ? Number(h[3]) : undefined;
+      setGoto(ref);
+      // Also the sheet, and this is the half that was missing. `goto` drives
+      // the transcript, which scrolls itself to the sheet and reports back —
+      // but a batch with no transcription reports nothing, so the facsimile
+      // pane fell back to the first sheet of the batch. Book I's leaves 66 to
+      // 77 are in batches nobody has transcribed, and every link to one of them
+      // opened the book eleven leaves early.
+      setSheet(ref);
     };
     readHash();
     addEventListener('hashchange', readHash);
@@ -79,7 +87,7 @@ export function useReader() {
   const goToBatch = useCallback((ledger: string, batch: number, ref?: number) => {
     history.replaceState(null, '', `#${ledger}/${batch}${ref ? `/${ref}` : ''}`);
     setOpen({ ledger, batch });
-    setSheet(undefined);
+    setSheet(ref);
     setGoto(ref);
   }, []);
 

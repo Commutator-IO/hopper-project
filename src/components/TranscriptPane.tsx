@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { entryOf, transcriptUrl } from '../lib/batches.ts';
 import type { Manifest } from '../lib/types.ts';
 
@@ -57,10 +57,22 @@ export function TranscriptPane({
     return () => removeEventListener('message', onMessage);
   }, [onSheet]);
 
+  // Posting on `goto` alone is not enough, and the gap only shows when moving
+  // between batches without a page load: the frame's src changes, the message
+  // is posted at a document that is still unloading, and nothing scrolls. The
+  // ref is kept so the load handler below can post it again once the new
+  // document is actually there.
+  const wanted = useRef<number | undefined>(undefined);
   useEffect(() => {
+    wanted.current = goto;
     if (!goto) return;
     frame.current?.contentWindow?.postMessage({ hopperGoto: goto }, location.origin);
   }, [goto]);
+
+  const onLoad = useCallback(() => {
+    if (wanted.current === undefined) return;
+    frame.current?.contentWindow?.postMessage({ hopperGoto: wanted.current }, location.origin);
+  }, []);
 
   if (!has) {
     // The exact command, not the name of the skill. The ledger id is the same
@@ -97,6 +109,7 @@ export function TranscriptPane({
       ref={frame}
       key={src}
       src={src}
+      onLoad={onLoad}
       title="Transcript"
       className="h-full w-full border-0 bg-white"
     />
