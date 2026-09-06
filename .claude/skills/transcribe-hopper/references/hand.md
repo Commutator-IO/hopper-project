@@ -836,3 +836,128 @@ under « corner » in the leaf 1 index, the word before « sword » on leaf 4, t
 word before « vase » on leaf 5 — scribbled over rather than struck through, and
 tiling will not recover them. Six of the rest are under the leaf 7 bulletin.
 Nothing else in the batch is pasted down.
+
+---
+
+## Ten leaves with no money on them at all
+
+*(Book I, batch 9)* Leaves 84 to 93 are the book's own index apparatus, and
+they are the first stretch of Book I that the accounts cannot use: « Current
+Exhibitions » (84–89), « Reviews, Reproductions » (90–91), « Photographs »
+(92–93). Not one price, commission or receipt in ten leaves. **A title on these
+leaves is cited, not recorded**, so no `\work{}` opens anywhere in the batch —
+« Chop Suey » on leaf 88 names a thing that travelled to St. Louis, and opening
+its block there would put the same picture's heading on twenty leaves.
+
+Almost nothing is ruled into columns. She writes running lines with a date at
+the left and **braces the titles belonging to one exhibition with a large
+hand-drawn brace spanning three or four lines**; give the brace as `{` at the
+head of each braced line, where she drew it.
+
+## The red pencil changes job
+
+*(batch 9)* Batches 2 to 8 found it ringing a figure or underlining a total. On
+leaves 84 to 91 it underlines **the name of every exhibiting institution and
+nothing else** — a finding device laid over the list, added after the ink. It
+is not transcribed. Keep `\emph{}` for the ink underlines she rules under her
+own headings; a reader must be able to tell the two apart.
+
+## A first column is not always a date column
+
+*(batch 9)* Leaf 92 lists William McKillop's negatives by number, so its ruled
+first column runs 10, 12, 11, 19, 20., 21, 22, 17, 29, 31. `yearInCell`'s
+two-digit branch read those as 1910, 1912, 1911 … and the works index published
+five of them as years of activity. `scripts/lib/ledger.mjs` now decides per
+table whether column 1 is dates at all (`isDateColumn`) and only then allows
+the two-digit reading. **Before setting a `ledgertable` whose first column is
+not dates, check what the derived indexes make of it** — `npm run works` and
+`npm run accounts`, then `git diff src/content/`. A table is an assertion about
+what its columns mean, and the parsers believe it.
+
+## The printed clipping is the best evidence in the volume
+
+*(batch 9)* The Rehn January 1929 checklist on leaf 87 lies clear of the
+writing, and it prints in type four names she abbreviates in ink: « Mr. John T.
+Spaulding » against her « J. N. Spaulding » (leaf 84) and « J. N. Spalding »
+(leaf 85); « Dr. & Mrs. H. H. M. Lyle » against the Lisle/Lyle pair of leaf 66;
+« Mr. & Mrs. Lesley G. Sheafer » into the standing Sheaffer tangle; « Marty
+Welch's House » and « Cape Ann Pasture » against leaf 92's « Marty Welsh's »
+and « Cape Anne Pasture ». **A clipping dates and spells itself, and settling a
+name against one is evidence from inside the archive rather than from outside
+it.** All spellings still stay as each hand writes them.
+
+The Rehn February 1927 checklist on leaf 85 is the other kind: pasted flat, not
+hinged, over a column of lenders, with no second photograph anywhere in the
+Whitney's sequence. Eight fragments show past its edge at the fore-edge and are
+given as far as they go.
+
+## A title settled by her own later hand
+
+*(batch 9)* Leaf 93 writes **`2 on the Aisle`** in heavy dark ink over an
+erasure — the same title leaves 55 and 86 give as « Two on the Isle », and the
+pencil « Aisle » hand.md has carried since batch 5 in ink at last. All three
+stay as written.
+
+## Names that change spelling within one leaf
+
+*(batch 9)* The photographs leaves do it twice over, a few lines apart each
+time, and neither form is regularised:
+
+- **`Peter Julie`** at the head of leaf 92 against **`Peter Juley`** twice at
+  its foot and again at the head of leaf 93.
+- **`Soichi Sunami`** (leaf 92) against **`Suichi Sunami`** (leaf 93).
+- **`Berenice Abbott`** then **`Berenice Abbot`**, three lines apart on leaf 92.
+
+## More spellings, all as written
+
+*(batch 9)*
+
+- **`Pittsburg`** without the h *(leaves 86, 87, 89)* against **`Pittsburgh`**
+  *(leaves 88, 89)* — leaf 89 has both, five lines apart.
+- **`Sweeden`** *(leaf 87)*; **`Bibliotèque Nationale`** and **`Exposition de
+  la Gravure Moderne Americaine`** *(leaf 86)*; **`Britanica`** *(leaf 91)*;
+  **`differentes cuidades`** *(leaf 93)*.
+- **`Ecluse de le Monnaie`**, **`Quai de Grands Augustins`**, **`La
+  Pénitents`** *(leaf 84)* — her French is wrong in a consistent way and the
+  wrongness is how an entry is found.
+- **`Sortillo Mansion`**, **`Sortillo Rooftops`** against **`Palms of
+  Sortilla`** and **`Palms at Sortilla`** *(leaves 90, 91)*, for Saltillo.
+- **`Alice Rousillier`** *(leaf 88)*, the Arts Club of Chicago's exhibition
+  chairman, and **`Art Club of Chicago`** for the Arts Club on the same line.
+- **`Cape Anne Pasture`**, **`Cape Anne Granite`** *(leaf 92)* — confirming
+  batches 4 and 6. **`Blackwells Island`** *(leaf 86)* against
+  **`Blackwell's Island`** *(leaf 92)*.
+- **`Carlyle Burroughs`** *(leaf 93)* for the Herald Tribune's Carlyle Burrows.
+- **`Rita Dahl Wolfe`** *(leaf 92)*, for the photographer Louise Dahl-Wolfe.
+
+## Readings that would not settle
+
+*(batch 9)* The batch's `\uncertain{}` are mostly names, and two are worth
+carrying forward:
+
+- **`Bootleggers`** *(leaf 84, twice)* — the medial letter is written the same
+  way both times and supports « Bort » as readily as « Boot ». Offered with the
+  doubt marked rather than normalised to the painting's known title.
+- **`(\ill{}ight houses)`** *(leaf 86)* — the initial letter will support
+  « eight », « Light » or « Sight » equally, so **no letter is offered at all**.
+  A single-letter `\ill{}` inside a word is the right answer where choosing
+  would be choosing on sense rather than on the stroke.
+- **`Cranesomething`** *(leaf 89)* — she appears to have written her own
+  placeholder for a name she could not recall, for what is plainly Cranbrook.
+  Transcribe the placeholder; it is what is on the leaf.
+- **`Rousillier`**, **`Schutzay`**, **`Carreedes`**, **`Rabbitfoot`**,
+  **`Josphine`**, **`Prg. Hall`**, **`(10 Sb. 20.)`**.
+
+**A reading can be recovered by looking again.** « Sport in Amer. Art » at the
+foot of leaf 90 was read « Short » at whole-sheet size and marked `\uncertain{}`
+with an `\ill{}` inside it; a 5× crop of the same pixels settled all of it. The
+descender that distinguishes p from h is a few pixels at the Whitney's `pre`
+size. Zoom before reaching for `\ill{}` on a word that is not under paper.
+
+## `\\` at the end of a line, then `[` at the start of the next
+
+*(batch 9)* LaTeX reads that as `\\[⟨length⟩]` and dies with « Paragraph ended
+before \@newline was complete », naming a line some way past the real one. It
+happens whenever a leaf's grouping mark is transcribed as a square bracket at
+the head of a line. `npm run render` does not see it and `npm run pdf` does, so
+**build the PDF before believing a batch is finished.**
