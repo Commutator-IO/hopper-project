@@ -108,6 +108,72 @@ function receiptYearOf(cell) {
 
 const isDitto = (cell) => /^["'”″\s.]*$/.test(cell) && /["'”″]/.test(cell);
 
+/**
+ * The year a cell states when the cell states nothing but a date.
+ *
+ * Book I rules its leaves and puts the date first. Book II rules no headings
+ * at all: a leaf is one work, and its one sale line runs buyer, price and the
+ * cut, the cheque, and then the date — « Mrs. Geo. H. Davis … | 1200 - 1/3 - |
+ * 800. | Feb. 9, 1937. » So the year is in the last column and never in the
+ * first, and reading it takes a test narrow enough not to become the
+ * any-column search that the loop below refuses.
+ *
+ * The test is that the cell is a date and *only* a date: a month, or a day, at
+ * the head of it — behind « Rec'd » or « Check » where she wrote one — and the
+ * year closing it. Book I's own unruled rows fail it, which is the point.
+ * « 1250. Dec. 29, 37. » on leaf 58 is a cheque and a date sharing a cell and
+ * « Mrs. Betty Beal 30 - 1/3 = 20. Feb. 14, 57. » on leaf 11 is an entire
+ * sale; in both the year is the day the money came, not the day the work went
+ * out, and dating a sale by it would be the same mistake in a new column.
+ *
+ * The year is taken from the pattern rather than from `yearOf`, because what
+ * is wanted is the year that *closes* the cell: « 6, 20, '45. » on Book II
+ * leaf 43 is the twentieth of June 1945, and `yearOf` reading left to right
+ * would find « , 20 » first and call it 1920.
+ */
+const DATE_ONLY =
+  /^(?:(?:rec['’]?d|check|cheque)\.?\s*)?(?:(?:jan|feb|mar|apr|ap|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?|[0-3]?\d\s*[.,])\s*[0-3]?\d\s*["”″']{0,2}\s*[.,]?\s*['’]?((?:1[89]|20)?\d\d)\s*[.,\-–—]*$/i;
+
+function dateOnlyYearOf(cell) {
+  const m = DATE_ONLY.exec(cell.trim());
+  if (!m) return null;
+  const n = Number(m[1]);
+  const y = n < 100 ? 1900 + n : n;
+  return y >= 1900 && y <= 1970 ? y : null;
+}
+
+/**
+ * Which column of a row dates the sale.
+ *
+ * The date column is the first one, because that is where the ledgers rule it,
+ * and the only leaves that move it are the ones that rule nothing. Three
+ * conditions, and all three are needed:
+ *
+ * **The leaf rules no headings.** Where a heading exists it says what the
+ * columns are, and it is what the two rules above already answer to. Many of
+ * them name the last column outright — « when rec'd. », « Payment rec'd Date »,
+ * « Date of check rec'd » — and that column is a receipt and not a sale, so a
+ * ruled leaf is read exactly as it is ruled.
+ *
+ * **The first column dates nothing.** Where it carries a year, or a ditto
+ * standing for the year above, it is the date column and there is nothing to
+ * decide.
+ *
+ * **The last column is a date and nothing else**, by the test above.
+ *
+ * Together these reach Book II's leaves and no others. Six of the sale rows
+ * Book I leaves undated stand on unruled leaves, and all six fail the third
+ * condition — which is why the condition is worth its length.
+ */
+function dateColumnOf(row) {
+  const cells = row.plain;
+  if (cells.length < 2) return 0;
+  if ((row.header ?? []).join('').trim()) return 0;
+  const first = cells[0] ?? '';
+  if (yearOf(first) !== null || isDitto(first)) return 0;
+  return dateOnlyYearOf(cells[cells.length - 1] ?? '') !== null ? cells.length - 1 : 0;
+}
+
 /* ------------------------------------------------------------ money */
 
 /**
@@ -167,9 +233,10 @@ for (const file of files) {
       const joined = cells.join(' ');
       const sales = salesIn(joined);
 
-      const dateCell = cells[0] ?? '';
-      let year = yearOf(dateCell);
-      let yearFrom = 'date column';
+      const dateCol = dateColumnOf(row);
+      const dateCell = cells[dateCol] ?? '';
+      let year = dateCol === 0 ? yearOf(dateCell) : dateOnlyYearOf(dateCell);
+      let yearFrom = dateCol === 0 ? 'date column' : 'date column, last in the row';
       if (year === null && isDitto(dateCell) && lastYear !== null) {
         year = lastYear;
         yearFrom = 'ditto, from the row above';
@@ -248,15 +315,21 @@ for (const file of files) {
         continue;
       }
 
-      const receipt = receiptIn(cells[cells.length - 1] ?? '');
+      // The cell the sale's own date came from is never read as a receipt: that
+      // is what makes this a receivable rather than a restatement of the sale,
+      // and it holds wherever the date column turns out to be. Taking it out
+      // leaves Book II's rows ending on the figure she wrote for the cheque —
+      // « 1200 - 1/3 - | 800. » — which is what the check below is for.
+      const money = cells.filter((_, i) => i !== dateCol);
+      const receipt = receiptIn(money[money.length - 1] ?? '');
       // When the money came. She writes it either in its own « When rec'd. »
       // column or, on the leaves that rule fewer columns, in the same cell as
       // the amount — « 3000 \quad June 3, 1931. » Both are looked at, and the
       // sale's own date column never is: that is what makes this a receivable
       // rather than a restatement of the sale.
       let receiptYear =
-        receiptYearOf(cells[cells.length - 1] ?? '') ??
-        (cells.length > 2 ? receiptYearOf(cells[cells.length - 2] ?? '') : null);
+        receiptYearOf(money[money.length - 1] ?? '') ??
+        (money.length > 1 ? receiptYearOf(money[money.length - 2] ?? '') : null);
       // A cheque cannot clear before the work went out. Where it appears to,
       // the year found is something else — a plate's date, a reproduction —
       // and the receipt is dropped rather than allowed to shorten a debt.
@@ -478,7 +551,11 @@ const out = {
     'terms | Received » — and one line carries an impression\'s whole history, so a sale in it ' +
     'has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with ' +
     'their receipt year rather than dated wrongly, and a cash-basis account could be built from ' +
-    'them without re-reading a leaf.',
+    'them without re-reading a leaf. Book II rules no columns at all, and it needs the other ' +
+    'half of the same rule: a leaf there is one work with one sale line — buyer, price and the ' +
+    'cut, the cheque, the date — so the date is in the last column and never in the first. It ' +
+    'is read there only on a leaf that rules nothing, only where the first column dates nothing, ' +
+    'and only where the last cell holds a date and nothing besides.',
   coverage: {
     ledgersTranscribed: [...new Set(files.map((f) => f.ledger))],
     batches: files.length,
@@ -503,8 +580,10 @@ const out = {
     'sale is accrued in the year of the leaf\'s date column and discharged in the year its ' +
     'receipt names. ' +
     Number(neverReceived.toFixed(2)) +
-    ' of net never has a receipt date in the transcribed leaves, which is a statement about how ' +
-    'much has been read and not about whether Hopper was paid.',
+    ' of net has no receipt date to discharge it. Most of that is Book II, whose leaves write ' +
+    'one date to a sale and do not separate the day the work went out from the day the cheque ' +
+    'came: the one date is booked at the sale, and no payment is invented out of it. The rest ' +
+    'is a statement about how much has been read and not about whether Hopper was paid.',
   works,
   worksNote:
     attributed +
