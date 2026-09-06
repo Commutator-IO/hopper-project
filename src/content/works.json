@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T07:32:22.752Z",
+  "generated": "2026-09-06T09:18:02.917Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -850,6 +850,26 @@
       ]
     },
     {
+      "key": "5 a m",
+      "title": "5 A.M",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "23",
+          "ref": "18134"
+        }
+      ]
+    },
+    {
       "key": "7 ave shops",
       "title": "7\" Ave. Shops",
       "museumTitle": null,
@@ -1080,6 +1100,46 @@
       ]
     },
     {
+      "key": "cape cod afternoon",
+      "title": "Cape Cod Afternoon",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "17",
+          "ref": "16656"
+        }
+      ]
+    },
+    {
+      "key": "cape cod evening",
+      "title": "Cape Cod Evening*",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "31",
+          "ref": "16755"
+        }
+      ]
+    },
+    {
       "key": "capron house",
       "title": "Capron House",
       "museumTitle": null,
@@ -1176,6 +1236,26 @@
           "batch": 3,
           "leaf": "39",
           "ref": "17049"
+        }
+      ]
+    },
+    {
+      "key": "compartment c",
+      "title": "Compartment C",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "25",
+          "ref": "18545"
         }
       ]
     },
@@ -1354,6 +1434,26 @@
           "batch": 5,
           "leaf": "55",
           "ref": "17525"
+        }
+      ]
+    },
+    {
+      "key": "french 6 day rider",
+      "title": "French 6 day Rider",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "21",
+          "ref": "18169"
         }
       ]
     },
@@ -1797,6 +1897,26 @@
       ]
     },
     {
+      "key": "jo painting",
+      "title": "Jo Painting",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "13",
+          "ref": "16839"
+        }
+      ]
+    },
+    {
       "key": "kelly jenness house",
       "title": "Kelly - Jenness House",
       "museumTitle": null,
@@ -1988,6 +2108,46 @@
           "batch": 3,
           "leaf": "37",
           "ref": "18172"
+        }
+      ]
+    },
+    {
+      "key": "men women horses",
+      "title": "Men, Women + Horses",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "29",
+          "ref": "16933"
+        }
+      ]
+    },
+    {
+      "key": "n y movie house",
+      "title": "N.Y. Movie House",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "27",
+          "ref": "16621"
         }
       ]
     },
@@ -2349,6 +2509,26 @@
       ]
     },
     {
+      "key": "sheridan theatre",
+      "title": "Sheridan Theatre",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "19",
+          "ref": "17977"
+        }
+      ]
+    },
+    {
       "key": "south truro church",
       "title": "South Truro Church",
       "museumTitle": null,
@@ -2528,6 +2708,26 @@
       ]
     },
     {
+      "key": "circle theatre",
+      "title": "The Circle Theatre",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "15",
+          "ref": "18268"
+        }
+      ]
+    },
+    {
       "key": "city",
       "title": "The City",
       "museumTitle": null,
@@ -2662,6 +2862,26 @@
           "batch": 3,
           "leaf": "26",
           "ref": "17265"
+        }
+      ]
+    },
+    {
+      "key": "long leg",
+      "title": "The Long Leg",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-ii",
+          "batch": 2,
+          "leaf": "11",
+          "ref": "17478"
         }
       ]
     },
