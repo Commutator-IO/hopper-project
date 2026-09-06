@@ -4,6 +4,7 @@ import { LEDGERS, SHEETS } from './content/catalogue.ts';
 import life from './content/life.json';
 import worksData from './content/works.json';
 import workNotes from './content/work-notes.json';
+import { Travels } from './components/Travels.tsx';
 import { batchOfSeq } from './lib/batches.ts';
 import { url } from './lib/base.ts';
 
@@ -467,6 +468,19 @@ export function TimelinePage() {
             </span>
           ))}
         </p>
+      </section>
+
+      {/* The chronology in space rather than in time, and much smaller than the
+          list above it: a place is here only where a named source puts him at
+          it, which is six places against the thirty the transcriptions tag. The
+          component says what was refused and why, because a reader who came
+          expecting a map of a life should be told which map this is. */}
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">Where the sources put him</h2>
+        <p className="prose-note mt-2 max-w-3xl">
+          The same entries as the years above, read for their places instead of their dates.
+        </p>
+        <Travels />
       </section>
 
       {/* The index of works, which is a different list from « what these museums

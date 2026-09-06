@@ -1,0 +1,97 @@
+{
+  "note": "Hand-declared. Every place here is one a named source in life.json puts Edward Hopper at, and every move cites the life.json event that states it. Nothing is typed from memory: `npm run places` refuses a move whose event it cannot find, and the coordinates are retrieved from OpenStreetMap rather than written down. What this is not is an itinerary — see `means` below, which is printed on the page beside the drawing.",
+  "means": "An arrow runs between the places two consecutive place-naming events in life.json name, in year order, and carries the later one's year. It is the order two records fall in, not a journey anybody wrote down: no source here says how or exactly when he went, and the ledgers — which record what left the studio, not where he was — cannot say either. So the chain runs through Gloucester to Cape Cod without returning to Washington Square in between, because no sourced statement stands between them, and not because he was not living there. He was: the 1913 entry says he lived and worked there until his death.",
+  "places": [
+    {
+      "key": "nyack",
+      "name": "Nyack, New York",
+      "query": "Nyack, New York, USA",
+      "what": "Born here in 1882, in the house his maternal grandparents built, and at home here until 1910."
+    },
+    {
+      "key": "new-york",
+      "name": "New York",
+      "query": "New York City, New York, USA",
+      "what": "The schools: the New York School of Illustrating from 1899, then the New York School of Art under Chase, Henri and Miller."
+    },
+    {
+      "key": "paris",
+      "name": "Paris",
+      "query": "Paris, France",
+      "what": "Three extended stays between 1906 and 1910. Book II leaves 60 to 63 are the canvases."
+    },
+    {
+      "key": "washington-square",
+      "name": "3 Washington Square North",
+      "query": "Washington Square Park, Manhattan, New York, USA",
+      "what": "The apartment and studio from 1913 until his death. The inside front cover of Book I gives the address, and the leaves say « Painted in N.Y. Studio » and « Painted in Wash. Sq. studio ».",
+      "note": "The coordinate is the square, not the door: OpenStreetMap is asked for Washington Square Park, and a house number retrieved for a building that has been rebuilt would be a precision nobody checked."
+    },
+    {
+      "key": "gloucester",
+      "name": "Gloucester, Massachusetts",
+      "query": "Gloucester, Massachusetts, USA",
+      "what": "Where he met Josephine Nivison in 1922. Book I leaf 60 books the Gloucester watercolours of 1923."
+    },
+    {
+      "key": "south-truro",
+      "name": "South Truro, Massachusetts",
+      "query": "South Truro, Massachusetts, USA",
+      "what": "The second home and studio from 1934, kept for the rest of his life. The leaves say « Painted in South Truro studio », and the Truro and Cape Cod pictures in Books I, II and III begin here."
+    }
+  ],
+  "moves": [
+    {
+      "from": "nyack",
+      "to": "new-york",
+      "year": 1899,
+      "match": "commuting into the city"
+    },
+    {
+      "from": "new-york",
+      "to": "paris",
+      "year": 1906,
+      "match": "First of three extended stays in Paris"
+    },
+    {
+      "from": "paris",
+      "to": "nyack",
+      "year": 1910,
+      "match": "Last of the Paris visits"
+    },
+    {
+      "from": "nyack",
+      "to": "washington-square",
+      "year": 1913,
+      "match": "Washington Square North"
+    },
+    {
+      "from": "washington-square",
+      "to": "gloucester",
+      "year": 1922,
+      "match": "Gloucester"
+    },
+    {
+      "from": "gloucester",
+      "to": "south-truro",
+      "year": 1934,
+      "match": "second home and studio on Cape Cod"
+    },
+    {
+      "from": "south-truro",
+      "to": "washington-square",
+      "year": 1967,
+      "match": "Dies in the studio"
+    }
+  ],
+  "refused": [
+    {
+      "what": "The thirty places the transcriptions tag with `place:`",
+      "why": "They are the subjects of pictures, not the whereabouts of a man. Gettysburg is in Book II because of Light Battery at Gettysburg and Dawn Before Gettysburg; Saltillo, Charleston, Santa Fe and Mexico are titles. A graph built on them would assert eleven journeys nobody recorded, and would look exactly as authoritative as the eight that are sourced."
+    },
+    {
+      "what": "An arrow between the places two consecutive works were made",
+      "why": "The same interpolation the timeline already refuses for dates. A leaf's date column is the day a work went to a dealer, not the day it was painted or the place it was painted in, and the ledgers are not in chronological order — Book I's etchings section correlates leaf number with year of making at r = −0.33."
+    }
+  ]
+}
