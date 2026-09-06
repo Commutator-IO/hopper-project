@@ -113,9 +113,11 @@ export function AccountsPage() {
           here and checked against the receipt she recorded.
         </p>
         <p className="prose-note mt-2 max-w-3xl">
-          The date is the leaf’s own first column, and that column is not always the day of sale:
-          on the watercolour leaves it is headed « Date kept at Rehn Gallery » and dates the
-          consignment, on the etchings leaves it dates the exhibition. So this is an account of
+          The date is the leaf’s own date column — the first, where the leaf rules its columns,
+          and the last on Book II’s leaves, which rule none and put the date after the buyer, the
+          price and the cheque. That column is not always the day of sale: on the watercolour
+          leaves it is headed « Date kept at Rehn Gallery » and dates the consignment, on the
+          etchings leaves it dates the exhibition. So this is an account of
           when work entered the market, which is the nearest thing to a sale date these books
           keep. Where the column dates something else entirely the row is reported below rather
           than dated wrongly.
