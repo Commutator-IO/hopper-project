@@ -195,6 +195,12 @@ function plain(s) {
     .replace(/\\&amp;/g, '&amp;')
     .replace(/\\#/g, '#')
     .replace(/\\_/g, '_')
+    // `\{` and `\}` were in ESCAPES from the start and never unescaped here,
+    // so they reached the reading view with the backslash showing. Nothing had
+    // used one until Book I leaf 84, where the brace is a mark Jo Hopper drew
+    // down the leaf to group the titles of one exhibition.
+    .replace(/\\\{/g, '{')
+    .replace(/\\\}/g, '}')
     .replace(/---/g, '—')
     .replace(/--/g, '–')
     .replace(/``/g, '“')

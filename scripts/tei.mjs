@@ -75,6 +75,46 @@ const xml = (s) =>
     .replace(/''/g, '\u201d')
     .replace(/~/g, ' ');
 
+/**
+ * How far a macro and its brace-balanced arguments run.
+ *
+ * This was a regex, and a regex is the wrong shape for it. Arguments nest to
+ * whatever depth the transcription needs — `\hand{jo}{… \uncertain{…} …}` —
+ * and they may contain a brace Jo Hopper drew on the leaf, escaped `\{`.
+ * Book I leaf 84 is the first transcription to use one, and the regex stopped
+ * dead at it: `\hand` lost its entire body, which then reached the TEI as raw
+ * text with its `\\` line breaks showing as lone backslashes. Balanced
+ * scanning cannot fail that way, and an unbalanced argument is left alone
+ * rather than half-consumed.
+ */
+function macroEnd(s) {
+  const m = /^\\[a-zA-Z]+\*?/.exec(s);
+  if (!m) return 2;
+  let i = m[0].length;
+  while (s[i] === '{') {
+    let depth = 0;
+    let j = i;
+    let closed = false;
+    for (; j < s.length; j++) {
+      if (s[j] === '\\') {
+        j++;
+        continue;
+      }
+      if (s[j] === '{') depth++;
+      else if (s[j] === '}') {
+        depth--;
+        if (depth === 0) {
+          closed = true;
+          break;
+        }
+      }
+    }
+    if (!closed) return i;
+    i = j + 1;
+  }
+  return i;
+}
+
 function group(s, i) {
   while (s[i] === ' ' || s[i] === '\n') i++;
   if (s[i] !== '{') return ['', i];
@@ -410,9 +450,9 @@ function convert(tex, meta) {
     }
     // Inline macro: hand it back to the inline converter with its arguments.
     const rest = s.slice(at);
-    const consumed = /^\\[a-zA-Z]+(\{(?:[^{}]|\{[^{}]*\})*\})*/.exec(rest);
-    para.push(inline(consumed ? consumed[0] : rest.slice(0, 2)));
-    i = at + (consumed ? consumed[0].length : 2);
+    const end = macroEnd(rest);
+    para.push(inline(rest.slice(0, end)));
+    i = at + end;
   }
   flush();
 
