@@ -6,7 +6,7 @@ derive it again at the cost of the attention it was meant to save.
 **This narrows a field of candidates and settles nothing.** Where the sheet
 will not support what is written here, the sheet wins and `\ill{}` stands.
 
-Written from Book I, batches 1 to 5 (sheets 1–60), 5–6 September 2026, Opus 5.
+Written from Book I, batches 1 to 6 (sheets 1–72), 5–6 September 2026, Opus 5.
 Add to it after every batch; say which batch taught you what.
 
 ---
@@ -284,3 +284,95 @@ settled --- do not quietly regularise them to the standing forms on leaves 6,
 **Sheeler is unreadable rather than doubtful** *(leaf 49)*: the name runs into
 the gutter and the photograph stops before it ends. `Shiel\ill{}` is the whole
 of what is there.
+
+## A clipping can cost a whole leaf
+
+*(batch 6)* Leaf 56 is the worst case Book I has produced. Three things are
+attached to it --- a photograph across the head, an exhibition catalogue leaf
+across the middle, a newspaper cutting across the foot --- and between them
+they cover every column the leaf rules. What survives is the heading, one
+date, one consignment note, the initial letter of a title, the words « When
+rec'd. » at the gutter, and one entry that happens to fall in the gap between
+two clippings. **A leaf can be almost entirely `\ill{}` and still be correctly
+transcribed**; what makes it correct is the `\note{}` saying the `\ill{}` means
+« under paper ».
+
+Leaf 57 is batch 5's leaf 53 again, and confirms the rule rather than adding
+to it: the Night Windows halftone is hinged, and turning it back drops its own
+verso --- an Easter egg advertisement --- onto the money columns. Transcribe at
+the sheet that shows the more, and where a figure survives only on the other
+photograph, give it and say so in a `\note{}`. **That is not the same as
+transcribing the leaf twice**: one leaf, one table, one set of figures, and a
+note recording which photograph each doubtful part was read from.
+
+Leaf 59 is the case where the same arrangement costs nothing --- the Tables
+for Ladies halftone turns back clear of the leaf altogether. So a second
+photograph of a hinged clipping is worth looking at every time, and worth
+assuming nothing about.
+
+## Whether the columns are named runs the other way here
+
+*(batch 6)* Batch 5 found the headings disappearing from leaf 45 onwards. Leaves
+56 to 63 do not continue that: the four oils leaves head nothing at all, and
+the four watercolour leaves head almost everything --- « Date », « Amt. minus
+com. », « When rec'd. » in ink, with « Rec'd at Rehn Gallery » and « Selling
+price in 1924 » added over and under them in pencil, and « Delivered at
+Rehns » / « Orig. price » / « Rec'd minus 1/3 Com. » on leaf 62. **Read the
+head band of each leaf before assuming which régime you are in.** No headings
+were supplied in `\add{}` anywhere in batch 6; none was needed.
+
+## The sketches come back
+
+*(batch 6)* Leaves 58 and 59 carry one of Edward's ink record drawings per work,
+ruled into a box beside the entry --- six in the batch, more than batches 2 to
+5 together. Three of them carry writing, and the writing is what `\sketch{}`
+takes: « clock. », « signature », « not very distinct. » on the Tables for
+Ladies drawing. The rest take an empty argument.
+
+**Blue crayon is a third register on these leaves.** « Painted in N.Y.
+Studio » beside four of the five works on leaf 58, « Sold » beside one, and the
+Malcolm Chase sale on leaf 61, are all in a blue pencil that is hers and later
+than the ink. It marks, it does not correct.
+
+## Ditto marks on a line of their own
+
+*(batch 6)* Leaf 63 puts four ditto marks on the ruled line *between* two
+titles, and draws an arrow up to them from the title below. They are the lower
+row's entry, written a line high because the line above had room. Transcribe
+them where they physically stand, and let a `\note{}` carry the arrow ---
+moving them down into the row they belong to would silently undo the leaf's own
+cross-reference.
+
+## More spellings, all as written
+
+*(batch 6)*
+
+- **`Cape Anne`** *(leaves 56, 57)* --- confirming batch 4. The catalogue
+  clipping on leaf 56 prints « Cape Anne, Massachusetts » with
+  « Massachusetts » struck in pencil and « Granite » written under it, so the
+  correction to Cape Anne Granite is hers and is on the clipping.
+- **`Osgord`** --- Mrs. John Osgord Blanchard, the single largest buyer of the
+  1924 and 1925 watercolours, spelt this way on leaves 59, 61, 62 and 63.
+  Never Osgood.
+- **`Coburne`** *(leaf 63)* against **`Coburn`** on leaves 60, 62 and 63
+  itself, four lines apart.
+- **`Achorn`** *(leaf 63)* --- and the clipping pasted on the same leaf prints
+  the title as « Mrs. Acorn's Parlor ». Two spellings on one leaf, one hers and
+  one a newspaper's.
+- **`Fog Museum`** *(leaf 62)* for the Fogg.
+- **`Fleishman`** *(leaf 58)* for Fleischman; **`Hirshfield`** *(leaf 61)*;
+  **`Sheppard`** *(leaf 57)*.
+- **`Booth Harbor`** *(leaf 57)* for Boothbay Harbor.
+- **`waste`** for waist, **`Caractatures`** in pencil on leaf 63 against an ink
+  heading on the same leaf where a letter is struck out mid-word and the
+  spelling cannot be settled either way.
+- **`Wm. Russell Allen`** and **`Wm. C. Russell Allan`** *(leaf 57)*, two lines
+  apart, for the same Boston buyer.
+- **`Zierler`**, **`Alfredo Valenté`**, **`Lawrence Bloedel`**, **`W. L.
+  Hearne`**, **`Anthony Haswell`**, **`Young + Rubicam`** --- all legible, all
+  new to this list.
+
+**Two readings that would not settle** *(leaf 60)*: « little yellow entie
+house », where the word is as likely « cutie »; and « (Kepple show) », where
+the letters will support « Keppe » as readily. Both stand as `\uncertain{}`.
+Leaf 59's restaurant cashier, « Anna Popalgopalos », is a third.
