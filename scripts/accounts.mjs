@@ -558,11 +558,21 @@ const out = {
     'and only where the last cell holds a date and nothing besides.',
   coverage: {
     ledgersTranscribed: [...new Set(files.map((f) => f.ledger))],
+    ledgersCounted: [...new Set(entries.map((e) => e.ledger))].sort(),
     batches: files.length,
     sheets: files.reduce((n, f) => n + f.sheets.length, 0),
     note:
       'Only the volumes and batches listed. Everything unread contributes nothing, and every ' +
       'figure here moves as batches land.',
+    countedNote:
+      'Transcribed and counted are not the same thing, and the difference is the ruling. Every ' +
+      'figure on this page is read out of a ruled row — a `ledgertable` in the .tex — because a ' +
+      'row puts the price in one cell and the date in another, and the column a date stands in ' +
+      'is what says whether it dates the sale or the cheque. A volume whose leaves rule nothing ' +
+      'and write the sale as a sentence is read here and counted nowhere: its money is on the ' +
+      'sheets, in the transcriptions, and outside these totals. Book III and Book V are in that ' +
+      'position now, and naming them is the point — a total that quietly omitted them would ' +
+      'look like a smaller number rather than a narrower one.',
   },
   arithmetic: {
     checkable: checked.length,

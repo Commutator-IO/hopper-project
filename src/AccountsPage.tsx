@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { Page } from './components/Frame.tsx';
 import accountsData from './content/accounts.json';
+import { LEDGERS } from './content/catalogue.ts';
 import { url } from './lib/base.ts';
 
 /**
@@ -63,7 +64,14 @@ const A = accountsData as unknown as {
   basis: string;
   note: string;
   limit: string;
-  coverage: { ledgersTranscribed: string[]; batches: number; sheets: number; note: string };
+  coverage: {
+    ledgersTranscribed: string[];
+    ledgersCounted: string[];
+    batches: number;
+    sheets: number;
+    note: string;
+    countedNote: string;
+  };
   arithmetic: { checkable: number; agree: number; disagree: number; note: string };
   years: Year[];
   works: Work[];
@@ -74,6 +82,9 @@ const A = accountsData as unknown as {
   entries: { year: number; leaf: string | null; work: string | null; gross: number; rateWritten: string; net: number; check: string | null; receiptWritten: number | null }[];
   unparsed: { count: number; sample: Unparsed[] };
 };
+
+/** A volume's own short name — « Book III », not the `book-iii` of a filename. */
+const named = (id: string) => LEDGERS.find((l) => l.id === id)?.short ?? id;
 
 const money = (n: number) =>
   n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -92,6 +103,19 @@ export function AccountsPage() {
       ),
     [],
   );
+
+  /**
+   * Volumes this page names as transcribed and does not count.
+   *
+   * Read off the data rather than listed here, so it empties itself if the
+   * generator ever reaches an unruled leaf. See `coverage.countedNote`.
+   */
+  const uncounted = useMemo(() => {
+    const counted = new Set(A.coverage.ledgersCounted);
+    return A.coverage.ledgersTranscribed
+      .filter((id) => !counted.has(id))
+      .map(named);
+  }, []);
 
   // One scale for both bars, and it is a net scale on purpose. Gross carries
   // the dealer's third and `received` does not, so a gross bar drawn beside a
@@ -125,10 +149,23 @@ export function AccountsPage() {
         <div className="mt-4 max-w-3xl rounded-card border border-alerte-200 bg-alerte-50 px-4 py-3">
           <p className="text-[13.5px] leading-relaxed text-ink-800">
             <strong className="font-semibold">This is not Edward Hopper’s income.</strong>{' '}
-            {A.coverage.batches} batches of {A.coverage.ledgersTranscribed.join(', ')} are
+            {A.coverage.batches} batches of {A.coverage.ledgersTranscribed.map(named).join(', ')} are
             transcribed — {A.coverage.sheets} sheets of the 504 in the six volumes. Every figure
             below is a floor under a number nobody knows yet, and it moves as batches land.
           </p>
+          {uncounted.length > 0 && (
+            <p className="mt-2 text-[13.5px] leading-relaxed text-ink-800">
+              <strong className="font-semibold">
+                And it does not count every volume it names.
+              </strong>{' '}
+              The figures are read out of ruled rows, because a row puts the price in one cell and
+              the date in another, and which column a date stands in is what says whether it dates
+              the sale or the cheque. {uncounted.join(' and ')}{' '}
+              {uncounted.length > 1 ? 'write' : 'writes'} the sale as a sentence on an unruled
+              leaf, so {uncounted.length > 1 ? 'those volumes are' : 'that volume is'} transcribed
+              here and counted nowhere. That money is on the sheets and outside these totals.
+            </p>
+          )}
         </div>
       </header>
 

@@ -142,6 +142,24 @@ export function TimelinePage() {
   }, []);
 
   /**
+   * Which volumes actually contribute a green leaf.
+   *
+   * Read off `transcribedYears` rather than named in the prose, because the
+   * answer changes every time a batch lands and a sentence that says « Book I »
+   * goes quietly wrong the moment a second volume is read. It is not simply
+   * the list of transcribed volumes: a green leaf needs a year in the leaf's
+   * own date column, so a volume that rules no columns and writes its sales as
+   * sentences — Book III, Book V — is transcribed and still contributes none.
+   */
+  const greenLedgers = useMemo(() => {
+    const ids = new Set(TRANSCRIBED.flatMap((t) => t.leaves.map((l) => l.ledger)));
+    const names = LEDGERS.filter((l) => ids.has(l.id)).map((l) => l.short);
+    return names.length > 1
+      ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
+      : (names[0] ?? 'no volume yet');
+  }, []);
+
+  /**
    * Works indexed by the year a museum dates them to.
    *
    * The museum's date, never the leaf's. A leaf's date column is the day a
@@ -195,7 +213,7 @@ export function TimelinePage() {
           </span>{' '}
           leaves are <strong>transcribed</strong>: somebody read the sheet, and the year is one
           Jo Hopper wrote in its own date column. Those appear only where the reading has been
-          done, which today means Book I.{' '}
+          done, which today means {greenLedgers}.{' '}
           <span className="rounded-full border border-ink-200 px-1.5 py-px text-ink-700">
             grey
           </span>{' '}
@@ -589,7 +607,12 @@ export function TimelinePage() {
                 </span>
                 {w.holdings.map((h) => (
                   <a
-                    key={h.short}
+                    /* Not `h.short`: a work can be held under several object
+                       numbers at one institution — (Blackhead, Monhegan) is at
+                       the Whitney under three — and the short name would then
+                       be the same key three times. The object URL is the one
+                       field that is unique per holding. */
+                    key={h.url}
                     href={h.url}
                     target="_blank"
                     rel="noreferrer"
