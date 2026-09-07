@@ -1768,3 +1768,146 @@ Cruickshank`, `Fred Mories`, `Edwine Behre`, `Jean du Puy Chamblin`
 - **`for Fr. Crowninshield`** *(leaf 70)*, in faint pencil written diagonally
   across a ditto column — the same name that stands in ink four rows above it,
   correctly spelt, which is why the pencil is offered at all.
+
+---
+
+*(Dealers/Etchings batch 3, sheets 25–36, leaves 75–87, read 7 September 2026,
+Opus 5. Third batch on the volume. Batch 1's finding that nothing in this book
+is under paper finally breaks, and batch 2's mirror-writing warning turns out
+to be the single most useful thing to carry into a batch.)*
+
+## Paper over text, at last — and it is the leaf's own corner
+
+Batches 1 and 2 both closed by saying there is not one clipping in this volume
+and every `\ill{}` is a tear, a gutter or a fore-edge. That still holds for
+clippings. But leaf 76's fore-edge is **curled back over its own last four
+rows**, and it takes the end of the Saunders line and the final digit of a date
+with it. A curled corner photographs exactly like a pasted slip at `pre` size —
+a pale band with writing stopping dead at its edge — and the way to tell them
+apart is that the curl carries the leaf's own ruling on it, at an angle.
+**Crop the corner at 400% before deciding which you are looking at**, because
+the note a reader needs is different: a clipping covers text that is still
+there, a curl is text that was not photographed.
+
+## Mirror writing is not occasional here; budget for it
+
+Batch 2 found one instance on leaf 71. This batch has four — leaf 77's head
+carries leaf 78's « Whitney Studio Club » backwards, leaf 81's middle carries a
+whole band of leaf 80, leaf 83's right third carries leaf 84, and leaf 86's
+upper right carries leaf 85. That is a third of the batch. The offsets sit
+where a marginal note would sit and read as a faint second hand, which is
+precisely the trap. **Before reaching for `\uncertain{}` on anything faint in
+the outer third of a leaf, hold it up mirrored against the facing leaf's
+photograph.** Every one of these four resolved that way in seconds and none of
+them resolved any other way.
+
+## The revised price is written above the struck one, not beside it
+
+Leaf 75 opens « Change in prices Dec. 8, 28 - 25 to 30 » and then does it
+twenty-odd times down the leaf: the old figure struck, the new one **directly
+above it**, not to its right. Batch 2's Keppel leaves put the correction beside
+the struck figure and the two habits are one leaf apart. Transcribed
+`\struck{25} 30` either way, but a pass that expects the correction to the
+right will read the column as unstruck singles and lose every revision. The
+head of the leaf tells you which habit is in force; read it first.
+
+## Three leaves where she audits her own book
+
+Leaf 77 (the 1943 package from Weyhe, four prints missing and one extra), leaf
+82 (the Downtown Gallery account closed against two disagreeing inventories),
+leaf 84 (thirty-nine prints from Harlow, twenty-eight on record, eleven gone).
+Each is prose filling half a leaf beside a table, and each is the *conclusion*
+of the table beside it. Batch 2 saw the beginning of this on leaf 71's
+statement about what a date column means. **Read the prose before transcribing
+the table it sits beside** — leaf 75's two « See note p. 82 » rows are
+unintelligible until leaf 82's note has been read, and they are seven leaves
+apart.
+
+## The asterisk is a cross-reference across leaves
+
+Four titles on leaves 76 and 77 carry an asterisk, and they are exactly the
+four leaf 77's prose names as missing in October 1943. Leaf 82's « See note * »
+points to the starred paragraph at the foot of the same leaf. Leaf 83's
+asterisk carries the bare word « where » and points at nothing that survives.
+So the mark is hers and it is load-bearing: **note where each one stands**,
+because the reader cannot see it in a transcription otherwise.
+
+## A pointer can run backwards as well as forwards
+
+Batch 2 found the feet of leaves pointing onward — « over, p. 72 », « See page
+84 ». This batch has the other half of every one of them at the head: « Frederick
+Keppel \& Co. - Continued from page 72 », « Kennedy \& Co. … Continued from p.
+73 », « Downtown Gallery - Continued from p. 75 ». Leaf 84 is the odd one:
+leaf 51's index sends Keppel to 70 and leaf 70 sends the reader to 84, but leaf
+84 says it continues **page 72**, which is Kraushaar's leaf. The disagreement
+is in the book and is left standing.
+
+## Her query mark is content, and it is not an illegible
+
+Leaf 80's Evening Wind block ends in a drawn rule and a bare « ? ». Leaf 81 has
+« East Sid Inter. ? ». Leaf 83 has an asterisk and « where ». Leaf 84 has
+« where from ? » and « Kennedy ? » pencilled in the margin. Leaf 85 has
+« \$28 rec'd ? » and « June ? 1951 ». **None of these is `\ill{}`** — the
+question is legible and the question is the record. An `\ill{}` used for a cell
+that contains a query mark reports the leaf as damaged when it is merely
+doubtful, and the first draft of this batch made that mistake once.
+
+## Prices thirty years apart, in one volume
+
+Jennings sells etchings at \$10 in 1925 (leaf 80, and eleven of them go to the
+Metropolitan at that price); Kennedy sells them at \$50 in 1956 (leaf 85).
+Between them the commission notation is unchanged — `30 - 1/3 = 20`,
+`50 - 1/3 = 33 1/3` — so the arithmetic looks identical and the money is not.
+The late leaves also carry a tone the early ones do not: « paid only 17 … we
+not consulted », « We in Mexico, not consulted », « Don't know when Kennedy got
+it. »
+
+## Marks that are not letters, continued
+
+- **A large pencil check drawn diagonally across a whole block**, on leaves 77
+  and 78. Batch 2's red-pencil « Returned » across a block is the same gesture
+  in another medium: a verdict on ten rows at once, with no cell to put it in.
+- **A small check before a title and a larger one after a sale date**, all down
+  leaf 83. Not transcribed in the cells.
+- **A tick in the last column** against nine rows of leaf 76, as batch 1 found
+  on leaf 58.
+
+## More spellings, all as written
+
+`Vickery, Atkins \& Tory` *(leaf 86)* against batch 1's `Vicery Atkins \& Torey`
+*(leaf 51)* — a third form of one firm's name; `Kleemann-Thorman Galleries`
+*(leaf 83)*, where the Whitney's own descriptor reads « Kleeman-Thorman
+Galelries »; `Les Poilus` *(leaf 80)* and `Les Poillus` *(leaf 81)*, one batch,
+two spellings, and batch 2 had `Les Poillus` too; `Mohegan Boat` *(leaf 76)*
+again; `Meyer Graefe` for Meier-Graefe *(leaf 76)*; `Denmark` for where three
+prints went *(leaf 76)*; `Mrs. Canade` *(leaf 77)*; `Sid` for Side *(leaf 81)*;
+`pric.` *(leaf 86)*; `june` with a small j *(leaf 81)*.
+
+## Readings that would not settle
+
+- **`Washington` + one word** *(leaf 84)*, ending « Mr. Keppel left Harlow for
+  Washington … ». A tall descender and an `r.`; not `D. C.`, not `Jr.`, not a
+  word. Left `\ill{}`.
+- **`allowed to …`** *(leaf 86)*, a capital with a raised `o` — the shape of
+  `Do.` for ditto, which the sense refuses. The row is the Victoria \& Albert
+  buying at half price and the abbreviation is probably the museum; probably is
+  not a reading.
+- **`For …`** *(leaf 86)*, written up the leaf beside the May 31 rows with a
+  second word inked over it in blue. Neither register resolves.
+- **`Jan \& Wansoos Feeding`** *(leaf 78)*, the title of the only drawing in
+  the batch, in quotation marks. The word after the ampersand is seven letters
+  and is not a word in English.
+- **`Goldsmith`** *(leaf 75)*, the second name under the Downtown Gallery's
+  brace. Compressed to about half the width the hand usually gives a surname.
+- **`Lechten`** *(leaf 87)*, the buyer in Scotland, whose forename « Ethel- »
+  ends the row above with a hyphen carrying it over. `k` is as defensible as
+  `L`.
+- **`Tucker`** *(leaf 87)* and **`Bess Martin`** *(leaf 87)*, two private
+  buyers. « Bess » turns on the open terminal loop this hand uses for `s` and
+  `o` without distinction — the same ambiguity that has kept `Denko` open since
+  batch 1.
+- **`\$43 or \$50`** *(leaf 85)*, the East Side Interior sold while the Hoppers
+  were in Mexico. She did not know the figure either; the row ends « \$28
+  rec'd ? ».
+- **`6 ave.`** *(leaf 84)*, in Harlow's address « 53 \& 6 ave. »
+- **`Dec. 20, 23`** *(leaf 76)*, the day written over another figure.
