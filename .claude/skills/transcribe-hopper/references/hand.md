@@ -1624,3 +1624,147 @@ two i-dots sit where accents would. It is « Suicide - bridge, cliff, crowd. Bl.
 crayon. » A word that looks French on a leaf of French drawings is not
 necessarily French.
 
+---
+
+*(Dealers/Etchings batch 2, sheets 13–24, leaves 61–74, read 7 September 2026,
+Opus 5. Second batch on the volume, so batch 1's findings are now either
+confirmed or corrected below.)*
+
+## Two leaves are written across the opening, not down the page
+
+Leaves 62 and 63 are the case, and the Whitney's descriptor — « horizontal
+orientation » — understates it. They are not two sideways leaves; they are
+**one sideways surface two leaves wide**. Turn each photograph a quarter turn
+clockwise and the columns run out of the foot of 62 straight into the head of
+63, mid-list and mid-brace: the Whitney Studio Galleries block starts on 62 and
+its prices, its « 5 sold » and its total are on 63.
+
+Two consequences, and the second costs a pass an hour if it is missed.
+
+- **The printed number tells you which way to turn.** It stays upright while
+  the writing lies on its side, so after a clockwise turn leaf 62's number is
+  at the top right and leaf 63's at the bottom right. A verso rotates to the
+  top of the surface and a recto to the bottom, which is also the reading
+  order.
+- **Each photograph takes in a band of the facing leaf past the gutter, and
+  the same six or seven lines therefore appear in both.** They must be
+  transcribed once. The physical edge settles it and nothing else does:
+  crop the boundary at 250% and the leaf's own edge is visible as a curve with
+  the neighbour's writing beyond it. Here « Sunflower » and « Movie theatre »
+  are the last lines of 62, and « 50 mat », « 5 sold » and the Corcoran line
+  are the first of 63.
+
+## The volume's other subject is Josephine Hopper
+
+Those same two leaves are **hers**, and nothing on them is about Edward
+Hopper's work: her watercolours, her prices, her dealers — Morton, Belmaison,
+the New Gallery, Ellen Ravenscroft's Studio Gallery — and, from 1938 to 1953,
+a running list of the juries that took her and the juries that did not. « Chez
+Hopper … turned down by Va. Mus. jury. E. H. chairman » and « Submitted to
+Va. Museum show — Guy du Bois chairman — thrown out » are on the same leaf.
+The volume's convention that Jo writes and Edward is written about does not
+hold here; she is both.
+
+## From leaf 69 the index takes over, and each leaf ends in a pointer
+
+Leaf 51's dealer index is exact. Leaf 70 is Keppel, 71 Keppel continued, 72
+Kraushaar, 73 Kennedy and then Denko, 74 Randolph — one dealer to a leaf, a
+consignment table of twenty to thirty rows, and at the foot **a pointer to a
+page further in**: « — over, p. 72 », « See page 84 », « Continued on p. 85 »,
+« for Feb. 8, 1938 ». Read them; they are the volume saying where a dealer's
+account resumes, and they are the reason a leaf can stop mid-account without
+anything being lost.
+
+## The best statement in the volume of what a date column means
+
+Leaf 71, across the head, in her hand and worth quoting to anyone who asks what
+these figures are:
+
+> Date of sale = date that payment is rec'd. by the artist. This statement does
+> not refer to the particular copy of the print after which it is entered … as
+> copies are not numbered + cannot be kept track of. Hence discrepancy in
+> prices.
+
+Leaf 72 says it again in one line: « Dates of sale do not belong to the
+particular print listed - it means any print of that name. » **So a row here is
+a title and an event, not an object.** Two rows of « Locomotive » at 30 with no
+sale date are two consignments, not two impressions traced.
+
+## Two spellings of one name in the first two lines of that name's own leaf
+
+Leaf 70 is headed « Frederick Keppel \& Co. » and its first column is headed
+« Delivered to Kepple ». Both are legible, both stand, and the second is not a
+misreading of the first — this is the Book II habit (« Corcaran » then
+« Corcoran ») turning up in this volume. Same batch, same leaf: « Zineas » in
+the table on leaf 62 and « Zinias » twice in the list below it.
+
+## « Denko » still will not settle, and now it never may
+
+Batch 1 called the reading firm in the leaf 51 index and the leaf 56 tally.
+Leaf 73 has it twice more — as an underlined heading and in « B'g't. back to
+Denko » — and the terminal letter is her open loop both times, which this hand
+uses for `s` and for `o` without distinction. Four occurrences and no
+discrimination between them: it is flagged `\uncertain{}` rather than settled,
+and a fifth occurrence will not help.
+
+## Her red pencil, third job
+
+Book I's red pencil rings a figure; batch 1 found it underlining exhibiting
+bodies on leaf 60. Here it does both again — the society names on leaf 61, the
+ticks in the left margin of leaf 69 against the four museum-purchase lines —
+and one thing more: on leaf 62 it writes **« Returned » in large letters
+diagonally across a whole block**, twice, once per column. That is a verdict on
+eight or ten rows at once, and there is no cell to put it in. It goes in a
+`\note{}`.
+
+## Marks that are not letters, continued
+
+- **A small drawn rectangle** after certain of Jo's watercolour titles on leaf
+  62 — « Petunias □ purple », « Guinney Fleet in fog □ ». Not a letter, sense
+  not established, not transcribed in the cell.
+- **A long ink stroke down the whole leaf**, crossing every block, on leaves 61
+  and 69. It deletes nothing. Book I's leaf 5 has the same thing bracketing
+  three rows; this is the full-height version and it is not read as a
+  cancellation.
+- **Ink offsets from the facing page** — leaf 71's lower left carries what looks
+  like « Ott. » twice and is leaf 70's ink printed backwards onto it. Look for
+  mirror-writing before reaching for `\uncertain{}`.
+
+## Where the illegibles came from this time
+
+Nine, and again **not one is under paper** — batch 1's finding holds for the
+whole volume so far. Five are her own overwriting (the month before « 1942 »
+on leaf 63, the word after « House on » on leaf 69, a title on leaf 73), two
+are an ink blot at the fore-edge of leaf 72 that takes the last two sale dates
+of the Kraushaar run with it, one is under a torn flap of leaf 62 lying across
+leaf 63, and one is a word written over twice on leaf 63. Magnification does
+nothing for any of them.
+
+## More spellings, all as written
+
+`Kepple` beside `Keppel` *(leaf 70)*, `Kraushaar` here against batch 1's
+`Krashaar` *(leaf 72)*, `Zineas` and `Zinias` *(leaf 62)*, `Guinney Fleet` and
+`Guineyboats` *(leaf 62)*, `Sein boats` for seine *(leaf 63)*, `Malcom Salaman`
+*(leaf 66)*, `Les Poillus` again and `caracatures` *(leaf 69)*, `Mohegan Boat`
+in leaf 69's reproductions block against `Monhegan Boat` in its prize table
+twelve lines above — one leaf, both spellings — `Dauphinée House`, `Anne Goldwaith` for Goldthwaite, `Collin
+Cruickshank`, `Fred Mories`, `Edwine Behre`, `Jean du Puy Chamblin`
+*(leaf 68)*, `Rudworth, N.Y.` *(leaf 63)*.
+
+## Readings that would not settle
+
+- **`Woods bath from Allen's`** *(leaf 63)*, in her list of watercolours sent
+  to the Brooklyn Museum. The letter after « Woods » is a tall loop — `l` or
+  `b` — and « lath » is as defensible as « bath ».
+- **`plein mats`** *(leaf 62)*, twice, with « white » interlineated above it.
+  « plain » is what the sense wants and not what the strokes give.
+- **`E. Ewend`** *(leaf 62)*, the recipient of Woodstock Int.
+- **`Madlee Huntington`** *(leaf 63)*, the second of the two painters « also
+  snubbed ».
+- **`(… ? or Rehn? \quad J. H. collection?)`** *(leaf 71)*, a pencil query
+  beside the unsold Girl on a Bridge. « J. H. collection? » is firm; the first
+  word is not a word.
+- **`Denko`** *(leaf 73)*, above.
+- **`for Fr. Crowninshield`** *(leaf 70)*, in faint pencil written diagonally
+  across a ditto column — the same name that stands in ink four rows above it,
+  correctly spelt, which is why the pencil is offered at all.
