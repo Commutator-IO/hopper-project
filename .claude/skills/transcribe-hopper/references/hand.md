@@ -1911,3 +1911,146 @@ prints went *(leaf 76)*; `Mrs. Canade` *(leaf 77)*; `Sid` for Side *(leaf 81)*;
   rec'd ? ».
 - **`6 ave.`** *(leaf 84)*, in Harlow's address « 53 \& 6 ave. »
 - **`Dec. 20, 23`** *(leaf 76)*, the day written over another figure.
+
+---
+
+# Book III
+
+*(Book III batch 2, sheets 13–24, read 7 September 2026, Opus 5. Batch 1 read
+the front matter of the volume and recorded what it found in that file's own
+header; what follows is batch 2's, and nothing in it has been confirmed by a
+third batch.)*
+
+## The volume has two halves and the join is inside this batch
+
+Sheets 1 to 19 are standing lists — Whereabouts, Prizes and Museum Purchases,
+eight leaves of Reviews and Reproductions, Gifts, One Man Shows — written in
+running prose down a leaf she does not rule. **Not one figure of money appears
+on any of them.** From sheet 20 the volume is a work book of the ordinary kind:
+one picture to a leaf, record drawing, title and size, paint formula,
+description, sale. Budget attention accordingly: the list leaves are dense and
+slow and carry no arithmetic to check, and the work leaves are quick and carry
+all of it.
+
+## The foliation is printed, in blue, and odd-numbered
+
+The stationer printed it; leaf 1, 3, 5, 7 in this batch, at the top right of a
+recto. The verso of leaf 3 carries a printed **4** at its top left, and the
+Whitney's descriptor for that sheet gives no leaf at all. `npm run render`
+enforces the catalogue, so it takes `\sheet{16404}{}` and the printed 4 goes in
+a `\note{}`. Expect the same wherever a verso was written on.
+
+## The record can be on a sheet laid over the leaf
+
+Leaf 1's whole record — drawing, title, paint, description — is on a plain
+sheet of **Croxley** paper lying on the ruled leaf, with the leaf's printed 1
+showing above its top edge. The blind stamp reads in mirror, so it is the back
+of that sheet that carries the writing. Book V does this too.
+
+## She writes in pencil, rubs it out, and inks over it — and the layers disagree
+
+All four work leaves show the erased pencil under the ink, and it is legible at
+the Whitney's `pre` size without magnifying. On leaf 1 the erased line dates
+Hotel Lobby « Jan. 11 1943 » where the ink above it reads « Jan. 4", 1943 ».
+**Transcribe the ink, record the erasure in a `\note{}`, and do not choose
+between them.** The Hope entry on the same leaf carries a whole erased sentence
+(« Director Indiana Univ. at Bloom- July 44 - 2500 ») that the ink never
+repeats.
+
+## Every paint formula is closed by a ruled line with a small x on it
+
+Hers, on all four work leaves, between the formula and whatever follows. It is
+not a letter and not a deletion. Note it once for the batch and move on.
+
+## Two more colours join the red pencil
+
+Batch 1 found the red pencil underlining picture titles so a leaf of magazine
+references can be read down them. Sheets 14 to 17 do the same in **orange
+crayon**, and sheets 16 and 17 pick out a handful of titles — Cape Cod A.M.,
+Early Sun. A.M., Approaching a City, Rooms by the Sea — in **blue** instead.
+No colour is a correction and none of them survives into the transcription.
+
+## Braces do most of the structuring on the list leaves
+
+Two, three or four consecutive lines braced against one date, one exhibition or
+one catalogue written once at the right. Sheet 14 braces four Times Book Review
+dates; sheet 16 braces four artists' names against « to represent the U.S.A. »;
+sheet 17 braces three columns of watercolour titles against « 1/2 page » three
+times. **Described in `\note{}` or `\marginal{}`, never transcribed.**
+
+## A paper patch over the gutter margin, and it is not a clipping
+
+Sheet 14 carries a rectangle of plain paper with a rounded corner over the
+gutter margin of its lower half; sheets 16 and 18 have the same thing. Her
+lines in that stretch begin to the right of it. It is not a clipping and there
+is no reason to think text is under it, but that cannot be seen either — say
+so rather than either transcribing through it or calling it `\ill{}`.
+
+## Her interlineations are the sense, again
+
+« The Empty Spaces » on sheet 16 has « ing » written above the line: the entry
+is the Art Digest article « The Emptying Spaces » and is transcribed as the
+correction makes it read. Sheet 24 strikes « off » and writes « on edge of »
+above it. Where the caret is unambiguous, read it in; where the addition sits
+above the line as a separate remark, `\marginal{}`.
+
+## The one-man-show years do not run forwards
+
+Sheet 19 goes 1959, 1959, 1960, 1963, then back to 1962, then 1963, then 1956,
+1961, 1956. Leave it.
+
+## More spellings, all as written
+
+- **Devries** *(sheet 13, twice)* — for Howard Devree of the Times.
+- **Sunami Road** *(sheet 13)* — no place of that name is known; the letters
+  are plain.
+- **Cincinati** *(sheet 14, twice on one line)*.
+- **Well Fleet Road** *(sheet 14)* and **Wellfleet** *(sheets 15, 17)* — both.
+- **Windenstein's** *(sheet 14)* and **Wildenstein's** *(sheet 16)* — for the
+  same gallery, two leaves apart.
+- **Venizia** *(sheet 15)*, **Biennial** beside **Biennale** *(sheet 15)*.
+- **Creative Intimations in Art + Poetry** *(sheet 16)* — Maritain's book is
+  *Creative Intuition*.
+- **Atheneum** *(sheet 16)* beside **Athenaeum** *(sheet 17)*.
+- **Goldzaler** *(sheet 17)* — for Henry Geldzahler.
+- **Hartford, Mass.** *(sheet 17)* — for Connecticut, which the line above
+  gets right.
+- **Manchester, N.H.** *(sheet 17)* and **Manchester, Mass.** *(sheet 19)* —
+  the same Currier Gallery show, two leaves apart.
+- **One Man's Shows** *(sheet 19 heading)* where the index writes One Man
+  Shows.
+- **Williamsberg, Mass.** *(sheet 23)* — Bloedel's Williamstown.
+- **wainscote** *(leaf 1)*, **Toscon, Ariz.** *(sheet 19)*, **Kommerce**
+  *(sheet 16)*.
+
+## Readings that would not settle
+
+- **`Coroelaturo`** *(sheet 16)* — the magazine that reviewed the Berenice
+  Abbott photographs for November 1949. Ten or eleven letters ending `-uro`,
+  with her abbreviation stroke over them; no title that exists fits. Left
+  `\uncertain{}`.
+- **`Bouilliert`** *(sheet 14)* — the author of *A Half Century of Art in the
+  U.S.A.*, almost certainly Bulliet, but the leaf gives eight or nine letters
+  and none of them is a `u` in the right place.
+- **`Burkhart`** *(sheet 14)* — the third partner of the Cincinnati
+  advertising agency; the leaf reads `Burkhaat` letter by letter.
+- **`Mothergal`** *(sheet 16, last line)* — a name of eight or nine letters
+  closing the U.S. Information Agency entry. It resolves into no stable string
+  at 8×, so it is the batch's one `\ill{}`.
+- **`Villager`** *(sheet 13)* — the terminal loop is her `r` and her `s`
+  without distinction, so *Greenwich Villages* is as defensible.
+- **`Kenney`** *(sheet 13)* — the Harvard student of the class of '51; `r` and
+  `n` again.
+- **`Pitcairn`** *(sheet 16)* — the portrait in Cosmopolitan for April 1955.
+- **`Col. Homes`** *(sheet 17)* — two words naming whatever carried the Light
+  at Two Lights cut in July 1959. Neither settles.
+- **`Saphrone Brown`**, **`Abe Sernes`**, **`Vacker`** *(sheet 18)* — three
+  people given etchings. The last is the young man who printed for Zigrosser
+  and is otherwise unidentified.
+- **`Unjustifications`** *(sheet 18)* — written plainly, with a bar over it,
+  beside the list of five etchings given to Philadelphia. The word is legible
+  and the sense is not.
+- **`John J. Morse`** *(sheet 17)* — the middle initial could be I. or D.
+- **`John L. Sexton`** *(leaf 3)* — the middle initial is in pale pencil where
+  the surname is in ink.
+- **`dark hair`** *(leaf 7)* — two words after « 2 men in boat ».
