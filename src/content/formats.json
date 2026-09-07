@@ -1,0 +1,1591 @@
+{
+  "basis": "the size written in the \\work{} heading, in Edward Hopper's hand",
+  "note": "The size is the one figure on these leaves the artist wrote himself — the inside cover of Book I says the drawings and their lettering are his and everything else is hers — and it is the only quantity in the archive that measures an object rather than reporting an event. Read from the heading only: sizes mentioned in the prose are remarks about a size rather than statements of one.",
+  "normalisation": "Nothing is rounded and nothing is reordered. 23 1/2 × 28 and 23 1/2 × 28 3/4 are two formats because they are two things she wrote, and the first figure stays the first figure — she writes height then width, so 35 × 60 is a very wide canvas and not a tall one. The fractions are parsed to numbers so the shapes can be plotted; the label keeps the figures as written.",
+  "headings": 230,
+  "counted": 165,
+  "formats": 66,
+  "repeated": 26,
+  "onceOnly": 40,
+  "byOrientation": [
+    {
+      "orientation": "landscape",
+      "formats": 63,
+      "works": 162
+    },
+    {
+      "orientation": "portrait",
+      "formats": 3,
+      "works": 3
+    },
+    {
+      "orientation": "square",
+      "formats": 0,
+      "works": 0
+    }
+  ],
+  "sizes": [
+    {
+      "label": "20 × 28",
+      "height": 20,
+      "width": 28,
+      "count": 21,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.4,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "4 Dead Trees",
+        "Capron House",
+        "Cobb House",
+        "Cottages at N. Truro",
+        "Crossing at Eastham",
+        "Gravel Bar, White River",
+        "House With a Rain Barrel",
+        "House at Eastham",
+        "House with Dead Trees",
+        "Jenness House Looking North",
+        "Kelly - Jenness House",
+        "Longnook Valley",
+        "Mouth of Pamet - Full Tide",
+        "Oaks at Eastham",
+        "Oregon Coast",
+        "The Forked Road",
+        "Vermont Hillside",
+        "White River at Royalton",
+        "White River at Sharon",
+        "Windy Day",
+        "Yawl Riding a Swell"
+      ]
+    },
+    {
+      "label": "14 × 20",
+      "height": 14,
+      "width": 20,
+      "count": 17,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.429,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Back of freight Station",
+        "Bob Slater's Hill",
+        "Hill + Cow",
+        "House Back of Dunes",
+        "House at San Mateo. Calif",
+        "Jenness House (III)",
+        "Locust Trees",
+        "Marshall's House",
+        "Near the Back Shore",
+        "Pamet River Road",
+        "R. R. Embankment",
+        "Rain on River",
+        "Route 14, Vermont",
+        "Route 14, Vt",
+        "Sugar Maple",
+        "Toward Boston",
+        "Vermont Sugar House"
+      ]
+    },
+    {
+      "label": "12 × 18",
+      "height": 12,
+      "width": 18,
+      "count": 8,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.5,
+      "ledgers": [
+        "book-v"
+      ],
+      "works": [
+        "Double House, Gloucester",
+        "Gloucester Boats at wharf",
+        "House and Trees, Gloucester",
+        "House with Field in Front",
+        "Houses on Skyline",
+        "Rocky Field with Trees",
+        "Two Big Trees",
+        "Willow Trees and Houses"
+      ]
+    },
+    {
+      "label": "20 × 25",
+      "height": 20,
+      "width": 25,
+      "count": 7,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.25,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Cold Storage Plant",
+        "First Branch of White River",
+        "House on Pamet River",
+        "House with Big Pine",
+        "Mountain Meadow",
+        "Shoshone Cliffs, Wy",
+        "Spindley Locusts"
+      ]
+    },
+    {
+      "label": "24 × 29",
+      "height": 24,
+      "width": 29,
+      "count": 7,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.208,
+      "ledgers": [
+        "book-i",
+        "book-ii"
+      ],
+      "works": [
+        "Corner Saloon",
+        "House by a Railroad",
+        "Moonlight Interior",
+        "Paris Paintings",
+        "Rail Road Train",
+        "Sailing"
+      ]
+    },
+    {
+      "label": "28 × 40",
+      "height": 28,
+      "width": 40,
+      "count": 7,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.429,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "City Sunlight",
+        "Conference at Night",
+        "High Noon",
+        "Morning Sun",
+        "Office in a Small City",
+        "Pennsylvania Coal Town",
+        "Portrait of Orleans"
+      ]
+    },
+    {
+      "label": "23 1/2 × 28 3/4",
+      "height": 23.5,
+      "width": 28.75,
+      "count": 6,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.223,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Apres Midi de Juin",
+        "Ecluse de La Monnaie",
+        "Ile Saint Louis",
+        "Le Louvre et la Sëine",
+        "Le Parc de Saint Cloud",
+        "Le Pont des Arts"
+      ]
+    },
+    {
+      "label": "29 × 43",
+      "height": 29,
+      "width": 43,
+      "count": 5,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.483,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Coast Guard Station at Two Lights & beach",
+        "Corn Hill, Truro",
+        "Light House at Two Lights",
+        "South Truro Church",
+        "Williamsburg Bridge"
+      ]
+    },
+    {
+      "label": "8 × 10",
+      "height": 8,
+      "width": 10,
+      "count": 4,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.25,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "East Side Interior",
+        "The Cat Boat",
+        "The Lonely House",
+        "The Rail Road"
+      ]
+    },
+    {
+      "label": "28 × 36",
+      "height": 28,
+      "width": 36,
+      "count": 4,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.286,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Capt. Ed Staples",
+        "Capt. Upton's House",
+        "Hodgkin's House",
+        "Sunday --- or Hoboken Facade"
+      ]
+    },
+    {
+      "label": "30 × 40",
+      "height": 30,
+      "width": 40,
+      "count": 4,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.333,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "7 A.M",
+        "Sea Watchers",
+        "South Carolina Morning",
+        "Two Puritans"
+      ]
+    },
+    {
+      "label": "7 × 9",
+      "height": 7,
+      "width": 9,
+      "count": 3,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.286,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Girl on a Bridge",
+        "Railroad Crossing - drypoint",
+        "The Monhegan Boat"
+      ]
+    },
+    {
+      "label": "8 1/2 × 10",
+      "height": 8.5,
+      "width": 10,
+      "count": 3,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.176,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Les Deux Pigeon",
+        "Summer Twilight",
+        "Train & Bathers"
+      ]
+    },
+    {
+      "label": "23 1/2 × 28",
+      "height": 23.5,
+      "width": 28,
+      "count": 3,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.191,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Le Pont Royal",
+        "Le Quai des Grands Augustins",
+        "Notre Dame de Paris"
+      ]
+    },
+    {
+      "label": "29 × 40",
+      "height": 29,
+      "width": 40,
+      "count": 3,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.379,
+      "ledgers": [
+        "book-i",
+        "book-iii"
+      ],
+      "works": [
+        "Ex Lax",
+        "Light House Hill",
+        "Rooms by the Sea"
+      ]
+    },
+    {
+      "label": "35 × 60",
+      "height": 35,
+      "width": 60,
+      "count": 3,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.714,
+      "ledgers": [
+        "book-i",
+        "book-ii"
+      ],
+      "works": [
+        "7\" Ave. Shops",
+        "Blackwell's Island"
+      ]
+    },
+    {
+      "label": "4 × 5",
+      "height": 4,
+      "width": 5,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.25,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Don Quixote",
+        "Tables for Ladies"
+      ]
+    },
+    {
+      "label": "6 × 7",
+      "height": 6,
+      "width": 7,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.167,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Bay Window",
+        "Les Poilhus"
+      ]
+    },
+    {
+      "label": "7 × 8",
+      "height": 7,
+      "width": 8,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.143,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Cow & Rocks",
+        "House by a River"
+      ]
+    },
+    {
+      "label": "7 × 8 3/8",
+      "height": 7,
+      "width": 8.375,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.196,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Evening Wind",
+        "Night Shadows"
+      ]
+    },
+    {
+      "label": "10 1/2 × 16",
+      "height": 10.5,
+      "width": 16,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.524,
+      "ledgers": [
+        "book-v"
+      ],
+      "works": [
+        "Field and Houses Eastham",
+        "House near Eastham"
+      ]
+    },
+    {
+      "label": "12 × 15",
+      "height": 12,
+      "width": 15,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.25,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Aux Fortifications",
+        "The Henry Ford"
+      ]
+    },
+    {
+      "label": "30 × 38",
+      "height": 30,
+      "width": 38,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.267,
+      "ledgers": [
+        "book-i",
+        "book-ii"
+      ],
+      "works": [
+        "Bootleggers",
+        "« Bootleggers »"
+      ]
+    },
+    {
+      "label": "31 × 40",
+      "height": 31,
+      "width": 40,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.29,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "First Row Orchestra",
+        "Hotel by a Railroad"
+      ]
+    },
+    {
+      "label": "30 × 42",
+      "height": 30,
+      "width": 42,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.4,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Rooms for Tourists",
+        "Summer Evening"
+      ]
+    },
+    {
+      "label": "32 × 50",
+      "height": 32,
+      "width": 50,
+      "count": 2,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.563,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Solitude \\#56",
+        "The Martha McKeen of Wellfleet"
+      ]
+    },
+    {
+      "label": "3 1/4 × 4",
+      "height": 3.25,
+      "width": 4,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.231,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "A Corner"
+      ]
+    },
+    {
+      "label": "5 × 6",
+      "height": 5,
+      "width": 6,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.2,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Nude in a Chair"
+      ]
+    },
+    {
+      "label": "5 × 7",
+      "height": 5,
+      "width": 7,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.4,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "The Bull Fight"
+      ]
+    },
+    {
+      "label": "6 × 8",
+      "height": 6,
+      "width": 8,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.333,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "House Tops"
+      ]
+    },
+    {
+      "label": "7 1/2 × 8",
+      "height": 7.5,
+      "width": 8,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.067,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Night in the L Train"
+      ]
+    },
+    {
+      "label": "± 11 × 6",
+      "height": 11,
+      "width": 6,
+      "count": 1,
+      "approx": true,
+      "orientation": "portrait",
+      "ratio": 0.545,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Paris Watercolors"
+      ]
+    },
+    {
+      "label": "7 1/2 × 12 1/2",
+      "height": 7.5,
+      "width": 12.5,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.667,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "American Landscape"
+      ]
+    },
+    {
+      "label": "10 × 12",
+      "height": 10,
+      "width": 12,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.2,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Maine Coast"
+      ]
+    },
+    {
+      "label": "10 3/8 × 16",
+      "height": 10.375,
+      "width": 16,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.542,
+      "ledgers": [
+        "book-v"
+      ],
+      "works": [
+        "Near Eastham"
+      ]
+    },
+    {
+      "label": "14 1/2 × 13 1/2",
+      "height": 14.5,
+      "width": 13.5,
+      "count": 1,
+      "approx": false,
+      "orientation": "portrait",
+      "ratio": 0.931,
+      "ledgers": [
+        "book-v"
+      ],
+      "works": [
+        "Drawing of Cats"
+      ]
+    },
+    {
+      "label": "11 3/4 × 18",
+      "height": 11.75,
+      "width": 18,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.532,
+      "ledgers": [
+        "book-v"
+      ],
+      "works": [
+        "Gloucester House"
+      ]
+    },
+    {
+      "label": "12 × 19",
+      "height": 12,
+      "width": 19,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.583,
+      "ledgers": [
+        "book-v"
+      ],
+      "works": [
+        "My Roof"
+      ]
+    },
+    {
+      "label": "20 × 22",
+      "height": 20,
+      "width": 22,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Shacks at Pamet Head"
+      ]
+    },
+    {
+      "label": "18 × 27",
+      "height": 18,
+      "width": 27,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.5,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Light Battery at Gettysburg"
+      ]
+    },
+    {
+      "label": "19 × 27",
+      "height": 19,
+      "width": 27,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.421,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "House by a Road"
+      ]
+    },
+    {
+      "label": "22 × 25",
+      "height": 22,
+      "width": 25,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.136,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Office at Night"
+      ]
+    },
+    {
+      "label": "20 × 29",
+      "height": 20,
+      "width": 29,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.45,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Tramp Steamer"
+      ]
+    },
+    {
+      "label": "20 × 30",
+      "height": 20,
+      "width": 30,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.5,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Summer in the City"
+      ]
+    },
+    {
+      "label": "23 × 30",
+      "height": 23,
+      "width": 30,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.304,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "August in the City"
+      ]
+    },
+    {
+      "label": "± 24 × 29",
+      "height": 24,
+      "width": 29,
+      "count": 1,
+      "approx": true,
+      "orientation": "landscape",
+      "ratio": 1.208,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Oils --- Sail Boat or Sailing --- ±"
+      ]
+    },
+    {
+      "label": "20 × 36",
+      "height": 20,
+      "width": 36,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.8,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Corn Belt City"
+      ]
+    },
+    {
+      "label": "24 × 36",
+      "height": 24,
+      "width": 36,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.5,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Approaching a City"
+      ]
+    },
+    {
+      "label": "29 × 31",
+      "height": 29,
+      "width": 31,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.069,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Night Windows"
+      ]
+    },
+    {
+      "label": "26 × 38",
+      "height": 26,
+      "width": 38,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.462,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "House by an Inlet"
+      ]
+    },
+    {
+      "label": "27 × 38",
+      "height": 27,
+      "width": 38,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.407,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Route 6 thru Eastham"
+      ]
+    },
+    {
+      "label": "26 × 40",
+      "height": 26,
+      "width": 40,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.538,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Gas"
+      ]
+    },
+    {
+      "label": "24 × 44",
+      "height": 24,
+      "width": 44,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.833,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "« Dawn in Pennsylvania »"
+      ]
+    },
+    {
+      "label": "26 × 42",
+      "height": 26,
+      "width": 42,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.615,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "October on Cape Cod"
+      ]
+    },
+    {
+      "label": "27 × 43",
+      "height": 27,
+      "width": 43,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.593,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Hills, South Truro"
+      ]
+    },
+    {
+      "label": "28 × 42 7/8",
+      "height": 28,
+      "width": 42.875,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.531,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Lee Shore"
+      ]
+    },
+    {
+      "label": "32 × 38",
+      "height": 32,
+      "width": 38,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.188,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "« Girlie Show »"
+      ]
+    },
+    {
+      "label": "29 × 44",
+      "height": 29,
+      "width": 44,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.517,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Summer Time"
+      ]
+    },
+    {
+      "label": "32 × 40",
+      "height": 32,
+      "width": 40,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.25,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Hotel Lobby"
+      ]
+    },
+    {
+      "label": "34 × 40",
+      "height": 34,
+      "width": 40,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.176,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Cape Cod Morning"
+      ]
+    },
+    {
+      "label": "29 × 48",
+      "height": 29,
+      "width": 48,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.655,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Railroad Sunset"
+      ]
+    },
+    {
+      "label": "32 × 46",
+      "height": 32,
+      "width": 46,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.438,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "East River"
+      ]
+    },
+    {
+      "label": "36 × 48",
+      "height": 36,
+      "width": 48,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.333,
+      "ledgers": [
+        "book-i"
+      ],
+      "works": [
+        "Two on the Isle"
+      ]
+    },
+    {
+      "label": "36 × 50",
+      "height": 36,
+      "width": 50,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.389,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "Ground Swell"
+      ]
+    },
+    {
+      "label": "33 × 60",
+      "height": 33,
+      "width": 60,
+      "count": 1,
+      "approx": false,
+      "orientation": "landscape",
+      "ratio": 1.818,
+      "ledgers": [
+        "book-ii"
+      ],
+      "works": [
+        "« Night Hawks »"
+      ]
+    },
+    {
+      "label": "60 × 44",
+      "height": 60,
+      "width": 44,
+      "count": 1,
+      "approx": false,
+      "orientation": "portrait",
+      "ratio": 0.733,
+      "ledgers": [
+        "book-iii"
+      ],
+      "works": [
+        "Morning in a City"
+      ]
+    }
+  ],
+  "byLedger": {
+    "book-ii": [
+      {
+        "label": "20 × 28",
+        "count": 21
+      },
+      {
+        "label": "14 × 20",
+        "count": 17
+      },
+      {
+        "label": "20 × 25",
+        "count": 7
+      },
+      {
+        "label": "24 × 29",
+        "count": 7
+      },
+      {
+        "label": "23 1/2 × 28 3/4",
+        "count": 6
+      },
+      {
+        "label": "23 1/2 × 28",
+        "count": 3
+      },
+      {
+        "label": "35 × 60",
+        "count": 3
+      },
+      {
+        "label": "30 × 38",
+        "count": 2
+      },
+      {
+        "label": "20 × 22",
+        "count": 1
+      },
+      {
+        "label": "18 × 27",
+        "count": 1
+      },
+      {
+        "label": "19 × 27",
+        "count": 1
+      },
+      {
+        "label": "22 × 25",
+        "count": 1
+      },
+      {
+        "label": "20 × 29",
+        "count": 1
+      },
+      {
+        "label": "27 × 38",
+        "count": 1
+      },
+      {
+        "label": "26 × 40",
+        "count": 1
+      },
+      {
+        "label": "24 × 44",
+        "count": 1
+      },
+      {
+        "label": "28 × 42 7/8",
+        "count": 1
+      },
+      {
+        "label": "32 × 38",
+        "count": 1
+      },
+      {
+        "label": "32 × 46",
+        "count": 1
+      },
+      {
+        "label": "36 × 50",
+        "count": 1
+      },
+      {
+        "label": "33 × 60",
+        "count": 1
+      }
+    ],
+    "book-v": [
+      {
+        "label": "12 × 18",
+        "count": 8
+      },
+      {
+        "label": "10 1/2 × 16",
+        "count": 2
+      },
+      {
+        "label": "10 3/8 × 16",
+        "count": 1
+      },
+      {
+        "label": "14 1/2 × 13 1/2",
+        "count": 1
+      },
+      {
+        "label": "11 3/4 × 18",
+        "count": 1
+      },
+      {
+        "label": "12 × 19",
+        "count": 1
+      }
+    ],
+    "book-i": [
+      {
+        "label": "24 × 29",
+        "count": 7
+      },
+      {
+        "label": "29 × 43",
+        "count": 5
+      },
+      {
+        "label": "8 × 10",
+        "count": 4
+      },
+      {
+        "label": "28 × 36",
+        "count": 4
+      },
+      {
+        "label": "7 × 9",
+        "count": 3
+      },
+      {
+        "label": "8 1/2 × 10",
+        "count": 3
+      },
+      {
+        "label": "29 × 40",
+        "count": 3
+      },
+      {
+        "label": "35 × 60",
+        "count": 3
+      },
+      {
+        "label": "4 × 5",
+        "count": 2
+      },
+      {
+        "label": "6 × 7",
+        "count": 2
+      },
+      {
+        "label": "7 × 8",
+        "count": 2
+      },
+      {
+        "label": "7 × 8 3/8",
+        "count": 2
+      },
+      {
+        "label": "12 × 15",
+        "count": 2
+      },
+      {
+        "label": "30 × 38",
+        "count": 2
+      },
+      {
+        "label": "3 1/4 × 4",
+        "count": 1
+      },
+      {
+        "label": "5 × 6",
+        "count": 1
+      },
+      {
+        "label": "5 × 7",
+        "count": 1
+      },
+      {
+        "label": "6 × 8",
+        "count": 1
+      },
+      {
+        "label": "7 1/2 × 8",
+        "count": 1
+      },
+      {
+        "label": "± 11 × 6",
+        "count": 1
+      },
+      {
+        "label": "7 1/2 × 12 1/2",
+        "count": 1
+      },
+      {
+        "label": "10 × 12",
+        "count": 1
+      },
+      {
+        "label": "± 24 × 29",
+        "count": 1
+      },
+      {
+        "label": "29 × 31",
+        "count": 1
+      },
+      {
+        "label": "26 × 38",
+        "count": 1
+      },
+      {
+        "label": "27 × 43",
+        "count": 1
+      },
+      {
+        "label": "29 × 48",
+        "count": 1
+      },
+      {
+        "label": "36 × 48",
+        "count": 1
+      }
+    ],
+    "book-iii": [
+      {
+        "label": "28 × 40",
+        "count": 7
+      },
+      {
+        "label": "30 × 40",
+        "count": 4
+      },
+      {
+        "label": "29 × 40",
+        "count": 3
+      },
+      {
+        "label": "31 × 40",
+        "count": 2
+      },
+      {
+        "label": "30 × 42",
+        "count": 2
+      },
+      {
+        "label": "32 × 50",
+        "count": 2
+      },
+      {
+        "label": "20 × 30",
+        "count": 1
+      },
+      {
+        "label": "23 × 30",
+        "count": 1
+      },
+      {
+        "label": "20 × 36",
+        "count": 1
+      },
+      {
+        "label": "24 × 36",
+        "count": 1
+      },
+      {
+        "label": "26 × 42",
+        "count": 1
+      },
+      {
+        "label": "29 × 44",
+        "count": 1
+      },
+      {
+        "label": "32 × 40",
+        "count": 1
+      },
+      {
+        "label": "34 × 40",
+        "count": 1
+      },
+      {
+        "label": "60 × 44",
+        "count": 1
+      }
+    ]
+  },
+  "unsized": {
+    "count": 65,
+    "note": "Work headings that state no size. Most are running-list leaves where the title stands alone and the measurement is in a column of its own, and a few are titles read only in part. Reported because they are the denominator: a format table drawn from the headings that happen to carry a size says nothing until you know how many did not.",
+    "sample": [
+      {
+        "ledger": "book-i",
+        "leaf": "4",
+        "ref": 16759,
+        "title": null,
+        "heading": "Night in"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "14",
+        "ref": 16553,
+        "title": "The Locomotive",
+        "heading": "The Locomotive 1922."
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "44",
+        "ref": 18288,
+        "title": "House at Tarrytown",
+        "heading": "House at Tarrytown"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "44",
+        "ref": 18288,
+        "title": "Self Portrait",
+        "heading": "Self Portrait"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "45",
+        "ref": 16318,
+        "title": "Apartment Houses",
+        "heading": "Apartment Houses"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "45",
+        "ref": 16318,
+        "title": "Water color --- House with Mansard Roof",
+        "heading": "Water color --- House with Mansard Roof"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "52",
+        "ref": 18056,
+        "title": "Sailing",
+        "heading": "Sailing"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "52",
+        "ref": 18056,
+        "title": "Apartment Houses",
+        "heading": "Apartment Houses"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "52",
+        "ref": 18056,
+        "title": "New York Restaurant",
+        "heading": "New York Restaurant"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "52",
+        "ref": 18056,
+        "title": "New York Pavements",
+        "heading": "New York Pavements"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "53",
+        "ref": 17852,
+        "title": "Yonkers",
+        "heading": "Yonkers"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "53",
+        "ref": 17852,
+        "title": null,
+        "heading": "Y. Interior"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "54",
+        "ref": 16522,
+        "title": "The Automat",
+        "heading": "The Automat"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "54",
+        "ref": 16522,
+        "title": "11 A. M",
+        "heading": "11 A. M."
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "54",
+        "ref": 16522,
+        "title": "The City",
+        "heading": "The City"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "54",
+        "ref": 16522,
+        "title": "Gloucester Street",
+        "heading": "Gloucester Street"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "56",
+        "ref": 18392,
+        "title": null,
+        "heading": "B"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "56",
+        "ref": 18392,
+        "title": null,
+        "heading": "Freight cars - Gloucest"
+      },
+      {
+        "ledger": "book-i",
+        "leaf": "71",
+        "ref": 16955,
+        "title": "Shore Acres",
+        "heading": "Shore Acres"
+      },
+      {
+        "ledger": "book-ii",
+        "leaf": "2",
+        "ref": 17332,
+        "title": "Dauphinée House",
+        "heading": "Dauphinée House."
+      },
+      {
+        "ledger": "book-ii",
+        "leaf": "2",
+        "ref": 17332,
+        "title": "Mrs. Scott's House",
+        "heading": "Mrs. Scott's House"
+      },
+      {
+        "ledger": "book-ii",
+        "leaf": "3",
+        "ref": 17965,
+        "title": "City Roofs",
+        "heading": "City Roofs -"
+      },
+      {
+        "ledger": "book-ii",
+        "leaf": "3",
+        "ref": 17965,
+        "title": "Ryder House",
+        "heading": "Ryder House"
+      },
+      {
+        "ledger": "book-ii",
+        "leaf": "4",
+        "ref": 18397,
+        "title": "Cape Cod Sunset",
+        "heading": "Cape Cod Sunset."
+      },
+      {
+        "ledger": "book-ii",
+        "leaf": "4",
+        "ref": 18397,
+        "title": "Sun on Prospect St",
+        "heading": "Sun on Prospect St."
+      }
+    ]
+  }
+}

@@ -862,7 +862,10 @@ const out = {
       'only a surname that more than one declared party shares, the row is reported ambiguous ' +
       'rather than credited to a guess.',
   },
-  entries: entries.map(({ rowText, ...e }) => e),
+  // `rowText` is carried on every entry so the party tally could look for a
+  // name in it, and dropped here: it is the whole row repeated 326 times, and
+  // nothing downstream reads it.
+  entries: entries.map(({ rowText: _rowText, ...e }) => e),
   unparsed: {
     count: unparsed.length,
     sample: unparsed.slice(0, 25),

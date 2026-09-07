@@ -19,7 +19,8 @@
     "tiles": "node scripts/tiles.mjs",
     "accounts": "node scripts/accounts.mjs",
     "places": "node scripts/places.mjs",
-    "notes": "node scripts/notes.mjs"
+    "notes": "node scripts/notes.mjs",
+    "formats": "node scripts/formats.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",

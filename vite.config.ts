@@ -83,6 +83,7 @@ export default defineConfig({
         archive: resolve(import.meta.dirname, 'archive/index.html'),
         timeline: resolve(import.meta.dirname, 'timeline/index.html'),
         accounts: resolve(import.meta.dirname, 'accounts/index.html'),
+        formats: resolve(import.meta.dirname, 'formats/index.html'),
         method: resolve(import.meta.dirname, 'method/index.html'),
         contribute: resolve(import.meta.dirname, 'contribute/index.html'),
       },
