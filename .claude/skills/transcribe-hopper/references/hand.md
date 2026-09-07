@@ -2054,3 +2054,147 @@ Sheet 19 goes 1959, 1959, 1960, 1963, then back to 1962, then 1963, then 1956,
 - **`John L. Sexton`** *(leaf 3)* — the middle initial is in pale pencil where
   the surname is in ink.
 - **`dark hair`** *(leaf 7)* — two words after « 2 men in boat ».
+
+---
+
+*(Book III batch 3, sheets 25–36, read 7 September 2026, Opus 5. What follows
+is batch 3's; batch 2's section above is unchanged by it except where said.)*
+
+## Twelve leaves, no clippings, no braces, no ruled table
+
+Batch 2's second half predicted this and it holds all the way to leaf 29: from
+sheet 20 the volume is one picture to a leaf and nothing else. **The whole of
+batch 3 has not one `ledgertable` in it** — no ruling of her own, no columns,
+and therefore none of the column-width arithmetic that dominates Book I. It
+also has no clippings and no braces at all, after eight leaves of both. Budget
+attention for prose and for money, not for layout.
+
+## The odd foliation holds, and the second written verso behaves like the first
+
+9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29 — printed in blue, top right of a
+recto. One verso is written on (a printed **10** at its head) and the Whitney
+again gives it no leaf number, so it takes `\sheet{17236}{}` and the printed
+number goes in a `\note{}`, exactly as leaf 4 did in batch 2. Expect this every
+time.
+
+## Her ordinal mark can look like an inch mark on a number that could be either
+
+Leaf 10's whole content is « The 76" oil painting since came to Rehn Gallery
+1924 ». That is the **seventy-sixth oil**, not a canvas 76 inches wide: it is
+her ordinal, the same raised stroke Book III writes as `"` throughout. A number
+followed by that mark and *not* followed by a second dimension is an ordinal.
+An arrow after it points across the opening at leaf 11, as leaf 4's did at
+leaf 5.
+
+## The volume's one lawsuit, and how it is laid down
+
+Leaf 9's sale of Solitude #56 runs to eight lines written between 1953 and 1961
+in at least three sittings, and **the leaf does not sort them**: the 1961
+settlement stands below the 1958 report which stands below the 1953 sale, and
+the ink lines were added under pencil ones. Instalments of 500 against 4500,
+one payment made, a television man who owned Moonlight Interior, the picture
+found damaged at auction, a lawyer who kept 2000. She blames Frank Rehn's death
+and the illness before it. **The buyer is « Chambers » twice in the pencil and
+« Charmers » in the ink six lines down** and nothing reconciles them.
+
+## Two leaves were never inked
+
+Leaves 13 and 25 stand wholly in pencil where the other nine are pencil rubbed
+out and inked over. Leaf 13 still shows its erased layer, and there it
+*contradicts* what is written above it: the erasure dates the Stephen Clark
+sale « Nov. '45 » where the pencil gives the cheque as « Ap. 4", 46 ».
+
+## The erased layer can differ in wording, not just in date
+
+Batch 2 found the layers disagreeing about a date. Leaf 11 has them disagreeing
+about a *fact*: the ink calls the canvas « smooth primer of doubtful character »
+where the pencil under it says only « smooth primed ». Transcribe the ink,
+report the erasure, choose neither.
+
+## Where the « To Rehn Gallery » marginal sits is not fixed
+
+Leaves 13 and 15 put it in the fore-edge margin at the **right** of the title
+line. Leaf 19 puts the same note in the margin at the **left**. Do not assume
+the side from the previous leaf.
+
+## A year can stand in the head margin, above the ruling
+
+Leaf 9 carries « 1944. » and leaf 27 « 1948. » in pencil above the ruled area,
+belonging to no line. `\marginal{}`, not `\note{}` — they are hers.
+
+## Every sale reconciles, and one is written as a decimal
+
+1750−1/3=1166 2/3 · 3000−1/3=2000 (three times) · 2250−1/3=1500 (twice) ·
+1500−1/3=1000 · 2500−1/3=1666.67 · 500−1/3=333 1/3. **Leaf 23 is the first
+place in the volume to write the third as a decimal** rather than 1666 2/3.
+As written; do not regularise it to the fraction the rest of the volume uses.
+
+## Leaf 27 records an exchange, not a sale
+
+The Whitney took 7 A.M. out of the 1950 retrospective and gave back The Circle
+Theatre, bought in 1936, plus 500 — and Rehn's third of that 500 is a separate
+line eighteen months later. The money on such a leaf is not a price and totting
+it up with the sales would be wrong.
+
+## She names the people in the picture, once
+
+Leaf 29 calls the two figures in Conference at Night **Deborah** (« is blond, a
+queen in her own right ») and **Sammy** (« better looking than here in
+drawing »). Neither name is anywhere else in the six volumes so far. They are
+hers and they are not titles.
+
+## Her interlineations are still the sense, and the caret is still the clue
+
+Leaf 29: « Chief interest what ^shown by a bright shaft of light »; « Big event
+where ^this light strikes ». Leaf 19: « 2 small patches of ^sage green ».
+Leaf 25 and leaf 11 do the same. Read the caret in; where the addition sits
+above the line as a separate remark, `\marginal{}`.
+
+## The prose is denser here than in batch 2 and it is the point of the batch
+
+Leaf 19 ends its description with two quotations, gives them to Goethe by way of
+Edward, and marks the attribution « (strictly off the record) ». Leaf 25 is six
+words: « She standing out for matrimony. » Leaf 17 says the signature is « most
+muleishly dimmed + concealed » and then argues, at length and under the heading
+« Note », why there is no gleam on the tracks. None of it is ornament and all of
+it transcribes like everything else.
+
+## More spellings, all as written
+
+- **Windsor** *(leaves 13, 19)* beside **Winsor** *(leaves 9, 17, 21, 23, 27,
+  29)* — the same colourman, six leaves apart.
+- **Block** *(leaf 11)* for the **Blockx** of leaf 9.
+- **tarpentine** *(leaf 23)* and **terpentine** *(leaf 27)* beside
+  **turpentine** everywhere else.
+- **Wichita** and **Witchita** *(leaf 29)* — on consecutive lines.
+- **mahogony** *(leaf 11)*, **whiteish** *(leaf 15)*, **purpleish**,
+  **greeny** *(leaf 21)*, **rooves** *(leaves 15, 19)*, **favorite**
+  *(leaf 19)*, **Slatey** / **slatey** *(leaves 15, 19)*.
+- **Summer Evening** *(leaf 25)* where the Whitney's descriptor gives
+  Summer Evenings.
+
+## Readings that would not settle
+
+- **the two characters after « Wolf »** *(leaf 9)* — between the surname and
+  « owns Moonlight », with « television Co. » written above them. Nothing at 8×;
+  one of the batch's two `\ill{}`.
+- **the word before « Coatesville, Pa. »** *(leaf 15)* — five or six letters
+  beginning with an S, so **not** « West » (her W is unmistakable and this is
+  not it). The batch's other `\ill{}`.
+- **`slatery`** *(leaf 9)* — the road's colour. Leaves 15 and 19 both write
+  « slatey » for the same thing and leaf 9's letters will carry either, so the
+  reading is offered rather than settled.
+- **`Charmers`** *(leaf 9)* — the ink spelling of the buyer the pencil calls
+  Chambers.
+- **`Zacker`** *(leaf 9)* — the lawyer who kept 2000; « Harry » is added above.
+- **`bark`** and **`case`** *(leaf 13)* — two words in « room bark, case curtain
+  pink ». Neither resolves; « lace » is tempting for the second and the initial
+  is a capital C.
+- **`of 5`** *(leaf 13)* — inside « (of 5 (Cape P.) », where the opening bracket
+  is never closed. « Cape P. » beside it is plain.
+- **`Leistner`** *(leaf 15)* — W. E., of Brooklyn.
+- **`Bo.`** *(leaf 27)* — inside « (Bo. ~~taken~~ in) », with « cash » struck
+  above the line and a caret below.
+- **`Navis`** *(leaf 29)* — Mrs. Raphael Navis of the Murdock Collection, with
+  « Elizabeth » added above the first occurrence. The surname recurs with the
+  same shape, which is not the same as its being settled.
