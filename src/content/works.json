@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T21:52:32.328Z",
+  "generated": "2026-09-07T10:13:00.796Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -8865,7 +8865,7 @@
     },
     {
       "key": "11 a m",
-      "title": "11 A. M",
+      "title": "11 A.M",
       "museumTitle": null,
       "date": null,
       "medium": null,
@@ -8880,6 +8880,12 @@
           "batch": 5,
           "leaf": "54",
           "ref": "16522"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "56",
+          "ref": "17680"
         }
       ]
     },
@@ -9078,6 +9084,12 @@
           "batch": 5,
           "leaf": "52",
           "ref": "18056"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": "18235"
         }
       ]
     },
@@ -9248,7 +9260,7 @@
       "holdings": [],
       "ledgerYear": 1924,
       "ledgerDisagrees": false,
-      "notLaterThan": null,
+      "notLaterThan": 1925,
       "namedIn": [
         {
           "ledger": "book-i",
@@ -9261,6 +9273,12 @@
           "batch": 5,
           "leaf": "71",
           "ref": "17170"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": "16762"
         }
       ]
     },
@@ -9886,6 +9904,12 @@
           "batch": 2,
           "leaf": "8",
           "ref": "17539"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "56",
+          "ref": "17680"
         }
       ]
     },
@@ -10170,6 +10194,12 @@
           "batch": 5,
           "leaf": "54",
           "ref": "16522"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "56",
+          "ref": "17680"
         }
       ]
     },
@@ -10433,6 +10463,12 @@
           "batch": 5,
           "leaf": "52",
           "ref": "18056"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": "18235"
         }
       ]
     },
@@ -11372,6 +11408,46 @@
       ]
     },
     {
+      "key": "n y corner saloon red house",
+      "title": "N.Y. Corner - saloon, red house",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": 1924,
+      "namedIn": [
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": "16762"
+        }
+      ]
+    },
+    {
+      "key": "n y interior back girl sewing dark canvas",
+      "title": "N.Y. Interior - Back girl, sewing, dark canvas",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": 1922,
+      "namedIn": [
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": "16762"
+        }
+      ]
+    },
+    {
       "key": "n y movie house",
       "title": "N.Y. Movie House",
       "museumTitle": null,
@@ -11448,6 +11524,12 @@
           "batch": 5,
           "leaf": "52",
           "ref": "18056"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "56",
+          "ref": "17680"
         }
       ]
     },
@@ -11468,6 +11550,12 @@
           "batch": 5,
           "leaf": "52",
           "ref": "18056"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": "18235"
         }
       ]
     },
@@ -12008,6 +12096,12 @@
           "batch": 5,
           "leaf": "68",
           "ref": "16468"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": "18235"
         }
       ]
     },
@@ -12303,6 +12397,26 @@
       ]
     },
     {
+      "key": "sunday or hoboken fa ade",
+      "title": "Sunday - or Hoboken façade",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": "18235"
+        }
+      ]
+    },
+    {
       "key": "sunday or hoboken facade",
       "title": "Sunday --- or Hoboken Facade",
       "museumTitle": null,
@@ -12367,6 +12481,12 @@
           "batch": 5,
           "leaf": "54",
           "ref": "16522"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "56",
+          "ref": "17680"
         }
       ]
     },
@@ -12470,6 +12590,12 @@
           "batch": 5,
           "leaf": "54",
           "ref": "16522"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "56",
+          "ref": "17680"
         }
       ]
     },
@@ -13071,6 +13197,26 @@
           "ref": "17852"
         }
       ]
+    },
+    {
+      "key": "yonkers trolley car blue sky",
+      "title": "Yonkers - trolley car, blue sky",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": 1925,
+      "namedIn": [
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": "16762"
+        }
+      ]
     }
   ],
   "transcribedYears": [
@@ -13240,6 +13386,20 @@
           "leaf": "43",
           "ref": 16638,
           "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "76",
+          "ref": 16476,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "90",
+          "ref": 17444,
+          "rows": 1
         }
       ]
     },
@@ -13364,6 +13524,69 @@
           "leaf": "53",
           "ref": 17852,
           "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": 16762,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "68",
+          "ref": 18171,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "73",
+          "ref": 18070,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "74",
+          "ref": 17076,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "76",
+          "ref": 16476,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "88",
+          "ref": 17130,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "89",
+          "ref": 16668,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "90",
+          "ref": 17444,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "97",
+          "ref": 16956,
+          "rows": 1
         }
       ]
     },
@@ -13497,11 +13720,60 @@
           "rows": 3
         },
         {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": 18235,
+          "rows": 2
+        },
+        {
           "ledger": "book-i",
           "batch": 6,
           "leaf": "61",
           "ref": 17622,
           "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "68",
+          "ref": 18171,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "70",
+          "ref": 16829,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "73",
+          "ref": 18070,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "76",
+          "ref": 16476,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "88",
+          "ref": 17130,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "89",
+          "ref": 16668,
+          "rows": 2
         }
       ]
     },
@@ -13663,6 +13935,20 @@
           "rows": 3
         },
         {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": 18235,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": 16762,
+          "rows": 2
+        },
+        {
           "ledger": "book-i",
           "batch": 6,
           "leaf": "60",
@@ -13684,10 +13970,31 @@
           "rows": 1
         },
         {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "68",
+          "ref": 18171,
+          "rows": 4
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "70",
+          "ref": 16829,
+          "rows": 1
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "72",
           "ref": 18117,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "73",
+          "ref": 18070,
           "rows": 1
         },
         {
@@ -13696,6 +14003,27 @@
           "leaf": "76",
           "ref": 17740,
           "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "76",
+          "ref": 16476,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "88",
+          "ref": 17130,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "90",
+          "ref": 17444,
+          "rows": 2
         }
       ]
     },
@@ -13864,6 +14192,20 @@
           "rows": 1
         },
         {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": 18235,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": 16762,
+          "rows": 4
+        },
+        {
           "ledger": "book-i",
           "batch": 6,
           "leaf": "62",
@@ -13875,6 +14217,41 @@
           "batch": 6,
           "leaf": "63",
           "ref": 18104,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "68",
+          "ref": 18171,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "74",
+          "ref": 17076,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "80",
+          "ref": 17902,
+          "rows": 4
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "81",
+          "ref": 18151,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "91",
+          "ref": 17125,
           "rows": 1
         }
       ]
@@ -14016,6 +14393,27 @@
           "rows": 3
         },
         {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": 16762,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "56",
+          "ref": 17680,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "60",
+          "ref": 17359,
+          "rows": 1
+        },
+        {
           "ledger": "book-i",
           "batch": 6,
           "leaf": "63",
@@ -14037,11 +14435,46 @@
           "rows": 2
         },
         {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "68",
+          "ref": 18171,
+          "rows": 3
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "76",
           "ref": 17740,
           "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "91",
+          "ref": 17125,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "92",
+          "ref": 16304,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "93",
+          "ref": 17434,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "95",
+          "ref": 16382,
+          "rows": 6
         }
       ]
     },
@@ -14168,11 +14601,39 @@
           "rows": 6
         },
         {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": 18235,
+          "rows": 1
+        },
+        {
           "ledger": "book-i",
           "batch": 5,
           "leaf": "55",
           "ref": 17525,
           "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "55",
+          "ref": 16762,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "56",
+          "ref": 17680,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "62",
+          "ref": 17630,
+          "rows": 1
         },
         {
           "ledger": "book-i",
@@ -14189,6 +14650,48 @@
           "rows": 3
         },
         {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "68",
+          "ref": 18171,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "70",
+          "ref": 16829,
+          "rows": 27
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "71",
+          "ref": 17690,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "72",
+          "ref": 17297,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "73",
+          "ref": 18070,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "75",
+          "ref": 18023,
+          "rows": 6
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "76",
@@ -14201,6 +14704,41 @@
           "leaf": "77",
           "ref": 18222,
           "rows": 6
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "78",
+          "ref": 16767,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "86",
+          "ref": 18274,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "93",
+          "ref": 17434,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "95",
+          "ref": 16382,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "97",
+          "ref": 16956,
+          "rows": 1
         }
       ]
     },
@@ -14411,6 +14949,13 @@
           "rows": 1
         },
         {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "67",
+          "ref": 17219,
+          "rows": 1
+        },
+        {
           "ledger": "book-i",
           "batch": 7,
           "leaf": "68",
@@ -14418,11 +14963,53 @@
           "rows": 2
         },
         {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "71",
+          "ref": 17690,
+          "rows": 4
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "73",
+          "ref": 18070,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "75",
+          "ref": 18023,
+          "rows": 8
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "76",
+          "ref": 16476,
+          "rows": 3
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "77",
           "ref": 18222,
           "rows": 5
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "78",
+          "ref": 16767,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "87",
+          "ref": 18333,
+          "rows": 1
         }
       ]
     },
@@ -14591,6 +15178,13 @@
           "rows": 1
         },
         {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "71",
+          "ref": 17690,
+          "rows": 5
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "72",
@@ -14598,10 +15192,52 @@
           "rows": 2
         },
         {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "75",
+          "ref": 18023,
+          "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "76",
+          "ref": 16476,
+          "rows": 4
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "77",
           "ref": 18222,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "82",
+          "ref": 17514,
+          "rows": 6
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "86",
+          "ref": 18274,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "87",
+          "ref": 18333,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "88",
+          "ref": 17130,
           "rows": 2
         }
       ]
@@ -14715,6 +15351,13 @@
           "rows": 4
         },
         {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "67",
+          "ref": 17219,
+          "rows": 1
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "72",
@@ -14729,6 +15372,13 @@
           "rows": 1
         },
         {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "73",
+          "ref": 18070,
+          "rows": 3
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "74",
@@ -14741,6 +15391,27 @@
           "leaf": "75",
           "ref": 17138,
           "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "76",
+          "ref": 16476,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "77",
+          "ref": 16433,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "89",
+          "ref": 16668,
+          "rows": 2
         }
       ]
     },
@@ -14837,6 +15508,27 @@
           "leaf": "79",
           "ref": 17175,
           "rows": 3
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "82",
+          "ref": 17514,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "86",
+          "ref": 18274,
+          "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "89",
+          "ref": 16668,
+          "rows": 1
         }
       ]
     },
@@ -14877,6 +15569,13 @@
           "leaf": "49",
           "ref": 17717,
           "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "57",
+          "ref": 16206,
+          "rows": 1
         }
       ]
     },
@@ -14912,11 +15611,25 @@
           "rows": 1
         },
         {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "57",
+          "ref": 16206,
+          "rows": 1
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "77",
           "ref": 18222,
           "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "83",
+          "ref": 17436,
+          "rows": 1
         }
       ]
     },
@@ -14963,6 +15676,20 @@
           "batch": 3,
           "leaf": "42",
           "ref": 17766,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "77",
+          "ref": 16433,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "83",
+          "ref": 17436,
           "rows": 1
         }
       ]
@@ -15042,6 +15769,13 @@
           "leaf": "77",
           "ref": 18222,
           "rows": 2
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "83",
+          "ref": 17436,
+          "rows": 1
         }
       ]
     },
@@ -15138,6 +15872,13 @@
           "leaf": "49",
           "ref": 17717,
           "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "84",
+          "ref": 16360,
+          "rows": 2
         }
       ]
     },
@@ -15225,6 +15966,13 @@
           "rows": 3
         },
         {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "58",
+          "ref": 16259,
+          "rows": 1
+        },
+        {
           "ledger": "book-i",
           "batch": 8,
           "leaf": "77",
@@ -15286,6 +16034,13 @@
           "rows": 2
         },
         {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "77",
+          "ref": 16433,
+          "rows": 1
+        },
+        {
           "ledger": "book-ii",
           "batch": 6,
           "leaf": "95",
@@ -15331,6 +16086,13 @@
           "leaf": "54",
           "ref": 16522,
           "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "58",
+          "ref": 16259,
+          "rows": 2
         },
         {
           "ledger": "book-ii",
@@ -15530,6 +16292,13 @@
           "batch": 3,
           "leaf": "24",
           "ref": 18414,
+          "rows": 1
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "85",
+          "ref": 18068,
           "rows": 1
         }
       ]

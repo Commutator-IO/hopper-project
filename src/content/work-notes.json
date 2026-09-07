@@ -127,6 +127,12 @@
       "retrieved": "2026-09-06",
       "via": "api.artic.edu"
     },
+    "chrysler-83-591": {
+      "name": "Chrysler Museum of Art, New York Pavements, object number 83.591",
+      "url": "https://chrysler.emuseum.com/objects/24186/new-york-pavements",
+      "retrieved": "2026-09-07",
+      "via": "chrysler.emuseum.com"
+    },
     "cma-1931-2647": {
       "name": "Cleveland Museum of Art, Hills, South Truro, accession 1931.2647",
       "url": "https://clevelandart.org/art/1931.2647",
@@ -144,6 +150,12 @@
       "url": "https://clevelandart.org/art/1959.298",
       "retrieved": "2026-09-06",
       "via": "openaccess-api.clevelandart.org"
+    },
+    "dmac-1958-2": {
+      "name": "Des Moines Art Center, Automat, accession 1958.2",
+      "url": "https://desmoinesartcenter.org/wp-content/uploads/2022/04/cc-hopper.pdf",
+      "retrieved": "2026-09-07",
+      "via": "desmoinesartcenter.org (Creative Connections: Mood + Hopper)"
     },
     "met-25-31": {
       "name": "The Metropolitan Museum of Art, accession lot 25.31 — fifteen Edward Hopper etchings numbered 25.31.1 to 25.31.15, every one credited Harris Brisbane Dick Fund, 1925. The link is 25.31.15, The Railroad, the last of the lot.",
@@ -223,6 +235,36 @@
       "retrieved": "2026-09-06",
       "via": "collectionapi.metmuseum.org"
     },
+    "moma-3-1930": {
+      "name": "The Museum of Modern Art, House by the Railroad, accession 3.1930",
+      "url": "https://www.moma.org/collection/works/78330",
+      "retrieved": "2026-09-07",
+      "via": "github.com/MuseumofModernArt/collection (the Museum’s own collection release)"
+    },
+    "muskegon-1936-12": {
+      "name": "Muskegon Museum of Art, New York Restaurant, accession 1936.12",
+      "url": "https://muskegonartmuseum.org/art/collection/new-york-restaurant/",
+      "retrieved": "2026-09-07",
+      "via": "muskegonartmuseum.org"
+    },
+    "pafa-1925-5": {
+      "name": "Pennsylvania Academy of the Fine Arts, Apartment Houses, accession 1925.5",
+      "url": "https://www.pafa.org/museum/collection/item/apartment-houses",
+      "retrieved": "2026-09-07",
+      "via": "pafa.org"
+    },
+    "phillips-0925": {
+      "name": "The Phillips Collection, Sunday, object number 0925",
+      "url": "https://www.phillipscollection.org/collection/sunday",
+      "retrieved": "2026-09-07",
+      "via": "phillipscollection.org"
+    },
+    "uama-1945-009-023": {
+      "name": "University of Arizona Museum of Art, The City, accession 1945.009.023",
+      "url": "https://artmuseum.arizona.edu/collections/art/major-collections/american-art",
+      "retrieved": "2026-09-07",
+      "via": "artmuseum.arizona.edu"
+    },
     "whitney-70-1188": {
       "name": "Whitney Museum of American Art, Blackwell's Island, accession 70.1188",
       "url": "https://whitney.org/collection/works/5899",
@@ -233,9 +275,34 @@
       "name": "Whitney Museum of American Art, teacher guide, “About the Artist”",
       "url": "https://whitney.org/education/schools-educators/k-12/teaching-materials/teacher-guides/hopper-new-york/about",
       "via": "src/content/life.json, which already carries this source for the 1913 entry"
+    },
+    "whitney-hopper-ny-checklist": {
+      "name": "Whitney Museum of American Art, Edward Hopper’s New York, exhibition checklist",
+      "url": "https://whitneymedia.org/assets/generic_file/2141/Edward_Hopper_s_New_York_Exhibition_Checklist_8_11_22.pdf",
+      "retrieved": "2026-09-07",
+      "via": "whitneymedia.org"
     }
   },
   "notes": {
+    "11 a m": {
+      "note": "Three leaves and no museum. The dealers leaf and Book I leaf 54 both stop the picture at the Rehn show of 14 February 1927 and the reproductions six days later; leaf 54’s block then runs under a pasted clipping — « ELEVEN A. M. by EDWARD HOPPER at the Rehn Gallery » — and all that survives to the left of it is « Sold in Ap. 1928. Ha », « Oct. 1928  Carnegie Institut » and a line reading « Jos. H. Hirshhorn - 2000 - 1/3 ». Leaf 53 records a sale of three canvases together in 1928, this among them, at 3000. Nothing on either leaf says whether that is the April sale the clipping covers.",
+      "claims": [
+        {
+          "says": "Book I leaf 54 heads it « 11 A. M. », describes it « (Nude seated in green armchair at window, light from shaft --- 28\" x 36\" », and rules « Feb. 14, 27  Hopper show at [illegible] », « Feb. 20, 27  Reprod. in Even. Post [illegible] », « Sold in Ap. 1928. Ha[illegible] », « Oct. 1928  Carnegie Institut[illegible] » and « Jos. H. Hirshhorn - 2000 - 1/3 [illegible] », with a clipping reading « ELEVEN A. M. by EDWARD HOPPER at the Rehn Gallery » pasted over the right half of the block.",
+          "source": "ledger:book-i/54"
+        },
+        {
+          "says": "Book I leaf 53 writes « Carl Hamilton of Cal. --- 1928. --- 3 canvases  Bootleggers, 11 A. M., Gloucester St.  3000 ».",
+          "source": "ledger:book-i/53"
+        },
+        {
+          "says": "Dealers/Etchings leaf 56 heads it « 11 A.M. », describes it « Nude in arm chair at window, light from air shaft. Big lamp shade - table, bed. », and writes « Feb. 14, 1927 -  Hopper Show at Rehn’s.  Reprod. in N.Y. Even. Post & Bklyn Eagle - Feb. 20, 27 », with no sale.",
+          "source": "ledger:dealers/56"
+        }
+      ],
+      "written": "2026-09-07",
+      "model": "claude-opus-5"
+    },
     "american landscape": {
       "note": "Leaf 28’s row for 8 May 1925 is followed by a second: an impression handed to E. P. Jennings as his commission on the Metropolitan purchase, with a dash where the money would go. The Met’s impression is 25.31.4, dated 1920 as the leaf’s heading is, at a plate of 7 5/16 x 12 3/8 in. against the leaf’s 7 1/2\" x 12 1/2\".",
       "claims": [
@@ -257,6 +324,48 @@
         }
       ],
       "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "apartment houses": {
+      "note": "The Academy calls this the first Hopper oil to enter a museum collection, bought out of its own 1925 annual, and both leaves book the money the same way — 400 less fifteen per cent, 340. On the dealers leaf that sum has slipped two rows down, onto the line where the picture is borrowed back for the Rehn show of February 1927, while the receipt date beside it still reads « Mar. 1, 1925 »; Book I leaf 52 has it against the Penn. Academy purchase where it belongs. The Academy measures 24 x 28 15/16 in.; the leaf writes 24 x 29.",
+      "claims": [
+        {
+          "says": "The Pennsylvania Academy of the Fine Arts holds it as Apartment Houses, oil on canvas, dated 1923, 24 x 28 15/16 in. (60.96 x 73.50125 cm.), credit line « John Lambert Fund. », accession 1925.5, and states « Exhibited in and purchased from the 1925 annual exhibition of the Pennsylvania Academy, this was Hopper’s first oil to enter a museum collection. »",
+          "source": "pafa-1925-5"
+        },
+        {
+          "says": "Book I leaf 52 heads it « Apartment Houses » at « 24 x 29. », describes it « Windows seen thru windows - fat blond woman making bed. », and books « Jan. 1925  at Penn. Academy - Bgt. by Penn. Acad.  $400 - 15%  $340.  Mar. 1, ’25 ».",
+          "source": "ledger:book-i/52"
+        },
+        {
+          "says": "Dealers/Etchings leaf 54 heads it « Apartment Houses » and rules « Jan. 15, 24. Belmaison. N.Y. Show. », « Jan. 15, 1925. Penn. Academy - bought by Pen. Ac. » and « Feb. 1927. Borrowed for Hopper Show at Rehn’s.  $400 - Commis. 15% = $340. » with « Mar. 1, 1925 » in the last column of that third row.",
+          "source": "ledger:dealers/54"
+        }
+      ],
+      "written": "2026-09-07",
+      "model": "claude-opus-5"
+    },
+    "automat": {
+      "note": "Sold off the wall at the Rehn show that opened on 14 February 1927 — « Bgt. by Mr. Schaeffer », 1200 less a third, 800 received on 23 April — and she went back afterwards to put the name right, or nearly: « Mr. & Mrs. Leo Ray Green Sheafer », the address left as « 777 - Lex. or Mad. ». Des Moines bought it thirty-one years after that, on Edmundson Art Foundation money, as 1958.2. Both leaves give the canvas as 28 x 36\"; the museum shows 28 1/8 x 35 in.",
+      "claims": [
+        {
+          "says": "The Des Moines Art Center holds it, credited « Des Moines Art Center Permanent Collections; Purchased with funds from the Edmundson Art Foundation, Inc., 1958.2 ».",
+          "source": "dmac-1958-2"
+        },
+        {
+          "says": "The Whitney’s Edward Hopper’s New York checklist gives it as « Edward Hopper, Automat, 1927. Oil on canvas, 28 1/8 x 35 in. (71.4 x 88.9 cm). Des Moines Art Center, purchased with funds from the Edmundson Art Foundation, Inc. »",
+          "source": "whitney-hopper-ny-checklist"
+        },
+        {
+          "says": "Book I leaf 54 heads it « The Automat » at « 28 x 36\" », books « Feb. 14, 27  In.  Hopper Show at Rehn’s. Bgt. by Mr. Schaeffer  $1200 - 1/3 = $800  Ap. 23, 27. » and « Feb. 20, 27  Reprod. N. Y. World », and adds beneath « Mr. & Mrs. Leo Ray Green Sheafer  777 - Lex. or Mad. », the words « Ray » and « Lex. or Mad. » read doubtfully.",
+          "source": "ledger:book-i/54"
+        },
+        {
+          "says": "Dealers/Etchings leaf 56 heads it « The Automat », describes it « girl in green coat, yellow hat at table, radiator, marble floor, window in back. », and books « Feb. 1927  In.  Hoppers Show at Rehn’s.  Bought by Mr. Schaeffer Feb. 1927 » with « paid 1200 - Com. 1/3 =  800 » and « Ap. 23, 27 ».",
+          "source": "ledger:dealers/56"
+        }
+      ],
+      "written": "2026-09-07",
       "model": "claude-opus-5"
     },
     "aux fortifications": {
@@ -302,7 +411,7 @@
       "model": "claude-opus-5"
     },
     "bootleggers": {
-      "note": "The cross-reference is in her hand: Book I leaf 53 heads the canvas « Bootleggers  30 x 38  See Book II, p. 71 », and leaf 71 of Book II is that page, at the same size. Leaf 53 carries five exhibitions between 1925 and 1927 and a line naming Carl Hamilton and three canvases at 3000 in 1928; leaf 71 carries one sale, to the « Corrier Gallery, Manchester, N.H. » at 4000 less a third on 7 April 1956. Neither leaf says how the 1928 line and the 1956 sale stand to one another.",
+      "note": "The cross-reference is in her hand: Book I leaf 53 heads the canvas « Bootleggers  30 x 38  See Book II, p. 71 », and leaf 71 of Book II is that page, at the same size. Leaf 53 carries five exhibitions between 1925 and 1927 and a line naming Carl Hamilton and three canvases at 3000 in 1928; leaf 71 carries one sale, to the « Corrier Gallery, Manchester, N.H. » at 4000 less a third on 7 April 1956. Neither leaf says how the 1928 line and the 1956 sale stand to one another. Leaf 53’s own date column is under the hinged clipping in both photographs of the sheet, and only fragments show at the fore-edge; the dealers leaf 55 carries the same five exhibitions with the dates on — 1925 at Rehn’s, the fall of 1925 at the Brooklyn Museum, January 1926 at the Tri-National, 12 April 1926 at St. Botolph’s, and 14 February to 5 March 1927 in the window at Rehn’s.",
       "claims": [
         {
           "says": "Book I leaf 53 heads it « Bootleggers   30 x 38   See Book II, p. 71 », lists it invited or shown at the Rehn Gallery and the Brooklyn Museum in 1925, the Tri-National Ex. at Wildenstein's and the St. Botolph's Club in Boston in 1926 and the Rehn Gallery in 1927, and writes « Carl Hamilton of Cal. --- 1928. --- 3 canvases  Bootleggers, 11 A. M., Gloucester St.  3000 ».",
@@ -311,9 +420,13 @@
         {
           "says": "Book II leaf 71 heads it « « Bootleggers »  30 x 38  1924 or 1925  Painted in Wash. Sq. studio » and books « Corrier Gallery, Manchester, N.H.  4000 - 1/3 =  2666 2/3,  Ap. 7, '56 ».",
           "source": "ledger:book-ii/71"
+        },
+        {
+          "says": "Dealers/Etchings leaf 55 heads it « Bootleggers » and rules « 1925  In.  Rehn Gal. », « Fall 1925  In.  Bklyn. Museum - », « Jan. 1926  In.  Tri-National Ex. at Wildensteen », « Ap. 12, 26  In.  One man show at St. Botolph’s Club, Boston » and « Feb. 14 - Mar. 5, 1927  In  Window. Rehn Exhibition ».",
+          "source": "ledger:dealers/55"
         }
       ],
-      "written": "2026-09-06",
+      "written": "2026-09-07",
       "model": "claude-opus-5"
     },
     "bull fight": {
@@ -352,6 +465,25 @@
         }
       ],
       "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "city": {
+      "note": "Book I leaf 54 follows this one out of the room: bought by Duncan Phillips at the February 1927 Rehn show, back at auction in « 1939 (or 1938) » where it was « hastily bought in by Mrs. to Cahn for 300 », and « acquired by Charles Leonard Pfeiffers » in 1943. Tucson holds it as 1945.009.023, gift of C. Leonard Pfeiffer, among the hundred paintings he gave the University during the war — two years later than the date on the leaf. Pasted across the same block is the museum’s own colour plate, headed « UNIVERSITY OF ARIZONA PAINTINGS ».",
+      "claims": [
+        {
+          "says": "The University of Arizona Museum of Art holds it as « Edward Hopper, The City, 1927, Oil on canvas, Gift of C. Leonard Pfeiffer. 1945.009.023 », and states that the University’s collection began with a founding gift of about a hundred paintings that C. Leonard Pfeiffer gave during the Second World War.",
+          "source": "uama-1945-009-023"
+        },
+        {
+          "says": "Book I leaf 54 heads it « The City », rules « Feb. 14, 27  Hopper Show at [Rehn’s] », « Bgt. by Duncan Phil[lips] », « 1939 (or 1938)  resold at Park-Bernet - \"hastily bought in by Mrs. to Cahn for 300.\" » and « 1943  acquired by Charles Leonard Pfeiffers », the ends of those lines lost under a pasted colour reproduction captioned « UNIVERSITY OF ARIZONA PAINTINGS ».",
+          "source": "ledger:book-i/54"
+        },
+        {
+          "says": "Dealers/Etchings leaf 56 heads it « The City », describes it « Corner, on park. Old mansard type in foreground, row of red houses in back, roofs & back 120 or more windows. sides - », and gives one line: « Feb. 1927  Hoppers Show at Rehn’s ».",
+          "source": "ledger:dealers/56"
+        }
+      ],
+      "written": "2026-09-07",
       "model": "claude-opus-5"
     },
     "compartment c": {
@@ -509,6 +641,25 @@
       "written": "2026-09-06",
       "model": "claude-opus-5"
     },
+    "house by a railroad": {
+      "note": "Book I leaf 52 writes « Returned to Rehn’s & Sold to Mr. Stephen C. Clark, Mar. 20 1926, of Cooperstown » at 750 reduced to 600 less a third, the cheque « $400. June 11, 26 », and on the line below it « Given to the Museum of Modern Art ». The Museum’s credit line for 3.1930 is « Given anonymously », taken in on 12 January 1930: the leaf names a buyer where the accession names nobody, and neither record says the two are one transaction. MoMA catalogues it as House by the Railroad and both leaves head it « House by a Railroad »; its 24 x 29\" is the leaf’s size to the inch.",
+      "claims": [
+        {
+          "says": "The Museum of Modern Art holds it as House by the Railroad, oil on canvas, dated 1925, 24 x 29\" (61 x 73.7 cm), credit line « Given anonymously », accession 3.1930, acquired 12 January 1930.",
+          "source": "moma-3-1930"
+        },
+        {
+          "says": "Book I leaf 52 heads it « House by a Railroad.  24 x 29 » and writes « Winter 1925, 26  Invited as Guest exhibitor at New Society, Anderson Gal. », « Returned to Rehn’s & Sold to Mr. Stephen C. Clark, Mar. 20 1926, of Cooperstown », « Price $750, reduced to 600 - 1/3 Com.  $400.  June 11, 26 » and « Given to the Museum of Modern Art, ».",
+          "source": "ledger:book-i/52"
+        },
+        {
+          "says": "Dealers/Etchings leaf 54 heads it « House by a Railroad » and writes « Winter 1925, 26 - Invited as Guest Exhibitor at New Society, Anderson Gal. Returned to Rehn - & sold to Mr. Stephen Clark - Mar. 20, 26 Price 750 reduced to 600 - 1/3 Com. », without the cheque or the gift.",
+          "source": "ledger:dealers/54"
+        }
+      ],
+      "written": "2026-09-07",
+      "model": "claude-opus-5"
+    },
     "house by a river": {
       "note": "Leaf 18 heads the plate « House by a River  7\"x8\"  1920 » and the Art Institute dates its impression 1919. The leaf’s earliest row is the Touchstone Galleries, 17 October 1920, which is consistent with either year and settles neither.",
       "claims": [
@@ -623,6 +774,48 @@
       "written": "2026-09-06",
       "model": "claude-opus-5"
     },
+    "new york pavements": {
+      "note": "The Chrysler’s provenance opens « Mr. and Mrs. Lawrence Fleischman, acquired from the artist » and gives no date; Book I leaf 52 puts that purchase in November 1955 and then waits fifteen months for the money — « Check rec’d from Gallery --- Feb. 14\", ’57 = 2250. - 1/3 Com. = $1500. » The museum’s exhibition history begins with the New Society’s seventh show at the Anderson Galleries in January 1926, which is the first row on the dealers leaf; the leaf then keeps going where the history does not, to Germany with the Tri-National in March 1926, Mrs. Force’s Whitney Studio travelling show in October 1927, and Chicago in October 1928. It reached Norfolk in 1983 as Walter P. Chrysler Jr’s gift.",
+      "claims": [
+        {
+          "says": "The Chrysler Museum of Art holds it as New York Pavements, oil on canvas, dated 1924–1925, 24 3/4 × 29 3/4 in. (62.9 × 75.6 cm), credit line « Gift of Walter P. Chrysler, Jr. », object number 83.591; its provenance reads « Mr. and Mrs. Lawrence Fleischman, acquired from the artist; Mr. and Mrs. Herbert A. Goldstone, by 1965; Mr. and Mrs. Mortimer Spiller, by 1971; E.V. Thaw and Company, 1976; Mr. Walter P. Chrysler, Jr., 1976; Gift of Walter P. Chrysler, Jr., to The Chrysler Museum, 1983. » and its exhibition history opens « \"The New Society of Artists - Seventh Exhibition,\" Anderson Galleries, New York, N.Y., January 1926. »",
+          "source": "chrysler-83-591"
+        },
+        {
+          "says": "Book I leaf 52 heads it « New York Pavements » at « 24 x 29. », rules « Jan. 1926 » New Society at the Anderson Gal., « Mar. ’26 » the Tri National Ex. to Germany, « Oct. 27 » Mrs. Force’s Whitney Studio Travelling Show and « Oct. ’28 » the Chicago Art Institute, then writes « Bgt. by Lawrence & Barbara Fleischman --- Nov. 1955. » and « Check rec’d from Gallery --- Feb. 14\", ’57 = 2250. - 1/3 Com. = $1500. »",
+          "source": "ledger:book-i/52"
+        },
+        {
+          "says": "Dealers/Etchings leaf 56 heads it « New York Pavements », describes it « Grey picture. Modern apt. house, nurse & baby carriage crossing front corner of picture », and rules only two lines: « Jan. 1926  In.  Guest exhibitor at New Society » and « Mar. 26  In.  Gone to Germany with Tri-National Ex. »",
+          "source": "ledger:dealers/56"
+        }
+      ],
+      "written": "2026-09-07",
+      "model": "claude-opus-5"
+    },
+    "new york restaurant": {
+      "note": "Two leaves record one Chicago sale and one of them has lost the year: the dealers leaf ends « Ap. 27, 192 » in the fold, Book I leaf 52 writes « Ap. 27, 26. ». Where it went afterwards she set down as a guess — « Resold by Walker Gallery to Hackley Art Gallery at Muskegon, Mich. circa Jan. 1937 - or before » — and Muskegon’s accession number is 1936.12, which is the « or before »; the museum also quotes a letter Hopper wrote it on 9 January 1937. She was no surer of the size, giving it « 24 x 29 or 28 x 36 ? » against the 24 x 30 in. the museum shows.",
+      "claims": [
+        {
+          "says": "The Muskegon Museum of Art holds it as New York Restaurant, oil on canvas, dated 1922, credit line « Hackley Picture Fund », accession 1936.12, and quotes a letter from Hopper to the museum dated 9 January 1937.",
+          "source": "muskegon-1936-12"
+        },
+        {
+          "says": "The Whitney’s Edward Hopper’s New York checklist gives it as « Edward Hopper, New York Restaurant, c. 1922. Oil on canvas, 24 x 30 in. (61 x 76.2 cm). Muskegon Museum of Art, MI; Hackley Picture Fund ».",
+          "source": "whitney-hopper-ny-checklist"
+        },
+        {
+          "says": "Book I leaf 52 books « Oct. 6, 25  In.  Chicago Art Institute - Sold by Art Inst. $700.  Price reduced to 500 - 10%  $450  Ap. 27, 26. », and carries the margins « 24 x 29 or 28 x 36 ? Painted before that. Resold by Walker Gallery to Hackley Art Gallery at Muskegon, Mich. circa Jan. 1937 - or before. » and « Mrs. Jenkins’ collection  sold to lady of Chicago ».",
+          "source": "ledger:book-i/52"
+        },
+        {
+          "says": "Dealers/Etchings leaf 54 books the same sale as « Oct. 6, 25  In.  Chicago Art Institute. Sold by Inst. - Price $700 reduced to 500 - minus - 10% Com. 450. » with the receipt date « Ap. 27, 192 », the year’s last figure illegible.",
+          "source": "ledger:dealers/54"
+        }
+      ],
+      "written": "2026-09-07",
+      "model": "claude-opus-5"
+    },
     "night on the el train": {
       "note": "The leaf calls it « Night in the L Train » where both museums catalogue Night on the El Train; the site links the two through a declared alias, and the identification is this archive’s rather than either museum’s. Both date it 1918 and put the plate near 7 3/8 x 7 13/16 in. against the leaf’s 7 1/2\" x 8\". The Met’s impression is 25.31.11, from the 8 May 1925 lot the leaf books at $10.",
       "claims": [
@@ -689,7 +882,7 @@
       "model": "claude-opus-5"
     },
     "sailing": {
-      "note": "Both ledgers call this the first canvas he sold, out of the Armory Show of 1913, which is the sale the Whitney’s own chronology puts in that year. They do not agree on the money: Book I leaf 52 writes « Sold at International Armory Show 1913 --- $225 » and then « Sold to Mr. Vietor, 25\" & Mad. Ave.  250 - 10% », where Book II leaf 68 has « ± $250 ». They part again over its reappearance — Book I’s margin says it turned up in the fall of 1949 and was bought in Pittsburg for $1,000, Book II that it came to the Rehn Gallery about 1951 and was resold for $1200 to Mrs. Becky Beal of Pittsburg.",
+      "note": "Both ledgers call this the first canvas he sold, out of the Armory Show of 1913, which is the sale the Whitney’s own chronology puts in that year. They do not agree on the money: Book I leaf 52 writes « Sold at International Armory Show 1913 --- $225 » and then « Sold to Mr. Vietor, 25\" & Mad. Ave.  250 - 10% », where Book II leaf 68 has « ± $250 ». They part again over its reappearance — Book I’s margin says it turned up in the fall of 1949 and was bought in Pittsburg for $1,000, Book II that it came to the Rehn Gallery about 1951 and was resold for $1200 to Mrs. Becky Beal of Pittsburg. The dealers leaf 54 makes a third figure of the Armory Show sale: $200.",
       "claims": [
         {
           "says": "Hopper sold his first canvas at the Armory Show in 1913.",
@@ -702,9 +895,13 @@
         {
           "says": "Book II leaf 68 heads « Sailing  1913 or before  24 x 29 » under « Early Oils » and writes « Sold out of famous Armory Show - 1913.  ± $250. », that it was the first canvas of E.H. sold, and « Turned up + brought to Rehn Gal. ± 1951 + resold for $1200. for owner - Bqt. by [Mrs.] Becky Beal, Pittsburg ».",
           "source": "ledger:book-ii/68"
+        },
+        {
+          "says": "Dealers/Etchings leaf 54 heads it « Sailing » and gives one line, « sold at International - Armory Show. 1913 » at « $200. »",
+          "source": "ledger:dealers/54"
         }
       ],
-      "written": "2026-09-06",
+      "written": "2026-09-07",
       "model": "claude-opus-5"
     },
     "summer twilight": {
@@ -720,6 +917,25 @@
         }
       ],
       "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "sunday or hoboken fa ade": {
+      "note": "The Phillips Collection’s whole acquisition line is two words, « Acquired 1926 ». The leaves give the month, the man and the discount: the dealers leaf has it sold to Duncan Phillips on 30 March 1926 at 800 reduced to 600, and Book I leaf 52 asks 850, writes « Bgt. by Duncan Phillips for $600 ! » with the exclamation mark hers, and books 400 on 13 November. The museum measures 29 x 34 in.; the leaf’s own heading is « 28 x 36 ? ».",
+      "claims": [
+        {
+          "says": "The Phillips Collection holds it as Sunday, oil on canvas, dated 1926, 29 x 34 in.; 73.66 x 86.36 cm, object number 0925, credit line « Acquired 1926 ».",
+          "source": "phillips-0925"
+        },
+        {
+          "says": "Book I leaf 52 heads it « Sunday --- or Hoboken Facade.  28 x 36 ? » and writes « Feb. 1926  850  To-day in American Art, Rehn Gallery. », « Bgt. by Duncan Phillips for $600 ! », « $400  Nov. 13, 26. » and « Reprod. in Bklyn. Eagle Mar. 7, 26,  Duncan Phillips Catalogue - ».",
+          "source": "ledger:book-i/52"
+        },
+        {
+          "says": "Dealers/Etchings leaf 54 heads it « Sunday - or Hoboken façade » and writes « Feb. 1926  In.  Rehn Gal. - \"To-day in American Art\" Sold to Mr. Duncan Phillips, Mar. 30, 26. Price $800 - reduced to 600. »",
+          "source": "ledger:dealers/54"
+        }
+      ],
+      "written": "2026-09-07",
       "model": "claude-opus-5"
     },
     "tables for ladies": {
