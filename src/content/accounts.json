@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T22:13:30.637Z",
+  "generated": "2026-09-07T23:04:11.638Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf. Book II rules no columns at all, and it needs the other half of the same rule: a leaf there is one work with one sale line — buyer, price and the cut, the cheque, the date — so the date is in the last column and never in the first. It is read there only on a leaf that rules nothing, only where the first column dates nothing, and only where the last cell holds a date and nothing besides.",
@@ -16,8 +16,8 @@
       "book-ii",
       "dealers"
     ],
-    "batches": 25,
-    "sheets": 286,
+    "batches": 26,
+    "sheets": 298,
     "note": "Only the volumes and batches listed. Everything unread contributes nothing, and every figure here moves as batches land.",
     "countedNote": "Transcribed and counted are not the same thing, and the difference is the ruling. Every figure on this page is read out of a ruled row — a `ledgertable` in the .tex — because a row puts the price in one cell and the date in another, and the column a date stands in is what says whether it dates the sale or the cheque. A volume whose leaves rule nothing and write the sale as a sentence is read here and counted nowhere: its money is on the sheets, in the transcriptions, and outside these totals. Book III and Book V are in that position now, and naming them is the point — a total that quietly omitted them would look like a smaller number rather than a narrower one."
   },
@@ -1559,6 +1559,666 @@
         }
       }
     ]
+  },
+  "parties": {
+    "dealers": [
+      {
+        "name": "Frank K. M. Rehn",
+        "aliases": [
+          "Frank K. M. Rehn",
+          "Rehn Gallery"
+        ],
+        "sales": 42,
+        "net": 3637.32,
+        "gross": 5456,
+        "works": 10,
+        "first": 1926,
+        "last": 1957
+      },
+      {
+        "name": "Goodspeed's Book Shop",
+        "sales": 4,
+        "net": 2703.33,
+        "gross": 4055,
+        "works": 1,
+        "first": 1924,
+        "last": 1934
+      },
+      {
+        "name": "Frederick Keppel",
+        "sales": 58,
+        "net": 976.7,
+        "gross": 1465,
+        "works": 12,
+        "first": 1927,
+        "last": 1940
+      },
+      {
+        "name": "Weyhe Gallery",
+        "aliases": [
+          "E. Weyhe",
+          "Weyhe Gallery"
+        ],
+        "sales": 19,
+        "net": 832.01,
+        "gross": 1248,
+        "works": 5,
+        "first": 1928,
+        "last": 1941
+      },
+      {
+        "name": "Macbeth Gallery",
+        "sales": 2,
+        "net": 800,
+        "gross": 1200,
+        "works": 1,
+        "first": 1924,
+        "last": 1957
+      },
+      {
+        "name": "Kennedy Galleries",
+        "aliases": [
+          "Kennedy",
+          "Kennedy Galleries"
+        ],
+        "sales": 21,
+        "net": 443.33,
+        "gross": 665,
+        "works": 4,
+        "first": 1928,
+        "last": 1957
+      },
+      {
+        "name": "John Clancy",
+        "sales": 1,
+        "net": 400,
+        "gross": 600,
+        "works": 0,
+        "first": 1924,
+        "last": 1924
+      },
+      {
+        "name": "H. V. Allison",
+        "sales": 13,
+        "net": 276.67,
+        "gross": 415,
+        "works": 5,
+        "first": 1943,
+        "last": 1961
+      },
+      {
+        "name": "Downtown Gallery",
+        "sales": 6,
+        "net": 100.67,
+        "gross": 151,
+        "works": 2,
+        "first": 1928,
+        "last": 1931
+      },
+      {
+        "name": "Milch Galleries",
+        "aliases": [
+          "E. & A. Milch",
+          "Milch Galleries"
+        ],
+        "sales": 3,
+        "net": 52,
+        "gross": 78,
+        "works": 1,
+        "first": 1929,
+        "last": 1929
+      },
+      {
+        "name": "Babcock Art Galleries",
+        "aliases": [
+          "Babcock Art Galleries",
+          "Babcock Galleries"
+        ],
+        "sales": 2,
+        "net": 40,
+        "gross": 60,
+        "works": 0,
+        "first": 1930,
+        "last": 1930
+      }
+    ],
+    "buyers": [
+      {
+        "name": "Charles Stein",
+        "sales": 4,
+        "net": 10266.67,
+        "gross": 15400,
+        "works": 1,
+        "first": 1930,
+        "last": 1961
+      },
+      {
+        "name": "Huntington Hartford",
+        "sales": 1,
+        "net": 3333.33,
+        "gross": 5000,
+        "works": 1,
+        "first": 1956,
+        "last": 1956
+      },
+      {
+        "name": "Stephen C. Clark",
+        "aliases": [
+          "Stephen C. Clark",
+          "Stephen Clark"
+        ],
+        "sales": 5,
+        "net": 3133.34,
+        "gross": 4700,
+        "works": 3,
+        "first": 1928,
+        "last": 1944
+      },
+      {
+        "name": "Metropolitan Museum of Art",
+        "sales": 1,
+        "net": 3000,
+        "gross": 4500,
+        "works": 1,
+        "first": 1930,
+        "last": 1930
+      },
+      {
+        "name": "Whitney Museum of American Art",
+        "aliases": [
+          "Whitney Museum",
+          "Whitney Museum of American Art"
+        ],
+        "sales": 3,
+        "net": 2300,
+        "gross": 3450,
+        "works": 2,
+        "first": 1934,
+        "last": 1957
+      },
+      {
+        "name": "Carnegie Institute",
+        "sales": 1,
+        "net": 2000,
+        "gross": 3000,
+        "works": 1,
+        "first": 1938,
+        "last": 1938
+      },
+      {
+        "name": "Mrs. John Osgord Blanchard",
+        "aliases": [
+          "Mrs. John Osgord Blanchard",
+          "Mrs. Osgord Blanchard"
+        ],
+        "sales": 3,
+        "net": 1700,
+        "gross": 2550,
+        "works": 1,
+        "first": 1926,
+        "last": 1930
+      },
+      {
+        "name": "Randolph Macon Women's College",
+        "sales": 1,
+        "net": 1666.67,
+        "gross": 2500,
+        "works": 1,
+        "first": 1936,
+        "last": 1936
+      },
+      {
+        "name": "Charles MacArthur",
+        "sales": 1,
+        "net": 1666.67,
+        "gross": 2500,
+        "works": 1,
+        "first": 1940,
+        "last": 1940
+      },
+      {
+        "name": "Mrs. Bliss Parkinson",
+        "aliases": [
+          "Bliss Parkinson",
+          "Mrs. Bliss Parkinson"
+        ],
+        "sales": 6,
+        "net": 1360,
+        "gross": 2040,
+        "works": 1,
+        "first": 1930,
+        "last": 1957
+      },
+      {
+        "name": "Alfredo Valente",
+        "sales": 1,
+        "net": 1333.33,
+        "gross": 2000,
+        "works": 0,
+        "first": 1926,
+        "last": 1926
+      },
+      {
+        "name": "Cleveland Museum",
+        "sales": 1,
+        "net": 1333.33,
+        "gross": 2000,
+        "works": 1,
+        "first": 1930,
+        "last": 1930
+      },
+      {
+        "name": "Mrs. Otto Spaeth",
+        "aliases": [
+          "Mrs. Otto Spaeth",
+          "Otto Spaeth"
+        ],
+        "sales": 1,
+        "net": 1333.33,
+        "gross": 2000,
+        "works": 1,
+        "first": 1942,
+        "last": 1942
+      },
+      {
+        "name": "Museum of Modern Art",
+        "sales": 1,
+        "net": 1200,
+        "gross": 1800,
+        "works": 1,
+        "first": 1943,
+        "last": 1943
+      },
+      {
+        "name": "Leslie Green Sheafer",
+        "sales": 4,
+        "net": 1166.66,
+        "gross": 1750,
+        "works": 0,
+        "first": 1928,
+        "last": 1930
+      },
+      {
+        "name": "Wadsworth Atheneum",
+        "sales": 3,
+        "net": 1033.34,
+        "gross": 1550,
+        "works": 1,
+        "first": 1930,
+        "last": 1934
+      },
+      {
+        "name": "John Taylor Spaulding",
+        "aliases": [
+          "John T. Spaulding",
+          "John Taylor Spaulding"
+        ],
+        "sales": 1,
+        "net": 1000,
+        "gross": 1500,
+        "works": 1,
+        "first": 1927,
+        "last": 1927
+      },
+      {
+        "name": "Butler Institute of American Art",
+        "aliases": [
+          "Butler Art Institute",
+          "Butler Institute of American Art"
+        ],
+        "sales": 1,
+        "net": 1000,
+        "gross": 1500,
+        "works": 1,
+        "first": 1948,
+        "last": 1948
+      },
+      {
+        "name": "Lloyd Goodrich",
+        "sales": 2,
+        "net": 933.33,
+        "gross": 1400,
+        "works": 2,
+        "first": 1937,
+        "last": 1949
+      },
+      {
+        "name": "Fred Palmer",
+        "sales": 3,
+        "net": 900,
+        "gross": 1350,
+        "works": 1,
+        "first": 1931,
+        "last": 1956
+      },
+      {
+        "name": "Harry Clark Bentley",
+        "aliases": [
+          "Harry C. Bentley",
+          "Harry Clark Bentley"
+        ],
+        "sales": 2,
+        "net": 766.67,
+        "gross": 1150,
+        "works": 2,
+        "first": 1934,
+        "last": 1938
+      },
+      {
+        "name": "Clifford Frondel",
+        "sales": 2,
+        "net": 766.67,
+        "gross": 1150,
+        "works": 0,
+        "first": 1950,
+        "last": 1950
+      },
+      {
+        "name": "Edward G. Robinson",
+        "sales": 1,
+        "net": 666.67,
+        "gross": 1000,
+        "works": 1,
+        "first": 1940,
+        "last": 1940
+      },
+      {
+        "name": "Newark Museum",
+        "sales": 1,
+        "net": 600,
+        "gross": 900,
+        "works": 1,
+        "first": 1940,
+        "last": 1940
+      },
+      {
+        "name": "Lawrence Bloedel",
+        "sales": 1,
+        "net": 600,
+        "gross": 900,
+        "works": 0,
+        "first": 1925,
+        "last": 1925
+      },
+      {
+        "name": "Fogg Art Museum",
+        "sales": 1,
+        "net": 500,
+        "gross": 750,
+        "works": 1,
+        "first": 1934,
+        "last": 1934
+      },
+      {
+        "name": "David Rockefeller",
+        "sales": 1,
+        "net": 500,
+        "gross": 750,
+        "works": 0,
+        "first": 1930,
+        "last": 1930
+      },
+      {
+        "name": "Worcester Art Museum",
+        "sales": 1,
+        "net": 500,
+        "gross": 750,
+        "works": 1,
+        "first": 1935,
+        "last": 1935
+      },
+      {
+        "name": "Edward W. Root",
+        "sales": 2,
+        "net": 466.67,
+        "gross": 700,
+        "works": 0,
+        "first": 1925,
+        "last": 1930
+      },
+      {
+        "name": "Hamilton College",
+        "sales": 2,
+        "net": 333.33,
+        "gross": 500,
+        "works": 0,
+        "first": 1923,
+        "last": 1925
+      },
+      {
+        "name": "Frank Crowninshield",
+        "sales": 12,
+        "net": 322.67,
+        "gross": 484,
+        "works": 11,
+        "first": 1926,
+        "last": 1928
+      },
+      {
+        "name": "Mrs. Albert Sterner",
+        "sales": 2,
+        "net": 286.67,
+        "gross": 430,
+        "works": 0,
+        "first": 1930,
+        "last": 1934
+      },
+      {
+        "name": "Wm. L. Hearne",
+        "sales": 2,
+        "net": 286.67,
+        "gross": 430,
+        "works": 1,
+        "first": 1924,
+        "last": 1957
+      },
+      {
+        "name": "Philadelphia Museum of Art",
+        "aliases": [
+          "Philadelphia Museum",
+          "Philadelphia Museum of Art"
+        ],
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 0,
+        "first": 1929,
+        "last": 1929
+      },
+      {
+        "name": "Mrs. Murray Crane",
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 0,
+        "first": 1929,
+        "last": 1929
+      },
+      {
+        "name": "William S. Paley",
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 0,
+        "first": 1929,
+        "last": 1929
+      },
+      {
+        "name": "Robert Wheelwright",
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 0,
+        "first": 1929,
+        "last": 1929
+      },
+      {
+        "name": "Alfred L. Hydeman",
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 0,
+        "first": 1930,
+        "last": 1930
+      },
+      {
+        "name": "Leslie Gould",
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 0,
+        "first": 1931,
+        "last": 1931
+      },
+      {
+        "name": "Smith College",
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 0,
+        "first": 1929,
+        "last": 1929
+      },
+      {
+        "name": "Robert Henri",
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 0,
+        "first": 1931,
+        "last": 1931
+      },
+      {
+        "name": "John Taylor Arms",
+        "sales": 1,
+        "net": 233.33,
+        "gross": 350,
+        "works": 0,
+        "first": 1929,
+        "last": 1929
+      },
+      {
+        "name": "A. Percy Saunders",
+        "sales": 2,
+        "net": 145.33,
+        "gross": 218,
+        "works": 1,
+        "first": 1923,
+        "last": 1930
+      },
+      {
+        "name": "Library of Congress",
+        "sales": 6,
+        "net": 135,
+        "gross": 180,
+        "works": 3,
+        "first": 1938,
+        "last": 1938
+      },
+      {
+        "name": "Utica Museum",
+        "sales": 1,
+        "net": 133.33,
+        "gross": 200,
+        "works": 0,
+        "first": 1923,
+        "last": 1923
+      },
+      {
+        "name": "Corcoran Gallery of Art",
+        "aliases": [
+          "Corcoran Gallery",
+          "Corcoran Gallery of Art"
+        ],
+        "sales": 1,
+        "net": 106.67,
+        "gross": 160,
+        "works": 0,
+        "first": 1951,
+        "last": 1951
+      },
+      {
+        "name": "Santa Barbara Museum",
+        "sales": 1,
+        "net": 66.67,
+        "gross": 100,
+        "works": 0,
+        "first": 1949,
+        "last": 1949
+      },
+      {
+        "name": "British Museum",
+        "sales": 2,
+        "net": 66.66,
+        "gross": 100,
+        "works": 0,
+        "first": 1945,
+        "last": 1945
+      },
+      {
+        "name": "University of Nebraska",
+        "sales": 2,
+        "net": 53.33,
+        "gross": 80,
+        "works": 0,
+        "first": 1953,
+        "last": 1953
+      },
+      {
+        "name": "Des Moines Art Center",
+        "sales": 2,
+        "net": 53.33,
+        "gross": 80,
+        "works": 0,
+        "first": 1953,
+        "last": 1953
+      },
+      {
+        "name": "Farjeon",
+        "sales": 3,
+        "net": 34,
+        "gross": 51,
+        "works": 0,
+        "first": 1927,
+        "last": 1929
+      },
+      {
+        "name": "Victoria and Albert Museum",
+        "aliases": [
+          "Victoria & Albert Museum",
+          "Victoria and Albert Museum"
+        ],
+        "sales": 1,
+        "net": 22.5,
+        "gross": 30,
+        "works": 0,
+        "first": 1929,
+        "last": 1929
+      },
+      {
+        "name": "Detroit Institute of Arts",
+        "sales": 1,
+        "net": 20,
+        "gross": 30,
+        "works": 0,
+        "first": 1930,
+        "last": 1930
+      },
+      {
+        "name": "Walker Art Center",
+        "sales": 1,
+        "net": 10,
+        "gross": 15,
+        "works": 1,
+        "first": 1949,
+        "last": 1949
+      }
+    ],
+    "namedNobody": 63,
+    "ambiguous": 55,
+    "counted": 326,
+    "note": "Who stands beside the price. On the etchings leaves that is almost always the dealer — « Keppel 30 - 1/3 » — and the person who took the print home is named only where Jo Hopper knew it, which is why the second table is the shorter one. The two are told apart by the facet the transcription itself declares: dealer:, against person: and collection:. No string test could do it — « Corcoran Gallery » is a museum and « Downtown Gallery » is a dealer — so a party nobody tagged cannot appear here however often the leaves sold to them, and this ranks what has been tagged inside what has been transcribed.",
+    "matchNote": "A row is credited to a party when it carries that party's name or their surname. Two spellings are one party only where one's words sit inside the other's, so Kennedy and Kennedy Galleries merge while Nelson, David and Mrs. John D. Rockefeller stay three buyers, and Boston's Public Library stays out of its Museum of Fine Arts. The merges that rule wrongly refuses are declared by hand in party-aliases.json. Where a leaf writes only a surname that more than one declared party shares, the row is reported ambiguous rather than credited to a guess."
   },
   "entries": [
     {
@@ -7138,6 +7798,7 @@
         "ref": "16853",
         "work": "Evening Wind",
         "section": "Leaf 2: Evening Wind",
+        "rowText": "Feb. 2, 23 Inv. Hopper & Pop Hart Ex. at Sidney Phillips $18 - 50% 9. Mar. 3, 1923",
         "row": [
           "Feb. 2, 23",
           "Inv.",
@@ -7155,6 +7816,7 @@
         "ref": "16853",
         "work": "Evening Wind",
         "section": "Leaf 2: Evening Wind",
+        "rowText": "\" \"  \" \" \" \" $22 - 15% - 2 prints 37.40 \" \"",
         "row": [
           "\" \"",
           "",
@@ -7172,6 +7834,7 @@
         "ref": "16853",
         "work": "Evening Wind",
         "section": "Leaf 2: Evening Wind",
+        "rowText": "Ap. 7, 26 Inv. Greenwich House, Village Artists Keppel $25 - 1/3 16.67 Mar. 5, 27.",
         "row": [
           "Ap. 7, 26",
           "Inv.",
@@ -7189,6 +7852,7 @@
         "ref": "16853",
         "work": "Evening Wind",
         "section": "Leaf 2: Evening Wind",
+        "rowText": "Nov. 14, 27 Inv. Hopper Oils, Watercolors & Etchings. Rehn Gallery - 25 - 1/3  16.66 May 18, 27",
         "row": [
           "Nov. 14, 27",
           "Inv.",
@@ -7206,6 +7870,7 @@
         "ref": "16853",
         "work": "Evening Wind",
         "section": "Leaf 2: Evening Wind",
+        "rowText": ", 27 16 2/3 Downtown Gallery - 25 - 1/3. Keppel - 25 - 1/3 - 16.66 Oct. 22, 27.",
         "row": [
           ", 27",
           "16 2/3",
@@ -7223,6 +7888,7 @@
         "ref": "16853",
         "work": "Evening Wind",
         "section": "Leaf 2: Evening Wind",
+        "rowText": ", 28 16 2/3 Keppel - 25 - 1/3 Com. Rehn - 25 - 1/3 16.66 Nov. 4, 27",
         "row": [
           ", 28",
           "16 2/3",
@@ -7240,6 +7906,7 @@
         "ref": "16853",
         "work": "Evening Wind",
         "section": "Leaf 2: Evening Wind",
+        "rowText": "28 16 2/3 Keppel 25 - 1/3 Com. Keppel - Fr. Grinshield 25 - 1/3 16.66 Nov. 26, 27",
         "row": [
           "28",
           "16 2/3",
@@ -7257,6 +7924,7 @@
         "ref": "16853",
         "work": "Evening Wind",
         "section": "Leaf 2: Evening Wind",
+        "rowText": " 16 2/3 Downtown Gallery 25 - 1/3 Keppel. \" 16.66 Nov. 26, 27",
         "row": [
           "",
           "16 2/3",
@@ -7274,6 +7942,7 @@
         "ref": "16759",
         "work": "Night in",
         "section": "Leaf 4: Night in the Park",
+        "rowText": "Ap. 7, 1926 Inv. Greenwich House, Village Artists; Sold by Randolph $18 - 50% $9 Jan. 3, 1924",
         "row": [
           "Ap. 7, 1926",
           "Inv.",
@@ -7290,6 +7959,7 @@
         "ref": "16759",
         "work": "Night in",
         "section": "Leaf 4: Night in the Park",
+        "rowText": "Oct. 27 \" Keppel exhib. of contemporains Fr. Corning Shield; Keppel 25 - 1/3 16 2/3 Nov. 26, 27.",
         "row": [
           "Oct. 27",
           "\"",
@@ -7306,6 +7976,7 @@
         "ref": "16759",
         "work": "Night in",
         "section": "Leaf 4: Night in the Park",
+        "rowText": "Dec. 9, 27 \" Amer. Print Makers Halpert Downtown Gal.; Kennedy 25 - 1/3 16 2/3 Sept. 19, 28.",
         "row": [
           "Dec. 9, 27",
           "\"",
@@ -7322,6 +7993,7 @@
         "ref": "16759",
         "work": "Night in",
         "section": "Leaf 4: Night in the Park",
+        "rowText": "Feb. 1, 28 $16 2/3 Downtown Gallery - 25 - 1/3. Bess Martin 15 - 10 due 15 Dec. 9, 28",
         "row": [
           "Feb. 1, 28",
           "$16 2/3",
@@ -7338,6 +8010,7 @@
         "ref": "16759",
         "work": "Night in",
         "section": "Leaf 4: Night in the Park",
+        "rowText": "Mar. 19, 28 16 2/3 Keppel Downtown Gal. 25 - 1/3 16 2/3 Jan. 5, 29.",
         "row": [
           "Mar. 19, 28",
           "16 2/3",
@@ -7354,6 +8027,7 @@
         "ref": "16759",
         "work": "Night in",
         "section": "Leaf 4: Night in the Park",
+        "rowText": "\" 16 2/3 \" Whitney Studio 30 - 1/4 22 1/2 Jan. 1, 29",
         "row": [
           "\"",
           "16 2/3",
@@ -7370,6 +8044,7 @@
         "ref": "16759",
         "work": "Night in",
         "section": "Leaf 4: Night in the Park",
+        "rowText": "May 16, 28 $25 Mrs. Lee, Hollywood, Cal. Keppel 30 - 1/3 20 Ap. 11, 29",
         "row": [
           "May 16, 28",
           "$25",
@@ -7385,6 +8060,7 @@
         "ref": "17443",
         "work": null,
         "section": "Leaf 3: Evening Wind, continued",
+        "rowText": "June 27, 49  Carnegie Inst. purchase of 11 for $300 = average of 27.27 - 1/3 Rehn Gal. = $18 - ",
         "row": [
           "June 27, 49",
           "",
@@ -7400,6 +8076,7 @@
         "ref": "18401",
         "work": null,
         "section": "Leaf 5: Night in the Park, continued",
+        "rowText": "  per group = 27.27 - 1/3 Com. Rehn Gal. = $18 -",
         "row": [
           "",
           "",
@@ -7415,6 +8092,7 @@
         "ref": "16548",
         "work": "Night Shadows",
         "section": "Leaf 6: Night Shadows",
+        "rowText": "Feb. '27.  Allied Dealers, Kennedy 50% Com. 25 - 1/2 12.50 Mar. 11, 27.",
         "row": [
           "Feb. '27.",
           "",
@@ -7432,6 +8110,7 @@
         "ref": "16548",
         "work": "Night Shadows",
         "section": "Leaf 6: Night Shadows",
+        "rowText": "Nov. 14, 27 - Hopper Watercolors, Oils & Etching, Rehn - 25 - 1/3 frame = $1 16.66 May 18, 27.",
         "row": [
           "Nov. 14, 27",
           "-",
@@ -7449,6 +8128,7 @@
         "ref": "16548",
         "work": "Night Shadows",
         "section": "Leaf 6: Night Shadows",
+        "rowText": "  Rehn 25 - 1/3 16.66 Nov. 4, 1927",
         "row": [
           "",
           "",
@@ -7465,6 +8145,7 @@
         "ref": "16548",
         "work": "Night Shadows",
         "section": "Leaf 6: Night Shadows",
+        "rowText": "Keppel to Fr. Crowninshield 25 - 1/3 $16 2/3 Nov. 26, 27",
         "row": [
           "Keppel to Fr. Crowninshield 25 - 1/3",
           "$16 2/3",
@@ -7479,6 +8160,7 @@
         "ref": "16548",
         "work": "Night Shadows",
         "section": "Leaf 6: Night Shadows",
+        "rowText": "Downtown Gallery - 25 - 1/3 Amer. Print Makers' Show 16 2/3 Jan. 6, 28.",
         "row": [
           "Downtown Gallery - 25 - 1/3 Amer. Print Makers' Show",
           "16 2/3",
@@ -7493,6 +8175,7 @@
         "ref": "16548",
         "work": "Night Shadows",
         "section": "Leaf 6: Night Shadows",
+        "rowText": "Downtown Gallery - 25 - 1/3 16 2/3 Feb. 1, 28",
         "row": [
           "Downtown Gallery - 25 - 1/3",
           "16 2/3",
@@ -7507,6 +8190,7 @@
         "ref": "16548",
         "work": "Night Shadows",
         "section": "Leaf 6: Night Shadows",
+        "rowText": "Whitney Cl. 25 - 1/10 22.50 Feb. 3, 28.",
         "row": [
           "Whitney Cl. 25 - 1/10",
           "22.50",
@@ -7521,6 +8205,7 @@
         "ref": "16548",
         "work": "Night Shadows",
         "section": "Leaf 6: Night Shadows",
+        "rowText": "Keppel 30 - 1/3 20 Oct. 18, 29.",
         "row": [
           "Keppel 30 - 1/3",
           "20",

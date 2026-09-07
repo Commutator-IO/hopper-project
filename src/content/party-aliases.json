@@ -1,0 +1,21 @@
+{
+  "_comment": "Two declared facts about the names in the ledgers, written by hand because no rule can see them. scripts/accounts.mjs groups the dealer:, person: and collection: keywords into parties by surname, and refuses to merge two labels unless one's words sit inside the other's — which is what keeps Nelson, David and Mrs. John D. Rockefeller three buyers rather than one, and Boston's Public Library out of its Museum of Fine Arts. Everything here is a claim somebody can disagree with in a diff, which is the only reason it is a file rather than a rule.",
+
+  "same": [
+    ["Frank K. M. Rehn", "Rehn Gallery"],
+    ["Butler Art Institute", "Butler Institute of American Art"]
+  ],
+  "sameNote": "Merges the containment test refuses and the leaves plainly make.",
+  "sameReasons": {
+    "Frank K. M. Rehn": "The man and the gallery. The leaves write « Rehn », « Rehn Gal. » and « Rehn Gallery » for the same consignee throughout and never distinguish the dealer from his firm.",
+    "Butler Art Institute": "One museum in Youngstown under two names; the leaves use the earlier and the later without remarking on the change."
+  },
+
+  "weakSurnames": ["Hartford", "Hopper", "Modern"],
+  "weakNote": "Surnames that are not evidence on their own, because the leaves write the same word meaning something else. A party carrying one of these is credited only where its full name appears. Each was found by reading the rows the surname alone had matched.",
+  "weakReasons": {
+    "Hartford": "Huntington Hartford of California is a buyer; Hartford, Connecticut is where the Wadsworth Atheneum is. The surname alone put three of the Atheneum's watercolours on his row.",
+    "Hopper": "Every « Inv. Hopper Oils, Watercolors & Etchings » is an exhibition title, not a purchase by Josephine Nivison Hopper, and the surname alone made her a buyer three times over.",
+    "Modern": "The Museum of Modern Art is a buyer; « Art Lending Mus. Modern Library » is a different service and « given to Modern Mus. » is a gift written beside somebody else's sale."
+  }
+}

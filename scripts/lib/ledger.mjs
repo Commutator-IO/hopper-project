@@ -386,7 +386,15 @@ function parseFile(path, ledger, batch) {
     }
   }
 
-  return { ledger, batch, path, sheets, works, looseRows };
+  // The `\keywords{}` line, parsed. It is the only place in the archive where
+  // somebody who read the sheets says whether a name is a dealer or a buyer,
+  // and `accounts.mjs` needs exactly that to rank the two apart. Read here so
+  // that a second reader of the same `.tex` does not grow beside this one.
+  const keywords = [];
+  for (const m of src.matchAll(/\\keywords\{([^}]*)\}/g))
+    for (const term of keywordTerms(m[1])) keywords.push(parseKeyword(term));
+
+  return { ledger, batch, path, sheets, works, looseRows, keywords };
 }
 
 /* ------------------------------------------------------------ keywords */

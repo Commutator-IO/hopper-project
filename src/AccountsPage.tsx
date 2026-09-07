@@ -52,6 +52,24 @@ interface Work {
   ledgers: string[];
 }
 
+/**
+ * A dealer or a buyer, with what the rows naming them came to.
+ *
+ * `net` is what the Hoppers kept on those rows, on both tables — so the
+ * dealers' column is not the dealer's own take, and is not comparable with a
+ * commission. It answers « how much of the archive went through this name ».
+ */
+interface Party {
+  name: string;
+  aliases?: string[];
+  sales: number;
+  net: number;
+  gross: number;
+  works: number;
+  first: number;
+  last: number;
+}
+
 interface Unparsed {
   reason: string;
   ledger: string;
@@ -77,6 +95,15 @@ const A = accountsData as unknown as {
   works: Work[];
   worksNote: string;
   duplicates: { count: number; note: string; sample: { work: string; net: number }[] };
+  parties: {
+    dealers: Party[];
+    buyers: Party[];
+    namedNobody: number;
+    ambiguous: number;
+    counted: number;
+    note: string;
+    matchNote: string;
+  };
   receivable: { year: number; accrued: number; received: number; outstanding: number }[];
   receivableNote: string;
   entries: { year: number; leaf: string | null; work: string | null; gross: number; rateWritten: string; net: number; check: string | null; receiptWritten: number | null }[];
@@ -298,6 +325,101 @@ export function AccountsPage() {
             ))}
           </tbody>
         </table>
+      </section>
+
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">Who was on the other side</h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          Two rankings, and they are not the same question. The name beside the price on an
+          etchings leaf is almost always the <em>dealer</em> — « Keppel 30&nbsp;-&nbsp;1/3 » — and
+          what he did with the print was sell it. The person who took it home is named only where
+          Jo Hopper happened to know, and that is why the second table is the shorter one: it is
+          short because the ledger usually did not record a buyer, not because the pictures went
+          nowhere.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">
+          Net is what the <em>Hoppers</em> kept, on both tables. The dealers’ column is therefore
+          not the dealer’s own take and cannot be read as one — it says how much of the archive
+          passed through that name.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">{A.parties.note}</p>
+
+        <div className="mt-5 grid gap-x-10 gap-y-8 lg:grid-cols-2">
+          {[
+            {
+              heading: 'Through whom it sold',
+              caption: 'Dealers and galleries.',
+              rows: A.parties.dealers,
+            },
+            {
+              heading: 'Who bought it',
+              caption: 'Buyers and collections the leaves name.',
+              rows: A.parties.buyers,
+            },
+          ].map((t) => (
+            <div key={t.heading}>
+              <h3 className="font-serif text-[15px] text-ink-900">{t.heading}</h3>
+              <p className="mt-1 text-[12.5px] text-ink-500">{t.caption}</p>
+              {t.rows.length === 0 ? (
+                <p className="prose-note mt-3">
+                  Nothing here yet — no batch transcribed so far names one.
+                </p>
+              ) : (
+                <table className="mt-3 w-full text-[13.5px]">
+                  <thead>
+                    <tr className="border-b border-ink-300 text-[11px] uppercase tracking-wider text-ink-400">
+                      <th className="py-1.5 text-left font-normal">Name</th>
+                      <th className="py-1.5 text-right font-normal">Sales</th>
+                      <th className="py-1.5 text-right font-normal">Years</th>
+                      <th className="py-1.5 text-right font-normal">Net</th>
+                      <th className="w-1/5 py-1.5 text-left font-normal" />
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {t.rows.slice(0, 10).map((p) => (
+                      <tr key={p.name} className="border-b border-ink-100">
+                        <td className="py-1.5 text-ink-900">
+                          {p.name}
+                          {p.aliases && (
+                            <span
+                              className="ml-1.5 text-[11.5px] text-ink-400"
+                              title={`written on the leaves as ${p.aliases.join(', ')}`}
+                            >
+                              +{p.aliases.length - 1}
+                            </span>
+                          )}
+                        </td>
+                        <td className="py-1.5 text-right tabular text-ink-500">{p.sales}</td>
+                        <td className="py-1.5 text-right tabular text-ink-500">
+                          {p.first === p.last ? p.first : `${p.first}–${p.last}`}
+                        </td>
+                        <td className="py-1.5 text-right tabular text-ink-900">
+                          ${money(p.net)}
+                        </td>
+                        <td className="py-1.5 pl-3">
+                          <span
+                            className="inline-block h-2 rounded-sm bg-brand-400 align-middle"
+                            style={{ width: `${Math.max(1, (p.net / t.rows[0].net) * 100)}%` }}
+                          />
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <p className="prose-note mt-5 max-w-3xl">
+          {A.parties.namedNobody} of the {A.parties.counted} counted sales name nobody the
+          transcriptions have tagged, and a further {A.parties.ambiguous} write only a surname
+          that more than one party could answer to — « Rockefeller » where three are on record,
+          « Hartford » where the word is as often the Connecticut city as the Californian buyer.
+          Those rows are reported rather than credited to a guess, which is why the two tables
+          together account for well under half the sales above.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">{A.parties.matchNote}</p>
       </section>
 
       <section className="border-t border-ink-200 py-8">

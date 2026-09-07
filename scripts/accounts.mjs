@@ -45,7 +45,7 @@
  *
  *   npm run accounts
  */
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { readTranscripts, workKey } from './lib/ledger.mjs';
 
@@ -260,6 +260,10 @@ for (const file of files) {
         ref: row.ref,
         work: row.work,
         section: row.section,
+        // The row as read, kept so the counterparty can be looked for in it
+        // later. Not written to the JSON — `entries` is already long — but the
+        // party tally below has nothing else to match against.
+        rowText: joined,
       };
 
       // On the etchings leaves the first column dates the *exhibition*, not the
@@ -532,6 +536,229 @@ const works = [...byWork.values()]
   }))
   .sort((a, b) => b.net - a.net);
 
+/* ------------------------------------------------- who was on the row */
+
+/**
+ * The parties named beside the sales, ranked — dealers apart from buyers.
+ *
+ * ## Why these are two tables and never one
+ *
+ * On the etchings leaves the name written next to the price is almost always
+ * the **dealer**: « Keppel 30 - 1/3 », « Downtown Gallery - 25 - 1/3 ». The
+ * person who took the print home is named only when Jo Hopper happened to know
+ * it — « Keppel to Fr. Crowninshield », « Rehn - to Mrs. Bliss ». Ranking the
+ * two together would put Keppel at the head of a table of Hopper's *customers*
+ * and read as though one man bought forty etchings, when what he did was sell
+ * them. So there are two rankings, and the shorter one is the more interesting:
+ * it is short because the ledger usually did not record a buyer, not because
+ * the pictures went nowhere.
+ *
+ * ## Where the names come from, and why not from a list of Hopper's dealers
+ *
+ * From the `\keywords{}` lines of the transcriptions, and from nothing else.
+ * A term there arrives already declared — `dealer:Frederick Keppel`,
+ * `collection:Library of Congress`, `person:Frank Crowninshield` — and the
+ * declaration was made by somebody who had read the sheets. That is the whole
+ * reason this is possible at all: **no string test can tell a dealer from a
+ * buyer**, as `parseKeyword` says at length. « Corcoran Gallery » is a museum
+ * and « Downtown Gallery » is a dealer, and they differ by nothing an
+ * algorithm can see.
+ *
+ * The consequence is a coverage limit worth stating: a party the tagger never
+ * named cannot appear here however often the leaves sold to them. This ranks
+ * what has been *tagged*, inside what has been transcribed.
+ *
+ * ## Matching, and the two ways it refuses
+ *
+ * The keywords give full names; the leaves write short ones. « Frederick
+ * Keppel » in the tag has to find « Keppel 30 - 1/3 » on the row, so each
+ * party carries a surname — the last word of the label that is not a
+ * gallery-or-museum word, else the first — and a row is credited if it
+ * contains the full label or that surname.
+ *
+ * Two labels with the same surname are the same party only if one's words are
+ * contained in the other's. « Kennedy » and « Kennedy Galleries » merge;
+ * « Nelson Rockefeller » and « David Rockefeller » do not, and neither do
+ * Boston's Public Library and its Museum of Fine Arts, nor Carl Hamilton and
+ * Hamilton College. Real merges that this refuses are declared by hand in
+ * `party-aliases.json` and nowhere else.
+ *
+ * Where a surname is left pointing at more than one party — the leaf says
+ * « Rockefeller » and three are declared — **the row is reported as ambiguous
+ * rather than credited to a guess**. Rows naming nobody are reported too. The
+ * two counts are the denominator of the tables, and they are on the page.
+ */
+const partyAliases = JSON.parse(
+  readFileSync(resolve(root, 'src/content/party-aliases.json'), 'utf8'),
+);
+
+// Words that name what an institution *is* rather than which one it is. A
+// surname is picked past them: « Rehn Gallery » is Rehn, « Whitney Museum of
+// American Art » is Whitney. They are not dropped from the containment test
+// below, where « Hamilton College » and « Carl Hamilton » have to stay apart.
+const GENERIC = new Set(
+  ('gallery galleries gal inc museum museums art arts of the and institute institution ' +
+    'collection collections company shop rooms room mus center centre club society university ' +
+    'univ memorial fine national american new york library public school academy association ' +
+    'foundation city college studio print makers brothers bros son sons')
+    .split(' '),
+);
+
+/** A label reduced to letters, so « Pène » and « Pene » are one word. */
+const bare = (s) =>
+  s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z-]/g, '');
+
+/** The words of a label that carry identity: not initials, not punctuation. */
+const wordsOf = (label) =>
+  label
+    .replace(/\\&/g, '&')
+    .split(/\s+/)
+    .map(bare)
+    .filter((w) => w.length >= 3);
+
+/** The name the leaves are likely to write: the last distinguishing word. */
+const surnameOf = (label) => {
+  const ok = wordsOf(label).filter((w) => !GENERIC.has(w));
+  return ok.length ? ok[ok.length - 1] : null;
+};
+
+/** Whether two labels may be one party: same surname, one's words inside the other's. */
+const compatible = (a, b) => {
+  const [x, y] = [new Set(wordsOf(a)), new Set(wordsOf(b))];
+  const sub = (p, q) => [...p].every((w) => q.has(w));
+  return sub(x, y) || sub(y, x);
+};
+
+const declaredSame = new Map();
+for (const group of partyAliases.same ?? [])
+  for (const label of group) declaredSame.set(label, group[0]);
+
+const parties = [];
+for (const file of files)
+  for (const { facet, label } of file.keywords) {
+    if (!['dealer', 'person', 'collection'].includes(facet)) continue;
+    const role = facet === 'dealer' ? 'dealer' : 'buyer';
+    const surname = surnameOf(label);
+    if (!surname) {
+      // No word that distinguishes it — « New York Public Library » is four
+      // generic words. It stands alone and is matched only in full.
+      if (!parties.some((p) => p.labels.has(label))) {
+        parties.push({ role, surname: null, labels: new Set([label]) });
+      }
+      continue;
+    }
+    const declared = declaredSame.get(label);
+    const found = parties.find(
+      (p) =>
+        p.role === role &&
+        p.surname === surname &&
+        (declared
+          ? [...p.labels].some((l) => declaredSame.get(l) === declared)
+          : [...p.labels].every((l) => compatible(l, label))),
+    );
+    if (found) found.labels.add(label);
+    else parties.push({ role, surname, labels: new Set([label]) });
+  }
+
+// The name shown is the fullest spelling the taggers used, so a table row
+// reads « Frederick Keppel » rather than whichever batch was transcribed first.
+for (const p of parties) {
+  p.name = [...p.labels].sort((a, b) => b.length - a.length)[0].replace(/\\&/g, '&');
+  p.aliases = [...p.labels].map((l) => l.replace(/\\&/g, '&')).sort();
+  p.tally = { sales: 0, net: 0, gross: 0, years: new Set(), works: new Set() };
+}
+
+// A surname claimed by more than one party cannot settle a row that writes only
+// the surname. Collected here so those rows can be reported rather than guessed.
+const bySurname = new Map();
+for (const p of parties) {
+  if (!p.surname) continue;
+  const k = `${p.role}|${p.surname}`;
+  bySurname.set(k, (bySurname.get(k) ?? []).concat(p));
+}
+
+const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// Both ends bounded, with a possessive or a plural allowed at the tail: the
+// leaves write « Rehns » and « Keppel's » for the same firm. Without the
+// closing boundary « Stein » found Steinberg on Book I leaf 64 and David
+// Steine on Book II leaf 53, and Charles Stein was credited with two sales he
+// had nothing to do with — which is a buyer invented out of a prefix.
+const hasWord = (text, word) => new RegExp(`\\b${esc(word)}(?:['’]?s)?\\b`, 'i').test(text);
+
+/**
+ * Surnames that cannot settle a row on their own, because another party's name
+ * contains them.
+ *
+ * « Huntington Hartford » of California and « Robert W. Huntington » of
+ * Hartford, Connecticut are two buyers whose names are each made of the
+ * other's surname, and the leaves write both short. Crediting either from a
+ * surname would put one man's five thousand dollars on the other's row. So a
+ * surname that appears inside any other party's label stops being evidence,
+ * and rows carrying only it are reported ambiguous.
+ */
+const collides = new Set((partyAliases.weakSurnames ?? []).map(bare));
+for (const p of parties) {
+  if (!p.surname) continue;
+  const inAnotherName = parties.some(
+    (q) => q !== p && [...q.labels].some((l) => wordsOf(l).includes(p.surname)),
+  );
+  if (inAnotherName) collides.add(p.surname);
+}
+
+let namedNobody = 0;
+let ambiguous = 0;
+for (const e of deduped) {
+  const text = (e.rowText ?? '').replace(/\\&/g, '&');
+  const hits = new Set();
+  let sawAmbiguous = false;
+  for (const p of parties) {
+    if ([...p.labels].some((l) => hasWord(text, l.replace(/\\&/g, '&')))) {
+      hits.add(p);
+      continue;
+    }
+    if (!p.surname || !hasWord(text, p.surname)) continue;
+    const rivals = bySurname.get(`${p.role}|${p.surname}`) ?? [];
+    if (rivals.length > 1 || collides.has(p.surname)) sawAmbiguous = true;
+    else hits.add(p);
+  }
+  if (!hits.size) {
+    if (sawAmbiguous) ambiguous++;
+    else namedNobody++;
+    continue;
+  }
+  if (sawAmbiguous) ambiguous++;
+  for (const p of hits) {
+    p.tally.sales++;
+    p.tally.net += e.net;
+    p.tally.gross += e.gross;
+    if (e.year) p.tally.years.add(e.year);
+    if (e.work) p.tally.works.add(e.work);
+  }
+}
+
+const ranked = (role) =>
+  parties
+    .filter((p) => p.role === role && p.tally.sales > 0)
+    .map((p) => ({
+      name: p.name,
+      aliases: p.aliases.length > 1 ? p.aliases : undefined,
+      sales: p.tally.sales,
+      net: Number(p.tally.net.toFixed(2)),
+      gross: Number(p.tally.gross.toFixed(2)),
+      works: p.tally.works.size,
+      first: Math.min(...p.tally.years),
+      last: Math.max(...p.tally.years),
+    }))
+    .sort((a, b) => b.net - a.net || b.sales - a.sales);
+
+const dealersRanked = ranked('dealer');
+const buyersRanked = ranked('buyer');
+
 const attributed = deduped.filter((e) => e.work && e.net).length;
 
 const checked = deduped.filter((e) => e.check !== null);
@@ -612,7 +839,30 @@ const out = {
       'collapse can be argued with rather than trusted.',
     sample: duplicates,
   },
-  entries,
+  parties: {
+    dealers: dealersRanked,
+    buyers: buyersRanked,
+    namedNobody,
+    ambiguous,
+    counted: deduped.length,
+    note:
+      'Who stands beside the price. On the etchings leaves that is almost always the dealer — ' +
+      '« Keppel 30 - 1/3 » — and the person who took the print home is named only where Jo ' +
+      'Hopper knew it, which is why the second table is the shorter one. The two are told apart ' +
+      'by the facet the transcription itself declares: dealer:, against person: and collection:. ' +
+      'No string test could do it — « Corcoran Gallery » is a museum and « Downtown Gallery » is ' +
+      'a dealer — so a party nobody tagged cannot appear here however often the leaves sold to ' +
+      'them, and this ranks what has been tagged inside what has been transcribed.',
+    matchNote:
+      'A row is credited to a party when it carries that party\'s name or their surname. Two ' +
+      'spellings are one party only where one\'s words sit inside the other\'s, so Kennedy and ' +
+      'Kennedy Galleries merge while Nelson, David and Mrs. John D. Rockefeller stay three ' +
+      'buyers, and Boston\'s Public Library stays out of its Museum of Fine Arts. The merges ' +
+      'that rule wrongly refuses are declared by hand in party-aliases.json. Where a leaf writes ' +
+      'only a surname that more than one declared party shares, the row is reported ambiguous ' +
+      'rather than credited to a guess.',
+  },
+  entries: entries.map(({ rowText, ...e }) => e),
   unparsed: {
     count: unparsed.length,
     sample: unparsed.slice(0, 25),
@@ -629,5 +879,7 @@ process.stdout.write(
     `          gross ${tGross.toFixed(2)}, commission ${(tGross - tNet).toFixed(2)}, net ${tNet.toFixed(2)}\n` +
     `          arithmetic checkable on ${checked.length}, ${disagree.length} disagree\n` +
     `          ${works.length} work(s) named, ${duplicates.length} cross-volume duplicate(s) collapsed\n` +
-    `          ${unparsed.length} sale-bearing row(s) with no year, reported not dropped\n`,
+    `          ${unparsed.length} sale-bearing row(s) with no year, reported not dropped\n` +
+    `          ${dealersRanked.length} dealer(s) and ${buyersRanked.length} named buyer(s) ranked; ` +
+    `${namedNobody} row(s) name nobody tagged, ${ambiguous} ambiguous by surname\n`,
 );
