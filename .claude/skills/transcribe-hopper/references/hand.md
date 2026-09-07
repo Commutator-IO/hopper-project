@@ -1492,3 +1492,135 @@ the right-hand column runs 1956, then 1960. The **back cover**, sheet 18495,
 carries nothing but the stationer's blind-stamped ornament and takes no
 `\sheet{}` at all, which is why Book I finishes at 116 transcribed sheets of
 117 rather than 117 of 117.
+
+---
+
+# Dealers/Etchings
+
+*(Dealers/Etchings batch 1, sheets 1–12, read 7 September 2026, Opus 5. First
+pass on the volume, so everything below is a first finding and none of it has
+been confirmed by a second batch.)*
+
+## The leaf numbers are printed, and they are on both sides of the leaf
+
+The stationer printed them, in blue, before a word was written: **top right of
+a recto, top left of a verso**, so one leaf carries two numbers and they are
+consecutive rather than the same. Leaf 57 and leaf 58 are the two sides of one
+sheet of paper.
+
+Two consequences, and the second is the one that costs a pass time.
+
+- **The volume does not begin at 51 for any reason of Jo Hopper's.** It is the
+  back half of a book whose front was used for something else, and 51 is
+  simply where the writing starts. Nothing on leaf 51 announces this.
+- **A missing number means a torn corner, not an unnumbered leaf.** Book II's
+  batch 6 established that printed numbers change what a gap means; here the
+  same fact changes what a *blank* means. Sheets 3 and 4 have no number
+  because the corner carrying it is gone, and through the tear on sheet 3 the
+  printed 53 of a leaf further in is legible — as it is through the tear in
+  the front cover, which is torn at both right corners in the same place.
+  **Do not read a number seen through a tear as this leaf's number.** The
+  Whitney supplies [51] and [52] in brackets from the sequence; the catalogue
+  records both as unnumbered, and `\sheet{}` must follow the catalogue or
+  `npm run render` fails.
+
+## The index is at the front and it is the plan of the volume
+
+Leaf 51 ends with **two small tables of dealers against leaf numbers**, side by
+side at the foot, a red pencil arc drawn round them — Keppel 70, Krashaar 72,
+Kennedy 85 + 73, Weyhe 76, Downtown/Halpert 75 + 82. Those numbers are the
+shape of everything after leaf 69, and they are worth reading before opening
+any later batch: this volume is indexed by *whose hands the work was in*, and a
+leaf is a dealer rather than a work.
+
+A **light pencil line** is drawn through seven of the index rows. It is not the
+red pencil of Book I and it does not look like deletion; its sense is not
+established, and it was not transcribed as `\struck{}`.
+
+## The first ten leaves are not the index's volume at all
+
+Leaves 51 to 60 are the watercolours, the Paris oils, the Paris caricatures and
+drawings, then five oils recorded one block to a picture — Sailing, Apartment
+Houses, New York Restaurant, House by a Railroad, Sunday — and they run out at
+leaf 60 into a checklist of the 1926 St. Botolph's Club show. **None of it is
+dealer-indexed.** A pass that opens here expecting Keppel will find
+watercolours sold to Mrs. Blanchard.
+
+## No clippings, and that is worth saying
+
+Not one in twelve sheets. Every `\ill{}` in this batch is a torn corner, a word
+bound into the gutter, or a figure running off the fore-edge — never paper over
+text. It makes the volume quicker to read than Book I and it removes the one
+reason Book I needed two photographs of a leaf.
+
+## Her red pencil underlines headings here
+
+In Book I the red pencil rings a figure and underlines a total. On leaf 60 it
+**underlines the exhibiting bodies** — New Society, Tri-National, Boston Art
+Club, St. Botolph's Club — and writes « Sold », « 2 sold » and a bare « S »
+against the etchings in the checklist. Those are content, not annotation, so
+they were transcribed as `\emph{}` like her ink underlinings, with one `\note{}`
+per leaf saying which of them are red.
+
+## A checklist runs in parallel columns that do not line up
+
+Leaf 60's St. Botolph's list is three columns down the lower two thirds of the
+leaf — nineteen watercolours, thirteen etchings, then eight more etchings with
+a price each. **Setting them as one table would assert an alignment the leaf
+does not have.** They were transcribed one after another with a `\note{}`
+saying so, which is the same answer batch 2 of Book I reached for the two
+parallel runs below a resale band.
+
+## Where the money is, and where it is not
+
+Leaves 54 to 56 rule five columns, head none of them, and put two dates in the
+far right one. **The right-hand column was left unheaded** rather than given
+Book I's « date check received » from leaf 1 — that key is Book I's and says
+nothing about this volume. Leaf 58 is the exception and the best leaf in the
+batch: it heads « Consigned » over the date and price together and « Amt. paid.
+» over the last column, and runs eighteen rows of H. V. Allison consignments of
+1941 and 1943 receipted between 1943 and 1961. A tick stands against nine rows.
+One row is receipted **Oct. 3 against a consignment of Oct. 30 in the same
+year**; it is as written.
+
+## Names that recur, and their spellings on these leaves
+
+She is as inconsistent here as in Book I, and twice within twelve sheets:
+
+- **Kepple** on leaf 51, **Keppel** on leaf 56.
+- **Krashaar** on leaf 51, **Kraushaar** on leaf 56 — the second is the
+  gallery's own spelling and the first is not. Both stand.
+- **Crowenshield** twice on leaf 58 — a spelling to add to Book I's
+  Crowninshield, Cromwinshield, Crownenshield and Crowneshield.
+- **Wildensteen** for Wildenstein; **Fog Museum** for the Fogg; **Caractatures**
+  for caricatures; **Spalding** for Spaulding, twice, on leaves 51 and 60;
+  **Concièrge**; **Hoboken façade**; **Achron's Parlor**.
+- **Denko** — a dealer at leaf 73, in the leaf 51 index and again in the leaf 56
+  tally. The reading is firm in both places and the name is not one Book I
+  carries.
+- **Harry Vary Allison** — as the Whitney's own descriptor also gives it.
+
+## Readings that would not settle
+
+- **« Mrs. Bachrach »** *(leaf 51)*, the buyer of House by a River. Barbour and
+  Bachman are as defensible from the strokes. A buyer's name, so `\uncertain{}`
+  and no more.
+- **« Adolph Lewisohn »** *(leaf 51)*, against Profile Widgeon. The tail reads
+  -ewisohn at 900%; the capital does not.
+- **« E. H. mentioned forth »** *(leaf 51)*. « E. H. » is settled — her capital
+  E is a descending loop and reads as « Ett » until you magnify it, which is
+  worth knowing for the rest of the volume. The word after « mentioned » is
+  f-or-th with a raised « th » and does not resolve into a word.
+- **« Rock. »** *(leaf 53)*, interlineated above « Crayon. » where the two lines
+  below it read « Bl. crayon ». The sense wants Black; the strokes give Rock.
+- **« Sold 10 pu Oct 12, 33 »** *(leaf 57)*.
+- **« banks with … »** *(leaf 52)*, in Le Parc de St. Cloud — seven letters that
+  are not a word in either language. Left `\ill{}`.
+- **« Jos Barnes »** *(leaf 56)*, in the list of five people given etchings.
+
+And one that did settle, late, and is worth the warning: **« Suicide »**
+*(leaf 53)* reads « Sévéedo » at any magnification below about 900%, because the
+two i-dots sit where accents would. It is « Suicide - bridge, cliff, crowd. Bl.
+crayon. » A word that looks French on a leaf of French drawings is not
+necessarily French.
+
