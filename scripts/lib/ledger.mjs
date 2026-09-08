@@ -159,6 +159,70 @@ export const yearInCell = (cell, bareTwoDigit = true) => {
   return y >= 1900 && y <= 1970 ? y : null;
 };
 
+/**
+ * Every year a passage of her prose states, in the order it states them.
+ *
+ * ## Why this exists at all
+ *
+ * `yearInCell` reads a date column, and three of the six volumes have none.
+ * Books II, III and V rule nothing: a sale on one of their leaves is a
+ * sentence — « Jos. H. Hirshhorn - Sept. 30, 1954. 3500 - 1/3 » — and a reader
+ * that looks only at `ledgertable` rows sees a transcribed volume with no
+ * dates in it. That is a fact about the ruling, not about the archive, and
+ * anything built on it (the timeline's green leaves, above all) reports the
+ * absence as though the leaves were silent.
+ *
+ * ## The four shapes, and nothing else
+ *
+ * Deliberately narrow. A bare two-figure number in prose is a price, a size, a
+ * street number or a leaf reference far more often than it is a year, so a
+ * two-figure year is read **only where a date is already being written**:
+ *
+ * - `1954` — four figures, anywhere. « Painted in Truro studio in August 1959 ».
+ * - `Sept. 30, 54` — a month, a day, then two figures. Her ordinal mark comes
+ *   between them as often as not: « July 8", 57 ».
+ * - `Sept. '54` — a month and an apostrophised pair, with no day.
+ * - `6.3.59` — the all-figure form Book V uses for a receipt.
+ *
+ * Everything else is left alone. « 3500 - 1/3 » yields nothing, « 12 x 18 »
+ * yields nothing, and « 165 B'way » yields nothing, which are three ways this
+ * would have gone wrong if the rule were « any two figures near a comma ».
+ *
+ * Bounded to 1900–1970 like `yearInCell`: the Hoppers' own span, either side
+ * of which a match is a misreading rather than a date.
+ */
+const MONTH = "(?:Jan|Feb|Mar|Ap|Apr|May|Jun|June|Jul|July|Aug|Sept|Sep|Oct|Nov|Dec)";
+const PROSE_YEARS = new RegExp(
+  [
+    // 1954
+    "\\b(1[89]\\d\\d)\\b",
+    // Sept. 30, 54  ·  July 8", 57  ·  Jan 11 '58
+    //
+    // The day is `\d{1,2}(?!\d)` and the lookahead is load-bearing: without it
+    // « Mar. 1950 » is read as day 19 of year 50, which happens to give 1950
+    // and so hides the bug for as long as every year in the archive begins
+    // 19. The day must be a day, and a four-figure year is left to the
+    // alternative above.
+    `\\b${MONTH}\\.?\\s+\\d{1,2}(?!\\d)\\s*["”']?\\s*,?\\s*'?(\\d{2})(?!\\d)`,
+    // Sept. '54  ·  Fall '46
+    `\\b(?:${MONTH}|Spring|Summer|Fall|Winter)\\.?\\s*'(\\d{2})(?!\\d)`,
+    // 6.3.59
+    "\\b\\d{1,2}\\.\\d{1,2}\\.\\s*'?(\\d{2})(?!\\d)",
+  ].join('|'),
+  'gi',
+);
+
+export function yearsInProse(text) {
+  const out = [];
+  for (const m of String(text ?? '').matchAll(PROSE_YEARS)) {
+    const four = m[1];
+    const two = m[2] ?? m[3] ?? m[4];
+    const y = four ? Number(four) : 1900 + Number(two);
+    if (y >= 1900 && y <= 1970 && !out.includes(y)) out.push(y);
+  }
+  return out;
+}
+
 /* ------------------------------------------------------------ brace matching */
 
 /**
@@ -273,6 +337,7 @@ function parseFile(path, ledger, batch) {
   const sheets = [];
   const works = [];
   const looseRows = [];
+  const hands = [];
 
   let sheet = null; // { ref, leaf }
   let section = null;
@@ -365,10 +430,45 @@ function parseFile(path, ledger, batch) {
         read: isReadTitle(a.body),
         statedYear: statedYearOf(a.body),
         rows: [],
+        hands: [],
       };
       works.push(work);
       carried = work.title;
       i = a.end - 1;
+      continue;
+    }
+
+    // The prose. Three of the six volumes rule no columns at all and write
+    // every sale as a sentence, so a consumer that reads only `ledgertable`
+    // rows sees Books I and Dealers and nothing else. `\hand{}` is the whole
+    // of what somebody wrote on the leaf, and it is deliberately *only* that:
+    // `\note{}` is the transcriber's own prose and `\marginal{}` ends in an
+    // editorial gloss of where on the leaf a note sits, so neither is
+    // collected here and a reader of `hands` never has to strip one out.
+    m = /^\\hand\{/.exec(rest);
+    if (m) {
+      const who = braced(body, i + m[0].length - 1);
+      if (!who) continue;
+      const said = braced(body, who.end);
+      if (!said) continue;
+      const hand = {
+        ledger,
+        batch,
+        section,
+        ref: sheet?.ref ?? null,
+        leaf: sheet?.leaf ?? null,
+        work: work?.title ?? null,
+        who: who.body.trim(),
+        raw: said.body,
+        plain: plainOf(said.body),
+      };
+      hands.push(hand);
+      // Also hung on the work it stands under, the way rows are, so a consumer
+      // asking « what does this work's own prose say » does not have to
+      // reconstruct the grouping from titles — two leaves can carry the same
+      // title, and matching on it would merge them.
+      if (work) work.hands.push(hand);
+      i = said.end - 1;
       continue;
     }
 
@@ -394,7 +494,7 @@ function parseFile(path, ledger, batch) {
   for (const m of src.matchAll(/\\keywords\{([^}]*)\}/g))
     for (const term of keywordTerms(m[1])) keywords.push(parseKeyword(term));
 
-  return { ledger, batch, path, sheets, works, looseRows, keywords };
+  return { ledger, batch, path, sheets, works, looseRows, hands, keywords };
 }
 
 /* ------------------------------------------------------------ keywords */
