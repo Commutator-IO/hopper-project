@@ -11,10 +11,9 @@ import { isCurrent, url } from '../lib/base.ts';
  */
 
 const OTHER_PAGES: { path: string; label: string }[] = [
-  { path: '/archive/', label: 'All sheets' },
   { path: '/timeline/', label: 'Timeline' },
   { path: '/accounts/', label: 'Accounts' },
-  { path: '/formats/', label: 'Formats' },
+  { path: '/technique/', label: 'Technique' },
   { path: '/method/', label: 'Method' },
   { path: '/contribute/', label: 'Contribute' },
 ];

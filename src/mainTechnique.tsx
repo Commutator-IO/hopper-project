@@ -1,10 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import { FormatsPage } from './FormatsPage.tsx';
+import { TechniquePage } from './TechniquePage.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <FormatsPage />
+    <TechniquePage />
   </StrictMode>,
 );

@@ -53,8 +53,8 @@ it meant every URL named something the museum could not be asked about.
 | [`/book-iv/`](https://hopper.commutator.io/book-iv/) | **Book IV** · 96.211 · 1913–1967 — every payment received, without a gap, for fifty-four years |
 | [`/book-v/`](https://hopper.commutator.io/book-v/) | **Book V** · 96.212 · 1953–1963 — an index, loans, drawings, and the Rehn receipts of 1953 |
 | [`/dealers/`](https://hopper.commutator.io/dealers/) | **Dealers/Etchings** · 96.213 · 1921–1951 — indexed by dealer rather than by work |
-| [`/archive/`](https://hopper.commutator.io/archive/) | All 504 sheets, searchable across the six |
 | [`/timeline/`](https://hopper.commutator.io/timeline/) | Hopper's life beside the dated leaves — every entry sourced |
+| [`/technique/`](https://hopper.commutator.io/technique/) | What the pictures were made of, and what shape — the paint formula in her hand, the sizes in his |
 | [`/method/`](https://hopper.commutator.io/method/) | How the reading is done, what it costs, what it does not claim |
 
 Every volume page links to the Whitney's own catalogue record for the object,

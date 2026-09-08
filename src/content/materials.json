@@ -1,0 +1,1398 @@
+{
+  "basis": "the paint formula written on the leaf, read from \\hand{} bodies only",
+  "note": "What the pictures were made of, as the leaves state it. From Book II onward nearly every work leaf carries a short block under the title naming the colourman, the canvas and its priming, the white, the oil and the thinner, in that order and in the same words for thirty years. It is the only surviving statement of what was on the palette on a given day, and unlike the size and the price it is neither a measurement of an object nor a report of an event: it is her hand recording his practice.",
+  "method": "Only the argument of \\hand{} is read — the words somebody wrote on the leaf. A transcription file also carries \\note{}, which is the transcriber's own prose, and \\marginal{}, whose body ends in an editorial gloss; both discuss materials constantly, and a count that read them would report that Winton is common because somebody remarked on how rare it is. Counted once per work, not once per mention: a leaf that abbreviates the colourman three times used one colourman.",
+  "normalisation": "Spellings are folded to one name for counting and published beside it. Chremnitz, Cremnitz and Crimnitz are one white; Winsor and Windsor one colourman; turpentine, tarpentine and terpentine one bottle. Nothing corrects the leaf. Words that mean a material in one sentence and something else in another are left out rather than guessed at — « canvas » is a support in the formula and a picture in the prose, so the makers and the priming are counted and the bare word is not.",
+  "dating": "A work is dated where she wrote « Painted in … 1950 » in the same statement, or where Edward put the year in the title line. Everything else is undated and stays out of the chronology. Dating a canvas by a sale date on the same leaf would date the paint by the year somebody bought the picture.",
+  "works": 242,
+  "worksWithFormula": 71,
+  "handsRead": 1361,
+  "looseHands": 894,
+  "dated": 38,
+  "undated": 33,
+  "groups": [
+    {
+      "group": "colourman",
+      "label": "Colourmen",
+      "note": "Who made the paint. She names the maker before the colours on nearly every leaf that carries a formula at all.",
+      "materials": [
+        {
+          "name": "Winsor & Newton",
+          "group": "colourman",
+          "works": 49,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1939,
+          "lastYear": 1962,
+          "years": {
+            "1939": 1,
+            "1943": 2,
+            "1944": 3,
+            "1945": 1,
+            "1946": 1,
+            "1947": 1,
+            "1948": 1,
+            "1949": 3,
+            "1950": 2,
+            "1951": 2,
+            "1952": 3,
+            "1953": 1,
+            "1954": 1,
+            "1955": 2,
+            "1956": 2,
+            "1957": 1,
+            "1958": 1,
+            "1959": 1,
+            "1960": 2,
+            "1961": 1,
+            "1962": 1
+          },
+          "variants": [
+            {
+              "spelling": "Winsor & Newton",
+              "count": 28
+            },
+            {
+              "spelling": "W & N.",
+              "count": 25
+            },
+            {
+              "spelling": "Winsor + Newton",
+              "count": 15
+            },
+            {
+              "spelling": "W. + N.",
+              "count": 7
+            },
+            {
+              "spelling": "Winsor Newton",
+              "count": 3
+            },
+            {
+              "spelling": "W. & N.",
+              "count": 1
+            }
+          ],
+          "examples": [
+            "N.Y. Movie House",
+            "Men, Women + Horses",
+            "Cape Cod Evening*",
+            "Ground Swell"
+          ]
+        },
+        {
+          "name": "Blockx",
+          "group": "colourman",
+          "works": 18,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1939,
+          "lastYear": 1949,
+          "years": {
+            "1939": 1,
+            "1943": 2,
+            "1944": 3,
+            "1949": 1
+          },
+          "variants": [
+            {
+              "spelling": "Blockx",
+              "count": 30
+            }
+          ],
+          "examples": [
+            "Cape Cod Evening*",
+            "Ground Swell",
+            "The MacArthurs' Home",
+            "Office at Night"
+          ]
+        },
+        {
+          "name": "Rembrandt",
+          "group": "colourman",
+          "works": 17,
+          "ledgers": [
+            "book-ii"
+          ],
+          "firstYear": 1932,
+          "lastYear": 1932,
+          "years": {
+            "1932": 1
+          },
+          "variants": [
+            {
+              "spelling": "Rembrandt",
+              "count": 11
+            },
+            {
+              "spelling": "R. colors",
+              "count": 6
+            }
+          ],
+          "examples": [
+            "Dauphinée House",
+            "Mrs. Scott's House",
+            "City Roofs",
+            "Ryder House"
+          ]
+        },
+        {
+          "name": "Grumbacher",
+          "group": "colourman",
+          "works": 1,
+          "ledgers": [
+            "book-iii"
+          ],
+          "firstYear": 1944,
+          "lastYear": 1944,
+          "years": {
+            "1944": 1
+          },
+          "variants": [
+            {
+              "spelling": "Grumbacher",
+              "count": 1
+            }
+          ],
+          "examples": [
+            "Morning in a City"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "white",
+      "label": "Whites",
+      "note": "The pigment that changes most across the archive, and the one she is most careful to name.",
+      "materials": [
+        {
+          "name": "flake white",
+          "group": "white",
+          "works": 26,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1944,
+          "lastYear": 1962,
+          "years": {
+            "1944": 1,
+            "1945": 2,
+            "1946": 2,
+            "1947": 1,
+            "1948": 1,
+            "1949": 3,
+            "1950": 2,
+            "1951": 2,
+            "1952": 1,
+            "1958": 1,
+            "1959": 1,
+            "1960": 2,
+            "1961": 1,
+            "1962": 1
+          },
+          "variants": [
+            {
+              "spelling": "flake white",
+              "count": 17
+            },
+            {
+              "spelling": "Flake White",
+              "count": 7
+            },
+            {
+              "spelling": "Flake white",
+              "count": 2
+            }
+          ],
+          "examples": [
+            "Men, Women + Horses",
+            "« Dawn in Pennsylvania »",
+            "Morning in a City",
+            "August in the City"
+          ]
+        },
+        {
+          "name": "zinc white",
+          "group": "white",
+          "works": 19,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1929,
+          "lastYear": 1932,
+          "years": {
+            "1929": 1,
+            "1932": 2
+          },
+          "variants": [
+            {
+              "spelling": "Zinc white",
+              "count": 17
+            },
+            {
+              "spelling": "zinc white",
+              "count": 2
+            }
+          ],
+          "examples": [
+            "Dauphinée House",
+            "Mrs. Scott's House",
+            "City Roofs",
+            "Ryder House"
+          ]
+        },
+        {
+          "name": "lead white",
+          "group": "white",
+          "works": 11,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1943,
+          "lastYear": 1957,
+          "years": {
+            "1943": 2,
+            "1944": 1,
+            "1957": 1
+          },
+          "variants": [
+            {
+              "spelling": "lead white",
+              "count": 10
+            },
+            {
+              "spelling": "white lead",
+              "count": 1
+            }
+          ],
+          "examples": [
+            "French 6 day Rider",
+            "5 A.M",
+            "Compartment C",
+            "N.Y. Movie House"
+          ]
+        },
+        {
+          "name": "Chremnitz white",
+          "group": "white",
+          "works": 9,
+          "ledgers": [
+            "book-iii"
+          ],
+          "firstYear": 1952,
+          "lastYear": 1956,
+          "years": {
+            "1952": 3,
+            "1953": 1,
+            "1954": 1,
+            "1955": 2,
+            "1956": 2
+          },
+          "variants": [
+            {
+              "spelling": "Chremnitz White",
+              "count": 7
+            },
+            {
+              "spelling": "Chremnitz white",
+              "count": 1
+            },
+            {
+              "spelling": "Crimnitz White",
+              "count": 1
+            }
+          ],
+          "examples": [
+            "Morning Sun",
+            "Hotel by a Railroad",
+            "Sea Watchers",
+            "Office in a Small City"
+          ]
+        },
+        {
+          "name": "silver white",
+          "group": "white",
+          "works": 8,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1949,
+          "lastYear": 1949,
+          "years": {
+            "1949": 1
+          },
+          "variants": [
+            {
+              "spelling": "Silver White",
+              "count": 5
+            },
+            {
+              "spelling": "silver white",
+              "count": 2
+            },
+            {
+              "spelling": "Silver white",
+              "count": 1
+            }
+          ],
+          "examples": [
+            "Office at Night",
+            "Light Battery at Gettysburg",
+            "Gas",
+            "House by a Road"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "oil",
+      "label": "Oils",
+      "note": "The binder. Poppy oil belongs to the earlier volumes and linseed to the later ones, and the leaves never remark on the change.",
+      "materials": [
+        {
+          "name": "linseed oil",
+          "group": "oil",
+          "works": 41,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1943,
+          "lastYear": 1962,
+          "years": {
+            "1943": 2,
+            "1944": 3,
+            "1945": 2,
+            "1946": 1,
+            "1947": 1,
+            "1948": 1,
+            "1949": 2,
+            "1950": 2,
+            "1951": 2,
+            "1952": 3,
+            "1953": 1,
+            "1954": 1,
+            "1955": 2,
+            "1956": 1,
+            "1957": 1,
+            "1958": 1,
+            "1959": 1,
+            "1960": 2,
+            "1961": 1,
+            "1962": 1
+          },
+          "variants": [
+            {
+              "spelling": "linseed oil",
+              "count": 38
+            },
+            {
+              "spelling": "Linseed oil",
+              "count": 4
+            }
+          ],
+          "examples": [
+            "French 6 day Rider",
+            "5 A.M",
+            "Compartment C",
+            "N.Y. Movie House"
+          ]
+        },
+        {
+          "name": "poppy oil",
+          "group": "oil",
+          "works": 26,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1932,
+          "lastYear": 1944,
+          "years": {
+            "1932": 1,
+            "1939": 1,
+            "1944": 2
+          },
+          "variants": [
+            {
+              "spelling": "poppy oil",
+              "count": 20
+            },
+            {
+              "spelling": "Poppy oil",
+              "count": 6
+            }
+          ],
+          "examples": [
+            "Dauphinée House",
+            "Mrs. Scott's House",
+            "City Roofs",
+            "Ryder House"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "thinner",
+      "label": "Thinners",
+      "note": "One bottle, three spellings.",
+      "materials": [
+        {
+          "name": "turpentine",
+          "group": "thinner",
+          "works": 35,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1943,
+          "lastYear": 1962,
+          "years": {
+            "1943": 2,
+            "1944": 1,
+            "1945": 2,
+            "1946": 2,
+            "1947": 1,
+            "1948": 1,
+            "1949": 3,
+            "1950": 2,
+            "1951": 2,
+            "1952": 3,
+            "1953": 1,
+            "1954": 1,
+            "1955": 2,
+            "1956": 1,
+            "1957": 1,
+            "1958": 1,
+            "1959": 1,
+            "1960": 2,
+            "1961": 1,
+            "1962": 1
+          },
+          "variants": [
+            {
+              "spelling": "turpentine",
+              "count": 32
+            },
+            {
+              "spelling": "Turpentine",
+              "count": 1
+            },
+            {
+              "spelling": "tarpentine",
+              "count": 1
+            },
+            {
+              "spelling": "terpentine",
+              "count": 1
+            }
+          ],
+          "examples": [
+            "Men, Women + Horses",
+            "Hotel Lobby",
+            "Summer Time",
+            "Morning in a City"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "canvas",
+      "label": "Canvas makers and grades",
+      "note": "The maker's own name for the cloth, in the parenthesis after the colourman. The bare word « canvas » is not counted: it means a support in the formula and a picture in the prose.",
+      "materials": [
+        {
+          "name": "National",
+          "group": "canvas",
+          "works": 12,
+          "ledgers": [
+            "book-iii"
+          ],
+          "firstYear": 1949,
+          "lastYear": 1955,
+          "years": {
+            "1949": 1,
+            "1950": 2,
+            "1951": 2,
+            "1952": 3,
+            "1953": 1,
+            "1954": 1,
+            "1955": 2
+          },
+          "variants": [
+            {
+              "spelling": "(National)",
+              "count": 12
+            }
+          ],
+          "examples": [
+            "High Noon",
+            "Portrait of Orleans",
+            "Cape Cod Morning",
+            "First Row Orchestra"
+          ]
+        },
+        {
+          "name": "Herga",
+          "group": "canvas",
+          "works": 8,
+          "ledgers": [
+            "book-iii"
+          ],
+          "firstYear": 1956,
+          "lastYear": 1962,
+          "years": {
+            "1956": 2,
+            "1957": 1,
+            "1959": 1,
+            "1960": 2,
+            "1961": 1,
+            "1962": 1
+          },
+          "variants": [
+            {
+              "spelling": "Herga",
+              "count": 8
+            }
+          ],
+          "examples": [
+            "Sunlight on Brownstones",
+            "Four Lane Road",
+            "Western Motel",
+            "Excursion into Philosophy"
+          ]
+        },
+        {
+          "name": "Winton",
+          "group": "canvas",
+          "works": 8,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1943,
+          "lastYear": 1958,
+          "years": {
+            "1943": 1,
+            "1958": 1
+          },
+          "variants": [
+            {
+              "spelling": "Winton",
+              "count": 8
+            }
+          ],
+          "examples": [
+            "N.Y. Movie House",
+            "Men, Women + Horses",
+            "Ground Swell",
+            "Gas"
+          ]
+        },
+        {
+          "name": "Fornet",
+          "group": "canvas",
+          "works": 2,
+          "ledgers": [
+            "book-ii"
+          ],
+          "firstYear": null,
+          "lastYear": null,
+          "years": {},
+          "variants": [
+            {
+              "spelling": "Fornet",
+              "count": 1
+            },
+            {
+              "spelling": "Foinet",
+              "count": 1
+            }
+          ],
+          "examples": [
+            "Cape Cod Evening*",
+            "« Girlie Show »"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "priming",
+      "label": "Priming",
+      "note": "How many coats of ground the cloth came with. The archive turns from double to single across the middle 1950s.",
+      "materials": [
+        {
+          "name": "double prime",
+          "group": "priming",
+          "works": 19,
+          "ledgers": [
+            "book-ii",
+            "book-iii"
+          ],
+          "firstYear": 1939,
+          "lastYear": 1955,
+          "years": {
+            "1939": 1,
+            "1945": 1,
+            "1946": 1,
+            "1949": 1,
+            "1950": 2,
+            "1951": 2,
+            "1952": 3,
+            "1953": 1,
+            "1954": 1,
+            "1955": 2
+          },
+          "variants": [
+            {
+              "spelling": "double prime",
+              "count": 19
+            }
+          ],
+          "examples": [
+            "The MacArthurs' Home",
+            "Office at Night",
+            "Light Battery at Gettysburg",
+            "House by a Road"
+          ]
+        },
+        {
+          "name": "single prime",
+          "group": "priming",
+          "works": 9,
+          "ledgers": [
+            "book-iii"
+          ],
+          "firstYear": 1949,
+          "lastYear": 1962,
+          "years": {
+            "1949": 1,
+            "1956": 1,
+            "1957": 1,
+            "1958": 1,
+            "1959": 1,
+            "1960": 2,
+            "1961": 1,
+            "1962": 1
+          },
+          "variants": [
+            {
+              "spelling": "single prime",
+              "count": 8
+            },
+            {
+              "spelling": "Single prime",
+              "count": 1
+            }
+          ],
+          "examples": [
+            "Summer in the City",
+            "Sunlight on Brownstones",
+            "Western Motel",
+            "Sunlight in a Cafeteria"
+          ]
+        }
+      ]
+    }
+  ],
+  "formulae": [
+    {
+      "formula": [
+        "Rembrandt",
+        "zinc white",
+        "poppy oil"
+      ],
+      "works": 14,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": 1932,
+      "lastYear": 1932,
+      "examples": [
+        "Dauphinée House",
+        "Mrs. Scott's House",
+        "City Roofs",
+        "Ryder House",
+        "Cape Cod Sunset"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Chremnitz white",
+        "linseed oil",
+        "turpentine",
+        "National",
+        "double prime"
+      ],
+      "works": 6,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1952,
+      "lastYear": 1955,
+      "examples": [
+        "Hotel by a Railroad",
+        "Sea Watchers",
+        "Office in a Small City",
+        "City Sunlight",
+        "South Carolina Morning"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "linseed oil",
+        "turpentine"
+      ],
+      "works": 5,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1945,
+      "lastYear": 1948,
+      "examples": [
+        "Two Puritans",
+        "Corn Belt City",
+        "Pennsylvania Coal Town",
+        "Summer Evening",
+        "7 A.M"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "linseed oil",
+        "turpentine",
+        "National",
+        "double prime"
+      ],
+      "works": 5,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1949,
+      "lastYear": 1951,
+      "examples": [
+        "High Noon",
+        "Portrait of Orleans",
+        "Cape Cod Morning",
+        "First Row Orchestra",
+        "Rooms by the Sea"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "linseed oil",
+        "turpentine",
+        "Herga",
+        "single prime"
+      ],
+      "works": 5,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1959,
+      "lastYear": 1962,
+      "examples": [
+        "Excursion into Philosophy",
+        "People in the Sun",
+        "Second Story Sunlight",
+        "A Woman in the Sun",
+        "New York Office"
+      ]
+    },
+    {
+      "formula": [
+        "zinc white"
+      ],
+      "works": 3,
+      "ledgers": [
+        "book-ii",
+        "book-iii"
+      ],
+      "firstYear": 1929,
+      "lastYear": 1932,
+      "examples": [
+        "Dawn Before Gettysburg",
+        "East River",
+        "November, Wash. Square"
+      ]
+    },
+    {
+      "formula": [
+        "Rembrandt",
+        "lead white",
+        "linseed oil"
+      ],
+      "works": 3,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "French 6 day Rider",
+        "5 A.M",
+        "Compartment C"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "silver white",
+        "poppy oil",
+        "double prime"
+      ],
+      "works": 3,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "Light Battery at Gettysburg",
+        "House by a Road",
+        "Route 6 thru Eastham"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "silver white",
+        "poppy oil",
+        "Winton"
+      ],
+      "works": 2,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "Gas",
+        "Lee Shore"
+      ]
+    },
+    {
+      "formula": [
+        "flake white",
+        "turpentine"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1946,
+      "lastYear": 1946,
+      "examples": [
+        "October on Cape Cod"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "turpentine"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1949,
+      "lastYear": 1949,
+      "examples": [
+        "Conference at Night"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Chremnitz white",
+        "Herga"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1956,
+      "lastYear": 1956,
+      "examples": [
+        "Four Lane Road"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "poppy oil",
+        "double prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": 1939,
+      "lastYear": 1939,
+      "examples": [
+        "The MacArthurs' Home"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "zinc white",
+        "poppy oil"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "« Night Hawks »"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "linseed oil",
+        "poppy oil"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1944,
+      "lastYear": 1944,
+      "examples": [
+        "Solitude \\#56"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "poppy oil",
+        "turpentine"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "August in the City"
+      ]
+    },
+    {
+      "formula": [
+        "flake white",
+        "linseed oil",
+        "turpentine",
+        "double prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1945,
+      "lastYear": 1945,
+      "examples": [
+        "Rooms for Tourists"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "zinc white",
+        "lead white",
+        "linseed oil",
+        "Winton"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "N.Y. Movie House"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "linseed oil",
+        "turpentine",
+        "Winton"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "Men, Women + Horses"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "lead white",
+        "linseed oil",
+        "Fornet"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "Cape Cod Evening*"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "lead white",
+        "linseed oil",
+        "Winton"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "Ground Swell"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "silver white",
+        "poppy oil",
+        "Fornet"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "« Girlie Show »"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "flake white",
+        "linseed oil",
+        "Winton"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "« Dawn in Pennsylvania »"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "lead white",
+        "linseed oil",
+        "turpentine"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1943,
+      "lastYear": 1943,
+      "examples": [
+        "Summer Time"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "lead white",
+        "linseed oil",
+        "poppy oil"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1944,
+      "lastYear": 1944,
+      "examples": [
+        "The Martha McKeen of Wellfleet"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "linseed oil",
+        "turpentine",
+        "double prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1946,
+      "lastYear": 1946,
+      "examples": [
+        "Approaching a City"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "silver white",
+        "lead white",
+        "poppy oil",
+        "double prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-ii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "Office at Night"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "lead white",
+        "linseed oil",
+        "turpentine",
+        "Winton"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1943,
+      "lastYear": 1943,
+      "examples": [
+        "Hotel Lobby"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "Grumbacher",
+        "flake white",
+        "linseed oil",
+        "turpentine"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1944,
+      "lastYear": 1944,
+      "examples": [
+        "Morning in a City"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Chremnitz white",
+        "linseed oil",
+        "turpentine",
+        "Herga",
+        "single prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1956,
+      "lastYear": 1956,
+      "examples": [
+        "Sunlight on Brownstones"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "lead white",
+        "linseed oil",
+        "turpentine",
+        "Herga",
+        "single prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1957,
+      "lastYear": 1957,
+      "examples": [
+        "Western Motel"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "linseed oil",
+        "turpentine",
+        "Winton",
+        "single prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1958,
+      "lastYear": 1958,
+      "examples": [
+        "Sunlight in a Cafeteria"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "Blockx",
+        "flake white",
+        "silver white",
+        "linseed oil",
+        "turpentine",
+        "single prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1949,
+      "lastYear": 1949,
+      "examples": [
+        "Summer in the City"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "Chremnitz white",
+        "linseed oil",
+        "turpentine",
+        "National",
+        "double prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1952,
+      "lastYear": 1952,
+      "examples": [
+        "Morning Sun"
+      ]
+    }
+  ],
+  "byLedger": {
+    "book-i": {
+      "works": 69,
+      "withFormula": 0,
+      "materials": {}
+    },
+    "book-ii": {
+      "works": 103,
+      "withFormula": 33,
+      "materials": {
+        "Rembrandt": 17,
+        "zinc white": 18,
+        "poppy oil": 23,
+        "lead white": 7,
+        "linseed oil": 8,
+        "Winsor & Newton": 14,
+        "Winton": 6,
+        "flake white": 2,
+        "turpentine": 1,
+        "Blockx": 12,
+        "Fornet": 2,
+        "double prime": 5,
+        "silver white": 7
+      }
+    },
+    "book-iii": {
+      "works": 39,
+      "withFormula": 38,
+      "materials": {
+        "Winsor & Newton": 35,
+        "Blockx": 6,
+        "lead white": 4,
+        "linseed oil": 33,
+        "turpentine": 34,
+        "Winton": 2,
+        "Grumbacher": 1,
+        "flake white": 24,
+        "poppy oil": 3,
+        "double prime": 14,
+        "National": 12,
+        "silver white": 1,
+        "single prime": 9,
+        "Chremnitz white": 9,
+        "Herga": 8,
+        "zinc white": 1
+      }
+    },
+    "book-v": {
+      "works": 16,
+      "withFormula": 0,
+      "materials": {}
+    },
+    "dealers": {
+      "works": 15,
+      "withFormula": 0,
+      "materials": {}
+    }
+  }
+}

@@ -20,7 +20,8 @@
     "accounts": "node scripts/accounts.mjs",
     "places": "node scripts/places.mjs",
     "notes": "node scripts/notes.mjs",
-    "formats": "node scripts/formats.mjs"
+    "formats": "node scripts/formats.mjs",
+    "materials": "node scripts/materials.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",
