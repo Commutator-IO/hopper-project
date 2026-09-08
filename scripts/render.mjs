@@ -387,9 +387,34 @@ function render(src, file, meta) {
       // already been consumed by `rows()`, so anywhere `inline` meets it, it is
       // a break inside a cell or inside a macro's argument — which is where
       // Jo Hopper's five-line inscriptions live.
+      //
+      // Not every one of them is worth drawing, and this is the only place in
+      // the pipeline where that judgement is made. The `.tex` keeps every
+      // break, because the lineation of the leaf is part of what was
+      // transcribed, and so does the TEI, which is what an archive deposits.
+      // The reading view is a third thing: it is set beside the photograph at
+      // whatever width the reader's window happens to be, and there a break
+      // that only records where the paper ran out mid-phrase produces an
+      // orphan — « House grey, shutters » on one line and « faded blue. » on
+      // the next, with the wrap of the browser already having broken the line
+      // somewhere else.
+      //
+      // So a break is drawn unless it is plainly the paper's: the line does
+      // not close a sentence and the next begins with a lowercase letter.
+      // Every structural break survives that test, because the thing after it
+      // starts with a capital or a figure or a macro — a paint formula's
+      // « Winsor & Newton », a sale's « Jos. H. Hirshhorn », a worked column's
+      // `\quad`. Conservative on purpose: where it is not certain the break is
+      // the paper's, the break stays.
       if (s[j + 1] === '\\') {
-        o += '<br>';
+        const before = s.slice(0, j);
+        const after = s.slice(j + 2);
+        const paperOnly = /^\s*[a-z]/.test(after) && !/[.!?:;)"'”»]\s*$/.test(before);
+        o += paperOnly ? ' ' : '<br>';
         j += 2;
+        // The newline and indent that followed the break would otherwise show
+        // up as a second space beside the one just emitted.
+        if (paperOnly) j += (/^\s+/.exec(s.slice(j))?.[0].length ?? 0);
         continue;
       }
       const m = /^\\([a-zA-Z]+)\*?/.exec(s.slice(j));
