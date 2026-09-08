@@ -2198,3 +2198,116 @@ it transcribes like everything else.
 - **`Navis`** *(leaf 29)* — Mrs. Raphael Navis of the Murdock Collection, with
   « Elizabeth » added above the first occurrence. The surname recurs with the
   same shape, which is not the same as its being settled.
+
+---
+
+*(Book III batch 6, sheets 61–72, read 8 September 2026, Opus 5. Batches 4 and
+5 recorded what they learned in their own file headers rather than here; what
+follows is batch 6's, and nothing in it has been confirmed by a later batch.)*
+
+## The work book ends at leaf 89, and the volume becomes a watercolour list
+
+Leaf 89 is The Two Commedians, finished 10 November 1966, the last picture
+Edward Hopper painted: five lines, no size, no buyer, no price, nothing after
+it. Then the foliation jumps 89 → 101 and the leaves change shape completely —
+**two works to a leaf**, a drawing to each, a title, a size, a month, and one
+line of money. No paint formula, no description of the light, no anecdote. A
+batch that spans the join is two batches of reading in one file and should be
+budgeted that way: the six oils are slow and carry all three worked money
+blocks, the six watercolour leaves carry twelve one-line sales between them.
+
+## The paint formula can be a single vertical note covering six sheets
+
+Leaf 101 writes it up the fore-edge margin in blue ink — Winsor Newton tube
+water colors on Whatman rough paper, four from the roof of the Casa Guajardo,
+two from a hotel window — and **that is the only formula on any of the six
+watercolour leaves**. Read the fore edge before concluding a leaf records no
+materials. Rotate the crop 90° clockwise (`-rotate 90`); the other way gives
+mirror writing and costs a minute.
+
+## Two spellings of one place on one leaf, again
+
+Leaf 105: **`Monterrey Cathedral`** in the upper entry, **`Sierra Madre at
+Montervey`** in the lower, four lines apart, both plainly legible. Leaf 101
+writes **`Guarhado House`** in the pencil head and **`Casa Guajardo`** in the
+blue fore-edge note. This is Book II's habit arriving in Book III; expect it and
+do not regularise.
+
+## A figure that does not reconcile, twice on one leaf
+
+Leaf 109 writes « 750 - 1/3 = 600 » for Construction in Mexico and again for
+Mount Moran, in ink, unambiguously. Leaves 103 and 105 take the same third
+correctly (750 − 1/3 = 500) and leaf 101 does 600 − 1/3 = 400. Nothing explains
+it. Transcribe both and say so in `\note{}`.
+
+## Two leaves tell the same Whitney exchange about different pictures
+
+Leaf 107 says El Palacio was swapped for Lombard's House out of the March 1950
+retrospective; leaf 109 says the same of Construction in Mexico, in the same
+terms and with the same 750, then **strikes both lines through with a single
+thin stroke each** and sells the picture to Buckley in blue ink above them. They
+cannot both be right. Do not reconcile them; transcribe both and note the
+conflict.
+
+## Herga gets a fifth spelling, and « single » stops being struck
+
+Leaves 79 and 81 write « Herga » in quotation marks; **leaf 89 writes
+`Herger`**, plainly and unquoted. After National (batch 4), the retraced capital
+of leaf 57, Winton on leaf 65 and Herga from leaf 63, that is five. « single
+prime » stands unstruck on every leaf of this batch that carries it, where four
+leaves of batch 5 struck it.
+
+## The pencil-then-ink order can run the other way
+
+Batches 2 and 3 found pencil rubbed out and inked over. On leaves 83 and 85 the
+**paint formula alone stays in rubbed pencil** and was never inked, while the
+title, the description and the sale above and below it are all in ink. The
+formula is not an erasure and not a marginal — it is the standing field it
+always was, left in the medium it was drafted in.
+
+## A money block can be dense enough that magnification stops helping
+
+Leaf 85 is the worst passage in the volume so far: a price, a gallery
+commission, two receipts a year apart, a discount, a final payment, a bank, and
+later ink over pencil over ink. Three `\ill{}` in six lines, and they were still
+`\ill{}` at 20×, grayscale-normalised, with unsharp masking. **The two receipts
+and the price reconcile and nothing else in the block does**; establish the part
+that reconciles first, then stop, rather than spending the pass on the part that
+will not.
+
+## More spellings, all as written
+
+- **`Commedians`** *(leaf 89)* — the Whitney's descriptor agrees.
+- **`Montervey`** beside **`Monterrey`** *(leaf 105)*.
+- **`Guarhado`** beside **`Guajardo`** *(leaf 101)*.
+- **`Herger`** *(leaf 89)*.
+- **`Sheriden Ave.`** *(leaf 103)* — Pittsburgh's Sheridan.
+- **`Estoban`** *(leaf 107)* — for San Esteban.
+- **`Vermillion`** *(leaf 101)*, **`Palmas at Saltillo`** *(leaf 101)*.
+- **`Lombard's House`** *(leaf 107)* beside **`Lombard House`** *(leaf 109)*.
+- **`Winsor Newton`** without the ampersand *(leaf 101, fore edge)*.
+
+## Readings that would not settle
+
+- **the figure after « final payment »** *(leaf 85)* — the batch's hardest. The
+  first character reads as a 6 or as her « to »; the group after it carries a
+  capital E and a double t, which would make it « Ett », her name for Edward on
+  leaf 75. `\ill{}`.
+- **`= 7 000`** *(leaf 85)* — legible, and belongs to no sum on the leaf.
+  Offered as `\uncertain{}`.
+- **the words between « entered » and « 1967 »** *(leaf 85)* — ink over pencil
+  over ink at the foot right. `\ill{}`.
+- **`Heydenrich`** *(leaf 79)* — the frame maker, whom batch 5's leaf 75 gives
+  as `Huydenryk`. Add him to the list of names this hand will not settle.
+- **the struck word before « End of stage »** *(leaf 81)* — scribbled over past
+  reading, with a caret below and a bare « E » before it.
+- **`warmish`** *(leaf 81)* — struck, before « grey Carpet »; « varnish » fits
+  the strokes as well and not the sense.
+- **`John H.`** *(leaf 103)* — the buyer's forename, with a struck « Betty »
+  beside it and « or James? » pencilled below. Three attempts at one name.
+- **`Manchen Gal.`** and **`himself`** *(leaf 109)* — the pencil under the
+  Buckley sale; Buckley was at Manchester, N.H., which batch 2 found spelt two
+  ways two leaves apart.
+- **the erased size beside « East River »** *(leaf 87)* — two figures and an
+  « x », rubbed past reading. `\note{}`, not `\ill{}`: the ink line it stands
+  beside carries no size at all.
