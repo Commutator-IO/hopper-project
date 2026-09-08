@@ -522,6 +522,31 @@ export const FACETS = [
 ];
 
 /**
+ * The LaTeX escapes that print their character, resolved.
+ *
+ * `\keywords{}` is written in the source as LaTeX, so a term naming a
+ * colourman arrives as « Winsor \& Newton watercolours » and a term naming a
+ * museum as « Victoria \& Albert Museum ». The label is the text, not the
+ * source, and every consumer of it wants the text: the site's tag index built
+ * by `npm run manifest`, the TEI `<item>`, and the party matching in
+ * `npm run accounts`. Two of those were printing the backslash — a chip
+ * reading « Winsor \& Newton watercolours » on the ledger page, and a stray
+ * backslash inside `<item type="medium">` in the XML.
+ *
+ * The reading view was never wrong, and that is why the fix belongs here
+ * rather than in each caller: `render.mjs` resolves these in `plain()` before
+ * it ever calls in, so this is a no-op on that path and not a second pass over
+ * an already-clean string.
+ *
+ * The set is the printing subset of `render.mjs`'s own `ESCAPES` — `\%` `\$`
+ * `\&` `\#` `\_` `\{` `\}` — and stops there on purpose. `\\` is a line break
+ * and `\ ` a space, and neither means anything in a label: a keyword is a
+ * short name from a closed vocabulary, so an escape outside this list is a
+ * mistake in the transcription rather than something to resolve quietly.
+ */
+const printing = (s) => s.replace(/\\([%$&#_{}])/g, '$1');
+
+/**
  * One keyword, split into its facet and its label.
  *
  * The facet is declared in the transcription — `place:Cape Cod` — and never
@@ -544,8 +569,8 @@ export const FACETS = [
  */
 export function parseKeyword(term) {
   const m = /^([a-z]+):\s*(.+)$/.exec(term.trim());
-  if (!m || !FACETS.includes(m[1])) return { facet: null, label: term.trim() };
-  return { facet: m[1], label: m[2].trim() };
+  if (!m || !FACETS.includes(m[1])) return { facet: null, label: printing(term.trim()) };
+  return { facet: m[1], label: printing(m[2].trim()) };
 }
 
 /** The terms of a `\keywords{}` argument, in source order. */
