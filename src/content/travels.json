@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T20:36:32.102Z",
+  "generated": "2026-09-08T20:26:49.414Z",
   "note": "Hand-declared. Every place here is one a named source in life.json puts Edward Hopper at, and every move cites the life.json event that states it. Nothing is typed from memory: `npm run places` refuses a move whose event it cannot find, and the coordinates are retrieved from OpenStreetMap rather than written down. What this is not is an itinerary — see `means` below, which is printed on the page beside the drawing.",
   "means": "An arrow runs between the places two consecutive place-naming events in life.json name, in year order, and carries the later one's year. It is the order two records fall in, not a journey anybody wrote down: no source here says how or exactly when he went, and the ledgers — which record what left the studio, not where he was — cannot say either. So the chain runs through Gloucester to Cape Cod without returning to Washington Square in between, because no sourced statement stands between them, and not because he was not living there. He was: the 1913 entry says he lived and worked there until his death.",
   "refused": [

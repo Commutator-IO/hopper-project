@@ -4,12 +4,12 @@
   "method": "Only the argument of \\hand{} is read — the words somebody wrote on the leaf. A transcription file also carries \\note{}, which is the transcriber's own prose, and \\marginal{}, whose body ends in an editorial gloss; both discuss materials constantly, and a count that read them would report that Winton is common because somebody remarked on how rare it is. Counted once per work, not once per mention: a leaf that abbreviates the colourman three times used one colourman.",
   "normalisation": "Spellings are folded to one name for counting and published beside it. Chremnitz, Cremnitz and Crimnitz are one white; Winsor and Windsor one colourman; turpentine, tarpentine and terpentine one bottle. Nothing corrects the leaf. Words that mean a material in one sentence and something else in another are left out rather than guessed at — « canvas » is a support in the formula and a picture in the prose, so the makers and the priming are counted and the bare word is not.",
   "dating": "A work is dated where she wrote « Painted in … 1950 » in the same statement, or where Edward put the year in the title line. Everything else is undated and stays out of the chronology. Dating a canvas by a sale date on the same leaf would date the paint by the year somebody bought the picture.",
-  "works": 242,
-  "worksWithFormula": 71,
-  "handsRead": 1361,
-  "looseHands": 894,
-  "dated": 38,
-  "undated": 33,
+  "works": 270,
+  "worksWithFormula": 77,
+  "handsRead": 1502,
+  "looseHands": 980,
+  "dated": 43,
+  "undated": 34,
   "groups": [
     {
       "group": "colourman",
@@ -19,13 +19,13 @@
         {
           "name": "Winsor & Newton",
           "group": "colourman",
-          "works": 49,
+          "works": 55,
           "ledgers": [
             "book-ii",
             "book-iii"
           ],
           "firstYear": 1939,
-          "lastYear": 1962,
+          "lastYear": 1964,
           "years": {
             "1939": 1,
             "1943": 2,
@@ -47,12 +47,14 @@
             "1959": 1,
             "1960": 2,
             "1961": 1,
-            "1962": 1
+            "1962": 3,
+            "1963": 2,
+            "1964": 1
           },
           "variants": [
             {
               "spelling": "Winsor & Newton",
-              "count": 28
+              "count": 33
             },
             {
               "spelling": "W & N.",
@@ -64,7 +66,7 @@
             },
             {
               "spelling": "W. + N.",
-              "count": 7
+              "count": 10
             },
             {
               "spelling": "Winsor Newton",
@@ -172,13 +174,13 @@
         {
           "name": "flake white",
           "group": "white",
-          "works": 26,
+          "works": 30,
           "ledgers": [
             "book-ii",
             "book-iii"
           ],
           "firstYear": 1944,
-          "lastYear": 1962,
+          "lastYear": 1964,
           "years": {
             "1944": 1,
             "1945": 2,
@@ -193,7 +195,9 @@
             "1959": 1,
             "1960": 2,
             "1961": 1,
-            "1962": 1
+            "1962": 2,
+            "1963": 2,
+            "1964": 1
           },
           "variants": [
             {
@@ -202,7 +206,7 @@
             },
             {
               "spelling": "Flake White",
-              "count": 7
+              "count": 11
             },
             {
               "spelling": "Flake white",
@@ -250,7 +254,7 @@
         {
           "name": "lead white",
           "group": "white",
-          "works": 11,
+          "works": 12,
           "ledgers": [
             "book-ii",
             "book-iii"
@@ -265,7 +269,7 @@
           "variants": [
             {
               "spelling": "lead white",
-              "count": 10
+              "count": 11
             },
             {
               "spelling": "white lead",
@@ -360,13 +364,13 @@
         {
           "name": "linseed oil",
           "group": "oil",
-          "works": 41,
+          "works": 45,
           "ledgers": [
             "book-ii",
             "book-iii"
           ],
           "firstYear": 1943,
-          "lastYear": 1962,
+          "lastYear": 1964,
           "years": {
             "1943": 2,
             "1944": 3,
@@ -387,16 +391,18 @@
             "1959": 1,
             "1960": 2,
             "1961": 1,
-            "1962": 1
+            "1962": 1,
+            "1963": 2,
+            "1964": 1
           },
           "variants": [
             {
               "spelling": "linseed oil",
-              "count": 38
+              "count": 41
             },
             {
               "spelling": "Linseed oil",
-              "count": 4
+              "count": 5
             }
           ],
           "examples": [
@@ -448,13 +454,13 @@
         {
           "name": "turpentine",
           "group": "thinner",
-          "works": 35,
+          "works": 40,
           "ledgers": [
             "book-ii",
             "book-iii"
           ],
           "firstYear": 1943,
-          "lastYear": 1962,
+          "lastYear": 1964,
           "years": {
             "1943": 2,
             "1944": 1,
@@ -475,12 +481,14 @@
             "1959": 1,
             "1960": 2,
             "1961": 1,
-            "1962": 1
+            "1962": 2,
+            "1963": 2,
+            "1964": 1
           },
           "variants": [
             {
               "spelling": "turpentine",
-              "count": 32
+              "count": 37
             },
             {
               "spelling": "Turpentine",
@@ -543,24 +551,25 @@
         {
           "name": "Herga",
           "group": "canvas",
-          "works": 8,
+          "works": 10,
           "ledgers": [
             "book-iii"
           ],
           "firstYear": 1956,
-          "lastYear": 1962,
+          "lastYear": 1963,
           "years": {
             "1956": 2,
             "1957": 1,
             "1959": 1,
             "1960": 2,
             "1961": 1,
-            "1962": 1
+            "1962": 2,
+            "1963": 1
           },
           "variants": [
             {
               "spelling": "Herga",
-              "count": 8
+              "count": 10
             }
           ],
           "examples": [
@@ -667,12 +676,12 @@
         {
           "name": "single prime",
           "group": "priming",
-          "works": 9,
+          "works": 13,
           "ledgers": [
             "book-iii"
           ],
           "firstYear": 1949,
-          "lastYear": 1962,
+          "lastYear": 1964,
           "years": {
             "1949": 1,
             "1956": 1,
@@ -681,12 +690,14 @@
             "1959": 1,
             "1960": 2,
             "1961": 1,
-            "1962": 1
+            "1962": 2,
+            "1963": 2,
+            "1964": 1
           },
           "variants": [
             {
               "spelling": "single prime",
-              "count": 8
+              "count": 12
             },
             {
               "spelling": "Single prime",
@@ -752,6 +763,29 @@
         "Winsor & Newton",
         "flake white",
         "linseed oil",
+        "turpentine",
+        "Herga",
+        "single prime"
+      ],
+      "works": 6,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1959,
+      "lastYear": 1963,
+      "examples": [
+        "Excursion into Philosophy",
+        "People in the Sun",
+        "Second Story Sunlight",
+        "A Woman in the Sun",
+        "New York Office"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "linseed oil",
         "turpentine"
       ],
       "works": 5,
@@ -789,29 +823,6 @@
         "Cape Cod Morning",
         "First Row Orchestra",
         "Rooms by the Sea"
-      ]
-    },
-    {
-      "formula": [
-        "Winsor & Newton",
-        "flake white",
-        "linseed oil",
-        "turpentine",
-        "Herga",
-        "single prime"
-      ],
-      "works": 5,
-      "ledgers": [
-        "book-iii"
-      ],
-      "firstYear": 1959,
-      "lastYear": 1962,
-      "examples": [
-        "Excursion into Philosophy",
-        "People in the Sun",
-        "Second Story Sunlight",
-        "A Woman in the Sun",
-        "New York Office"
       ]
     },
     {
@@ -886,6 +897,39 @@
       "examples": [
         "Gas",
         "Lee Shore"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "linseed oil",
+        "turpentine",
+        "single prime"
+      ],
+      "works": 2,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1963,
+      "lastYear": 1964,
+      "examples": [
+        "Sun in an Empty Room",
+        "Chair Car"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1962,
+      "lastYear": 1962,
+      "examples": [
+        "Mass of Trees at Eastham"
       ]
     },
     {
@@ -1018,6 +1062,23 @@
       "lastYear": 1945,
       "examples": [
         "Rooms for Tourists"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "lead white",
+        "linseed oil",
+        "turpentine"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": null,
+      "lastYear": null,
+      "examples": [
+        "The Two Commedians"
       ]
     },
     {
@@ -1180,6 +1241,24 @@
       "lastYear": 1946,
       "examples": [
         "Approaching a City"
+      ]
+    },
+    {
+      "formula": [
+        "Winsor & Newton",
+        "flake white",
+        "turpentine",
+        "Herga",
+        "single prime"
+      ],
+      "works": 1,
+      "ledgers": [
+        "book-iii"
+      ],
+      "firstYear": 1962,
+      "lastYear": 1962,
+      "examples": [
+        "Road and Trees"
       ]
     },
     {
@@ -1363,24 +1442,24 @@
       }
     },
     "book-iii": {
-      "works": 39,
-      "withFormula": 38,
+      "works": 67,
+      "withFormula": 44,
       "materials": {
-        "Winsor & Newton": 35,
+        "Winsor & Newton": 41,
         "Blockx": 6,
-        "lead white": 4,
-        "linseed oil": 33,
-        "turpentine": 34,
+        "lead white": 5,
+        "linseed oil": 37,
+        "turpentine": 39,
         "Winton": 2,
         "Grumbacher": 1,
-        "flake white": 24,
+        "flake white": 28,
         "poppy oil": 3,
         "double prime": 14,
         "National": 12,
         "silver white": 1,
-        "single prime": 9,
+        "single prime": 13,
         "Chremnitz white": 9,
-        "Herga": 8,
+        "Herga": 10,
         "zinc white": 1
       }
     },
