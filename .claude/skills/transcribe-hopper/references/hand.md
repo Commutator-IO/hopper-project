@@ -2311,3 +2311,141 @@ will not.
 - **the erased size beside « East River »** *(leaf 87)* — two figures and an
   « x », rubbed past reading. `\note{}`, not `\ill{}`: the ink line it stands
   beside carries no size at all.
+
+---
+
+*(Book III batch 7, sheets 73–84, read 8 September 2026, Opus 5. Nothing in it
+has been confirmed by a later batch.)*
+
+## Three sheets can be one leaf, and only the last one shows it
+
+Sheets 75, 76 and 77 are all leaf 117. Sheet 75 is a plain **unruled** sheet
+carrying the whole California Hills record and lying over the leaf; sheet 76 is
+the leaf with a *second* loose sheet — the gift drawing for Mrs. Rose — over
+its lower half; sheet 77 is the recto with both moved aside. Batch 1's rule
+held without strain: transcribe the leaf once, at the sheet that shows it,
+transcribe each laid sheet as the document it is, and put a `\note{}` on the
+sheets that cover it.
+
+**How to tell a laid sheet from a leaf in ten seconds**: crop the top 300 px at
+200% and look for printed rules. A leaf has crisp blue and red ruling; a laid
+sheet has none, and the leaf's printed number shows in blue *above* its top
+edge. Sheet 75 looks like a leaf at the Whitney's `pre` size and is not one.
+
+## A laid sheet can carry writing that stands upside down
+
+The foot of sheet 75 has « Feb. 17, 1957 » in a smaller, more upright script,
+inverted to everything above it. Rotate 180 (`-rotate 180`), not `-flop`: a
+first attempt at mirroring it wasted two crops. Mirror writing is show-through
+from the back; **inverted writing is on the face you are looking at**, and the
+two want different transforms.
+
+## The Whitney's descriptor and the leaf can disagree about the title
+
+Leaf 113 writes **`Mitla`** plainly where the descriptor gives *Milta*; leaf
+119 writes **`Horse and Vermont Barn`** where the descriptor gives *House and
+Vermont Farm*, and the horse is in the drawing and in three lines of the
+description. Transcribe the leaf, note the divergence, and do not adjust the
+title to match — the work link takes the leaf's title or takes nothing.
+
+## Every sale reconciles, and the third is a fraction throughout
+
+1800 − 1/3 = 1200 twice, 1500 − 1/3 = 1000 twice, 900 − 1/3 = 600,
+2000 − 1/3 = 1333 1/3, 6500 − 1/3 = 4333 2/3. No decimals, no worked payment
+blocks, nothing like batch 6's leaf 85. Two of the nine work leaves carry no
+money at all (121, 125). After batch 6 this is a relief and it should be
+budgeted as one: the reading time goes to leaves 170 and 171 instead.
+
+## Her ordinal mark is the inch mark, and the batch settles nothing about it
+
+« 4" visit », « July 2", 59 », « July 6", 1960 », « Oct. 12" + 13" », « 3" fl. »
+and « 2" fl. » — all ordinals. « 12" x 18" », « 16 x 22 » — measurements. The
+mark is identical and only the context separates them. Transcribe as written
+and expand neither.
+
+## A second hand appears on one leaf and does the paint formula
+
+Leaf 121's three closing lines — painted July, August 1962 / Whatmans Cold
+Pressed water color / paper, Winsor & Newton water colors — are upright, evenly
+spaced and separately pen-lifted where everything above them runs. It is the
+only paint formula in the batch. Nothing on the leaf settles whose it is, so it
+took `\hand{unidentified}`. Do not push it onto `jo` because she wrote the rest
+of the leaf.
+
+## Long horizontal strokes over a word are t-bars, not deletions
+
+Leaf 123 appears to strike « iron » and « at ». It does not: the crossbars of
+the t's in « sheet » and « white » run out to the right over the following
+word. Check what letter the stroke starts from before reaching for `\struck{}`.
+Leaf 116 has the harder case — a pen stroke between two lines of the
+description that is under nothing and over nothing, and it was left out.
+
+## The Whereabouts leaves are the densest prose in the volume
+
+Leaves 170 and 171: twenty-eight lines, no ruling used as columns, not one
+figure of money. Leaf 170 runs from the bulldozed dune at South Truro through
+the arrival at 3 Washington Square of what she calls Hitler's aggressors to
+eleven lines on how the chaos made the whole house friends. Full-width bands
+stepping 130 px at 300% on a 1299 × 2000 sheet read it cleanly; the
+line-to-line overlap is what makes a line that falls on a seam readable from
+the band below. Two double strokes (`//`) in one paragraph are hers and divide
+it into subjects.
+
+## The braced list is back, and it is two lines this time
+
+Leaf 170 braces « 2. H. » and « 3. H. » against « 1959 - 60 - Whitney Annual »
+written once at the left. Described in `\note{}`, never transcribed, as batch 2
+had it.
+
+## The columns of a four-line memorandum are not a table
+
+The Frames leaf (printed 187) sets three works against a ditto mark, a figure,
+a second ditto mark and a date, in columns, on a ruled leaf. It was **not** put
+in a `ledgertable`: the columns are unheaded and supplying `\add{}` headings
+would have been asserting what the figures are. Lines with `\quad` and a
+`\note{}` describing the alignment is the honest form when there are three rows
+and no heading anywhere on the leaf.
+
+## More spellings, all as written
+
+- **`Boick`** *(leaf 170, twice)* — for the Buick, and for Warren Buick who
+  replaced it.
+- **`Malcomb Chace`** *(leaf 170)*.
+- **`Atheneum`** *(leaf 170)* — Book III's second go at it; batch 2 found
+  *Atheneum* beside *Athenaeum* two leaves apart.
+- **`Sasconset`** *(leaf 170)* — for Siasconset, and the vowels are not firm.
+- **`Whatmans`** *(leaf 121)* without the apostrophe.
+- **`Lillian`** *(leaf 117)* beside **`Lillias`** *(the gift drawing lying on
+  it)* — one woman, two sheets, two spellings, one of them touching the other.
+- **`Charlestown, Vt.`** *(leaf 119)*, **`preground`** *(leaf 117)*.
+- **`Canon Road`** *(leaf 116)*, **`Guanajuato`** *(leaf 115, correctly)*.
+
+## Readings that would not settle
+
+- **`Carl Gross`** *(leaf 170)* — the man who drove them back to New York to
+  vote. Four or five letters after the G and none of them firm; « Gnes » fits
+  the strokes as well. Not the Carl Benson of the same leaf.
+- **`Dorothy Buttles`** *(leaf 171)* — who took N.Y. Office in exchange for an
+  Eakins. Reads Bulles, Butles or Buttles.
+- **`El` + a struck word + `French`** *(leaf 171)* — a name of two elements
+  with four or five letters struck past reading between them; Franch fits the
+  surname as well as French.
+- **`Lechner`** *(leaf 123)* — the buyer of Charleston Slum; Leshner is as
+  defensible.
+- **`Chas. F. Stein, Jr.`** *(leaf 113)* — the middle initial is a looped
+  descender with a bar across it, which is her F and her T without distinction.
+- **`Barcer`** *(leaf 115, foot)* — the photographer, after a small circled
+  letter that is not a letter of the name. Two figures follow, 16 and 499, and
+  they belong to no sum on the leaf.
+- **`gone to`** and the word after it *(leaf 121, left margin)* — the end of
+  « try portfolio », struck once and then continued. `\ill{}` at 900%.
+- **the head-margin word of leaf 117** — six or seven letters with a long
+  stroke rising from them. Not « Water »: that heading is on the laid sheet,
+  not the leaf, and the two were confused for a while before the crops settled
+  it.
+- **`with`** *(leaf 115)* — four letters with a crossed stroke, after
+  « nondescript ». « inch » fits the strokes and not the sense.
+- **`watery`** *(leaf 117, interlineation)* — « not to watery Color »; the t is
+  crossed, which is what argues for it.
+- **`dresser`** *(leaf 170)* — the replacement Buick is « black + white
+  dresser 1956 », legible and opaque.

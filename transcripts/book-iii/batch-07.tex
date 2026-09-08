@@ -1,0 +1,569 @@
+% Pass: Opus 5 (claude-opus-5), 2026-09-08 - first pass, unchecked against the
+% sheets by a human.
+%
+% Book III, batch 7: sheets 73 to 84 - the watercolour list runs out, and the
+% volume ends in three kinds of leaf that have nothing to do with each other.
+%
+% Eight things worth knowing before reading it.
+%
+% The watercolour list of batch 6 changes shape again inside this batch and
+% then stops. Leaves 113 to 125 are one work to a leaf, not two: Edward's ink
+% record drawing at the head, then the title and the size, then two or three
+% lines of description, then the sale. That is the shape of the oil leaves of
+% batches 4 and 5 with the paint formula taken out, and it is the shape of nine
+% of the twelve sheets here. Then the foliation jumps from 125 to 170 and the
+% last three sheets are a Whereabouts running list (leaves 170 and 171) and a
+% four-line memorandum headed Frames (the leaf printed 187). Budget attention
+% accordingly: the work leaves are quick and every one of their sales
+% reconciles, and the two Whereabouts leaves are the densest prose in the
+% volume - twenty-eight lines of it, in a hand travelling fast, with no
+% arithmetic in it at all.
+%
+% Three of the twelve sheets are one leaf. Sheets 75, 76 and 77 are all leaf
+% 117, and only the third of them shows it. Sheet 75 is a plain unruled sheet
+% carrying the whole California Hills record - drawing, title, description,
+% prize and purchase - lying over the leaf, with the leaf's printed 117 showing
+% above its top edge; the Whitney's descriptor places it at p. 116 and the
+% catalogue follows, so it takes \sheet{17794}{116}. Sheet 76 is the leaf with
+% a second loose sheet, the gift drawing for Mrs. Rose, over its lower half,
+% covering the Gloucester Beach entry down to three word-ends at the fore edge.
+% Sheet 77 is the same recto with both moved aside. Following batch 1's rule,
+% leaf 117 is transcribed once, at sheet 77, each laid sheet is transcribed as
+% the document it is, and the sheets that cover it carry a \note{}. Nothing is
+% transcribed twice.
+%
+% The foliation is the stationer's, printed in blue, and it is odd-numbered on
+% a recto as it has been since leaf 9: 113, 115, 117, 119, 121, 123, 125, then
+% 170, 171, then 187. The leaves between 125 and 170 and between 171 and 187
+% were not photographed and nothing here says what is on them. Leaf 170 is an
+% even number and carries its printed 170 at the top left, which is what a
+% written verso does in this volume; the Whitney gives it a leaf number where
+% batches 2 and 3 met versos it left unnumbered, so it takes \sheet{18199}{170}
+% and not an empty second argument. The Frames leaf is the other way round: its
+% printed 187 is plain at the top right and the Whitney's descriptor gives no
+% leaf, so it is \sheet{17145}{} with the number in a \note{}.
+%
+% Every sale on the nine work leaves reconciles, and the third is taken as a
+% fraction throughout: 1800 - 1/3 = 1200 twice, 1500 - 1/3 = 1000 twice,
+% 900 - 1/3 = 600, 2000 - 1/3 = 1333 1/3, 6500 - 1/3 = 4333 2/3. That is the
+% whole of the arithmetic in the batch and it is the cleanest run of it in the
+% volume - batch 6's leaf 109, which took the same third twice and got 600 out
+% of 750 both times, has no counterpart here. Two of the nine leaves carry no
+% money at all: leaf 121, where the entry stops at the paper and the paint, and
+% leaf 125, which is a drawing, a title, a size and a year.
+%
+% Leaf 121 is written in two hands and they do not look alike. The title, the
+% studio note and the marginals are hers, running and impatient; the three
+% lines below them - painted July, August 1962, Whatmans Cold Pressed water
+% color paper, Winsor & Newton water colors - are upright, evenly spaced and
+% separately pen-lifted, and they are the only paint formula in the batch. They
+% are given to an unidentified hand rather than to hers or to Edward's, because
+% nothing on the leaf settles it and the vocabulary exists so that a doubtful
+% attribution does not fall on her by default.
+%
+% Her ordinal mark is everywhere on these leaves and it is the inch mark: the
+% fourth visit to Mexico is « 4" visit », the sale dates are « July 2", 59 »
+% and « July 6", 1960 », and leaf 171 hangs two pictures on « 3" fl. » and
+% « 2" fl. » of the Whitney. Where the same mark closes a measurement it is an
+% inch mark and means it - « 12" x 18" » on the gift drawing. Both are
+% transcribed as written and neither is expanded.
+%
+% Leaf 170 is a running list she wrote as an account of two bad years and one
+% good one, and it is the best prose in Book III so far: the dune top over the
+% sea bulldozed away at South Truro, the arrival at 3 Washington Square of what
+% she calls Hitler's aggressors, five studios turned into offices, and then
+% eleven lines saying that the chaos made the whole house friends - the shared
+% backaches, the plaster in the halls, the tenants who grieved when the workmen
+% left, the Irish and Italian Catholics who were not voting the way anyone
+% expected, and the radiators that arrived in time for Christmas. It is not
+% ruled, it carries no figures, and it is transcribed as she wrote it.
+%
+% Six of the twelve sheets carry a correction written above the line with a
+% caret under it, and on this batch the caret is reliable: « done » over the
+% date on leaf 113, « the houses themselves » over the description on leaf 117,
+% « House » between « pre-Civil War » and « with later additions » on leaf 119,
+% « Spring » before « 1929 » on leaf 123, « its » over a struck « their » and
+% « upper » before « balcony » on leaf 170, and « 40" » over a struck figure on
+% leaf 171. Where the caret is there the addition is read in; where a remark
+% simply stands above the line it is a \marginal{}.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/hopper}
+
+\ledger{book-iii}
+\ledgertitle{Artist's ledger --- Book III}
+\objectnumber{96.210}
+\batch{7}
+\sheets{73}{84}
+\dating{1924--1967}
+\watermark{Demonstration edition}
+
+\begin{document}
+
+\section{Cliffs near Mitla, Oaxaca}
+
+\sheet{17910}{113}
+
+\marginal{Mexico - winter 1952-3. \quad 4" visit --- in ink in the head margin,
+above the ruled area}
+
+\marginal{1953. --- in pencil below it, set in from the left}
+
+\sketch{}
+
+\work{Cliffs near Mitla, Oaxaca --- 21 x 29 \quad Feb. 1953}
+
+\marginal{done --- in pencil above « Feb. 1953 », without a caret}
+
+\marginal{Delivered to Gallery\\
+Dec 11, 53. --- in small pencil in the left margin, level with the title and
+the first line of the description}
+
+\hand{jo}{Very blue sky. Yellowish grey Rocks. Green cactus bushes,\\
+rust dripping over tops of rocks, middle. Hills in distance\\
+at left dark. Very strong.}
+
+\hand{jo}{Chas. \uncertain{F.} Stein, Jr. \quad 1800 - 1/3 = 1200. \quad July
+2", 59.}
+
+\note{the title is written « Mitla » on the leaf, plainly, where the Whitney's
+descriptor for the sheet gives Milta. The head margin carries the trip in ink
+and the year in pencil, in that order down the leaf, and the year is the later
+of the two hands. The buyer's middle initial is a looped descender with a bar
+across it, which is her F and her T without distinction.}
+
+\section{Mountains at Guanajuato}
+
+\sheet{16302}{115}
+
+\sketch{}
+
+\work{Mountains at Guanajuato \quad 21 x 29 \quad Jan. 195\struck{3}. 1954}
+
+\hand{jo}{Left for Mexico day after opening of Water Color Show at\\
+Metrop. Dec. ± 6", 1953.}
+
+\hand{jo}{upper half blue green rock + watery white sky. Middle: brown\\
+green hill pasture in shadow mounting to top at left, spot of\\
+erosion pale earth. Foreground green tree foliage against light.\\
+Little turret pale \struck{nonde-}\\
+\struck{\ill{}}script \uncertain{with} white top. Strong design vs. Color.\\
+Cold, rocky, bleak, sharp.}
+
+\marginal{nondescript --- in pencil above the line at the end of the third
+line of the description, over the struck « nonde- »}
+
+\hand{jo}{Stephen C. Clark \quad 900 - 1/3 = 600 \quad July 5, 1955.}
+
+\hand{jo}{Maybe in Belgium - 1962 - given to wife of son. in law of Stephen
+Clark.}
+
+\marginal{Photo by \ill{} \uncertain{Barcer} \quad 16 \quad 499 --- in pencil
+at the foot of the leaf, by the fore edge; the word before the surname is a
+small circled letter}
+
+\note{the date on the title line is written Jan. 1953, the final 3 struck
+through with a diagonal, and 1954 written after it, all in the same pencil. The
+last two lines of the leaf are in pencil where the description and the sale are
+in ink. The word before « white top » is four letters with a crossed stroke and
+gives « with » or « inch »; « with » is offered.}
+
+\section{California Hills}
+
+\sheet{17794}{116}
+
+\hand{jo}{\struck{Water Color}}
+
+\hand{jo}{Water Colors.}
+
+\sketch{}
+
+\work{California Hills \quad 21 x 29 \quad 1955. Jan or Feb.}
+
+\hand{jo}{\uncertain{Canon Road}\\
+at Huntington Hartford Foundation\\
+near Santa Monica + Los Angeles.}
+
+\hand{jo}{Tall green hill against pale blue sky with\\
+diagonal streaks of white. Pinky yellowish sand bank\\
+at right of road. Left red building? modern design,\\
++ pale pavement (road).}
+
+\hand{jo}{Hallmark prize - \$2000 - Jan. 1958.\\
+\qquad for 1957}
+
+\hand{jo}{Purchase by \qquad Hallmark \quad 2000 - 1/3 = 1333 1/3\\
+\qquad\qquad\qquad\qquad\qquad\qquad Jan. 11, 58.}
+
+\marginal{Feb. 17, 1957 --- in ink in the lower half of the sheet, standing
+upside down to everything above it, in a smaller and more upright script}
+
+\note{this is not a leaf. The whole record is on a plain unruled sheet lying
+over leaf 117, and the leaf's printed 117 shows in blue above the sheet's top
+edge; the Whitney's descriptor places the sheet at p. 116 and the catalogue
+follows it. What is under the sheet is leaf 117, transcribed at sheet 17124.
+The title line runs in two columns - title and size at the left, date and place
+at the right - and is set out here as the sheet sets it. A long pen stroke runs
+between the first and second lines of the description; it is not under one word
+or over another and is not read as an underline. A wavy stroke crosses
+« Huntington » without obscuring it.}
+
+\section{Leaf 117 with the gift drawing over it}
+
+\sheet{17940}{117}
+
+\sketch{To Mrs. \uncertain{Lillias} Rose \qquad \uncertain{Edw. Hopper}}
+
+\hand{jo}{12" x 18" mat covering 1/4 inch all around}
+
+\note{a second loose sheet, carrying a pencil drawing of the beach in a ruled
+box with the dedication inside it at the foot and a signature at its right,
+lies over the lower half of leaf 117 and covers the Gloucester Beach entry
+apart from three word-ends at the fore edge. The drawing is the gift recorded
+in that entry. Leaf 117 itself is transcribed at sheet 17124, where both laid
+sheets have been moved aside; the dedication spells the name Lillias or Lillia
+where the leaf writes Lillian.}
+
+\section{Houses on a Hill}
+
+\sheet{17124}{117}
+
+\marginal{\ill{} --- in pencil in the head margin, above the ruled area; six or
+seven letters with a long stroke rising from them, past reading}
+
+\sketch{}
+
+\hand{jo}{16 x 22}
+
+\work{Houses on a Hill \quad 1923, 4, 6, 8. ?}
+
+\hand{jo}{Warm day in Gloucester. A.M., fall. Rocky preground grey.\\
+Big house, facing East. Yellow. Color washed out, both faded\\
++ bleached to a deep cream. Sky, blue, light relaxed not beaming\\
+altho shadows dark but not menacing. Foliage changes Early on\\
+Cape Ann. So dull green + brown. Probably pre-Civil War House with later
+additions.}
+
+\marginal{not to \uncertain{watery} Color, \quad the houses themselves ---
+above the third line of the description, with a caret under « cream », the
+first phrase in ink and the second in a lighter stroke}
+
+\marginal{John Clancy's\\
+gift --- in small pencil in the left margin, with an arrow at the sale line
+below}
+
+\hand{jo}{Winifred E. Mannion \quad 1800 - 1/3 = 1200. \quad July 6, 1960.\\
+(became Mrs. John Clancy 1961.)}
+
+\work{Gloucester Beach - Bass Rocks - 12" x 18" \quad Bet. 1923 - 28.}
+
+\hand{jo}{White sand, ultramarine water. Cobalt Sky fading at horizon.\\
+Red, yellow, white in umbrellas (4). 11 figures mostly in white. Man at L; in
+khaki coat.}
+
+\hand{jo}{Gift to Mrs. J. Rose (Lillian), daughter of Dr. Alliston McLellan.
+Mar. 13, 59.}
+
+\note{the leaf with both laid sheets moved aside, and the only one of the three
+sheets that shows it whole. « House » is written above the line between
+« pre-Civil War » and « with later additions », with a caret, and is read in.
+The title of the upper work is in quotation marks and underlined on the leaf,
+and the query mark after the four years is hers. The size stands on its own
+line above the title, which is where batch 6's watercolour leaves put it.}
+
+\section{Cape Elizabeth Shore}
+
+\sheet{18090}{119}
+
+\sketch{}
+
+\work{Cape Elizabeth Shore \quad 14" x 20".}
+
+\hand{jo}{Long lazy wave - relaxed. Teeth sharpened\\
+only at each end among rocks. This one of his best sea pictures, calmly
+dramatic\\
+but making no claims. \qquad 1927-29}
+
+\hand{jo}{Atlanta Art Assn. \quad 1500 - 1/3 = 1000 \quad rec'd by painter
+Jan. 24, 62.}
+
+\sketch{}
+
+\hand{jo}{14 x 20}
+
+\work{Horse and Vermont Barn}
+
+\hand{jo}{Fall, late afternoon, 3 horizontal strips -\\
+1 beautiful field, pale yellow green - so very smooth - the horse did it? He
+brown.\\
+2 House, sharp black roof + rafters + dark green Hills. 3 White sky, thin
+streaks fading,\\
+getting Cold. the horse goes on eating.}
+
+\hand{jo}{\struck{1927 or later, \uncertain{this} built after house built in
+1934.}\\
+White siding --- Charlestown, Vt.? \qquad could be 1927}
+
+\hand{jo}{William H. Bender, Jr. \quad 1500 - 1/3 = 1000 \quad July 6", 1960.}
+
+\note{two works to the leaf, each with its drawing, which is batch 6's
+watercolour shape rather than the shape of the seven leaves around it. The
+title of the lower work is underlined; the Whitney's descriptor for the sheet
+gives House and Vermont Farm where the leaf gives Horse and Vermont Barn, and
+the horse is in the drawing and in three lines of the description. The struck
+pencil line and the line below it are both in pencil, faint, and were written
+after the ink; the struck one is legible only in part.}
+
+\section{Mass of Trees at Eastham}
+
+\sheet{16471}{121}
+
+\marginal{Has been --- in pencil in the left margin, above the first line}
+
+\hand{jo}{In Studio - 1964. - Water Color (not the larger oil)}
+
+\sketch{}
+
+\work{Mass of Trees at Eastham \quad 21 x 29}
+
+\marginal{try portfolio \struck{was} \uncertain{gone to} \ill{} --- in ink in
+the left margin, below the title}
+
+\hand{unidentified}{Painted July, August 1962\\
+Whatmans Cold Pressed water color\\
+paper, Winsor \& Newton water colors}
+
+\note{the leaf carries no sale, no buyer and no price - the record stops at the
+paper and the colours. The three closing lines are in a hand quite unlike the
+one above them: upright, evenly spaced, each word separately pen-lifted, where
+the title and the marginals run. Nothing on the leaf says whose it is, so it is
+not attributed. The title is in quotation marks on the leaf. The last two words
+of the fore-edge marginal will not resolve at any magnification.}
+
+\section{Charleston Slum}
+
+\sheet{17866}{123}
+
+\sketch{}
+
+\work{Charleston Slum \quad 16 x 25, \struck{done in} 1929 in\\
+Charleston, S.C.}
+
+\marginal{Spring --- in pencil above the line, with a caret before « 1929 »}
+
+\hand{jo}{At left red carvings on houses (sheet iron), white at right. -}
+
+\hand{jo}{Daniel \uncertain{Lechner} - 6500 - 1/3 = 4333 2/3 \quad Dec. 17",
+1964.}
+
+\note{the title and the description are in pencil and the sale is in ink, which
+is the order the other work leaves of this batch use. The long horizontal
+strokes over « iron » and over « at » are the crossbars of the t's in « sheet »
+and « white » run out to the right, not deletions and not underlines. The
+buyer's surname gives Lechner or Leshner letter by letter.}
+
+\section{Cape Cod Bay}
+
+\sheet{16620}{125}
+
+\sketch{}
+
+\work{Cape Cod Bay \quad 20 x 28 \quad 1965}
+
+\note{the last work leaf of the volume that was photographed, and the whole of
+it: a drawing, a title in quotation marks, a size and a year, in pencil, with
+nothing below them. No description, no paint, no buyer, no price. The leaf is
+otherwise empty to the foot.}
+
+\section{Whereabouts, fourth page}
+
+\sheet{18199}{170}
+
+\hand{jo}{\emph{Whereabouts} \qquad continued from pages C D E F}
+
+\hand{jo}{1959. ± July 15 \quad S. Truro. find dune top over the sea had
+been cut off by\\
+bulldozer of Carl Benson of S. Truro. Also land bulldozed for houses - on\\
+Hoppers property. Real Cape predicament, like being lost at sea in fog. Near\\
+\uncertain{Sasconset}. Months of blind anxiety}
+
+\hand{jo}{Fall, off for Watercolor + Etching show at the Currier Gallery at
+Manchester,\\
+then shown at R.I. Sch. of Design in Providence. Hoppers there guests of\\
+Mr. + Mrs. Malcomb Chace. then show on. to the Atheneum at Hartford.}
+
+\marginal{N.H. --- in pencil above the line at the end of « Manchester », with
+a caret under it}
+
+\hand{jo}{1959 - 60 - Whitney Annual \qquad 2. H. \quad "Excursion into
+Philosophy"\\
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad 3. H. \quad Cape Cod Bedroom.}
+
+\hand{jo}{1960. S. Truro, fall (Arnold) Slade. tiny stove installed in kitchen.
+Carl \uncertain{Gross} gets us\\
+back to N.Y. to \struck{get} vote \struck{this time} for Rep. president. At 3
+Wash. Sq. chaos with arrival of\\
+Hitler's aggressors, utter chaos, five studios turned into offices for Social
+Service\\
+Dept. But Radiators arrive for 1960 Xmas. So needn't go to Mexico to escape\\
+cold. // \quad Ap. 1" off to Boston to find off-Cape lawyer --- on State St.,
+Boston\\
+near Mass. Land Court. // \quad In the midst of the chaos at \# 3 came to E.H.\\
+the \emph{Art in Amer.} award of \$1000 + notice with portrait in N.Y. Times.}
+
+\hand{jo}{All the Electricians, plumbers, Carpenters, painters running\\
+in + out of everyone's apt. Took the greatest interest + pride. All the
+people\\
+in the studios got to love all the workmen, the friendliest feeling, all\\
+the tenants grieved when they left, so much talk over the election, we\\
+found Irish + Italian Catholics who weren't voting that way at all - so\\
+amazingly - but that election brought everyone closer. And no one hated\\
+the College + their people. It would seem the chaos, instead of making every\\
+one irritable + exasperated, it did just the opposite, we shared all the\\
+backaches, \struck{piles} of paint, stretchers, rope, elec. wire, heaps of
+plaster etc. etc.\\
+all over halls, stairs, interiors + the enforced intimacy with almost
+affection\\
++ appreciation, an experience shared + the great reward: radiators}
+
+\marginal{piles --- in pencil above the struck word in the ninth line of that
+paragraph}
+
+\marginal{for Xmas \quad 1960 --- in a smaller hand at the fore edge, after
+« radiators »}
+
+\hand{jo}{1961. TV on \emph{Meet the Hoppers} - at the \emph{Boston Mus.} on
+Ap. 13 meant we spent 3 days\\
+in Boston at the Sheraton Plaza, Boston as guests of Channel IV. Program\\
+later shown in N.Y. etc. over N.B.C. later in the month. Cape Cod listening in
++\\
+heard from. \quad S. Truro in July. House so happily all ready for us.}
+
+\marginal{anyone --- in pencil above the line, before « N.Y. etc. »}
+
+\hand{jo}{1960 - Spring groups - The Reality + met at home of John Koch - many
+times to\\
+prepare protest \struck{to} against predominance of the Gobbledegook influence
+at\\
+the Whitney Mus. Theo called there to discuss the affair with Lloyd Goodrich.}
+
+\hand{jo}{At that time groups of younger painters did picket line duty around
+Mus. of Modern\\
+to protest \struck{their} harmful attitude. Some from balcony of Mus. of Mod.
+Art., in answer\\
+to protest, threw bucket of water down on crowd below.}
+
+\marginal{its --- above the struck « their », with a caret; upper --- above the
+line before « balcony »; Art. --- at the fore edge, closing « Mus. of Modern »}
+
+\hand{jo}{1961. Our green Boick burned down in Sept. due to short circuit.
+Replaced\\
+at Warren Boick by another black + white \uncertain{dresser} 1956. It had the
+new garage.}
+
+\marginal{1954 --- in pencil above « Boick », with a caret}
+
+\note{the leaf is a written verso and carries its printed 170 in blue at the
+top left, where a recto carries the number at the top right; the Whitney gives
+it a leaf number, unlike the written versos batches 2 and 3 met. Nothing on it
+is ruled into columns and there is not one figure of money on it. The two
+double strokes in the 1960 paragraph are hers and divide it into three
+subjects. « 2. H. » and « 3. H. » are braced together against « Whitney
+Annual » written once at the left; the brace is described rather than
+transcribed.}
+
+\section{Whereabouts, fifth page}
+
+\sheet{16501}{171}
+
+\hand{jo}{1961 - Oct. 1. E.H. started "A Woman in the Sun" on bitter cold dawn
+in S. Truro.\\
+Finished in time to get back to N.Y. for Whitney Mus. 30" Birth Day yearly in\\
+later Oct. \quad \emph{Early Sun. A.M.} on 3" fl. - \emph{2" Story Sunlight} on
+2" fl. Photographed at Plaza}
+
+\marginal{Whitney --- in pencil at the fore edge, below « Plaza », running down
+the margin}
+
+\hand{jo}{1962 - S. Truro. Gas heat installed in Nov. No more, asbestos dumps
+on Hill.\\
+"N.Y. Office" acquired by Dorothy \uncertain{Buttles} by Exchange for Eakins
+portrait.\\
+El\struck{\ill{}} \uncertain{French} died in winter. White rail to Chez Hopper,
+built by him yrs. before.}
+
+\hand{jo}{1963. May 4, 5, 6 - gorgeous big parties, Time Magazine's
+\struck{\ill{}} 40" Anniversary.\\
+All the heads on Covers (3 all alive) used by Time invited, all expenses
+prepaid,\\
+to come from the Ends of the Earth, with wives to this huge celebration}
+
+\marginal{40" --- in a smaller hand above the struck figure}
+
+\hand{jo}{May 14" \quad St. Botolph's Club of Boston award to E.H. with banquet
++\\
+parallel banquet for wives of members + wife of award for guest of honor
+\uncertain{at the}\\
+Jury of selections for Boston Art Festival May 21, 2, 3. Motherwell, Porter +
+Hopper.\\
+Hoppers stayed 8 days at Vandome Hotel as guest of St. B. + Boston Art
+Festival.}
+
+\hand{jo}{S. Truro shortly after 4" July, back - N.Y. by end of Nov.}
+
+\marginal{of E.H. --- at the fore edge, closing that line}
+
+\hand{jo}{Oct. 12" + 13" \quad visits of Dr. Brian O'Doherty + Hans Namuth to
+get snaps\\
+for coming book "20 Amer. Masters".}
+
+\note{leaf 171 continues leaf 170 without repeating its heading, and stops
+two-thirds of the way down; the rest of the leaf is empty. The word between
+« El » and « French » is struck past reading and the surname could as easily be
+Franch. The Time Magazine anniversary figure is struck and « 40" » written
+above it, so the leaf gives no other number for it. Underlining in this
+transcription is her own: she underlines picture titles, journal titles and
+place names on this leaf and nowhere near as often on any other in the batch.}
+
+\section{Frames}
+
+\sheet{17145}{}
+
+\hand{jo}{\emph{Frames}}
+
+\hand{jo}{Watchers by the Sea - Matt \struck{winter} 1952 -\\
+House at Dusk - \qquad " \quad \struck{\$}82. \quad " \qquad " or Early '53.\\
+Office in Small City \quad " \qquad 57 \ill{} \quad " \quad 1953. Dec.}
+
+\note{the leaf is printed 187 at the top right in blue and the Whitney's
+descriptor gives it no leaf number, so the sheet takes an empty second
+argument. Four lines on an otherwise empty leaf. The three entries are set in
+columns - work, a ditto mark, a figure, a second ditto mark, a date - and the
+ditto marks carry « Matt » from the first line and the year from the first line
+respectively; the columns are not headed on the leaf and no headings have been
+supplied, because inventing them would be inventing a claim about what the
+figures are. The mark after 57 is a small struck figure of the same kind as the
+struck dollar sign on the line above, and it will not resolve.}
+
+\keywords{feature:record drawings, feature:sheet laid over the leaf,
+feature:two laid sheets on one leaf, feature:printed odd foliation,
+feature:written verso, feature:interlineations with carets,
+feature:her ordinal mark, feature:a second hand on one leaf,
+person:John Clancy, person:Winifred Mannion, person:Stephen C. Clark,
+person:Charles Stein, person:William H. Bender, person:Daniel Lechner,
+person:Lloyd Goodrich, person:John Koch, person:Brian O'Doherty,
+person:Hans Namuth, person:Malcomb Chace, person:Carl Benson,
+person:Arnold Slade, person:Alliston McLellan,
+collection:Hallmark, collection:Atlanta Art Association,
+collection:Whitney Museum of American Art, collection:Currier Gallery,
+collection:Atheneum at Hartford, collection:Museum of Modern Art,
+collection:Rhode Island School of Design,
+collection:Huntington Hartford Foundation,
+place:Mitla, place:Oaxaca, place:Guanajuato, place:Mexico,
+place:South Truro, place:Washington Square, place:Gloucester,
+place:Charleston, place:Boston, place:Providence, place:Manchester,
+place:Cape Elizabeth, place:Vermont, place:Santa Monica,
+medium:Whatman paper, medium:Winsor \& Newton watercolours, watercolours,
+gift of a work, exchange for a painting, prizes and awards, frames,
+whereabouts, one-man shows and annuals}
+
+\end{document}
