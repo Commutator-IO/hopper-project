@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T06:45:03.762Z",
+  "generated": "2026-09-08T20:18:34.900Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -8796,6 +8796,26 @@
   ],
   "index": [
     {
+      "key": "el palacio movie saltillo",
+      "title": "\"El Palacio\" (movie) Saltillo",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "107",
+          "ref": "18465"
+        }
+      ]
+    },
+    {
       "key": "dawn in pennsylvania",
       "title": "« Dawn in Pennsylvania »",
       "museumTitle": null,
@@ -9399,6 +9419,26 @@
       ]
     },
     {
+      "key": "california hills",
+      "title": "California Hills",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1955,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "116",
+          "ref": "17794"
+        }
+      ]
+    },
+    {
       "key": "cape cod afternoon",
       "title": "Cape Cod Afternoon",
       "museumTitle": null,
@@ -9415,6 +9455,34 @@
           "batch": 2,
           "leaf": "17",
           "ref": "16656"
+        }
+      ]
+    },
+    {
+      "key": "cape cod bay",
+      "title": "Cape Cod Bay",
+      "museumTitle": "(Cape Cod Bay)",
+      "date": "1965",
+      "medium": "Watercolor and graphite pencil on paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "6829",
+          "url": "https://whitney.org/collection/works/6829",
+          "openImage": false
+        }
+      ],
+      "ledgerYear": 1965,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "125",
+          "ref": "16620"
         }
       ]
     },
@@ -9487,6 +9555,26 @@
       ]
     },
     {
+      "key": "cape elizabeth shore",
+      "title": "Cape Elizabeth Shore",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "119",
+          "ref": "18090"
+        }
+      ]
+    },
+    {
       "key": "capron house",
       "title": "Capron House",
       "museumTitle": null,
@@ -9547,6 +9635,66 @@
       ]
     },
     {
+      "key": "chair car",
+      "title": "Chair Car",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1964,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "85",
+          "ref": "17652"
+        }
+      ]
+    },
+    {
+      "key": "charleston slum",
+      "title": "Charleston Slum",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1929,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "123",
+          "ref": "17866"
+        }
+      ]
+    },
+    {
+      "key": "church of san estoban",
+      "title": "Church of San Estoban",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "107",
+          "ref": "18465"
+        }
+      ]
+    },
+    {
       "key": "city roofs",
       "title": "City Roofs",
       "museumTitle": null,
@@ -9591,6 +9739,26 @@
           "batch": 4,
           "leaf": "51",
           "ref": "17200"
+        }
+      ]
+    },
+    {
+      "key": "cliffs near mitla oaxaca",
+      "title": "Cliffs near Mitla, Oaxaca",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1953,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "113",
+          "ref": "17910"
         }
       ]
     },
@@ -9691,6 +9859,26 @@
           "batch": 3,
           "leaf": "29",
           "ref": "17590"
+        }
+      ]
+    },
+    {
+      "key": "construction in mexico",
+      "title": "Construction in Mexico",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "109",
+          "ref": "17241"
         }
       ]
     },
@@ -9995,6 +10183,12 @@
           "batch": 5,
           "leaf": "73",
           "ref": "18356"
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "87",
+          "ref": "17816"
         }
       ]
     },
@@ -10366,6 +10560,26 @@
       ]
     },
     {
+      "key": "gloucester beach bass rocks",
+      "title": "Gloucester Beach - Bass Rocks",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1923,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "117",
+          "ref": "17124"
+        }
+      ]
+    },
+    {
       "key": "gloucester boats at wharf",
       "title": "Gloucester Boats at wharf",
       "museumTitle": null,
@@ -10556,6 +10770,26 @@
           "batch": 6,
           "leaf": "57",
           "ref": "18424"
+        }
+      ]
+    },
+    {
+      "key": "horse and vermont barn",
+      "title": "Horse and Vermont Barn",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "119",
+          "ref": "18090"
         }
       ]
     },
@@ -11059,6 +11293,26 @@
       ]
     },
     {
+      "key": "houses on a hill",
+      "title": "Houses on a Hill",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1923,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "117",
+          "ref": "17124"
+        }
+      ]
+    },
+    {
       "key": "houses on skyline",
       "title": "Houses on Skyline",
       "museumTitle": null,
@@ -11095,6 +11349,26 @@
           "batch": 5,
           "leaf": "62",
           "ref": "17311"
+        }
+      ]
+    },
+    {
+      "key": "intermission",
+      "title": "Intermission",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "81",
+          "ref": "17386"
         }
       ]
     },
@@ -11155,6 +11429,34 @@
           "batch": 3,
           "leaf": "40",
           "ref": "17500"
+        }
+      ]
+    },
+    {
+      "key": "jo in wyoming",
+      "title": "Jo in Wyoming",
+      "museumTitle": "(Jo in Wyoming)",
+      "date": "1946",
+      "medium": "Watercolor and graphite pencil on paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "6891",
+          "url": "https://whitney.org/collection/works/6891",
+          "openImage": false
+        }
+      ],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "111",
+          "ref": "18452"
         }
       ]
     },
@@ -11602,6 +11904,34 @@
       ]
     },
     {
+      "key": "mass of trees at eastham",
+      "title": "Mass of Trees at Eastham",
+      "museumTitle": null,
+      "date": "1962",
+      "medium": "Watercolor and graphite pencil on paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "6896",
+          "url": "https://whitney.org/collection/works/6896",
+          "openImage": false
+        }
+      ],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "121",
+          "ref": "16471"
+        }
+      ]
+    },
+    {
       "key": "men women horses",
       "title": "Men, Women + Horses",
       "museumTitle": null,
@@ -11618,6 +11948,26 @@
           "batch": 2,
           "leaf": "29",
           "ref": "16933"
+        }
+      ]
+    },
+    {
+      "key": "monterrey cathedral",
+      "title": "Monterrey Cathedral",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1943,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "105",
+          "ref": "16386"
         }
       ]
     },
@@ -11682,6 +12032,26 @@
       ]
     },
     {
+      "key": "mount moran",
+      "title": "Mount Moran",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "109",
+          "ref": "17241"
+        }
+      ]
+    },
+    {
       "key": "mountain meadow",
       "title": "Mountain Meadow",
       "museumTitle": null,
@@ -11698,6 +12068,26 @@
           "batch": 4,
           "leaf": "45",
           "ref": "17871"
+        }
+      ]
+    },
+    {
+      "key": "mountains at guanajuato",
+      "title": "Mountains at Guanajuato",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1953,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "115",
+          "ref": "16302"
         }
       ]
     },
@@ -12248,6 +12638,26 @@
       ]
     },
     {
+      "key": "palmas at saltillo",
+      "title": "Palmas at Saltillo",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "101",
+          "ref": "17944"
+        }
+      ]
+    },
+    {
       "key": "pamet river road",
       "title": "Pamet River Road",
       "museumTitle": null,
@@ -12476,6 +12886,26 @@
       ]
     },
     {
+      "key": "road and trees",
+      "title": "Road and Trees",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "79",
+          "ref": "16422"
+        }
+      ]
+    },
+    {
       "key": "rocky field with trees",
       "title": "Rocky Field with Trees",
       "museumTitle": null,
@@ -12644,6 +13074,54 @@
           "batch": 1,
           "leaf": "54",
           "ref": "18235"
+        }
+      ]
+    },
+    {
+      "key": "saltillo mansion",
+      "title": "Saltillo Mansion",
+      "museumTitle": null,
+      "date": "1943",
+      "medium": "Watercolor over graphite on paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "488165",
+          "url": "https://www.metmuseum.org/art/collection/search/488165",
+          "openImage": false
+        }
+      ],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "101",
+          "ref": "17944"
+        }
+      ]
+    },
+    {
+      "key": "saltillo roof tops",
+      "title": "Saltillo Roof Tops",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1943,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "103",
+          "ref": "16198"
         }
       ]
     },
@@ -12848,6 +13326,66 @@
           "batch": 4,
           "leaf": "57",
           "ref": "17261"
+        }
+      ]
+    },
+    {
+      "key": "sierra madre at montervey",
+      "title": "Sierra Madre at Montervey",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1943,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "105",
+          "ref": "16386"
+        }
+      ]
+    },
+    {
+      "key": "sierra madre at saltillo",
+      "title": "Sierra Madre at Saltillo",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": 1943,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "103",
+          "ref": "16198"
+        }
+      ]
+    },
+    {
+      "key": "slopes of grand teton",
+      "title": "Slopes of Grand Teton",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "111",
+          "ref": "18452"
         }
       ]
     },
@@ -13071,6 +13609,26 @@
           "batch": 4,
           "leaf": "42",
           "ref": "16860"
+        }
+      ]
+    },
+    {
+      "key": "sun in an empty room",
+      "title": "Sun in an Empty Room",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "83",
+          "ref": "17402"
         }
       ]
     },
@@ -13599,6 +14157,26 @@
       ]
     },
     {
+      "key": "two commedians",
+      "title": "The Two Commedians",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "89",
+          "ref": "16659"
+        }
+      ]
+    },
+    {
       "key": "toward boston",
       "title": "Toward Boston",
       "museumTitle": null,
@@ -14100,6 +14678,19 @@
           "batch": 5,
           "leaf": "74",
           "ref": 17840,
+          "rows": 0,
+          "prose": 1
+        }
+      ]
+    },
+    {
+      "year": 1908,
+      "leaves": [
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "193",
+          "ref": 18439,
           "rows": 0,
           "prose": 1
         }
@@ -14994,6 +15585,14 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "54",
@@ -15383,6 +15982,22 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "87",
+          "ref": 17816,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "54",
@@ -15744,6 +16359,14 @@
           "batch": 5,
           "leaf": "71",
           "ref": 17170,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
           "rows": 0,
           "prose": 1
         },
@@ -16113,6 +16736,14 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "54",
@@ -16452,6 +17083,22 @@
           "ref": 17174,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "119",
+          "ref": 18090,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 2
         },
         {
           "ledger": "dealers",
@@ -16907,6 +17554,14 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 2
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "62",
@@ -17264,6 +17919,14 @@
           "prose": 0
         },
         {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 2
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "11",
@@ -17597,6 +18260,14 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "67",
@@ -17822,6 +18493,30 @@
           "batch": 10,
           "leaf": "99",
           "ref": 17911,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "109",
+          "ref": 17241,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
           "rows": 0,
           "prose": 1
         },
@@ -18196,6 +18891,22 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 2
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "57",
@@ -18367,6 +19078,38 @@
           "ref": 16582,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "109",
+          "ref": 17241,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "119",
+          "ref": 18090,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 2
         },
         {
           "ledger": "dealers",
@@ -18673,6 +19416,14 @@
           "ref": 16558,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -18969,6 +19720,14 @@
           "batch": 4,
           "leaf": "55",
           "ref": 17435,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
           "rows": 0,
           "prose": 1
         },
@@ -19795,6 +20554,22 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "103",
+          "ref": 16198,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "105",
+          "ref": 16386,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "63",
@@ -20003,6 +20778,38 @@
           "ref": 18354,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "101",
+          "ref": 17944,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "105",
+          "ref": 16386,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "109",
+          "ref": 17241,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -20078,6 +20885,14 @@
           "batch": 3,
           "leaf": "25",
           "ref": 18128,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "103",
+          "ref": 16198,
           "rows": 0,
           "prose": 1
         },
@@ -20211,6 +21026,22 @@
           "batch": 3,
           "leaf": "27",
           "ref": 16558,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "107",
+          "ref": 18465,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
           "rows": 0,
           "prose": 1
         }
@@ -20386,6 +21217,14 @@
           "ref": 16952,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -20545,6 +21384,30 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "107",
+          "ref": 18465,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "109",
+          "ref": 17241,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "59",
@@ -20684,6 +21547,14 @@
           "ref": 18347,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
         },
         {
           "ledger": "book-v",
@@ -20880,6 +21751,30 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "115",
+          "ref": 16302,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "book-v",
           "batch": 2,
           "leaf": "51",
@@ -21003,6 +21898,30 @@
           "ref": 17200,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "193",
+          "ref": 18439,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -21078,6 +21997,30 @@
           "batch": 5,
           "leaf": "55",
           "ref": 16671,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "115",
+          "ref": 16302,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "190",
+          "ref": 17739,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
           "rows": 0,
           "prose": 1
         }
@@ -21197,6 +22140,22 @@
           "ref": 16622,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "170",
+          "ref": 18199,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 3
         }
       ]
     },
@@ -21356,6 +22315,14 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "116",
+          "ref": 17794,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "5",
@@ -21415,6 +22382,14 @@
           "ref": 17966,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "116",
+          "ref": 17794,
+          "rows": 0,
+          "prose": 2
         }
       ]
     },
@@ -21452,6 +22427,46 @@
           "ref": 18472,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "113",
+          "ref": 17910,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "117",
+          "ref": 17124,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "170",
+          "ref": 18199,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "193",
+          "ref": 18439,
+          "rows": 0,
+          "prose": 1
         },
         {
           "ledger": "book-v",
@@ -21553,6 +22568,54 @@
           "ref": 17872,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "117",
+          "ref": 17124,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "119",
+          "ref": 18090,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "170",
+          "ref": 18199,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "191",
+          "ref": 16408,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "192",
+          "ref": 18194,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "193",
+          "ref": 18439,
+          "rows": 0,
+          "prose": 4
         },
         {
           "ledger": "book-v",
@@ -21664,6 +22727,46 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "117",
+          "ref": 17124,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "170",
+          "ref": 18199,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "171",
+          "ref": 16501,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "192",
+          "ref": 18194,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "193",
+          "ref": 18439,
+          "rows": 0,
+          "prose": 5
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "58",
@@ -21741,6 +22844,62 @@
           "prose": 2
         },
         {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "79",
+          "ref": 16422,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "115",
+          "ref": 16302,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "119",
+          "ref": 18090,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "121",
+          "ref": 16471,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "171",
+          "ref": 16501,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "192",
+          "ref": 18194,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "193",
+          "ref": 18439,
+          "rows": 0,
+          "prose": 1
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "1",
@@ -21810,6 +22969,62 @@
           "prose": 1
         },
         {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "79",
+          "ref": 16422,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "81",
+          "ref": 17386,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "83",
+          "ref": 17402,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "171",
+          "ref": 16501,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "192",
+          "ref": 18194,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "193",
+          "ref": 18439,
+          "rows": 0,
+          "prose": 3
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "194",
+          "ref": 17259,
+          "rows": 0,
+          "prose": 2
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "11",
@@ -21829,6 +23044,54 @@
           "ref": 16494,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "79",
+          "ref": 16422,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "83",
+          "ref": 17402,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "85",
+          "ref": 17652,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "87",
+          "ref": 17816,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "121",
+          "ref": 16471,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 7,
+          "leaf": "123",
+          "ref": 17866,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -21840,6 +23103,80 @@
           "batch": 5,
           "leaf": "75",
           "ref": 17107,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "81",
+          "ref": 17386,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "85",
+          "ref": 17652,
+          "rows": 0,
+          "prose": 3
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "87",
+          "ref": 17816,
+          "rows": 0,
+          "prose": 1
+        }
+      ]
+    },
+    {
+      "year": 1966,
+      "leaves": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "81",
+          "ref": 17386,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "85",
+          "ref": 17652,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "89",
+          "ref": 16659,
+          "rows": 0,
+          "prose": 1
+        }
+      ]
+    },
+    {
+      "year": 1967,
+      "leaves": [
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "85",
+          "ref": 17652,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 8,
+          "leaf": "192",
+          "ref": 18194,
           "rows": 0,
           "prose": 1
         }

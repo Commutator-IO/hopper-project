@@ -235,6 +235,18 @@
       "retrieved": "2026-09-06",
       "via": "collectionapi.metmuseum.org"
     },
+    "met-488165": {
+      "name": "The Metropolitan Museum of Art, Saltillo Mansion, accession 45.157.2",
+      "url": "https://www.metmuseum.org/art/collection/search/488165",
+      "retrieved": "2026-09-08",
+      "via": "collectionapi.metmuseum.org"
+    },
+    "met-488730": {
+      "name": "The Metropolitan Museum of Art, Office in a Small City, accession 53.183",
+      "url": "https://www.metmuseum.org/art/collection/search/488730",
+      "retrieved": "2026-09-08",
+      "via": "collectionapi.metmuseum.org"
+    },
     "moma-3-1930": {
       "name": "The Museum of Modern Art, House by the Railroad, accession 3.1930",
       "url": "https://www.moma.org/collection/works/78330",
@@ -265,10 +277,40 @@
       "retrieved": "2026-09-07",
       "via": "artmuseum.arizona.edu"
     },
+    "whitney-60-54": {
+      "name": "Whitney Museum of American Art, Second Story Sunlight, accession 60.54",
+      "url": "https://whitney.org/collection/works/873",
+      "retrieved": "2026-09-08",
+      "via": "whitney.org/api"
+    },
+    "whitney-67-13": {
+      "name": "Whitney Museum of American Art, South Carolina Morning, accession 67.13",
+      "url": "https://whitney.org/collection/works/789",
+      "retrieved": "2026-09-08",
+      "via": "whitney.org/api"
+    },
+    "whitney-70-1159": {
+      "name": "Whitney Museum of American Art, (Jo in Wyoming), accession 70.1159",
+      "url": "https://whitney.org/collection/works/6891",
+      "retrieved": "2026-09-08",
+      "via": "whitney.org/api"
+    },
+    "whitney-70-1164": {
+      "name": "Whitney Museum of American Art, Mass of Trees at Eastham, accession 70.1164",
+      "url": "https://whitney.org/collection/works/6896",
+      "retrieved": "2026-09-08",
+      "via": "whitney.org/api"
+    },
     "whitney-70-1188": {
       "name": "Whitney Museum of American Art, Blackwell's Island, accession 70.1188",
       "url": "https://whitney.org/collection/works/5899",
       "retrieved": "2026-09-06",
+      "via": "whitney.org/api"
+    },
+    "whitney-84-31": {
+      "name": "Whitney Museum of American Art, A Woman in the Sun, accession 84.31",
+      "url": "https://whitney.org/collection/works/1337",
+      "retrieved": "2026-09-08",
       "via": "whitney.org/api"
     },
     "whitney-guide": {
@@ -281,6 +323,18 @@
       "url": "https://whitneymedia.org/assets/generic_file/2141/Edward_Hopper_s_New_York_Exhibition_Checklist_8_11_22.pdf",
       "retrieved": "2026-09-07",
       "via": "whitneymedia.org"
+    },
+    "yale-1961-18-29": {
+      "name": "Yale University Art Gallery, Rooms by the Sea, accession 1961.18.29",
+      "url": "https://lux.collections.yale.edu/view/object/63bdda22-a6be-413d-9a35-5e2649c14c21",
+      "retrieved": "2026-09-08",
+      "via": "lux.collections.yale.edu, Yale’s own linked-open-data platform; artgallery.yale.edu refuses automated requests, so the record is cited where it can be checked"
+    },
+    "yale-2008-144-1": {
+      "name": "Yale University Art Gallery, Two Studies for Rooms by the Sea (recto and verso), accession 2008.144.1",
+      "url": "https://lux.collections.yale.edu/view/object/01949ad6-9718-43d7-8636-39e9f98fe38f",
+      "retrieved": "2026-09-08",
+      "via": "lux.collections.yale.edu"
     }
   },
   "notes": {
@@ -550,6 +604,21 @@
       "written": "2026-09-06",
       "model": "claude-opus-5"
     },
+    "east river": {
+      "note": "Two books carry a canvas called East River and neither agrees with the other about when it was painted: Book II leaf 73 writes « about 1929 », Book III leaf 87 « Painted in Washington Square studio + or - 1924, 5, 6? ». Book III is also the leaf that asks two questions of its own record and answers neither — that one and « Relined 1964. by whom? » — and the only one of the two that carries a sale, « Dr. Irving Levitt   Rec’d June 23, 1965 - 15 000 - 1/3 = 10 000 », where Book II has no buyer, no price and no date at all. The figure that would settle whether the two leaves mean one canvas is the size, and only Book II has it: « 32x46 », against an erased pencil size on Book III that will not resolve past two figures and an « x ».",
+      "claims": [
+        {
+          "says": "Book II leaf 73 heads it « East River   32x46   about 1929 », adds « Probably painted with zinc white », and carries no buyer, no price and no date of sale.",
+          "source": "ledger:book-ii/73"
+        },
+        {
+          "says": "Book III leaf 87 heads it « East River » with no size in the title line, records « Painted in Washington Square studio + or - 1924, 5, 6? / Relined 1964. by whom? », and books « Dr. Irving Levitt   Rec’d June 23, 1965 - 15 000 - 1/3 = 10 000. »",
+          "source": "ledger:book-iii/87"
+        }
+      ],
+      "written": "2026-09-08",
+      "model": "claude-opus-5"
+    },
     "east side interior": {
       "note": "Leaf 8 books the Chicago Society of Etchers’ award of 23 February 1923 as « Logan Prize - not purchase », $25, and the line beneath it records two prints sold through the Society for $28.80. The Art Institute’s impression is accession 1923.305, credited to the Mr. and Mrs. Frank G. Logan Purchase Prize Fund and taken in that year; which of those two lines it came in on is not settled by either record. The Met’s impression is 25.31.1, the first number of the 1925 lot the leaf books at $10 on 8 May.",
       "claims": [
@@ -675,6 +744,21 @@
       "written": "2026-09-06",
       "model": "claude-opus-5"
     },
+    "house by an inlet": {
+      "note": "Two books record one sale and neither can read the buyer: Book I leaf 58 has « Sold  Enfau for $3500 - Com 1/3 = 2333 1/3 -  Paid Feb. 14, 1957 » and Book III leaf 59 « Bought by Milton B. Eulau - 3500 - 1/3 Com. = 2333 1/3. Feb. 14, 1957 », the same money on the same day under two spellings of one surname, both marked uncertain on their sheets and only one carrying a forename. The rest agrees across the two volumes — 26 by 38 inches in both, the New York studio in both, February 1930 in both, and « opalescent » in both descriptions. Book III adds what Book I has no column for: « returned to Rehn June 15, 1956 », the canvas coming back to the dealer twenty-six years after it was painted and going out again eight months later.",
+      "claims": [
+        {
+          "says": "Book I leaf 58 heads it « House by an Inlet   26 x 38 » with the marginal « Painted in N.Y. Studio », describes « Pale picture, opalescent morning, white sky with narrow strip of blue across », and rules the row « Feb. 17, 30 | Sold  Enfau for $3500 - Com 1/3 = | 2333 1/3 - | Paid Feb. 14, 1957. », the surname transcribed as uncertain.",
+          "source": "ledger:book-i/58"
+        },
+        {
+          "says": "Book III leaf 59 heads it « House by an Inlet   26\" x 38\" », records « Painted in New York Studio Feb. 1930, returned to Rehn June 15, 1956 », closes the description « One remembers this Canvas as opalescent + charming », and books « Bought by Milton B. Eulau - 3500 - 1/3 Com. = 2333 1/3. Feb. 14, 1957 », the surname transcribed as uncertain.",
+          "source": "ledger:book-iii/59"
+        }
+      ],
+      "written": "2026-09-08",
+      "model": "claude-opus-5"
+    },
     "house tops": {
       "note": "Both museums put the plate at 14.8 × 19.9 cm and render that in inches differently — 5 13/16 x 7 13/16 at the Met, 5 7/8 × 7 7/8 in Chicago — where leaf 32 gives a flat « 6\"x8\" ». Its Metropolitan row of 8 May 1925 is five months before the Brooklyn Museum bought an impression out of the Society of Etchers show at $15 less 15%, and the Met’s is 25.31.10.",
       "claims": [
@@ -696,6 +780,21 @@
         }
       ],
       "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "jo in wyoming": {
+      "note": "The leaf says only where the sheet was not: « Not at Rehn Gallery », four words in pencil under the title, with no buyer, no price and no date of sale anywhere on the page. The Whitney’s copy is accession 70.1159 and its credit line is « Josephine N. Hopper Bequest », which is not a sale either. On the sheet itself the two records are close to exact: 14 x 20 and « July ’46 » on the leaf, 13 15/16 × 19 15/16 in. and 1946 at the museum.",
+      "claims": [
+        {
+          "says": "The Whitney Museum of American Art holds it as (Jo in Wyoming), watercolor and graphite pencil on paper, dated 1946, sheet 13 15/16 × 19 15/16 in. (35.4 × 50.6 cm), credit line « Josephine N. Hopper Bequest », accession 70.1159.",
+          "source": "whitney-70-1159"
+        },
+        {
+          "says": "Book III leaf 111 heads it « Jo in Wyoming - 14 x 20 - July ’46. » and writes under it « Not at Rehn Gallery », with no buyer, no price and no date of sale on the leaf.",
+          "source": "ledger:book-iii/111"
+        }
+      ],
+      "written": "2026-09-08",
       "model": "claude-opus-5"
     },
     "les deux pigeons": {
@@ -757,6 +856,21 @@
         }
       ],
       "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "mass of trees at eastham": {
+      "note": "The leaf stops at the paper and the colours — « Whatmans Cold Pressed water color paper, Winsor & Newton water colors » — with no buyer, no price and no date of sale, and it heads the entry « In Studio - 1964. - Water Color (not the larger oil) ». The Whitney’s sheet is accession 70.1164, credit line « Josephine N. Hopper Bequest », dated 1962, against the leaf’s « Painted July, August 1962 », which stands in a hand unlike anything else on the page and is not attributed. The leaf gives 21 x 29; the Whitney measures the sheet, and calls it irregular, at 22 1/2 × 30 1/2 in.",
+      "claims": [
+        {
+          "says": "The Whitney Museum of American Art holds it as Mass of Trees at Eastham, watercolor and graphite pencil on paper, dated 1962, sheet (irregular) 22 1/2 × 30 1/2 in. (57.2 × 77.5 cm), credit line « Josephine N. Hopper Bequest », accession 70.1164.",
+          "source": "whitney-70-1164"
+        },
+        {
+          "says": "Book III leaf 121 heads it « In Studio - 1964. - Water Color (not the larger oil) » and « Mass of Trees at Eastham   21 x 29 », and carries « Painted July, August 1962 / Whatmans Cold Pressed water color paper, Winsor & Newton water colors » in an unidentified hand, with no sale, no buyer and no price.",
+          "source": "ledger:book-iii/121"
+        }
+      ],
+      "written": "2026-09-08",
       "model": "claude-opus-5"
     },
     "monhegan boat": {
@@ -881,6 +995,40 @@
       "written": "2026-09-06",
       "model": "claude-opus-5"
     },
+    "office in a small city": {
+      "note": "The leaf books the money on 27 January 1954 — « Bought by Metropolitan Mus. of Art - paid 4000, Jan. 27, 54. Com. 1/3 = 2666.66 » — while the Met’s accession is 53.183 and its credit line reads « George A. Hearn Fund, 1953 », the museum a year ahead of the cheque. On the painting they agree: the head margin gives 1953, the description gives September 1953 in the Truro studio, and the Met dates the canvas 1953. The leaf writes the size 28 x 40; the Met measures 28 1/8 × 40 1/4 in.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds it as Office in a Small City, oil on canvas, dated 1953, 28 1/8 × 40 1/4 × 7/8 in. (71.4 × 102.2 × 2.2 cm), credit line « George A. Hearn Fund, 1953 », accession 53.183, accession year 1953.",
+          "source": "met-488730"
+        },
+        {
+          "says": "Book III leaf 49 heads it « Office in a Small City   28 x 40 », carries 1953 in the head margin, records it « Painted in Truro Studio in September 1953 », and books « Bought by Metropolitan Mus. of Art - paid 4000, Jan. 27, 54. Com. 1/3 = 2666.66 ».",
+          "source": "ledger:book-iii/49"
+        }
+      ],
+      "written": "2026-09-08",
+      "model": "claude-opus-5"
+    },
+    "rooms by the sea": {
+      "note": "The leaf has Stephen Clark buying it « snapped up at once before shown publicly », a cheque from the Rehn Gallery on 7 April 1952 at 4000 less a third, and then « Sept. to Yale Univ. Gallery »; Yale’s accession is 1961.18.29, « Bequest of Stephen Carlton Clark, B.A. 1903 ». Yale’s provenance for the canvas carries neither that sale nor the dealer, running « Josephine Hopper … Mary Schiffenhaus … Frank M. Capazzera … Peter Findlay Gallery » before it reaches Clark — the same four names in the same order that head Yale’s provenance for its two charcoal studies for the picture, accession 2008.144.1. The alias is on the leaf twice, in the title line and at the foot: « \"Jumping Off Place\" for name, turned down ».",
+      "claims": [
+        {
+          "says": "Yale University Art Gallery holds it as Rooms by the Sea, oil on canvas, 29 1/4 × 40 in. (74.3 × 101.6 cm), credit line « Bequest of Stephen Carlton Clark, B.A. 1903 », accession 1961.18.29, with the provenance « Josephine Hopper (1883–1968), Truro, Mass.; Mary Schiffenhaus, New York; Frank M. Capazzera, New York; Peter Findlay Gallery, New York; Stephen Carlton Clark (1882–1960), New York, to 1961; bequeathed to the Yale University Art Gallery, New Haven, Conn., 1961 ».",
+          "source": "yale-1961-18-29"
+        },
+        {
+          "says": "Yale University Art Gallery holds Two Studies for Rooms by the Sea (recto and verso), charcoal, accession 2008.144.1, with the provenance « Josephine Hopper, Truro, Massachusetts; by descent to Mary Schiffenhaus, New York; Frank M. Capazzera, New York; Peter Findlay Gallery, New York; Private Collection, New York ».",
+          "source": "yale-2008-144-1"
+        },
+        {
+          "says": "Book III leaf 41 heads it « Rooms by the Sea   29 x 40   Alias \"The Jumping Off Place\" », records it « Painted in Truro Studio in September 1951 », notes « To Rehn Gal. Nov 8 51 » in the left margin, closes the description « \"Jumping Off Place\" for name, turned down - but moonlight overtones ascribed by some », and books « Stephen Clark (snapped up at once before shown publicly.) », « Check from Rehn Gallery Ap. 7, 52.   4000 - 1/3 com. = 2666.67 » and « Sept. to Yale Univ. Gallery ».",
+          "source": "ledger:book-iii/41"
+        }
+      ],
+      "written": "2026-09-08",
+      "model": "claude-opus-5"
+    },
     "sailing": {
       "note": "Both ledgers call this the first canvas he sold, out of the Armory Show of 1913, which is the sale the Whitney’s own chronology puts in that year. They do not agree on the money: Book I leaf 52 writes « Sold at International Armory Show 1913 --- $225 » and then « Sold to Mr. Vietor, 25\" & Mad. Ave.  250 - 10% », where Book II leaf 68 has « ± $250 ». They part again over its reappearance — Book I’s margin says it turned up in the fall of 1949 and was bought in Pittsburg for $1,000, Book II that it came to the Rehn Gallery about 1951 and was resold for $1200 to Mrs. Becky Beal of Pittsburg. The dealers leaf 54 makes a third figure of the Armory Show sale: $200.",
       "claims": [
@@ -902,6 +1050,59 @@
         }
       ],
       "written": "2026-09-07",
+      "model": "claude-opus-5"
+    },
+    "saltillo mansion": {
+      "note": "The leaf writes the cheque « from Rehn Gal. Ap. 4, 46 » at 600 less a third, and the Met’s accession is 45.157.2, credited to the George A. Hearn Fund in 1945 — the museum a year ahead of the payment again, as it is on leaf 49, where a January 1954 cheque answers a 1953 accession. The two records do not agree on the sheet: the leaf gives 25 1/8\" x 19 5/8\", taller than wide, and the Met measures 21 1/4 × 27 1/8 in., wider than tall. They agree on the year — « Aug. ’43 » on the leaf, 1943 at the museum.",
+      "claims": [
+        {
+          "says": "The Metropolitan Museum of Art holds it as Saltillo Mansion, watercolor over graphite on paper, dated 1943, 21 1/4 × 27 1/8 in. (54 × 68.9 cm), credit line « George A. Hearn Fund, 1945 », accession 45.157.2, accession year 1945.",
+          "source": "met-488165"
+        },
+        {
+          "says": "Book III leaf 101 heads it « Saltillo Mansion   25 1/8\" x 19 5/8\"   Aug. ’43 » and books « Metropolitan Museum - Check from Rehn Gal. Ap. 4, 46   600 - 1/3 Com = 400. »",
+          "source": "ledger:book-iii/101"
+        },
+        {
+          "says": "Book III leaf 49 books the Metropolitan’s payment for Office in a Small City as « paid 4000, Jan. 27, 54 ».",
+          "source": "ledger:book-iii/49"
+        },
+        {
+          "says": "The Metropolitan’s accession year for Office in a Small City is 1953, accession 53.183.",
+          "source": "met-488730"
+        }
+      ],
+      "written": "2026-09-08",
+      "model": "claude-opus-5"
+    },
+    "second story sunlight": {
+      "note": "The leaf names the buyer — « At once snapped up by Lloyd Goodrich for the Whitney. 15 000 » — and the museum’s credit line names nobody, reading « Purchase, with funds from the Friends of the Whitney Museum of American Art ». Its accession number is 60.54, while on the leaf the Whitney pays 5 000 on 5 January 1961 and 3 333.34 on 6 February 1962, thirteen months apart. Between price and payment the leaf takes two commissions off one sum, the museum’s own sixth first and then the gallery’s third of what is left, which is how 15 000 reaches the painter as 8 333.34.",
+      "claims": [
+        {
+          "says": "The Whitney Museum of American Art holds it as Second Story Sunlight, oil on canvas, dated 1960, overall 40 3/16 × 50 1/8 in. (102.1 × 127.3 cm), credit line « Purchase, with funds from the Friends of the Whitney Museum of American Art », accession 60.54.",
+          "source": "whitney-60-54"
+        },
+        {
+          "says": "Book III leaf 73 heads it « Second Story Sunlight.   40\" x 50\".   Aug. 25\" - Sept. 15\", 1960 in Cape studio. », writes « At once snapped up by Lloyd Goodrich for the Whitney. 15 000 », and rules the column « 15 000 - Museum’s 1/6 Commission, also 1/3 Gallery Com. », « - 2 500 », « 12 500 », « - 4 166.2/3   Gallery 1/3 », « 8 333.34   Rec’d by painter. », « 5 000.   Paid by Whitney,  Jan. 5, 1961. » and « 3 333.34   \"  \"  \"   Feb. 6, 1962 ».",
+          "source": "ledger:book-iii/73"
+        }
+      ],
+      "written": "2026-09-08",
+      "model": "claude-opus-5"
+    },
+    "south carolina morning": {
+      "note": "The leaf’s buyer is « Mrs. Otto Spaeth bought just before Easter, 1956 - 4500 - deferred payment », settled a year and a quarter later at « 3000 July 8\", 57 »; the Whitney’s credit line is « Given in memory of Otto L. Spaeth by his Family », accession 67.13. The museum’s entry dates the encounter behind the picture to a Charleston visit of 1 April to 11 May 1929 and calls it the only painting in Hopper’s work to depict an African American woman; the leaf, made twenty-six years after that visit, opens « Girl is a mulatto » and carries « \"Dinah\" » in pencil in the fore-edge margin, which is a name for the figure and not a title. Both give 1955 — the leaf as August and September in the Truro studio, the museum as the date of the canvas.",
+      "claims": [
+        {
+          "says": "The Whitney Museum of American Art holds it as South Carolina Morning, oil on canvas, dated 1955, overall 30 3/8 × 40 1/4 in. (77.2 × 102.2 cm), credit line « Given in memory of Otto L. Spaeth by his Family », accession 67.13, and its entry states that « From April 1 to May 11, 1929, Edward Hopper and his wife, Josephine Nivison Hopper, visited Charleston, South Carolina », that the Hoppers there « encountered a woman who stood in front of her cabin but retreated indoors when her husband came home », and that this is « the only painting in his oeuvre that depicts an African American woman ».",
+          "source": "whitney-67-13"
+        },
+        {
+          "says": "Book III leaf 53 heads it « South Carolina Morning.   30 x 40 », records it « Painted in Truro Studio, August, Sept. 1955 », describes « Girl is a mulatto. Dress + hat red - not vivid, black pumps, thin nylons », carries « \"Dinah\" » in pencil in the fore-edge margin, and books « Mrs. Otto Spaeth bought just before Easter, 1956 - 4500 - deferred payment » and « Mrs. Otto Spaeth 4500 - 1/3 = 3000 July 8\", 57. »",
+          "source": "ledger:book-iii/53"
+        }
+      ],
+      "written": "2026-09-08",
       "model": "claude-opus-5"
     },
     "summer twilight": {
@@ -974,6 +1175,25 @@
         }
       ],
       "written": "2026-09-06",
+      "model": "claude-opus-5"
+    },
+    "woman in the sun": {
+      "note": "The buyers on the leaf are the donors in the credit line: « Mr. + Mrs. Albert Hackett » pay 15 000 in two instalments, 10 000 in 1962 and 5 000 on 15 January 1963, and the Whitney holds the canvas as the « 50th Anniversary Gift of Mr. and Mrs. Albert Hackett in honor of Edith and Lloyd Goodrich ». The name honoured there is the one leaf 73 gives two leaves earlier, where the Whitney’s purchase of Second Story Sunlight is « At once snapped up by Lloyd Goodrich for the Whitney ». The museum’s catalogue entry says Josephine Nivison Hopper sat for the figure at seventy-eight; the description on the leaf, in her own hand, is « Tragic figure of small woman, blond, straight brown hair ».",
+      "claims": [
+        {
+          "says": "The Whitney Museum of American Art holds it as A Woman in the Sun, oil on linen, dated 1961, overall 40 1/8 × 60 3/16 in. (101.9 × 152.9 cm), credit line « 50th Anniversary Gift of Mr. and Mrs. Albert Hackett in honor of Edith and Lloyd Goodrich », accession 84.31, and its entry states that « Hopper’s wife, Josephine Nivison Hopper, served as the model for this figure as she did for many of the women who appeared in his paintings. She was seventy-eight at the time of this painting ».",
+          "source": "whitney-84-31"
+        },
+        {
+          "says": "Book III leaf 75 heads it « A Woman in the Sun   40 x 60 inches », records it « Painted in Truro studio in October 1961 », describes « Tragic figure of small woman, blond, straight brown hair », and books « Mr. + Mrs. Albert Hackett   15 000 », « 62. - 10 000 », « Jan. 15, 63.   5 000 », « Total = 15 000 », « - 1/3 Com. =   Rec’d. 10 000 ».",
+          "source": "ledger:book-iii/75"
+        },
+        {
+          "says": "Book III leaf 73 writes « At once snapped up by Lloyd Goodrich for the Whitney. 15 000 » of Second Story Sunlight.",
+          "source": "ledger:book-iii/73"
+        }
+      ],
+      "written": "2026-09-08",
       "model": "claude-opus-5"
     }
   }
