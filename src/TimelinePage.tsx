@@ -68,7 +68,7 @@ const WORKS = (worksData as unknown as { index: IndexedWork[] }).index;
 
 interface TranscribedYear {
   year: number;
-  leaves: { ledger: string; batch: number; leaf: string; ref: number; rows: number }[];
+  leaves: { ledger: string; batch: number; leaf: string; ref: number; rows: number; prose: number }[];
 }
 
 /**
@@ -114,6 +114,44 @@ const NOTES = (
   }
 );
 
+/** A leaf's entries for a year, whichever half of the leaf recorded them. */
+const entriesOf = (l: { rows: number; prose: number }) => l.rows + l.prose;
+
+/**
+ * Which twelve of a year's leaves to show, when a year has more than twelve.
+ *
+ * Not the first twelve. Book I is transcribed several times over compared with
+ * the rest and its leaves sort first, so a straight `slice` shows twelve Book I
+ * leaves for 1930 and hides the fact that Book II, Book V and Dealers/Etchings
+ * all have something to say about that year. The cap exists to keep a row from
+ * running to forty chips, not to decide which volumes count.
+ *
+ * So: one leaf from each volume in turn, round and round, until the cap is
+ * reached. A year that touches five volumes shows all five whatever their
+ * sizes, and the leaves within a volume keep the order they arrived in.
+ */
+const spread = <T extends { ledger: string }>(leaves: T[], cap: number): T[] => {
+  const byLedger = new Map<string, T[]>();
+  for (const l of leaves) {
+    const q = byLedger.get(l.ledger);
+    if (q) q.push(l);
+    else byLedger.set(l.ledger, [l]);
+  }
+  const queues = [...byLedger.values()];
+  const out: T[] = [];
+  for (let round = 0; out.length < cap; round++) {
+    let took = false;
+    for (const q of queues) {
+      if (round >= q.length) continue;
+      out.push(q[round]);
+      took = true;
+      if (out.length === cap) break;
+    }
+    if (!took) break;
+  }
+  return out;
+};
+
 /** The four-figure year a museum's date string states, if it states one. */
 const yearOfDate = (d: string | null): number | null => {
   const m = d ? /\b(1[89]\d\d|20\d\d)\b/.exec(d) : null;
@@ -146,10 +184,14 @@ export function TimelinePage() {
    *
    * Read off `transcribedYears` rather than named in the prose, because the
    * answer changes every time a batch lands and a sentence that says « Book I »
-   * goes quietly wrong the moment a second volume is read. It is not simply
-   * the list of transcribed volumes: a green leaf needs a year in the leaf's
-   * own date column, so a volume that rules no columns and writes its sales as
-   * sentences — Book III, Book V — is transcribed and still contributes none.
+   * goes quietly wrong the moment a second volume is read.
+   *
+   * For a long time this was not the same as the list of transcribed volumes,
+   * and the reason was an artefact: a green leaf needed a year in a ruled date
+   * column, and Books II, III and V rule none — one work to a leaf, the sale
+   * written as a sentence. Three fully transcribed volumes therefore
+   * contributed nothing at all. `works.mjs` now reads their prose as well, so
+   * the two lists agree again and this stays derived rather than declared.
    */
   const greenLedgers = useMemo(() => {
     const ids = new Set(TRANSCRIBED.flatMap((t) => t.leaves.map((l) => l.ledger)));
@@ -212,8 +254,11 @@ export function TimelinePage() {
             green
           </span>{' '}
           leaves are <strong>transcribed</strong>: somebody read the sheet, and the year is one
-          Jo Hopper wrote in its own date column. Those appear only where the reading has been
-          done, which today means {greenLedgers}.{' '}
+          Jo Hopper wrote on it — in a ruled date column where the leaf has one, and in the
+          sentence that records the sale where it has not. Three of the six volumes rule no
+          columns at all, so reading only the columns would have shown them as read and
+          dateless, which is a fact about their ruling rather than about their contents. Green
+          leaves appear wherever the reading has been done, which today means {greenLedgers}.{' '}
           <span className="rounded-full border border-ink-200 px-1.5 py-px text-ink-700">
             grey
           </span>{' '}
@@ -368,11 +413,17 @@ export function TimelinePage() {
                           {recorded.length} read
                         </div>
                         <div className="flex flex-wrap gap-1.5">
-                          {recorded.slice(0, 12).map((l) => (
+                          {/* Rows and sentences are counted apart upstream because they are
+                              two different readings of a leaf; here they are one number,
+                              because a reader wants to know how much of the leaf falls in
+                              this year and not which macro it came out of. */}
+                          {spread(recorded, 12).map((l) => (
                             <a
                               key={`${l.ledger}-${l.ref}`}
                               href={url(`/${l.ledger}/#${l.ledger}/${l.batch}/${l.ref}`)}
-                              title={`${l.rows} row${l.rows === 1 ? '' : 's'} dated ${y} — opens the leaf`}
+                              title={`${entriesOf(l)} ${
+                                entriesOf(l) === 1 ? 'entry' : 'entries'
+                              } dated ${y} — opens the leaf`}
                               className="rounded-full border border-relu-200 bg-relu-50 px-2 py-0.5 text-[11.5px] text-relu-700 transition hover:border-relu-400"
                             >
                               {LEDGERS.find((g) => g.id === l.ledger)?.short} leaf {l.leaf}

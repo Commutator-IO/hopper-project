@@ -67,7 +67,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { readTranscripts, workKey, yearInCell } from './lib/ledger.mjs';
+import { readTranscripts, workKey, yearInCell, yearsInProse } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 
@@ -527,31 +527,71 @@ const index = [...named.values()]
  *
  * That is now a fixable gap rather than a fact about the archive. Once a leaf
  * is transcribed its dates are on the page in Jo Hopper's hand, and this reads
- * them back: a leaf appears under every year its own date column names. It is
- * derived from the transcriptions and grows only as batches land, which is the
- * point — the timeline should show what has been read.
+ * them back: a leaf appears under every year it names. It is derived from the
+ * transcriptions and grows only as batches land, which is the point — the
+ * timeline should show what has been read.
+ *
+ * A leaf names a year in one of two places and both are read. The **date
+ * column** is the obvious one, and for a while it was the only one — which
+ * quietly limited this to the two volumes that rule columns at all. Books II,
+ * III and V rule none: their leaves are one work each in running prose, and
+ * the sale is a sentence with the date inside it. Reading only the columns
+ * reported those three volumes as transcribed and dateless, which said
+ * something about their ruling and nothing about their contents. So the
+ * **prose** is read as well, from `\hand{}` and from nothing else, and each
+ * leaf keeps the two counts apart so the difference stays visible.
  */
 const leafYears = new Map();
+
+/** Record that `leaf` names `year`, and say which half of the leaf said so. */
+const noteYear = (year, leaf, from) => {
+  if (year === null || !leaf.leaf || !leaf.ref) return;
+  if (!leafYears.has(year)) leafYears.set(year, new Map());
+  const m = leafYears.get(year);
+  const k = `${leaf.ledger}/${leaf.ref}`;
+  if (!m.has(k))
+    m.set(k, {
+      ledger: leaf.ledger,
+      batch: leaf.batch,
+      leaf: leaf.leaf,
+      ref: Number(leaf.ref),
+      rows: 0,
+      prose: 0,
+    });
+  m.get(k)[from]++;
+};
+
 for (const file of readTranscripts(root)) {
-  for (const rows of [...file.works.map((w) => w.rows), file.looseRows]) {
-    for (const r of rows) {
-      if (!r.leaf || !r.ref) continue;
-      const y = yearInCell(r.plain[0], r.dateColumn);
-      if (y === null) continue;
-      if (!leafYears.has(y)) leafYears.set(y, new Map());
-      const m = leafYears.get(y);
-      const k = `${r.ledger}/${r.ref}`;
-      if (!m.has(k))
-        m.set(k, { ledger: r.ledger, batch: r.batch, leaf: r.leaf, ref: Number(r.ref), rows: 0 });
-      m.get(k).rows++;
-    }
-  }
+  for (const rows of [...file.works.map((w) => w.rows), file.looseRows])
+    for (const r of rows) noteYear(yearInCell(r.plain[0], r.dateColumn), r, 'rows');
+
+  /**
+   * The same reading, out of the prose, for the volumes that rule nothing.
+   *
+   * Books II, III and V write every sale as a sentence — « Jos. H. Hirshhorn -
+   * Sept. 30, 1954. 3500 - 1/3 » — so the loop above finds no date on any of
+   * their leaves and the timeline showed them as transcribed and silent. That
+   * was an artefact of the ruling and not a fact about the archive.
+   *
+   * `yearsInProse` is deliberately narrow about what counts (see its header),
+   * and this reads only `\hand{}` — what somebody wrote on the leaf — so a
+   * transcriber's note about the year a leaf *ought* to carry never becomes a
+   * year the leaf carries. The two counts stay apart on each leaf: `rows` is
+   * the date column, `prose` the sentences, and a consumer can tell which
+   * reading put a leaf under a year.
+   */
+  for (const h of file.hands) for (const y of yearsInProse(h.plain)) noteYear(y, h, 'prose');
 }
 const transcribedYears = [...leafYears.entries()]
   .sort((a, b) => a[0] - b[0])
   .map(([year, m]) => ({
     year,
-    leaves: [...m.values()].sort((a, b) => Number(a.leaf) - Number(b.leaf)),
+    // By volume first, then by leaf. A year now draws leaves from up to five
+    // volumes at once, and sorting on the leaf number alone would interleave
+    // Book I leaf 6 with Book V leaf 7 as though they were one sequence.
+    leaves: [...m.values()].sort(
+      (a, b) => a.ledger.localeCompare(b.ledger) || Number(a.leaf) - Number(b.leaf),
+    ),
   }));
 
 const out = {
