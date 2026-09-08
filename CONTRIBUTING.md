@@ -80,6 +80,23 @@ the same.
 - **Never extend the LaTeX subset** without extending `scripts/render.mjs`,
   `scripts/tei.mjs` and `transcripts/preamble/hopper.sty` in the same commit.
 
+## What you can and cannot license to us
+
+The repository is CC0, and a pull request contributes your own work to the
+public domain on those terms — your `\note{}` observations, your `\keywords{}`
+line, your tooling, your prose.
+
+**A transcription is not that.** The words you type out of a sheet are
+Josephine Hopper's, © her heirs and licensed by Artists Rights Society (ARS),
+New York; the Whitney holds the object. They are not yours to place in the
+public domain and they are not ours to accept on those terms, which is why
+`LICENSE` carves them out and `transcripts/NOTICE` says which parts of a `.tex`
+are whose. Contribute a transcription on the same footing as the rest: as an
+unauthorised working document that says so on its own face.
+
+Nothing here asks you to warrant that you hold rights in the ledger text. It
+asks you not to claim you do.
+
 ## Declaring what no file can prove
 
 `transcripts/status.json`, keyed `<ledger>#<batch>`:

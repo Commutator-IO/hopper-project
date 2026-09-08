@@ -1,3 +1,37 @@
+SCOPE OF THIS DEDICATION
+========================
+
+Read this before relying on the CC0 text below. The dedication does not cover
+everything in this repository, because not everything in it is ours to give.
+
+COVERED — the maintainers' own work, dedicated to the public domain:
+
+    scripts/            the build, render and analysis tooling
+    src/                the site, and the derived content under src/content/
+    harvest/            the Whitney's listing as retrieved
+    *.md, config, and everything else not named below
+
+NOT COVERED — transcripts/, which reproduces the text of the Edward and
+Josephine Hopper artist's ledgers, Whitney Museum of American Art 96.208 to
+96.213. That text is
+
+    (c) Heirs of Josephine N. Hopper, licensed by Artists Rights Society
+    (ARS), New York
+
+It is not ours to place in the public domain, and no permission to reproduce
+it has been sought or granted. See transcripts/NOTICE.
+
+The .tex files are mixed rather than wholly one thing or the other. The
+editorial apparatus in them is the maintainers' own and is CC0 with the rest:
+every \note{}, every \marginal{} gloss, the \keywords{} lines, the hand
+attributions, and the LaTeX that carries them. What is not ours is what
+Josephine and Edward Hopper wrote -- the bodies of \hand{}, \work{} and the
+quoted matter inside the ruled tables.
+
+The CC0 1.0 Universal text follows, unmodified.
+
+--------------------------------------------------------------------------
+
 Creative Commons Legal Code
 
 CC0 1.0 Universal

@@ -1,0 +1,58 @@
+NOTICE — the text in this directory is not ours
+===============================================
+
+The .tex files under transcripts/ are transcriptions of the Edward and
+Josephine Hopper artist's ledgers, Whitney Museum of American Art, 96.208 to
+96.213, made from the sheets the Whitney has digitised and published.
+
+    (c) Heirs of Josephine N. Hopper, licensed by Artists Rights Society
+    (ARS), New York.
+
+    The Whitney records the object rights as transferred to the Museum.
+
+A transcription reproduces Josephine Hopper's text. Josephine Hopper died in
+1968, so that text is in copyright in the United States and in the European
+Union for some years yet. No permission to reproduce it has been sought from
+ARS or from anyone else, and none has been granted. These files are
+unauthorised working documents, and every one of them says so on its own face:
+the rights line is printed in the title block of each rendered file and
+repeated as a watermark on every page of each PDF, and `npm run render` will
+not build a file that omits it.
+
+The repository's LICENSE dedicates the maintainers' own work to the public
+domain under CC0. It does not, and cannot, reach the text in this directory.
+
+
+What in these files IS ours
+---------------------------
+
+The .tex files are mixed. The apparatus around the transcribed text is the
+maintainers' own work and is CC0 with the rest of the repository:
+
+    \note{}          the transcriber's observations on a leaf
+    \marginal{}      the description of what stands in the margins
+    \keywords{}      the tags
+    \hand{}          the attribution -- the choice of whose hand it is
+    \uncertain{}     the marking of a doubtful reading
+    the LaTeX structure, the section headings, and transcripts/preamble/
+
+What is not ours is what the Hoppers wrote: the bodies of \hand{} and \work{},
+and the quoted matter inside the ruled tables.
+
+
+Facts are not covered by any of this
+------------------------------------
+
+Prices, dates, dimensions, buyers' names and accession numbers are facts, and
+facts are not subject to copyright. The derived files under src/content/ —
+works.json, accounts.json, formats.json, materials.json and the rest — are the
+maintainers' own compilations of those facts and are CC0 without qualification.
+
+
+If you hold or represent these rights
+-------------------------------------
+
+Open an issue at https://github.com/Commutator-IO/hopper-project/issues, or
+write to the repository owner, and say what you would like changed. A request
+to remove or restrict any part of this directory will be acted on rather than
+argued with.

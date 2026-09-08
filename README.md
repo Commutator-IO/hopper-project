@@ -332,3 +332,31 @@ checked against her says so rather than implying otherwise by silence.
 No transcription here is an edition. A machine pass over a hand of the 1920s
 produces a reading, checkable against the photograph on the same screen. That
 is its whole value, and its whole claim.
+
+## Licence
+
+`LICENSE` is CC0 — but not over everything here, because not everything here
+is ours to give away. The dedication covers what we wrote: `scripts/`, `src/`
+including every derived file under `src/content/`, `harvest/`, the
+documentation, and the editorial apparatus inside the transcriptions — every
+`\note{}`, every `\marginal{}` gloss, the `\keywords{}` lines, the hand
+attributions.
+
+It does not cover the transcribed text itself, for the reason the section
+above gives: that text is Josephine Hopper's, © her heirs and licensed by ARS,
+and no permission to reproduce it has been sought or granted. The `.tex` files
+are mixed rather than wholly one thing or the other, so the carve-out is by
+content and not by path. `transcripts/NOTICE` sets out which is which, and
+`LICENSE` carries the same statement above the CC0 text, for anyone who reads
+the licence file and nothing else.
+
+**The figures are a different question and a much simpler one.** Prices,
+dates, sizes, buyers and accession numbers are facts, and facts carry no
+copyright. `works.json`, `accounts.json`, `formats.json`, `materials.json` and
+the rest are our own compilations of them and are CC0 without qualification.
+The accounts tab is on firmer ground than the reading panes, which is the
+opposite of what people expect.
+
+If you hold or represent the rights in the ledgers, the issues page is the
+place to say so, and a request to remove or restrict anything will be acted on
+rather than argued with.
