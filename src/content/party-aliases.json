@@ -1,21 +1,35 @@
 {
   "_comment": "Two declared facts about the names in the ledgers, written by hand because no rule can see them. scripts/accounts.mjs groups the dealer:, person: and collection: keywords into parties by surname, and refuses to merge two labels unless one's words sit inside the other's — which is what keeps Nelson, David and Mrs. John D. Rockefeller three buyers rather than one, and Boston's Public Library out of its Museum of Fine Arts. Everything here is a claim somebody can disagree with in a diff, which is the only reason it is a file rather than a rule.",
-
   "same": [
-    ["Frank K. M. Rehn", "Rehn Gallery"],
-    ["Butler Art Institute", "Butler Institute of American Art"]
+    [
+      "Frank K. M. Rehn",
+      "Rehn Gallery"
+    ],
+    [
+      "Butler Art Institute",
+      "Butler Institute of American Art"
+    ]
   ],
   "sameNote": "Merges the containment test refuses and the leaves plainly make.",
   "sameReasons": {
     "Frank K. M. Rehn": "The man and the gallery. The leaves write « Rehn », « Rehn Gal. » and « Rehn Gallery » for the same consignee throughout and never distinguish the dealer from his firm.",
     "Butler Art Institute": "One museum in Youngstown under two names; the leaves use the earlier and the later without remarking on the change."
   },
-
-  "weakSurnames": ["Hartford", "Hopper", "Modern"],
+  "weakSurnames": [
+    "Hartford",
+    "Hopper",
+    "Modern",
+    "Tucker",
+    "Baker",
+    "Ball"
+  ],
   "weakNote": "Surnames that are not evidence on their own, because the leaves write the same word meaning something else. A party carrying one of these is credited only where its full name appears. Each was found by reading the rows the surname alone had matched.",
   "weakReasons": {
     "Hartford": "Huntington Hartford of California is a buyer; Hartford, Connecticut is where the Wadsworth Atheneum is. The surname alone put three of the Atheneum's watercolours on his row.",
     "Hopper": "Every « Inv. Hopper Oils, Watercolors & Etchings » is an exhibition title, not a purchase by Josephine Nivison Hopper, and the surname alone made her a buyer three times over.",
-    "Modern": "The Museum of Modern Art is a buyer; « Art Lending Mus. Modern Library » is a different service and « given to Modern Mus. » is a gift written beside somebody else's sale."
+    "Modern": "The Museum of Modern Art is a buyer; « Art Lending Mus. Modern Library » is a different service and « given to Modern Mus. » is a gift written beside somebody else's sale.",
+    "Tucker": "Book III leaf 191 names Richard Tucker, for whom Light at Two Lights was sold in 1959, and says in the same sentence that the painter had the money from his mother, who bought it in 1929. Every Tucker who buys in the counted volumes is she - Mrs. Samuel A. Tucker, Mrs. S. Tucker, Mrs. Sam Tucker - and Book I names four more: Mrs. Allen, Anne, Dorothy and Winifred Tucker. The surname alone put five of his mother's sales on the son's row.",
+    "Baker": "Book III leaf 193 names L. D. Baker and his father Capt. L. D. Baker as the men the Hoppers bought their South Truro land from, not pictures. The surname alone put a 1926 sale on his row whose buyer the leaf gives as Hubert A. Goldstone, « Baker » there being the photographer named beside it.",
+    "Ball": "David B. Ball is declared from Book II, but the sale of May 1937 the surname alone matched is « Mrs. Ball », with « Elizabeth » written above the gap after « Mrs. » and « Muncie, Ind. » below it. Two people, one surname."
   }
 }

@@ -2424,12 +2424,15 @@ and no heading anywhere on the leaf.
 
 - **`Carl Gross`** *(leaf 170)* — the man who drove them back to New York to
   vote. Four or five letters after the G and none of them firm; « Gnes » fits
-  the strokes as well. Not the Carl Benson of the same leaf.
+  the strokes as well. Not the Carl Benson of the same leaf. **Settled by batch
+  8**: leaf 192 writes the name and then writes « Gross » above it, her own
+  correction.
 - **`Dorothy Buttles`** *(leaf 171)* — who took N.Y. Office in exchange for an
   Eakins. Reads Bulles, Butles or Buttles.
 - **`El` + a struck word + `French`** *(leaf 171)* — a name of two elements
   with four or five letters struck past reading between them; Franch fits the
-  surname as well as French.
+  surname as well as French. **Settled by batch 8**: leaf 192 writes « Elwood
+  French » plainly.
 - **`Lechner`** *(leaf 123)* — the buyer of Charleston Slum; Leshner is as
   defensible.
 - **`Chas. F. Stein, Jr.`** *(leaf 113)* — the middle initial is a looped
@@ -2449,3 +2452,166 @@ and no heading anywhere on the leaf.
   crossed, which is what argues for it.
 - **`dresser`** *(leaf 170)* — the replacement Buick is « black + white
   dresser 1956 », legible and opaque.
+
+---
+
+*(Book III batch 8, sheets 85–90, read 8 September 2026, Opus 5. The last batch
+of the volume. Nothing in it has been confirmed by a later batch, but two of
+batch 7's unsettled readings are settled by it.)*
+
+## The volume ends in a third kind of leaf, and it is neither of the first two
+
+Batch 2 divided Book III into standing lists (sheets 1–19) and a work book
+(from sheet 20). The last five leaves are neither. They are headed **Memoranda**
+and they are continuous prose: no ruled table anywhere in the batch, no record
+drawing, no paint formula, no `\work{}` block, and four figures of money on
+five leaves. Budget the whole of the attention for prose and none of it for
+layout — and budget more of it than the sheet count suggests, because leaf 192
+carries **fifty-five lines** where batch 7's Whereabouts leaves carried
+twenty-eight.
+
+## Band parameters for the densest leaves in the volume
+
+Leaf 190 reads at 300% in bands 190 px deep stepping 140. Leaves 191 and 192 do
+not: their lines run at about thirty-four pixels where leaf 190's run at fifty,
+and they want 340% and 380% with a step of 120 to 125. The overlap is not
+decoration — on leaf 192 a line falling on a seam is only readable from the band
+below.
+
+## Two of batch 7's unsettled names are settled here, by her and not by us
+
+- **`Carl Gross`** — batch 7 could not fix the name of the man who drove them
+  back to New York to vote, and recorded that « Gnes » fitted the strokes as
+  well. Leaf 192 writes the name in the line and then writes **« Gross »
+  above it** as her own correction. That is her evidence, not an inference.
+- **`Elwood French`** — batch 7 left « El » plus a struck word plus « French »
+  on leaf 171. Leaf 192 writes **« Elwood French »** plainly.
+
+Both have been amended above. The lesson generalises: a name that will not
+settle on one leaf may be written again, and corrected, forty leaves later.
+
+## Her G has a descender and her C does not
+
+Settled on leaf 192, where « Cobble de Kook! » had to be told from
+« Gobble ». Compare the initial against « Greenwich » on the same leaf: her
+capital G carries a full loop below the baseline, and her capital C is an open
+curve sitting on it. The reading that makes the better joke lost.
+
+## A drawn angle sign is a mark, not a letter
+
+Leaf 193 twice writes « at rt. » followed by a **drawn angle glyph** rather
+than the word. There is no mathematics in the permitted subset and there should
+not be; it takes `\add{angle}` with a `\note{}` saying the leaf draws it. Do not
+transcribe it as a letter and do not reach for `\ill{}` — it is perfectly
+legible, it is just not writing.
+
+## A passage can run across the join between two leaves, and change medium at it
+
+The last four lines of leaf 193 are in **pencil** where the whole leaf above
+them is in ink, and they do not stop at the foot of the leaf: leaf 194 opens
+« put up at the Waldorf » and carries the same pencil to the end of the volume.
+Leaf 193's foot and the whole of leaf 194 are one passage. It also **retells
+what leaf 192 had already recorded in ink** — the Time Magazine anniversary — so
+the volume ends by saying the same thing twice in two mediums. Neither telling
+is corrected from the other.
+
+## Long horizontal strokes are still t-bars
+
+Batch 7 found this on leaf 123 and leaf 190 makes it cost something: the stroke
+that appears to cancel « Retrospective » is the crossbar of its own t running
+out to the right, and so are the strokes over « Construction » and over
+« water color » on the line below. **What is genuinely struck on these leaves is
+scribbled over rather than ruled through** — and scribbled past reading every
+time. Thirteen `\ill{}` in the batch, five of them inside a `\struck{}`.
+
+## The dates end at 1967, out of order
+
+Leaf 192 runs 1961, **1967**, 1962, 1961 in four consecutive lines. The 1967 —
+the death of Arnold Slade of Truro — is the latest date anywhere in Book III and
+the year Edward Hopper died. Her seven is crossed, which is what tells it from
+her one. Not corrected, not moved.
+
+## A memorandum can restate what a work's leaf struck out
+
+Leaf 190 writes out the Whitney's taking of Construction in Mexico in exchange
+for Lombard House, with both sizes and the 1934 price, and calls it an even
+exchange. Batch 6's leaf 107 carries that same exchange **struck out** on the
+work's own leaf, where the picture is sold to Chas. E. Buckley instead. Leave
+both; neither leaf is evidence against the other.
+
+## A leaf can point at the front of its own volume
+
+Leaf 193 names the photographer who did the « photo of E. H. inside front Cover
+of this book ». That is sheet 17702, Book III's third sheet, which batch 1
+transcribed as front matter. The volume cross-references itself, and it is
+worth a `\note{}` because nothing else on the site would make the link.
+
+## One party, two hosts, two leaves
+
+Leaf 192 gives the host of the Greenwich party as « Mr. Linen (owner of
+Time?) »; leaf 194 gives « Bertram \uncertain{Anders} head publisher or whatever
+of Time ». Same evening, same paragraph of her memory, two names. Both stand.
+
+## Her « 2. B. » is the same mark on two leaves
+
+Leaf 192 gives Col. Richard Magee as « of air force, \uncertain{2. B.} » and
+leaf 190's left-margin note puts the same two characters against the same man.
+Neither resolves; the point of recording both is that it is one mark recurring
+and not two separate accidents.
+
+## More spellings, all as written
+
+- **`Vendome`** *(leaf 192)* beside **`Vandome`** *(leaf 194)* — one Boston
+  hotel, two leaves apart, as batch 2 found Atheneum beside Athenaeum.
+- **`Sconset`** *(leaf 191)* — batch 7's leaf 170 spells it `Sasconset`.
+- **`Buick`** *(leaf 193)* — correctly, where batch 7's leaf 170 twice has
+  `Boick`.
+- **`Max Namuth`** *(leaf 193)* — where batch 7's leaf 171 gives Hans Namuth.
+- **`personel`**, **`plummers`**, **`xpress`** *(leaf 192)*.
+- **`responsability`** *(leaf 194)*.
+- **`cahots`** *(leaf 193)*, **`agression`** *(leaf 191)*.
+- **`Nerhu`** *(leaf 194)* — for Nehru.
+- **`Bridel Path`**, **`Aire France`** *(leaf 190)*.
+- **`Toppsfield, Mass.`** *(leaf 191)*.
+- **`Sculduggery`** *(leaf 193)*, capitalised as though a place.
+- **`their their wives`** *(leaf 192)* — written twice, and left.
+
+## Readings that would not settle
+
+- **`Cobble de Kook!`** *(leaf 192)* — her coinage for the abstraction the
+  Boston jury was meant to turn the tide of. « Gobble », which would make it
+  gobbledygook, is the better joke and the wrong letter; see the G above.
+- **`2. B.`** and **`2. B's`** *(leaves 192 and 190)* — see above.
+- **`Capt. Stan's House`** *(leaf 190)* — one of six watercolours bought by the
+  Wadsworth Atheneum, with « (Portland » interlineated after it. Four letters
+  after the capital and none of them firm; there is no `rou` under the t-bar,
+  so it is not Strout.
+- **`L. D. Baker,`** *(leaf 191, fore edge)* — written above a struck name as
+  the seller of the South Truro hill. Leaf 193 names L. D. Baker, son of Capt.
+  L. D. Baker, as the seller in plain ink, which is why the reading is offered;
+  the letters on 191 give « Bahn » as readily.
+- **`duties`** *(leaf 193)* — what Chas. Francis took over from Jack Kelley.
+  « deaths » fits the strokes as well and the sentence rather less.
+- **`Thanks` + an unread word + `of Goodrich`** *(leaf 193)* — closing the
+  Whitney's purchase of Second Story Sunlight. The unread word is a single tall
+  loop and will not resolve at 1300%.
+- **`Anders`** *(leaf 194)*, **`Mauries`** *(leaf 191)*, **`Damberg`**
+  *(leaf 191)* — three names, all r/n or m/w.
+- **`Nerhu` + `reporters`** *(leaf 194)* — and the word after « of » is the
+  batch's hardest, running into the fore edge.
+- **`adverting`** *(leaf 190)* — closing the Genauer column line; « advertising »
+  abbreviated fits the strokes as well.
+- **`gie`** *(leaf 190, fore-edge marginal)* — the second half of Carnegie,
+  broken at her line end and written *after* « Pittsburgh » rather than before
+  it.
+- **`me were`** *(leaf 192)* — above « feel members »; « we were » is as
+  defensible and makes better sense, which is not evidence.
+
+## Where Book III ends
+
+Eighty-nine transcribed sheets of ninety. The back cover, sheet 16196, carries
+nothing but the stationer's printed border and no writing of any hand, so it
+takes no sheet — the third volume to close that way, after Book I at 116 of 117
+and Book II at 71 of 72. The last words in the book are hers, about a frame:
+« a glint surrounding \struck{\ill{}} area made glad by enclosing glamour of
+supporting light. »

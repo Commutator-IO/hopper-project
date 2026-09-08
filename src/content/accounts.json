@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T23:16:36.162Z",
+  "generated": "2026-09-08T19:00:44.681Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf. Book II rules no columns at all, and it needs the other half of the same rule: a leaf there is one work with one sale line — buyer, price and the cut, the cheque, the date — so the date is in the last column and never in the first. It is read there only on a leaf that rules nothing, only where the first column dates nothing, and only where the last cell holds a date and nothing besides.",
@@ -16,8 +16,8 @@
       "book-ii",
       "dealers"
     ],
-    "batches": 26,
-    "sheets": 298,
+    "batches": 30,
+    "sheets": 339,
     "note": "Only the volumes and batches listed. Everything unread contributes nothing, and every figure here moves as batches land.",
     "countedNote": "Transcribed and counted are not the same thing, and the difference is the ruling. Every figure on this page is read out of a ruled row — a `ledgertable` in the .tex — because a row puts the price in one cell and the date in another, and the column a date stands in is what says whether it dates the sale or the cheque. A volume whose leaves rule nothing and write the sale as a sentence is read here and counted nowhere: its money is on the sheets, in the transcriptions, and outside these totals. Book III and Book V are in that position now, and naming them is the point — a total that quietly omitted them would look like a smaller number rather than a narrower one."
   },
@@ -1693,7 +1693,11 @@
         "last": 1961
       },
       {
-        "name": "Huntington Hartford",
+        "name": "Huntington Hartford Foundation",
+        "aliases": [
+          "Huntington Hartford",
+          "Huntington Hartford Foundation"
+        ],
         "sales": 1,
         "net": 3333.33,
         "gross": 5000,
@@ -1775,6 +1779,15 @@
         "works": 1,
         "first": 1940,
         "last": 1940
+      },
+      {
+        "name": "Laurence Fleishman",
+        "sales": 1,
+        "net": 1533.33,
+        "gross": 2300,
+        "works": 1,
+        "first": 1960,
+        "last": 1960
       },
       {
         "name": "Mrs. Bliss Parkinson",
@@ -1941,6 +1954,15 @@
         "last": 1925
       },
       {
+        "name": "Charles E. Buckley",
+        "sales": 1,
+        "net": 533.33,
+        "gross": 800,
+        "works": 0,
+        "first": 1926,
+        "last": 1926
+      },
+      {
         "name": "Fogg Art Museum",
         "sales": 1,
         "net": 500,
@@ -1975,6 +1997,15 @@
         "works": 0,
         "first": 1925,
         "last": 1930
+      },
+      {
+        "name": "John Clancy",
+        "sales": 1,
+        "net": 400,
+        "gross": 600,
+        "works": 0,
+        "first": 1924,
+        "last": 1924
       },
       {
         "name": "Hamilton College",
@@ -2089,6 +2120,15 @@
         "last": 1931
       },
       {
+        "name": "Atheneum at Hartford",
+        "sales": 1,
+        "net": 266.67,
+        "gross": 400,
+        "works": 1,
+        "first": 1934,
+        "last": 1934
+      },
+      {
         "name": "John Taylor Arms",
         "sales": 1,
         "net": 233.33,
@@ -2138,7 +2178,11 @@
         "last": 1951
       },
       {
-        "name": "Santa Barbara Museum",
+        "name": "Santa Barbara Museum of Art",
+        "aliases": [
+          "Santa Barbara Museum",
+          "Santa Barbara Museum of Art"
+        ],
         "sales": 1,
         "net": 66.67,
         "gross": 100,
@@ -2214,8 +2258,8 @@
         "last": 1949
       }
     ],
-    "namedNobody": 63,
-    "ambiguous": 55,
+    "namedNobody": 56,
+    "ambiguous": 61,
     "counted": 326,
     "note": "Who stands beside the price. On the etchings leaves that is almost always the dealer — « Keppel 30 - 1/3 » — and the person who took the print home is named only where Jo Hopper knew it, which is why the second table is the shorter one. The two are told apart by the facet the transcription itself declares: dealer:, against person: and collection:. No string test could do it — « Corcoran Gallery » is a museum and « Downtown Gallery » is a dealer — so a party nobody tagged cannot appear here however often the leaves sold to them, and this ranks what has been tagged inside what has been transcribed.",
     "matchNote": "A row is credited to a party when it carries that party's name or their surname. Two spellings are one party only where one's words sit inside the other's, so Kennedy and Kennedy Galleries merge while Nelson, David and Mrs. John D. Rockefeller stay three buyers, and Boston's Public Library stays out of its Museum of Fine Arts. The merges that rule wrongly refuses are declared by hand in party-aliases.json. Where a leaf writes only a surname that more than one declared party shares, the row is reported ambiguous rather than credited to a guess."
