@@ -2856,3 +2856,120 @@ Webb, Adventure and Wells Fargo. Batch 3 is the war-work turn:
 figure of the Every Week entry has a heavy stroke through its 1 and reads as
 « \$5 »; the entry below it is a plain 15 and the receipt of 30 00 fixes both
 at 15. There is no dollar sign anywhere in Book IV's money column.
+
+## Book IV's colour rule has exceptions, and one whole entry is in pencil
+
+*(Book IV batch 4, sheets 37–48, leaves 36–47, read 9 September 2026, Opus 5.)*
+
+Batches 1 to 3 found the rule and found it exceptionless: black entries, red
+receipt lines, from leaf 7 onwards. Batch 4 breaks it twice, and both breaks
+are the kind a pass that trusts the rule will transcribe wrongly.
+
+- **A charge date can be in red.** Leaf 46, the Colliers' entry: the date of
+  the charge line is red where every other charge date in four batches is
+  black, and the figure of 60 beside it is black. The line carries no word at
+  all in the description column — not even « bill ».
+- **A whole entry can be in pencil.** Leaf 44, the De Vinne Press: date,
+  description, the interlineation across it and the « Porter Car bill » line
+  are all pencil; only the receipt below is red, and only the year « 1920 »
+  beside it is ink. It is the sole pencil *entry* in four batches — the other
+  pencil marks in the volume are years and interlineations, not transactions.
+- **A pencil year can be written under the ink of a date.** Leaf 38 puts
+  « 1919 » above and partly under « Jan 16 », so the ink crosses the pencil.
+  Same shape as leaf 28's « 19 18 » in batch 3; record it as a `\marginal{}`.
+
+## A list can run over the leaf-turn with nothing but its sum to bind it
+
+*(batch 4)* Leaf 36 opens an Adventure Magazine list, names three titles, and
+stops at the foot of the leaf. Leaf 37 opens on the fourth title with **no
+client, no issue and no date repeated**, runs to ten more, rules off at 195 and
+receipts it. Thirteen titles at 15 make 195 exactly, and that arithmetic is the
+only thing on either leaf that says the two halves are one list. **Do not merge
+them**, and say so in a `\note{}` on both leaves.
+
+The same leaf writes « line drawings » with no count where every other list of
+this kind in Book IV gives one, and uses a **brace** in the date column to
+gather its last three titles under one date — the seven titles above the brace
+carry no date at all.
+
+## The 5 and the 0 join the 5 and the 6 as the pair to distrust
+
+*(batch 4)* Batch 3 warned about 5 against 6. Leaf 37's second Everybodys'
+figure reads as **58** at the Whitney's `pre` size and is **50** at 600\%; the
+receipt of 75 less the 25 above it is what confirms it. Tile before reading any
+figure whose second digit could be a 0 — this hand closes a 0 with a stroke
+that reads as an 8's upper bowl at page size.
+
+## Two shapes that reconcile and one that does not
+
+*(batch 4)* Every bill in the batch is answered to the dollar, which is a first
+for Book IV, and the exceptions are informative rather than defects:
+
+- **A cheque can answer two bills with no subtotal written anywhere.** Leaf 41
+  bills 40 on 17 June, leaves three blank ruled lines, bills 40 again on 23
+  June and receipts **80** on 9 July. Batch 3's collected cheques wrote a small
+  subtotal under the second bill; this one writes nothing.
+- **A struck entry is never paid.** Leaf 47's Association Men entry of 20 is
+  crossed corner to corner with one large pencil X across all four of its
+  lines, reaching into the money column. Everything under it is legible; there
+  is no receipt.
+- **A pencil interlineation can contradict the bill under it.** Leaf 44 says
+  « 25 - bill rendered » in pencil across « 1 rough sketch », and the pencil
+  bill and the red receipt below both say **10**. The figures stand as written.
+
+**A bare money row followed by a receipt rather than a bill is a subtotal.**
+Leaf 37's 195 and leaf 39's 100 are both ruled-off sums, not fresh charges. The
+rule batch 1 wrote — subtotal if a bill follows, charge otherwise — does not
+reach this shape, and `scripts/accounts.mjs` still double-counts leaf 37's 195.
+
+## Book IV's clients turn out of war work
+
+*(batch 4)* Wells Fargo \& Co, who carried batch 3, stop; from October 1918 the
+Messenger covers are billed to **Am. Railway Express** (also « The Amer.
+Railway Express »), at 40 apiece. The Morse Dry Dock Dial cover runs the whole
+batch and its price is datable: **35** in September 1918, **40** from December,
+**45** from October 1919. The issue's month is still written above the line at
+the end of the description, and the run skips April, June, August and September
+1919 while billing **July twice** — leaf 39 on 20 March and leaf 40 on 25
+April, each at 40 and each receipted.
+
+New and periodical: **Scribners Magazine** (100, then 175), **Everybodys'
+Magazine** (75, then 100), **Colliers' Magazine** (60) — the apostrophe is
+after the s in both « Everybodys' » and « Colliers' », as batch 1 found. Then
+war charities giving way to commerce: The World Outlook, The Centenary,
+Association Men, War Camp. Community Service, and from January 1920 the
+**Greeley Square Hotel Co** (Tavern Topics covers), the **Sperry Gyroscope Co.**
+(Sperryscope covers), **La France** — which is leaf 42's « France America
+Corporation » written short — and the Christian Herald through **J. W.
+Thompson**, against order numbers again (« order No. 2018 », « Order No 2021 »),
+which Book IV had not written since batch 1.
+
+## Readings that would not settle
+
+*(batch 4)*
+
+- **`The Haunting of the Lady …`** *(leaf 37)* — one undifferentiated run of
+  minims after « Sh ». « Shannon », « Shermen » and half a dozen others fit
+  equally at 600\%. Unread.
+- **A rubbed-out red line** *(leaf 38)* — between « The Emperors Ghost. » and
+  the 175. Four or five words survive as traces; from its colour and position
+  it is a receipt, and the receipt below it is complete, so nothing is offered.
+- **`J. W.`** *(leaf 44)* — the Thompson initials are retraced two or three
+  times over an earlier start and read as one blot. « J. W. » comes from leaves
+  45 and 46, not from this leaf.
+- **`Willeams`** *(leaf 44)* — « Charles Willeams Stores », with a closed loop
+  where an « i » would stand. Doubted on that letter alone.
+- **`Shope`** *(leaf 44)* — « Mc Alpin Candy Shope ». The terminal curl is the
+  same one this hand puts after « Stores » and « Bits », so « Shop » is as
+  defensible.
+- **`Dial`** *(leaf 45)* — « Blacksmith Dial cover », written short without the
+  « a » the other eleven covers carry. Offered on the run, not on the strokes.
+- **`S. Sophias`** *(leaf 45)* — the Greeley Square March cover subject.
+  Letters legible one by one, name confirmed by nothing.
+- **`Siffin`** *(leaf 46)* — « interior Siffin factory », six letters with a
+  doubled long f. « Sifflin » fits about as well.
+- **`hlf.`** *(leaf 47)* — « 2 hlf. drawings », blotted; offered on the
+  abbreviation the leaf uses elsewhere.
+- **The word after `bill`** *(leaf 47)* — a mass of strokes ending in two
+  vertical marks, on the line dated 15 March. Unread. The receipt day below is
+  blotted through too, though the 25 survives it.
