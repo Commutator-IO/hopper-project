@@ -4266,3 +4266,34 @@ The last entry is an Artex royalty of **23 March 1967** on « Light House a 2
 lights », receipted twice a fortnight apart. The volume stops there without
 saying so; the rest of leaf 159 is empty. **Nothing on the last leaf marks it as
 the last** — do not look for a closing total, and do not supply one.
+
+## The money columns: set the figure as the leaf sets it
+
+*(after issue #20)* Book IV's four columns are the stationer's, and the two at
+the right are dollars and cents divided by a printed red rule. The writer keeps
+to that rule about half the time. She also writes the point at the end of the
+dollars and stops — « 1200. » — writes it there and then fills the cents cell
+anyway — « 350. | 00 » — and, from leaf 111, writes the figure entire with the
+point standing *on* the rule — « 3959.84 ». All three are hers.
+
+**Set what she wrote, in the cells she wrote it across.** A figure written whole
+goes in the dollars cell so that the arrangement survives; a figure she divided
+stays divided. There is nothing to normalise and nothing to choose between: the
+three shapes are one fact about her hand, and `scripts/accounts.mjs` reads the
+dollars cell as digits with an optional point and an optional one or two figures
+after it, so all three come to the same number.
+
+The one arrangement it will not read is the fraction **stated twice** — cents in
+the dollars cell *and* in the cents cell, « 3959.84 | 84 ». It does not occur.
+If a leaf ever does it, transcribe it as written and expect the row in
+`unparsed`: two statements of one figure are for a reader looking at the sheet
+to reconcile, not for the parser to pick between.
+
+Batches 10, 11 and 13 write the figure whole; 12 and 14 divide it. Both stand.
+Earlier batches are not to be re-set to one convention — that would be editing
+the leaves to suit a reader, which is the wrong way round.
+
+Batches 12 and 14 dividing what 10, 11 and 13 left whole is exactly why the
+defect of issue #20 stayed invisible: the two most recently read batches
+happened to use the arrangement the old reader admitted, so nothing in the
+output looked wrong while a hundred and forty-four figures went unread.

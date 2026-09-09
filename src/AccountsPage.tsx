@@ -105,6 +105,19 @@ const A = accountsData as unknown as {
     totals: { accrued: number; collected: number; outstanding: number; notRecorded: number };
   }[];
   activitiesNote: string;
+  /** Book IV's own counts — what was read as a charge, and what was set aside. */
+  illustration: {
+    charges: number;
+    receipts: number;
+    subtotalsExcluded: number;
+    deductionsExcluded: number;
+    netsExcluded: number;
+    carriedSumsExcluded: number;
+    struckExcluded: number;
+    wordlessReceipts: number;
+    blankDescription: number;
+    note: string;
+  };
   years: Year[];
   works: Work[];
   worksNote: string;
@@ -420,13 +433,26 @@ export function AccountsPage() {
         <p className="prose-note mt-4 max-w-3xl">
           <strong className="font-semibold text-ink-700">Three states and not two</strong>, because
           the two books do not record the same things. Book IV names a cheque for very nearly
-          every charge in it, so what it leaves undischarged is genuinely still owed at the point
-          the reading stops. The work books mostly do not: a leaf there often writes one date to a
-          sale and never separates the day the picture went out from the day the money came. So a
-          sale can sit unpaid because the buyer had not paid, or because Jo Hopper did not write
-          it down, and those are not the same fact. Folding them together would set tens of
-          thousands of dollars of <em>silence</em> beside a few hundred of real debt and invite
-          you to compare them.
+          every charge in it, so what it leaves undischarged is nearer to a real debt than a
+          silence. The work books mostly do not: a leaf there often writes one date to a sale and
+          never separates the day the picture went out from the day the money came. So a sale can
+          sit unpaid because the buyer had not paid, or because Jo Hopper did not write it down,
+          and those are not the same fact. Folding them together would set tens of thousands of
+          dollars of <em>silence</em> beside a few hundred of real debt and invite you to compare
+          them.
+        </p>
+        <p className="prose-note mt-3 max-w-3xl">
+          <strong className="font-semibold text-ink-700">
+            Book IV’s « still owed » is not all debt either
+          </strong>
+          , and it is read high rather than low. {A.illustration.blankDescription} of its charges
+          describe nothing at all, and a figure with no words beside it is as often a sum the
+          writer ruled off under her own items as a price she forgot to name. Where a cheque, a
+          bill or a « less » line stands under such a sum it is recognised and excluded; where
+          nothing answers it, or where the leaf’s own arithmetic disagrees with itself — leaf 125
+          rules off 2700 over two oils of 1200 — it is counted as a charge and inflates both the
+          gross and what looks unpaid. That is the largest open question in this volume, and it
+          is stated here rather than smoothed.
         </p>
 
         <h3 className="mt-8 font-serif text-[17px] text-ink-900">When each trade earned</h3>
@@ -741,9 +767,12 @@ export function AccountsPage() {
         <h2 className="font-serif text-xl text-ink-900">What the accrual basis cannot reach</h2>
         <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">{A.limit}</p>
         <p className="prose-note mt-3 max-w-3xl">
-          {A.unparsed.count} sale-bearing rows are reported rather than counted. They are listed
-          because a parser that silently skips what it cannot read produces a total that looks
-          complete, and a total that looks complete is the one nobody re-checks.
+          {A.unparsed.count} rows are reported rather than counted — a sale whose year nothing on
+          the leaf states, or a money column carrying writing that is not a figure in dollars.
+          They are listed because a parser that silently skips what it cannot read produces a
+          total that looks complete, and a total that looks complete is the one nobody re-checks.
+          The sample below is taken a reason at a time rather than off the top of the list, so
+          that a kind of refusal with one row under it is as visible as a kind with a hundred.
         </p>
         <ul className="mt-4 max-w-3xl">
           {A.unparsed.sample.map((u, i) => (

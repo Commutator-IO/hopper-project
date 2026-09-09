@@ -221,6 +221,30 @@ function receiptIn(text) {
 const files = readTranscripts(root);
 const entries = [];
 const unparsed = [];
+/**
+ * A sample that shows every reason there is, rather than the first `n` rows.
+ *
+ * Round-robin over the distinct reasons, so a kind of refusal that has one row
+ * in it is as visible as a kind that has a hundred and eighty. The rare kind is
+ * the one worth seeing: a reason with a single row under it is usually either
+ * the newest rule or the wrongest one.
+ */
+const byReason = (rows, n) => {
+  const groups = new Map();
+  for (const r of rows) {
+    if (!groups.has(r.reason)) groups.set(r.reason, []);
+    groups.get(r.reason).push(r);
+  }
+  const out = [];
+  const queues = [...groups.values()];
+  while (out.length < n && queues.some((q) => q.length)) {
+    for (const q of queues) {
+      if (out.length >= n) break;
+      if (q.length) out.push(q.shift());
+    }
+  }
+  return out;
+};
 
 /**
  * Which trade a volume records.
@@ -475,6 +499,37 @@ for (const file of files) {
  * would be inventing a precision the book does not have, and the year totals
  * do not need it.
  */
+
+/**
+ * Where the writer puts the decimal point, which is three places and not one.
+ *
+ * The two cells at the end of a Book IV row are the stationer's dollars and
+ * cents columns, divided by a printed red rule. The writer respects that rule
+ * about half the time. She also writes « 1200. » with the point at the end of
+ * the dollars and nothing beyond it, « 350. | 00 » with the point at the end
+ * of the dollars and the cents in their own cell anyway, and — from leaf 111 —
+ * « 3959.84 » entire, the point sitting *on* the rule, which the edition sets
+ * in the dollars cell so that the leaf's own arrangement survives.
+ *
+ * All three are hers, none is a transcription mistake, and a reader that
+ * admits only the first is not reading the volume. Requiring `^\d+$` of the
+ * dollars cell dropped 144 figures without a word — 108 written whole, 36 with
+ * a terminal point — and dropping a figure in this volume does not merely lose
+ * it. A row whose amount is null never closes the settlement phrase above it,
+ * so the next row that does carry money inherits « rec'd by check » and is
+ * counted as money received; and because the dropped row is usually the last
+ * line of an entry, what inherits it is usually a charge in the next one.
+ * Leaves 145, 149, 153 and 155 contributed no receipts at all, while Girlie
+ * Show and People in the Sun were counted as cheques.
+ *
+ * So the dollars cell is read as digits with an optional point and an optional
+ * one or two figures after it, and the volume's three arrangements come to the
+ * same number. What is refused is refused loudly: a cell carrying its own
+ * cents *and* a cents cell beside it states the fraction twice and is not
+ * guessed at, and every cell the reader turns down is reported by the caller
+ * rather than passed over.
+ */
+const IV_DOLLARS = /^(\d+)(?:\.(\d{0,2}))?$/;
 const bookIVAmount = (cells) => {
   const d = (cells[cells.length - 2] ?? '').replace(/[$,\s]/g, '');
   const c = (cells[cells.length - 1] ?? '').replace(/[$,\s]/g, '');
@@ -484,9 +539,32 @@ const bookIVAmount = (cells) => {
   // twenty-three cents. Read as nothing at all, it took the Artex subtotal of
   // 2.13 with it, which then no longer summed its own two lines and was
   // counted a second time as a charge.
-  if (!/^\d+$/.test(d)) return d === '' && cents ? Number(c) / 100 : null;
-  return Number(d) + (cents ? Number(c) : 0) / 100;
+  if (d === '') return cents ? Number(c) / 100 : null;
+  const written = IV_DOLLARS.exec(d);
+  if (!written) return null;
+  const fraction = written[2] ?? '';
+  // The fraction stated twice. It does not happen anywhere in the volume as
+  // transcribed, and if it ever does the two statements have to be reconciled
+  // by someone looking at the leaf, not by preferring one of them here.
+  if (fraction !== '')
+    return c === '' ? Number(written[1]) + Number(fraction.padEnd(2, '0')) / 100 : null;
+  return Number(written[1]) + (cents ? Number(c) : 0) / 100;
 };
+
+/**
+ * Whether the money columns of a row carry any writing at all.
+ *
+ * The test that turns a refusal into a report. A row `bookIVAmount` declines
+ * while this is true is a figure standing on the leaf that no total in this
+ * file contains, and the whole of this script's method is that such a thing is
+ * said out loud. Nine rows are in that state as the volume stands: two in
+ * pounds sterling on leaf 80, a ditto standing for the sum above it on leaf
+ * 49, and six expense lines on leaves 132 and 138 that the writer sets with a
+ * minus sign in front of them, which is a sign this reader does not yet know
+ * how to spend.
+ */
+const ivMoneyWritten = (cells) =>
+  [cells[cells.length - 2] ?? '', cells[cells.length - 1] ?? ''].some((c) => /\S/.test(c));
 // Anchored at the head of the cell, and that is not fussiness: « bill » loose
 // in the line matched « Wild Bill in Deadwood Gulch » and took a fifteen-dollar
 // drawing out of the 1915 total by calling it an invoice.
@@ -590,14 +668,16 @@ const ivStruck = (raw) => {
  * 25 of the 3rd, and leaf 23's 80 is two McCann half-pages across a leaf-turn
  * with a third entry above them.
  */
-const sumsTheRunAbove = (rows, i, target) => {
+const sumsTheRunAbove = (rows, i, target, least = 1) => {
   let acc = 0;
+  let lines = 0;
   for (let j = i - 1; j >= 0; j--) {
     const p = rows[j];
     if (p.kind !== 'item') break;
     if (p.amount === null) continue;
     acc += p.amount;
-    if (Math.abs(acc - target) < 0.005) return true;
+    lines++;
+    if (lines >= least && Math.abs(acc - target) < 0.005) return true;
   }
   return false;
 };
@@ -629,6 +709,8 @@ let ivBlankDescription = 0;
 let ivStruckRows = 0;
 // Receipts recognised by repetition alone, because the row carries no word.
 let ivWordless = 0;
+// Rows whose money columns carry writing the reader would not read as dollars.
+let ivUnreadMoney = 0;
 {
   const ivFiles = files.filter((f) => activityOf(f.ledger) === 'illustration');
   const rows = [];
@@ -672,6 +754,29 @@ let ivWordless = 0;
       if (amount !== null && ivStruck(row.cells)) {
         ivStruckRows++;
         continue;
+      }
+      // A figure the reader turned down. Said out loud, because the money
+      // columns of this volume are the whole of what it records and a cell
+      // with writing in it that reaches no total is the one thing here that
+      // must never pass in silence: `^\d+$` on the dollars cell refused a
+      // hundred and forty-four of them for years, and nothing on the page or
+      // in the output showed it.
+      const unread = amount === null && ivMoneyWritten(cells) && !ivStruck(row.cells);
+      if (unread) {
+        ivUnreadMoney++;
+        unparsed.push({
+          reason:
+            'a Book IV row whose money columns carry writing that is not a figure in dollars — ' +
+            'a sum in pounds sterling, a ditto standing for the sum above, or an expense the ' +
+            'leaf writes with a minus sign in front of it',
+          ledger: row.ledger,
+          batch: row.batch,
+          leaf: row.leaf,
+          ref: row.ref,
+          section: row.section,
+          work: null,
+          row: cells,
+        });
       }
       // A year in the date cell. On a line of its own it is only a year; on a
       // row that carries a description as well — leaf 44's « 1920 | 1 rough
@@ -717,6 +822,12 @@ let ivWordless = 0;
         : amount !== null && (own === 'item' || own === 'bare') && openPhrase !== null
           ? openPhrase
           : own;
+      // A row whose money the reader turned down does *not* close the phrase
+      // above it, and leaf 80 is why: « rec'd by cash | £1 » is answered by
+      // « 5 | 00 » on the line below, the pounds converted, and the cheque is
+      // that five dollars. The phrase has to reach it. Closing the phrase on
+      // any writing in the money columns would be the tidier rule and would
+      // lose the only receipt in the volume paid in another currency.
       openPhrase = amount !== null ? null : own === 'item' || own === 'bare' ? openPhrase : own;
       rows.push({
         amount,
@@ -802,12 +913,42 @@ let ivWordless = 0;
     // there would count the leaves whose subtotal disagrees with their own
     // items — leaf 137's 2350 against three watercolours making 2850 — as a
     // second charge on top of the first.
+    //
+    // And a sum ruled off part-way down an entry is answered by nothing at
+    // all: the volume prices its oils, rules off their total, goes on to the
+    // water colours, rules off *that* total, and only then takes its
+    // commission. Leaf 153's 31500.00 and leaf 125's 140 and 1950 are that
+    // shape, and what follows each of them is another item. The arithmetic is
+    // then the only thing that speaks, so it is asked on its own — which is
+    // safe for the same reason it is safe above: leaf 14's 30 follows a 25
+    // that does not make it, and leaf 39's 100 has nothing priced above it
+    // since the last cheque, so neither sums the run it stands under and
+    // neither is taken for a subtotal.
+    //
+    // Two priced lines at least, where the cheque case wants only one. A bare
+    // figure repeating the single item above it is not a subtotal of anything;
+    // it is the red receipt with its words gone, read as such at the foot of
+    // this loop. Asking for one line took leaf 159's 8000.00 of 1 January and
+    // its 100.00 of 11 February for sums of the charges they repeat, and lost
+    // both cheques.
+    //
+    // It reaches what the arithmetic reaches and no further. Leaf 152's
+    // 24500.00 is a subtotal too, of « Excursion into Philosophy » at 14500.00
+    // and « A Woman in the Sun » at 10000.00 — but the first of those has its
+    // price on the line *below* its title, in a row with an empty description,
+    // so the run above the sum is not a run of items and does not add. And
+    // leaf 125's 2700.00 stands over two oils of 1200.00 each, which the
+    // leaf's own note says is three hundred dollars out. Both are still
+    // counted as charges. Neither can be settled by arithmetic that is not
+    // there, and both belong to the older question of what an undescribed
+    // figure is, which this file has fifty rows of and has not closed.
     const answer = rows[i + 1]?.kind;
     if (
       r.kind === 'bare' &&
       (answer === 'bill' ||
         answer === 'deduction' ||
-        (answer === 'receipt' && sumsTheRunAbove(rows, i, r.amount)))
+        (answer === 'receipt' && sumsTheRunAbove(rows, i, r.amount)) ||
+        (r.body === '' && answer === 'item' && sumsTheRunAbove(rows, i, r.amount, 2)))
     ) {
       ivSubtotals.push({ year: r.year, amount: r.amount, ...r.where });
       continue;
@@ -1493,9 +1634,12 @@ const out = {
       'total, then « Rec\'d by check » in red. The items are the charge; a bill is counted only ' +
       'where nothing was itemised since the last settlement, or every commission in the volume ' +
       'would be counted twice. A bare figure with no description is a subtotal where a bill or a ' +
-      '« less » line follows it, or where a cheque follows it and the priced lines directly ' +
-      'above add to it — the leaf rules a line above a subtotal and the transcription does not ' +
-      'record the rule, so the rule is recovered from the arithmetic. From the 1930s the volume ' +
+      '« less » line follows it; where a cheque follows it and the priced lines directly above ' +
+      'add to it; or where another item follows it and two or more priced lines above add to it, ' +
+      'which is the sum ruled off part-way down an entry — the oils totalled, then the water ' +
+      'colours, and only then the commission. The leaf rules a line above every one of these and ' +
+      'the transcription does not record the rule, so the rule is recovered from the arithmetic. ' +
+      'From the 1930s the volume ' +
       'is a gallery account rather than an invoice book, and one sale is written down the leaf ' +
       'four or five times over: the items, their subtotal, « less commission », the net, « less ' +
       'photographs », the net again. Only the items are counted. A « less » line is a ' +
@@ -1573,7 +1717,13 @@ const out = {
   receipts,
   unparsed: {
     count: unparsed.length,
-    sample: unparsed.slice(0, 25),
+    // Taken a reason at a time and not off the top of the pile. The first
+    // twenty-five rows of this list are all one kind — the exhibition dates of
+    // Book II — so a straight slice showed that kind and nothing else, and the
+    // nine Book IV money cells this file learned to refuse would have been
+    // counted here and seen by nobody. A sample that cannot show a new reason
+    // is a report only in name.
+    sample: byReason(unparsed, 25),
   },
 };
 
@@ -1587,7 +1737,8 @@ process.stdout.write(
     `          gross ${tGross.toFixed(2)}, commission ${(tGross - tNet).toFixed(2)}, net ${tNet.toFixed(2)}\n` +
     `          arithmetic checkable on ${checked.length}, ${disagree.length} disagree\n` +
     `          ${works.length} work(s) named, ${duplicates.length} cross-volume duplicate(s) collapsed\n` +
-    `          ${unparsed.length} sale-bearing row(s) with no year, reported not dropped\n` +
+    `          ${unparsed.length} row(s) the reader could not settle, reported not dropped ` +
+    `(${ivUnreadMoney} of them a Book IV money cell that is not a figure in dollars)\n` +
     `          ${dealersRanked.length} dealer(s) and ${buyersRanked.length} named buyer(s) ranked; ` +
     `${namedNobody} row(s) name nobody tagged, ${ambiguous} ambiguous by surname\n` +
     activities
