@@ -31,9 +31,10 @@ import tailwindcss from '@tailwindcss/vite';
  * at any point.
  *
  * If that ever changes — if the Whitney restricts `Origin` to its own site —
- * the fix is a relay of the kind the parent project already has, and
- * `docs/relay.md` says what it would have to do. Until then, building one
- * would be adding a hop between a reader and a museum for no reason.
+ * the fix is a relay of the kind the parent project already has, and the four
+ * measurements it would have to defeat are recorded in `src/lib/batches.ts`
+ * beside `sheetUrl`. Until then, building one would be adding a hop between a
+ * reader and a museum for no reason.
  */
 /**
  * Where this build is rooted, as an **absolute** path, always.

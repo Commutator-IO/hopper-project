@@ -258,6 +258,45 @@
            of them again.</p>
       </div>
 
+      <div>
+        <head>What this rests on</head>
+
+        <listBibl>
+          <bibl><author>TEI Consortium</author>. <title level="m">TEI P5:
+             Guidelines for Electronic Text Encoding and Interchange</title>,
+             version 4.12.0, 28 July 2026.
+             <ref target="https://www.tei-c.org/Vault/P5/4.12.0/">
+             www.tei-c.org/Vault/P5/4.12.0/</ref>. The version this corpus is
+             validated against, by the Vault URL rather than the moving
+             one.</bibl>
+          <bibl><author>Rahtz, Sebastian</author> and
+             <author>Burnard, Lou</author>. <title level="a">Reviewing the TEI
+             ODD System</title>. In <title level="m">DocEng '13: Proceedings of
+             the 2013 ACM Symposium on Document Engineering</title>,
+             pp. 193–196. New York: ACM, 2013.
+             <ref target="https://doi.org/10.1145/2494266.2494321">
+             doi:10.1145/2494266.2494321</ref>. The account of the mechanism
+             this file uses, by the two people who built it.</bibl>
+          <bibl><author>Wilkinson, Mark D.</author>, et al. <title level="a">The
+             FAIR Guiding Principles for scientific data management and
+             stewardship</title>. <title level="j">Scientific Data</title> 3,
+             160018 (2016).
+             <ref target="https://doi.org/10.1038/sdata.2016.18">
+             doi:10.1038/sdata.2016.18</ref>. Assessed against, and departed
+             from in two places on purpose — see
+             <ref target="../docs/fair.md">docs/fair.md</ref>.</bibl>
+        </listBibl>
+
+        <p>One reference was carried for a while and is not here, because it
+           does not exist: a book by Sebastian Rahtz called <title level="m">
+           Digital Humanities: Tools and Methods</title>. Searching his
+           bibliography turns up no such title. What he actually built is the
+           thing this customisation stands on — the TEI stylesheets, OxGarage,
+           and the ODD processing chain — and the paper above is where he and
+           Burnard describe it. <emph>A plausible citation is worse than
+           none</emph>, and this project would rather say what it checked.</p>
+      </div>
+
     </body>
   </text>
 </TEI>

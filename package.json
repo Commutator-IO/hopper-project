@@ -15,6 +15,7 @@
     "manifest": "node scripts/manifest.mjs",
     "tei": "node scripts/tei.mjs",
     "tei:validate": "node scripts/tei-validate.mjs",
+    "citation": "node scripts/citation.mjs",
     "pdf": "node scripts/pdf.mjs",
     "sitemap": "node scripts/sitemap.mjs",
     "tiles": "node scripts/tiles.mjs",

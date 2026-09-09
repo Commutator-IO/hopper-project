@@ -1,32 +1,48 @@
 SCOPE OF THIS DEDICATION
 ========================
 
-Read this before relying on the CC0 text below. The dedication does not cover
-everything in this repository, because not everything in it is ours to give.
+Read this before relying on the CC0 text below. Three kinds of thing are in
+this repository and they have three different statuses. RIGHTS.md sets all
+three out in full; this is the operative text for the first two of them.
 
-COVERED — the maintainers' own work, dedicated to the public domain:
+1. THE SOFTWARE -- covered, dedicated to the public domain:
 
-    scripts/            the build, render and analysis tooling
-    src/                the site, and the derived content under src/content/
+    scripts/            the build, render, export and analysis tooling
+    src/                the site, other than src/content/
+    tei/                the TEI customisation this corpus declares
+    .github/, *.md, the configs, and everything else not named below
+
+2. THE GENERATED DATA AND METADATA -- covered, dedicated to the public domain,
+   and stated separately because the reasons differ from those above:
+
+    src/content/        works.json, accounts.json, formats.json, and the rest
+    public/transcripts/ the TEI, HTML and PDF derived from the .tex
     harvest/            the Whitney's listing as retrieved
-    *.md, config, and everything else not named below
+    CITATION.cff, codemeta.json, .zenodo.json
 
-NOT COVERED — transcripts/, which reproduces the text of the Edward and
-Josephine Hopper artist's ledgers, Whitney Museum of American Art 96.208 to
-96.213. That text is
+   These are compilations of facts -- prices, dates, dimensions, buyers,
+   accession numbers -- and facts carry no copyright. What a compilation can
+   attract is a database right of its own, and in the European Union it does.
+   CC0 waives that expressly, and this paragraph is here so that nobody has to
+   work out whether it was meant to.
+
+3. THE TRANSCRIBED TEXT -- NOT COVERED. transcripts/ reproduces the text of the
+   Edward and Josephine Hopper artist's ledgers, Whitney Museum of American
+   Art, 96.208 to 96.213. That text is
 
     (c) Heirs of Josephine N. Hopper, licensed by Artists Rights Society
     (ARS), New York
 
-It is not ours to place in the public domain, and no permission to reproduce
-it has been sought or granted. See transcripts/NOTICE.
+   It is not ours to place in the public domain, and no permission to reproduce
+   it has been sought or granted. See transcripts/NOTICE.
 
-The .tex files are mixed rather than wholly one thing or the other. The
-editorial apparatus in them is the maintainers' own and is CC0 with the rest:
-every \note{}, every \marginal{} gloss, the \keywords{} lines, the hand
-attributions, and the LaTeX that carries them. What is not ours is what
-Josephine and Edward Hopper wrote -- the bodies of \hand{}, \work{} and the
-quoted matter inside the ruled tables.
+The .tex files are mixed rather than wholly one thing or the other, so the
+carve-out is by content and not by path. The editorial apparatus in them is the
+maintainers' own and is CC0 with the rest: every \note{}, every \marginal{}
+gloss, the \keywords{} lines, the hand attributions, every \uncertain{}, and
+the LaTeX that carries them. What is not ours is what Josephine and Edward
+Hopper wrote -- the bodies of \hand{} and \work{} and the quoted matter inside
+the ruled tables. The same division follows the text into the TEI.
 
 The CC0 1.0 Universal text follows, unmodified.
 

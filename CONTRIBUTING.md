@@ -103,8 +103,11 @@ Josephine Hopper's, © her heirs and licensed by Artists Rights Society (ARS),
 New York; the Whitney holds the object. They are not yours to place in the
 public domain and they are not ours to accept on those terms, which is why
 `LICENSE` carves them out and `transcripts/NOTICE` says which parts of a `.tex`
-are whose. Contribute a transcription on the same footing as the rest: as an
-unauthorised working document that says so on its own face.
+are whose. [`RIGHTS.md`](RIGHTS.md) is the map of all three statuses — the
+software, the generated data, and the text — and is the shortest way to see
+which one your contribution falls under. Contribute a transcription on the same
+footing as the rest: as an unauthorised working document that says so on its
+own face.
 
 Nothing here asks you to warrant that you hold rights in the ledger text. It
 asks you not to claim you do.

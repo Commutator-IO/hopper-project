@@ -55,6 +55,16 @@ jobs:
           fi
           npm run tei:validate
 
+      # The citation metadata is generated from the corpus census and rebuilt
+      # here for the same reason `src/content/catalogue.ts` is: a CITATION.cff
+      # that still says 499 sheets after the next batch lands is a number
+      # somebody will quote. It is deterministic — the release date is the
+      # latest `Pass:` line in the transcriptions, not the clock — so this
+      # comparison means something.
+      - run: npm run manifest
+      - run: npm run citation
+      - run: git diff --exit-code CITATION.cff codemeta.json .zenodo.json
+
       # Tectonic, pinned, for the transcript PDFs. A static musl binary from
       # the project's own releases rather than a piped install script or the
       # whole of TeX Live: 20 MB against 500, and a version somebody chose.

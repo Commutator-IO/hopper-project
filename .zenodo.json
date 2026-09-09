@@ -1,0 +1,41 @@
+{
+  "title": "The Edward and Josephine Hopper artist’s ledgers: a reading and transcription",
+  "description": "<p>A machine transcription of the six artist's ledgers kept by Edward and Josephine Hopper, Whitney Museum of American Art 96.208 to 96.213, published beside the museum's own photograph of each sheet so that any reading can be checked against the hand it came from. 499 of 504 digitised sheets are transcribed, in 44 batches across 6 volumes, as of 2026-09-09. Each transcription records the model and date of the pass that produced it, marks what was illegible rather than conjecturing it, and attributes each passage to a hand. No transcription here is an edition, and the text transcribed is not the maintainers' to license: see RIGHTS.md.</p><p>Read the corpus at <a href=\"https://hopper.commutator.io\">https://hopper.commutator.io</a>. The source of record is the LaTeX under <code>transcripts/</code>; every other form in this deposit is derived from it and rebuilt.</p><p><strong>Rights.</strong> The software and the generated data are CC0. The transcribed text is not: © Heirs of Josephine N. Hopper, licensed by Artists Rights Society (ARS), New York, and no permission to reproduce it has been sought or granted. See RIGHTS.md in the deposit.</p>",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-zero",
+  "publication_date": "2026-09-09",
+  "version": "2026.09.09",
+  "creators": [
+    {
+      "name": "Hua, Michel",
+      "affiliation": "Commutator"
+    }
+  ],
+  "keywords": [
+    "Edward Hopper",
+    "Josephine Nivison Hopper",
+    "artists’ ledgers",
+    "art market",
+    "provenance",
+    "manuscript transcription",
+    "palaeography",
+    "TEI",
+    "digital humanities",
+    "Whitney Museum of American Art"
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isDerivedFrom",
+      "identifier": "https://whitney.org/collection/works/11014",
+      "resource_type": "other"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://hopper.commutator.io",
+      "resource_type": "dataset"
+    }
+  ],
+  "notes": "Transcribed by Opus 5; every file records the model and the date of the pass that produced it. 499 of 504 sheets read as of 2026-09-09. No transcription here is an edition."
+}
