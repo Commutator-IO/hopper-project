@@ -212,7 +212,7 @@ that, in what order, and what would survive what.
 | [`docs/data-model.md`](docs/data-model.md) | What a ledger, a sheet, a leaf, a batch, a work, a row and a keyword are, and how they relate. |
 | [`docs/preservation.md`](docs/preservation.md) | What survives what, the deposit, and what is deliberately not preserved. |
 | [`docs/fair.md`](docs/fair.md) | The FAIR assessment, and the two principles this corpus deliberately fails. |
-| [`tei/hopper.odd`](tei/hopper.odd) | The TEI customisation: fifty-five elements, declared and enforced in CI. |
+| [`tei/hopper.odd`](tei/hopper.odd) | The TEI customisation: fifty-five elements, declared and enforced in CI. Served at [`/tei/hopper.odd`](https://hopper.commutator.io/tei/hopper.odd), which is the URL every exported file names. |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | What a contributor can and cannot license to us. |
 
 ## The timeline

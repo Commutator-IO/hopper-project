@@ -15,3 +15,6 @@ archives/
 # Derived from transcripts/*.tex, and rebuilt: the .tex is the source of record.
 public/transcripts/
 public/records/
+# Copied from tei/hopper.odd by `npm run tei`, so the customisation is served
+# at /tei/hopper.odd beside the files it describes.
+public/tei/

@@ -43,7 +43,7 @@
  * read the sheets, the date, the demonstration-edition status, the accession
  * number — as structured statements, so provenance stays a fact about the file.
  */
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { keywordTerms, parseKeyword, FACET_LABEL } from './lib/ledger.mjs';
@@ -569,6 +569,10 @@ ${Object.entries(FACET_LABEL)
   .join('\n')}
         </taxonomy>
       </classDecl>
+      <p>This file uses a declared subset of TEI P5 — fifty-five elements, and a
+         closed list of values for every @type in it. The customisation is
+         published as an ODD at https://hopper.commutator.io/tei/hopper.odd and
+         is enforced against this export on every build.</p>
       <editorialDecl>
         <p>Illegible passages are marked with <gap/> and are never conjectured.
            Doubtful readings are <unclear/>. Prices, dates and names are given as written
@@ -620,4 +624,11 @@ for (const d of readdirSync(dir, { withFileTypes: true })) {
     }
   }
 }
-process.stdout.write(`tei: ${n} file(s)\n`);
+// The customisation, served beside the files it describes. An ODD that lives
+// only in a git repository is published in the sense that the source is; a
+// consumer holding one of these XML files and wanting to know what subset it
+// belongs to needs a URL, and `@source` in the schemaSpec is not it.
+mkdirSync(resolve(root, 'public/tei'), { recursive: true });
+copyFileSync(resolve(root, 'tei/hopper.odd'), resolve(root, 'public/tei/hopper.odd'));
+
+process.stdout.write(`tei: ${n} file(s), and the ODD at /tei/hopper.odd\n`);
