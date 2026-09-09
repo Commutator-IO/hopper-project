@@ -2759,3 +2759,100 @@ writes « Dec 4th » in pencil in the left margin against a row four lines below
 Nothing on the leaf says which entry the payment belongs to. **Transcribe both
 and interpret neither** — the struck word as `\struck{Dec}`, the pencil as a
 `\marginal{}` naming the row it stands against.
+
+## Book IV's arithmetic gets better, and it settles the doubtful figures
+
+*(Book IV batch 3, sheets 25–36, leaves 24–35, read 9 September 2026, Opus 5.)*
+
+Batch 1 found the sums reconciling and called it a check rather than a licence.
+Batch 3 is where that check does the most work, because the leaves stop
+receipting each entry as it falls and start collecting two or three bills into
+one cheque:
+
+- **A subtotal can be written small under the second of two bills.** Leaf 29
+  puts « 70 » in small black figures below and right of its own 35; the other
+  35 is on leaf 28, four lines and a leaf-turn away, and the 70 is what the red
+  receipt of 7 February answers. Same trick, unwritten, on leaves 31–32 (70 on
+  25 May) and leaves 32–33 (70 on 27 June).
+- **`forward` in red marks a bill held over.** Leaf 33, on the line below the
+  bill of 6 June, in the description column with no figure beside it. Only
+  occurrence in three batches.
+- **An overpayment can settle an earlier bill silently.** Leaf 34 bills 15 on
+  25 June and receipts 20 on 20 July; the extra 5 is the bill of 22 June, and
+  nothing on the leaf says so. Take it into account before declaring leaf 35's
+  receipt of 40 irreconcilable — with it, 40 is exactly what remains.
+
+**The 5 and the 6 are the pair to be careful of here, not the 2 and the 7.**
+This hand writes 5 as a loop with a stroke rising to the *right* from its top
+and 6 as a loop with a stroke rising from its *left*. Leaf 26 bills a Messenger
+drawing and receipts it, and both figures read as 16 at page size and are 15 at
+600%. Check the direction of the stroke before letting an apparent discrepancy
+into a note.
+
+## Book IV's clients turn over a second time
+
+*(batch 3)* Batch 2 recorded the swap from the Associated Sunday Magazines to
+Webb, Adventure and Wells Fargo. Batch 3 is the war-work turn:
+
+- **Morse Dry Dock \& Repair Co.** — a two-colour cover for the house organ,
+  the *Dry Dock Dial*, almost every month from January 1918 at 35 apiece. The
+  issue's month is written **above the line** at the end of the description
+  (« Dry Dock Dial cover Jan. »), and names the issue, not the date of work.
+  The firm is « Morse Dry Dock Co » as often as « Morse Dry Dock \& Repair Co ».
+- **`D. D.`** — the same Dry Dock, abbreviated, from leaf 29 onwards.
+- **`W. S. S.`** — War Savings Stamps, on the Wells Fargo covers of leaves 30
+  and 32.
+- **Redfield-Kendrick-Odell** — the agency that buys the war-charity work of
+  leaves 34 and 35 at 5 and 10 a piece. Hyphenated at its first two appearances
+  and written open at the last four. The capital of « Kendrick » is the same
+  letterform as the K of « Kerr canning » on the same leaf, which is what
+  settles it against « Hendrick ».
+- **U. S. Shipping Board** — one poster, « Smash the Hun », receipted at **300**
+  with no date. Ten times the largest figure anywhere else in the volume, and
+  the only government client in three batches. A figure that looks impossible
+  against the 5s and 10s around it is right.
+
+## More spellings and marks, all as written
+
+*(batch 3)*
+
+- **`Fransico`** *(leaf 27)* — « In San Fransico », no c after the n.
+- **`Pason`** *(leaf 25)* — « The Lurking Pason », no r.
+- **`Caraddo`** *(leaf 25)* — two clear d's.
+- **`Sociète Generale`** *(leaves 29, 30)* — the accent on the second e both
+  times, opened with a quotation mark and never closed both times.
+- **`Gingling College`** *(leaf 35, twice)* — legible at 550% on the second
+  occurrence; do not regularise.
+- **`drwg`** — the leaf's own abbreviation for drawing, on leaves 30 and 33,
+  with a stop and without. **`hlf tone`** likewise for half tone.
+- **`cov. Ex. Mess.`** *(leaf 33)* — « cov. » written above « Ex. »; the
+  Express Messenger's cover.
+- **A quotation mark opened and never closed, or closed and never opened, is
+  the volume's habit and not an error.** Leaf 24 gives « Round the Mountain' »
+  closed only; leaf 26 gives « `Round the Mountain » opened only, two leaves
+  later, for the same serial.
+- **Two small × marks** *(leaf 25)*, in the left margin against two of the
+  fourteen Adventure titles. Sense not established — the same class of mark as
+  Book I's pencil ticks.
+- **A tall parenthesis spanning two lines** *(leaf 31)*, bracketing « The
+  Survivors & » and « logotype » together, one at each side. Each line still
+  carries its own 15.
+
+## What a rubbed-out figure looks like, and what it is not
+
+*(batch 3)* Three erasures in the batch, and they are worth telling apart:
+
+- **Leaf 28**, the price on the « Your Boy and Mine » line: written in ink and
+  rubbed out, two figures' worth of ghost, no reading at any magnification.
+  `\ill{}`, and the note says rubbed out.
+- **Leaf 26**, the last line: two words in ink, rubbed out, one tall capital
+  and one of four strokes surviving. The next leaf opens « Every Week », which
+  is exactly the temptation `\ill{}` exists to refuse.
+- **Leaf 34**, below the bill of 1 July: a scatter of broken red flecks with no
+  continuous stroke. **Not writing** — say so, because it reads as an erasure
+  at page size and a future pass will otherwise spend the magnification twice.
+
+**A cross-stroke can turn a 1 into a dollar sign** *(leaf 27)*. The first
+figure of the Every Week entry has a heavy stroke through its 1 and reads as
+« \$5 »; the entry below it is a plain 15 and the receipt of 30 00 fixes both
+at 15. There is no dollar sign anywhere in Book IV's money column.
