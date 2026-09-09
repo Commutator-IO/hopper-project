@@ -3916,11 +3916,219 @@ subtotal is the only arbiter. Leaf 122's « Approaching a City » is the same tr
 - **The words after the surviving ditto** in each of the three rubbed red
   receipts *(leaves 121, 122, 130)*.
 
+## The two digit traps are already here, five years before batch 14 found them
+
+*(Book IV batch 13, sheets 145–156, leaves 144–155, read 9 September 2026,
+Opus 5. Read last of the volume, so it is checked against batches 12 and 14 on
+either side of it.)*
+
+Batch 14 found the linked-loop 0 and the closed-loop 3 on the last four leaves
+and called them late habits. They are not. Three instances stand in these
+twelve leaves and the arithmetic settles every one:
+
+- **Leaf 146** reads **10,800.88** and **3,833.33** letter by letter, and the
+  net **6,666.67** ruled off beneath is legible and is 10,000.00 less 3,333.33.
+- **Leaf 151**'s red cheque reads **10000.40** and is 10000.00; the black net
+  directly above it is unambiguous, and 15000.00 less the 5000.00 commission
+  gives it.
+- **Leaf 153** writes **« less 83 1/3 % »** for « less 33 1/3 % », with the 3
+  below the fraction rule in the plain open form on the same line — the control
+  batch 14 described.
+
+**Read the net before the charge on any Rehn entry of these years.** The net is
+written last, slowest and largest, and it is the figure that decides the two
+above it.
+
+## The same figure in black and in red is the best control on her 3
+
+*(batch 13)* Leaf 149 writes the Allison net twice on consecutive lines,
+**236.67 in black** and **236.67 in red**. The black 3 carries the closed upper
+loop and reads as an 8; the red 3 immediately beneath is the plain open form.
+Same digit, same position, same figure, two inks, one line apart. It is the
+shape of leaf 159's 28.83 against 28.23 and it is four years earlier, so the
+habit is not late either.
+
+## Four sums refuse, and no two refuse alike
+
+*(batch 13)* Worth keeping apart, because the right treatment differs:
+
+- **Leaf 145** — items 7290.00, deductions 2498.25, both exact, and the cheque
+  is **4791.79** where the subtraction gives 4791.75. The pencil carry beneath
+  repeats 4791.79, so the leaf is consistent with itself and not with its own
+  arithmetic. Four cents.
+- **Leaf 147** — seven items make 6010 against a subtotal of **5960**, and
+  commission, net and cheque all follow the subtotal. The fifty is « Cow and
+  Rocks » at 80.00, and « American Landscape » at 30.00 stands on the line
+  immediately below it: at 700\% the two first digits are a closed double loop
+  and an open flat-topped 3, plainly different glyphs. **This is the case where
+  the arithmetic must not win** — leaf 109 in batch 10 and leaf 90 in batch 8
+  again.
+- **Leaf 150** — 5750.00 less 16.07 is 5733.93 and the leaf pays **5633.93**,
+  in black and in red alike. A hundred, in the hundreds.
+- **Leaf 146** — the pencil year total is **6686.40** against the 6687.40 its
+  own two receipts make. A dollar, the slip of leaves 83, 86 and 130.
+
+## The year totals are exact when they are exact, and what they leave out is the finding
+
+*(batch 13)* **1961 = 15637.21** on leaf 150 over three leaves and **1962 =
+39842.56** on leaf 152 over three more, both to the cent — the best run of year
+totals in the volume. 1962's is labelled simply **« Total »**, with no year
+beside it, which is new.
+
+What they omit is worth more than what they add. **1960's total leaves out the
+Art in America award of 1000.00** receipted on leaf 148 on 20 December, and
+**1962's leaves out the 375.00 of fire insurance** receipted on leaf 153 on 22
+December. So the rule leaf 116 wrote down in pencil — « not included in income »
+— is being applied silently to a prize in one year and to an insurance payout in
+another. **Check a year total against the receipts that are sales before
+calling it wrong.**
+
+## A commission can be absent rather than misnamed
+
+*(batch 13)* Batches 10 and 11 found « less commission » naming the net. Leaf
+154 does something else: « Road and Trees » is charged at **15,000.00 twice**,
+on 6 July and again on 27 December 1963, and receipted at **7,500.00** on
+account and **2,500.00** as the balance. The two receipts make 10,000.00, two
+thirds of the charge, and **no commission line stands in either entry**. The
+third came off and was never written.
+
+Leaf 148 has the same silence from the other end: the Whitney's « Second Story
+Sunlight » is receipted 5000.00 in part payment and 3333.34 as the balance on
+leaf 151, which make 8333.34 — two thirds of 12500.00 — and neither the charge
+nor the commission appears anywhere in the batch.
+
+## The book starts citing dates as numerals, and pointing at earlier years
+
+*(batch 13)* Leaf 152 deducts « payment on **acount 1/24/1962** » from a sale of
+June 1962 — **the first date in Book IV written as numerals** — pointing back at
+leaf 150's entry of 24 January. Leaf 153 deducts « **Jan 22, 62** Payment on
+Account Hackett » from a sale of January 1963, so a 1962 date stands inside the
+1963 block. Both are leaf 128's « refer to statement of Dec 29, 1951 » in a
+smaller form.
+
+## Pencil marks that select entries rather than count them
+
+*(batch 13)* Leaf 151 carries **pencil ovals drawn round two pairs of figures**
+— the black charge and the red receipt of the February 7 entry, and the same
+pair of the February 12 entry — with **a pencil cross in the left margin beside
+each of those two entries and beside no other**. The pencil is harder and finer
+than the leaf sums. Four entries stand on the leaf and two are marked. Nothing
+says why. Record and claim nothing, as with the crosses of leaves 128 and 129.
+
+A smaller mark of two or three strokes, in the black of the entries, stands in
+the left margin outside the date rule at the head of leaves 146, 150, 152 and
+154. It is not letters.
+
+## A slip can be under the writing rather than over it
+
+*(batch 13)* Leaf 154 has a slip of white paper about an inch and a half wide
+stuck over the foot of the date column, and **the last receipt's date is written
+on the slip, not on the leaf** — the red ink of that line has run down it in a
+long drip, so the slip was in place when the line was written. Batch 12's slip
+on leaf 137 was the same shape. **Look at which side of the paper the ink is on
+before deciding whether a slip covers an entry or carries one.**
+
+## The commission block can be in pencil
+
+*(batch 13)* Leaf 145 writes its whole deduction block — commission, photos,
+frames and their total — **in pencil** where the entry above it is black. Leaf
+153 goes further and writes an entire entry in pencil, receipt line included,
+where red would be expected: the fire insurance on the 1957 Buick. The colour
+rule holds everywhere else in the batch.
+
+## What the leaves cost, and who is buying
+
+*(batch 13)* Rehn still takes nearly everything and the figures are the largest
+in Book IV: 8490.40, 4791.79, 6666.67, 3959.84, 10333.34, 5633.93, 10000.00,
+**17366.66** (two oils and three water colours, 23 June 1962) and 14650.33.
+Prints go to **H. V. Allison \& Co** at 25, 30 and 50 apiece with a flat third
+off, and the **Philadelphia Museum of Art** takes **105 etchings for a flat
+3500.00** with no commission line, as it took five for a flat 75 on leaf 113.
+
+Named in the entries themselves rather than the margin: **Charles Stein**,
+**Chalmers**, **Mrs Sterling Morton** buying for the **Santa Barbara Museum**,
+the **Atlantic Art Club**, **Nathanson**, **Alfredo Valente**, **Mr and Mrs
+Albert Hackett**, **Lawrence Fleischman**, the **Butler Institute of American
+Art**, and **John Clancy** buying twice for himself on leaf 154.
+
+New clients: the **Nordness Gallery** (per Rehn), **Harry N. Abrams**, the
+**F. E. Compton Co**, the **St. Botolph's Club** award, the **Art in America**
+award, the **Kohnstamm Prize** of the Chicago Art Institute, and the **British
+\& Foreign Ins Co**.
+
+## The Artex royalty is the one calculation the book shows its working for
+
+*(batch 13)* Four times, and it comes out to the cent every time: folio prints
+at **25c each less a tenth**, Artex Juniors at **\$1.00 per M**. Leaf 146 writes
+the rate (« 10 % »); leaves 154 and 155 do not. Leaf 154 writes the count of
+Juniors as « **3.600.** », with a stop where a thousands comma would stand.
+**Use it to settle a doubtful digit in a royalty line** — it is the only place
+in Book IV where price, count, rate and result all stand together.
+
+## More spellings and marks, all as written
+
+*(batch 13)*
+
+- **« Water colors »** *(leaves 144, 147, 152)* against **« watercolors »**
+  *(leaf 145)*, one word.
+- **« Light House at Two Lights »** *(leaf 144)*, **« Lighthouse at Two Lights »**
+  *(leaves 146, 148, 154, 155)*, **« "Lighthouse" print »** *(leaf 151)* — and
+  « Light House a 2 lights » on leaf 159 in batch 14. Four spellings of one
+  plate across twelve leaves.
+- **« acount »** *(leaf 152)* with one c, in « Less payment on acount ».
+- **« Night in the Parks »** *(leaf 149)* with the terminal s, as on leaf 125.
+- **« Modern Mus. »** *(leaf 147)* against **« Mus. Modern Art »** *(leaf 149)*.
+- **« Chicago Art. Institute »** *(leaf 155)* with the stop, against « Art
+  Institute of Chicago » in batch 10.
+- **« House in Charlestown »** *(leaf 153)* against « House at Charlestown » and
+  « Houses at Charleston » on leaf 156.
+- **« Less commission 33 1/3 »** *(leaf 149)* capitalised and with no per-cent
+  sign, against « less 33 1/3 % » on the leaves either side.
+- **« Rec'd » in black and « recd » in red** on one leaf *(leaf 144)*, the habit
+  batch 14 found on leaves 158 and 159.
+- **A single upright stroke after a title** *(leaf 144)*, « Lime Rock Quarry 1 ».
+  Nothing on the leaf says what it counts.
+- **A small figure 4 above the L of « Lighthouse »** *(leaf 148)*, no caret.
+- **Medium labels written in the date column** *(leaf 150)*: « W.C. » and
+  « Drawings » stand where a date would, against the group each covers.
+- **Prices written without cents and with a stop** *(leaf 149)*: « 30. »,
+  « 25. », « 50. » down eleven lines, the last two without it.
+- **A red arrow** *(leaf 150)* drawn after « Rec'd by check », pointing at the
+  figure. The only one in the batch.
+- **A receipt a day before its charge** *(leaf 154)*, and **a receipt five days
+  after a charge, dated in full rather than by a ditto** *(leaf 155)*.
+- **An offset « 1962 »** *(leaf 150)* mirror-image over the money column, ink
+  from the facing leaf.
+
+## Readings that would not settle
+
+*(batch 13)*
+
+- **`Tram`** *(leaf 149, « Tram and Bathers »)* — after the T stand an r, an a,
+  then two humps and a terminal downstroke, with **no i-dot written anywhere
+  above the word**. « Train » fits the strokes about as well; the leaf supports
+  neither better. Offered as « Tram » on the hump count alone.
+- **`Green`** *(leaf 144, « Sandy Dune with Green Top »)* — retraced two or
+  three times into a heavier mass than the words either side. The G, the double
+  e and the n survive.
+- **`Clb`** *(leaf 150, « Cape Elizabeth (Atlantic Art Clb) »)* — a capital, an
+  l, and a terminal that is a b or an s, with the closing bracket running into
+  the figure.
+- **`Fellin`** *(leaf 150, « Gloucester Boat at Wharf (Fellin) »)* — the usual
+  r/n/s terminal, and the second letter is an e or an i.
+- **`rec'd`** *(leaf 154, the last receipt)* — under the blot the red pen made
+  when it ran down the slip. A descender and a terminal d survive.
+- **The rubbed pencil figure at the foot of leaf 155** — six digits' worth of
+  traces under a ruled pencil line, where the year totals of leaves 146, 150 and
+  152 stand. Nothing at 800\%. The leaf's four receipts make 1319.98.
+- **The rubbed pencil mark left of leaf 145's 7.73** — two digits reading as 14
+  survive and nothing else.
+
 ## The closed-loop 0 is a whole digit, not just a cents habit
 
 *(Book IV batch 14, sheets 157–161, leaves 156–159 and the back cover, read
-9 September 2026, Opus 5. Batch 13 was not read, so nothing here is checked
-against leaves 144 to 155.)*
+9 September 2026, Opus 5. Written before batch 13; the section above it, read
+afterwards, confirms these two glyph habits on leaves 144 to 155.)*
 
 Batch 10 found the linked double o in the **cents** column. Here the same
 closed loop turns up as a **single digit inside a dollar figure**, and twice it
