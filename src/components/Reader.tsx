@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Cite } from './Cite.tsx';
 import { Downloads } from './Downloads.tsx';
 import { FacsimilePane } from './FacsimilePane.tsx';
 import { TranscriptPane } from './TranscriptPane.tsx';
@@ -256,6 +257,8 @@ export function Reader({
         </div>
 
         <Downloads manifest={manifest} ledger={ledger.id} batch={batch} />
+
+        <Cite manifest={manifest} ledger={ledger} batch={batch} sheet={currentSheet} />
 
         <a
           href={issueUrl({

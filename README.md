@@ -58,7 +58,9 @@ it meant every URL named something the museum could not be asked about.
 | [`/method/`](https://hopper.commutator.io/method/) | How the reading is done, what it costs, what it does not claim |
 
 Every volume page links to the Whitney's own catalogue record for the object,
-so a citation from here is a citation the museum can answer.
+so a citation from here is a citation the museum can answer — see
+[How to cite](#how-to-cite) for the sentence to copy, and for which of the
+three overlapping numbers to quote.
 
 **Book IV is the one to open if you only open one.** It is a pocket book, 7½ by
 4¾ inches, with no sketches and no anecdote: one column of dates, one of payers
@@ -67,6 +69,126 @@ first decade is all illustration work — *Adventure*, *Everybody's*, the *Wells
 Fargo Messenger*, Morse Dry Dock — which is the part of Hopper's working life
 the paintings books do not record at all. It is also the only volume the
 Whitney dated leaf by leaf, which is what lets the timeline point into it.
+
+## How to cite
+
+Three numbering systems overlap in these books and only one of them is an
+address. The Hoppers wrote leaf numbers on the paper. The Whitney's
+digitisation counts *photographs* — the covers, the versos, the flyleaves and
+the loose insertions included — so it agrees with the leaf numbers nowhere. And
+ResourceSpace holds a resource ref, which is in no order at all and is the only
+thing in the archive that names exactly one image.
+
+"Leaf 58" names six different things across six volumes. Inside Book I alone it
+names three photographs — refs 18297, 17062 and 17411. Ref 18297 names one.
+
+So **a citation from here prints both**: the leaf, because it is what the book
+itself says and the only number a reader of the photograph can see, and the
+ref, because it is the one the museum can be asked about.
+
+### The form
+
+> Josephine Nivison Hopper and Edward Hopper, Artist's ledger — Book I, leaf 58 (ref 18297).
+> Whitney Museum of American Art, 96.208. Hopper Ledgers, batch-06, first
+> machine pass by Opus 5, 6 September 2026,
+> <https://hopper.commutator.io/book-i/#book-i/6/18297> (accessed 10 September
+> 2026).
+
+Two clauses, and the division is the whole design. **The object** — authors,
+volume, leaf, ref, holding institution, accession — is the Whitney's, and it
+stays true whatever happens to this site. **The reading** — this site, the
+batch, the pass — is a claim of ours, it is dated, and it may be wrong.
+
+Nothing in it is invented for the occasion. Every field is one the TEI export
+already emits, so a citation copied off the screen and a TEI file deposited in
+a repository cannot disagree:
+
+| In the citation | In the TEI |
+|---|---|
+| Josephine Nivison Hopper and Edward Hopper | `<author>` × 2, in that order |
+| *Artist's ledger — Book I* | `<title>` |
+| batch-06 | the file, `batch-06.tex`; `<title>` spells it "batch 6" |
+| leaf 58 | `<pb n="58"/>` |
+| unnumbered leaf | `<pb n="unnumbered"/>` |
+| ref 18297 | `<pb facs="…view.php?ref=18297" xml:id="sheet-18297"/>` |
+| Whitney Museum of American Art, 96.208 | `<msIdentifier>` |
+| first machine pass by Opus 5, 6 September 2026 | `<respStmt>` |
+
+### Three things get cited, and they are not interchangeable
+
+**A sheet** — one photograph — is the default, and the only unit with a unique
+address:
+
+> … Book I, leaf 58 (ref 18297). … <https://hopper.commutator.io/book-i/#book-i/6/18297>
+
+**A leaf** is the page of the book as the Hoppers numbered it, and is what
+somebody holding the volume can find. A leaf may be several photographs, so a
+leaf citation prints every ref, in binding order, rather than quietly picking
+one; its link is the `leaf-` form, which is resolved on arrival and keeps
+working if the batching ever changes:
+
+> … Book I, leaf 58 (refs 18297, 17062, 17411). … <https://hopper.commutator.io/book-i/#book-i/leaf-58>
+
+**A batch** — twelve sheets — is what to cite when the thing being cited is
+*the transcription*: a reading, a note, an editorial decision. It names the
+sheets and the leaves it covers, because a batch number is ours and means
+nothing to anybody holding the book:
+
+> … Book I, batch-06 (sheets 61–72, leaves 56–63). … <https://hopper.commutator.io/book-i/#book-i/6>
+
+### The two cases with no leaf number and no reading
+
+**A sheet nobody numbered** — a cover, a flyleaf, an index leaf, a loose
+insertion, about one sheet in nine — is cited as an **unnumbered leaf**, with
+its ref:
+
+> Josephine Nivison Hopper and Edward Hopper, Artist's ledger — Book I, unnumbered leaf (ref
+> 16761). Whitney Museum of American Art, 96.208. …
+
+That is the same answer the TEI gives as `n="unnumbered"`, and it is an answer
+rather than an omission: nobody wrote a number on that leaf, and inventing one
+for the sake of a tidy citation would be inventing a fact about the object.
+Such a sheet has no leaf citation at all, because there is nothing to name it
+by — and the **Cite** panel simply does not offer one.
+
+**A sheet nobody has transcribed** keeps its object clause whole and loses the
+reading clause:
+
+> … Whitney Museum of American Art, 96.208. Not transcribed; sheet listed in
+> Hopper Ledgers, …
+
+The photograph is there and the site will show it; there is simply no reading
+of ours to cite. A batch *declared* to hold nothing to transcribe says
+something different, because it is a decision and not a gap: *No transcription:
+this batch is declared to hold nothing to transcribe.*
+
+### It cites a reading, which may change
+
+The pass is named in the sentence — which model read the sheets, and on what
+day — because a citation of this site cites *a reading*, not a fact. Everything
+here is first-pass machine work and corrections are the point of publishing it;
+a reading that could not be dated could not be superseded, and "the site says
+X" would stay true forever and be worth nothing. Where a person has gone sheet
+by sheet against the photograph the sentence says so too, and only a person may
+declare that.
+
+Until [issue #7](https://github.com/Commutator-IO/hopper-project/issues/7)
+gives each transcription a per-file revision history, the pass and the access
+date are what pin a citation to the words that were actually read. **The
+address does not move when a reading does**: a corrected sheet keeps its ref,
+its leaf and its URL.
+
+### Where to get one
+
+Open a sheet in the reading view and press **Cite**, beside the download row.
+It offers all three, each ready to copy, built from what the page already knows
+— and it offers only the ones that exist, so an unnumbered sheet gets no leaf
+citation and a batch outside the book gets nothing at all.
+
+The URL is always `https://hopper.commutator.io`, never the address the page
+happens to be loaded from. The build also answers at `github.io` whenever no
+custom domain is configured, and a citation copied from that preview would name
+an address that exists only until the DNS record does.
 
 ## The timeline
 
@@ -283,6 +405,7 @@ well-formed with `xmllint` when it is installed.
 | `scripts/mirror.mjs` | Downloads sheets for transcription — not for reading |
 | `scripts/tiles.mjs` | Cuts a sheet into overlapping crops, so a figure can be looked at |
 | `scripts/render.mjs` | LaTeX subset → the reading view, and the checks that make it strict |
+| `src/lib/cite.ts` | The citation, in one place — the form, and why it prints the leaf and the ref together |
 | `scripts/tei.mjs` | The transcription → TEI P5 |
 | `scripts/works.mjs` | Queries the Met and the Art Institute for works the ledgers name |
 

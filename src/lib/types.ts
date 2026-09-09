@@ -200,6 +200,27 @@ export interface TranscriptEntry {
   pdf: boolean;
   /** The TEI P5 export, derived from the `.tex` by `npm run tei`. */
   xml: boolean;
+  /**
+   * Which model read the sheets, and when — off the `.tex` header's own
+   * `% Pass:` line, the same line the TEI `<respStmt>` carries.
+   *
+   * It is in the manifest so that a citation can name it. A citation of this
+   * site cites a reading rather than a fact, and a reading that cannot be
+   * dated cannot be superseded: « the site says X » stays true forever and is
+   * therefore worth nothing. `null` where the header does not parse, which the
+   * citation reports rather than papers over.
+   */
+  pass?: Pass | null;
+}
+
+/** The model that read a batch's sheets, and the day it did. */
+export interface Pass {
+  /** The model's public name — « Opus 5 ». */
+  model: string;
+  /** Its exact identifier — « claude-opus-5 ». */
+  id: string;
+  /** ISO `YYYY-MM-DD`. */
+  date: string;
 }
 
 /**

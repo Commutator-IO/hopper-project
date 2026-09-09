@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
 import { Page } from './components/Frame.tsx';
 import { LEDGERS, BY_LEDGER, SHEETS } from './content/catalogue.ts';
 import { BATCH_SIZE, batchCount, batchState, useManifest } from './lib/batches.ts';
 import { STATES, tally, type State } from './lib/progress.ts';
 import { STATE_COLOURS } from './components/Reader.tsx';
 import { url } from './lib/base.ts';
+import { REPO } from './lib/report.ts';
 
 /**
  * How the reading is done, what it costs, and what it does not claim.
@@ -16,6 +18,21 @@ import { url } from './lib/base.ts';
  */
 export function MethodPage() {
   const manifest = useManifest();
+
+  // `/method/#cite` has to land on the citation section, and by itself it does
+  // not: the browser looks for the element while the page is still an empty
+  // root div, finds nothing, and stays at the top. The reader's **Cite** panel
+  // links here, so a reader who follows it to find out what they just copied
+  // would arrive at the progress table instead.
+  //
+  // `instant` rather than the page's own smooth scroll: a reader who followed a
+  // link wants to be there, not to watch seventeen hundred pixels go past.
+  useEffect(() => {
+    if (!location.hash) return;
+    document
+      .getElementById(location.hash.slice(1))
+      ?.scrollIntoView({ behavior: 'instant', block: 'start' });
+  }, []);
 
   const batches = LEDGERS.flatMap((l) => {
     const all = BY_LEDGER.get(l.id) ?? [];
@@ -119,6 +136,128 @@ export function MethodPage() {
             ))}
           </tbody>
         </table>
+      </section>
+
+      {/* How to cite, with an id the reader's Cite panel links into. A reader
+          who has just copied a sentence and wants to know what is in it lands
+          here, so the section has to answer that question first and argue
+          second. */}
+      <section id="cite" className="scroll-mt-16 border-b border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">How to cite</h2>
+        <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-700">
+          Three numbering systems overlap in these books and only one of them is an address. The
+          Hoppers wrote leaf numbers on the paper. The Whitney&rsquo;s digitisation counts{' '}
+          <em>photographs</em> — the covers, the versos, the flyleaves and the loose insertions
+          included — so it agrees with the leaf numbers nowhere. ResourceSpace holds a resource
+          ref, which is in no order at all and is the only thing in the archive naming exactly one
+          image. <strong>“Leaf 58” names six different things across six volumes — and inside Book I
+          alone it names three photographs, refs 18297, 17062 and 17411. Ref 18297 names
+          one.</strong> So a citation from here prints both: the leaf, because it is what the book
+          itself says and the only number a reader of the photograph can see, and the ref, because
+          it is the one the museum can be asked about.
+        </p>
+
+        <figure className="mt-5 max-w-3xl rounded-card border border-ink-200 bg-white px-4 py-3">
+          <p className="text-[13.5px] leading-relaxed text-ink-800">
+            Josephine Nivison Hopper and Edward Hopper, Artist’s ledger — Book I, leaf 58 (ref
+            18297). Whitney
+            Museum of American Art, 96.208. Hopper Ledgers, batch-06, first machine pass by Opus 5,
+            6 September 2026, https://hopper.commutator.io/book-i/#book-i/6/18297 (accessed 10
+            September 2026).
+          </p>
+          <figcaption className="mt-2 border-t border-ink-200 pt-2 text-[12.5px] leading-relaxed text-ink-500">
+            Two clauses. <strong>The object</strong> — authors, volume, leaf, ref, institution,
+            accession — is the Whitney’s, and stays true whatever happens to this site.{' '}
+            <strong>The reading</strong> — this site, the batch, the pass — is a claim of ours, it
+            is dated, and it may be wrong.
+          </figcaption>
+        </figure>
+
+        <p className="prose-note mt-4 max-w-3xl">
+          Press <strong>Cite</strong> in any reading view, beside the download row, and the
+          sentence is built from what the page already knows. It offers three, because three
+          different things get cited and they are not interchangeable.
+        </p>
+
+        <table className="mt-4 w-full max-w-3xl text-[13.5px]">
+          <thead>
+            <tr className="border-b border-ink-300 text-left text-[11.5px] uppercase tracking-wider text-ink-400">
+              <th className="py-1.5">Unit</th>
+              <th className="py-1.5 pl-6">When</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              [
+                'a sheet — one photograph, ref 18297',
+                'By default. It is the only unit with a unique address.',
+              ],
+              [
+                'a leaf — leaf 58 (refs 18297, 17062, 17411)',
+                'When somebody holding the volume should be able to find it. A leaf may be several photographs — the Whitney shot hinged leaves and pasted-in clippings more than once — so every ref is printed, in binding order, rather than one being quietly picked. Its link is the leaf- form, resolved on arrival, which keeps working if the batching ever changes.',
+              ],
+              [
+                'a batch — batch-06 (sheets 61–72, leaves 56–63)',
+                'When what is cited is the transcription itself: a reading, a note, an editorial decision. It names the sheets and the leaves it covers, because a batch number is ours and means nothing to anybody holding the book.',
+              ],
+            ].map(([unit, when]) => (
+              <tr key={unit} className="border-b border-ink-200 align-top">
+                <td className="w-64 py-2 pr-4 text-ink-800">{unit}</td>
+                <td className="py-2 pl-6 text-ink-600">{when}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div className="mt-5 max-w-3xl space-y-4 text-[14.5px] leading-relaxed text-ink-700">
+          <Diff title="A sheet nobody numbered is cited as an unnumbered leaf">
+            A cover, a flyleaf, an index leaf, a loose insertion — about one sheet in nine — carries
+            no number, and is cited by its ref as an <em>unnumbered leaf</em>. That is the same
+            answer the TEI gives as <code className="font-mono text-[13px]">n=&quot;unnumbered&quot;</code>,
+            and it is an answer rather than an omission: nobody wrote a number on that leaf, and
+            inventing one for the sake of a tidy citation would be inventing a fact about the
+            object. Such a sheet has no leaf citation at all, because there is nothing to name it
+            by.
+          </Diff>
+          <Diff title="A sheet nobody has transcribed keeps its object and loses its reading">
+            The object clause stands whole and the reading clause is replaced by{' '}
+            <em>Not transcribed; sheet listed in Hopper Ledgers</em>. The photograph is there and
+            this site will show it; there is simply no reading of ours to cite, and saying so is an
+            answer rather than a gap. A batch <em>declared</em> to hold nothing to transcribe says
+            something else, because that is a decision rather than a gap: <em>No transcription:
+            this batch is declared to hold nothing to transcribe.</em>
+          </Diff>
+          <Diff title="Nothing in the sentence is invented — the TEI already emits all of it">
+            The authors are the file’s <code className="font-mono text-[13px]">&lt;author&gt;</code>{' '}
+            elements, in the order it lists them — Josephine first, because the writing in these
+            books is overwhelmingly hers — the leaf is its{' '}
+            <code className="font-mono text-[13px]">&lt;pb n=&quot;58&quot;/&gt;</code>, the ref is
+            the same tag’s <code className="font-mono text-[13px]">facs</code> and{' '}
+            <code className="font-mono text-[13px]">xml:id</code>, the accession is its{' '}
+            <code className="font-mono text-[13px]">&lt;msIdentifier&gt;</code> and the pass is its{' '}
+            <code className="font-mono text-[13px]">&lt;respStmt&gt;</code>. One source, so a
+            citation copied from the screen and a TEI file deposited in a repository cannot
+            disagree.
+          </Diff>
+          <Diff title="It cites a reading, which may change">
+            The pass is named in the sentence — which model read the sheets, and on what day —
+            because a citation of this site cites a <em>reading</em>, not a fact. A reading that
+            could not be dated could not be superseded, and “the site says X” would stay true
+            forever and be worth nothing. Where a person has gone sheet by sheet against the
+            photograph the sentence says that too, and only a person may declare it. Until{' '}
+            <a
+              href={`${REPO}/issues/7`}
+              target="_blank"
+              rel="noreferrer"
+              className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+            >
+              each transcription carries a revision history
+            </a>
+            , the pass and the access date are what pin a citation to the words that were actually
+            read. The address does not move when a reading does: a corrected sheet keeps its ref,
+            its leaf and its URL.
+          </Diff>
+        </div>
       </section>
 
       {/* Four decisions that are not obvious from the code, kept because a

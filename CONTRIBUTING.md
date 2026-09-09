@@ -15,6 +15,18 @@ A misread price, a buyer's name got wrong, a date in the wrong year: those are
 the reports worth most, because they are the ones that would otherwise be
 cited.
 
+## Cite a sheet
+
+The same view carries a **Cite** button beside the download row, and it exists
+for the same reason the report button prefills the ref: a reader left to
+compose a reference will write "leaf 58", which is ambiguous across six
+volumes. A citation from here prints the leaf *and* the ref, names the
+accession, and names the pass that produced the reading — because what is being
+cited is a reading, not a fact. The form, and how an unnumbered or an
+untranscribed sheet is cited, are in
+[README §How to cite](README.md#how-to-cite); it is built in `src/lib/cite.ts`,
+which is the only place it may be built.
+
 ## Transcribe a batch
 
 ```bash

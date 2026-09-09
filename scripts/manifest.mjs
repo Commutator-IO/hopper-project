@@ -33,6 +33,24 @@ const read = (p, fallback) => {
 
 const declared = read(resolve(root, 'transcripts/status.json'), {});
 
+/**
+ * The pass that produced a transcription, off the file's own header.
+ *
+ * Every `.tex` opens with `% Pass: Opus 5 (claude-opus-5), 2026-09-09 - …`,
+ * and `scripts/tei.mjs` already lifts that line into the TEI `<respStmt>`. It
+ * is lifted here too, for the same reason and from the same place: a citation
+ * of this site cites a *reading*, and a reading has a model and a date. One
+ * source, so the deposited file and the copied citation cannot disagree.
+ *
+ * A file whose header does not match returns `null` rather than a guess, and
+ * the citation then says the date is unrecorded — which is true, and better
+ * than a plausible date nobody wrote.
+ */
+function passOf(tex) {
+  const m = /^%\s*Pass:\s*(.+?)\s*\((\S+?)\)\s*,\s*(\d{4}-\d{2}-\d{2})\b/m.exec(tex);
+  return m ? { model: m[1], id: m[2], date: m[3] } : null;
+}
+
 const transcripts = {};
 const tags = {};
 const readCount = {};
@@ -50,6 +68,7 @@ if (existsSync(out)) {
       const key = `${ledger}#${Number(m[1])}`;
       const e = (transcripts[key] ??= { html: false, tex: false, pdf: false, xml: false });
       e[m[2]] = true;
+      if (m[2] === 'tex') e.pass = passOf(readFileSync(resolve(out, ledger, f), 'utf8'));
     }
   }
 }
