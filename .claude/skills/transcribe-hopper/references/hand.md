@@ -3118,3 +3118,121 @@ description lines also end in a terminal flourish that looks identical.
   makes tempting.
 - **A pencil interlineation above « Cover »** *(leaf 51)* — two words, the
   second reading as « banks ». The first will not resolve at 900\%.
+
+## Book IV starts adding up, and the leaf sums are the best check in the volume
+
+*(Book IV batch 6, sheets 61–72, leaves 60–71, read 9 September 2026, Opus 5.)*
+
+From leaf 66 each leaf carries a **sum at its foot, in pencil, under a pencil
+rule** drawn across the money columns: 12.50, 410.10, 256.50, 279, 317, 665.
+Nothing in five earlier batches does this. Five of the six are the leaf's own
+receipts added to the cent, which makes them a stronger figure-check than the
+discounts — they will settle a doubtful digit anywhere on the leaf.
+
+Two things about them:
+
+- **The running begins with the year line, not with the leaf.** Leaf 66's sum is
+  12.50 where its five receipts come to 205.50, because only the Randolph cheque
+  of 14 January falls below the underlined « 1924 ». Do not call it wrong.
+- **Leaf 71's does not come out**, and it is the batch's one unreconciled shape:
+  500 + 100 + 100 + 65 = 765 against a pencil 665. Both figures are 6s, not 7s,
+  at 600%. Neither charge on the leaf is struck. It stands.
+
+## The red charge date is a habit now, not an exception
+
+*(batch 6)* Batch 4 found one on leaf 46 and called it an exception. Leaves 65
+and 67 both have it, in the same shape every time: **the charge line's date in
+red, its figure in black, and no word at all in the description column** — not
+even « bill ». Expect it rather than doubting it.
+
+## An entry can carry no money at all
+
+*(batch 6)* Leaf 68's Hotel Management dummy of 22 May — client, « 1 dummy cover
+3 colors », « How to Travel », all in pencil — has no bill, no figure in any
+money cell and no receipt. The leaf's sum at the foot is exact without it. The
+cover it describes is billed a fortnight later on leaf 69, through the Ahrens
+Publishing Co., which is the only thing that connects them.
+
+## What the prints cost, and why the same plate has three prices
+
+*(batch 6)* Twenty-two prints across fifteen sales, and the list is consistent
+once the buyer is taken into account:
+
+- **18 is the list price** — East Side Interior, Night Shadows, Night in the
+  Park, Aux Fortifications, The Cat Boat. **Evening Wind is 22.**
+- **A society or a prize purchase pays a flat 25** with no discount written:
+  Chicago's Logan in February 1923, Los Angeles's Bryan in April, both taking one
+  East Side Interior. The Whitney Studio Galleries pays a flat 10 for Night
+  Shadows on leaf 69 and Keppel a flat 12 for Aux Fortifications on leaf 70;
+  nothing explains either.
+- **The trade takes 10, 15, 20, 30 or 50\% off**, and every one comes out
+  exactly: 90 less a half is 45, 36 less a fifth is 28.80, 18 less a tenth is
+  16.20, 102 less 15\% is 86.70, 62 less 30\% is 43.40.
+
+**One sale refuses.** Leaf 60 writes « 2 prints at 36.50 less 30\% » — plainly,
+at 400% — and enters 25.20 twice. Thirty-six fifty less three tenths is 25.55;
+36 less 30\% is exactly 25.20, and the same buyer's two prints on leaf 62 are
+12.60 each, which is 18 less 30\%. The leaf is wrong and stands.
+
+## The 0-that-reads-as-8 trap, again
+
+*(batch 6)* Leaf 66's Randolph line reads « less 58\% » at the Whitney's `pre`
+size and « less 50\% » at 500%, where the closing stroke of the nought turns out
+to be what looked like an 8's upper bowl. Batch 4 found the same thing on leaf
+37. **Tile before reading any percentage**, not just any figure.
+
+## A rubbed-out figure can be one written a line too high
+
+*(batch 6)* Leaf 70 carries a rubbed 65 in the dollars column on the « Hotel
+Management » line, one line above the bill of the 8th, its terminal flourish
+surviving beside it. It is not a cancelled charge and not a revision: the figure
+was written on the wrong line and rewritten below. Look at the line under a
+rubbed figure before writing a note about a struck bill.
+
+## Book IV's clients turn a fifth time, and one of them is a pupil
+
+*(batch 6)* The Morse Dry Dock Dial and the Greeley Square Tavern Topics covers
+that carried batches 4 and 5 are gone — Tavern Topics appears once, on leaf 60,
+and never again. What replaces them:
+
+- **Printers Ink** — eight « Pop Ball » drawings at 50 across five leaves, each
+  titled for its article (« On Making a Hit with the Dealer », « Soft Boiled
+  Salesmanship », « Buyers Objections », « Salesmans' Phantoms »).
+- **Geo. L. Dyer Co.** — line drawings for Remington Arms and Remington knives,
+  against order numbers written into the description or interlineated above the
+  client (« order 2172 », leaf 65).
+- **The Ahrens Publishing Co.** — the *Hotel Management* cover, monthly at 65
+  from June 1924 to the end of the batch.
+- **Charles Scribner's Sons** — a steady 175 for three drawings.
+- **Mrs L. Whitins** — 105 for seven weeks of instruction and 60 for four more,
+  at 15 a week. The only teaching income in six batches.
+
+Then the two that are not illustration at all: **the Brooklyn Museum** takes The
+Mansarde Roof for 100 on leaf 66 — one line between an advertising job and a
+Printers Ink drawing, no « bill », no count — and **Frank K. M. Rehn** takes five
+water colours at 33 1/3 \% on leaf 71, numbered 1 to 5 down the description
+column at 100 apiece, receipted 500 the same day. It is the largest figure in
+Book IV.
+
+## Readings that would not settle
+
+*(batch 6)*
+
+- **`French`** *(leaf 60)* — « 1 French Caricature », the Whitney Studio Club's.
+  « Fre » is clear; the letter after it descends below the line and loops back
+  into « ch », which in this hand is a y or a g far more often than an n.
+- **The mark before `House Tops`** *(leaf 60)* — a small e-shaped glyph and a
+  heavy diagonal stroke running up through the H. Nothing at 600%. The two
+  titles and their 60 and 15 are otherwise clear and make the 75 receipted.
+- **`Whitins`** *(leaves 67, 68)* — the instruction client, written twice. After
+  « W » a tall stroke carrying **no bar**, then a minim run with one dot, then n
+  and a terminal s. « Whilins » and « Wilkins » fit about as well. The
+  « Whitney » of leaf 60 is four leaves back in the same hand and gives the h and
+  the barred t to compare against — use it.
+- **`feeling knife`** *(leaf 65)* — « Remington, trapper … ». « fee » is clear
+  and the next letter is a tall loop carrying d or l equally; the word after is a
+  tall loop, two humps, a tall stroke and a terminal e, which reads « knife » and
+  would also carry « lamp ». The two Dyer entries above it are both for Remington
+  knives, which is a reason to suspect the reading rather than to trust it.
+- **The day of two charge lines** *(leaves 64, 67)* — rubbed out on 64, faint red
+  on 67, both on lines that carry no word beside them.
