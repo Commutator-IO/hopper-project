@@ -2973,3 +2973,148 @@ which Book IV had not written since batch 1.
 - **The word after `bill`** *(leaf 47)* — a mass of strokes ending in two
   vertical marks, on the line dated 15 March. Unread. The receipt day below is
   blotted through too, though the 25 survives it.
+
+## Book IV starts selling prints, and print sales are shaped differently
+
+*(batch 5)* From leaf 49 the volume carries etching income beside the
+illustration jobs, six sales in twelve leaves: the **Print Makers of Los
+Angeles** (The Monhegan Boat, 18 less 10\%), **Carl Smalley** (Somewhere in
+France, 12 less 33 1/2\%), the **Nat. Academy of Design** (The Bull Fight, 22
+less 10\%), the **Weyhe Book Shop** (3 prints at 45 less 40\%), the **Whitney
+Studio Club** (Night in the Park, a flat 20) and **Brown Robertson Co** (4
+prints @ 69 less 33 1/3\%).
+
+They do not look like the rest of the book, and the differences are all
+diagnostic:
+
+- **A print sale has no « bill » line.** Client, « 1 print », the title, the
+  terms, then the cheque. Nothing is ever rendered.
+- **It usually has no date** in the date column until the receipt line.
+- **The figure after « at » or « @ » is the group total, not the unit price.**
+  « 3 prints at 45 less 40\% » is 27, and « 4 prints @ 69 less 33 1/3\% » is 46;
+  three prints at 45 apiece would be 81 net and neither 81 nor 135 is written.
+  Book IV has no commission column, so the dealer's percentage is written into
+  the description and the money column carries the net.
+- **The discounts come out exactly**, which makes them the best figure-check in
+  the volume: 45 less two fifths is 27, 69 less a third is 46, 22 less a tenth
+  is 19.80, 18 less a tenth is 16.20.
+
+## The cents column is used at last, and only by prints
+
+*(batch 5)* Batch 4 recorded the cents cell as unused throughout. It is used
+three times here — 16.20 on leaf 49 and 19.80 twice on leaf 54 — and every one
+of them is a print sale whose discount did not land on a round dollar. The
+black line may write the point across the rule (« 19.80 ») where the red receipt
+puts 19 and 80 in their own cells; both go in as dollars and cents.
+
+## A year line can be wrong, and it must still stand
+
+*(batch 5)* Leaf 53 writes **« 1920 »** on a line of its own. The entries under
+it run 1 January to 4 March and follow a December entry receipted on 7 February,
+so they are 1921. The last digit is retraced in a second bluish ink — the same
+ink that has gone over the « 30 » eight lines below, and the same narrow slanted
+nought in both places — which is what makes it legible at all.
+
+**Transcribe it as written and say so in a `\note{}`.** `scripts/accounts.mjs`
+carries the year forward from the last line the volume states, so the whole of
+leaves 53 to 55 lands in 1920 and Book IV shows **no 1921 at all**. That is the
+book's error faithfully propagated, not a reader bug, and whether the accounts
+should override an obviously wrong year line is a decision nobody has taken.
+
+## Everybodys loses its apostrophe
+
+*(batch 5)* Batches 1 and 4 found « Everybodys' » with the mark after the s,
+plainly enough to see under magnification. On leaves 55 to 59 there is **none** —
+five leaves, nine occurrences, no apostrophe anywhere — and twice the word is
+split, « Every bodys » (leaves 56 and 58). Check it per batch rather than
+carrying the earlier finding forward. « Fleischmans' » on leaf 51 does take the
+post-s mark, so the habit has not disappeared, only left this one word.
+
+## A per-cent sign written where « days » was meant
+
+*(batch 5)* Leaf 50 writes « bill 10\% dis 15 \% ». The second glyph is the same
+loop-stroke-loop as the first, not an abbreviation for days, and the Greeley
+Square lines on leaves 49, 52 and 53 all write « days » in full in that
+position. It is a slip and it stands.
+
+## Two bill-and-cheque disagreements, both left alone
+
+*(batch 5)* The batch reconciles better than any before it, and the two shapes
+that refuse are worth knowing because both tempt a correction:
+
+- **Leaf 50**, the Morse cover of 3 September: a pencil bill of **60** answered
+  by a red cheque of **50**, where every other Dial cover on the leaf is 50 both
+  ways. The entry is wholly in pencil; only the receipt is in ink.
+- **Leaf 53**, the Greeley Square March cover: a faint pencil bill read as
+  **65** against a clear red **60**. The bill's first digit matches the 6 of the
+  receipt below it, which is the whole of the case for 65; the terms had lapsed
+  by February, so no discount explains the gap.
+
+## Book IV's clients turn a fourth time, into the agencies
+
+*(batch 5)* The **Morse Dry Dock Dial** cover runs the whole batch at 45 in
+April 1920 and 50 from May, and it now names the **subject** rather than the
+month at the end of the description — painter, man at lathe, welder, boiler
+maker, carpenter, Cup Defender, Statue of Liberty. The **Greeley Square Hotel
+Co** buys Tavern Topics covers on « 10\% discount 15 days », terms taken exactly
+once (60 billed 21 June 1920, 54 received 3 July) and let lapse every other time.
+
+New and agency: **J. Walter Thompson** (Fleischmans', against order numbers),
+**Calkins \& Holden**, **Barton Durstine \& Osborn**, **Redfield, Kendrick
+Odell**, **The Blackman Co.** New and periodical: **Photoplay Pub. Co**, whose
+« Vamps of All Times » runs eight drawings at 35 across leaves 53 and 54 (Lilith,
+Aphrodite, Artemis, Frisca, Isis, Potiphars Wife, Kali, Juno — the series head is
+« All Times » on leaf 53 and « All Time » on leaf 54); **Everybodys**, whose
+« Sacrifice » runs five parts at 200, 200, 200, 200 and 100; then Designer
+Publishing, Survey Graphic, Printers Ink, Crowell, Charles Scribner and the
+Mutual Service Corp.
+
+## A struck word inside a live entry
+
+*(batch 5)* Leaf 59 strikes « 1st set » and « 2nd set » with a single horizontal
+stroke each, leaving « full pages » standing beside them, and both entries are
+billed and paid in full. A strike here cancels **words and not the charge** —
+unlike leaf 47's Association Men entry in batch 4, where the X crosses the money
+column too. Test which by looking for a receipt.
+
+## A long horizontal is a t-bar, again
+
+*(batch 5)* Leaf 51's « U.S. Army pole vaulter » carries a stroke running the
+width of the remaining line, which reads as a cancellation at page size and is
+the t-bar of « vaulter » at 700\%. The entry was billed 65 and paid 65. Batch 7
+of Book I found the same thing; it keeps recurring because this hand's
+description lines also end in a terminal flourish that looks identical.
+
+## Readings that would not settle
+
+*(batch 5)*
+
+- **The month of the Calkins \& Holden entry** *(leaf 51)* — under a wet ink
+  blot that has spread into the paper. The day, 20, is clear beside it. Nothing
+  else on the leaf names the month.
+- **`Town Tell-Tales`** *(leaf 49)* — the Norma Talmedge cover design.
+  « Tell-Tales » is clear and quoted at both ends; the first word is T-o- then
+  an undifferentiated pair of minims.
+- **`Gold Bronze Pierrot`** *(leaf 50)* — the initial is a capital with a loop
+  that will carry G or T about equally; « Told » is as defensible letter by
+  letter.
+- **`Nov.` before the 5** *(leaf 52)* — retraced two or three times over an
+  earlier word and read as a mass of strokes.
+- **`Frisca`** *(leaf 53)* — a Photoplay vamp, among Lilith, Aphrodite and
+  Artemis. No ascender where a k would stand, so it is not « Fricka » on the
+  leaf however well that would fit the series.
+- **`Poverty`** *(leaf 57)* — « The ``Game of … », the quote opened and never
+  closed. One clear t-bar in a run of minims; the v is the doubtful letter.
+- **`Vail`** *(leaf 57)* — « 3 cols. Vail \& Globe », for « Our World ». The
+  initial is a V on its two strokes and on nothing else.
+- **`Lamborne`** *(leaf 58)* — a Blackman account. Clear b, terminal e, and a
+  minim run between them.
+- **`Whitlock`** *(leaf 58)* — offered on a dotted i and a crossed t; everything
+  after them is compressed.
+- **The word beside it** *(leaf 58)* — opens « Wel » and ends in a descender
+  that carries « Welch », « Welsh » or « Welp » equally. Unread.
+- **`Hot` in « Hot clothes on Motor »** *(leaf 58)* — the H is reduced to a
+  single vertical and reads as a 1, which the line above (« 1 line drawing »)
+  makes tempting.
+- **A pencil interlineation above « Cover »** *(leaf 51)* — two words, the
+  second reading as « banks ». The first will not resolve at 900\%.
