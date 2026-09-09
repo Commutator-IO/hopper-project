@@ -3392,3 +3392,154 @@ line below carries the figure.
 - **The day of the July Rehn entry** *(leaf 80)* — a blot; the receipt gives 16.
 - **The day of the February receipt** *(leaf 72)* — written over an earlier
   figure and retraced into a mass; 27 is what survives.
+
+## Book IV becomes a gallery ledger, and the discount notation vanishes
+
+*(Book IV batch 8, sheets 85–96, leaves 84–95, read 9 September 2026, Opus 5.)*
+
+Batch 7 found the illustration income stopping at leaf 77. Twelve leaves and
+thirty-two months later it has not come back: from May 1927 to March 1930 there
+is **no illustration entry of any kind**, and the unit is a work and a dealer
+throughout.
+
+**The percentages disappear with it.** Batch 7's form was « 1 etching @ 33 1/3
+\% » with the net in the money column. In this batch there is no @, no « less »
+and no percentage anywhere — only the net. The thirds survive in the figures
+(16.67 a print, 166.67 a water colour, 112.67 for eight) but the rate is no
+longer written, so the discount check that carried batches 5 to 7 is gone. What
+replaces it as the figure-check is the leaf sum, which is now the only
+arithmetic on the leaf.
+
+## The leaf sums are at their best here, and they settle real digits
+
+*(batch 8)* Eleven of twelve come out to the cent — the best run in the volume,
+against nine of twelve in batch 7 — and they earn their keep three times:
+
+- **Leaf 88's 16.65.** The Halpert entry of 5 June 1928 reads 16.65 in black and
+  in red where every sister entry reads 16.67. The sum decides it: 190.32 is
+  right with 16.65 and would be 190.34 with 16.67. Two cents, and the leaf knows.
+- **Leaf 90's cheque loses to its own items.** The Halpert entry of 7 January
+  1929 charges 20 + 16.67 + 16.67 = 53.34 and receipts a red **53.84** whose
+  cents carry an unambiguous double-bowled 8. The foot sum reads 125.34, which is
+  53.34 + 72. **The leaf sum sides with the items against the cheque** — a shape
+  no earlier batch has shown, and both figures stand.
+- **Leaf 89's unreceipted charge counts.** Bette Martin's Night in Park of 9
+  December 1928 is wholly in pencil with no receipt line at all, and the foot sum
+  of 3615.34 includes its 15. A charge with no cheque is money in, to this leaf.
+
+**Leaf 86 is the one that refuses, and it refuses in batch 7's way.** Its sub-sum
+of 16.67 closes 1927 above the « 1928 » line, but the foot sum of 1256.68
+answers to neither year: below the line makes 1241.01 and the whole leaf makes
+1257.68. It is the whole leaf **short by exactly one dollar** — the same slip as
+leaf 83 at the end of batch 7, and again in the dollars and not the cents.
+
+## A leaf sum is not a charge, and `accounts.mjs` still thinks it is
+
+*(batch 8)* The pencil sum at the foot of a leaf is a bare money row that no bill
+and no cheque answers, so rule 2 in `scripts/accounts.mjs` classifies it « an
+itemised charge whose description column is blank ». Leaf sums begin at leaf 66,
+so this starts in batch 6 and grows: **19 such rows in batch 6 (3501.80), 28 in
+batch 7 (10286.55), 18 in batch 8 (24627.60)**, against six genuine ones totalling
+424 in batches 1 to 5. That is essentially the whole of the illustrator side's
+34149.43 « outstanding ». **Do not read the outstanding figure as the book's until
+this is fixed**, and do not suspect a new transcription of causing it — the leaf
+sum is on the paper and belongs in the edition.
+
+Leaf 85 shows the same defect on an *entry* subtotal: 1333.34 and 119.34 are ruled
+off in ink at 1452.68 and answered by a cheque for 1452.68, and the run above is
+not recognised because the first of the two rows carries `\ill{}` rather than a
+description.
+
+## Three year lines, and only two behave
+
+*(batch 8)* Leaves 86 (1928), 90 (1929) and 94 (1930) each carry a year line
+inside the leaf. Leaf 90 sums 291.34 above and 125.34 below; leaf 94 sums 1841.67
+above and 67 below; both pairs exact, exactly as batch 7 said. Leaf 86 does not —
+see above.
+
+## Book IV's first dollar sign
+
+*(batch 8)* Batch 3 recorded that there is no dollar sign anywhere in Book IV's
+money column, and there still is not. But leaf 94's Downtown Gallery line of 7
+January 1930 writes one in the **description** column: « \$20, - 3.00 for cat. »,
+against 17 in the money column — twenty for the print less three for the
+catalogue. The cents of the 3 are two small raised o's over a short rule, this
+hand's way of writing a round sum.
+
+## The buyers multiply, and the same plate falls from 25 to 20
+
+*(batch 8)* Rehn still takes the largest sums — 1452.68, 2248.34, 1783.67,
+3232.34, **3380.17** (two oils, six water colours, a drawing and eight etchings on
+5 June 1929, the largest figure in Book IV) and two oils at 1666.67 apiece — and
+Fred Keppel \& Co. buys prints by the dozen (8, 19, 12, 13, 18, 10, 5, 24, 7).
+Beside them, eight names new to the volume: the **Whitney Studio Club**, which
+becomes plain **Whitney Studio** from January 1929; **Vickery Atkins \& Torrey**
+(spelt correctly here, k and all, where Book I gives « Vicery Atkins \& Torey »);
+**Kennedy \& Co**; **E \& A Milch**; the **Am. Federation of Arts**, buying for
+the London Victoria \& Albert show; **Babcock Galleries**; and the **Downtown
+Gallery**, from December 1929. Then five private buyers named and nothing more:
+Mrs Lee, Mrs S. Tucker, Bette Martin, Mrs Murray, and the unread client of leaf
+84.
+
+Meanwhile **East Side Interior** sells for 25 in May 1927, 16.67 that December,
+20 in January 1929, and a flat 20 to three different galleries in 1930.
+
+**One entry is not a sale at all.** Leaf 93, 2 November 1929: Rehn pays **1000**
+as « Insurance on Capt Ed \uncertain{Staples} from Cleveland Mus. ». The leaf sum
+counts it with the sales. Only occurrence in eight batches.
+
+## An entry can name no work, and a client can name nothing at all
+
+*(batch 8)* Three shapes that look like damage and are not:
+
+- **Leaf 95's Weyhe entry of 15 February 1930** names no work and gives no count.
+  Three ruled lines stand **empty** between the client and the 56.67. Nothing is
+  rubbed and nothing is faint; the lines were left blank.
+- **Leaf 91's Rehn entry of 8 February 1929** is « Oils, water colors, etchings »
+  — plural, no counts, no titles — for 3232.34.
+- **Leaf 95's Babcock entry of 11 March** carries no charge figure at all: the Eve
+  Wind line's money cells are empty and only the red receipt of 20 stands.
+
+## More spellings and marks, all as written
+
+*(batch 8)*
+
+- **Weyhe Books Shop** *(leaf 87)*, with an s on Books, against **Weyhe Book
+  Shop** on leaves 85, 90, 93 and 95.
+- **Cattboat** *(leaves 85, 88)* against **Cat Boat** *(leaf 91)*.
+- **Whitney Studio Club** *(leaves 85, 86, 88)* against **Whitney Studio**
+  *(leaf 91, twice)*.
+- **Frank K. M. Rehn**, **Frank. K. M. Rehn** and **Frank K M. Rehn** all appear
+  again, as in batch 7.
+- **« June » struck at the head of leaf 92**, one heavy horizontal, the « 5 »
+  beside it standing; the entry below repeats « June 5 » in full. Same shape as
+  leaf 72's struck « Dec » in batch 7.
+- **A receipt can predate its charge.** Leaf 89 bills a Rehn oil on 4 December
+  1928 and receipts it « " 3 ». Both days are clear.
+- **Two receipts « by cash »** *(leaves 88, 94)*, against thirty-odd by cheque.
+
+## Readings that would not settle
+
+*(batch 8)*
+
+- **The client of leaf 84, 25 May 1927** — « Geo », then a single glyph standing
+  where an initial would (a loop closed at the top with an ascender curving
+  left), then a surname of two tall loops and « ian ». The glyph is **not** the
+  capital S this hand writes in « Mrs. S. Tucker » on leaf 91, which is a tall
+  slanted loop with a hook, so it is left unread; « Allian » and « Ullian » fit
+  the surname equally.
+- **`Staples`** *(leaf 93)* — S, a tall loop, « a », « p », a second tall loop,
+  « es », with **one long horizontal crossing both tall loops**. The bar serves
+  either, so « Staples » and « Slaptes » are equally defensible letter by letter.
+  Offered on the bar alone, and doubted.
+- **`prints`** *(leaf 91, 11 April)* — the word after « 10 » is written over an
+  earlier word and retraced into a mass. Clear terminal « ts » and an extra loop
+  at its head; offered on the terminal and on the volume's habit.
+- **The count of leaf 95's last Keppel entry** — written over a blot; 7 on the
+  surviving descender, and 140 over seven is the 20 apiece the three gallery
+  sales above it were charged. That is a reason to accept it and not a reading.
+- **The charge of leaf 89's Halpert entry of 12 October** — a clear 3 followed by
+  a solid blot a digit wide. Nothing at 700\%; the receipt below gives 60.
+- **The description of leaf 85's 1333.34** — rubbed out, three or four words'
+  worth of grey traces, nothing at 700\%. The figure beside it is untouched and
+  is the oil and the two water colours together.
