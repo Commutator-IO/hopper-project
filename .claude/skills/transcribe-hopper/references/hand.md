@@ -3740,3 +3740,178 @@ apiece, against the 20 everyone else pays — with no commission line.
 - **The two or three words after « less commission » on leaf 117** — rubbed out;
   grey traces of about that length and nothing at 550\%. The line below opens
   with a ditto and « expenses ».
+
+## A rubbed line on the subtotal's row is now the volume's commonest accident
+
+*(Book IV batch 11, sheets 121–132, leaves 120–131, read 9 September 2026,
+Opus 5.)*
+
+Batch 10 found five instances and called them a shape. Batch 11 has four more —
+leaves 121, 122, 124 and 130 — and the shape does not vary: a line is written
+across the ruled row that already carries the black subtotal, rubbed out, and
+written again on the line below. Three are red receipts (« " 12 rec'd », « " 13
+rec'd », the Artex description with its 7.75), and one is a **pencil year total**
+on leaf 124, the word « total » and six digits' worth of traces, rubbed out four
+lines above the « 1949 total 3661.14 » that replaced it.
+
+**Look at the row above a rubbed line before assuming it is an erased entry.**
+In every case here the leaf gains no transaction: the same words stand complete
+one line down.
+
+## The commission line goes on naming the net, and now it does it twice on one leaf
+
+*(batch 11)* Batch 10 found three. Here: leaf 130's « less expenses and
+commission 3894.32 » against items of 4000.02, receipted 3894.32; and leaf 131's
+« less 33 1/3 \% commission 2666.66 » against 4000 and « less 33 1/3 Commission
+1166.66 » against 3500 — the first receipted as written, the second followed by
+a net of 2323.34 that makes it a genuine deduction. **The same leaf writes the
+line both ways, four inches apart.** Check every one against a third before
+reading it as a deduction.
+
+Where it is the deduction it is a flat third: 900 of 2700, 250 of 750, 2250 of
+6750, 833.33 of 2500, 1596.65 of 4790, 1983.33 of 5950. Leaf 124's 919.99 of
+2760 is a cent short, which is the departure batch 10 recorded twice.
+
+## A leaf can side with its own subtotal against its own items
+
+*(batch 11)* Three times, and each is a different size of gap:
+
+- **Leaf 122** rules off 305.49 over 42.40 and 236.09, which make 278.49. The
+  cheque pays 305.49. Out by twenty-seven, and 263.09 for the second item would
+  close it — but the figure is 236 at 1200\%, and the temptation to transpose it
+  is exactly what this rule guards against.
+- **Leaf 125** rules off 2700.00 over two oils of 1200 each, and **leaf 126
+  carries the 2700 forward** inside « from preceeding page total 4790.00 ». So
+  subtotal *and* carry-forward stand against the items, by 300.
+- **Leaf 123/124** prices twelve of the thirteen things it names: 1500, 360, 500
+  and 300 of etchings make 2660 against a subtotal of 2760, and the missing
+  hundred is the line reading « Drawing » with both money cells empty. An entry
+  item with no figure — batch 6's leaf 68 shape — is worth checking for before
+  writing a note about a subtotal that refuses.
+
+## The year totals span leaves and the year sums do not always add the leaf
+
+*(batch 11)* The pencil at a leaf's foot is a **running total for the year**, not
+a sum of the leaf, and leaf 121 shows the arithmetic in the open: « 1800 + 560
+53 » on one line and « 2360 53 » under it, where 1800 is leaf 120's closing
+cheque. Leaf 124 writes « 1949 total 3661.14 » across the date and description
+columns, exact over three leaves, and is the second total in Book IV labelled
+with its year after leaf 114's.
+
+Two refuse. Leaf 128's 7245.26 is **ten short**, and the ten is the N. Y. Times
+reproduction fee — which leaf 127 had counted twice in its own 4520.00, so the
+book is inconsistent about the same client in successive years. Leaf 130's
+4030.07 is **a dollar over**, in the dollars and not the cents, the slip of leaf
+83 in batch 7 and leaf 86 in batch 8. And leaf 121's foot carries a pencil
+6339.04 that answers to nothing on it or on the leaves either side; its last
+digit stands at the fore-edge.
+
+**1948 and 1952 are never totalled**, as 1944 was not.
+
+## A buyer can be named in brackets in the receipt line
+
+*(batch 11)* New to the volume, on leaf 131 twice: « rec'd by check (Zucker) »
+and « rec'd by check (Clancey) », both in red. Clancey is also named in the
+charge line of his own entry — « John Clancey less 33 1/3 \% » — which is the
+Rehn Gallery's manager writing his way into a ledger that has said « Frank K. M.
+Rehn » and nothing else for twenty years. Book I's leaf 67 spells him the same
+way.
+
+## The pencil cross returns without its words
+
+*(batch 11)* Batch 10 found a pencil × in the money column of leaf 116 beneath
+« not included in income. ». Here the same mark stands beside the red cheques of
+leaves 128 (2666.67) and 129 (3945.77) with **no words anywhere near it**, and
+both cheques are counted in the leaf sums. So the mark does not by itself mean
+exclusion. Record it and claim nothing.
+
+## An entry can point outside the book
+
+*(batch 11)* Leaf 128's first entry of 1952 carries « (Check date Dec 29, 51) »
+bracketed down two lines of the date column and « refer to statement of Dec 29,
+1951 » in the description, against 2706.85 with no items named. It is the first
+entry in Book IV to cite a document that is not in Book IV.
+
+Two more entries name nothing at all: leaf 127's Rehn cheques of 10 May and 21
+December 1951 are both « on account », 3500 and 1000. And leaf 131's last cheque
+is « rec'd by check on account 2000.00 » against a net of 2333.34, with the
+difference carried nowhere.
+
+## The year line can move out of the date column
+
+*(batch 11)* Leaves 128, 129, 130 and 131 write the year **centred in the
+description column**, where every year line in ten earlier batches stands in the
+date column. Leaf 120 does something else again: « 1947 » stands in the date
+column *in place of* the charge's date, and the entry under it has no date of
+its own.
+
+## An offset is not a marginal
+
+*(batch 11)* A faint mirror-image « 1951 » sits over the money columns at the
+head of leaf 126. It is ink transferred from leaf 127's year line, which faces
+it across the opening, and it is not writing on leaf 126. **Read a faint mark at
+the head or foot of a leaf backwards before transcribing it** — the facing leaf
+is the first place to look.
+
+## Her 5 has two forms and one of them is a closed loop
+
+*(batch 11)* Leaf 121's « August in the City » reads 1760 at page size and is
+1750: the third glyph is a closed oval, which is her other 5, and 1250, 1750,
+1275, 50 and 30 make the 4355.00 ruled off. The 5 of 1275 four lines below is
+the flat-topped form. **Both forms occur inside one entry**, so a 5 cannot be
+identified against a neighbour on the same leaf the way batch 10's 8 could — the
+subtotal is the only arbiter. Leaf 122's « Approaching a City » is the same trap:
+2280 at page size, 2250 at 900\%, and 6750 is what the leaf rules off.
+
+## More spellings and marks, all as written
+
+*(batch 11)*
+
+- **`Sattillo Roof Tops`** *(leaf 121)* — two barred t's under one horizontal, at
+  900\%, against **`Saltillo Mansion`** and **`Palms at Saltillo`** on leaf 120,
+  where the first tall stroke is a looped l. Seven months apart.
+- **`preceeding`** *(leaf 126)* — « from preceeding page total ».
+- **`Am. Artists Group, inc`** and **`Am. Artist Group, inc`** *(leaf 122)*,
+  eight lines apart, against **`American Artists Group`** *(leaf 121)*.
+- **`Lombard House`** *(leaf 125)* against **`Lombards House`** *(leaf 130)*.
+- **`Night in the Parks`** *(leaf 125)* with a terminal s, against **`Night in
+  the Park`** on leaves 123, 124 and 126.
+- **`Frank H. M. Rehn`** *(leaf 130)* — the only H in the batch; every other line
+  gives K. M.
+- **`Ryders House`**, **`Cobbs`**, **`Kennedy \& Company.`** with the stop,
+  **`Kennedy \& Co.`**, **`Kennedy Galleries, inc.`** — the print dealer under
+  three names in four years.
+- **`L. House at 2 Lights`** *(leaf 128)* — the lighthouse abbreviated to a
+  capital L and a stop, as « the L. Train » is on leaf 116.
+- **`w,c`**, **`w.C`**, **`w.c`**, **`o`**, **`oil`**, **`E`** — the medium
+  letters of batch 10, and leaf 120 uses three forms of the water colour mark in
+  one entry.
+- **A pencil interlineation with no caret** *(leaf 122)*: « Cape Cod Evening »
+  above « Summer Evening » on the first item of the Rehn entry of 25 June 1948.
+  It names a different picture and corrects nothing the leaf does; batch 8's rule
+  applies — no caret, so a later gloss.
+- **A receipt five days before its charge** *(leaf 126)*: the Whitney's
+  reproduction fee is charged 25 January and receipted « " 20 ».
+- **Two entries out of order** *(leaf 126)*: 20 December stands above 1 August.
+- **A dollar sign in the description** *(leaves 130, 131)*: « = \$17.00 » and
+  « and \$10.00 for cleaning », the second writing its cents as two raised loops
+  over a short rule.
+- **Two small pencil figures at the fore-edge foot** *(leaves 128, 131)*, read as
+  2 and 52, under the leaf sums and answering to nothing on either leaf.
+
+## Readings that would not settle
+
+*(batch 11)*
+
+- **The day of the first April entry** *(leaf 128)* — « Apr » is clear and the
+  day is written into a blot; the red receipt below gives 4.
+- **`expenses`** *(leaf 130)* — « less expenses and commission », retraced two or
+  three times into a mass. Offered on the shape of the whole word and on the
+  phrase the volume uses elsewhere.
+- **`dividend`** and its **`7 75`** *(leaf 130)* — the rubbed first attempt at the
+  Artex line, read against the line that replaced it and doubted on that account.
+- **The rubbed pencil figure** *(leaf 124)* — six digits' worth of traces where a
+  year total would fall, four lines above the one that was written instead.
+  Nothing at 800\%.
+- **The words after the surviving ditto** in each of the three rubbed red
+  receipts *(leaves 121, 122, 130)*.
