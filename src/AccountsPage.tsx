@@ -246,7 +246,7 @@ function Spans({
     <div className="mt-4 space-y-3">
       {live.map((a) => {
         const by = new Map(a.years.map((y) => [y.year, y.accrued + y.notRecorded]));
-        const peak = Math.max(...[...by.values()], 1);
+        const peak = Math.max(...by.values(), 1);
         return (
           <div key={a.key}>
             <div className="flex items-baseline gap-2 text-[11.5px] text-ink-500">

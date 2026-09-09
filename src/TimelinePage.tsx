@@ -7,7 +7,7 @@ import life from './content/life.json';
 import worksData from './content/works.json';
 import workNotes from './content/work-notes.json';
 import { Travels } from './components/Travels.tsx';
-import { batchOfSeq } from './lib/batches.ts';
+import { batchOfSeq, useManifest } from './lib/batches.ts';
 import { url } from './lib/base.ts';
 
 /**
@@ -216,6 +216,77 @@ export function TimelinePage() {
    * contributed nothing at all. `works.mjs` now reads their prose as well, so
    * the two lists agree again and this stays derived rather than declared.
    */
+  /**
+   * The corpus, counted rather than stated.
+   *
+   * The legend below used to call a green leaf « transcribed », which was true
+   * when it was written and is now the wrong axis: every volume has been read,
+   * so « transcribed » no longer separates green from grey. What separates
+   * them is whose date it is. These two figures keep the sentence that says so
+   * from being a claim — the catalogue supplies the sheets, the manifest
+   * supplies how many of them have a transcription, and neither is typed here.
+   */
+  const manifest = useManifest();
+  const census = useMemo(() => {
+    const catalogued = SHEETS.length;
+    const read = manifest?.read
+      ? Object.values(manifest.read).reduce((a, b) => a + b, 0)
+      : null;
+    return {
+      catalogued,
+      read,
+      left: read === null ? null : catalogued - read,
+      bookI: SHEETS.filter((x) => x.ledger === 'book-i').length,
+    };
+  }, [manifest]);
+
+  /**
+   * The years a transcribed leaf writes on itself, keyed `<ledger>/<ref>`.
+   *
+   * Read by the grey chips as well as by the count below them: a sheet the
+   * Whitney dates to one year and the hand dates to another should say so
+   * where somebody is looking at it, and not only in the paragraph above.
+   */
+  const leafYears = useMemo(() => {
+    const m = new Map<string, number[]>();
+    for (const t of TRANSCRIBED)
+      for (const l of t.leaves) {
+        const k = `${l.ledger}/${l.ref}`;
+        m.set(k, [...(m.get(k) ?? []), t.year]);
+      }
+    for (const v of m.values()) v.sort((a, b) => a - b);
+    return m;
+  }, []);
+
+  /**
+   * Where the cataloguer's year and the leaf's own year can be compared.
+   *
+   * Grey used to be the only date Book IV had, and the legend said so. Book IV
+   * is read now, so on the leaves that write a year the two datings sit side by
+   * side and can disagree — which is worth printing, and worth counting here
+   * rather than in a sentence that would go stale the next time a batch lands.
+   *
+   * `read` is the sheets where both exist; `agree` is the sheets where the
+   * leaf names the descriptor's year among its own. The difference between
+   * `dated` and `read` is not a gap in the reading: those leaves carry a month
+   * and a day under a year opened further up the run, so the descriptor is the
+   * only year they have.
+   */
+  const cross = useMemo(() => {
+    let dated = 0;
+    let read = 0;
+    let agree = 0;
+    for (const sheet of SHEETS) {
+      if (sheet.years.length === 0) continue;
+      dated++;
+      const g = leafYears.get(`${sheet.ledger}/${sheet.ref}`);
+      if (!g) continue;
+      read++;
+      if (sheet.years.some((y) => g.includes(y))) agree++;
+    }
+    return { dated, read, agree, disagree: read - agree, only: dated - read };
+  }, [leafYears]);
+
   const greenLedgers = useMemo(() => {
     const ids = new Set(TRANSCRIBED.flatMap((t) => t.leaves.map((l) => l.ledger)));
     const names = LEDGERS.filter((l) => ids.has(l.id)).map((l) => l.short);
@@ -308,26 +379,46 @@ export function TimelinePage() {
           left behind in New York. <strong>The painting season is the gap.</strong>
         </p>
         <p className="prose-note mt-3 max-w-3xl">
-          A year lists two different kinds of leaf, and the difference is worth knowing.{' '}
+          A year lists two kinds of leaf, and what separates them is <strong>whose date it
+          is</strong> — not, any longer, whether anybody has read the sheet. Every volume has now
+          been read
+          {census.read !== null && (
+            <>
+              : {census.read} of the {census.catalogued} digitised sheets carry a transcription,
+              and the {census.left} that do not are back covers and the chipboard folded round
+              Book IV
+            </>
+          )}
+          .{' '}
           <span className="rounded-full border border-relu-200 bg-relu-50 px-1.5 py-px text-relu-700">
             green
           </span>{' '}
-          leaves are <strong>transcribed</strong>: somebody read the sheet, and the year is one
-          Jo Hopper wrote on it — in a ruled date column where the leaf has one, and in the
-          sentence that records the sale where it has not. Three of the six volumes rule no
-          columns at all, so reading only the columns would have shown them as read and
-          dateless, which is a fact about their ruling rather than about their contents. Green
-          leaves appear wherever the reading has been done, which today means {greenLedgers}.{' '}
+          leaves carry a year <strong>written on the leaf</strong> in Jo Hopper’s hand — in a
+          ruled date column where the leaf has one, and in the sentence that records the sale
+          where it has not. Three of the six volumes rule no columns at all, so reading only the
+          columns would have shown them as read and dateless, which is a fact about their ruling
+          rather than about their contents. Green leaves today come from {greenLedgers}.{' '}
           <span className="rounded-full border border-ink-200 px-1.5 py-px text-ink-700">
             grey
           </span>{' '}
-          leaves are dated by the Whitney’s <em>own</em> descriptor, without anyone here reading
-          anything — and that is Book IV and nothing else, because it is a running account and
-          its cataloguer had a date for every leaf. Book I’s descriptors say « Page 56 [multiple
-          works] » and name no year, which is why none of its 117 sheets appears in grey however
-          much of it is transcribed. A volume’s range is never spread over its leaves to make the
-          page look fuller.
+          leaves are dated by the Whitney’s <em>own</em> descriptor — the cataloguer’s year,
+          arrived at without reading the hand — and that is Book IV and nothing else, because it
+          is a running account and its cataloguer had a date for every leaf. Book I’s
+          descriptors say « Page 56 [multiple works] » and name no year, which is why none of its{' '}
+          {census.bookI} sheets appears in grey however much of it is transcribed. A volume’s
+          range is never spread over its leaves to make the page look fuller.
         </p>
+        {cross.read > 0 && (
+          <p className="prose-note mt-3 max-w-3xl">
+            Book IV having been read, grey has stopped standing in for a volume nobody had
+            opened and become a second opinion. Of the {cross.dated} sheets whose descriptor
+            names a year, {cross.read} now carry a year on the leaf as well: {cross.agree} agree
+            with the cataloguer and {cross.disagree} do not, and the disagreement is printed on
+            both rows rather than settled by preferring one. The other {cross.only} write a
+            month and a day under a year opened further up the run — there the descriptor is the
+            only year there is, which is why the grey row stays.
+          </p>
+        )}
       </header>
 
       {/* The strip is the calendar's year selector, not a second chart. One mark
@@ -510,7 +601,7 @@ export function TimelinePage() {
                     {recorded.length > 0 && (
                       <>
                         <div
-                          title={`Leaves somebody has transcribed that carry an entry Jo Hopper dated ${y}`}
+                          title={`Leaves that carry an entry Jo Hopper dated ${y}, read off the sheet itself`}
                           className="text-[11px] uppercase tracking-wider text-ink-400 sm:pt-1 sm:text-right"
                         >
                           {recorded.length} read
@@ -544,7 +635,7 @@ export function TimelinePage() {
                     {sheets.length > 0 && (
                       <>
                         <div
-                          title={`Sheets the Whitney's own descriptor dates to ${y}, with nobody here having read them`}
+                          title={`Sheets the Whitney’s own descriptor dates to ${y} — the cataloguer’s year, not a reading of the hand`}
                           className="text-[11px] uppercase tracking-wider text-ink-400 sm:pt-1 sm:text-right"
                         >
                           {sheets.length} catalogued
@@ -552,11 +643,19 @@ export function TimelinePage() {
                         <div className="flex flex-wrap gap-1.5">
                           {sheets.slice(0, 10).map((s) => {
                             const ledger = LEDGERS.find((l) => l.id === s.ledger);
+                            // What the hand says, where the sheet has been read: the
+                            // descriptor is the cataloguer's date, and on Book IV there is
+                            // now a second one to compare it with.
+                            const said = leafYears.get(`${s.ledger}/${s.ref}`);
                             return (
                               <a
                                 key={s.ref}
                                 href={url(`/${s.ledger}/#${s.ledger}/${batchOfSeq(s.seq)}/${s.ref}`)}
-                                title={s.descriptor}
+                                title={
+                                  said
+                                    ? `${s.descriptor} — the leaf itself is dated ${said.join(', ')}`
+                                    : s.descriptor
+                                }
                                 className="rounded-full border border-ink-200 px-2 py-0.5 text-[11.5px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
                               >
                                 {ledger?.short}

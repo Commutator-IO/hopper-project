@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T20:18:34.900Z",
+  "generated": "2026-09-09T22:07:47.959Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -14731,6 +14731,19 @@
       ]
     },
     {
+      "year": 1912,
+      "leaves": [
+        {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "101",
+          "ref": 17933,
+          "rows": 1,
+          "prose": 0
+        }
+      ]
+    },
+    {
       "year": 1913,
       "leaves": [
         {
@@ -14788,6 +14801,14 @@
           "ref": 18258,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 1,
+          "leaf": "3",
+          "ref": 17106,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -14841,6 +14862,61 @@
           "ref": 17840,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 1,
+          "leaf": "4",
+          "ref": 16930,
+          "rows": 1,
+          "prose": 0
+        }
+      ]
+    },
+    {
+      "year": 1915,
+      "leaves": [
+        {
+          "ledger": "book-iv",
+          "batch": 1,
+          "leaf": "11",
+          "ref": 18485,
+          "rows": 1,
+          "prose": 0
+        }
+      ]
+    },
+    {
+      "year": 1916,
+      "leaves": [
+        {
+          "ledger": "book-iv",
+          "batch": 2,
+          "leaf": "14",
+          "ref": 17077,
+          "rows": 1,
+          "prose": 0
+        }
+      ]
+    },
+    {
+      "year": 1917,
+      "leaves": [
+        {
+          "ledger": "book-iv",
+          "batch": 2,
+          "leaf": "19",
+          "ref": 17669,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 14,
+          "leaf": "156",
+          "ref": 16483,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -14854,6 +14930,14 @@
           "ref": 17837,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 14,
+          "leaf": "157",
+          "ref": 16307,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -14984,6 +15068,38 @@
           "ref": 18440,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 4,
+          "leaf": "44",
+          "ref": 17705,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 5,
+          "leaf": "51",
+          "ref": 16979,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 5,
+          "leaf": "53",
+          "ref": 16505,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "126",
+          "ref": 17173,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -15266,6 +15382,22 @@
           "ref": 17911,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 5,
+          "leaf": "48",
+          "ref": 16164,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 5,
+          "leaf": "56",
+          "ref": 17059,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "book-v",
@@ -15591,6 +15723,14 @@
           "ref": 16408,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 6,
+          "leaf": "60",
+          "ref": 17258,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -15998,6 +16138,14 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 6,
+          "leaf": "66",
+          "ref": 17008,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "54",
@@ -16369,6 +16517,46 @@
           "ref": 16408,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 3,
+          "leaf": "32",
+          "ref": 17283,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 7,
+          "leaf": "72",
+          "ref": 16213,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 7,
+          "leaf": "74",
+          "ref": 16175,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 7,
+          "leaf": "77",
+          "ref": 16585,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 7,
+          "leaf": "78",
+          "ref": 17653,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -16744,6 +16932,22 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 7,
+          "leaf": "78",
+          "ref": 17653,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 7,
+          "leaf": "80",
+          "ref": 16737,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "54",
@@ -17099,6 +17303,14 @@
           "ref": 16408,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 7,
+          "leaf": "81",
+          "ref": 16470,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -17562,6 +17774,14 @@
           "prose": 2
         },
         {
+          "ledger": "book-iv",
+          "batch": 8,
+          "leaf": "86",
+          "ref": 17620,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "62",
@@ -17927,6 +18147,14 @@
           "prose": 2
         },
         {
+          "ledger": "book-iv",
+          "batch": 8,
+          "leaf": "90",
+          "ref": 16402,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "11",
@@ -18268,6 +18496,14 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 8,
+          "leaf": "94",
+          "ref": 17365,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "67",
@@ -18521,6 +18757,22 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "97",
+          "ref": 18059,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "98",
+          "ref": 16793,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 3,
           "leaf": "82",
@@ -18700,6 +18952,14 @@
           "ref": 16582,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "99",
+          "ref": 18158,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -18907,6 +19167,14 @@
           "prose": 2
         },
         {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "100",
+          "ref": 17018,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "57",
@@ -19112,6 +19380,22 @@
           "prose": 2
         },
         {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "101",
+          "ref": 17933,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "102",
+          "ref": 16989,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 3,
           "leaf": "77",
@@ -19227,6 +19511,14 @@
           "ref": 18440,
           "rows": 1,
           "prose": 2
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "103",
+          "ref": 17628,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -19424,6 +19716,14 @@
           "ref": 17739,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "104",
+          "ref": 16650,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -19549,6 +19849,14 @@
           "ref": 17688,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "106",
+          "ref": 17082,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -19732,6 +20040,30 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "107",
+          "ref": 17198,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "108",
+          "ref": 16971,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "109",
+          "ref": 17083,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "63",
@@ -19889,6 +20221,14 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "110",
+          "ref": 17968,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "63",
@@ -20038,6 +20378,30 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "110",
+          "ref": 17968,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "111",
+          "ref": 16515,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "112",
+          "ref": 18175,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "58",
@@ -20185,6 +20549,14 @@
           "ref": 16566,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "112",
+          "ref": 18175,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -20352,6 +20724,22 @@
           "prose": 2
         },
         {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "113",
+          "ref": 18166,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "114",
+          "ref": 17380,
+          "rows": 2,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "63",
@@ -20477,6 +20865,22 @@
           "prose": 0
         },
         {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "115",
+          "ref": 18224,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "116",
+          "ref": 18385,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "58",
@@ -20568,6 +20972,30 @@
           "ref": 16386,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "116",
+          "ref": 18385,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "117",
+          "ref": 18089,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "118",
+          "ref": 17430,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -20703,6 +21131,22 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "118",
+          "ref": 17430,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "119",
+          "ref": 18551,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 2,
           "leaf": "63",
@@ -20810,6 +21254,14 @@
           "ref": 17739,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "120",
+          "ref": 16926,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -20895,6 +21347,22 @@
           "ref": 16198,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "120",
+          "ref": 16926,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "121",
+          "ref": 16778,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "dealers",
@@ -21044,6 +21512,22 @@
           "ref": 17739,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "121",
+          "ref": 16778,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "122",
+          "ref": 17079,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -21225,6 +21709,22 @@
           "ref": 17739,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "122",
+          "ref": 17079,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "123",
+          "ref": 17248,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -21408,6 +21908,22 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "124",
+          "ref": 17734,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "125",
+          "ref": 16530,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "59",
@@ -21555,6 +22071,30 @@
           "ref": 17739,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "126",
+          "ref": 17173,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "127",
+          "ref": 17181,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "128",
+          "ref": 17686,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "book-v",
@@ -21922,6 +22462,22 @@
           "ref": 18439,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "132",
+          "ref": 17132,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "133",
+          "ref": 16276,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -22023,6 +22579,30 @@
           "ref": 16408,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "134",
+          "ref": 17057,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "135",
+          "ref": 17308,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "136",
+          "ref": 16577,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -22156,6 +22736,38 @@
           "ref": 16408,
           "rows": 0,
           "prose": 3
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "136",
+          "ref": 16577,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "137",
+          "ref": 18081,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "138",
+          "ref": 18140,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "139",
+          "ref": 18131,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -22323,6 +22935,30 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "139",
+          "ref": 18131,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "140",
+          "ref": 18250,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "141",
+          "ref": 16957,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "5",
@@ -22390,6 +23026,30 @@
           "ref": 17794,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "141",
+          "ref": 16957,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "142",
+          "ref": 18094,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 12,
+          "leaf": "143",
+          "ref": 18525,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -22467,6 +23127,22 @@
           "ref": 18439,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "144",
+          "ref": 18174,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "145",
+          "ref": 18567,
+          "rows": 1,
+          "prose": 0
         },
         {
           "ledger": "book-v",
@@ -22618,6 +23294,30 @@
           "prose": 4
         },
         {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "146",
+          "ref": 18236,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "147",
+          "ref": 17929,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "148",
+          "ref": 17149,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "13",
@@ -22767,6 +23467,30 @@
           "prose": 5
         },
         {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "148",
+          "ref": 17149,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "149",
+          "ref": 17238,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "150",
+          "ref": 17889,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "dealers",
           "batch": 1,
           "leaf": "58",
@@ -22900,6 +23624,38 @@
           "prose": 1
         },
         {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "150",
+          "ref": 17889,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "151",
+          "ref": 18073,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "152",
+          "ref": 17664,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "153",
+          "ref": 16161,
+          "rows": 2,
+          "prose": 0
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "1",
@@ -23025,6 +23781,22 @@
           "prose": 2
         },
         {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "153",
+          "ref": 16161,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "154",
+          "ref": 17869,
+          "rows": 1,
+          "prose": 0
+        },
+        {
           "ledger": "book-v",
           "batch": 1,
           "leaf": "11",
@@ -23092,6 +23864,22 @@
           "ref": 17866,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "155",
+          "ref": 18419,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 14,
+          "leaf": "156",
+          "ref": 16483,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -23129,6 +23917,22 @@
           "ref": 17816,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 14,
+          "leaf": "156",
+          "ref": 16483,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 14,
+          "leaf": "157",
+          "ref": 16307,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -23158,6 +23962,14 @@
           "ref": 16659,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 14,
+          "leaf": "158",
+          "ref": 16958,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -23179,6 +23991,14 @@
           "ref": 18194,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 14,
+          "leaf": "159",
+          "ref": 17218,
+          "rows": 1,
+          "prose": 0
         }
       ]
     }
