@@ -408,11 +408,37 @@ for (const file of files) {
  *
  * **What a bare figure is.** A money row whose description column is empty is
  * either a subtotal ruled off above — she draws the rule, and the transcription
- * does not record it — or a charge whose description she did not write. They
- * are told apart by what follows: a subtotal exists to be billed, and is
- * followed by the bill. Leaf 14's undescribed 30 is followed by a receipt and
- * is a charge; leaves 21, 22 and 23 carry subtotals that are followed by their
- * bills, and those are excluded. Both counts are reported below.
+ * does not record it — or a charge whose description she did not write. What
+ * follows it settles the first half of the question: both kinds are answered
+ * on the next line, a subtotal by the bill it exists to be billed on, an
+ * undescribed charge by the cheque that clears it. Leaves 21, 22 and 23 are
+ * the first: bare figures followed by « bill ».
+ *
+ * Where the answer is a cheque the two shapes are identical on the page, and
+ * the arithmetic is what tells them apart — the same arithmetic the leaves'
+ * own notes use, « thirteen titles at 15 make that figure exactly ». A
+ * subtotal is the sum of the priced lines directly above it, back to the last
+ * settlement; a charge is not. Leaf 37's 195 gathers ten Adventure Magazine
+ * titles on its own leaf and three more carried over the leaf-turn from leaf
+ * 36, and leaves 25 and 31 do the same for 225 and 180. Leaf 39's 100 stands
+ * under « The House that Patty built » with nothing priced above it since the
+ * last cheque, and is the charge itself; so are leaf 14's 30, which follows a
+ * 25 that does not make it, and leaf 46's undescribed 60. Both counts are
+ * reported below.
+ *
+ * An earlier rule here asked only « is a bill next? », which read every one of
+ * those three ruled-off sums as a fresh charge and counted six hundred dollars
+ * of Adventure Magazine drawings twice.
+ *
+ * **What is struck out.** An entry crossed corner to corner never happened,
+ * and a figure inside `\struck{}` is not money the book is owed. Leaf 47's
+ * Association Men drawing is the case: twenty dollars under a pencil X, with
+ * no receipt anywhere. Counting it was wrong twice over — once for the
+ * twenty, and once because a struck row counts as *itemised* under the rule
+ * above, so the genuine bill of 50 three lines below it was read as
+ * restating a charge that was never made and dropped. A row whose figure is
+ * wholly struck is excluded from the charges and from the receipts alike,
+ * and takes no part in what stands above or below it.
  *
  * **When it happened.** The year carries forward from the last line that
  * states one, and across a batch boundary, because the volume is continuous
@@ -421,6 +447,26 @@ for (const file of files) {
  * from batch 2 would be four leaves and possibly two years stale, so the chain
  * is broken and the rows are reported unread until the volume states a year
  * again.
+ *
+ * The volume states a year in three positions, not one. On a line of its own
+ * inside the table — « 1916 », leaf 14, nothing else in the row. In the date
+ * cell of a row that carries a description as well, which is leaf 44's
+ * « 1920 | 1 rough sketch », and which dates that row too. And, from 1918
+ * on, in pencil above a date and across the red rule, which the edition
+ * records as a `\marginal{}` after the table because there is nowhere in a
+ * ruled row to put a thing written over one: leaf 28's « 19 18 » and leaf
+ * 38's « 1919 ». A marginal year is taken at the position the edition puts
+ * it, which is the end of its leaf, so the few rows standing under the pencil
+ * on that leaf itself keep the year before it — a bill of 35 on leaf 28, and
+ * fifty dollars of Dial covers with the cheque that answered them on leaf 38.
+ * The gloss does say which date the pencil sits above. Reading a year out of
+ * the transcriber's prose would buy those two entries at the price of a reader
+ * that breaks the first time a sentence is worded differently, and both
+ * entries are inside a fortnight of the turn of their year in any case.
+ *
+ * Before this, no year after 1917 was found anywhere, and eight leaves of
+ * 1918, 1919 and 1920 — some five thousand dollars of it — were filed under
+ * 1917.
  *
  * The receipts are kept as their own stream rather than attached to
  * individual charges. A cheque settles a run of work and not a line of it, and
@@ -441,9 +487,72 @@ const bookIVAmount = (cells) => {
 const IV_RECEIPT = /^["'”\s]*(rec['’]?d|received)\b/i;
 const IV_BILL = /^["'”\s]*(bill|billed)\b/i;
 
+/**
+ * Whether a row's figure is wholly struck out.
+ *
+ * Tested on the *raw* cells, because `plainOf` keeps the reading inside
+ * `\struck{}` — which is right, since a struck word was read and is worth
+ * showing — and so a struck figure reaches the totals looking exactly like a
+ * live one. Wholly is the whole of the test: a cell that is `\struck{20}` and
+ * nothing else is a figure somebody cancelled, and a cell that merely contains
+ * a struck fragment beside a live figure is a correction, which is money.
+ */
+const IV_STRUCK_CELL = /^\\struck\s*\{[^{}]*\}$/;
+const ivStruck = (raw) => {
+  const money = [raw[raw.length - 2] ?? '', raw[raw.length - 1] ?? ''].map((c) => c.trim());
+  return money.some((c) => c !== '') && money.every((c) => c === '' || IV_STRUCK_CELL.test(c));
+};
+
+/**
+ * Whether a bare figure is the sum of the lines ruled off above it.
+ *
+ * She draws the rule and the transcription does not record it, so the rule
+ * has to be recovered from the arithmetic — which is what the leaves' own
+ * notes do: « thirteen titles at 15 make that figure exactly ». Read upwards
+ * from the line above the figure and stop at the last settlement, because a
+ * bill or a cheque closes a run and nothing beyond it is being gathered.
+ * Description lines that carry no figure are transparent: « 2 line drawings »
+ * stands between a client and its titles all through the volume.
+ *
+ * Any leading part of that run will do, not the whole of it. Leaf 21's 65 is
+ * the 50 and the 15 of the 7 March commission and does not reach back to the
+ * 25 of the 3rd, and leaf 23's 80 is two McCann half-pages across a leaf-turn
+ * with a third entry above them.
+ */
+const sumsTheRunAbove = (rows, i, target) => {
+  let acc = 0;
+  for (let j = i - 1; j >= 0; j--) {
+    const p = rows[j];
+    if (p.kind !== 'item') break;
+    if (p.amount === null) continue;
+    acc += p.amount;
+    if (Math.abs(acc - target) < 0.005) return true;
+  }
+  return false;
+};
+
+/**
+ * The year a `\marginal{}` states, where it states one and nothing else.
+ *
+ * The body of a marginal is what stands beside the rows and then, after an
+ * em-dash, the transcriber's gloss of where on the leaf it stands. Only the
+ * first part is the book's own writing, and only a first part that is a
+ * four-figure year and nothing besides is read: leaf 28 writes the year in two
+ * halves with a gap between them, « 19 18 », so the spaces are closed up, but
+ * a marginal that carries a subtotal (« 160 \\ 35 \\ 195 »), a date
+ * (« Dec 4th »), a carried figure (« 70 ») or a sentence yields nothing at
+ * all.
+ */
+const ivMarginalYear = (plain) => {
+  const said = plain.split(/\s*---\s*/)[0] ?? '';
+  const digits = said.replace(/\s+/g, '');
+  return /^(19[0-6]\d)$/.test(digits) && /^[\d\s]+$/.test(said) ? Number(digits) : null;
+};
+
 const receipts = [];
 const ivSubtotals = [];
 let ivBlankDescription = 0;
+let ivStruckRows = 0;
 {
   const ivFiles = files.filter((f) => activityOf(f.ledger) === 'illustration');
   const rows = [];
@@ -453,17 +562,43 @@ let ivBlankDescription = 0;
     // The year carries across a batch boundary only where the batches abut.
     if (previousBatch !== null && file.batch !== previousBatch + 1) year = null;
     previousBatch = file.batch;
+    // The pencil years, by the sheet they stand on. Taken as that sheet's rows
+    // run out, which is where the edition puts the marginal.
+    const pencil = new Map();
+    for (const m of file.marginals) {
+      const y = ivMarginalYear(m.plain);
+      if (y !== null && m.ref !== null) pencil.set(m.ref, y);
+    }
+    let sheet = null;
+    const closeSheet = () => {
+      if (sheet !== null && pencil.has(sheet)) year = pencil.get(sheet);
+    };
     for (const row of file.looseRows) {
+      if (row.ref !== sheet) {
+        closeSheet();
+        sheet = row.ref;
+      }
       const cells = row.plain;
       const body = cells
         .slice(1, cells.length - 2)
         .join(' ')
         .trim();
       const amount = bookIVAmount(cells);
-      const bare = /^(19[0-6]\d)\.?$/.exec((cells[0] ?? '').trim());
-      if (bare && !body && amount === null) {
-        year = Number(bare[1]);
+      // A cancelled entry is not a charge, not a receipt, and not something
+      // the rows around it can be read against. Dropped here rather than
+      // skipped below, so that it does not stand between a ruled-off sum and
+      // the figure it sums.
+      if (amount !== null && ivStruck(row.cells)) {
+        ivStruckRows++;
         continue;
+      }
+      // A year in the date cell. On a line of its own it is only a year; on a
+      // row that carries a description as well — leaf 44's « 1920 | 1 rough
+      // sketch » — it dates that row too, and the row goes on to be read.
+      const stated = /^(19[0-6]\d)\.?$/.exec((cells[0] ?? '').trim());
+      if (stated) {
+        year = Number(stated[1]);
+        if (!body && amount === null) continue;
       }
       rows.push({
         amount,
@@ -487,6 +622,7 @@ let ivBlankDescription = 0;
         cells,
       });
     }
+    closeSheet();
   }
 
   // How much has been itemised since the last bill or cheque closed a run.
@@ -510,7 +646,16 @@ let ivBlankDescription = 0;
       sinceSettlement = 0;
       continue;
     }
-    if (r.kind === 'bare' && rows[i + 1]?.kind === 'bill') {
+    // A sum ruled off. What answers it is on the line below — the bill, or,
+    // where she drew none, the cheque. Where that answer is a cheque the
+    // arithmetic has to say so too, because an undescribed *charge* is
+    // answered by a cheque in exactly the same way: leaf 14's 30 and leaf
+    // 39's 100 both are.
+    const answer = rows[i + 1]?.kind;
+    if (
+      r.kind === 'bare' &&
+      (answer === 'bill' || (answer === 'receipt' && sumsTheRunAbove(rows, i, r.amount)))
+    ) {
       ivSubtotals.push({ year: r.year, amount: r.amount, ...r.where });
       continue;
     }
@@ -1117,16 +1262,20 @@ const out = {
     charges: entries.filter((e) => e.activity === 'illustration').length,
     receipts: receipts.length,
     subtotalsExcluded: ivSubtotals.length,
+    struckExcluded: ivStruckRows,
     blankDescription: ivBlankDescription,
     note:
       'Book IV states a client, then its items one to a line, then « Bill rendered » with their ' +
       'total, then « Rec\'d by check » in red. The items are the charge; a bill is counted only ' +
       'where nothing was itemised since the last settlement, or every commission in the volume ' +
       'would be counted twice. A bare figure with no description is a subtotal where a bill ' +
-      'follows it and a charge otherwise — the leaf rules a line above a subtotal and the ' +
-      'transcription does not record the rule, so this is the one place the reader infers rather ' +
-      'than reads. Receipts are kept as their own stream: a cheque settles a run of work, not a ' +
-      'line of it, and the runs overlap.',
+      'follows it, or where a cheque follows it and the priced lines directly above add to it — ' +
+      'the leaf rules a line above a subtotal and the transcription does not record the rule, so ' +
+      'the rule is recovered from the arithmetic. A figure written wholly inside a struck-out ' +
+      'entry is neither charge nor receipt. Receipts are kept as their own stream: a cheque ' +
+      'settles a run of work, not a line of it, and the runs overlap. The year is carried from ' +
+      'the last one the volume states — on a line of its own, in the date cell of a described ' +
+      'row, or in pencil in the margin, which the edition records after the table.',
   },
   years,
   receivable,
@@ -1217,6 +1366,7 @@ process.stdout.write(
           `not recorded ${a.totals.notRecorded.toFixed(2)}\n`,
       )
       .join('') +
-    `          Book IV: ${receipts.length} receipt(s), ${ivSubtotals.length} subtotal(s) excluded, ` +
+    `          Book IV: ${receipts.length} receipt(s), ${ivSubtotals.length} subtotal(s) and ` +
+    `${ivStruckRows} struck row(s) excluded, ` +
     `${ivBlankDescription} charge(s) with no description written\n`,
 );

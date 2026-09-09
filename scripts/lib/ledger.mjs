@@ -338,6 +338,7 @@ function parseFile(path, ledger, batch) {
   const works = [];
   const looseRows = [];
   const hands = [];
+  const marginals = [];
 
   let sheet = null; // { ref, leaf }
   let section = null;
@@ -472,6 +473,33 @@ function parseFile(path, ledger, batch) {
       continue;
     }
 
+    // What is written on the leaf beside the ruled rows rather than in them.
+    // Collected because Book IV keeps a year there: the volume writes its
+    // years in pencil, above a date and across the rule, and the edition has
+    // nowhere to put a thing that stands over a row except a `\marginal{}`
+    // after the table. Recorded with the sheet it stands on, so a reader that
+    // needs the position has it; the body carries the transcriber's gloss of
+    // where on the leaf it sits after an em-dash, and stripping that is left
+    // to whoever reads it, because for `materials.mjs` the gloss is the very
+    // thing that must not be counted.
+    m = /^\\marginal\{/.exec(rest);
+    if (m) {
+      const a = braced(body, i + m[0].length - 1);
+      if (!a) continue;
+      marginals.push({
+        ledger,
+        batch,
+        section,
+        ref: sheet?.ref ?? null,
+        leaf: sheet?.leaf ?? null,
+        work: work?.title ?? null,
+        raw: a.body,
+        plain: plainOf(a.body),
+      });
+      i = a.end - 1;
+      continue;
+    }
+
     m = /^\\begin\{ledgertable\}\{/.exec(rest);
     if (m) {
       const spec = braced(body, i + m[0].length - 1);
@@ -494,7 +522,7 @@ function parseFile(path, ledger, batch) {
   for (const m of src.matchAll(/\\keywords\{([^}]*)\}/g))
     for (const term of keywordTerms(m[1])) keywords.push(parseKeyword(term));
 
-  return { ledger, batch, path, sheets, works, looseRows, hands, keywords };
+  return { ledger, batch, path, sheets, works, looseRows, hands, marginals, keywords };
 }
 
 /* ------------------------------------------------------------ keywords */

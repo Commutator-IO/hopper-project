@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T07:58:46.199Z",
+  "generated": "2026-09-09T08:39:00.996Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf. Book II rules no columns at all, and it needs the other half of the same rule: a leaf there is one work with one sale line — buyer, price and the cut, the cheque, the date — so the date is in the last column and never in the first. It is read there only on a leaf that rules nothing, only where the first column dates nothing, and only where the last cell holds a date and nothing besides.",
@@ -329,7 +329,7 @@
         "book-iv"
       ],
       "batches": 4,
-      "rows": 269,
+      "rows": 266,
       "years": [
         {
           "year": 1913,
@@ -361,27 +361,49 @@
         },
         {
           "year": 1917,
-          "accrued": 5206,
-          "received": 4983,
+          "accrued": 1453,
+          "received": 1440,
           "notRecorded": 0,
-          "outstanding": 223
+          "outstanding": 13
+        },
+        {
+          "year": 1918,
+          "accrued": 1556,
+          "received": 1916,
+          "notRecorded": 0,
+          "outstanding": -347
+        },
+        {
+          "year": 1919,
+          "accrued": 977,
+          "received": 977,
+          "notRecorded": 0,
+          "outstanding": -347
+        },
+        {
+          "year": 1920,
+          "accrued": 650,
+          "received": 650,
+          "notRecorded": 0,
+          "outstanding": -347
         }
       ],
       "totals": {
-        "accrued": 8082,
+        "accrued": 7512,
         "collected": 7859,
-        "outstanding": 223,
+        "outstanding": -347,
         "notRecorded": 0
       }
     }
   ],
   "activitiesNote": "The same money split by which trade earned it: Books I, II, III, V and the dealers' book record Edward Hopper selling his own work, Book IV records him being paid for magazine and advertising drawings. Through the years transcribed the two barely overlap, which is the point of separating them — the illustration income is the part the paintings books do not mention at all. Three buckets and not two: « not recorded » is money whose row states no receipt of any kind, and it is nearly all art, because the pocket book dates its cheques and the work books often do not. Reading it as debt would compare a silence with a sum.",
   "illustration": {
-    "charges": 269,
+    "charges": 266,
     "receipts": 150,
-    "subtotalsExcluded": 3,
-    "blankDescription": 9,
-    "note": "Book IV states a client, then its items one to a line, then « Bill rendered » with their total, then « Rec'd by check » in red. The items are the charge; a bill is counted only where nothing was itemised since the last settlement, or every commission in the volume would be counted twice. A bare figure with no description is a subtotal where a bill follows it and a charge otherwise — the leaf rules a line above a subtotal and the transcription does not record the rule, so this is the one place the reader infers rather than reads. Receipts are kept as their own stream: a cheque settles a run of work, not a line of it, and the runs overlap."
+    "subtotalsExcluded": 6,
+    "struckExcluded": 1,
+    "blankDescription": 5,
+    "note": "Book IV states a client, then its items one to a line, then « Bill rendered » with their total, then « Rec'd by check » in red. The items are the charge; a bill is counted only where nothing was itemised since the last settlement, or every commission in the volume would be counted twice. A bare figure with no description is a subtotal where a bill follows it, or where a cheque follows it and the priced lines directly above add to it — the leaf rules a line above a subtotal and the transcription does not record the rule, so the rule is recovered from the arithmetic. A figure written wholly inside a struck-out entry is neither charge nor receipt. Receipts are kept as their own stream: a cheque settles a run of work, not a line of it, and the runs overlap. The year is carried from the last one the volume states — on a line of its own, in the date cell of a described row, or in pencil in the margin, which the edition records after the table."
   },
   "years": [
     {
@@ -11616,26 +11638,6 @@
     {
       "year": 1917,
       "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 225,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 225,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 3,
-      "leaf": "25",
-      "ref": "17678",
-      "section": "Leaf 25: July to August 1917",
-      "work": null
-    },
-    {
-      "year": 1917,
-      "yearFrom": "the year the volume last stated, carried forward",
       "gross": 20,
       "rateWritten": null,
       "commission": 0,
@@ -11914,7 +11916,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -11934,7 +11936,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -11954,7 +11956,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -11974,7 +11976,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -11994,7 +11996,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12014,7 +12016,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12034,7 +12036,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 60,
       "rateWritten": null,
@@ -12054,7 +12056,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 20,
       "rateWritten": null,
@@ -12074,7 +12076,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12094,7 +12096,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12114,7 +12116,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12134,7 +12136,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12154,7 +12156,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12174,7 +12176,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12194,7 +12196,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12214,7 +12216,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12234,7 +12236,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12254,7 +12256,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12274,7 +12276,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12294,7 +12296,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12314,27 +12316,7 @@
       "work": null
     },
     {
-      "year": 1917,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 180,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 180,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 3,
-      "leaf": "31",
-      "ref": "16194",
-      "section": "Leaf 31: March to May 1918",
-      "work": null
-    },
-    {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 6,
       "rateWritten": null,
@@ -12354,7 +12336,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12374,7 +12356,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12394,7 +12376,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12414,7 +12396,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 25,
       "rateWritten": null,
@@ -12434,7 +12416,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12454,7 +12436,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12474,7 +12456,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12494,7 +12476,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 5,
       "rateWritten": null,
@@ -12514,7 +12496,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12534,7 +12516,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 10,
       "rateWritten": null,
@@ -12554,7 +12536,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 5,
       "rateWritten": null,
@@ -12574,7 +12556,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 10,
       "rateWritten": null,
@@ -12594,7 +12576,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 5,
       "rateWritten": null,
@@ -12614,7 +12596,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 5,
       "rateWritten": null,
@@ -12634,7 +12616,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -12654,7 +12636,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 75,
       "rateWritten": null,
@@ -12674,7 +12656,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 25,
       "rateWritten": null,
@@ -12694,7 +12676,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -12714,7 +12696,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12734,7 +12716,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12754,7 +12736,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12774,7 +12756,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12794,7 +12776,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12814,7 +12796,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12834,7 +12816,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12854,7 +12836,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12874,7 +12856,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12894,7 +12876,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12914,7 +12896,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12934,7 +12916,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12954,7 +12936,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -12974,27 +12956,7 @@
       "work": null
     },
     {
-      "year": 1917,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 195,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 195,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 4,
-      "leaf": "37",
-      "ref": "18168",
-      "section": "Leaf 37: October to December 1918",
-      "work": null
-    },
-    {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13014,7 +12976,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 25,
       "rateWritten": null,
@@ -13034,7 +12996,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 50,
       "rateWritten": null,
@@ -13054,7 +13016,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 175,
       "rateWritten": null,
@@ -13074,7 +13036,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 25,
       "rateWritten": null,
@@ -13094,7 +13056,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 15,
       "rateWritten": null,
@@ -13114,7 +13076,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13134,7 +13096,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 10,
       "rateWritten": null,
@@ -13154,7 +13116,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1918,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13174,7 +13136,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13194,7 +13156,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 25,
       "rateWritten": null,
@@ -13214,7 +13176,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 100,
       "rateWritten": null,
@@ -13234,7 +13196,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13254,7 +13216,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13274,7 +13236,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 50,
       "rateWritten": null,
@@ -13294,7 +13256,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13314,7 +13276,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13334,7 +13296,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 25,
       "rateWritten": null,
@@ -13354,7 +13316,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13374,7 +13336,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 100,
       "rateWritten": null,
@@ -13394,7 +13356,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13414,7 +13376,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13434,7 +13396,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 12,
       "rateWritten": null,
@@ -13454,7 +13416,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 20,
       "rateWritten": null,
@@ -13474,7 +13436,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 80,
       "rateWritten": null,
@@ -13494,7 +13456,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 45,
       "rateWritten": null,
@@ -13514,7 +13476,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 45,
       "rateWritten": null,
@@ -13534,7 +13496,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 25,
       "rateWritten": null,
@@ -13554,7 +13516,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 45,
       "rateWritten": null,
@@ -13574,7 +13536,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 40,
       "rateWritten": null,
@@ -13594,7 +13556,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1919,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 45,
       "rateWritten": null,
@@ -13614,7 +13576,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 10,
       "rateWritten": null,
@@ -13634,7 +13596,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 25,
       "rateWritten": null,
@@ -13654,7 +13616,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -13674,7 +13636,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 80,
       "rateWritten": null,
@@ -13694,7 +13656,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 45,
       "rateWritten": null,
@@ -13714,7 +13676,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 50,
       "rateWritten": null,
@@ -13734,7 +13696,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 45,
       "rateWritten": null,
@@ -13754,7 +13716,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -13774,7 +13736,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 60,
       "rateWritten": null,
@@ -13794,7 +13756,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 35,
       "rateWritten": null,
@@ -13814,7 +13776,7 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 80,
       "rateWritten": null,
@@ -13834,27 +13796,7 @@
       "work": null
     },
     {
-      "year": 1917,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 20,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 20,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 4,
-      "leaf": "47",
-      "ref": "17073",
-      "section": "Leaf 47: March to May 1920",
-      "work": null
-    },
-    {
-      "year": 1917,
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 50,
       "rateWritten": null,
@@ -13874,7 +13816,27 @@
       "work": null
     },
     {
-      "year": 1917,
+      "year": 1920,
+      "yearFrom": "the year the volume last stated, carried forward",
+      "gross": 50,
+      "rateWritten": null,
+      "commission": 0,
+      "net": 50,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "activity": "illustration",
+      "charge": "a bill, with nothing itemised since the last settlement",
+      "description": "bill",
+      "ledger": "book-iv",
+      "batch": 4,
+      "leaf": "47",
+      "ref": "17073",
+      "section": "Leaf 47: March to May 1920",
+      "work": null
+    },
+    {
+      "year": 1920,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 50,
       "rateWritten": null,
@@ -14766,7 +14728,7 @@
       "section": "Leaf 28: December 1917 to January 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 70,
       "date": "Feb 7",
       "ledger": "book-iv",
@@ -14776,7 +14738,7 @@
       "section": "Leaf 29: January to February 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 35,
       "date": "Feb 4",
       "ledger": "book-iv",
@@ -14786,7 +14748,7 @@
       "section": "Leaf 29: January to February 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 35,
       "date": "Feb 15",
       "ledger": "book-iv",
@@ -14796,7 +14758,7 @@
       "section": "Leaf 29: January to February 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 35,
       "date": "\" 27",
       "ledger": "book-iv",
@@ -14806,7 +14768,7 @@
       "section": "Leaf 29: January to February 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 35,
       "date": "Mar 20th",
       "ledger": "book-iv",
@@ -14816,7 +14778,7 @@
       "section": "Leaf 30: February to March 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 35,
       "date": "Mar 9",
       "ledger": "book-iv",
@@ -14826,7 +14788,7 @@
       "section": "Leaf 30: February to March 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 60,
       "date": "Mar 23rd",
       "ledger": "book-iv",
@@ -14836,7 +14798,7 @@
       "section": "Leaf 30: February to March 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 20,
       "date": "Mar 23",
       "ledger": "book-iv",
@@ -14846,7 +14808,7 @@
       "section": "Leaf 30: February to March 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 180,
       "date": "April 9",
       "ledger": "book-iv",
@@ -14856,7 +14818,7 @@
       "section": "Leaf 31: March to May 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 6,
       "date": "May 7",
       "ledger": "book-iv",
@@ -14866,7 +14828,7 @@
       "section": "Leaf 31: March to May 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 20,
       "date": "April 30",
       "ledger": "book-iv",
@@ -14876,7 +14838,7 @@
       "section": "Leaf 32: April to May 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 35,
       "date": "May 7",
       "ledger": "book-iv",
@@ -14886,7 +14848,7 @@
       "section": "Leaf 32: April to May 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 70,
       "date": "May 25",
       "ledger": "book-iv",
@@ -14896,7 +14858,7 @@
       "section": "Leaf 32: April to May 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 25,
       "date": "June 6",
       "ledger": "book-iv",
@@ -14906,7 +14868,7 @@
       "section": "Leaf 33: May to July 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 35,
       "date": "July 16",
       "ledger": "book-iv",
@@ -14916,7 +14878,7 @@
       "section": "Leaf 33: May to July 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 70,
       "date": "\" 27",
       "ledger": "book-iv",
@@ -14926,7 +14888,7 @@
       "section": "Leaf 33: May to July 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 20,
       "date": "July 20",
       "ledger": "book-iv",
@@ -14936,7 +14898,7 @@
       "section": "Leaf 34: June to July 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 40,
       "date": "Sept 13",
       "ledger": "book-iv",
@@ -14946,7 +14908,7 @@
       "section": "Leaf 35: July to September 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 300,
       "date": "",
       "ledger": "book-iv",
@@ -14956,7 +14918,7 @@
       "section": "Leaf 35: July to September 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 35,
       "date": "Oct 10",
       "ledger": "book-iv",
@@ -14966,7 +14928,7 @@
       "section": "Leaf 36: September to October 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 100,
       "date": "Oct 25th",
       "ledger": "book-iv",
@@ -14976,7 +14938,7 @@
       "section": "Leaf 36: September to October 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 40,
       "date": "Oct 21",
       "ledger": "book-iv",
@@ -14986,7 +14948,7 @@
       "section": "Leaf 36: September to October 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 195,
       "date": "Nov 7",
       "ledger": "book-iv",
@@ -14996,7 +14958,7 @@
       "section": "Leaf 37: October to December 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 40,
       "date": "Nov. 13",
       "ledger": "book-iv",
@@ -15006,7 +14968,7 @@
       "section": "Leaf 37: October to December 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 75,
       "date": "Dec 6",
       "ledger": "book-iv",
@@ -15016,7 +14978,7 @@
       "section": "Leaf 37: October to December 1918"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 175,
       "date": "Dec 13",
       "ledger": "book-iv",
@@ -15026,7 +14988,7 @@
       "section": "Leaf 38: November 1918 to February 1919"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 40,
       "date": "Jan 1",
       "ledger": "book-iv",
@@ -15036,7 +14998,7 @@
       "section": "Leaf 38: November 1918 to February 1919"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 40,
       "date": "Jan 22",
       "ledger": "book-iv",
@@ -15046,7 +15008,7 @@
       "section": "Leaf 38: November 1918 to February 1919"
     },
     {
-      "year": 1917,
+      "year": 1918,
       "amount": 50,
       "date": "Feb 3",
       "ledger": "book-iv",
@@ -15056,7 +15018,7 @@
       "section": "Leaf 38: November 1918 to February 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 65,
       "date": "\" 27",
       "ledger": "book-iv",
@@ -15066,7 +15028,7 @@
       "section": "Leaf 39: January to March 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 100,
       "date": "Mar. 19",
       "ledger": "book-iv",
@@ -15076,7 +15038,7 @@
       "section": "Leaf 39: January to March 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 40,
       "date": "Mar 12",
       "ledger": "book-iv",
@@ -15086,7 +15048,7 @@
       "section": "Leaf 39: January to March 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 40,
       "date": "Mar 31",
       "ledger": "book-iv",
@@ -15096,7 +15058,7 @@
       "section": "Leaf 39: January to March 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 50,
       "date": "Apr 17",
       "ledger": "book-iv",
@@ -15106,7 +15068,7 @@
       "section": "Leaf 40: April to June 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 40,
       "date": "May 20",
       "ledger": "book-iv",
@@ -15116,7 +15078,7 @@
       "section": "Leaf 40: April to June 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 40,
       "date": "May 15",
       "ledger": "book-iv",
@@ -15126,7 +15088,7 @@
       "section": "Leaf 40: April to June 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 25,
       "date": "June 12",
       "ledger": "book-iv",
@@ -15136,7 +15098,7 @@
       "section": "Leaf 40: April to June 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 40,
       "date": "May 26",
       "ledger": "book-iv",
@@ -15146,7 +15108,7 @@
       "section": "Leaf 41: May to July 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 100,
       "date": "June 11",
       "ledger": "book-iv",
@@ -15156,7 +15118,7 @@
       "section": "Leaf 41: May to July 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 80,
       "date": "July 9",
       "ledger": "book-iv",
@@ -15166,7 +15128,7 @@
       "section": "Leaf 41: May to July 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 12,
       "date": "Sept 29",
       "ledger": "book-iv",
@@ -15176,7 +15138,7 @@
       "section": "Leaf 42: July to October 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 20,
       "date": "\" 16",
       "ledger": "book-iv",
@@ -15186,7 +15148,7 @@
       "section": "Leaf 42: July to October 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 80,
       "date": "\" 22",
       "ledger": "book-iv",
@@ -15196,7 +15158,7 @@
       "section": "Leaf 42: July to October 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 45,
       "date": "\" 31",
       "ledger": "book-iv",
@@ -15206,7 +15168,7 @@
       "section": "Leaf 42: July to October 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 45,
       "date": "Nov 19",
       "ledger": "book-iv",
@@ -15216,7 +15178,7 @@
       "section": "Leaf 43: October to December 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 25,
       "date": "\" 13",
       "ledger": "book-iv",
@@ -15226,7 +15188,7 @@
       "section": "Leaf 43: October to December 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 45,
       "date": "Dec 11",
       "ledger": "book-iv",
@@ -15236,7 +15198,7 @@
       "section": "Leaf 43: October to December 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 40,
       "date": "\" 20",
       "ledger": "book-iv",
@@ -15246,7 +15208,7 @@
       "section": "Leaf 43: October to December 1919"
     },
     {
-      "year": 1917,
+      "year": 1919,
       "amount": 45,
       "date": "Jan 3",
       "ledger": "book-iv",
@@ -15256,7 +15218,7 @@
       "section": "Leaf 44: December 1919 to March 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 10,
       "date": "Mar 19",
       "ledger": "book-iv",
@@ -15266,7 +15228,7 @@
       "section": "Leaf 44: December 1919 to March 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 25,
       "date": "\" 28",
       "ledger": "book-iv",
@@ -15276,7 +15238,7 @@
       "section": "Leaf 44: December 1919 to March 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 35,
       "date": "Feb 20",
       "ledger": "book-iv",
@@ -15286,7 +15248,7 @@
       "section": "Leaf 44: December 1919 to March 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 80,
       "date": "\" 27",
       "ledger": "book-iv",
@@ -15296,7 +15258,7 @@
       "section": "Leaf 45: January to February 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 45,
       "date": "Feb 20",
       "ledger": "book-iv",
@@ -15306,7 +15268,7 @@
       "section": "Leaf 45: January to February 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 50,
       "date": "\" 19",
       "ledger": "book-iv",
@@ -15316,7 +15278,7 @@
       "section": "Leaf 45: January to February 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 45,
       "date": "\" 19",
       "ledger": "book-iv",
@@ -15326,7 +15288,7 @@
       "section": "Leaf 45: January to February 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 35,
       "date": "\" 26",
       "ledger": "book-iv",
@@ -15336,7 +15298,7 @@
       "section": "Leaf 46: February to March 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 60,
       "date": "\" 26",
       "ledger": "book-iv",
@@ -15346,7 +15308,7 @@
       "section": "Leaf 46: February to March 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 35,
       "date": "Mar 1",
       "ledger": "book-iv",
@@ -15356,7 +15318,7 @@
       "section": "Leaf 46: February to March 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 80,
       "date": "\" 13",
       "ledger": "book-iv",
@@ -15366,7 +15328,7 @@
       "section": "Leaf 46: February to March 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 50,
       "date": "\" 25",
       "ledger": "book-iv",
@@ -15376,7 +15338,7 @@
       "section": "Leaf 47: March to May 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 50,
       "date": "Apr. 28",
       "ledger": "book-iv",
@@ -15386,7 +15348,7 @@
       "section": "Leaf 47: March to May 1920"
     },
     {
-      "year": 1917,
+      "year": 1920,
       "amount": 50,
       "date": "May 19",
       "ledger": "book-iv",
