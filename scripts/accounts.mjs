@@ -478,18 +478,35 @@ for (const file of files) {
 const bookIVAmount = (cells) => {
   const d = (cells[cells.length - 2] ?? '').replace(/[$,\s]/g, '');
   const c = (cells[cells.length - 1] ?? '').replace(/[$,\s]/g, '');
-  if (!/^\d+$/.test(d)) return null;
-  return Number(d) + (/^\d{1,2}$/.test(c) ? Number(c) : 0) / 100;
+  const cents = /^\d{1,2}$/.test(c);
+  // A sum under a dollar leaves the dollars column empty and writes the point
+  // on the ruled division itself: leaf 138's « 11 Folios sold | | 23 » is
+  // twenty-three cents. Read as nothing at all, it took the Artex subtotal of
+  // 2.13 with it, which then no longer summed its own two lines and was
+  // counted a second time as a charge.
+  if (!/^\d+$/.test(d)) return d === '' && cents ? Number(c) / 100 : null;
+  return Number(d) + (cents ? Number(c) : 0) / 100;
 };
 // Anchored at the head of the cell, and that is not fussiness: « bill » loose
 // in the line matched « Wild Bill in Deadwood Gulch » and took a fifteen-dollar
 // drawing out of the 1915 total by calling it an invoice.
-const IV_RECEIPT = /^["'”\s]*(rec['’]?d|received)\b/i;
+// « rec'd by check », and not « Rec'd from Frank Rehn Inc ». From leaf 139 the
+// volume writes its *charge* line that way too — « Rec'd from Rehn Gallery /
+// check No 6388 date Feb 14 / Empire Trust Co », with the red « rec'd by
+// check » repeating the figure underneath — so the two have to be told apart
+// by the word that follows, which is the only thing on the page that does it
+// once the colours are gone.
+const IV_RECEIPT = /^["'”\s]*(rec['’]?d|received)\b(?!\s+from\b)/i;
 const IV_BILL = /^["'”\s]*(bill|billed)\b/i;
 // A subtraction, and a restatement of what one leaves. Anchored at the head
 // for the reason `IV_BILL` is: « less » loose in the line would match a title.
 const IV_DEDUCTION = /^["'”\s]*less\b/i;
 const IV_RESTATED = /^["'”\s]*total\b/i;
+// « Total », alone or with the year it totals, and nothing else. A « total »
+// that says what it totals is a different thing and is a charge: leaf 124's
+// « total etchings 300 » gathers six etchings listed without prices, and it is
+// the only line that states their money.
+const IV_YEAR_TOTAL = /^["'”\s]*total\s*(19[0-6]\d)?\s*$/i;
 
 /**
  * Whether a row's figure is wholly struck out.
@@ -577,6 +594,8 @@ let ivStruckRows = 0;
       if (y !== null && m.ref !== null) pencil.set(m.ref, y);
     }
     let sheet = null;
+    // A settlement phrase still waiting for its figure, or null.
+    let openPhrase = null;
     const closeSheet = () => {
       if (sheet !== null && pencil.has(sheet)) year = pencil.get(sheet);
     };
@@ -613,22 +632,35 @@ let ivStruckRows = 0;
       // the nine has no letters in it, which is to say it is a bare figure,
       // and it was counted as a fresh charge for a drawing nobody made.
       const previous = rows[rows.length - 1];
+      const own = IV_RECEIPT.test(body)
+        ? 'receipt'
+        : IV_BILL.test(body)
+          ? 'bill'
+          : IV_DEDUCTION.test(body)
+            ? 'deduction'
+            : isDitto(body) && previous !== undefined
+              ? previous.kind
+              : /[A-Za-z]/.test(body)
+                ? 'item'
+                : 'bare';
+      // A settlement whose words do not fit on one ruled line finishes on the
+      // next, and the figure goes with the end of the phrase rather than with
+      // the beginning: leaf 134 writes « Rec'd by check from | John Clancy
+      // Special 3666.67 » across two lines, and leaves 80, 102 and 108 write
+      // « rec'd by check » with the money alone on the line below. The second
+      // line says nothing about itself, so it inherits the phrase it completes
+      // — which is open only while no figure has been reached, so a client's
+      // name over its items never reaches them.
+      const kind = amount !== null && (own === 'item' || own === 'bare') && openPhrase !== null
+        ? openPhrase
+        : own;
+      openPhrase = amount !== null ? null : own === 'item' || own === 'bare' ? openPhrase : own;
       rows.push({
         amount,
         body,
         year,
         date: (cells[0] ?? '').trim(),
-        kind: IV_RECEIPT.test(body)
-          ? 'receipt'
-          : IV_BILL.test(body)
-            ? 'bill'
-            : IV_DEDUCTION.test(body)
-              ? 'deduction'
-              : isDitto(body) && previous !== undefined
-                ? previous.kind
-                : /[A-Za-z]/.test(body)
-                  ? 'item'
-                  : 'bare',
+        kind,
         where: {
           ledger: row.ledger,
           batch: row.batch,
@@ -723,13 +755,21 @@ let ivStruckRows = 0;
     // that column, one to a line at a hundred each: six charges whose
     // description is a numeral, and the cheque of 600 below them confirms it.
     // Without the test they read as six sums carried, and five hundred dollars
-    // leaves the year.
+    // leaves the year. « Total », alone or with its year, is the same figure
+    // with the word written in front of it and is admitted here.
+    //
+    // And the settlement that would answer it has to be on the *same sheet*.
+    // A cheque at the head of the next leaf is answering that leaf and not
+    // this one: leaf 133's 20799.82 and leaf 140's 24498.43 both stand at the
+    // foot of a leaf whose successor opens « Rec'd from », and both were
+    // counted as charges because a receipt three lines further on happened to
+    // be the next row in the volume.
+    const answersHere = rows[i + 1]?.where.ref === r.where.ref ? answer : undefined;
     if (
-      r.kind === 'bare' &&
-      r.body === '' &&
+      (r.kind === 'bare' ? r.body === '' : IV_YEAR_TOTAL.test(r.body)) &&
       sinceSettlement === 0 &&
-      answer !== 'bill' &&
-      answer !== 'receipt'
+      answersHere !== 'bill' &&
+      answersHere !== 'receipt'
     ) {
       ivCarried.push({ year: r.year, amount: r.amount, ...r.where });
       continue;
