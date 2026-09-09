@@ -3915,3 +3915,146 @@ subtotal is the only arbiter. Leaf 122's « Approaching a City » is the same tr
   Nothing at 800\%.
 - **The words after the surviving ditto** in each of the three rubbed red
   receipts *(leaves 121, 122, 130)*.
+
+## The closed-loop 0 is a whole digit, not just a cents habit
+
+*(Book IV batch 14, sheets 157–161, leaves 156–159 and the back cover, read
+9 September 2026, Opus 5. Batch 13 was not read, so nothing here is checked
+against leaves 144 to 155.)*
+
+Batch 10 found the linked double o in the **cents** column. Here the same
+closed loop turns up as a **single digit inside a dollar figure**, and twice it
+is the difference between two readings a thousand dollars and eight thousand
+dollars apart:
+
+- **Leaf 157** — the payment on account for « Chair Car » reads **10,800.00**
+  letter by letter. The glyph after the comma is the same shape as the first
+  figure after the comma in the **6,000.00** two lines below it, and 10,000
+  with 6,000 is the 16,000.00 the leaf rules off and the cheque pays.
+- **Leaf 158** — the figure standing above the red receipt reads **18,666.67**,
+  and the receipt written directly under it reads **10,666.67**, which is
+  16,666.67 less the 6,000.00 payment on account above.
+
+**Compare the suspect glyph with the zeros nearest to it on the same leaf**
+before reaching for the sum. Her 0 takes a closed entry loop at the top of a
+run and drops it for the rest, so the first 0 after a comma is the one that
+looks like an 8 and the ones after it do not.
+
+## Her 3 in figures carries a closed upper loop, and it is why a third will not read
+
+*(batch 14)* « less 33 1/3 » on leaf 158 shows it plainly: the numerator's 3s
+are made with a **closed top loop over an open lower bowl**, while the
+denominator's 3, written below the rule, is a plain open 3. In a fast money
+figure the lower bowl closes too, and the digit becomes indistinguishable from
+an 8, or from a 9 where the top loop closes and the tail runs on.
+
+Leaf 158's commission line is the casualty: it reads **8398.83** at any
+magnification, and 25000.00 less it does not give the **16666.67** ruled off
+underneath, which is legible and is 25000.00 less **8333.33**. The figure is
+given as 8333.33, marked doubtful, and the note says what the glyphs say. It is
+the batch's one unsettled figure.
+
+The reliable control on the same leaf is leaf 159's **28.83** against
+**28.23**: the same royalty receipted twice, so her 8 and her 2 stand side by
+side in the same position of the same figure, in black and in red.
+
+## A passage can be written twice, one ink over the other, changing nothing
+
+*(batch 14)* New to the volume, and not a correction. On leaf 158 « Dec. 15,
+1966 » and « Balance on Chair Car » stand in **blue** with the same words traced
+over them in **black**; the three lines below — « to be deposited by John in
+Bank of New York on Jan 1, 1967 » — stand in **red** with the same words traced
+over them in **black**. Word for word, slightly out of register, nothing added
+and nothing altered.
+
+Batch 12's blue was a fourth colour doing a fourth job — following two cheques
+that were given back. This blue does no job at all. Transcribe the passage
+once and put the doubling in a `\note{}`; attributing the second writing to
+anyone would be inventing a reason for it.
+
+## The last three entries are one cheque seen from three sides
+
+*(batch 14)* Leaf 157's cheque of **16,000.00** on 18 December 1965 pays on
+account for two pictures at once — « Chair Car » for Dr and Mrs David B. Fall
+and « Intermission » for Howard Mack. Leaf 158 carries the balance of
+Intermission forward and settles it on 1 July 1966, then receipts the balance
+of Chair Car on 15 December 1966 with « to be deposited by John in Bank of New
+York on Jan 1, 1967 ». Leaf 159 opens 1967 by entering that **8,000.00** again
+as its first item, « deposited by Clancy ».
+
+So the same 8,000.00 is written on two leaves and counted in two years, and the
+book says so both times — the device of the Clancy cheques on leaves 133 to
+135, used once more at the end of the volume. **Do not merge the two entries**
+and do not treat the second as a duplicate: they are the two halves of a
+deliberate carry.
+
+Note also that the same man is « John » on one leaf and « Clancy » on the next,
+seven lines apart.
+
+## Expenses come off a sale, for the first time in the volume
+
+*(batch 14)* Leaf 156 rules off at 21000.00 and then deducts **372.00** of
+expenses before the cheque: relining, cleaning and varnishing of « East
+River » at 190.00, a frame by **Kulicke** for the same picture at 144.00, and a
+frame by **Granick** for the Charleston houses at 38.00. Nothing earlier in
+Book IV takes a cost off a price; the deductions have all been commission.
+
+## More spellings and marks, all as written
+
+*(batch 14)*
+
+- **« House at Charlestown »** *(leaf 156)* in the sale line against **« Houses
+  at Charleston »** *(leaf 156)* in the frame line, eight lines apart on one
+  leaf. Both stand.
+- **« Light House a 2 lights »** *(leaf 159)*, the word between « House » and the
+  numeral being a single letter with a small tail.
+- **« Folio Prints 137. Artex Junior »** *(leaf 156)* and **« by Artex Junior »**
+  *(leaf 159)* — the product line, not a person.
+- **« Mus. Modern Art »** *(leaf 159)* against **« Whitney Mus. of Am. Art »**
+  *(leaf 157)*.
+- **« recd »** without the apostrophe in the red receipt lines of leaves 158 and
+  159, against **« Rec'd »** with it in the black charge lines of the same
+  entries.
+- **Every line of the February 1967 entry is underscored** *(leaf 159)*, from
+  « for reproduction » to « in payment ». A blanket underscore of a whole entry
+  is not emphasis of any phrase in it; leave it to a `\note{}` rather than
+  wrapping six lines in `\emph{}`.
+- **A cents figure raised over a short rule** *(leaf 159)*: « 28.⁸³ ». Batch 11
+  found the habit in a description; here it is in the money column.
+
+## Readings that would not settle
+
+*(batch 14)*
+
+- **The forename between « Dr. » and « Levitt »** *(leaf 157)* — a capital of two
+  strokes, then four or five minims, then a descending g. Nothing at 1000\%
+  separates the minims, and the surname itself is « Levitt » with « Lewitt »
+  defensible at the third letter. `\ill{}` stands for the forename: **a name is
+  the one field never to offer a guess for**, however well the entries around it
+  would support one.
+- **`Leshner`** *(leaf 156)* — in « Daniel Leshner ». The terminal is the usual
+  r/n, and the second letter is an e or an i.
+- **`Relining`** *(leaf 156)* — « Rel- » plus a run of minims plus a g, offered on
+  the stroke count and on the operation the line goes on to describe
+  (« cleaning and varnishing »). The minims will not be counted.
+- **`Fall`** *(leaf 157)* — in « Dr \& Mrs David B. Fall »; « Falk » fits the
+  terminal about as well.
+- **The two figures of 20628.00** *(leaf 156)* — the black one has a rubbed grey
+  patch across its cents and the red one is written into a spread of its own
+  ink. Given as 21000.00 less 372.00 gives them, and marked.
+- **The Artex charge of 33 37 against its receipt of 6.63** *(leaf 156)* — the
+  digits are legible, no decimal point is written in the charge, and nothing on
+  the leaf explains why the receipt is the smaller.
+- **A rubbed pencil word behind « deposited by Clancy »** *(leaf 159)*, and a
+  second rubbed pencil line under the year total of leaf 156. Nothing of either.
+
+## Where Book IV ends
+
+*(batch 14)* Sheet 161 is the **back cover** — cloth over board, a black rule
+ruled inside its four edges, no writing of any hand. It takes a `\sheet{}` with
+an empty leaf number and a `\note{}`, like the front cover in batch 1.
+
+The last entry is an Artex royalty of **23 March 1967** on « Light House a 2
+lights », receipted twice a fortnight apart. The volume stops there without
+saying so; the rest of leaf 159 is empty. **Nothing on the last leaf marks it as
+the last** — do not look for a closing total, and do not supply one.
