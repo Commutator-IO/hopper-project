@@ -129,6 +129,58 @@ for (const [ledger, byLabel] of Object.entries(tags)) {
     .sort((a, b) => a.tag.localeCompare(b.tag));
 }
 
+/**
+ * A census of the apparatus itself, per ledger.
+ *
+ * The schema page argues that these books are a data model, and an argument
+ * like that is worth nothing if its figures are typed into the prose by hand:
+ * a page that said « 370 illegible readings » would be wrong the day after the
+ * next batch landed, and would go on looking authoritative. So the counts are
+ * read off the sources, the same way the progress figures are.
+ *
+ * Comment lines are dropped before counting. Every transcription opens with a
+ * header explaining what its batch contains, and those headers name the macros
+ * they discuss — counting them would report the prose about the reading as
+ * part of the reading.
+ */
+const MACROS = [
+  'ill',
+  'uncertain',
+  'struck',
+  'add',
+  'note',
+  'marginal',
+  'sketch',
+  'clipping',
+  'work',
+];
+
+const apparatus = {};
+for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : []) {
+  if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
+  for (const f of readdirSync(resolve(out, dir.name))) {
+    if (!/^batch-\d+\.tex$/.test(f)) continue;
+    const src = readFileSync(resolve(out, dir.name, f), 'utf8')
+      .split('\n')
+      .filter((ln) => !ln.trimStart().startsWith('%'))
+      .join('\n');
+    const e = (apparatus[dir.name] ??= {
+      macros: Object.fromEntries(MACROS.map((m) => [m, 0])),
+      hands: {},
+      tables: 0,
+      rows: 0,
+    });
+    for (const m of MACROS) e.macros[m] += (src.match(new RegExp(`\\\\${m}\\{`, 'g')) ?? []).length;
+    for (const m of src.matchAll(/\\hand\{(\w+)\}/g)) e.hands[m[1]] = (e.hands[m[1]] ?? 0) + 1;
+    e.tables += (src.match(/\\begin\{ledgertable\}/g) ?? []).length;
+    // A row ends at the `\\` that closes it. Counted inside the tables only,
+    // so a line break in a paragraph of Jo Hopper's prose is not a ledger row.
+    for (const t of src.matchAll(/\\begin\{ledgertable\}([\s\S]*?)\\end\{ledgertable\}/g)) {
+      e.rows += (t[1].match(/\\\\/g) ?? []).length;
+    }
+  }
+}
+
 const manifest = {
   batchSize: BATCH_SIZE,
   generated: new Date().toISOString(),
@@ -136,6 +188,7 @@ const manifest = {
   declared,
   tags,
   read: readCount,
+  apparatus,
 };
 
 writeFileSync(resolve(out, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');

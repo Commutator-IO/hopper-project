@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          addEventListener('error', function (e) {
+            var el = e.target; var u = el && (el.src || el.href);
+            if (u && /\/assets\//.test(u) && !sessionStorage.getItem('assetReload')) {
+              sessionStorage.setItem('assetReload', '1'); location.reload();
+            }
+          }, true);
+          addEventListener('load', function () { sessionStorage.removeItem('assetReload'); });
+        } catch (_) {}
+      })();
+    </script>
+    <title>Schema | Hopper Ledgers</title>
+    <meta name="description" content="Six volumes, four record structures, fifty-four years, and none of them designed: the Hopper ledgers read as a data model, with the modern counterpart of each part named." />
+    <meta property="og:title" content="Schema | Hopper Ledgers" />
+    <meta property="og:description" content="Six volumes, four record structures, fifty-four years, and none of them designed: the Hopper ledgers read as a data model, with the modern counterpart of each part named." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hopper.commutator.io/schema/" />
+    <link rel="canonical" href="https://hopper.commutator.io/schema/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/mainSchema.tsx"></script>
+  </body>
+</html>

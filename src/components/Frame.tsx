@@ -14,6 +14,7 @@ const OTHER_PAGES: { path: string; label: string }[] = [
   { path: '/timeline/', label: 'Timeline' },
   { path: '/accounts/', label: 'Accounts' },
   { path: '/technique/', label: 'Technique' },
+  { path: '/schema/', label: 'Schema' },
   { path: '/method/', label: 'Method' },
   { path: '/contribute/', label: 'Contribute' },
 ];

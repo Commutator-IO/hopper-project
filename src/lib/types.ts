@@ -170,6 +170,26 @@ export interface Manifest {
    * was.
    */
   read?: Record<string, number>;
+  /**
+   * A census of the apparatus per ledger, counted from the `.tex` sources.
+   *
+   * Here so that the schema page can argue from figures rather than assert
+   * them. A count typed into prose is wrong the day the next batch lands and
+   * goes on looking authoritative; this one moves with the corpus.
+   */
+  apparatus?: Record<string, Apparatus>;
+}
+
+/** What one ledger's transcriptions are made of. Counts exclude comment lines. */
+export interface Apparatus {
+  /** Occurrences of each editorial macro — `ill`, `uncertain`, `struck`, … */
+  macros: Record<string, number>;
+  /** Passages attributed to each hand. */
+  hands: Record<string, number>;
+  /** `ledgertable` environments — one per ruled block on a leaf. */
+  tables: number;
+  /** Rows inside those tables, and only inside them. */
+  rows: number;
 }
 
 /** Which artifacts exist for a batch. Keyed `<ledger>#<batch>`. */
