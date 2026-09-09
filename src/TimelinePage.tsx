@@ -1,5 +1,7 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Page } from './components/Frame.tsx';
+import { LedgerCalendar } from './components/LedgerCalendar.tsx';
+import streak from './content/streak.json';
 import { LEDGERS, SHEETS } from './content/catalogue.ts';
 import life from './content/life.json';
 import worksData from './content/works.json';
@@ -24,12 +26,24 @@ import { url } from './lib/base.ts';
  * took the Washington Square top floor is the live case — the disagreement is
  * printed rather than resolved by picking one quietly.
  *
- * **The link into the archive is derived, never asserted.** A year lights up
- * the sheets whose *own Whitney descriptor* names that year, which in practice
- * means Book IV: it is a running account, so the cataloguer had a date to give
- * for each leaf. The other five volumes are dated at the volume and not at the
- * sheet, and this page does not spread a volume's range over its leaves to
- * make the display fuller.
+ * **The link into the archive is derived, never asserted.** The year sections
+ * light up the sheets whose *own Whitney descriptor* names that year, which in
+ * practice means Book IV: it is a running account, so the cataloguer had a date
+ * to give for each leaf. The other five volumes are dated at the volume and not
+ * at the sheet, and this page does not spread a volume's range over its leaves
+ * to make the display fuller.
+ *
+ * ## The calendar reads the transcriptions instead, and that is the reframe
+ *
+ * That descriptor rule made a chart about time in which five of six volumes
+ * were invisible. So the head of the page is now a day-level calendar built by
+ * `scripts/streak.mjs`, which reads the **date columns of the transcriptions**
+ * — every volume has them wherever somebody has done the reading — and the
+ * strip beneath the events is its year selector rather than a second chart.
+ *
+ * The two coexist because they answer different questions. The calendar asks
+ * on what days the books were written in; the sections ask what is known to
+ * have happened in the year, and who says so.
  */
 
 interface LifeEvent {
@@ -158,6 +172,15 @@ const yearOfDate = (d: string | null): number | null => {
   return m ? Number(m[1]) : null;
 };
 
+const STREAK = streak as unknown as {
+  span: [number, number];
+  rowsDated: number;
+  distinctDays: number;
+  rowsWithMonthUnresolved: number;
+  yearRolls: number;
+  years: [number, number, number][];
+};
+
 const LIFE = life as unknown as {
   note: string;
   sources: Record<string, { name: string; url: string }>;
@@ -238,6 +261,25 @@ export function TimelinePage() {
     return { lo, hi };
   }, [years]);
 
+  /**
+   * Days the transcriptions themselves date, by year.
+   *
+   * This is what the strip measures now. It used to measure sheets whose
+   * Whitney descriptor named the year, which was Book IV alone — a chart about
+   * time in which five volumes could not appear. `streak.json` is read off the
+   * date columns, so a volume enters the moment it is read.
+   */
+  const daysByYear = useMemo(() => {
+    const m = new Map<number, number>();
+    for (const [y, days] of STREAK.years) m.set(y, days);
+    return m;
+  }, []);
+
+  /** Opens on the year the books were busiest, so the grid arrives full. */
+  const [calYear, setCalYear] = useState(
+    () => STREAK.years.reduce((a, b) => (b[1] > a[1] ? b : a))[0],
+  );
+
   return (
     <Page path="/timeline/">
       <header className="border-b border-ink-200 py-10">
@@ -247,6 +289,23 @@ export function TimelinePage() {
           it. Every entry names the source that states it and links to that page — nothing here
           is written from memory, and where sources disagree the disagreement is printed rather
           than resolved.
+        </p>
+        <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-ink-700">
+          It reads in two registers. The <strong>calendar</strong> below is the books&rsquo; own
+          working year: {STREAK.rowsDated.toLocaleString('en-GB')} dated rows on{' '}
+          {STREAK.distinctDays.toLocaleString('en-GB')} days, read out of the date columns of
+          every transcribed volume. The <strong>year sections</strong> under it are the life,
+          each entry carrying the source that states it. The first says when the books were
+          written in; the second says what is known to have been happening, and who says so.
+        </p>
+        <p className="prose-note mt-3 max-w-3xl">
+          <strong>The calendar is not a record of days Edward Hopper worked</strong>, and it is
+          worth being blunt about that before looking at it, because a dense grid reads as
+          productivity. What is dated is a transaction &mdash; a cheque cleared, a bill
+          rendered, a plate sold. Josephine Hopper wrote almost every line of it. The data says
+          so itself: Sunday carries a sixth of the days a weekday does, and August is the
+          thinnest month in the year, because August is Truro and Gloucester with the dealers
+          left behind in New York. <strong>The painting season is the gap.</strong>
         </p>
         <p className="prose-note mt-3 max-w-3xl">
           A year lists two different kinds of leaf, and the difference is worth knowing.{' '}
@@ -271,24 +330,47 @@ export function TimelinePage() {
         </p>
       </header>
 
-      {/* The strip: one mark per year, so the shape of the record is visible
-          before any of it is read. Height is the number of dated sheets. */}
+      {/* The strip is the calendar's year selector, not a second chart. One mark
+          per year, height being the days that year's transcriptions date, so
+          the shape of the whole record stays visible while one year is open. */}
       <section className="border-b border-ink-200 py-6">
         <div className="flex items-end gap-px overflow-x-auto pt-6">
           {Array.from({ length: span.hi - span.lo + 1 }, (_, i) => span.lo + i).map((y) => {
-            const n = byYear.get(y)?.length ?? 0;
+            const n = daysByYear.get(y) ?? 0;
             const ev = LIFE.events.some((e) => e.year === y);
+            const on = y === calYear;
+            /*
+             * The strip is longer than the ledgers are.
+             *
+             * Its span comes from the life events and the museums' dates for
+             * the works, so it runs 1858 to 1995 — a birth two volumes before
+             * the first account book, and acquisitions long after the last.
+             * That was harmless while it was only a chart. As the calendar's
+             * selector it would offer eighty years that open on nothing, so
+             * only the years the books actually cover are pickable; the rest
+             * still carry their life marks and stay as they are.
+             */
+            const pickable = y >= STREAK.span[0] && y <= STREAK.span[1];
             // The two rules are read off the life file, where the year carries
             // the source that states it, rather than typed into this
             // component. A date written into a chart is a date nobody can
             // check against anything.
             const life = LIFE.events.find((e) => e.year === y && e.life)?.life;
             return (
-              <a
+              <button
                 key={y}
-                href={`#y${y}`}
-                title={`${y}${n ? ` — ${n} sheet${n === 1 ? '' : 's'}` : ''}`}
-                className="group relative flex w-2 shrink-0 flex-col justify-end"
+                type="button"
+                onClick={() => pickable && setCalYear(y)}
+                disabled={!pickable}
+                aria-current={on ? 'true' : 'false'}
+                title={
+                  pickable
+                    ? `${y}${n ? ` — ${n} day${n === 1 ? '' : 's'} recorded` : ' — nothing dated'}`
+                    : `${y} — outside the account books`
+                }
+                className={`group relative flex w-2 shrink-0 flex-col justify-end ${
+                  pickable ? 'cursor-pointer' : 'cursor-default'
+                }`}
                 style={{ height: 44 }}
               >
                 {life && (
@@ -299,21 +381,26 @@ export function TimelinePage() {
                     </span>
                   </>
                 )}
+                {on && (
+                  <span className="pointer-events-none absolute inset-x-[-1px] bottom-[-4px] h-0.5 rounded-full bg-ink-900" />
+                )}
                 <span
-                  className={`w-full rounded-sm ${n ? 'bg-brand-400' : 'bg-ink-200'}`}
-                  style={{ height: Math.max(3, Math.min(34, n * 4)) }}
+                  className={`w-full rounded-sm ${
+                    on ? 'bg-brand-700' : n ? 'bg-brand-400 group-hover:bg-brand-600' : 'bg-ink-200'
+                  }`}
+                  style={{ height: Math.max(3, Math.min(34, n * 0.4)) }}
                 />
                 {ev && <span className="mt-0.5 h-1 w-full rounded-full bg-ink-800" />}
-              </a>
+              </button>
             );
           })}
         </div>
-        <div className="mt-2 flex justify-between text-[11px] tabular text-ink-400">
+        <div className="mt-3 flex justify-between text-[11px] tabular text-ink-400">
           <span>{span.lo}</span>
           <span>
             <span className="mr-3">
               <span className="mr-1 inline-block h-2 w-2 rounded-sm bg-brand-400 align-middle" />
-              sheets dated to the year
+              days the transcriptions date
             </span>
             <span>
               <span className="mr-1 inline-block h-1 w-2 rounded-full bg-ink-800 align-middle" />
@@ -322,6 +409,22 @@ export function TimelinePage() {
           </span>
           <span>{span.hi}</span>
         </div>
+
+        <div className="mt-6">
+          <LedgerCalendar year={calYear} onPickYear={setCalYear} />
+        </div>
+
+        <p className="prose-note mt-4">
+          <a href={`#y${calYear}`} className="underline decoration-ink-300 underline-offset-2">
+            Read {calYear} below ↓
+          </a>{' '}
+          — the events, the sheets and the works for the year now open above. The reading is
+          derived: {STREAK.rowsWithMonthUnresolved} further rows name a month but yield no day
+          and are counted rather than dropped, and {STREAK.yearRolls} dates in the whole corpus
+          roll into the next year where a leaf runs December into January under a heading that
+          names both. Dates are transcribed as written — the ledgers are frequently out of
+          order, and none has been corrected to make a sequence work.
+        </p>
       </section>
 
       <section className="py-6">

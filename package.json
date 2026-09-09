@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run manifest && vite",
-    "build": "npm run manifest && npm run notes && npm run places -- --check && tsc -b && vite build && npm run sitemap",
+    "build": "npm run manifest && npm run notes && npm run streak && npm run places -- --check && tsc -b && vite build && npm run sitemap",
     "lint": "oxlint --deny-warnings",
     "preview": "vite preview",
     "catalogue": "node scripts/catalogue.mjs",
@@ -20,6 +20,7 @@
     "accounts": "node scripts/accounts.mjs",
     "places": "node scripts/places.mjs",
     "notes": "node scripts/notes.mjs",
+    "streak": "node scripts/streak.mjs",
     "formats": "node scripts/formats.mjs",
     "materials": "node scripts/materials.mjs"
   },
