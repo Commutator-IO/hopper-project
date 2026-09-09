@@ -91,6 +91,19 @@ const A = accountsData as unknown as {
     countedNote: string;
   };
   arithmetic: { checkable: number; agree: number; disagree: number; note: string };
+  /**
+   * The same money split by which trade earned it. `years` below is the art
+   * alone; this is where Book IV's illustration income lives.
+   */
+  activities: {
+    key: string;
+    label: string;
+    ledgers: string[];
+    rows: number;
+    years: { year: number; accrued: number; received: number; notRecorded: number; outstanding: number }[];
+    totals: { accrued: number; collected: number; outstanding: number; notRecorded: number };
+  }[];
+  activitiesNote: string;
   years: Year[];
   works: Work[];
   worksNote: string;
@@ -144,6 +157,8 @@ export function AccountsPage() {
       .map(named);
   }, []);
 
+  const illustration = A.activities?.find((a) => a.key === 'illustration');
+
   // One scale for both bars, and it is a net scale on purpose. Gross carries
   // the dealer's third and `received` does not, so a gross bar drawn beside a
   // received bar would show every year under-collected by exactly the
@@ -180,6 +195,17 @@ export function AccountsPage() {
             transcribed — {A.coverage.sheets} sheets of the 504 in the six volumes. Every figure
             below is a floor under a number nobody knows yet, and it moves as batches land.
           </p>
+          {illustration && illustration.rows > 0 && (
+            <p className="mt-2 text-[13.5px] leading-relaxed text-ink-800">
+              <strong className="font-semibold">And the totals below are his own work only.</strong>{' '}
+              Book IV is a pocket cash book of magazine and advertising commissions, and it is now
+              read: ${money(illustration.totals.accrued)} charged across{' '}
+              {illustration.years[0]?.year}–{illustration.years[illustration.years.length - 1]?.year},
+              of which ${money(illustration.totals.collected)} is receipted. That is a different
+              trade on a different basis, so it is counted apart rather than added in — every
+              figure in the tables below is the sale of a picture.
+            </p>
+          )}
           {uncounted.length > 0 && (
             <p className="mt-2 text-[13.5px] leading-relaxed text-ink-800">
               <strong className="font-semibold">

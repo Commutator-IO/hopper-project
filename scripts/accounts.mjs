@@ -222,7 +222,25 @@ const files = readTranscripts(root);
 const entries = [];
 const unparsed = [];
 
+/**
+ * Which trade a volume records.
+ *
+ * Books I, II, III and V and the dealers' book record Edward Hopper selling
+ * his own work; Book IV records him being paid for somebody else's. Keeping
+ * the two apart is not a nicety — through the years this batch covers they are
+ * nearly disjoint in time, and a single total would say that a man who sold
+ * almost no pictures before 1924 was earning steadily, which is true only
+ * because he was drawing two line drawings a week for the Associated Sunday
+ * Magazines at twenty dollars each.
+ *
+ * Everything that is not the pocket book is « art », rather than the reverse,
+ * so a volume nobody has classified is counted with the work rather than
+ * silently invented as a second income.
+ */
+const activityOf = (ledger) => (ledger === 'book-iv' ? 'illustration' : 'art');
+
 for (const file of files) {
+  if (activityOf(file.ledger) !== 'art') continue;
   const groups = [...file.works.map((w) => w.rows), file.looseRows];
   for (const rows of groups) {
     // A ditto in the date column means the row above, and only within one run
@@ -355,10 +373,183 @@ for (const file of files) {
           receiptWritten: sales.length === 1 ? receipt : null,
           receiptYear,
           check,
+          activity: 'art',
           ...where,
         });
       }
     }
+  }
+}
+
+/* --------------------------------------------- Book IV: the pocket book */
+
+/**
+ * The illustration income, which is shaped nothing like the rest.
+ *
+ * Book IV is a stationer's pocket memorandum book with the money column
+ * already printed, and every assumption the reader above rests on is false in
+ * it. There is no commission, so the `price - 1/3` pattern that defines a sale
+ * everywhere else appears nowhere. The money is split across two cells,
+ * dollars and cents, by two printed red rules. No column is headed, in
+ * fifty-four years. And the date column gives a month and a day but never a
+ * year: the year is written once, alone, on a line of its own, and carries
+ * until the next one.
+ *
+ * So it gets its own reader, and the reader has to decide three things.
+ *
+ * **What a charge is.** A row states a client, then its items one per line
+ * with a price, then « Bill rendered » with their total, then « Rec'd by
+ * check » in red. Counting the items *and* the bill would double every
+ * commission in the volume. Counting only the bill would lose the many blocks
+ * that were never billed on their own line. So: the items are the charge, and
+ * a bill is counted only where nothing was itemised since the last settlement
+ * — which is exactly the case of « June 25 Everybodys' Magazine / 3 half tone
+ * drawings / The Hero » and then, alone, « June 27 Bill rendered 125 ».
+ *
+ * **What a bare figure is.** A money row whose description column is empty is
+ * either a subtotal ruled off above — she draws the rule, and the transcription
+ * does not record it — or a charge whose description she did not write. They
+ * are told apart by what follows: a subtotal exists to be billed, and is
+ * followed by the bill. Leaf 14's undescribed 30 is followed by a receipt and
+ * is a charge; leaves 21, 22 and 23 carry subtotals that are followed by their
+ * bills, and those are excluded. Both counts are reported below.
+ *
+ * **When it happened.** The year carries forward from the last line that
+ * states one, and across a batch boundary, because the volume is continuous
+ * and the batches are read in order. It carries *only* across contiguous
+ * batches: if batch 5 is transcribed and batches 3 and 4 are not, a year taken
+ * from batch 2 would be four leaves and possibly two years stale, so the chain
+ * is broken and the rows are reported unread until the volume states a year
+ * again.
+ *
+ * The receipts are kept as their own stream rather than attached to
+ * individual charges. A cheque settles a run of work and not a line of it, and
+ * the runs overlap — leaf 6 bills 90 « to date » and receives 80, because ten
+ * of it had already been paid two weeks earlier. Allocating that across lines
+ * would be inventing a precision the book does not have, and the year totals
+ * do not need it.
+ */
+const bookIVAmount = (cells) => {
+  const d = (cells[cells.length - 2] ?? '').replace(/[$,\s]/g, '');
+  const c = (cells[cells.length - 1] ?? '').replace(/[$,\s]/g, '');
+  if (!/^\d+$/.test(d)) return null;
+  return Number(d) + (/^\d{1,2}$/.test(c) ? Number(c) : 0) / 100;
+};
+// Anchored at the head of the cell, and that is not fussiness: « bill » loose
+// in the line matched « Wild Bill in Deadwood Gulch » and took a fifteen-dollar
+// drawing out of the 1915 total by calling it an invoice.
+const IV_RECEIPT = /^["'”\s]*(rec['’]?d|received)\b/i;
+const IV_BILL = /^["'”\s]*(bill|billed)\b/i;
+
+const receipts = [];
+const ivSubtotals = [];
+let ivBlankDescription = 0;
+{
+  const ivFiles = files.filter((f) => activityOf(f.ledger) === 'illustration');
+  const rows = [];
+  let year = null;
+  let previousBatch = null;
+  for (const file of ivFiles) {
+    // The year carries across a batch boundary only where the batches abut.
+    if (previousBatch !== null && file.batch !== previousBatch + 1) year = null;
+    previousBatch = file.batch;
+    for (const row of file.looseRows) {
+      const cells = row.plain;
+      const body = cells
+        .slice(1, cells.length - 2)
+        .join(' ')
+        .trim();
+      const amount = bookIVAmount(cells);
+      const bare = /^(19[0-6]\d)\.?$/.exec((cells[0] ?? '').trim());
+      if (bare && !body && amount === null) {
+        year = Number(bare[1]);
+        continue;
+      }
+      rows.push({
+        amount,
+        body,
+        year,
+        date: (cells[0] ?? '').trim(),
+        kind: IV_RECEIPT.test(body)
+          ? 'receipt'
+          : IV_BILL.test(body)
+            ? 'bill'
+            : /[A-Za-z]/.test(body)
+              ? 'item'
+              : 'bare',
+        where: {
+          ledger: row.ledger,
+          batch: row.batch,
+          leaf: row.leaf,
+          ref: row.ref,
+          section: row.section,
+        },
+        cells,
+      });
+    }
+  }
+
+  // How much has been itemised since the last bill or cheque closed a run.
+  let sinceSettlement = 0;
+  for (let i = 0; i < rows.length; i++) {
+    const r = rows[i];
+    if (r.amount === null) continue;
+    if (r.year === null) {
+      unparsed.push({
+        reason:
+          'a money row in Book IV standing after a gap in the transcribed batches, so no year ' +
+          'can be carried to it — the volume states a year once and lets it run',
+        ...r.where,
+        work: null,
+        row: r.cells,
+      });
+      continue;
+    }
+    if (r.kind === 'receipt') {
+      receipts.push({ year: r.year, amount: r.amount, date: r.date, ...r.where });
+      sinceSettlement = 0;
+      continue;
+    }
+    if (r.kind === 'bare' && rows[i + 1]?.kind === 'bill') {
+      ivSubtotals.push({ year: r.year, amount: r.amount, ...r.where });
+      continue;
+    }
+    // A bill restates what was itemised above it; only an unitemised one is a
+    // charge in its own right.
+    if (r.kind === 'bill' && sinceSettlement > 0) {
+      sinceSettlement = 0;
+      continue;
+    }
+    if (r.kind === 'bare') ivBlankDescription++;
+    entries.push({
+      year: r.year,
+      yearFrom: 'the year the volume last stated, carried forward',
+      gross: r.amount,
+      rateWritten: null,
+      commission: 0,
+      net: r.amount,
+      receiptWritten: null,
+      receiptYear: null,
+      check: null,
+      activity: 'illustration',
+      charge:
+        r.kind === 'bill'
+          ? 'a bill, with nothing itemised since the last settlement'
+          : r.kind === 'bare'
+            ? 'an itemised charge whose description column is blank'
+            : 'an itemised charge',
+      // The line as written, which is what was drawn and not who paid for it.
+      // Book IV names the client once, on its own line above the items, and
+      // that line is not attached here: a client header is not reliably
+      // distinguishable from an item that happens to carry a date and no
+      // price — « May 25th Initial Letters » is the case that settles it — and
+      // a client guessed wrong would be worse than none.
+      description: r.body || null,
+      ...r.where,
+      work: null,
+    });
+    if (r.kind === 'bill') sinceSettlement = 0;
+    else sinceSettlement++;
   }
 }
 
@@ -392,7 +583,11 @@ const duplicates = [];
 const deduped = [];
 {
   const byKey = new Map();
-  for (const e of entries) {
+  // Art only. Book IV names no work and sells nothing twice — its rows are
+  // aggregated by activity further down, and putting them through a pass built
+  // to collapse the same painting written into two volumes would be answering
+  // a question the pocket book never asks.
+  for (const e of entries.filter((e) => e.activity === 'art')) {
     if (!e.work) {
       deduped.push(e);
       continue;
@@ -490,6 +685,102 @@ const receivable = allYears.map((year) => {
   };
 });
 
+
+/**
+ * The two trades, side by side, and the three states money can be in.
+ *
+ * `years` and `receivable` above are the art alone and keep the meaning they
+ * have always had; this is the split the pocket book made possible.
+ *
+ * Three buckets rather than two, and the third is the honest one. Book IV
+ * records a cheque for very nearly every charge in it, so what it does not
+ * discharge is genuinely still owed at the point the transcription stops.
+ * Books I to III mostly do not: a leaf there often writes one date to a sale
+ * and does not separate the day the work went out from the day the cheque
+ * came, so a sale sits undischarged because the book is silent, not because
+ * nobody paid. Folding those two into one « outstanding » figure would put
+ * tens of thousands of dollars of silence beside a few hundred of real debt
+ * and invite the reader to compare them. So:
+ *
+ * — **collected**, where a receipt names a year;
+ * — **outstanding**, accrued in a year and not yet discharged in it;
+ * — **not recorded**, where the row states no receipt at all.
+ *
+ * The last is a fact about the volume, and it is reported per activity so that
+ * the difference between the two books is visible rather than absorbed.
+ */
+const ACTIVITIES = [
+  { key: 'art', label: 'Painter and etcher' },
+  { key: 'illustration', label: 'Illustrator' },
+];
+
+const activities = ACTIVITIES.map(({ key, label }) => {
+  const mine = key === 'art' ? deduped : entries.filter((e) => e.activity === key);
+  const cashRows = key === 'art' ? null : receipts;
+
+  // Accrual is split at source into the part whose fate the book states and
+  // the part it does not, so that the running debt below is a debt and not a
+  // silence. Book IV states a receipt for its charges as a matter of course,
+  // so all of it is followable; Book II mostly does not, and two thirds of the
+  // art falls on the other side of this line.
+  const accruedBy = new Map();
+  const silentBy = new Map();
+  const receivedBy = new Map();
+  let notRecorded = 0;
+  if (cashRows) {
+    for (const e of mine) accruedBy.set(e.year, (accruedBy.get(e.year) ?? 0) + e.net);
+    for (const r of cashRows) receivedBy.set(r.year, (receivedBy.get(r.year) ?? 0) + r.amount);
+  } else {
+    for (const e of mine) {
+      if (e.receiptYear === null) {
+        notRecorded += e.net;
+        silentBy.set(e.year, (silentBy.get(e.year) ?? 0) + e.net);
+        continue;
+      }
+      accruedBy.set(e.year, (accruedBy.get(e.year) ?? 0) + e.net);
+      receivedBy.set(e.receiptYear, (receivedBy.get(e.receiptYear) ?? 0) + e.net);
+    }
+  }
+
+  const span = [
+    ...new Set([...accruedBy.keys(), ...receivedBy.keys(), ...silentBy.keys()]),
+  ].sort((a, b) => a - b);
+  let running = 0;
+  const byYear = span.map((year) => {
+    const accrued = accruedBy.get(year) ?? 0;
+    const received = receivedBy.get(year) ?? 0;
+    const silent = silentBy.get(year) ?? 0;
+    running += accrued - received;
+    return {
+      year,
+      // Accrued in this year on rows the book follows to a cheque.
+      accrued: Number(accrued.toFixed(2)),
+      received: Number(received.toFixed(2)),
+      // Accrued in this year on rows that state no receipt at all. Never
+      // enters `outstanding`: it is not a debt, it is an absence.
+      notRecorded: Number(silent.toFixed(2)),
+      outstanding: Number(running.toFixed(2)),
+    };
+  });
+
+  const accrued = [...accruedBy.values()].reduce((a, b) => a + b, 0);
+  const collected = [...receivedBy.values()].reduce((a, b) => a + b, 0);
+  return {
+    key,
+    label,
+    ledgers: [...new Set(mine.map((e) => e.ledger))].sort(),
+    rows: mine.length,
+    years: byYear,
+    totals: {
+      // Everything the rows state, followable or not — so that
+      // accrued = collected + outstanding + notRecorded, at every level.
+      accrued: Number((accrued + notRecorded).toFixed(2)),
+      collected: Number(collected.toFixed(2)),
+      outstanding: Number((accrued - collected).toFixed(2)),
+      notRecorded: Number(notRecorded.toFixed(2)),
+    },
+  };
+});
 
 /**
  * Works by what they brought in, net of commission.
@@ -810,8 +1101,37 @@ const out = {
       'commission. A disagreement is reported, never corrected: it most often means a figure was ' +
       'misread, and it points at the row to go back to.',
   },
+  activities,
+  activitiesNote:
+    'The same money split by which trade earned it: Books I, II, III, V and the dealers\' book ' +
+    'record Edward Hopper selling his own work, Book IV records him being paid for magazine and ' +
+    'advertising drawings. Through the years transcribed the two barely overlap, which is the ' +
+    'point of separating them — the illustration income is the part the paintings books do not ' +
+    'mention at all. Three buckets and not two: « not recorded » is money whose row states no ' +
+    'receipt of any kind, and it is nearly all art, because the pocket book dates its cheques ' +
+    'and the work books often do not. Reading it as debt would compare a silence with a sum.',
+  illustration: {
+    charges: entries.filter((e) => e.activity === 'illustration').length,
+    receipts: receipts.length,
+    subtotalsExcluded: ivSubtotals.length,
+    blankDescription: ivBlankDescription,
+    note:
+      'Book IV states a client, then its items one to a line, then « Bill rendered » with their ' +
+      'total, then « Rec\'d by check » in red. The items are the charge; a bill is counted only ' +
+      'where nothing was itemised since the last settlement, or every commission in the volume ' +
+      'would be counted twice. A bare figure with no description is a subtotal where a bill ' +
+      'follows it and a charge otherwise — the leaf rules a line above a subtotal and the ' +
+      'transcription does not record the rule, so this is the one place the reader infers rather ' +
+      'than reads. Receipts are kept as their own stream: a cheque settles a run of work, not a ' +
+      'line of it, and the runs overlap.',
+  },
   years,
   receivable,
+  yearsNote:
+    'The art alone — Books I, II and the dealers\' book. The illustration income is in ' +
+    '`activities`, and is deliberately not added in here: these figures have meant the sale of ' +
+    "Edward Hopper's own work since this file was first written, and quietly widening them " +
+    'would change every total on the page without changing its label.',
   receivableNote:
     'What was owed to the Hoppers at the end of each year on the sales this archive can see. A ' +
     'sale is accrued in the year of the leaf\'s date column and discharged in the year its ' +
@@ -866,6 +1186,7 @@ const out = {
   // name in it, and dropped here: it is the whole row repeated 326 times, and
   // nothing downstream reads it.
   entries: entries.map(({ rowText: _rowText, ...e }) => e),
+  receipts,
   unparsed: {
     count: unparsed.length,
     sample: unparsed.slice(0, 25),
@@ -884,5 +1205,15 @@ process.stdout.write(
     `          ${works.length} work(s) named, ${duplicates.length} cross-volume duplicate(s) collapsed\n` +
     `          ${unparsed.length} sale-bearing row(s) with no year, reported not dropped\n` +
     `          ${dealersRanked.length} dealer(s) and ${buyersRanked.length} named buyer(s) ranked; ` +
-    `${namedNobody} row(s) name nobody tagged, ${ambiguous} ambiguous by surname\n`,
+    `${namedNobody} row(s) name nobody tagged, ${ambiguous} ambiguous by surname\n` +
+    activities
+      .map(
+        (a) =>
+          `          ${a.label.padEnd(18)} ${a.rows} row(s), accrued ${a.totals.accrued.toFixed(2)}, ` +
+          `collected ${a.totals.collected.toFixed(2)}, outstanding ${a.totals.outstanding.toFixed(2)}, ` +
+          `not recorded ${a.totals.notRecorded.toFixed(2)}\n`,
+      )
+      .join('') +
+    `          Book IV: ${receipts.length} receipt(s), ${ivSubtotals.length} subtotal(s) excluded, ` +
+    `${ivBlankDescription} charge(s) with no description written\n`,
 );
