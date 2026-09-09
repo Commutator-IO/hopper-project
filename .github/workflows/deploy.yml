@@ -65,6 +65,14 @@ jobs:
       - run: npm run citation
       - run: git diff --exit-code CITATION.cff codemeta.json .zenodo.json
 
+      # The glossary is declared by hand and checked against the leaves: an
+      # entry whose pattern matches nothing on a transcribed sheet fails, which
+      # is what keeps the key from claiming forms nobody has read. The
+      # comparison catches the other direction — a batch that lands, or a
+      # reading that is corrected, moves the evidence under an entry.
+      - run: npm run glossary
+      - run: git diff --exit-code src/content/glossary.json
+
       # Tectonic, pinned, for the transcript PDFs. A static musl binary from
       # the project's own releases rather than a piped install script or the
       # whole of TeX Live: 20 MB against 500, and a version somebody chose.

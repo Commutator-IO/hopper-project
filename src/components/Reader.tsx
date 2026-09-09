@@ -14,6 +14,7 @@ import {
 } from '../lib/batches.ts';
 import { BY_LEDGER, LEDGER_BY_ID } from '../content/catalogue.ts';
 import { issueUrl } from '../lib/report.ts';
+import { url } from '../lib/base.ts';
 import type { State } from '../lib/progress.ts';
 import type { Ledger, Manifest, Sheet } from '../lib/types.ts';
 
@@ -259,6 +260,20 @@ export function Reader({
         <Downloads manifest={manifest} ledger={ledger.id} batch={batch} />
 
         <Cite manifest={manifest} ledger={ledger} batch={batch} sheet={currentSheet} />
+
+        {/* The key to the hand, one click from the place the abbreviations are
+            actually met. The transcription expands nothing — `Inv.` stays
+            `Inv.` and « 25 - 1/10 » stays as written, because expanding would
+            be normalisation — so the fidelity that makes this pane worth
+            reading is also what makes it opaque without the glossary. It
+            belongs beside the reading and not only in the nav. */}
+        <a
+          href={url('/method/#glossary')}
+          className="rounded-full border border-ink-200 px-2.5 py-0.5 text-[11.5px] text-ink-600 transition hover:border-ink-400"
+          title="Inv., Bklyn., Rec'd, « 30 - 1/3 » — what she wrote, and what it means"
+        >
+          Glossary
+        </a>
 
         <a
           href={issueUrl({

@@ -1,0 +1,1265 @@
+{
+  "note": "Hand-declared, and checked against the leaves. What a form means is a judgement and no script has it, so every entry here is written by a person. What no person is trusted with is whether the form is actually in the books: each entry declares a pattern, `npm run glossary` searches the transcribed leaves for it, and an entry that matches nothing fails the build. The search runs over the books' own writing — the ruled rows, the headings the leaf carries, the work titles, the hands and the margins — and never over a `\\note{}`, because the notes are where we discuss these forms and an entry could otherwise cite as evidence the sentence written because of it.",
+  "means": "Two columns, and the division is the whole point. « As written » is the leaf's, exactly, and is not a claim of ours. « Means » is ours, it is an expansion the transcription deliberately does not make, and it may be wrong. Nothing in the transcription is expanded — `Inv.` stays `Inv.` and `30 - 1/3` stays as written — because expanding would be normalisation, which is the one thing this edition refuses. This page is the key, kept outside the text it unlocks. In the lines quoted as evidence, │ marks a ruled column division on the leaf: what falls between two of them stood in one cell of the book's own ruling.",
+  "entries": [
+    {
+      "term": "A / R",
+      "sort": "A",
+      "kind": "abbreviation",
+      "written": "A · R",
+      "means": "Accepted · Refused. The jury's verdict, one letter in its own narrow column beside the date. A refusal is recorded as carefully as an acceptance, which is the most useful habit in Book I.",
+      "match": "(^|│ )[AR](?= │|$)",
+      "note": "The column is unheaded on most leaves and headed « accepted Refused » on leaf 8.",
+      "count": 157,
+      "sheets": 28,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "43",
+          "ref": "16638",
+          "count": 11,
+          "shows": "Feb. 7, 20 │ A │ Chicago Society of Etchers, Art Inst. │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "18",
+          "ref": "17168",
+          "count": 11,
+          "shows": "Oct. 17, 20 │ A │ Touchstone Galleries │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "4",
+          "ref": "16759",
+          "count": 10,
+          "shows": "May 3, 21 │ A │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853",
+          "count": 10,
+          "shows": "Jan. 28, 21 │ A │ Print Makers Ex., Los │ │"
+        }
+      ]
+    },
+    {
+      "term": "Amer.",
+      "kind": "abbreviation",
+      "written": "Amer.",
+      "means": "American.",
+      "match": "\\bAmer\\.",
+      "count": 167,
+      "sheets": 75,
+      "seen": [
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "75",
+          "ref": "18023",
+          "count": 9,
+          "shows": "” │ 25 30 │ Amer. Landscape │ │ Ret. June, 1929"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 9,
+          "leaf": "91",
+          "ref": "16331",
+          "count": 8,
+          "shows": "Office at Night - Art Digest, May 15, 45. House by R.R. - Vogue, June 1945. Cited as first purchase of Mod. Mus. Collection. Tiny reprod. in article on the Mod."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "77",
+          "ref": "18222",
+          "count": 6,
+          "shows": "Mar. 11, 27 │ 18 │ Amer. Landscape for Carnegie group Dec. 1948. │ │"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "77",
+          "ref": "16433",
+          "count": 5,
+          "shows": "” │ 30 │ Amer. Landscape │ 20 Feb. 6, 40"
+        }
+      ]
+    },
+    {
+      "term": "Bklyn.",
+      "kind": "abbreviation",
+      "written": "Bklyn.",
+      "means": "Brooklyn — most often the Brooklyn Society of Etchers, whose annual he showed in from 1921, and the Brooklyn Museum that bought from it.",
+      "match": "\\bBklyn",
+      "count": 83,
+      "sheets": 47,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "32",
+          "ref": "16428",
+          "count": 4,
+          "shows": "Nov. 13, 24 │ R │ Bklyn. Soc. of Etchers, Bklyn. Mus. │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "30",
+          "ref": "16799",
+          "count": 4,
+          "shows": "Nov. 12, 20 │ R │ Bklyn. Soc. of Etchers, Bklyn. Mus. │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853",
+          "count": 4,
+          "shows": "Nov. 10, 21 │ R │ Bklyn. Soc. of Etchers │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "18",
+          "ref": "17168",
+          "count": 4,
+          "shows": "Nov. 12, 20 │ R │ Bklyn. Soc. of Etchers, Bklyn. Mus. │ │ │"
+        }
+      ]
+    },
+    {
+      "term": "Com.",
+      "kind": "abbreviation",
+      "written": "Com. · com.",
+      "means": "Commission — the dealer's share, and the thing that turns a price into a receipt. See `30 - 1/3` below.",
+      "match": "\\b[Cc]om\\b\\.?",
+      "count": 131,
+      "sheets": 82,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "26",
+          "ref": "17265",
+          "count": 8,
+          "shows": "│ │ │ Sold by Jennings $18 - Com. 1/3 │ 12. │ Dec. 23, 25."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "8",
+          "ref": "17539",
+          "count": 6,
+          "shows": "Ap. 19, 23 │ │ \" \" \" Purchased by \"Calif. State Library\" $18 - Com. │ │ 16.20 │ June 6, 23"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853",
+          "count": 5,
+          "shows": "│ │ Sold by E. P. Jennings - $22 - Com. │ 13.67 │ Oct. 1925"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "12",
+          "ref": "16218",
+          "count": 4,
+          "shows": "Jan. 19, 27 │ │ Sold by Fred Moriss to Miss Beth Merrill - no com. │ $18 │ Jan. 19, 27."
+        }
+      ]
+    },
+    {
+      "term": "E",
+      "kind": "abbreviation",
+      "written": "E",
+      "means": "Etching. The last of the three medium markers to appear, on Book IV leaf 119 in 1945.",
+      "match": "\\bE(?= │|$)",
+      "count": 9,
+      "sheets": 4,
+      "seen": [
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "125",
+          "ref": "16530",
+          "count": 4,
+          "shows": "│ 1 Evening Wind E │ 50.00 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "121",
+          "ref": "16778",
+          "count": 2,
+          "shows": "│ East Side Interior E │ 50 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "119",
+          "ref": "18551",
+          "count": 2,
+          "shows": "│ “East Side Interior” E │ 50 │"
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 6,
+          "leaf": "81",
+          "ref": "17386",
+          "count": 1,
+          "shows": "E"
+        }
+      ]
+    },
+    {
+      "term": "E. H. / J. H.",
+      "sort": "EH",
+      "kind": "abbreviation",
+      "written": "E. H. · J. H.",
+      "means": "Edward Hopper · Josephine Hopper — herself. She initials her own hand as readily as his.",
+      "match": "\\b[EJ]\\.\\s*H\\.",
+      "count": 159,
+      "sheets": 68,
+      "seen": [
+        {
+          "ledger": "book-iii",
+          "batch": 1,
+          "leaf": null,
+          "ref": "17581",
+          "count": 8,
+          "shows": "on to Charlestown N.H. to visit Mrs. Wm. Preston at Marystoke, return to Gloucester to see Frank Rehn + return to Cape. Back to N.Y. in Oct. for Whitney opening"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 10,
+          "leaf": "99",
+          "ref": "17911",
+          "count": 8,
+          "shows": "Ap. 8, 25 A Corner \\ E. P. Jennings Don Juixote \\ Dec. 24, 25 Cat Boat - Mrs. John Osgord Blanchard Dec. 25, 25 Bull Fight to Edwina Behre Jan. 15, 26 Amer. Lan"
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 2,
+          "leaf": null,
+          "ref": "16917",
+          "count": 7,
+          "shows": "Venice Biennial 24 canvases of E. H. 4 men selected E. H. Kuniyoshi Stuart Davis Alex Calder"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": null,
+          "ref": "17913",
+          "count": 7,
+          "shows": "Etchings of E. H. owned by J. H."
+        }
+      ]
+    },
+    {
+      "term": "Ex.",
+      "kind": "abbreviation",
+      "written": "Ex.",
+      "means": "Exhibition. Almost always followed by the society or the gallery that held it.",
+      "match": "\\bEx\\.",
+      "count": 87,
+      "sheets": 55,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "12",
+          "ref": "16218",
+          "count": 5,
+          "shows": "Dec. 16, 22 │ A │ Bklyn. Soc. Rotary Ex. │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "10",
+          "ref": "17627",
+          "count": 5,
+          "shows": "Dec. 6, 24 │ A │ Nat. Arts Cl. Etch. Ex. │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 9,
+          "leaf": "87",
+          "ref": "18189",
+          "count": 5,
+          "shows": "1930 Newark Museum Watercolor Show - Essex Barn. Spring 1930? 1930 Ex. to Sweeden - Manhattan Bridge Loop. 1930 - City Art Museum, Annual Ex. Amer. Artists - St"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853",
+          "count": 4,
+          "shows": "Jan. 28, 21 │ A │ Print Makers Ex., Los │ │"
+        }
+      ]
+    },
+    {
+      "term": "Gal.",
+      "kind": "abbreviation",
+      "written": "Gal.",
+      "means": "Gallery. « Rehn Gal. », « Downtown Gal. », « Babcock Gal. » — the same dealers she elsewhere writes out in full.",
+      "match": "\\bGal\\.",
+      "count": 112,
+      "sheets": 65,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "3",
+          "ref": "17443",
+          "count": 6,
+          "shows": "Mar. 1, 28 │ 16 2/3 │ Downtown Gal. │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "9",
+          "ref": "17703",
+          "count": 6,
+          "shows": "Jan. 5, 29 │ 20 │ Downtown Gal. 30 - 1/3"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "7",
+          "ref": "16439",
+          "count": 5,
+          "shows": "June 11, 31 │ 20 │ Downtown Gal. 30 - 1/3."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "14",
+          "ref": "16553",
+          "count": 5,
+          "shows": "Dec. 9, 27 │ │ Amer. Print Makers (Halpert Gal.) │ Rehn - to Whitney Mus. 30 - 1/3 20 Jan. 8, 34."
+        }
+      ]
+    },
+    {
+      "term": "Inst.",
+      "kind": "abbreviation",
+      "written": "Inst.",
+      "means": "Institute — the Art Institute of Chicago and the Carnegie Institute, chiefly.",
+      "match": "\\bInst\\.",
+      "count": 72,
+      "sheets": 51,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 10,
+          "leaf": "95",
+          "ref": "16884",
+          "count": 3,
+          "shows": "1931 - One Man Exhibition at Mus. of Modern Art, N.Y. City. This show went on to Chicago Art Inst. - Seen after. 1937 - \" \" \" Carnegie Institute. Pittsburgh. Pe"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 9,
+          "leaf": "90",
+          "ref": "17334",
+          "count": 3,
+          "shows": "Catalogue Art Inst. Chicago, Oct. 1942. 53\" Annual Amer. Paintings + Sculpt. Night Hawks. Chicago fall show - purchased 1\" prize. Review from C. J. Bulliet in C"
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 1,
+          "leaf": null,
+          "ref": "17707",
+          "count": 3,
+          "shows": "Pennsylvania Coal Town - Spring 1948 - Butler Art Inst. purchase - Youngstown, Ohio."
+        },
+        {
+          "ledger": "book-iii",
+          "batch": 1,
+          "leaf": null,
+          "ref": "17834",
+          "count": 3,
+          "shows": "Honorary degree of Dr. of Fine Arts from Chicago Art Inst., June 1950. \" \" \" Dr. of Letters \" Rutgers, Univ. of N.J. - \" 3, 1953, Elected member of Institute of"
+        }
+      ]
+    },
+    {
+      "term": "Inv.",
+      "kind": "abbreviation",
+      "written": "Inv.",
+      "means": "Invited. The work was asked for by the exhibition, rather than submitted to its jury — which is why it stands where `A` and `R` otherwise stand, and why no verdict follows it.",
+      "match": "\\bInv\\.",
+      "count": 62,
+      "sheets": 19,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "4",
+          "ref": "16759",
+          "count": 10,
+          "shows": "Mar. 27, 22 │ Inv. │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "6",
+          "ref": "16548",
+          "count": 7,
+          "shows": "Oct. 22 │ Inv. │ Reprod. in Shadowland with DuBois article │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853",
+          "count": 7,
+          "shows": "Jan. 31, 22 │ Inv. │ Ex. of Amer. Etchings, │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "8",
+          "ref": "17539",
+          "count": 7,
+          "shows": "Nov. 18, 22 │ Inv. │ Belmaison Gallery │ Randolph $25 - 50% │ 12.50 │ Jan. 4, 24."
+        }
+      ]
+    },
+    {
+      "term": "Mus.",
+      "kind": "abbreviation",
+      "written": "Mus.",
+      "means": "Museum.",
+      "match": "\\bMus\\.",
+      "count": 335,
+      "sheets": 142,
+      "seen": [
+        {
+          "ledger": "book-iii",
+          "batch": 1,
+          "leaf": null,
+          "ref": "18033",
+          "count": 12,
+          "shows": "Ex Lax, House of the Fog Horn II, House by Squam River. Spaulding Collection Cat. - Boston Mus. May - Nov. 1948."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 9,
+          "leaf": "91",
+          "ref": "16331",
+          "count": 11,
+          "shows": "\\ Sky lights Cape Elizabeth Cobb's House \\ American Water \\ Adam's House House on Pamet River Sortillo Rooftops \\ Colors - \\ Methodist Church First Branch of Wh"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 10,
+          "leaf": "95",
+          "ref": "16884",
+          "count": 11,
+          "shows": "1931 - One Man Exhibition at Mus. of Modern Art, N.Y. City. This show went on to Chicago Art Inst. - Seen after. 1937 - \" \" \" Carnegie Institute. Pittsburgh. Pe"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 9,
+          "leaf": "89",
+          "ref": "18152",
+          "count": 10,
+          "shows": "1937 Feb. or Mar. Hopper 1 man show at Carnegie Institute, Pittsburgh Easter - Corcoran Gallery Washington - Amer. Contemp. Cape Cod Afternoon. - Spring Metrop."
+        }
+      ]
+    },
+    {
+      "term": "N. A. D.",
+      "kind": "abbreviation",
+      "written": "N. A. D.",
+      "means": "The National Academy of Design, New York. It recurs on nearly every etching leaf, and it is the body that refused him most often.",
+      "match": "N\\.\\s*A\\.\\s*D\\.",
+      "count": 24,
+      "sheets": 20,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "18",
+          "ref": "17168",
+          "count": 3,
+          "shows": "Nov. 1, 21 │ R │ N. A. D. │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "30",
+          "ref": "16799",
+          "count": 2,
+          "shows": "Mar. 7, 22 │ R │ N. A. D. │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "16",
+          "ref": "18263",
+          "count": 2,
+          "shows": "Feb. 17, 21 │ R │ N. A. D. │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": "38",
+          "ref": "16162",
+          "count": 1,
+          "shows": "Nov. 1, 21 │ A │ N. A. D. │ │"
+        }
+      ]
+    },
+    {
+      "term": "o",
+      "kind": "abbreviation",
+      "written": "o",
+      "means": "Oil. The bare letter after a title, in the same position `w.c` and `E` take.",
+      "match": "│ [^│]*\\b(?:o)\\b(?= │|$)",
+      "note": "The commonest one-letter marker and the easiest to misread as part of a title. It is a marker only where it stands after the title with nothing else on the line.",
+      "count": 7,
+      "sheets": 4,
+      "seen": [
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "121",
+          "ref": "16778",
+          "count": 3,
+          "shows": "│ House on Cape Cod o │ 1250 │ 00"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "125",
+          "ref": "16530",
+          "count": 2,
+          "shows": "│ Summer in the City o │ 1200.00 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "112",
+          "ref": "18175",
+          "count": 1,
+          "shows": "│ Corner Saloon o │ 800 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "119",
+          "ref": "18551",
+          "count": 1,
+          "shows": "│ “Summer Time” o │ 2200 │"
+        }
+      ]
+    },
+    {
+      "term": "Rec'd",
+      "kind": "abbreviation",
+      "written": "Rec'd",
+      "means": "Received. In Book I it heads the column of what actually came in; in Book IV it opens the red line under a charge — « rec'd by check » — that says the account is settled.",
+      "match": "[Rr]ec['’]d",
+      "count": 708,
+      "sheets": 244,
+      "seen": [
+        {
+          "ledger": "book-iv",
+          "batch": 13,
+          "leaf": "151",
+          "ref": "18073",
+          "count": 7,
+          "shows": "\" 1 │ rec'd by check │ 8 │ 63"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "111",
+          "ref": "16515",
+          "count": 6,
+          "shows": "\" 26 │ rec'd by check │ 380 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 8,
+          "leaf": "88",
+          "ref": "16873",
+          "count": 6,
+          "shows": "\" 3 │ rec'd by check │ 42 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 9,
+          "leaf": "102",
+          "ref": "16989",
+          "count": 6,
+          "shows": "\" 8 │ rec'd by check │ 20 │"
+        }
+      ]
+    },
+    {
+      "term": "Reprod.",
+      "kind": "abbreviation",
+      "written": "Reprod.",
+      "means": "Reproduced. The work was printed somewhere — a magazine, a catalogue, a review — and she recorded it as carefully as a sale.",
+      "match": "\\bReprod\\.",
+      "count": 30,
+      "sheets": 22,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "8",
+          "ref": "17539",
+          "count": 3,
+          "shows": "June 24, 1924 │ │ Reprod. in The Arts. Article Virgil Barker. │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 10,
+          "leaf": "97",
+          "ref": "17710",
+          "count": 3,
+          "shows": "N.Y. American \" 15 \" or 22” Dec. 1929. Reprod. Blackwell's Is."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 5,
+          "leaf": "54",
+          "ref": "16522",
+          "count": 2,
+          "shows": "Feb. 20, 27 │ │ Reprod. N. Y. World │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853",
+          "count": 2,
+          "shows": "June 1924 │ │ Reprod. in the Arts, article by Virgil Barker │ │"
+        }
+      ]
+    },
+    {
+      "term": "Soc.",
+      "kind": "abbreviation",
+      "written": "Soc.",
+      "means": "Society — the printmakers' and etchers' societies whose annuals Book I follows year by year.",
+      "match": "\\bSoc\\.",
+      "count": 61,
+      "sheets": 34,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "12",
+          "ref": "16218",
+          "count": 4,
+          "shows": "Oct. 24, 22 │ A │ Bklyn. Soc. of Etchers │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "8",
+          "ref": "17539",
+          "count": 4,
+          "shows": "Dec. 29, 22 │ A │ Chicago Soc. of Etchers │ │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "6",
+          "ref": "16548",
+          "count": 3,
+          "shows": "Jan. 5, 21 │ A │ Chicago Soc. of Etchers, Art Inst. │ │"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "30",
+          "ref": "16799",
+          "count": 3,
+          "shows": "Feb. 7, 20 │ R │ Soc. of Etchers, Chicago, at Art Inst. │ Kepple - $18 - 1/3 Com. = │ 12. │ Oct. 22, 27."
+        }
+      ]
+    },
+    {
+      "term": "w.c",
+      "kind": "abbreviation",
+      "written": "w.c · w.C",
+      "means": "Water colour. One of the three medium markers that enter Book IV at leaf 109, written beside the title rather than in a column of their own.",
+      "match": "\\bw\\.[cC]\\b",
+      "count": 23,
+      "sheets": 10,
+      "seen": [
+        {
+          "ledger": "book-iv",
+          "batch": 10,
+          "leaf": "117",
+          "ref": "18089",
+          "count": 6,
+          "shows": "│ w.c. Sierra Madre at Saltillo │ 750 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "120",
+          "ref": "16926",
+          "count": 4,
+          "shows": "│ Saltillo Mansion w.C │ 600 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "125",
+          "ref": "16530",
+          "count": 3,
+          "shows": "│ Wellfleet Road w.c │ 400.00 │"
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "122",
+          "ref": "17079",
+          "count": 2,
+          "shows": "│ Cottages at Wellfleet w.c │ 750 │"
+        }
+      ]
+    },
+    {
+      "term": "16 2/3",
+      "sort": "16",
+      "kind": "notation",
+      "written": "16 2/3 · 33 1/3 · 66 2/3",
+      "means": "A sum in dollars and a vulgar fraction of one, which is what a third of a price comes to before anybody rounds. On the leaf the fraction is raised over lowered figures; the transcription sets it on the line as `2/3`.",
+      "match": "\\d+\\s+\\d\\s*/\\s*\\d\\b",
+      "count": 482,
+      "sheets": 161,
+      "seen": [
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "70",
+          "ref": "16829",
+          "count": 23,
+          "shows": "Mar. 11, 27 │ 25 18 │ Cat Boat │ Nov. 26, 27 │ 16 2/3"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "71",
+          "ref": "17690",
+          "count": 21,
+          "shows": "Feb. 2, 28 │ 25 │ Evening Wind │ July 16, 29 │ 16 2/3"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "75",
+          "ref": "18023",
+          "count": 19,
+          "shows": "Ap. 22, 27 │ 25 │ East Side Interior │ 16 2/3 │ May 1, 27"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "6",
+          "ref": "16548",
+          "count": 11,
+          "shows": "Night Shadows\\quad 7\"x8 3/8\"\\qquad 1921."
+        }
+      ]
+    },
+    {
+      "term": "16.66",
+      "sort": "16.",
+      "kind": "notation",
+      "written": "16.66 · 12.60 · 3959.84",
+      "means": "The same money written as a decimal, which is what the right-hand columns hold. Book IV writes the point three ways — after the dollars, across the ruled division between the columns, or not at all — and all three are hers.",
+      "match": "\\d+\\.\\d{2}\\b",
+      "count": 327,
+      "sheets": 99,
+      "seen": [
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "70",
+          "ref": "16829",
+          "count": 17,
+          "shows": "Jan. 12, 23 │ 25 │ Night in the Park │ Nov. 26, 27 │ $16.66"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853",
+          "count": 17,
+          "shows": "Feb. 27, 22 │ R │ Amer. Academy of Arts & Letters │ Mrs. Mario Sterner - 30% out of 18 │ 12.60 Jan. 14, 1923"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "76",
+          "ref": "17740",
+          "count": 17,
+          "shows": "Oct. 8, 24 │ 22 │ Evening Wind - bgt. by Mr. Steph. C. Clark │ 14.67 │ June 11, 25"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "8",
+          "ref": "17539",
+          "count": 14,
+          "shows": "Oct. 24, 22 │ A │ Bklyn. Society of Etchers │ Mrs. Sterner $18 - 30% = │ 12.60 │ Jan. 12, 23."
+        }
+      ]
+    },
+    {
+      "term": "30 - 1/3",
+      "sort": "30",
+      "kind": "notation",
+      "written": "30 - 1/3 · 25 - 1/10 · 18 - 50%",
+      "means": "A price and the dealer's share of it, and NOT a subtraction. « 30 - 1/3 » is a work priced at thirty dollars with a third to the dealer, leaving twenty. The fraction is the commission rate, written as a fraction or as a percentage indifferently, and the figure that follows in the next column is what the cheque actually came to.",
+      "match": "\\d[\\d\\s,.]*-\\s*(?:\\d+\\s*/\\s*\\d+|\\d+\\s*%)",
+      "note": "This is the single most misreadable form in the books. Read as arithmetic it turns a thirty-dollar etching into a work priced at twenty-nine and two-thirds.",
+      "count": 619,
+      "sheets": 171,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "3",
+          "ref": "17443",
+          "count": 28,
+          "shows": "Feb. 3, 28 │ $22.50 │ Whitney Club 25 - 1/10 │ 32 sold 12"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "28",
+          "ref": "18395",
+          "count": 28,
+          "shows": "Feb. 14, 27 │ Inv. │ \" Oils \" \" \" , Rehn Gallery. │ Rehn 18 - 1/3 │ 12. │ Nov. 4, 27."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "14",
+          "ref": "16553",
+          "count": 27,
+          "shows": "Nov. 26, 27 │ $13 1/3 │ Keppel │ Kennedy - 30 - 1/3 20 Jan. 1, 32."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "9",
+          "ref": "17703",
+          "count": 26,
+          "shows": "Dec. 18, 28 │ 16 2/3 │ Keppel 25 - 1/3"
+        }
+      ]
+    },
+    {
+      "term": "\"",
+      "sort": "ditto",
+      "kind": "notation",
+      "written": "\" · \" \" \"",
+      "means": "A ditto: this line repeats the line above, in that column. A row of nothing but dittoes is the row above it over again — a second cheque to the same client, most often — and it carries no new fact except its own figure.",
+      "match": "(^|│ )\\s*(?:\"|”)(?:\\s*(?:\"|”))*\\s*(?= │|$)",
+      "count": 438,
+      "sheets": 86,
+      "seen": [
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "71",
+          "ref": "17690",
+          "count": 50,
+          "shows": "\" │ 18 │ Les Deux Pigeons │ Mar. 19, 28 │ 12."
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "70",
+          "ref": "16829",
+          "count": 44,
+          "shows": "Mar. 18, 24 │ 22 │ \" │ Nov. 26, 27 │ 14.66"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "63",
+          "ref": "18104",
+          "count": 25,
+          "shows": "\" │ \" │ La Pierreuse - big bust, straight front, small waste, pompadour Bgt. by Mrs. Coburne │ $66.67 │ Oct. 17, 26."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "60",
+          "ref": "16299",
+          "count": 20,
+          "shows": "\" │ \" │ Parkhurst's House (The Captain's House) - Hopper show 1924 In studio 14 x 20 See Bk. II. p. 59 │ │"
+        }
+      ]
+    },
+    {
+      "term": "$",
+      "sort": "dollar",
+      "kind": "notation",
+      "written": "$18 · $1200.",
+      "means": "The dollar sign, which she writes above and to the left of the figure and often detached from it. It is easy to attach to the wrong column when reading, and it reaches Book IV's money column only in the 1940s and only on the largest sums.",
+      "match": "\\$",
+      "count": 412,
+      "sheets": 128,
+      "seen": [
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "58",
+          "ref": "16259",
+          "count": 18,
+          "shows": "May 14, 41. │ 30 │ Railroad │ $20 . May 23, 1950"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 3,
+          "leaf": "85",
+          "ref": "18068",
+          "count": 17,
+          "shows": "Dec. 21”, 50. │ $30 │ Night Shadows - $20. Feb. 15”, 57."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "8",
+          "ref": "17539",
+          "count": 15,
+          "shows": "Oct. 24, 22 │ A │ Bklyn. Society of Etchers │ Mrs. Sterner $18 - 30% = │ 12.60 │ Jan. 12, 23."
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "70",
+          "ref": "16829",
+          "count": 11,
+          "shows": "Jan. 12, 23 │ 25 │ Night in the Park │ Nov. 26, 27 │ $16.66"
+        }
+      ]
+    },
+    {
+      "term": "Cape Anne",
+      "sort": "Cape Ann",
+      "kind": "spelling",
+      "standard": "Cape Ann, Massachusetts",
+      "written": "Cape Anne",
+      "means": "With an e, on leaves 56, 57, 79 and 92 and in three work titles. The catalogue clipping pasted to leaf 56 prints « Cape Anne, Massachusetts » too, so the spelling is not only hers.",
+      "match": "Cape Anne\\b",
+      "count": 9,
+      "sheets": 6,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 9,
+          "leaf": "92",
+          "ref": "16807",
+          "count": 2,
+          "shows": "11 │ Cape Anne Pasture │ 7 │ Drug Store"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "67",
+          "ref": "17040",
+          "count": 2,
+          "shows": "Oct 1928. │ $400 │ Cape Anne Pasture. 14 x 22. Cows + rocks longer shape. A beauty. Stephen C. Clark - Oct. 1928. 400 - 1/3 │ 266 2/3 │ June 5, 29."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "79",
+          "ref": "17175",
+          "count": 2,
+          "shows": "1923 Gloucester 1924 1925. New Mexico 1926 - Rockland + Cape Anne 1927. Two Lights, Cape Elizabeth 1928 - Cape Anne 1929 Charleston Cape Elizabeth - (Two Lights"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 4,
+          "leaf": null,
+          "ref": "16982",
+          "count": 1,
+          "shows": "13 3/8 x 19 9/16\" Houses at the Fort Cape Anne. Back of 1 1/2 story house, boulders in foreground; at R. gabled roof in shadow & water beyond Signed E. H. Glouc"
+        }
+      ]
+    },
+    {
+      "term": "Clancey",
+      "kind": "spelling",
+      "standard": "John Clancy, of the Rehn Gallery",
+      "written": "Clancey",
+      "means": "John Clancy, who ran the Rehn Gallery after Rehn's death. Book IV writes « Clancy » and « Clancey » on facing leaves, and Book I spells it with the e on leaf 67.",
+      "match": "\\bClancey\\b",
+      "count": 5,
+      "sheets": 4,
+      "seen": [
+        {
+          "ledger": "book-iv",
+          "batch": 11,
+          "leaf": "131",
+          "ref": "17179",
+          "count": 2,
+          "shows": "│ John Clancey less 33 1/3 % │ 1166. │ 66"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "60",
+          "ref": "16299",
+          "count": 1,
+          "shows": "Oct. 6, 24 │ $50 │ Dead Trees. Hopper show Oct. 1924. 14 x 20 Shown at New Gallery, spring 1925. See Bk. IV Macbeth Xmas 1925 John Clancey said wants Feb. 14\" '"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "67",
+          "ref": "17040",
+          "count": 1,
+          "shows": "│ │ Marty Welch's House - white, awnings + fence in sunlight. A beauty 14 x 20 Gloucester John Clancey fall 1928 300 - 1/3 │ 200 │ Mar. 29, 1930."
+        },
+        {
+          "ledger": "book-ii",
+          "batch": 1,
+          "leaf": "4",
+          "ref": "18397",
+          "count": 1,
+          "shows": "John Clancey took canvas down to purser of boat to deliver present after boat sailed. Paul Roche's"
+        }
+      ]
+    },
+    {
+      "term": "Cromwinshield",
+      "kind": "spelling",
+      "standard": "Frank Crowninshield, editor of Vanity Fair",
+      "written": "Cromwinshield",
+      "means": "Frank Crowninshield, spelt three ways across Book I — « Crowninshield » on leaves 6 and 10, this on leaf 12. All stay.",
+      "match": "\\bCromwinshield\\b",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "12",
+          "ref": "16218",
+          "count": 1,
+          "shows": "Nov. 26, 27 │ $13 1/3 │ Keppel. $20 - 1/3. To Fr. Cromwinshield"
+        }
+      ]
+    },
+    {
+      "term": "Fog Museum",
+      "kind": "spelling",
+      "standard": "The Fogg Museum, Harvard",
+      "written": "Fog Museum",
+      "means": "One g, on leaves 62, 64, 66 and 86. She writes « Fogg » correctly elsewhere in the same book, which is why both forms have to be searched for and neither can be normalised away.",
+      "match": "\\bFog Museum\\b",
+      "count": 7,
+      "sheets": 7,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "64",
+          "ref": "16704",
+          "count": 1,
+          "shows": "\" │ 250 │ Schorner's Bowsprit - derelict drawn ashore, glorious 14 x 20 Rockland Mr. C. B. Hoyt (of Fog Museum counsel) Jan. 27. Mar. 4, 27. │ 166 2/3 │ Mar. 4,"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "66",
+          "ref": "16820",
+          "count": 1,
+          "shows": "\" │ 300 │ Libby House, Portland. Brownstone mansion + dead tree trunk 14 x 20 Fog Museum, Dec. 12, 27 Mr. Paul Sakes. Reprod. in Mod. Art particulars: book « Ed"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "62",
+          "ref": "17089",
+          "count": 1,
+          "shows": "Oct. 15, 25 │ $200 │ Manhattan Bridge 14 x 20 Bgt. by Fog Museum (Mr. Hoyt?) Museum discount. Mod. Mus. cat. Edward Hopper 1933 - 1 page. │ 133 1/3 │ Ap. 23, 27"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 4,
+          "leaf": "91",
+          "ref": "17125",
+          "count": 1,
+          "shows": "” │ Manhattan Bridge - Fog Museum │ │ │"
+        }
+      ]
+    },
+    {
+      "term": "Grace Horn's",
+      "sort": "Grace Horn",
+      "kind": "spelling",
+      "standard": "Grace Horne's Galleries, Boston",
+      "written": "Grace Horn's Coffee House",
+      "means": "Grace Horne's, without the e. Boston, and a gallery rather than the tea room the name suggests.",
+      "match": "Grace Horn['’]s",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "16",
+          "ref": "18263",
+          "count": 1,
+          "shows": "July 1924 │ Inv. │ Grace Horn's Coffee House, Gloucester, Mass. (Mrs. Sterner) │ │ │"
+        }
+      ]
+    },
+    {
+      "term": "Kepple",
+      "kind": "spelling",
+      "standard": "Frederick Keppel & Co., the print dealers",
+      "written": "Kepple",
+      "means": "Frederick Keppel & Co. She spells it « Keppel » four lines from where she spells it « Kepple », and both stand as written. Search for either.",
+      "match": "\\bKepple\\b",
+      "count": 7,
+      "sheets": 7,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "60",
+          "ref": "16299",
+          "count": 1,
+          "shows": "\" │ \" │ Houses of Squam Light (leading to light house) 11 3/4 x 18 (Kepple show) bgt by J. T. Spalding Boston Mus. 1948 Also Mus. publication Edward Hopper 1933"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 3,
+          "leaf": "30",
+          "ref": "16799",
+          "count": 1,
+          "shows": "Feb. 7, 20 │ R │ Soc. of Etchers, Chicago, at Art Inst. │ Kepple - $18 - 1/3 Com. = │ 12. │ Oct. 22, 27."
+        },
+        {
+          "ledger": "dealers",
+          "batch": 2,
+          "leaf": "70",
+          "ref": "16829",
+          "count": 1,
+          "shows": "Delivered to Kepple │ │ │ Sold │ Amt. Returned"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": null,
+          "ref": "17143",
+          "count": 1,
+          "shows": "Kepple - Even. Wind - Paid. Kennedy - Allied Dealers. R.R. - Even. Wind and Fortifications Aug. 7, 27 Rehn - House by a River - Mrs. Bachrach, May. Feb., Mar. E"
+        }
+      ]
+    },
+    {
+      "term": "Osgord",
+      "kind": "spelling",
+      "standard": "Osgood, on the usual spelling of the name — but nothing in these books establishes it.",
+      "written": "Mrs. John Osgord Blanchard",
+      "means": "The single largest buyer of the 1924 and 1925 watercolours. She writes « Osgord » on leaves 59, 60, 61, 62, 63 and 66 and never once « Osgood »: six leaves and one spelling is not a slip of the pen, so this entry records what the books have and points at where, rather than correcting her to the name a reader would expect.",
+      "match": "\\bOsgord\\b",
+      "count": 6,
+      "sheets": 5,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 7,
+          "leaf": "66",
+          "ref": "16820",
+          "count": 2,
+          "shows": "Nov. 3, 27 │ 300 │ House of the Fog Horn I. grey day, rocks + cinders in fore-ground, flag pole - flag. 14 x 20 Cape Elizabeth Mrs. John Osgord Blanchard. Nov. "
+        },
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "60",
+          "ref": "16299",
+          "count": 1,
+          "shows": "\" │ \" │ Italian Quarter - 2 women talking, big houses. 14 x 20 bgt. by Mrs. John Osgord Blanchard 1 page reprod. Also Mus. Cat. Edward Hopper 1933 │ $100 │ Oct."
+        },
+        {
+          "ledger": "book-i",
+          "batch": 6,
+          "leaf": "59",
+          "ref": "16991",
+          "count": 1,
+          "shows": "Oct. 15, 30 │ Mrs. John Osgord Blanchard. Spring 1931. │ 2000 - 1/3 │ 1000 1st payment = 666 2/3 Jan. 19, 1932"
+        },
+        {
+          "ledger": "book-i",
+          "batch": 10,
+          "leaf": "99",
+          "ref": "17911",
+          "count": 1,
+          "shows": "Ap. 8, 25 A Corner \\ E. P. Jennings Don Juixote \\ Dec. 24, 25 Cat Boat - Mrs. John Osgord Blanchard Dec. 25, 25 Bull Fight to Edwina Behre Jan. 15, 26 Amer. Lan"
+        }
+      ]
+    },
+    {
+      "term": "Shicago",
+      "kind": "spelling",
+      "standard": "Chicago",
+      "written": "Shicago",
+      "means": "Once, on the Logan Prize line. Not a hand this project would correct: the letter is unambiguous.",
+      "match": "\\bShicago\\b",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 2,
+          "leaf": "8",
+          "ref": "17539",
+          "count": 1,
+          "shows": "│ │ Sale = $18 - Com. Shicago Soc. — │ 2 prints = │ $28.80 │"
+        }
+      ]
+    },
+    {
+      "term": "Vicery Atkins & Torey",
+      "sort": "Vicery",
+      "kind": "spelling",
+      "standard": "Vickery, Atkins & Torrey, San Francisco",
+      "written": "Vicery Atkins & Torey",
+      "means": "The San Francisco print dealers, with the k gone from the first name and an r from the last. The Dealers volume spells the same firm « Vickery, Atkins & Tory », so all three forms are in the corpus and none of them is the firm's own.",
+      "match": "\\bVicery\\b",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "ledger": "book-i",
+          "batch": 1,
+          "leaf": "2",
+          "ref": "16853",
+          "count": 1,
+          "shows": "Oct. 29, 27 │ 16 2/3 │ Vicery Atkins & Torey, Calif. - San Francisco 1/3 Com. │ Rehn — │ 16.66 \" \""
+        }
+      ]
+    }
+  ]
+}

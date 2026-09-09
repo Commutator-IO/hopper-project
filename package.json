@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run manifest && vite",
-    "build": "npm run manifest && npm run notes && npm run streak && npm run places -- --check && tsc -b && vite build && npm run sitemap",
+    "build": "npm run manifest && npm run notes && npm run streak && npm run glossary && npm run places -- --check && tsc -b && vite build && npm run sitemap",
     "lint": "oxlint --deny-warnings",
     "preview": "vite preview",
     "catalogue": "node scripts/catalogue.mjs",
@@ -16,6 +16,7 @@
     "tei": "node scripts/tei.mjs",
     "tei:validate": "node scripts/tei-validate.mjs",
     "citation": "node scripts/citation.mjs",
+    "glossary": "node scripts/glossary.mjs",
     "pdf": "node scripts/pdf.mjs",
     "sitemap": "node scripts/sitemap.mjs",
     "tiles": "node scripts/tiles.mjs",

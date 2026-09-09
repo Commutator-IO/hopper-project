@@ -6,6 +6,34 @@ import { STATES, tally, type State } from './lib/progress.ts';
 import { STATE_COLOURS } from './components/Reader.tsx';
 import { url } from './lib/base.ts';
 import { REPO } from './lib/report.ts';
+import glossaryData from './content/glossary.json';
+
+/** The volume, as the cards name it. Two other pages carry the same one line. */
+const named = (id: string) => LEDGERS.find((l) => l.id === id)?.short ?? id;
+
+/**
+ * The three kinds, and what a reader is being told by each.
+ *
+ * They are separated on the page because they are separated in kind, and the
+ * separation is the one thing this section is for: an abbreviation has an
+ * expansion, a notation has a *reading* that is not an expansion at all, and a
+ * misspelling has neither — it has a leaf that spells it that way, and it is
+ * here so that searching for the right form does not lose the entry.
+ */
+const GLOSSARY_HEADING = {
+  abbreviation: 'Abbreviations',
+  notation: 'Notations',
+  spelling: 'Spellings that recur',
+} as const;
+
+const GLOSSARY_BLURB = {
+  abbreviation:
+    'Words she shortened and never expanded. Neither does the transcription, so this is where the expansion lives.',
+  notation:
+    'Forms that are not short for anything. They mean something other than what they look like, and the first of them is the one that has misled every reader of these books at least once.',
+  spelling:
+    'Not corrections. She spells several names more than one way, and the transcription keeps every form as written — which means a reader searching for the right spelling will miss the leaf. These are finding aids: the wrong form, and the leaf that has it.',
+} as const;
 
 /**
  * How the reading is done, what it costs, and what it does not claim.
@@ -136,6 +164,68 @@ export function MethodPage() {
             ))}
           </tbody>
         </table>
+      </section>
+
+      {/* The glossary, with an id the reading view's own link points into.
+          It sits directly under the apparatus because the two answer adjacent
+          questions: that table says what our marks mean, and this one says
+          what *hers* mean. The order matters — a reader who has just met
+          « 25 - 1/10 » on a leaf arrives at the second, not the first. */}
+      <section id="glossary" className="scroll-mt-16 border-b border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">
+          What she wrote, and what it means
+        </h2>
+        <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-700">
+          {glossaryData.means}
+        </p>
+        <p className="prose-note mt-3 max-w-3xl">{glossaryData.note}</p>
+
+        {(['abbreviation', 'notation', 'spelling'] as const).map((kind) => {
+          const rows = glossaryData.entries.filter((e) => e.kind === kind);
+          if (rows.length === 0) return null;
+          return (
+            <div key={kind} className="mt-8">
+              <h3 className="font-serif text-[17px] text-ink-900">{GLOSSARY_HEADING[kind]}</h3>
+              <p className="mt-1 max-w-3xl text-[13.5px] leading-relaxed text-ink-600">
+                {GLOSSARY_BLURB[kind]}
+              </p>
+              <ul className="mt-4 max-w-3xl">
+                {rows.map((e) => (
+                  <li key={e.term} className="border-b border-ink-200 py-3">
+                    <div className="flex flex-wrap items-baseline gap-x-3">
+                      <span className="font-mono text-[13px] text-brand-700">{e.written}</span>
+                      <span className="text-[11.5px] text-ink-400">
+                        {e.count}× on {e.sheets} sheet{e.sheets === 1 ? '' : 's'}
+                      </span>
+                    </div>
+                    {'standard' in e && e.standard ? (
+                      <div className="mt-1 text-[13px] text-ink-500">
+                        <span className="text-ink-400">for</span> {e.standard}
+                      </div>
+                    ) : null}
+                    <p className="mt-1 text-[13.5px] leading-relaxed text-ink-700">{e.means}</p>
+                    {'note' in e && e.note ? (
+                      <p className="prose-note mt-1">{e.note}</p>
+                    ) : null}
+                    <div className="mt-2 space-y-1">
+                      {e.seen.map((s) => (
+                        <div key={s.ref} className="text-[12px] leading-relaxed text-ink-500">
+                          <a
+                            className="text-brand-700 hover:underline"
+                            href={`${url(`${s.ledger}/`)}#${s.ledger}/${s.batch}/${s.ref}`}
+                          >
+                            {named(s.ledger)}, {s.leaf ? `leaf ${s.leaf}` : 'unnumbered leaf'}
+                          </a>{' '}
+                          <span className="text-ink-400">— {s.shows}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
       </section>
 
       {/* How to cite, with an id the reader's Cite panel links into. A reader
