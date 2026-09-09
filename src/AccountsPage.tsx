@@ -99,6 +99,7 @@ const A = accountsData as unknown as {
     key: string;
     label: string;
     ledgers: string[];
+    batches: number;
     rows: number;
     years: { year: number; accrued: number; received: number; notRecorded: number; outstanding: number }[];
     totals: { accrued: number; collected: number; outstanding: number; notRecorded: number };
@@ -122,6 +123,159 @@ const A = accountsData as unknown as {
   entries: { year: number; leaf: string | null; work: string | null; gross: number; rateWritten: string; net: number; check: string | null; receiptWritten: number | null }[];
   unparsed: { count: number; sample: Unparsed[] };
 };
+
+/**
+ * One trade, with the three states its money can be in.
+ *
+ * The bar is stacked rather than grouped because the three are parts of one
+ * whole — collected + outstanding + not recorded is exactly what was accrued,
+ * at every level, and the generator asserts it. A grouped bar would let a
+ * reader add them and get twice the money.
+ */
+function Trade({
+  a,
+}: {
+  a: {
+    key: string;
+    label: string;
+    ledgers: string[];
+    rows: number;
+    years: { year: number; accrued: number; notRecorded: number }[];
+    totals: { accrued: number; collected: number; outstanding: number; notRecorded: number };
+  };
+}) {
+  const t = a.totals;
+  const pct = (n: number) => (t.accrued > 0 ? (n / t.accrued) * 100 : 0);
+  // The years it *earned* in, not the years the account touches: art's series
+  // runs to 1962 because a cheque arrived then, and a span printed above the
+  // words « earned, as the rows state it » must not include a year that sold
+  // nothing.
+  const earning = a.years.filter((y) => y.accrued + y.notRecorded > 0);
+  const first = earning[0]?.year;
+  const last = earning[earning.length - 1]?.year;
+  const buckets = [
+    { k: 'Collected', v: t.collected, cls: 'bg-relu-500', help: 'a cheque is recorded against it' },
+    {
+      k: 'Still owed',
+      v: t.outstanding,
+      cls: 'bg-encours-500',
+      help: 'accrued, and no cheque yet in the leaves read',
+    },
+    {
+      k: 'Not recorded',
+      v: t.notRecorded,
+      cls: 'bg-ink-300',
+      help: 'the row states no receipt of any kind — an absence, not a debt',
+    },
+  ];
+
+  return (
+    <div className="rounded-card border border-ink-200 bg-white px-4 py-4">
+      <div className="flex items-baseline justify-between gap-3">
+        <h3 className="text-[14px] font-semibold text-ink-900">{a.label}</h3>
+        <span className="text-[11.5px] text-ink-400">
+          {first === last ? first : `${first}–${last}`}
+        </span>
+      </div>
+      <div className="mt-0.5 text-[11.5px] text-ink-400">
+        {a.ledgers.map(named).join(', ')} · {a.rows} rows
+      </div>
+
+      <div className="mt-3 font-serif text-2xl tabular text-ink-900">${money(t.accrued)}</div>
+      <div className="text-[11px] uppercase tracking-wider text-ink-400">earned, as the rows state it</div>
+
+      <div className="mt-3 flex h-2.5 w-full overflow-hidden rounded-sm bg-ink-100">
+        {buckets.map((b) =>
+          b.v > 0 ? (
+            <span
+              key={b.k}
+              className={b.cls}
+              style={{ width: `${pct(b.v)}%` }}
+              title={`${b.k}: $${money(b.v)}`}
+            />
+          ) : null,
+        )}
+      </div>
+
+      <dl className="mt-3 space-y-1.5">
+        {buckets.map((b) => (
+          <div key={b.k} className="flex items-baseline gap-2">
+            <span className={`mt-1 inline-block h-2 w-2 shrink-0 rounded-sm ${b.cls}`} />
+            <dt className="text-[12.5px] text-ink-700">{b.k}</dt>
+            <dd className="ml-auto shrink-0 tabular text-[12.5px] text-ink-900">
+              ${money(b.v)}
+            </dd>
+            <dd className="w-10 shrink-0 text-right tabular text-[11.5px] text-ink-400">
+              {t.accrued > 0 ? `${Math.round(pct(b.v))}%` : '—'}
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <p className="mt-2 text-[11.5px] leading-relaxed text-ink-500">
+        {buckets.find((b) => b.v > 0 && b.k === 'Not recorded')
+          ? 'Most of what looks unpaid here is unwritten rather than unsettled.'
+          : 'Every charge in this book is followed to a cheque or is still open.'}
+      </p>
+    </div>
+  );
+}
+
+/**
+ * The two trades on one time axis.
+ *
+ * Each trade is scaled to its own peak on purpose. The illustration work runs
+ * at fifteen and twenty dollars a drawing and the oils at thousands a canvas,
+ * so a shared axis would draw four years of steady weekly earning as a flat
+ * line — which is the opposite of what the strip is for. What is comparable
+ * here is *when*, and the figures are in the cards above.
+ */
+function Spans({
+  activities,
+}: {
+  activities: { key: string; label: string; years: { year: number; accrued: number; notRecorded: number }[] }[];
+}) {
+  const live = activities.filter((a) => a.years.length);
+  if (!live.length) return null;
+  const all = live.flatMap((a) => a.years.map((y) => y.year));
+  const from = Math.min(...all);
+  const to = Math.max(...all);
+  const span = Array.from({ length: to - from + 1 }, (_, i) => from + i);
+  const tone: Record<string, string> = { art: 'bg-brand-400', illustration: 'bg-edward-500' };
+
+  return (
+    <div className="mt-4 space-y-3">
+      {live.map((a) => {
+        const by = new Map(a.years.map((y) => [y.year, y.accrued + y.notRecorded]));
+        const peak = Math.max(...[...by.values()], 1);
+        return (
+          <div key={a.key}>
+            <div className="flex items-baseline gap-2 text-[11.5px] text-ink-500">
+              <span className={`inline-block h-2 w-2 rounded-sm ${tone[a.key] ?? 'bg-ink-400'}`} />
+              {a.label}
+            </div>
+            <div className="mt-1 flex h-12 items-end gap-px">
+              {span.map((year) => {
+                const v = by.get(year) ?? 0;
+                return (
+                  <span
+                    key={year}
+                    className={`flex-1 rounded-t-[1px] ${v > 0 ? (tone[a.key] ?? 'bg-ink-400') : 'bg-ink-100'}`}
+                    style={{ height: v > 0 ? `${Math.max(6, (v / peak) * 100)}%` : '2px' }}
+                    title={v > 0 ? `${year}: $${money(v)}` : `${year}: nothing recorded`}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+      <div className="flex justify-between text-[11px] tabular text-ink-400">
+        <span>{from}</span>
+        <span>{to}</span>
+      </div>
+    </div>
+  );
+}
 
 /** A volume's own short name — « Book III », not the `book-iii` of a filename. */
 const named = (id: string) => LEDGERS.find((l) => l.id === id)?.short ?? id;
@@ -158,6 +312,12 @@ export function AccountsPage() {
   }, []);
 
   const illustration = A.activities?.find((a) => a.key === 'illustration');
+  // How many batches the pocket book would take in all, so the fraction read
+  // is observed rather than written into the sentence and left to go stale.
+  const ivBatches = useMemo(
+    () => Math.max(1, Math.ceil((LEDGERS.find((l) => l.id === 'book-iv')?.sheets ?? 0) / 12)),
+    [],
+  );
 
   // One scale for both bars, and it is a net scale on purpose. Gross carries
   // the dealer's third and `received` does not, so a gross bar drawn beside a
@@ -197,13 +357,13 @@ export function AccountsPage() {
           </p>
           {illustration && illustration.rows > 0 && (
             <p className="mt-2 text-[13.5px] leading-relaxed text-ink-800">
-              <strong className="font-semibold">And the totals below are his own work only.</strong>{' '}
-              Book IV is a pocket cash book of magazine and advertising commissions, and it is now
-              read: ${money(illustration.totals.accrued)} charged across{' '}
-              {illustration.years[0]?.year}–{illustration.years[illustration.years.length - 1]?.year},
-              of which ${money(illustration.totals.collected)} is receipted. That is a different
-              trade on a different basis, so it is counted apart rather than added in — every
-              figure in the tables below is the sale of a picture.
+              <strong className="font-semibold">
+                And every table below this one is his own work only.
+              </strong>{' '}
+              Book IV is a pocket cash book of magazine and advertising commissions — a different
+              trade, on a different basis — so it is counted apart rather than added in. It has
+              its own section directly below, and every figure after that is the sale of a
+              picture.
             </p>
           )}
           {uncounted.length > 0 && (
@@ -222,7 +382,11 @@ export function AccountsPage() {
         </div>
       </header>
 
-      <section className="grid gap-4 border-b border-ink-200 py-6 sm:grid-cols-4">
+      <section className="border-b border-ink-200 py-6">
+        <h2 className="text-[11px] uppercase tracking-wider text-ink-400">
+          Sales of his own work — Book I, Book II and the dealers’ book
+        </h2>
+        <div className="mt-3 grid gap-4 sm:grid-cols-4">
         {[
           { k: 'Sales recorded', v: String(totals.sales) },
           { k: 'Gross', v: `$${money(totals.gross)}` },
@@ -234,6 +398,52 @@ export function AccountsPage() {
             <div className="font-serif text-2xl tabular text-ink-900">{c.v}</div>
           </div>
         ))}
+        </div>
+      </section>
+
+      <section className="border-b border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">Two trades, and what came of the money</h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          Edward Hopper earned in two ways and kept two kinds of book about it. Books I, II, III
+          and V and the dealers’ book record him selling his own work; Book IV is a stationer’s
+          pocket cash book of magazine and advertising commissions. Adding them would make one
+          number out of two trades that barely share a decade, so they stand apart here — and
+          each is split by what actually became of the money.
+        </p>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {A.activities.map((a) => (
+            <Trade key={a.key} a={a} />
+          ))}
+        </div>
+
+        <p className="prose-note mt-4 max-w-3xl">
+          <strong className="font-semibold text-ink-700">Three states and not two</strong>, because
+          the two books do not record the same things. Book IV names a cheque for very nearly
+          every charge in it, so what it leaves undischarged is genuinely still owed at the point
+          the reading stops. The work books mostly do not: a leaf there often writes one date to a
+          sale and never separates the day the picture went out from the day the money came. So a
+          sale can sit unpaid because the buyer had not paid, or because Jo Hopper did not write
+          it down, and those are not the same fact. Folding them together would set tens of
+          thousands of dollars of <em>silence</em> beside a few hundred of real debt and invite
+          you to compare them.
+        </p>
+
+        <h3 className="mt-8 font-serif text-[17px] text-ink-900">When each trade earned</h3>
+        <p className="mt-1 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          One bar to a year, each trade to its own scale — the point is the shape and the span,
+          not the height, because a twenty-dollar line drawing and a three-thousand-dollar canvas
+          would flatten each other on one axis.
+        </p>
+        <Spans activities={A.activities} />
+        <p className="prose-note mt-3 max-w-3xl">
+          In what has been read so far the two do not overlap at all: the illustration income
+          stops in {illustration?.years[illustration.years.length - 1]?.year} and the first sale
+          of his own work is booked in {A.years[0]?.year}. That gap is the part of the career the
+          paintings books do not mention — and it is a gap in the <em>transcription</em> before it
+          is a gap in the life: Book IV runs to 1967, and {illustration?.batches} of its{' '}
+          {ivBatches} batches are read.
+        </p>
       </section>
 
       <section className="py-6">
@@ -449,7 +659,7 @@ export function AccountsPage() {
       </section>
 
       <section className="border-t border-ink-200 py-8">
-        <h2 className="font-serif text-xl text-ink-900">What was owed</h2>
+        <h2 className="font-serif text-xl text-ink-900">What went undischarged</h2>
         <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
           A work went to the dealer in one year and the cheque arrived in another, and in between
           somebody owed the Hoppers money. That gap is the whole difference between an accrual
@@ -458,13 +668,21 @@ export function AccountsPage() {
           paid for in June 1962 — thirty-eight years.
         </p>
         <p className="prose-note mt-2 max-w-3xl">{A.receivableNote}</p>
+        <p className="prose-note mt-2 max-w-3xl">
+          The last column is deliberately not headed <em>owed</em>. It is everything the leaves
+          have not followed to a cheque, and the section at the top of this page splits that in
+          two: of the ${money(A.years.reduce((n, y) => n + y.net, 0))} accrued here, only what
+          carries a receipt date can be called settled or unsettled at all, and the rest — nearly
+          two thirds — is a row that says nothing either way. A debt and a silence run together in
+          this column because the running total cannot tell them apart; the cards above can.
+        </p>
         <table className="mt-4 w-full max-w-3xl text-[13.5px]">
           <thead>
             <tr className="border-b border-ink-300 text-[11px] uppercase tracking-wider text-ink-400">
               <th className="py-1.5 text-left font-normal">Year</th>
               <th className="py-1.5 text-right font-normal">Accrued</th>
               <th className="py-1.5 text-right font-normal">Received</th>
-              <th className="py-1.5 text-right font-normal">Owed at year end</th>
+              <th className="py-1.5 text-right font-normal">Undischarged at year end</th>
             </tr>
           </thead>
           <tbody>

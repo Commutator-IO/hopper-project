@@ -769,6 +769,9 @@ const activities = ACTIVITIES.map(({ key, label }) => {
     key,
     label,
     ledgers: [...new Set(mine.map((e) => e.ledger))].sort(),
+    // Distinct batches the counted rows come from, so a page can say how much
+    // of the volume this is without the fraction being typed into its prose.
+    batches: new Set(mine.map((e) => `${e.ledger}#${e.batch}`)).size,
     rows: mine.length,
     years: byYear,
     totals: {
