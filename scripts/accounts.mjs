@@ -486,6 +486,10 @@ const bookIVAmount = (cells) => {
 // drawing out of the 1915 total by calling it an invoice.
 const IV_RECEIPT = /^["'”\s]*(rec['’]?d|received)\b/i;
 const IV_BILL = /^["'”\s]*(bill|billed)\b/i;
+// A subtraction, and a restatement of what one leaves. Anchored at the head
+// for the reason `IV_BILL` is: « less » loose in the line would match a title.
+const IV_DEDUCTION = /^["'”\s]*less\b/i;
+const IV_RESTATED = /^["'”\s]*total\b/i;
 
 /**
  * Whether a row's figure is wholly struck out.
@@ -551,6 +555,9 @@ const ivMarginalYear = (plain) => {
 
 const receipts = [];
 const ivSubtotals = [];
+const ivDeductions = [];
+const ivNets = [];
+const ivCarried = [];
 let ivBlankDescription = 0;
 let ivStruckRows = 0;
 {
@@ -600,6 +607,12 @@ let ivStruckRows = 0;
         year = Number(stated[1]);
         if (!body && amount === null) continue;
       }
+      // A description that is nothing but ditto marks repeats the row above it
+      // and is whatever that row was. Leaf 28 pays the Webb Publishing Co in
+      // two cheques and writes the second « " 27 | " " " | 9 »: without this
+      // the nine has no letters in it, which is to say it is a bare figure,
+      // and it was counted as a fresh charge for a drawing nobody made.
+      const previous = rows[rows.length - 1];
       rows.push({
         amount,
         body,
@@ -609,9 +622,13 @@ let ivStruckRows = 0;
           ? 'receipt'
           : IV_BILL.test(body)
             ? 'bill'
-            : /[A-Za-z]/.test(body)
-              ? 'item'
-              : 'bare',
+            : IV_DEDUCTION.test(body)
+              ? 'deduction'
+              : isDitto(body) && previous !== undefined
+                ? previous.kind
+                : /[A-Za-z]/.test(body)
+                  ? 'item'
+                  : 'bare',
         where: {
           ledger: row.ledger,
           batch: row.batch,
@@ -625,8 +642,10 @@ let ivStruckRows = 0;
     closeSheet();
   }
 
-  // How much has been itemised since the last bill or cheque closed a run.
+  // How much has been itemised since the last bill or cheque closed a run, and
+  // whether a « less » line is currently working a subtotal down to a cheque.
   let sinceSettlement = 0;
+  let deducting = false;
   for (let i = 0; i < rows.length; i++) {
     const r = rows[i];
     if (r.amount === null) continue;
@@ -644,19 +663,75 @@ let ivStruckRows = 0;
     if (r.kind === 'receipt') {
       receipts.push({ year: r.year, amount: r.amount, date: r.date, ...r.where });
       sinceSettlement = 0;
+      deducting = false;
       continue;
+    }
+    // A subtraction, and never money the book is owed — under either reading
+    // of the line. « less commission 1983.33 » takes a third off; « less
+    // commission 3433.00 », which is the same words for the figure that is
+    // left, states a net, and this volume writes it both ways. Both are the
+    // settlement working itself out down the leaf, and neither is a charge.
+    if (r.kind === 'deduction') {
+      ivDeductions.push({ year: r.year, amount: r.amount, ...r.where });
+      deducting = true;
+      continue;
+    }
+    // And what a subtraction leaves. Between a « less » line and the cheque
+    // that closes the block the figures are the running net, restated after
+    // each deduction — bare, or under the word « total ». A described row that
+    // is neither ends the run: leaf 137 takes a commission and then frames off
+    // one group of watercolours and starts pricing the next.
+    if (deducting) {
+      if ((r.kind === 'bare' && r.body === '') || IV_RESTATED.test(r.body)) {
+        ivNets.push({ year: r.year, amount: r.amount, ...r.where });
+        continue;
+      }
+      deducting = false;
     }
     // A sum ruled off. What answers it is on the line below — the bill, or,
     // where she drew none, the cheque. Where that answer is a cheque the
     // arithmetic has to say so too, because an undescribed *charge* is
     // answered by a cheque in exactly the same way: leaf 14's 30 and leaf
     // 39's 100 both are.
+    //
+    // A « less » line below it needs no such test. Nothing but a subtotal can
+    // stand where a commission is about to be taken, and asking the arithmetic
+    // there would count the leaves whose subtotal disagrees with their own
+    // items — leaf 137's 2350 against three watercolours making 2850 — as a
+    // second charge on top of the first.
     const answer = rows[i + 1]?.kind;
     if (
       r.kind === 'bare' &&
-      (answer === 'bill' || (answer === 'receipt' && sumsTheRunAbove(rows, i, r.amount)))
+      (answer === 'bill' ||
+        answer === 'deduction' ||
+        (answer === 'receipt' && sumsTheRunAbove(rows, i, r.amount)))
     ) {
       ivSubtotals.push({ year: r.year, amount: r.amount, ...r.where });
+      continue;
+    }
+    // A sum carried at the foot of a leaf. From leaf 66 the volume rules off
+    // the leaf, and later the year, under the last cheque on it — leaf 128's
+    // 7245.26, leaf 129's 4115.77 — and those figures restate money already
+    // counted line by line above. What distinguishes one from an undescribed
+    // charge is that nothing stands unsettled: every item since the last
+    // cheque has been paid for, so there is nothing left for the figure to be
+    // owed on. Leaf 14's 30 and leaf 39's 100 are undescribed charges, and
+    // each is answered by a cheque of its own, which is the test kept above.
+    //
+    // The description column must be *empty*, and not merely wordless. Leaf 73
+    // bills « 6 water colors at 33 1/3 » and then numbers them 9 to 14 down
+    // that column, one to a line at a hundred each: six charges whose
+    // description is a numeral, and the cheque of 600 below them confirms it.
+    // Without the test they read as six sums carried, and five hundred dollars
+    // leaves the year.
+    if (
+      r.kind === 'bare' &&
+      r.body === '' &&
+      sinceSettlement === 0 &&
+      answer !== 'bill' &&
+      answer !== 'receipt'
+    ) {
+      ivCarried.push({ year: r.year, amount: r.amount, ...r.where });
       continue;
     }
     // A bill restates what was itemised above it; only an unitemised one is a
@@ -1262,16 +1337,27 @@ const out = {
     charges: entries.filter((e) => e.activity === 'illustration').length,
     receipts: receipts.length,
     subtotalsExcluded: ivSubtotals.length,
+    deductionsExcluded: ivDeductions.length,
+    netsExcluded: ivNets.length,
+    carriedSumsExcluded: ivCarried.length,
     struckExcluded: ivStruckRows,
     blankDescription: ivBlankDescription,
     note:
       'Book IV states a client, then its items one to a line, then « Bill rendered » with their ' +
       'total, then « Rec\'d by check » in red. The items are the charge; a bill is counted only ' +
       'where nothing was itemised since the last settlement, or every commission in the volume ' +
-      'would be counted twice. A bare figure with no description is a subtotal where a bill ' +
-      'follows it, or where a cheque follows it and the priced lines directly above add to it — ' +
-      'the leaf rules a line above a subtotal and the transcription does not record the rule, so ' +
-      'the rule is recovered from the arithmetic. A figure written wholly inside a struck-out ' +
+      'would be counted twice. A bare figure with no description is a subtotal where a bill or a ' +
+      '« less » line follows it, or where a cheque follows it and the priced lines directly ' +
+      'above add to it — the leaf rules a line above a subtotal and the transcription does not ' +
+      'record the rule, so the rule is recovered from the arithmetic. From the 1930s the volume ' +
+      'is a gallery account rather than an invoice book, and one sale is written down the leaf ' +
+      'four or five times over: the items, their subtotal, « less commission », the net, « less ' +
+      'photographs », the net again. Only the items are counted. A « less » line is a ' +
+      'subtraction and never a charge — this volume writes those words for the deduction and ' +
+      'for the figure it leaves indifferently — and what stands between it and the cheque is ' +
+      'that running net restated. A sum ruled off under the last cheque on a leaf, with nothing ' +
+      'unsettled above it, is the leaf or the year carried and not a fresh debt. A figure ' +
+      'written wholly inside a struck-out ' +
       'entry is neither charge nor receipt. Receipts are kept as their own stream: a cheque ' +
       'settles a run of work, not a line of it, and the runs overlap. The year is carried from ' +
       'the last one the volume states — on a line of its own, in the date cell of a described ' +
@@ -1366,7 +1452,8 @@ process.stdout.write(
           `not recorded ${a.totals.notRecorded.toFixed(2)}\n`,
       )
       .join('') +
-    `          Book IV: ${receipts.length} receipt(s), ${ivSubtotals.length} subtotal(s) and ` +
-    `${ivStruckRows} struck row(s) excluded, ` +
+    `          Book IV: ${receipts.length} receipt(s); excluded ${ivSubtotals.length} subtotal(s), ` +
+    `${ivDeductions.length} deduction(s), ${ivNets.length} restated net(s), ` +
+    `${ivCarried.length} carried sum(s), ${ivStruckRows} struck row(s); ` +
     `${ivBlankDescription} charge(s) with no description written\n`,
 );
