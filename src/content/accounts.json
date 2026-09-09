@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T19:51:28.859Z",
+  "generated": "2026-09-09T20:03:51.969Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf. Book II rules no columns at all, and it needs the other half of the same rule: a leaf there is one work with one sale line — buyer, price and the cut, the cheque, the date — so the date is in the last column and never in the first. It is read there only on a leaf that rules nothing, only where the first column dates nothing, and only where the last cell holds a date and nothing besides.",
@@ -329,7 +329,7 @@
         "book-iv"
       ],
       "batches": 13,
-      "rows": 798,
+      "rows": 786,
       "years": [
         {
           "year": 1913,
@@ -487,198 +487,199 @@
         },
         {
           "year": 1936,
-          "accrued": 6214.76,
-          "received": 3839.91,
+          "accrued": 2614.76,
+          "received": 5639.91,
           "notRecorded": 0,
-          "outstanding": -7372.69
+          "outstanding": -12772.69
         },
         {
           "year": 1937,
           "accrued": 6983.34,
           "received": 5714.27,
           "notRecorded": 0,
-          "outstanding": -6103.62
+          "outstanding": -11503.62
         },
         {
           "year": 1938,
           "accrued": 10031.84,
           "received": 6771.05,
           "notRecorded": 0,
-          "outstanding": -2842.83
+          "outstanding": -8242.83
         },
         {
           "year": 1939,
           "accrued": 3250,
           "received": 2160.47,
           "notRecorded": 0,
-          "outstanding": -1753.3
+          "outstanding": -7153.3
         },
         {
           "year": 1940,
           "accrued": 6699.82,
           "received": 4818.16,
           "notRecorded": 0,
-          "outstanding": 128.36
+          "outstanding": -5271.64
         },
         {
           "year": 1941,
           "accrued": 1590,
           "received": 874.6,
           "notRecorded": 0,
-          "outstanding": 843.76
+          "outstanding": -4556.24
         },
         {
           "year": 1942,
           "accrued": 6530,
           "received": 4682.44,
           "notRecorded": 0,
-          "outstanding": 2691.32
+          "outstanding": -2708.68
         },
         {
           "year": 1943,
           "accrued": 2922.83,
           "received": 4558.37,
           "notRecorded": 0,
-          "outstanding": 1055.78
+          "outstanding": -4344.22
         },
         {
           "year": 1944,
           "accrued": 12320.31,
           "received": 6761.77,
           "notRecorded": 0,
-          "outstanding": 6614.32
+          "outstanding": 1214.32
         },
         {
           "year": 1945,
           "accrued": 4690.38,
           "received": 3625.55,
           "notRecorded": 0,
-          "outstanding": 7679.15
+          "outstanding": 2279.15
         },
         {
           "year": 1946,
           "accrued": 8050,
           "received": 5341.57,
           "notRecorded": 0,
-          "outstanding": 10387.58
+          "outstanding": 4987.58
         },
         {
           "year": 1947,
           "accrued": 5934.06,
           "received": 2860.53,
           "notRecorded": 0,
-          "outstanding": 13461.11
+          "outstanding": 8061.11
         },
         {
           "year": 1948,
           "accrued": 11452.89,
           "received": 7374.54,
           "notRecorded": 0,
-          "outstanding": 17539.46
+          "outstanding": 12139.46
         },
         {
           "year": 1949,
           "accrued": 9026.8,
           "received": 3661.14,
           "notRecorded": 0,
-          "outstanding": 22905.12
+          "outstanding": 17505.12
         },
         {
           "year": 1950,
           "accrued": 3503.05,
           "received": 3408.49,
           "notRecorded": 0,
-          "outstanding": 22999.68
+          "outstanding": 17599.68
         },
         {
           "year": 1951,
           "accrued": 24650.77,
           "received": 29243.1,
           "notRecorded": 0,
-          "outstanding": 18407.35
+          "outstanding": 13007.35
         },
         {
           "year": 1954,
           "accrued": 18210,
           "received": 13806.34,
           "notRecorded": 0,
-          "outstanding": 22811.01
+          "outstanding": 17411.01
         },
         {
           "year": 1955,
           "accrued": 9262.2,
           "received": 13406.39,
           "notRecorded": 0,
-          "outstanding": 18666.82
+          "outstanding": 13266.82
         },
         {
           "year": 1956,
           "accrued": 39457.13,
           "received": 26098.61,
           "notRecorded": 0,
-          "outstanding": 32025.34
+          "outstanding": 26625.34
         },
         {
           "year": 1957,
           "accrued": 25013.08,
           "received": 25013.08,
           "notRecorded": 0,
-          "outstanding": 32025.34
+          "outstanding": 26625.34
         },
         {
           "year": 1958,
           "accrued": 29687.53,
           "received": 19861.37,
           "notRecorded": 0,
-          "outstanding": 41851.5
+          "outstanding": 36451.5
         },
         {
           "year": 1964,
-          "accrued": 52872,
+          "accrued": 31500,
           "received": 20628,
           "notRecorded": 0,
-          "outstanding": 74095.5
+          "outstanding": 47323.5
         },
         {
           "year": 1965,
           "accrued": 31133.37,
           "received": 26106.63,
           "notRecorded": 0,
-          "outstanding": 79122.24
+          "outstanding": 52350.24
         },
         {
           "year": 1966,
-          "accrued": 41666.67,
+          "accrued": 25000,
           "received": 18666.67,
           "notRecorded": 0,
-          "outstanding": 102122.24
+          "outstanding": 58683.57
         },
         {
           "year": 1967,
-          "accrued": 16228.23,
-          "received": 28.83,
+          "accrued": 8100,
+          "received": 8157.06,
           "notRecorded": 0,
-          "outstanding": 118321.64
+          "outstanding": 58626.51
         }
       ],
       "totals": {
-        "accrued": 451854.76,
-        "collected": 333533.12,
-        "outstanding": 118321.64,
+        "accrued": 402087.86,
+        "collected": 343461.35,
+        "outstanding": 58626.51,
         "notRecorded": 0
       }
     }
   ],
   "activitiesNote": "The same money split by which trade earned it: Books I, II, III, V and the dealers' book record Edward Hopper selling his own work, Book IV records him being paid for magazine and advertising drawings. Through the years transcribed the two barely overlap, which is the point of separating them — the illustration income is the part the paintings books do not mention at all. Three buckets and not two: « not recorded » is money whose row states no receipt of any kind, and it is nearly all art, because the pocket book dates its cheques and the work books often do not. Reading it as debt would compare a silence with a sum.",
   "illustration": {
-    "charges": 798,
-    "receipts": 541,
+    "charges": 786,
+    "receipts": 545,
     "subtotalsExcluded": 39,
-    "deductionsExcluded": 91,
-    "netsExcluded": 52,
-    "carriedSumsExcluded": 75,
+    "deductionsExcluded": 95,
+    "netsExcluded": 55,
+    "carriedSumsExcluded": 76,
     "struckExcluded": 1,
-    "blankDescription": 46,
+    "wordlessReceipts": 2,
+    "blankDescription": 41,
     "note": "Book IV states a client, then its items one to a line, then « Bill rendered » with their total, then « Rec'd by check » in red. The items are the charge; a bill is counted only where nothing was itemised since the last settlement, or every commission in the volume would be counted twice. A bare figure with no description is a subtotal where a bill or a « less » line follows it, or where a cheque follows it and the priced lines directly above add to it — the leaf rules a line above a subtotal and the transcription does not record the rule, so the rule is recovered from the arithmetic. From the 1930s the volume is a gallery account rather than an invoice book, and one sale is written down the leaf four or five times over: the items, their subtotal, « less commission », the net, « less photographs », the net again. Only the items are counted. A « less » line is a subtraction and never a charge — this volume writes those words for the deduction and for the figure it leaves indifferently — and what stands between it and the cheque is that running net restated. A sum ruled off under the last cheque on a leaf, with nothing unsettled above it, is the leaf or the year carried and not a fresh debt. A figure written wholly inside a struck-out entry is neither charge nor receipt. Receipts are kept as their own stream: a cheque settles a run of work, not a line of it, and the runs overlap. The year is carried from the last one the volume states — on a line of its own, in the date cell of a described row, or in pencil in the margin, which the edition records after the table."
   },
   "years": [
@@ -20232,46 +20233,6 @@
       "work": null
     },
     {
-      "year": 1936,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 1800,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 1800,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge",
-      "description": "commission 600, rec'd by check",
-      "ledger": "book-iv",
-      "batch": 9,
-      "leaf": "106",
-      "ref": "17082",
-      "section": "Leaf 106: December 1936 to March 1937",
-      "work": null
-    },
-    {
-      "year": 1936,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 1800,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 1800,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 9,
-      "leaf": "106",
-      "ref": "17082",
-      "section": "Leaf 106: December 1936 to March 1937",
-      "work": null
-    },
-    {
       "year": 1937,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 20,
@@ -24412,106 +24373,6 @@
       "work": null
     },
     {
-      "year": 1964,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 190,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 190,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge",
-      "description": "(cleaning and varnishing)",
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "156",
-      "ref": "16483",
-      "section": "Leaf 156: December 1964 to February 1965",
-      "work": null
-    },
-    {
-      "year": 1964,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 144,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 144,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge",
-      "description": "``East River''",
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "156",
-      "ref": "16483",
-      "section": "Leaf 156: December 1964 to February 1965",
-      "work": null
-    },
-    {
-      "year": 1964,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 38,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 38,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge",
-      "description": "Houses at Charleston",
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "156",
-      "ref": "16483",
-      "section": "Leaf 156: December 1964 to February 1965",
-      "work": null
-    },
-    {
-      "year": 1964,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 372,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 372,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "156",
-      "ref": "16483",
-      "section": "Leaf 156: December 1964 to February 1965",
-      "work": null
-    },
-    {
-      "year": 1964,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 20628,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 20628,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "156",
-      "ref": "16483",
-      "section": "Leaf 156: December 1964 to February 1965",
-      "work": null
-    },
-    {
       "year": 1965,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 33.37,
@@ -24632,46 +24493,6 @@
       "work": null
     },
     {
-      "year": 1966,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 6000,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 6000,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge",
-      "description": "Payment on acct",
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "158",
-      "ref": "16958",
-      "section": "Leaf 158: 1966, and a cheque held over into 1967",
-      "work": null
-    },
-    {
-      "year": 1966,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 10666.67,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 10666.67,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge",
-      "description": "check ---",
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "158",
-      "ref": "16958",
-      "section": "Leaf 158: 1966, and a cheque held over into 1967",
-      "work": null
-    },
-    {
       "year": 1967,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 8000,
@@ -24694,26 +24515,6 @@
     {
       "year": 1967,
       "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 8000,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 8000,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "159",
-      "ref": "17218",
-      "section": "Leaf 159: January to March 1967",
-      "work": null
-    },
-    {
-      "year": 1967,
-      "yearFrom": "the year the volume last stated, carried forward",
       "gross": 100,
       "rateWritten": null,
       "commission": 0,
@@ -24724,46 +24525,6 @@
       "activity": "illustration",
       "charge": "an itemised charge",
       "description": "in payment",
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "159",
-      "ref": "17218",
-      "section": "Leaf 159: January to March 1967",
-      "work": null
-    },
-    {
-      "year": 1967,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 100,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 100,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge whose description column is blank",
-      "description": null,
-      "ledger": "book-iv",
-      "batch": 14,
-      "leaf": "159",
-      "ref": "17218",
-      "section": "Leaf 159: January to March 1967",
-      "work": null
-    },
-    {
-      "year": 1967,
-      "yearFrom": "the year the volume last stated, carried forward",
-      "gross": 28.23,
-      "rateWritten": null,
-      "commission": 0,
-      "net": 28.23,
-      "receiptWritten": null,
-      "receiptYear": null,
-      "check": null,
-      "activity": "illustration",
-      "charge": "an itemised charge",
-      "description": "\" \" Mar 16",
       "ledger": "book-iv",
       "batch": 14,
       "leaf": "159",
@@ -28824,6 +28585,16 @@
       "section": "Leaf 105: May to December 1936"
     },
     {
+      "year": 1936,
+      "amount": 1800,
+      "date": "\" 11",
+      "ledger": "book-iv",
+      "batch": 9,
+      "leaf": "106",
+      "ref": "17082",
+      "section": "Leaf 106: December 1936 to March 1937"
+    },
+    {
       "year": 1937,
       "amount": 40,
       "date": "\" 15",
@@ -30175,8 +29946,38 @@
     },
     {
       "year": 1967,
+      "amount": 8000,
+      "date": "",
+      "ledger": "book-iv",
+      "batch": 14,
+      "leaf": "159",
+      "ref": "17218",
+      "section": "Leaf 159: January to March 1967"
+    },
+    {
+      "year": 1967,
+      "amount": 100,
+      "date": "",
+      "ledger": "book-iv",
+      "batch": 14,
+      "leaf": "159",
+      "ref": "17218",
+      "section": "Leaf 159: January to March 1967"
+    },
+    {
+      "year": 1967,
       "amount": 28.83,
       "date": "",
+      "ledger": "book-iv",
+      "batch": 14,
+      "leaf": "159",
+      "ref": "17218",
+      "section": "Leaf 159: January to March 1967"
+    },
+    {
+      "year": 1967,
+      "amount": 28.23,
+      "date": "\"",
       "ledger": "book-iv",
       "batch": 14,
       "leaf": "159",

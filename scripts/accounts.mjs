@@ -496,7 +496,17 @@ const bookIVAmount = (cells) => {
 // check » repeating the figure underneath — so the two have to be told apart
 // by the word that follows, which is the only thing on the page that does it
 // once the colours are gone.
-const IV_RECEIPT = /^["'”\s]*(rec['’]?d|received)\b(?!\s+from\b)/i;
+// One row in the volume puts the commission in front of the phrase instead of
+// deducting it in the column above: leaf 106's « commission 600, rec'd by
+// check » against 1800, where 600 is a third of the 1800 answered and the
+// whole is 2400. Unanchoring the phrase is what `IV_BILL` shows must not be
+// done, so the one prefix the volume actually writes is admitted and nothing
+// else is — a word, a figure, a comma. Left out, that row was counted as a
+// second charge of 1800 for a picture already priced on the line above, and
+// the pencil sub-sum below it, having nothing settled behind it, was counted
+// as a third.
+const IV_RECEIPT =
+  /^["'”\s]*(commission\s+[\d,.\s]+,\s*)?(rec['’]?d|received)\b(?!\s+from\b)/i;
 const IV_BILL = /^["'”\s]*(bill|billed)\b/i;
 // A subtraction, and a restatement of what one leaves. Anchored at the head
 // for the reason `IV_BILL` is: « less » loose in the line would match a title.
@@ -507,6 +517,46 @@ const IV_RESTATED = /^["'”\s]*total\b/i;
 // « total etchings 300 » gathers six etchings listed without prices, and it is
 // the only line that states their money.
 const IV_YEAR_TOTAL = /^["'”\s]*total\s*(19[0-6]\d)?\s*$/i;
+
+// A ditto that carries a date. `isDitto` wants a cell that is nothing but
+// quote marks, and leaf 159's last row is « " " Mar 16 » — the marks saying
+// « the same again » and the date saying when. Read as an item that row became
+// a second royalty of 28.23 on top of the 28.83 it repeats, and the black
+// charge line above it was taken for the receipt, so the entry came out
+// backwards. Only a date may follow the marks: anything else is words, and
+// words are the row speaking for itself.
+const IV_DITTO_DATED =
+  /^["'”″\s.]*["'”″][\s"'”″.]*((jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s*)?\d{1,2}(st|nd|rd|th)?\.?\s*$/i;
+const isDittoDated = (cell) => IV_DITTO_DATED.test(cell) && /["'”″]/.test(cell);
+
+// Money going the other way. Leaf 156 is the first leaf in the volume to take
+// a cost off a sale rather than a commission: it rules off at 21000.00, heads
+// a block « Expenses », lists a relining and two frames, and pays the
+// difference. Left alone the three costs were counted as income and the
+// volume was credited with 372.00 for money it spent.
+//
+// The block is closed by the cheque that answers it, which is how every other
+// run in this volume ends. Its own rows are folded into the deductions rather
+// than counted separately: they are subtractions, which is what that stream
+// is, and telling a frame from a commission is a question for the leaf and not
+// for the total.
+const IV_EXPENSES = /^["'”\s]*expenses?\b/i;
+
+// Two shapes that keep a settlement going where every other described row
+// ends it, and both are on leaf 158. « Payment on acct » is money already had,
+// subtracted from the net like a commission; « check --- » is what the
+// subtraction leaves, the same restatement `IV_RESTATED` reads under the word
+// « total ». Read as items they were a charge of 6000.00 for nothing and a
+// charge of 10666.67 for the cheque that answers them, on top of the 25000.00
+// the leaf actually asks for.
+//
+// Both are admitted only while a « less » line is already working a subtotal
+// down, which is the whole of what stops « payment on account » heading the
+// two priced entries of leaf 157 from being read this way. The cheque row is
+// the bare word and its rule and nothing else, so leaf 139's « check No 6388
+// date Feb 14 » — a description, and carrying no figure — stays what it is.
+const IV_PAID_ON_ACCOUNT = /^["'”\s]*payment\s+on\s+acc(t|ount)?\b/i;
+const IV_NET_CHECK = /^["'”\s]*check\s*[-–—\s]*$/i;
 
 /**
  * Whether a row's figure is wholly struck out.
@@ -577,6 +627,8 @@ const ivNets = [];
 const ivCarried = [];
 let ivBlankDescription = 0;
 let ivStruckRows = 0;
+// Receipts recognised by repetition alone, because the row carries no word.
+let ivWordless = 0;
 {
   const ivFiles = files.filter((f) => activityOf(f.ledger) === 'illustration');
   const rows = [];
@@ -596,6 +648,8 @@ let ivStruckRows = 0;
     let sheet = null;
     // A settlement phrase still waiting for its figure, or null.
     let openPhrase = null;
+    // Whether an « Expenses » heading is open on this sheet.
+    let expensing = false;
     const closeSheet = () => {
       if (sheet !== null && pencil.has(sheet)) year = pencil.get(sheet);
     };
@@ -603,6 +657,7 @@ let ivStruckRows = 0;
       if (row.ref !== sheet) {
         closeSheet();
         sheet = row.ref;
+        expensing = false;
       }
       const cells = row.plain;
       const body = cells
@@ -638,7 +693,7 @@ let ivStruckRows = 0;
           ? 'bill'
           : IV_DEDUCTION.test(body)
             ? 'deduction'
-            : isDitto(body) && previous !== undefined
+            : (isDitto(body) || isDittoDated(body)) && previous !== undefined
               ? previous.kind
               : /[A-Za-z]/.test(body)
                 ? 'item'
@@ -651,9 +706,17 @@ let ivStruckRows = 0;
       // line says nothing about itself, so it inherits the phrase it completes
       // — which is open only while no figure has been reached, so a client's
       // name over its items never reaches them.
-      const kind = amount !== null && (own === 'item' || own === 'bare') && openPhrase !== null
-        ? openPhrase
-        : own;
+      // An « Expenses » heading turns the described rows under it into
+      // subtractions until a cheque closes the block. The bare rows are left
+      // alone: the sum of the costs and the net below it are read by the
+      // `deducting` pass, which is already looking for exactly that shape.
+      if (IV_EXPENSES.test(body) && amount === null) expensing = true;
+      else if (own === 'receipt') expensing = false;
+      const kind = expensing && amount !== null && own === 'item'
+        ? 'deduction'
+        : amount !== null && (own === 'item' || own === 'bare') && openPhrase !== null
+          ? openPhrase
+          : own;
       openPhrase = amount !== null ? null : own === 'item' || own === 'bare' ? openPhrase : own;
       rows.push({
         amount,
@@ -718,6 +781,14 @@ let ivStruckRows = 0;
         ivNets.push({ year: r.year, amount: r.amount, ...r.where });
         continue;
       }
+      if (IV_PAID_ON_ACCOUNT.test(r.body)) {
+        ivDeductions.push({ year: r.year, amount: r.amount, ...r.where });
+        continue;
+      }
+      if (IV_NET_CHECK.test(r.body)) {
+        ivNets.push({ year: r.year, amount: r.amount, ...r.where });
+        continue;
+      }
       deducting = false;
     }
     // A sum ruled off. What answers it is on the line below — the bill, or,
@@ -778,6 +849,38 @@ let ivStruckRows = 0;
     // charge in its own right.
     if (r.kind === 'bill' && sinceSettlement > 0) {
       sinceSettlement = 0;
+      continue;
+    }
+    // The red receipt with its words gone. From leaf 157 the volume stops
+    // writing « rec'd by check » over the repeat and simply sets the figure
+    // again on the line below, in red, with nothing in the date column and
+    // nothing in the description: leaf 159 does it twice, to the 8000.00 of 1
+    // January and the 100.00 of 11 February. The colour is the whole of what
+    // says so, and the colour does not survive into the transcription, so what
+    // is left to read is the repetition itself — same sheet, same figure to
+    // the cent, immediately under the charge it answers, and no word of its
+    // own anywhere on the line.
+    //
+    // Kept last, after the subtotal and the carried sum have had their turn,
+    // so that a run of one item ruled off and then deducted from stays what
+    // those tests already make of it.
+    const above = (() => {
+      for (let j = i - 1; j >= 0; j--) if (rows[j].amount !== null) return rows[j];
+      return null;
+    })();
+    if (
+      r.kind === 'bare' &&
+      r.body === '' &&
+      r.date === '' &&
+      above !== null &&
+      above.where.ref === r.where.ref &&
+      (above.kind === 'item' || above.kind === 'bare') &&
+      Math.abs(above.amount - r.amount) < 0.005
+    ) {
+      receipts.push({ year: r.year, amount: r.amount, date: r.date, ...r.where });
+      ivWordless++;
+      sinceSettlement = 0;
+      deducting = false;
       continue;
     }
     if (r.kind === 'bare') ivBlankDescription++;
@@ -1381,6 +1484,9 @@ const out = {
     netsExcluded: ivNets.length,
     carriedSumsExcluded: ivCarried.length,
     struckExcluded: ivStruckRows,
+    // Receipts read off the repetition rather than off a word, because from
+    // leaf 157 the volume stops writing « rec'd by check » over the repeat.
+    wordlessReceipts: ivWordless,
     blankDescription: ivBlankDescription,
     note:
       'Book IV states a client, then its items one to a line, then « Bill rendered » with their ' +
@@ -1495,5 +1601,6 @@ process.stdout.write(
     `          Book IV: ${receipts.length} receipt(s); excluded ${ivSubtotals.length} subtotal(s), ` +
     `${ivDeductions.length} deduction(s), ${ivNets.length} restated net(s), ` +
     `${ivCarried.length} carried sum(s), ${ivStruckRows} struck row(s); ` +
+    `${ivWordless} wordless receipt(s); ` +
     `${ivBlankDescription} charge(s) with no description written\n`,
 );
