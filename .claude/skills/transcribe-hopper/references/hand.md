@@ -3236,3 +3236,159 @@ Book IV.
   knives, which is a reason to suspect the reading rather than to trust it.
 - **The day of two charge lines** *(leaves 64, 67)* — rubbed out on 64, faint red
   on 67, both on lines that carry no word beside them.
+
+## Book IV stops being an illustration book
+
+*(Book IV batch 7, sheets 73–84, leaves 72–83, read 9 September 2026, Opus 5.)*
+
+The Ahrens Publishing Co's *Hotel Management* cover, which carried batches 5 and
+6, is billed for the last time in November 1925 on leaf 76 and never appears
+again; Charles Scribner's Sons pays 175 in March and again in September 1925 and
+stops. **From leaf 77 there is no illustration income at all** — every entry to
+the end of the batch is a picture or a print. Do not expect the client-and-job
+shape the first six batches taught; the unit is now a work and a dealer.
+
+## The Rehn water colours are numbered in one series across three leaves
+
+*(batch 7)* Leaf 71 (batch 6) numbers five water colours **1 to 5** down the
+description column at 100 apiece; leaf 72 numbers three **6, 7, 8**; leaf 73
+numbers six **9 to 14**. None of the fourteen is named. A bare numeral in the
+description column of a Rehn entry is therefore a position in that series and
+not a count — read the leaf before it before calling it anything else. The series
+stops at 14 and the later Rehn entries name the pictures instead.
+
+## Three of twelve leaf sums do not come out, and the shortfalls are not alike
+
+*(batch 7)* Batch 6 found five of six exact. Here nine of twelve are exact to the
+cent and three are not:
+
+- **Leaf 76** — receipts 14.67 + five of 65 + 175 = 514.67 against a pencil
+  **474.67**, short by forty. The 4-7-4 is unambiguous at 700%, all five red 65s
+  are 65 at 400%, and the Scribners figure is 175 and not 135.
+- **Leaf 80** — receipts 81.34 + 133.34 + 5.00 + 266.67 + 400 = 886.35 against a
+  pencil figure ending 35 and beginning 9, whose second digit is a closed oval
+  entered from the upper right. That is the shape of her pencil **6**, not the
+  flat-topped 5 of « 1005.64 » on leaf 79 — so 962, with 952 the alternative.
+  Neither closes it.
+- **Leaf 83** — 1924.04 + 33.33 + 11 + 249.34 = 2217.71 against **2218.71**, out
+  by one dollar.
+
+The cents always agree; it is the dollars column that slips. Use the sums as a
+check still, but **expect one leaf in four to refuse** and do not adjust a figure
+to make one work.
+
+## Where a year line falls inside a leaf, the leaf carries two sums
+
+*(batch 7)* Confirms and extends batch 6's rule. Leaves 72, 78 and 81 each carry
+a pencil sum under a pencil rule **above** the year line, closing the old year
+(300, 14.67, 400), and a second at the foot closing the new (117.00, 236.50, 75).
+Both are exact. Leaf 72's « 1925 » has a pencil oval drawn round it.
+
+## Book IV's one sterling figure, and its conversion
+
+*(batch 7)* Leaf 80, 7 July 1926: E. P. Jennings sells etchings **to the British
+Museum** for a figure written as a two-barred **£1** in black and again in red,
+receipted « rec'd by cash » where every other receipt in the batch reads « by
+check ». A pencil **5.00** stands on the line below the red £1, in the money
+columns, and that is the figure the leaf sum uses. Write the £ as the character;
+`\pounds` is outside the subset and the preamble runs `fontspec`, so Book I batch
+9's « 1£ » is the precedent.
+
+## The commission gets an @ sign, and the discounts simplify
+
+*(batch 7)* Batches 5 and 6 write « less 30\% » or « at 33 1/3 \% ». From leaf 82
+the form is **« 1 etching @ 33 1/3 \% »** — an @ that has not appeared before in
+the volume. The list price of East Side Interior, Night Shadows and Evening Wind
+has risen from 18 and 22 to a flat **25**, and only two discounts are now in use:
+a half (Kennedy \& Co.) and a third (Keppel, Halpert, Rehn). Every one comes out:
+25 less a third is 16.67, less a half 12.50; two Railroads less a half are 18.
+
+## A fraction can stand in the cents column
+
+*(batch 7)* Leaf 83's Halpert entry enters **16.66 2/3** twice, the fraction
+written numerator-over-denominator after the cents, and receipts 33.33. It is the
+first fraction in a money cell in Book IV. Transcribe it `66 2/3` in the cents
+cell.
+
+## « 33 1/3 » can have a denominator that reads as an 8
+
+*(batch 7)* Leaf 73's « 6 water colors at 33 1/3 » writes the denominator as a
+closed double loop that is an 8 at 700%. Leaf 72, four weeks earlier, writes the
+same phrase with an open 3 that cannot be an 8, and leaves 82 and 83 write
+« 33 1/3 \% » plainly. Read it 1/3 and flag the figure; the six nets of 100
+against a third off are what settle it.
+
+## Two pencil tallies stand in the head margins, and they count etchings
+
+*(batch 7)* « 62 Etchings » at the head of leaf 78, left of the date column;
+« 75 Etchings » at the head of leaf 79, right of it over the money columns. Both
+in pencil, both above the ruling, neither part of any entry. Leaf 75 carries a
+third pencil marginal in the same position — 49 over 15 under a short rule, then
+64 — that answers to nothing on the leaf. `\marginal{}`, not `\note{}`.
+
+## A day written 17 reads as a capital M
+
+*(batch 7)* Leaf 77's « Dec. 17. Frank Rehn » runs the 1 and the 7 together into
+one stroke that is an M at page size. The receipt line below gives « 17 »
+separately. Look at the receipt before reading a date that resolves to a letter.
+
+## An entry can run across the leaf-turn with no client on the second leaf
+
+*(batch 7)* The Rehn purchase of 23 April 1927 — one oil and eight water colours
+— begins on leaf 82 with the client, the count and four titles, and continues at
+the head of leaf 83 with five more titles, the deduction « Less 209.30 Expenses »
+and the receipt of 1924.04. **Leaf 83 opens with no client and no date.** Do not
+supply either; note that the leaves are one entry and leave them as written.
+
+## A query mark can stand where a title should be
+
+*(batch 7)* Leaf 81's Rehn entry of 3 December 1926 is three water colours, two
+named and the third a bare **?** written below the opening words of the line
+above rather than in the description column proper. The three are charged 400
+together. It is content, as batch 9 of Book I found, and it is not an illegible.
+
+## Marks that are not letters, continued
+
+*(batch 7)* On leaf 75 a word between « Night on » and « L. Train » is written
+over another and carries a long horizontal through it; nothing at 700%, and it
+cannot be told whether the stroke deletes or is a t-bar. On leaf 76 the dollars
+of the Evening Wind charge is a solid blot followed by a 4, and only the receipt
+line below carries the figure.
+
+## More spellings, all as written
+
+*(batch 7)*
+
+- **Santa Fe** *(leaf 79)* against **Sante Fe** *(leaf 80)* — one leaf apart, in
+  the same hand, closed a against open e at 600%.
+- **Morrill** *(leaf 81, 19 January)* against **Merrill** *(leaf 81, 16
+  February)* — the same buyer, the same leaf, closed o against open e.
+- **Randolph Collections** *(leaves 72, 79)* against **Randolph Collection**
+  *(leaf 78)*.
+- **Frank K. M. Rehn**, **Frank Rehn** and **Frank. K. M. Rehn** all appear;
+  Keppel is **Fred Keppel \& Co** here and not Kepple.
+- **Hotel Man.** *(leaf 76)*, **Hotel Manage.** *(leaf 77)* and **Hotel
+  Management** in full elsewhere — her abbreviation mark is a comma sitting on
+  the line as often as a stop.
+- **Bklyn Society Etchers** *(leaf 78)* — no « of ».
+- **Abbotts House**, **Talbots House**, **Andersons House** — no apostrophes.
+
+## Readings that would not settle
+
+*(batch 7)*
+
+- **`Mories`** *(leaf 81, three times)* — the client of every 1927 entry. M, a
+  minim run, a terminal « es ». « Maries » and « Morris » fit the strokes about
+  as well; the interlineated « to » before the bracket is clear.
+- **`Tucker`** *(leaf 81)* — « (Winifred J. ucker) », the surname preceded by a
+  tall loop carrying **no crossbar**, where this hand bars its t.
+- **`J.`** *(leaf 72)* — in « Sale to Chas. J. Lane ». A loop peaking at the
+  right with a **straight** descender; her « Jan » on the same leaf loops its
+  descender, so G is as defensible.
+- **`Flg`** *(leaf 82)* — « Flg Hill - Gloucester ». A tall loop, a g with a full
+  descender, a short raised stroke. An abbreviation, and nothing at 900%.
+- **`L.`** *(leaves 75, 77)* — in « Night on … L. Train » and « Night - the L.
+  Train ». A tall loop with a foot turning right, which carries S as readily.
+- **The day of the July Rehn entry** *(leaf 80)* — a blot; the receipt gives 16.
+- **The day of the February receipt** *(leaf 72)* — written over an earlier
+  figure and retraced into a mass; 27 is what survives.
