@@ -3543,3 +3543,200 @@ counts it with the sales. Only occurrence in eight batches.
 - **The description of leaf 85's 1333.34** — rubbed out, three or four words'
   worth of grey traces, nothing at 700\%. The figure beside it is untouched and
   is the oil and the two water colours together.
+
+## The book states what it counts as income, and it is not everything receipted
+
+*(Book IV batch 10, sheets 109–120, leaves 108–119, read 9 September 2026,
+Opus 5.)*
+
+Ten batches in, the ledger finally says out loud what its sums have been doing.
+Leaf 116's Kennedy print sale of 14 January 1944 — charged 30, commission 10,
+receipted 20 — carries **« Take note »** in pencil beside the client, underscored,
+and **« not included in income. »** with a pencil cross in the money column on the
+line beneath the receipt. Both are in a smaller, more upright pencil hand than the
+ledger's; neither is signed.
+
+Leaf 108 had already applied the rule without writing it. Four museums refund
+Hopper's jury and travel expenses that spring — 56.04 (Virginia Museum), 8.20
+(Pennsylvania Academy), 78.60 (John Herron), 18.95 (Virginia Museum again) — each
+charged and each receipted in full, and **the leaf's foot sum is 600, which is the
+single Rehn cheque and none of the refunds**. It is the first leaf in the volume
+whose sum excludes a receipted figure standing above it. Batch 9 had seen the
+shape coming: leaf 104's « Pittsburgh travel expenses 50 » and « Springfield
+Travel expenses 14.76 » carried figures and no receipt at all.
+
+**So a leaf sum is not the sum of the leaf.** Check a foot sum against the
+receipts *that are sales* before deciding it has failed.
+
+## « Less commission » stops naming the commission
+
+*(batch 10)* Three times in this batch the figure written on the commission line
+is the **net** and not the deduction, and only the arithmetic catches it:
+
+- **Leaf 117, Rehn, 15 June 1944.** Items 1100, « less commission 733.34 », then
+  « " photos 6.40 », cheque 726.94. 733.34 is 1100 less a third; 733.34 − 6.40 is
+  726.94. The deduction, 366.66, is nowhere on the leaf.
+- **Leaf 116, Allison, 30 October 1943.** 30 charged, « less commission 20 »,
+  cheque 20 — where every other print on the leaf is 30 less 10.
+- **Leaf 112, Rehn, 27 December 1940** goes the other way. Items 930, « less
+  commission and photos 24 », net 596. 930 less a third is 620, and 620 − 24 is
+  596: the 24 is the photographer's bill alone and the commission of 310 is never
+  written. The 24 is a plain two-digit figure with clean paper to its left inside
+  the column — it is not a truncated 334.
+
+**Do not read the commission line as a deduction without checking it against a
+third.** Where it is genuinely the commission it is a flat third to the dollar:
+300 of 900, 190 of 570, 250 of 750, 1583.33 of 4750, 2275 of 6825, 600 of 1800,
+1016.66 of 3050. Two depart by a cent downward — 519.99 of 1560, 666.66 of 2000.
+The **Library of Congress** (leaf 109) is the only client charged a rate in
+writing, « less commission 25\% », and the only one not charged a third.
+
+## A round sum in the cents column is a linked double o, not two figures
+
+*(batch 10)* This is the single most useful glyph in the batch. Where the cents
+are zero the hand writes **two joined loops** — one continuous stroke, often
+reading as a single blot or as a stray « oo » — rather than two separate 0s. It
+appears on leaf 111's 28, leaf 110's Weyhe 20 and 1500, leaf 112's 400 and 800,
+leaf 109's 1000, and leaf 118 throughout. A cell carrying it is a whole-dollar
+sum, not an unreadable one; do not reach for `\ill{}`.
+
+It also runs into the **dollars**: leaf 109's « 3800 » and « 1000 » both end in
+linked loops, and leaf 112's « 800 » is an 8 followed by one such pair.
+
+## The 8 and the linked-loop 0 are distinguishable, and the leaf sum is not the arbiter
+
+*(batch 10)* Leaf 109's Rehn entry of 14 May 1938 lists 3800, 1000 and 750,
+which make **5550**, and rules off **4750** beneath them. The commission of
+1583.33 is a third of 4750, the cheque is 3166.67, and the foot sum of 3561.21
+counts that cheque — so subtotal, commission, cheque and leaf sum all side with
+4750 and only the three items disagree, by exactly 1000. Same shape as leaf 107
+in batch 9 and leaf 90 in batch 8.
+
+The temptation is to read 3800 down to 3000 and make it close. **Don't.** The
+second glyph is a narrow tall double loop and matches the 8 of the red 180 seven
+lines below on the same leaf; the round hundreds of the 1000 on the line beneath
+it are open linked loops of a plainly different shape. Compare a doubtful glyph
+against a known 8 *on the same leaf* before letting arithmetic decide it.
+
+## A line written one line too high, rubbed, and written again
+
+*(batch 10)* Five instances, and they all look the same at first glance: a row
+that seems to carry a duplicate. What has happened is that a receipt or a label
+was written **across the ruled line that already carried the entry's net**, then
+rubbed out and written again on the line below.
+
+- **Leaf 111**, Keppel, 26 February 1940 — pale red, date and « rec'd by check »
+  still legible, sharing its row with the black subtotal 380.
+- **Leaf 115** twice — over the Allison net of 20 (red, « rec'd by » and the 2 of
+  its day survive) and over the Oct 8 net of 1200 (grey but legible, « rec'd by
+  check », no day).
+- **Leaf 112**, « less commission » written against the 1560.00 subtotal, rubbed,
+  rewritten below.
+- **Leaf 119**, « Rebate on Liability Ins » written once, rubbed, rewritten below.
+
+**Transcribe the rubbed line on the subtotal's row**, not as a row of its own —
+otherwise the leaf gains a line it does not have. And read it before reaching for
+`\ill{}`: in four of the five, most of the words survive.
+
+## The dollar sign and the decimal point reach the money column
+
+*(batch 10)* Batch 3 found no dollar sign anywhere in Book IV; batch 8 found the
+first, in a *description* on leaf 94. Here it reaches the column itself, on the
+largest figures only: **\$900, \$596** (leaf 112), **\$1200** (leaf 113),
+**\$854.60** (leaf 112), **\$1657.07** (leaf 118).
+
+The **decimal point** arrives with it, written *across* the ruled division
+between dollars and cents instead of respecting it: 1182.16 (leaf 111), 1040.01
+(leaf 112), 666.66 and 12.80 (leaf 115), 3050.00 and 1016.66 (leaf 119), 1.31
+(leaf 119). Set these in the dollars cell so the leaf's own arrangement survives.
+
+## Media markers, and the volume's first brace
+
+*(batch 10)* The medium is marked by a letter beside the title, before it or
+after it: **« o »** for oil, **« w.c. »** / **« w.C »** for water colour, and from
+leaf 119 **« E »** for etching, which is new. They begin on leaf 109 and are not
+used on every entry.
+
+Leaf 117 carries **the first brace in the volume**, joining « Cape Cod Evening »
+and « Roofs of Cobb's Barns » to one figure of 2925. The subtotal decides that the
+pair is one figure: 750, 750, 750, 650 and 1000 with 2925 make the 6825 ruled off.
+
+## Year totals get labelled and carried across a leaf-turn
+
+*(batch 10)* Leaf 114 writes **« 1942 --- 5857.44 »** across the date and
+description columns beside its own foot sum of 4537.44 — the year being that
+figure plus leaf 113's 1320. It is the first total in Book IV labelled with its
+year. Leaf 119 does the same for 1945 in pencil, 3624.24, which is leaf 118's
+1120 plus this leaf's 2004.24 and 500.
+
+**1944 is never totalled anywhere.** Leaf 116 rules a pencil line under the last
+1943 receipt and writes no figure; leaf 117 carries no sum at all; leaf 118 opens
+with November 1944 and rules off at « 1945 » without totalling what stands above.
+So the year of Hotel Lobby and the six April water colours has no total in the
+book.
+
+## Book IV's clients turn a sixth time, into institutions
+
+*(batch 10)* Rehn still takes almost everything, and the figures are the largest
+in the book — 3166.67, 2317.84, 1971, 1328.14, 1657.07, 2004.24 and **4357.76**
+(six water colours, two oils and a drawing, 14 April 1944), which is the largest
+single cheque in Book IV. Prints go on at 30 less a third to Keppel, Kennedy,
+Weyhe, Babcock and **H. V. Allison \& Co** (new).
+
+New beside them: the **Library of Congress** (per an uncertain « Louis » A.
+Wuerth), the **Virginia Museum of Fine Arts**, the **Pennsylvania Academy**, the
+**John Herron Art Institute**, the **Worcester Museum**'s divided prize, the **Art
+Institute of Chicago** twice — the Ada S. Garrett Prize of 750 for Night Hawks in
+1942 and the Logan Prize of 500 in 1945 — the **Salmagundi** cash prize of 1000,
+and royalties from **Associated American Artists** (on a « Treasury Am Print »),
+**Living American Art** (on a collotype of House on Pamet River) and the **Am.
+Artists Group** (on a monograph).
+
+The **Philadelphia Museum** buys five prints for a flat 75 on leaf 113 — fifteen
+apiece, against the 20 everyone else pays — with no commission line.
+
+## More spellings and marks, all as written
+
+*(batch 10)*
+
+- **« Night Hawks »**, two words, on both lines of leaf 114.
+- **« Cobbs House »** *(leaf 114)* without the apostrophe, against **« Roofs of
+  Cobb's Barns »** *(leaf 117)* with it.
+- **« 1 Night - the L. Train »** *(leaf 116)*, the elevated railway as a bare
+  capital L with a dot.
+- **« R.. R. Crossing »** *(leaf 113)*, two dots after the first R.
+- **« Fred Keppel \& Co. »** *(leaf 111, February)* against **« Fred. Keppel and
+  Co. »** *(leaf 111, November)* on the same leaf.
+- **« Weyhe Book Shop. »** with the stop *(leaf 110)*.
+- **An opening quotation mark with no closing one** *(leaf 108)*, « Dawn Before
+  Gettysburg.
+- **Compartment C, Car 293 sells twice** — to Rehn at 1000 on 14 May 1938 *(leaf
+  109)* and again at 900 on 19 June 1943 *(leaf 115)*.
+- **Two entries out of order** *(leaf 111)*: 4 November stands above 11 July.
+- **A receipt ten days before its charge** *(leaf 116)*: charge dated Oct. 30,
+  receipt dated 20, both clear.
+- **An entry with no charge figure** *(leaf 116)*: Babcock's « 1 Evening Wind »
+  has both money cells empty and only « less commission 15 » beneath it.
+- **An entry with no receipt figure** *(leaf 108)*: « rec'd by check » under the
+  charge of 18.95 with both cells empty.
+- **Two entries that are not sales** *(leaf 119)*: « Cooperative Interest » 1.31
+  and « Rebate on Liability Ins » 10.38, both pencil, both December 1945.
+
+## Readings that would not settle
+
+*(batch 10)*
+
+- **`Louis`** *(leaf 109, the Library of Congress line)* — the word after « per »
+  is written over an earlier word and retraced into a mass, with a horizontal
+  crossing it at mid height. A looped capital, two minims, a dotted i and a
+  terminal s survive, and « Louis » fits them; offered on that and doubted. The
+  bar may be a strike and nothing on the leaf settles it.
+- **`divided`** *(leaf 113, the Worcester line)* — the second half of the word is
+  under a grey smear a word wide. The first five letters are clear; « prize »
+  beside it is untouched.
+- **The rubbed figure under leaf 110's receipt of 17 January** — six digits'
+  worth of grey traces where a running total would fall, beginning with what may
+  be a 3 and ending with what may be a 7. Nothing at 800\%.
+- **The two or three words after « less commission » on leaf 117** — rubbed out;
+  grey traces of about that length and nothing at 550\%. The line below opens
+  with a ditto and « expenses ».
