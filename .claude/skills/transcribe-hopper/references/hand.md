@@ -2615,3 +2615,147 @@ takes no sheet — the third volume to close that way, after Book I at 116 of 11
 and Book II at 71 of 72. The last words in the book are hers, about a frame:
 « a glint surrounding \struck{\ill{}} area made glad by enclosing glamour of
 supporting light. »
+
+---
+
+# Book IV
+
+*(Book IV batch 1, sheets 1–12, leaves 3–11, read 9 September 2026, Opus 5.
+First pass on the volume, so everything below is a first finding and none of it
+has been confirmed by a second batch.)*
+
+## It is not a work book, and there is no work to record
+
+Nothing in this batch is a picture. Book IV is a **cash account of illustration
+income**, opened on 15 November 1913, and the unit of an entry is a payment
+rather than a plate: a client, what was drawn for him, what it fetched, and the
+date the cheque cleared. There is no title block, no size, no sketch, no
+exhibition, no buyer and no commission. Do not go looking for the shapes the
+other five volumes have — `\work{}` and `\sketch{}` have no work to do here, and
+a leaf that looks empty of them is complete.
+
+## The stationer ruled the columns and nobody named them
+
+It is a pocket **memorandum** book bought ready-ruled, and its money column
+comes divided into dollars and cents by two printed red rules, with a third at
+the left for the date. **No heading is written above any column anywhere in the
+batch**, and none should be supplied: the fields are unmistakable from the
+ruling, and a supplied heading would be inventing a word for something the book
+never called anything. `{lY{0.50}rr}` with a blank header row fits the leaf and
+leaves the pdf a wide margin.
+
+**A figure standing in the body of the leaf, left of the money rule, is a
+running subtotal** — not a price and not a receipt. It is usually « 40 », it
+carries an unpaid group forward, and it turns up either on a line of its own or
+tucked after « Rec'd by check ». Transcribe it where it stands and do not move
+it into the money column.
+
+## The colour of the ink changes job at leaf 7
+
+On **leaves 3 to 6** the text is black and every money figure is in red. From
+**leaf 7** the money figures go back to black and the red is transferred to the
+receipt line, so that « Received by check », its date and its figure are written
+in red right across the leaf while everything around them stays black. That is
+the volume's way of making a paid entry findable at a glance, and it is worth
+one note per batch rather than one per leaf.
+
+## The hand is neither of the two
+
+One hand runs the whole batch: a **fluent sloping copperplate**, letters fully
+joined, long looped descenders on f, g, y and J, and capitals with a wide
+entering flourish. It is not the small upright running hand and it is not the
+drawn title lettering, and the first entry precedes Josephine Nivison's
+involvement by eleven years. **Nothing on these sheets identifies the writer**,
+so batch 1 records every passage as `unidentified` and says why once, on
+leaf 3. Anyone who has compared it with a signed 1913 letter should replace
+that note rather than leave it standing.
+
+## The arithmetic is the best check on a doubtful figure
+
+Unusually for these books, it reconciles. The « Bill rendered to date » lines
+are true sums of the unpaid entries above them and the cheques answer them
+exactly: **90 on 19 March** is the six litho entries of 4 to 19 March, **80 on
+26 May** the six after that, **115 on 29 November** the four Everybodys'
+drawings. Use it to settle a 2 against a 7 or an 8 against a 0 — the red « 20 »
+on leaf 4 that reads as « 28 » at page size is a 0 at 700% and 0 is what the
+sum wants. **It is a check and not a licence**: where the sum refuses — the
+pencil drawing entered at 12 on 4 March and billed at 10 on the 6th — the
+figures stand as written and the note says so.
+
+## The clients, and how the leaves spell them
+
+- **Asc. Sunday Magazines** — the Associated Sunday Magazines, two line
+  drawings a week at \$20 each, the spine of the early leaves. She writes
+  « Asc. » with the stop on leaves 3, 9, 10 and 11 and « Asc » without it on
+  leaves 4 to 8, sometimes both on one leaf.
+- **U.S. Printing & Litho Co** — poster drawings, priced by sheet size (1, 3, 6
+  or 9 sheet) at 10 or 12, each against a five-figure order number, and most of
+  them against an **Éclair** film release, which the leaf spells `Eclair`
+  without the accent.
+- **The A. W. Shaw Co** — halftones for the business magazines, by the half
+  page and the double page, the largest sums in the batch.
+- **J. Walton Thompson Co** *(leaf 7)* against **J. Walter Thompson Co.**
+  *(leaf 11)* — the same agency, spelt two ways four leaves apart. Both stand.
+- **Everybodys' Magazine** — the apostrophe is written **after** the s on both
+  leaf 9 and leaf 11, plainly enough to see at 550%. It is not « Everybody's ».
+
+## The titles are the magazines', and several are half-quoted
+
+The quotation marks are used as they fall and the leaf is not consistent: « An
+Eery Hunt for Gold' » is closed and not opened, « ``The Gap of Death (Eclair) »
+opened and not closed, and the two titles of 21 February 1914 carry none at
+all. **Transcribe the marks that are there.** Do not balance them, and do not
+add a pair to a title that has none, because on these leaves the presence of
+quotes is the only thing separating a title from a description of the job.
+
+## Order numbers are the volume's other identifier
+
+Every litho entry carries one — `(Order No. 10798)`, `(Order no. 10865)`,
+`Order 11360`, `Eclair order 11681` — in four different forms, with the « No. »
+capitalised as often as not. They are the one field that can tie an entry to a
+surviving poster, so read them at magnification and never smooth their form.
+Two of them are preceded by a bracketed word: `(Insert)` in full on leaf 9, and
+on leaf 8 a blot of two or three letters that the leaf 9 reading is offered
+against and that is still only `\uncertain{(Ins)}`.
+
+## What the two sheets before the book are
+
+Sheet 1 is a **used envelope** folded round the volume, typewritten to 3
+Washington Square N. and metered `LYNBROOK / JUL -2'63 / N.Y.` — fifty years
+later than the entries it protects, and the only dated thing in the batch that
+is not an entry. Sheet 2 is **blank chipboard** and takes no `\sheet{}` at all.
+Sheet 3, the **front cover**, carries the stationer's stamped « MEMORANDUM »
+in an ornamental banner and no writing of any hand: it takes a `\sheet{}` and a
+note, and nothing else.
+
+## Readings that would not settle
+
+- **A word before `(Order no. 10865)`** *(leaf 5)* — rubbed out and not written
+  over, six or seven letters left as traces. Leaf 6 puts « Billed » in that
+  position, which is why the temptation exists; the traces will not carry it,
+  and `\ill{}` stands.
+- **`(Ins)`** *(leaf 8)* — blotted, two or three letters, before « Order
+  11667 ». « (Insert) », which leaf 9 writes in full, is what the reading is
+  offered against.
+- **`Wayland`** *(leaf 3)* — the terminal is `n`+`d` or `i`+`d`; « Waylaid » is
+  as defensible letter by letter and less likely as a story title.
+- **`Mende Beilis`** *(leaf 5)* — the forename is five letters and ends in `e`,
+  so it is not « Mendel » on the leaf however the newspapers spelt it.
+- **`Petrof the Vassel`** *(leaf 8)* — the f's descender may or may not be
+  carrying a comma, and « Vessel » fits the second letter about as well as
+  « Vassel ».
+- **`Time watching films`** *(leaf 6)* and **`Time on films`** *(leaf 9)* —
+  charged at 2 and 8 respectively. The first word is `Tine` as readily as
+  `Time` in both places; the pair is what settles it.
+- **`Eery`** *(leaf 4)* — in « An Eery Hunt for Gold ». Four letters, and the
+  third is the usual r/n.
+- **`or 1723`** *(leaf 11)* — the abbreviation for the order number, written
+  small and without a stop, so it reads as the word « or ».
+
+## A struck date and a pencil date, four lines apart
+
+Leaf 10 strikes « Dec » out of a receipt line and leaves « 4th » standing, then
+writes « Dec 4th » in pencil in the left margin against a row four lines below.
+Nothing on the leaf says which entry the payment belongs to. **Transcribe both
+and interpret neither** — the struck word as `\struck{Dec}`, the pencil as a
+`\marginal{}` naming the row it stands against.
