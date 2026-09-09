@@ -1,4 +1,8 @@
+import { useState } from 'react';
 import { Page } from './components/Frame.tsx';
+import { ERDiagram, ERLegend } from './components/ERDiagram.tsx';
+import { LedgerForm } from './components/LedgerForm.tsx';
+import { ARCHIVE_MODEL, SCHEMAS } from './content/schemas.ts';
 import { LEDGERS, SHEETS } from './content/catalogue.ts';
 import { useManifest } from './lib/batches.ts';
 import type { Apparatus } from './lib/types.ts';
@@ -186,6 +190,20 @@ export function SchemaPage() {
       </section>
 
       <section className="border-b border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">The four schemas, drawn</h2>
+        <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-700">
+          The same volumes as entity-relationship diagrams. Every box, field and cardinality below
+          was read off a transcribed leaf, and a field quotes the cell that establishes it — an ER
+          diagram looks authoritative in exactly the way a table of figures does, so one invented
+          attribute would be indistinguishable from a read one a year from now. Two of the
+          conventions carry most of the argument: a <strong>dashed box</strong> is a table the leaf
+          implies but never rules, and a <strong>dashed line</strong> is a join that holds in fact
+          and is enforced by nothing.
+        </p>
+        <Workbench />
+      </section>
+
+      <section className="border-b border-ink-200 py-8">
         <h2 className="font-serif text-2xl text-ink-900">
           Book IV is a state machine, and the ink is the status field
         </h2>
@@ -272,6 +290,11 @@ export function SchemaPage() {
             which is the one kind that never has to be revised.
           </Card>
         </div>
+        <ERDiagram model={ARCHIVE_MODEL} className="mt-5" />
+        <p className="prose-note mt-1 max-w-3xl">
+          The archive’s own three tables — and the one place in any of this where a foreign key is
+          genuinely enforced.
+        </p>
         <p className="prose-note mt-4 max-w-3xl">
           Each transcription joins two of the three explicitly —{' '}
           <code className="font-mono text-[12.5px]">\sheet&#123;16853&#125;&#123;2&#125;</code>{' '}
@@ -413,6 +436,72 @@ export function SchemaPage() {
         </p>
       </section>
     </Page>
+  );
+}
+
+/**
+ * One schema at a time: the diagram, what a person who normalises tables would
+ * say about it, and a form whose fields are that volume's own columns.
+ *
+ * The form is a sandbox and says so where it matters. Nothing typed into it is
+ * submitted or stored anywhere but the reader's own browser, and that is a rule
+ * of the edition rather than a limit of the hosting: every figure published here
+ * has to come off a photographed leaf, and a form that let a visitor contribute
+ * a plausible row would manufacture precisely what the method exists to prevent.
+ */
+function Workbench() {
+  const [id, setId] = useState(SCHEMAS[0].id);
+  const s = SCHEMAS.find((x) => x.id === id) ?? SCHEMAS[0];
+  return (
+    <div className="mt-5">
+      <div role="tablist" aria-label="The schemas" className="flex flex-wrap gap-1.5">
+        {SCHEMAS.map((x) => (
+          <button
+            key={x.id}
+            type="button"
+            role="tab"
+            aria-selected={x.id === id}
+            onClick={() => setId(x.id)}
+            className={`rounded-full border px-3.5 py-1.5 text-[13px] transition ${
+              x.id === id
+                ? 'border-brand-600 bg-brand-600 text-white'
+                : 'border-ink-200 bg-white text-ink-600 hover:border-ink-300'
+            }`}
+          >
+            {x.tab}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-4 rounded-card border border-ink-200 bg-white p-4 sm:p-6">
+        <h3 className="font-serif text-xl text-ink-900">{s.volumes}</h3>
+        <p className="mt-1 text-[13.5px] text-ink-500">
+          One record is <em>{s.record}</em>.
+        </p>
+        <p className="mt-3 max-w-3xl text-[14px] leading-relaxed text-ink-700">{s.gist}</p>
+
+        <ERDiagram model={s.model} className="mt-5" />
+        <ERLegend />
+
+        <p className="mt-4 max-w-3xl border-l-2 border-ink-200 pl-3 text-[13.5px] leading-relaxed text-ink-600">
+          <strong className="text-ink-800">Where it would fail a review:</strong> {s.normal}
+        </p>
+
+        <div className="mt-7 border-t border-ink-200 pt-5">
+          <h4 className="font-serif text-lg text-ink-900">Keep this book yourself</h4>
+          <p className="mt-1 max-w-3xl text-[13.5px] leading-relaxed text-ink-600">
+            The fields below are this volume’s columns and nothing else. Write a line and it goes
+            onto the leaf in the pen the book would have used — which is the quickest way to feel
+            how much of the record is carried by the notation and how little by the form.{' '}
+            <strong>It is a sandbox.</strong> What you type stays in your browser, and no figure
+            that was not read off a photographed sheet may ever enter the edition.
+          </p>
+          <div className="mt-4">
+            <LedgerForm schema={s} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
