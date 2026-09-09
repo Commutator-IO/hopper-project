@@ -19,6 +19,17 @@
  * | `\clipping{…}` | `<figure type="clipping">` |
  * | `\sheet{ref}{leaf}` | `<pb facs="…" n="…"/>` |
  * | `ledgertable` | `<table>` with `<row>`/`<cell>` |
+ * | `\section{…}` | `<div type="leaf">` with its `<head>` |
+ * | `\work{…}` | `<div type="work">` inside the leaf |
+ * | `\keywords{…}` | `<term>`s in `<textClass>`, in the header |
+ *
+ * The divisions are a hierarchy because the leaves are: a leaf, and the works
+ * recorded on it. That is also what makes the file valid — TEI puts `<head>`
+ * at the start of the division it heads and nowhere else, and this export
+ * spent its whole existence writing one flat `<div>` a batch with a head at
+ * every leaf inside it. `npm run tei:validate` is what found it, and is what
+ * keeps it found; `xmllint --noout` here is only the fast check that the bytes
+ * parse, run as each file is written so a failure names the file.
  *
  * The `<handNote>` declarations in the header are the reason a TEI export is
  * worth making for *these* documents in particular. `\hand{}` is the one macro
@@ -35,7 +46,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { keywordTerms, parseKeyword } from './lib/ledger.mjs';
+import { keywordTerms, parseKeyword, FACET_LABEL } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const dir = resolve(root, 'public/transcripts');
@@ -274,6 +285,37 @@ function convert(tex, meta) {
   /** Open `<item>`s, so a list closes its last one. */
   const lists = [];
 
+  /**
+   * The divisions currently open, outermost first.
+   *
+   * TEI puts `<head>` at the *start* of the division it heads, and nowhere
+   * else. The export used to emit one flat `<div>` for a whole batch with a
+   * `<head>` at each leaf inside it, which parses and is not TEI: `xmllint
+   * --relaxng tei_all.rng` refuses the second head on every file in the
+   * corpus. The sections are a real hierarchy on the page — a leaf, and the
+   * works recorded on it — so they are given as one, and the head goes where
+   * TEI expects to find it.
+   */
+  const divs = [];
+  /** The batch's tags, for `<textClass>` in the header. */
+  let keywords = '';
+  const RANK = { section: 1, subsection: 2, work: 3 };
+  const openDiv = (kind, type, head) => {
+    while (divs.length && RANK[divs[divs.length - 1]] >= RANK[kind]) {
+      out.push('</div>');
+      divs.pop();
+    }
+    out.push(`<div type="${type}">`);
+    divs.push(kind);
+    out.push(head);
+  };
+  const closeDivs = () => {
+    while (divs.length) {
+      out.push('</div>');
+      divs.pop();
+    }
+  };
+
   const flush = () => {
     const t = para.join('').trim();
     para = [];
@@ -362,34 +404,39 @@ function convert(tex, meta) {
       const [t, a] = group(s, i);
       i = a;
       flush();
-      out.push(`<head type="work">${inline(t)}</head>`);
+      openDiv('work', 'work', `<head type="work">${inline(t)}</head>`);
       continue;
     }
     if (name === 'section' || name === 'subsection') {
       const [t, a] = group(s, i);
       i = a;
       flush();
-      out.push(`<head>${inline(t)}</head>`);
+      openDiv(name, name === 'section' ? 'leaf' : 'part', `<head>${inline(t)}</head>`);
       continue;
     }
     if (name === 'keywords') {
       const [t, a] = group(s, i);
       i = a;
       flush();
-      out.push(
-        // TEI keeps the facet rather than dropping it: `@type` on the item is
-        // exactly where a controlled vocabulary belongs, and a consumer that
-        // ignores it still reads the term. An undeclared facet emits no
-        // attribute, which is not the same as declaring an empty one.
-        `<list type="keywords">${keywordTerms(t)
-          .map((k) => parseKeyword(k))
-          .map(({ facet, label }) =>
-            facet
-              ? `<item type="${xml(facet)}">${xml(label)}</item>`
-              : `<item>${xml(label)}</item>`,
-          )
-          .join('')}</list>`,
-      );
+      // The tags describe the batch and not the leaf the file happens to end
+      // on, and TEI has a place for exactly that: `<textClass>` in the header.
+      // They used to be written into the body as a trailing `<list>`, which is
+      // both the wrong statement and — once the leaves became real divisions —
+      // not valid there, since a division's own content must precede the
+      // divisions inside it.
+      //
+      // The facet is kept rather than dropped: `@type` on the item is where a
+      // controlled vocabulary belongs, and a consumer that ignores it still
+      // reads the term. An undeclared facet emits no attribute, which is not
+      // the same as declaring an empty one.
+      keywords = keywordTerms(t)
+        .map((k) => parseKeyword(k))
+        .map(({ facet, label }) =>
+          facet
+            ? `<term type="${xml(facet)}">${xml(label)}</term>`
+            : `<term>${xml(label)}</term>`,
+        )
+        .join('');
       continue;
     }
     if (name === 'begin' || name === 'end') {
@@ -455,6 +502,7 @@ function convert(tex, meta) {
     i = at + end;
   }
   flush();
+  closeDivs();
 
   const meta_ = meta;
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -498,9 +546,29 @@ function convert(tex, meta) {
 ${Object.entries(HANDS)
   .map(([id, who]) => `        <handNote xml:id="${id}"><p>${who}</p></handNote>`)
   .join('\n')}
-      </handNotes>
+      </handNotes>${
+        keywords
+          ? `
+      <textClass>
+        <keywords scheme="#hopper-facets">${keywords}</keywords>
+      </textClass>`
+          : ''
+      }
     </profileDesc>
     <encodingDesc>
+      <classDecl>
+        <taxonomy xml:id="hopper-facets">
+          <bibl>The project's own facets. A closed set: a term declares one of
+             these or none, and a term that declares none is a tag and not a
+             classification.</bibl>
+${Object.entries(FACET_LABEL)
+  .map(
+    ([id, label]) =>
+      `          <category xml:id="facet-${id}"><catDesc>${xml(label)}</catDesc></category>`,
+  )
+  .join('\n')}
+        </taxonomy>
+      </classDecl>
       <editorialDecl>
         <p>Illegible passages are marked with <gap/> and are never conjectured.
            Doubtful readings are <unclear/>. Prices, dates and names are given as written

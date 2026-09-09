@@ -535,19 +535,26 @@ function parseFile(path, ledger, batch) {
  * A closed set, and deliberately small. The point of facetting is that a
  * reader can find the museums without reading past the places; a vocabulary
  * that grows a facet per term is the flat list again with extra punctuation.
+ *
+ * The labels are here rather than beside the one page that shows them, because
+ * they are also the `<catDesc>` of the `<taxonomy>` the TEI export declares:
+ * a vocabulary whose published definition and whose heading in the reading
+ * view can disagree is not a vocabulary. `src/LedgerPage.tsx` carries a copy
+ * for the browser and is kept in step by hand, as `src/lib/types.ts` is.
  */
-export const FACETS = [
-  'medium',
-  'place',
-  'work',
-  'person',
-  'dealer',
-  'collection',
-  'society',
-  'publication',
-  'prize',
-  'feature',
-];
+export const FACET_LABEL = {
+  medium: 'Medium',
+  place: 'Places',
+  work: 'Works',
+  person: 'People',
+  dealer: 'Dealers',
+  collection: 'Collections',
+  society: 'Societies and exhibitions',
+  publication: 'Publications',
+  prize: 'Prizes',
+  feature: 'On the leaves',
+};
+export const FACETS = Object.keys(FACET_LABEL);
 
 /**
  * The LaTeX escapes that print their character, resolved.

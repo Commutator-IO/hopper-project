@@ -38,6 +38,22 @@ jobs:
       - run: git diff --exit-code src/content/catalogue.ts
       - run: npm run render
       - run: npm run tei
+      # Well-formed is not valid, and the export was invalid TEI for as long as
+      # it existed — one `<div>` a batch with a `<head>` at every leaf inside
+      # it, which parses and which TEI forbids. `xmllint --noout` had been
+      # asking whether the bytes were XML. This asks the Consortium's own
+      # RELAX NG, at a pinned version and a checked digest, and then asks
+      # tei/hopper.odd whether the export stayed inside the subset it promises.
+      - uses: actions/cache@v4
+        with:
+          path: node_modules/.cache/tei
+          key: tei-p5-schema-${{ hashFiles('scripts/tei-validate.mjs') }}
+      - name: Validate the TEI
+        run: |
+          if ! command -v xmllint >/dev/null; then
+            sudo apt-get update && sudo apt-get install -y libxml2-utils
+          fi
+          npm run tei:validate
 
       # Tectonic, pinned, for the transcript PDFs. A static musl binary from
       # the project's own releases rather than a piped install script or the

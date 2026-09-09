@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>The Hopper ledgers: the TEI customisation this corpus uses</title>
+        <author>Commutator</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Commutator</publisher>
+        <availability status="free">
+          <p>CC0 1.0 Universal. This file is the maintainers' own work; see
+             LICENSE and RIGHTS.md. It describes the encoding of transcriptions
+             whose text is not the maintainers' — see transcripts/NOTICE.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Written against the export produced by
+           <ref target="../scripts/tei.mjs">scripts/tei.mjs</ref> from the
+           <ref target="../transcripts/">transcriptions</ref>, which are the
+           source of record.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <p>An ODD, in the ordinary sense: one document from which the schema and
+         the documentation of this customisation are both derived.</p>
+    </encodingDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+
+      <div>
+        <head>What this declares, and why a subset is the honest form</head>
+
+        <p>TEI P5 has some six hundred elements. This corpus uses fifty-five,
+           and the fifty-five are not a sample of the six hundred: they are the
+           exact reach of a mechanical conversion from a small set of LaTeX
+           macros. Every element here exists because a macro in the
+           transcriptions maps onto it, and the mapping is one to one — the
+           table in <ref target="../scripts/tei.mjs">scripts/tei.mjs</ref> is
+           the whole of it. Nothing in the export is a judgement the .tex did
+           not already make.</p>
+
+        <p>Publishing the subset matters more here than the usual reason. A
+           reader who is handed a TEI file with no customisation has been told
+           that six hundred elements are possible and that none of them is
+           promised, which is a way of saying nothing. The list below is a
+           promise: these elements and no others, these attribute values and no
+           others, and a build that breaks the promise fails rather than
+           quietly widening it. <ref target="../scripts/tei-validate.mjs">
+           scripts/tei-validate.mjs</ref> reads this file and enforces it
+           against the export on every run, in both directions — an element
+           used and not declared is an error, and an element declared and used
+           nowhere is an error too, because a declaration nobody has read is a
+           claim about the corpus that is not true.</p>
+
+        <p>The customisation is a pure subset. It removes; it adds nothing, it
+           renames nothing, and it changes no content model. So a file from this
+           corpus is valid against TEI P5 unmodified — which is the property
+           that makes the export worth depositing — and the subset is a
+           statement about what a consumer will actually meet, not a dialect
+           they would have to learn.</p>
+      </div>
+
+      <div>
+        <head>The one thing that could not be reconstructed without it</head>
+
+        <p>These are two hands. Edward Hopper drew the record sketches and
+           wrote the dimensions; Josephine Hopper wrote everything else, over
+           fifty-four years, in four or five hands of her own that are datable.
+           Which hand wrote a line is a reading — it is made by looking at the
+           sheet, it is recorded in <gi>hand</gi> in the .tex, and it is the one
+           part of the transcription that <emph>could not be recovered from the
+           photographs by somebody else</emph> without doing the whole work
+           again.</p>
+
+        <p>TEI has carried the notion of a hand since P3. That is the reason
+           this export exists at all: <gi>handNote</gi> and <att>hand</att> on
+           <gi>seg</gi> carry the attributions out of this repository and into a
+           format that will outlive it. Everything else in the subset is there
+           to hold them up.</p>
+      </div>
+
+      <div>
+        <head>The customisation</head>
+
+        <schemaSpec ident="hopper" start="TEI" prefix="tei_"
+                    source="https://www.tei-c.org/Vault/P5/4.12.0/xml/tei/odd/p5subset.xml">
+
+          <!-- Infrastructure. Not optional and not a choice. -->
+          <moduleRef key="tei"/>
+
+          <!-- The document, the leaves, and the divisions the leaves make. -->
+          <moduleRef key="textstructure" include="TEI body div text"/>
+
+          <!-- The reading itself: what is illegible, what is doubtful, what is
+               struck, what the transcriber says about it, and the tags. -->
+          <moduleRef key="core"
+                     include="author bibl del gap head hi item lb list name note p pb
+                              publisher resp respStmt term title unclear"/>
+
+          <!-- Provenance: the model that read the sheets, the date, the
+               accession number, the rights, the facets. -->
+          <moduleRef key="header"
+                     include="availability catDesc category classDecl edition editionStmt
+                              editorialDecl encodingDesc fileDesc handNote idno keywords
+                              profileDesc publicationStmt sourceDesc taxonomy teiHeader
+                              textClass titleStmt"/>
+
+          <!-- The object at the Whitney, as the museum identifies it. -->
+          <moduleRef key="msdescription"
+                     include="history institution msDesc msIdentifier origDate origin"/>
+
+          <!-- The ruled tables, which are most of what these books are, and the
+               record sketches and pasted clippings that stand beside them. -->
+          <moduleRef key="figures" include="cell figure row table"/>
+
+          <!-- The hand attributions. -->
+          <moduleRef key="transcr" include="handNotes supplied"/>
+          <moduleRef key="linking" include="seg"/>
+
+          <!-- The closed value lists. These are the part a consumer can rely
+               on: a `@type` here is drawn from a list, not invented per file.
+               They are declared `closed`, and the validator refuses a value
+               outside them rather than letting the vocabulary drift one
+               transcription at a time. -->
+
+          <elementSpec ident="div" module="textstructure" mode="change">
+            <attList>
+              <attDef ident="type" mode="change" usage="req">
+                <desc>What the division is on the page.</desc>
+                <valList type="closed">
+                  <valItem ident="leaf">
+                    <desc>One leaf of the ledger, headed as the transcription
+                       heads it. A leaf is the unit the Hoppers numbered.</desc>
+                  </valItem>
+                  <valItem ident="part">
+                    <desc>A division within a leaf that is not a work — a run of
+                       entries the transcription sets apart under its own
+                       heading.</desc>
+                  </valItem>
+                  <valItem ident="work">
+                    <desc>The record of one work, which is what a leaf of the
+                       paintings books is organised around.</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="figure" module="figures" mode="change">
+            <attList>
+              <attDef ident="type" mode="change" usage="req">
+                <desc>What is on the paper that is not writing. Neither is
+                   reproduced here: the export records that it is there and
+                   what the transcriber saw in it.</desc>
+                <valList type="closed">
+                  <valItem ident="record-sketch">
+                    <desc>Edward Hopper's ink drawing of the finished work, made
+                       for the record.</desc>
+                  </valItem>
+                  <valItem ident="clipping">
+                    <desc>A cutting pasted to the leaf — a review, a
+                       photograph, a dealer's notice.</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="head" module="core" mode="change">
+            <attList>
+              <attDef ident="type" mode="change" usage="opt">
+                <valList type="closed">
+                  <valItem ident="work">
+                    <desc>The heading is the title of a work as the ledger
+                       writes it, and not the transcriber's description of a
+                       leaf.</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="note" module="core" mode="change">
+            <attList>
+              <attDef ident="type" mode="change" usage="opt">
+                <desc>Present on the transcriber's own notes and absent on the
+                   book's. The distinction is the point: a note with
+                   <att>place</att> of <val>margin</val> is something written on
+                   the leaf, and an <val>editorial</val> note is not.</desc>
+                <valList type="closed">
+                  <valItem ident="editorial">
+                    <desc>The transcriber's observation about the leaf.</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="term" module="core" mode="change">
+            <attList>
+              <attDef ident="type" mode="change" usage="opt">
+                <desc>The facet the tag declares, from the taxonomy each file's
+                   header carries. A tag that declares none is a tag and not a
+                   classification, and the attribute is then absent rather than
+                   empty.</desc>
+                <valList type="closed">
+                  <valItem ident="medium"/>
+                  <valItem ident="place"/>
+                  <valItem ident="work"/>
+                  <valItem ident="person"/>
+                  <valItem ident="dealer"/>
+                  <valItem ident="collection"/>
+                  <valItem ident="society"/>
+                  <valItem ident="publication"/>
+                  <valItem ident="prize"/>
+                  <valItem ident="feature"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+        </schemaSpec>
+      </div>
+
+      <div>
+        <head>Generating the schema from this file</head>
+
+        <p>This ODD is the source. The RELAX NG schema for the subset is
+           derived from it, and is not kept in the repository, for the same
+           reason no other derived file is kept: a copy that can drift from its
+           source will.</p>
+
+        <p>To generate it, use the TEI's own stylesheets — Roma, at
+           <ref target="https://roma.tei-c.org/">roma.tei-c.org</ref>, or
+           OxGarage, or <code>teitorelaxng</code> from the
+           <code>tei-xsl</code> package:</p>
+
+        <p><code>teitorelaxng --localsource=p5subset.xml tei/hopper.odd hopper.rng</code></p>
+
+        <p>Continuous integration does not run that step, and the reason is
+           worth stating rather than hiding. Generating a schema from an ODD
+           needs an XSLT 3.0 processor and the TEI stylesheet library — Saxon
+           and some forty megabytes of XSL — to produce a schema whose only job
+           would be to re-state constraints that
+           <ref target="../scripts/tei-validate.mjs">scripts/tei-validate.mjs</ref>
+           already checks directly against this file, in seconds, with no
+           network. What CI does run is the part that cannot be shortcut:
+           every exported file, and this ODD itself, validated against
+           unmodified TEI P5 4.12.0 with <code>xmllint --relaxng</code>.</p>
+
+        <p>So the chain is: TEI P5 validity, proved against the Consortium's own
+           schema at a pinned version and a checked digest; and subset
+           conformance, proved against this file. A generated
+           <code>hopper.rng</code> would sit between the two and prove neither
+           of them again.</p>
+      </div>
+
+    </body>
+  </text>
+</TEI>
