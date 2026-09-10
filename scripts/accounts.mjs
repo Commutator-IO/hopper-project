@@ -405,6 +405,175 @@ for (const file of files) {
   }
 }
 
+/* ------------------------------------------ Book III: the sale in prose */
+
+/**
+ * Book III rules no columns. A work has its opening — the sketch, the paint
+ * formula, Jo Hopper's description — and then the sale, written as a sentence:
+ * « Bgt. by Lawrence Bloedel of Williamsberg, Mass. 6000 - 1/3 = 4000. Feb.
+ * 17 », « Duncan Phillips … 2250 - 1/3 Com = 1500 check rec'd June 25, 1948 »,
+ * « $25 000 - 1/3 com. 8333.33 = 16 666.67 10 666.67, July 1" 1966 ». The
+ * reader above cannot see it, because nothing puts the price in one cell and
+ * the date in another, and until now the volume was counted nowhere.
+ *
+ * The sentence has one shape, and it is the shape `salesIn` already reads on
+ * the ruled leaves: a price, a dash, a third. So a work's own prose is read
+ * for that — the figure written after the « = » checked against the third,
+ * the date written beside it taken as the sale's, a « rec'd » in the same
+ * sentence taken as the receipt — and what the sentence says before the
+ * price is kept as the buyer, unread. Three habits of the volume are allowed
+ * for and nothing else: a thousand written with a space (« 14 500 »), a full
+ * stop after a figure (« 14500. - 1/3 »), and a picture whose payments are
+ * written out under its price (leaf 69: « $14 500 - 1/3 » and then « 5000 -
+ * 1/3 » and « 9500 - 1/3 » beneath), where the parts that add to the price
+ * are set aside as instalments of it. A passage that carries figures but no
+ * such sentence — Second Story Sunlight's museum sixth over the gallery
+ * third, Chair Car's « Price 27,000 » with its two payments — is reported in
+ * `unparsed`, not guessed at.
+ */
+const MONTH =
+  /\b(Jan|Feb|Mar|Ap|Apr|May|June?|July?|Aug|Sept?|Oct|Nov|Dec)[a-z]*\.?\s*(\d{1,2})(?:st|nd|rd|th)?["”]?\.?,?\s*(?:'?(\d{2})\b|(19\d\d))?/g;
+const datesIn = (text) => {
+  const out = [];
+  for (const m of text.matchAll(MONTH)) {
+    // « Aug. 62 » is a month and a year; a day does not go past 31.
+    const day = Number(m[2]);
+    const year = m[4] ? Number(m[4]) : m[3] ? 1900 + Number(m[3]) : day > 31 ? 1900 + day : null;
+    out.push({ at: m.index, year });
+  }
+  for (const m of text.matchAll(/\b(19[0-6]\d)\b/g)) {
+    if (!out.some((d) => Math.abs(d.at - m.index) < 14)) out.push({ at: m.index, year: Number(m[1]) });
+  }
+  return out.sort((a, b) => a.at - b.at);
+};
+// Her thousands with a space, and her full stop after a figure — but not the
+// space after a third: « 1/3 400 » is a rate and a figure, not « 1/3400 ».
+const iiiFigures = (text) =>
+  text
+    .replace(/\$\s*/g, '')
+    .replace(/(?<![/\d])(\d{1,3})\s(\d{3})\b/g, '$1$2')
+    .replace(/(\d)\.\s*-/g, '$1 -');
+{
+  const iiiFiles = files.filter((f) => f.ledger === 'book-iii');
+  for (const file of iiiFiles) {
+    for (const w of file.works) {
+      const passages = (w.hands ?? []).map((h) => iiiFigures(h.plain.replace(/\\\\/g, '\n')));
+      if (!passages.some((t) => /\d{3}/.test(t))) continue;
+      const where = {
+        ledger: file.ledger,
+        batch: file.batch,
+        leaf: w.leaf ?? null,
+        ref: w.ref ?? null,
+        section: w.section ?? null,
+        work: w.title,
+      };
+      const found = [];
+      let lastYear = null;
+      let previous = null;
+      for (const text of passages) {
+        const dates = datesIn(text);
+        for (const m of text.matchAll(SALE)) {
+          const gross = Number(m[1].replace(/,/g, ''));
+          if (!Number.isFinite(gross) || gross <= 0) continue;
+          const rate = m[3] ? 1 / Number(m[3]) : Number(m[4]) / 100;
+          if (!Number.isFinite(rate) || rate <= 0 || rate >= 1) continue;
+          // The figure she writes for what is left, after « = » or a second dash.
+          const after = text.slice(m.index + m[0].length, m.index + m[0].length + 60);
+          const tail = /^[^\n]*?(?:=|[-–—])\s*(\d[\d,]*(?:\.\d+)?(?:\s+\d\/\d)?)/.exec(after);
+          const written = tail ? (receiptIn(tail[1]) ?? Number(tail[1].replace(/,/g, ''))) : null;
+          const at = m.index + m[0].search(/\d/);
+          const lineStart = text.lastIndexOf('\n', at) + 1;
+          const lineEnd = text.indexOf('\n', at) < 0 ? text.length : text.indexOf('\n', at);
+          const line = text.slice(lineStart, lineEnd);
+          // The buyer is what the sentence says before the price; when the
+          // price stands on a line of its own, what the passage opens with.
+          const trim = (t) => t.replace(/^\s*(bgt\.?|bought)\s+by\s+/i, '').replace(/[\s\-–—=:.,]+$/, '').trim();
+          let buyer = trim(text.slice(lineStart, at));
+          if (!buyer || /^total$/i.test(buyer)) buyer = trim(text.slice(0, text.search(/\d/)));
+          // « Henry R. Hope » on one line and « 2500 - 1/3 = 1666 2/3 » on the
+          // next: the name is the passage before, when that carries no figure.
+          if (!buyer && previous && !/\d/.test(previous)) buyer = trim(previous);
+          const sameLine = dates.filter((d) => d.at >= lineStart && d.at < lineEnd && d.year !== null);
+          const year =
+            sameLine.find((d) => d.at > at)?.year ??
+            sameLine[sameLine.length - 1]?.year ??
+            dates.filter((d) => d.at < at && d.year !== null).pop()?.year ??
+            lastYear;
+          found.push({
+            gross,
+            rateWritten: m[3] ? `1/${m[3]}` : `${m[4]}%`,
+            commission: gross * rate,
+            net: gross * (1 - rate),
+            written,
+            year,
+            received: /\brec['’]?d\b|\breceived\b|\bcheck\b|\bpaid\b/i.test(line),
+            buyer: buyer || null,
+          });
+        }
+        lastYear = dates.filter((d) => d.year !== null).pop()?.year ?? lastYear;
+        previous = text;
+      }
+      if (!found.length) {
+        unparsed.push({
+          reason:
+            'a Book III work whose prose carries figures but no sale written as « price - 1/3 » — ' +
+            'a museum sixth over the gallery third, a price with its payments, a prize',
+          ...where,
+          row: [passages.join(' ').replace(/\s+/g, ' ').slice(0, 160)],
+        });
+        continue;
+      }
+      // The same price written twice on a leaf — once when the sale is agreed,
+      // once when it is paid — is one sale, and the sentence that carries the
+      // figure after « = » is the one kept.
+      for (const f of found) {
+        const twin = found.find((g) => g !== f && !g.instalment && !g.again && g.gross === f.gross);
+        if (twin && f.written === null && twin.written !== null) f.again = true;
+      }
+      // The payments written under a price add up to it and are its
+      // instalments, not further sales.
+      for (const f of found) {
+        if (f.again) continue;
+        const others = found.filter((g) => g !== f && !g.instalment && !g.again);
+        for (let k = 0; k < others.length; k++) {
+          for (let l = k + 1; l < others.length; l++) {
+            if (Math.abs(others[k].gross + others[l].gross - f.gross) < 0.01) {
+              others[k].instalment = true;
+              others[l].instalment = true;
+            }
+          }
+        }
+      }
+      for (const f of found) {
+        if (f.instalment || f.again) continue;
+        if (f.year === null) {
+          unparsed.push({
+            reason: 'a Book III sale written as « price - 1/3 » with no date anywhere in its passage',
+            ...where,
+            row: [`${f.gross} - ${f.rateWritten}`],
+          });
+          continue;
+        }
+        const check = f.written === null ? null : Math.abs(f.written - f.net) < 0.02 ? 'agrees' : 'disagrees';
+        entries.push({
+          year: f.year,
+          yearFrom: 'the date written beside the sale in the prose of Book III',
+          gross: f.gross,
+          rateWritten: f.rateWritten,
+          commission: Number(f.commission.toFixed(2)),
+          net: Number(f.net.toFixed(2)),
+          receiptWritten: f.received && f.written !== null ? Number(f.written.toFixed(2)) : null,
+          receiptYear: f.received ? f.year : null,
+          check,
+          activity: 'art',
+          buyer: f.buyer,
+          ...where,
+        });
+      }
+    }
+  }
+}
+
 /* --------------------------------------------- Book IV: the pocket book */
 
 /**
@@ -2104,11 +2273,14 @@ const out = {
       'Transcribed and counted are not the same thing, and the difference is the ruling. Every ' +
       'figure on this page is read out of a ruled row — a `ledgertable` in the .tex — because a ' +
       'row puts the price in one cell and the date in another, and the column a date stands in ' +
-      'is what says whether it dates the sale or the cheque. A volume whose leaves rule nothing ' +
-      'and write the sale as a sentence is read here and counted nowhere: its money is on the ' +
-      'sheets, in the transcriptions, and outside these totals. Book III and Book V are in that ' +
-      'position now, and naming them is the point — a total that quietly omitted them would ' +
-      'look like a smaller number rather than a narrower one.',
+      'is what says whether it dates the sale or the cheque. Book III rules nothing and writes ' +
+      'the sale as a sentence, and one sentence only — « 6000 - 1/3 = 4000. Feb. 17 » — so its ' +
+      'works are read for that sentence and nothing else: the price, the third, the figure she ' +
+      'writes for what is left, the date beside it. A passage with figures and no such sentence ' +
+      'is reported below, not guessed at. Book V is still read here and counted nowhere: its ' +
+      'money is on the sheets, in the transcriptions, and outside these totals — and naming it ' +
+      'is the point, since a total that quietly omitted it would look like a smaller number ' +
+      'rather than a narrower one.',
   },
   arithmetic: {
     checkable: checked.length,

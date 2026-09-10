@@ -418,6 +418,15 @@ export function AccountsPage() {
               {uncounted.length > 1 ? 'write' : 'writes'} the sale as a sentence on an unruled
               leaf, so {uncounted.length > 1 ? 'those volumes are' : 'that volume is'} transcribed
               here and counted nowhere. That money is on the sheets and outside these totals.
+              {A.coverage.ledgersCounted.includes('book-iii') && (
+                <>
+                  {' '}
+                  Book III writes its sales as sentences too, and is read for one sentence only —
+                  « 6000 - 1/3 = 4000. Feb. 17 » — the price, the third, the figure she writes for
+                  what is left and the date beside it; a passage with figures and no such sentence
+                  is reported among the unsettled rows, not guessed at.
+                </>
+              )}
             </p>
           )}
         </div>
@@ -425,7 +434,7 @@ export function AccountsPage() {
 
       <section className="border-b border-ink-200 py-6">
         <h2 className="text-[11px] uppercase tracking-wider text-ink-400">
-          Sales of his own work — Book I, Book II and the dealers’ book
+          Sales of his own work — {A.coverage.ledgersCounted.filter((l) => l !== 'book-iv').map(named).join(', ')}
         </h2>
         <div className="mt-3 grid gap-4 sm:grid-cols-4">
         {[

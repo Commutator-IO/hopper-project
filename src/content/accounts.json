@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T18:16:05.464Z",
+  "generated": "2026-09-10T18:44:15.472Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf. Book II rules no columns at all, and it needs the other half of the same rule: a leaf there is one work with one sale line — buyer, price and the cut, the cheque, the date — so the date is in the last column and never in the first. It is read there only on a leaf that rules nothing, only where the first column dates nothing, and only where the last cell holds a date and nothing besides.",
@@ -15,18 +15,19 @@
     "ledgersCounted": [
       "book-i",
       "book-ii",
+      "book-iii",
       "book-iv",
       "dealers"
     ],
     "batches": 44,
     "sheets": 499,
     "note": "Only the volumes and batches listed. Everything unread contributes nothing, and every figure here moves as batches land.",
-    "countedNote": "Transcribed and counted are not the same thing, and the difference is the ruling. Every figure on this page is read out of a ruled row — a `ledgertable` in the .tex — because a row puts the price in one cell and the date in another, and the column a date stands in is what says whether it dates the sale or the cheque. A volume whose leaves rule nothing and write the sale as a sentence is read here and counted nowhere: its money is on the sheets, in the transcriptions, and outside these totals. Book III and Book V are in that position now, and naming them is the point — a total that quietly omitted them would look like a smaller number rather than a narrower one."
+    "countedNote": "Transcribed and counted are not the same thing, and the difference is the ruling. Every figure on this page is read out of a ruled row — a `ledgertable` in the .tex — because a row puts the price in one cell and the date in another, and the column a date stands in is what says whether it dates the sale or the cheque. Book III rules nothing and writes the sale as a sentence, and one sentence only — « 6000 - 1/3 = 4000. Feb. 17 » — so its works are read for that sentence and nothing else: the price, the third, the figure she writes for what is left, the date beside it. A passage with figures and no such sentence is reported below, not guessed at. Book V is still read here and counted nowhere: its money is on the sheets, in the transcriptions, and outside these totals — and naming it is the point, since a total that quietly omitted it would look like a smaller number rather than a narrower one."
   },
   "arithmetic": {
-    "checkable": 45,
-    "agree": 42,
-    "disagree": 3,
+    "checkable": 95,
+    "agree": 90,
+    "disagree": 5,
     "note": "Where a row states one sale and one receipt, the receipt is compared with price less commission. A disagreement is reported, never corrected: it most often means a figure was misread, and it points at the row to go back to."
   },
   "activities": [
@@ -137,10 +138,11 @@
       "ledgers": [
         "book-i",
         "book-ii",
+        "book-iii",
         "dealers"
       ],
-      "batches": 17,
-      "rows": 326,
+      "batches": 23,
+      "rows": 380,
       "years": [
         {
           "year": 1923,
@@ -293,112 +295,119 @@
           "year": 1944,
           "accrued": 0,
           "received": 0,
-          "notRecorded": 566.67,
+          "notRecorded": 3233.34,
           "outstanding": 8120.01
         },
         {
           "year": 1945,
           "accrued": 0,
           "received": 0,
-          "notRecorded": 586.66,
+          "notRecorded": 2053.33,
           "outstanding": 8120.01
         },
         {
           "year": 1946,
-          "accrued": 0,
-          "received": 266.67,
-          "notRecorded": 1466.67,
+          "accrued": 2000,
+          "received": 2266.67,
+          "notRecorded": 3100,
           "outstanding": 7853.34
         },
         {
           "year": 1947,
-          "accrued": 0,
-          "received": 300,
-          "notRecorded": 919.99,
+          "accrued": 1166.67,
+          "received": 1466.67,
+          "notRecorded": 2919.99,
           "outstanding": 7553.34
         },
         {
           "year": 1948,
-          "accrued": 0,
-          "received": 0,
-          "notRecorded": 1000,
+          "accrued": 1500,
+          "received": 1500,
+          "notRecorded": 3500,
           "outstanding": 7553.34
         },
         {
           "year": 1949,
           "accrued": 0,
           "received": 0,
-          "notRecorded": 410,
+          "notRecorded": 6076.67,
           "outstanding": 7553.34
         },
         {
           "year": 1950,
           "accrued": 0,
           "received": 1053.34,
-          "notRecorded": 953.33,
+          "notRecorded": 2753.33,
           "outstanding": 6500
         },
         {
           "year": 1951,
-          "accrued": 0,
-          "received": 0,
-          "notRecorded": 2886.67,
+          "accrued": 333.33,
+          "received": 333.33,
+          "notRecorded": 4886.67,
           "outstanding": 6500
         },
         {
           "year": 1952,
-          "accrued": 0,
-          "received": 0,
-          "notRecorded": 500,
+          "accrued": 2666.67,
+          "received": 2666.67,
+          "notRecorded": 2500,
           "outstanding": 6500
         },
         {
           "year": 1953,
           "accrued": 0,
           "received": 500,
-          "notRecorded": 666.66,
+          "notRecorded": 2999.99,
           "outstanding": 6000
         },
         {
           "year": 1954,
           "accrued": 0,
           "received": 0,
-          "notRecorded": 520,
+          "notRecorded": 9853.32,
           "outstanding": 6000
         },
         {
           "year": 1955,
-          "accrued": 0,
-          "received": 0,
-          "notRecorded": 933.34,
+          "accrued": 2333.33,
+          "received": 2333.33,
+          "notRecorded": 1533.34,
           "outstanding": 6000
         },
         {
           "year": 1956,
-          "accrued": 0,
-          "received": 866.67,
-          "notRecorded": 7239.99,
+          "accrued": 5000,
+          "received": 5866.67,
+          "notRecorded": 9939.99,
           "outstanding": 5133.33
         },
         {
           "year": 1957,
           "accrued": 0,
           "received": 666.67,
-          "notRecorded": 2313.33,
+          "notRecorded": 17646.66,
           "outstanding": 4466.66
         },
         {
           "year": 1958,
           "accrued": 0,
           "received": 1800,
-          "notRecorded": 3000,
+          "notRecorded": 10666.66,
+          "outstanding": 2666.66
+        },
+        {
+          "year": 1959,
+          "accrued": 6000,
+          "received": 6000,
+          "notRecorded": 1200,
           "outstanding": 2666.66
         },
         {
           "year": 1960,
           "accrued": 0,
           "received": 0,
-          "notRecorded": 1533.33,
+          "notRecorded": 10400,
           "outstanding": 2666.66
         },
         {
@@ -410,17 +419,45 @@
         },
         {
           "year": 1962,
+          "accrued": 1000,
+          "received": 3666.66,
+          "notRecorded": 19666.67,
+          "outstanding": 0
+        },
+        {
+          "year": 1963,
           "accrued": 0,
-          "received": 2666.66,
+          "received": 0,
+          "notRecorded": 21000,
+          "outstanding": 0
+        },
+        {
+          "year": 1964,
+          "accrued": 0,
+          "received": 0,
+          "notRecorded": 21000,
+          "outstanding": 0
+        },
+        {
+          "year": 1965,
+          "accrued": 10000,
+          "received": 10000,
           "notRecorded": 0,
+          "outstanding": 0
+        },
+        {
+          "year": 1966,
+          "accrued": 0,
+          "received": 0,
+          "notRecorded": 16666.67,
           "outstanding": 0
         }
       ],
       "totals": {
-        "accrued": 90813.93,
-        "collected": 30777.36,
+        "accrued": 270913.92,
+        "collected": 62777.36,
         "outstanding": 0,
-        "notRecorded": 60036.57
+        "notRecorded": 208136.56
       }
     },
     {
@@ -1610,145 +1647,154 @@
     },
     {
       "year": 1944,
-      "sales": 2,
-      "gross": 850,
-      "commission": 283.33,
-      "net": 566.67,
+      "sales": 5,
+      "gross": 4850,
+      "commission": 1616.66,
+      "net": 3233.34,
       "disagreements": 0,
       "received": 0
     },
     {
       "year": 1945,
-      "sales": 4,
-      "gross": 880,
-      "commission": 293.34,
-      "net": 586.66,
+      "sales": 5,
+      "gross": 3080,
+      "commission": 1026.67,
+      "net": 2053.33,
       "disagreements": 0,
       "received": 0
     },
     {
       "year": 1946,
-      "sales": 1,
-      "gross": 2200,
-      "commission": 733.33,
-      "net": 1466.67,
-      "disagreements": 0,
-      "received": 266.67
+      "sales": 6,
+      "gross": 7650,
+      "commission": 2550,
+      "net": 5100,
+      "disagreements": 1,
+      "received": 2266.67
     },
     {
       "year": 1947,
-      "sales": 4,
-      "gross": 1380,
-      "commission": 460.01,
-      "net": 919.99,
+      "sales": 7,
+      "gross": 6130,
+      "commission": 2043.34,
+      "net": 4086.66,
       "disagreements": 0,
-      "received": 300
+      "received": 1466.67
     },
     {
       "year": 1948,
-      "sales": 1,
-      "gross": 1500,
-      "commission": 500,
-      "net": 1000,
+      "sales": 4,
+      "gross": 7500,
+      "commission": 2500,
+      "net": 5000,
       "disagreements": 0,
-      "received": 0
+      "received": 1500
     },
     {
       "year": 1949,
-      "sales": 3,
-      "gross": 615,
-      "commission": 205,
-      "net": 410,
+      "sales": 5,
+      "gross": 9115,
+      "commission": 3038.33,
+      "net": 6076.67,
       "disagreements": 0,
       "received": 0
     },
     {
       "year": 1950,
-      "sales": 10,
-      "gross": 1430,
-      "commission": 476.67,
-      "net": 953.33,
+      "sales": 12,
+      "gross": 4130,
+      "commission": 1376.67,
+      "net": 2753.33,
       "disagreements": 0,
       "received": 1053.34
     },
     {
       "year": 1951,
-      "sales": 9,
-      "gross": 4330,
-      "commission": 1443.33,
-      "net": 2886.67,
+      "sales": 11,
+      "gross": 7830,
+      "commission": 2610,
+      "net": 5220,
       "disagreements": 0,
-      "received": 0
+      "received": 333.33
     },
     {
       "year": 1952,
-      "sales": 1,
-      "gross": 750,
-      "commission": 250,
-      "net": 500,
+      "sales": 3,
+      "gross": 7750,
+      "commission": 2583.33,
+      "net": 5166.67,
       "disagreements": 0,
-      "received": 0
+      "received": 2666.67
     },
     {
       "year": 1953,
-      "sales": 8,
-      "gross": 1000,
-      "commission": 333.34,
-      "net": 666.66,
+      "sales": 9,
+      "gross": 4500,
+      "commission": 1500.01,
+      "net": 2999.99,
       "disagreements": 0,
       "received": 500
     },
     {
       "year": 1954,
-      "sales": 2,
-      "gross": 780,
-      "commission": 260,
-      "net": 520,
+      "sales": 6,
+      "gross": 14780,
+      "commission": 4926.68,
+      "net": 9853.32,
       "disagreements": 0,
       "received": 0
     },
     {
       "year": 1955,
-      "sales": 4,
-      "gross": 1400,
-      "commission": 466.66,
-      "net": 933.34,
+      "sales": 6,
+      "gross": 5800,
+      "commission": 1933.33,
+      "net": 3866.67,
       "disagreements": 0,
-      "received": 0
+      "received": 2333.33
     },
     {
       "year": 1956,
-      "sales": 9,
-      "gross": 10860,
-      "commission": 3620.01,
-      "net": 7239.99,
+      "sales": 12,
+      "gross": 22410,
+      "commission": 7470.01,
+      "net": 14939.99,
       "disagreements": 0,
-      "received": 866.67
+      "received": 5866.67
     },
     {
       "year": 1957,
-      "sales": 14,
-      "gross": 3470,
-      "commission": 1156.67,
-      "net": 2313.33,
+      "sales": 19,
+      "gross": 26470,
+      "commission": 8823.34,
+      "net": 17646.66,
       "disagreements": 0,
       "received": 666.67
     },
     {
       "year": 1958,
-      "sales": 1,
-      "gross": 4500,
-      "commission": 1500,
-      "net": 3000,
+      "sales": 3,
+      "gross": 16000,
+      "commission": 5333.34,
+      "net": 10666.66,
       "disagreements": 0,
       "received": 1800
     },
     {
+      "year": 1959,
+      "sales": 2,
+      "gross": 10800,
+      "commission": 3600,
+      "net": 7200,
+      "disagreements": 0,
+      "received": 6000
+    },
+    {
       "year": 1960,
-      "sales": 1,
-      "gross": 2300,
-      "commission": 766.67,
-      "net": 1533.33,
+      "sales": 4,
+      "gross": 15600,
+      "commission": 5200,
+      "net": 10400,
       "disagreements": 0,
       "received": 0
     },
@@ -1759,6 +1805,51 @@
       "commission": 3765,
       "net": 7530,
       "disagreements": 2,
+      "received": 0
+    },
+    {
+      "year": 1962,
+      "sales": 3,
+      "gross": 31000,
+      "commission": 10333.33,
+      "net": 20666.67,
+      "disagreements": 0,
+      "received": 3666.66
+    },
+    {
+      "year": 1963,
+      "sales": 2,
+      "gross": 31500,
+      "commission": 10500,
+      "net": 21000,
+      "disagreements": 0,
+      "received": 0
+    },
+    {
+      "year": 1964,
+      "sales": 2,
+      "gross": 31500,
+      "commission": 10500,
+      "net": 21000,
+      "disagreements": 1,
+      "received": 0
+    },
+    {
+      "year": 1965,
+      "sales": 1,
+      "gross": 15000,
+      "commission": 5000,
+      "net": 10000,
+      "disagreements": 0,
+      "received": 10000
+    },
+    {
+      "year": 1966,
+      "sales": 1,
+      "gross": 25000,
+      "commission": 8333.33,
+      "net": 16666.67,
+      "disagreements": 0,
       "received": 0
     }
   ],
@@ -1891,116 +1982,230 @@
     },
     {
       "year": 1944,
-      "accrued": 566.67,
+      "accrued": 3233.34,
       "received": 0,
-      "outstanding": 35696.61
+      "outstanding": 38363.28
     },
     {
       "year": 1945,
-      "accrued": 586.66,
+      "accrued": 2053.33,
       "received": 0,
-      "outstanding": 36283.27
+      "outstanding": 40416.61
     },
     {
       "year": 1946,
-      "accrued": 1466.67,
-      "received": 266.67,
-      "outstanding": 37483.27
+      "accrued": 5100,
+      "received": 2266.67,
+      "outstanding": 43249.94
     },
     {
       "year": 1947,
-      "accrued": 919.99,
-      "received": 300,
-      "outstanding": 38103.26
+      "accrued": 4086.66,
+      "received": 1466.67,
+      "outstanding": 45869.93
     },
     {
       "year": 1948,
-      "accrued": 1000,
-      "received": 0,
-      "outstanding": 39103.26
+      "accrued": 5000,
+      "received": 1500,
+      "outstanding": 49369.93
     },
     {
       "year": 1949,
-      "accrued": 410,
+      "accrued": 6076.67,
       "received": 0,
-      "outstanding": 39513.26
+      "outstanding": 55446.6
     },
     {
       "year": 1950,
-      "accrued": 953.33,
+      "accrued": 2753.33,
       "received": 1053.34,
-      "outstanding": 39413.25
+      "outstanding": 57146.59
     },
     {
       "year": 1951,
-      "accrued": 2886.67,
-      "received": 0,
-      "outstanding": 42299.92
+      "accrued": 5220,
+      "received": 333.33,
+      "outstanding": 62033.26
     },
     {
       "year": 1952,
-      "accrued": 500,
-      "received": 0,
-      "outstanding": 42799.92
+      "accrued": 5166.67,
+      "received": 2666.67,
+      "outstanding": 64533.26
     },
     {
       "year": 1953,
-      "accrued": 666.66,
+      "accrued": 2999.99,
       "received": 500,
-      "outstanding": 42966.58
+      "outstanding": 67033.25
     },
     {
       "year": 1954,
-      "accrued": 520,
+      "accrued": 9853.32,
       "received": 0,
-      "outstanding": 43486.58
+      "outstanding": 76886.57
     },
     {
       "year": 1955,
-      "accrued": 933.34,
-      "received": 0,
-      "outstanding": 44419.92
+      "accrued": 3866.67,
+      "received": 2333.33,
+      "outstanding": 78419.91
     },
     {
       "year": 1956,
-      "accrued": 7239.99,
-      "received": 866.67,
-      "outstanding": 50793.24
+      "accrued": 14939.99,
+      "received": 5866.67,
+      "outstanding": 87493.23
     },
     {
       "year": 1957,
-      "accrued": 2313.33,
+      "accrued": 17646.66,
       "received": 666.67,
-      "outstanding": 52439.9
+      "outstanding": 104473.22
     },
     {
       "year": 1958,
-      "accrued": 3000,
+      "accrued": 10666.66,
       "received": 1800,
-      "outstanding": 53639.9
+      "outstanding": 113339.88
+    },
+    {
+      "year": 1959,
+      "accrued": 7200,
+      "received": 6000,
+      "outstanding": 114539.88
     },
     {
       "year": 1960,
-      "accrued": 1533.33,
+      "accrued": 10400,
       "received": 0,
-      "outstanding": 55173.23
+      "outstanding": 124939.88
     },
     {
       "year": 1961,
       "accrued": 7530,
       "received": 0,
-      "outstanding": 62703.23
+      "outstanding": 132469.88
     },
     {
       "year": 1962,
-      "accrued": 0,
-      "received": 2666.66,
-      "outstanding": 60036.57
+      "accrued": 20666.67,
+      "received": 3666.66,
+      "outstanding": 149469.89
+    },
+    {
+      "year": 1963,
+      "accrued": 21000,
+      "received": 0,
+      "outstanding": 170469.89
+    },
+    {
+      "year": 1964,
+      "accrued": 21000,
+      "received": 0,
+      "outstanding": 191469.89
+    },
+    {
+      "year": 1965,
+      "accrued": 10000,
+      "received": 10000,
+      "outstanding": 191469.89
+    },
+    {
+      "year": 1966,
+      "accrued": 16666.67,
+      "received": 0,
+      "outstanding": 208136.56
     }
   ],
   "yearsNote": "The art alone — Books I, II and the dealers' book. The illustration income is in `activities`, and is deliberately not added in here: these figures have meant the sale of Edward Hopper's own work since this file was first written, and quietly widening them would change every total on the page without changing its label.",
-  "receivableNote": "What was owed to the Hoppers at the end of each year on the sales this archive can see. A sale is accrued in the year of the leaf's date column and discharged in the year its receipt names. 60036.57 of net has no receipt date to discharge it. Most of that is Book II, whose leaves write one date to a sale and do not separate the day the work went out from the day the cheque came: the one date is booked at the sale, and no payment is invented out of it. The rest is a statement about how much has been read and not about whether Hopper was paid.",
+  "receivableNote": "What was owed to the Hoppers at the end of each year on the sales this archive can see. A sale is accrued in the year of the leaf's date column and discharged in the year its receipt names. 208136.56 of net has no receipt date to discharge it. Most of that is Book II, whose leaves write one date to a sale and do not separate the day the work went out from the day the cheque came: the one date is booked at the sale, and no payment is invented out of it. The rest is a statement about how much has been read and not about whether Hopper was paid.",
   "works": [
+    {
+      "title": "Intermission",
+      "net": 16666.67,
+      "gross": 25000,
+      "sales": 1,
+      "years": [
+        1966
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Sun in an Empty Room",
+      "net": 16666.67,
+      "gross": 25000,
+      "sales": 1,
+      "years": [
+        1964
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "New York Office",
+      "net": 11000,
+      "gross": 16500,
+      "sales": 1,
+      "years": [
+        1963
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "People in the Sun",
+      "net": 10000,
+      "gross": 15000,
+      "sales": 1,
+      "years": [
+        1962
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "A Woman in the Sun",
+      "net": 10000,
+      "gross": 15000,
+      "sales": 1,
+      "years": [
+        1963
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "East River",
+      "net": 10000,
+      "gross": 15000,
+      "sales": 1,
+      "years": [
+        1965
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Excursion into Philosophy",
+      "net": 9666.67,
+      "gross": 14500,
+      "sales": 1,
+      "years": [
+        1962
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
     {
       "title": "« Girlie Show »",
       "net": 7333.33,
@@ -2014,6 +2219,90 @@
       ]
     },
     {
+      "title": "November, Wash. Square",
+      "net": 6666.67,
+      "gross": 10000,
+      "sales": 1,
+      "years": [
+        1960
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Sunlight in a Cafeteria",
+      "net": 6000,
+      "gross": 9000,
+      "sales": 1,
+      "years": [
+        1959
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Hotel Window",
+      "net": 4666.67,
+      "gross": 7000,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Western Motel",
+      "net": 4333.33,
+      "gross": 6500,
+      "sales": 1,
+      "years": [
+        1958
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Charleston Slum",
+      "net": 4333.33,
+      "gross": 6500,
+      "sales": 1,
+      "years": [
+        1964
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Morning in a City",
+      "net": 4000,
+      "gross": 6000,
+      "sales": 1,
+      "years": [
+        1949
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Four Lane Road",
+      "net": 4000,
+      "gross": 6000,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
       "title": "Dauphinée House",
       "net": 3333.33,
       "gross": 5000,
@@ -2023,6 +2312,18 @@
       ],
       "ledgers": [
         "book-ii"
+      ]
+    },
+    {
+      "title": "Sunlight on Brownstones",
+      "net": 3333.33,
+      "gross": 5000,
+      "sales": 1,
+      "years": [
+        1958
+      ],
+      "ledgers": [
+        "book-iii"
       ]
     },
     {
@@ -2050,6 +2351,42 @@
       ]
     },
     {
+      "title": "Sea Watchers",
+      "net": 3000,
+      "gross": 4500,
+      "sales": 1,
+      "years": [
+        1956
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "South Carolina Morning",
+      "net": 3000,
+      "gross": 4500,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Cape Cod Morning",
+      "net": 2700,
+      "gross": 4050,
+      "sales": 1,
+      "years": [
+        1956
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
       "title": "« Bootleggers »",
       "net": 2666.67,
       "gross": 4000,
@@ -2062,6 +2399,102 @@
       ]
     },
     {
+      "title": "Rooms by the Sea",
+      "net": 2666.67,
+      "gross": 4000,
+      "sales": 1,
+      "years": [
+        1952
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "The Martha McKeen of Wellfleet",
+      "net": 2333.33,
+      "gross": 3500,
+      "sales": 1,
+      "years": [
+        1954
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Portrait of Orleans",
+      "net": 2333.33,
+      "gross": 3500,
+      "sales": 1,
+      "years": [
+        1953
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "First Row Orchestra",
+      "net": 2333.33,
+      "gross": 3500,
+      "sales": 1,
+      "years": [
+        1954
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Morning Sun",
+      "net": 2333.33,
+      "gross": 3500,
+      "sales": 1,
+      "years": [
+        1954
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Hotel by a Railroad",
+      "net": 2333.33,
+      "gross": 3500,
+      "sales": 1,
+      "years": [
+        1954
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "City Sunlight",
+      "net": 2333.33,
+      "gross": 3500,
+      "sales": 1,
+      "years": [
+        1955
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "House by an Inlet",
+      "net": 2333.33,
+      "gross": 3500,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
       "title": "Cape Cod Afternoon",
       "net": 2000,
       "gross": 3000,
@@ -2071,6 +2504,66 @@
       ],
       "ledgers": [
         "book-ii"
+      ]
+    },
+    {
+      "title": "Rooms for Tourists",
+      "net": 2000,
+      "gross": 3000,
+      "sales": 1,
+      "years": [
+        1946
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "October on Cape Cod",
+      "net": 2000,
+      "gross": 3000,
+      "sales": 1,
+      "years": [
+        1956
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Summer Evening",
+      "net": 2000,
+      "gross": 3000,
+      "sales": 1,
+      "years": [
+        1948
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Conference at Night",
+      "net": 2000,
+      "gross": 3000,
+      "sales": 1,
+      "years": [
+        1952
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "High Noon",
+      "net": 2000,
+      "gross": 3000,
+      "sales": 1,
+      "years": [
+        1951
+      ],
+      "ledgers": [
+        "book-iii"
       ]
     },
     {
@@ -2122,6 +2615,30 @@
       ]
     },
     {
+      "title": "Hotel Lobby",
+      "net": 1666.67,
+      "gross": 2500,
+      "sales": 1,
+      "years": [
+        1944
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Pennsylvania Coal Town",
+      "net": 1666.67,
+      "gross": 2500,
+      "sales": 1,
+      "years": [
+        1949
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
       "title": "Tramp Steamer",
       "net": 1533.33,
       "gross": 2300,
@@ -2134,6 +2651,30 @@
       ]
     },
     {
+      "title": "Two Puritans",
+      "net": 1500,
+      "gross": 2250,
+      "sales": 1,
+      "years": [
+        1947
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Approaching a City",
+      "net": 1500,
+      "gross": 2250,
+      "sales": 1,
+      "years": [
+        1948
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
       "title": "Lee Shore",
       "net": 1466.67,
       "gross": 2200,
@@ -2143,6 +2684,18 @@
       ],
       "ledgers": [
         "book-ii"
+      ]
+    },
+    {
+      "title": "Summer Time",
+      "net": 1466.67,
+      "gross": 2200,
+      "sales": 1,
+      "years": [
+        1945
+      ],
+      "ledgers": [
+        "book-iii"
       ]
     },
     {
@@ -2191,6 +2744,18 @@
       ],
       "ledgers": [
         "book-ii"
+      ]
+    },
+    {
+      "title": "California Hills",
+      "net": 1333.33,
+      "gross": 2000,
+      "sales": 1,
+      "years": [
+        1957
+      ],
+      "ledgers": [
+        "book-iii"
       ]
     },
     {
@@ -2243,6 +2808,42 @@
       ]
     },
     {
+      "title": "Cliffs near Mitla, Oaxaca",
+      "net": 1200,
+      "gross": 1800,
+      "sales": 1,
+      "years": [
+        1959
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Houses on a Hill",
+      "net": 1200,
+      "gross": 1800,
+      "sales": 1,
+      "years": [
+        1960
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "August in the City",
+      "net": 1166.67,
+      "gross": 1750,
+      "sales": 1,
+      "years": [
+        1947
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
       "title": "Office at Night",
       "net": 1010,
       "gross": 1515,
@@ -2277,6 +2878,42 @@
       ],
       "ledgers": [
         "book-ii"
+      ]
+    },
+    {
+      "title": "Corn Belt City",
+      "net": 1000,
+      "gross": 1500,
+      "sales": 1,
+      "years": [
+        1950
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Cape Elizabeth Shore",
+      "net": 1000,
+      "gross": 1500,
+      "sales": 1,
+      "years": [
+        1962
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Horse and Vermont Barn",
+      "net": 1000,
+      "gross": 1500,
+      "sales": 1,
+      "years": [
+        1960
+      ],
+      "ledgers": [
+        "book-iii"
       ]
     },
     {
@@ -2325,6 +2962,18 @@
       ],
       "ledgers": [
         "book-ii"
+      ]
+    },
+    {
+      "title": "Summer in the City",
+      "net": 800,
+      "gross": 1200,
+      "sales": 1,
+      "years": [
+        1950
+      ],
+      "ledgers": [
+        "book-iii"
       ]
     },
     {
@@ -2397,6 +3046,18 @@
       ],
       "ledgers": [
         "book-ii"
+      ]
+    },
+    {
+      "title": "Mountains at Guanajuato",
+      "net": 600,
+      "gross": 900,
+      "sales": 1,
+      "years": [
+        1955
+      ],
+      "ledgers": [
+        "book-iii"
       ]
     },
     {
@@ -2568,6 +3229,66 @@
       ]
     },
     {
+      "title": "Saltillo Roof Tops",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1947
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Sierra Madre at Saltillo",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1944
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Sierra Madre at Montervey",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1944
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Church of San Estoban",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1948
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Mount Moran",
+      "net": 500,
+      "gross": 750,
+      "sales": 1,
+      "years": [
+        1946
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
       "title": "New York Restaurant",
       "net": 450,
       "gross": 500,
@@ -2628,6 +3349,30 @@
       ]
     },
     {
+      "title": "Palmas at Saltillo",
+      "net": 400,
+      "gross": 600,
+      "sales": 1,
+      "years": [
+        1946
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Saltillo Mansion",
+      "net": 400,
+      "gross": 600,
+      "sales": 1,
+      "years": [
+        1946
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
       "title": "Apartment Houses",
       "net": 340,
       "gross": 400,
@@ -2673,6 +3418,30 @@
       ],
       "ledgers": [
         "book-ii"
+      ]
+    },
+    {
+      "title": "7 A.M",
+      "net": 333.33,
+      "gross": 500,
+      "sales": 1,
+      "years": [
+        1951
+      ],
+      "ledgers": [
+        "book-iii"
+      ]
+    },
+    {
+      "title": "Monterrey Cathedral",
+      "net": 333.33,
+      "gross": 500,
+      "sales": 1,
+      "years": [
+        1946
+      ],
+      "ledgers": [
+        "book-iii"
       ]
     },
     {
@@ -2928,7 +3697,7 @@
       ]
     }
   ],
-  "worksNote": "153 of 326 sale rows name a work at all — the rest carry a price on a line that names no title — so this is a floor that moves with every batch transcribed, and a work absent from it may simply be on a leaf nobody has read.",
+  "worksNote": "207 of 380 sale rows name a work at all — the rest carry a price on a line that names no title — so this is a floor that moves with every batch transcribed, and a work absent from it may simply be on a leaf nobody has read.",
   "duplicates": {
     "count": 1,
     "note": "The same sale written into two volumes, counted once. Collapsed before every total on this page, not only before the ranking. Matched on title, price and the commission written, and only across different volumes: within one volume a repeated price is a repeated sale of an edition. Reported so the collapse can be argued with rather than trusted.",
@@ -3650,9 +4419,9 @@
         "last": 1949
       }
     ],
-    "namedNobody": 56,
+    "namedNobody": 110,
     "ambiguous": 61,
-    "counted": 326,
+    "counted": 380,
     "note": "Who stands beside the price. On the etchings leaves that is almost always the dealer — « Keppel 30 - 1/3 » — and the person who took the print home is named only where Jo Hopper knew it, which is why the second table is the shorter one. The two are told apart by the facet the transcription itself declares: dealer:, against person: and collection:. No string test could do it — « Corcoran Gallery » is a museum and « Downtown Gallery » is a dealer — so a party nobody tagged cannot appear here however often the leaves sold to them, and this ranks what has been tagged inside what has been transcribed.",
     "matchNote": "A row is credited to a party when it carries that party's name or their surname. Two spellings are one party only where one's words sit inside the other's, so Kennedy and Kennedy Galleries merge while Nelson, David and Mrs. John D. Rockefeller stay three buyers, and Boston's Public Library stays out of its Museum of Fine Arts. The merges that rule wrongly refuses are declared by hand in party-aliases.json. Where a leaf writes only a surname that more than one declared party shares, the row is reported ambiguous rather than credited to a guess."
   },
@@ -9547,6 +10316,1032 @@
       "ref": "16304",
       "work": null,
       "section": "Leaves 92 and 93: what went to Rehn from Gloucester and Rockland, 1926"
+    },
+    {
+      "year": 1944,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 2500,
+      "rateWritten": "1/3",
+      "commission": 833.33,
+      "net": 1666.67,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Henry R. Hope\n Univ. of Bloomington, Indiana",
+      "ledger": "book-iii",
+      "batch": 2,
+      "leaf": "1",
+      "ref": "16279",
+      "section": "Hotel Lobby",
+      "work": "Hotel Lobby"
+    },
+    {
+      "year": 1945,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 2200,
+      "rateWritten": "1/3",
+      "commission": 733.33,
+      "net": 1466.67,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "John L. Sexton, Wilmington, Del. June 20, 45;",
+      "ledger": "book-iii",
+      "batch": 2,
+      "leaf": "3",
+      "ref": "17456",
+      "section": "Summer Time",
+      "work": "Summer Time"
+    },
+    {
+      "year": 1949,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 6000,
+      "rateWritten": "1/3",
+      "commission": 2000,
+      "net": 4000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Lawrence Bloedel of Williamsberg, Mass",
+      "ledger": "book-iii",
+      "batch": 2,
+      "leaf": "5",
+      "ref": "17012",
+      "section": "Morning in a City",
+      "work": "Morning in a City"
+    },
+    {
+      "year": 1954,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3500,
+      "rateWritten": "1/3",
+      "commission": 1166.67,
+      "net": 2333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Harold Harris (Ellenville, N.Y",
+      "ledger": "book-iii",
+      "batch": 2,
+      "leaf": "7",
+      "ref": "18257",
+      "section": "The Martha McKeen of Wellfleet",
+      "work": "The Martha McKeen of Wellfleet"
+    },
+    {
+      "year": 1947,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 1750,
+      "rateWritten": "1/3",
+      "commission": 583.33,
+      "net": 1166.67,
+      "receiptWritten": 1166.67,
+      "receiptYear": 1947,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Norton Florida Gallery, W. Palm Beach, Fla",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "11",
+      "ref": "17769",
+      "section": "August in the City",
+      "work": "August in the City"
+    },
+    {
+      "year": 1946,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3000,
+      "rateWritten": "1/3",
+      "commission": 1000,
+      "net": 2000,
+      "receiptWritten": 2000,
+      "receiptYear": 1946,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Stephen Clark. Check from Rehn Gal. Ap. 4\", 46",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "13",
+      "ref": "16828",
+      "section": "Rooms for Tourists",
+      "work": "Rooms for Tourists"
+    },
+    {
+      "year": 1947,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 2250,
+      "rateWritten": "1/3",
+      "commission": 750,
+      "net": 1500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Marks Sugarman",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "15",
+      "ref": "16329",
+      "section": "Two Puritans",
+      "work": "Two Puritans"
+    },
+    {
+      "year": 1948,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 2250,
+      "rateWritten": "1/3",
+      "commission": 750,
+      "net": 1500,
+      "receiptWritten": 1500,
+      "receiptYear": 1948,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Duncan Phillips. for Phillips Memorial, Washington, D.C",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "17",
+      "ref": "18354",
+      "section": "Approaching a City",
+      "work": "Approaching a City"
+    },
+    {
+      "year": 1956,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3000,
+      "rateWritten": "1/3",
+      "commission": 1000,
+      "net": 2000,
+      "receiptWritten": 2000,
+      "receiptYear": 1956,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Paid by John Clancy, new head of Rehn Gallery",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "19",
+      "ref": "16838",
+      "section": "October on Cape Cod",
+      "work": "October on Cape Cod"
+    },
+    {
+      "year": 1950,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 1500,
+      "rateWritten": "1/3",
+      "commission": 500,
+      "net": 1000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Edgar Kaufmann, Jr",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "21",
+      "ref": "16798",
+      "section": "Corn Belt City",
+      "work": "Corn Belt City"
+    },
+    {
+      "year": 1949,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 2500,
+      "rateWritten": "1/3",
+      "commission": 833.33,
+      "net": 1666.67,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Butler Art Institute, Youngstown, O",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "23",
+      "ref": "16347",
+      "section": "Pennsylvania Coal Town",
+      "work": "Pennsylvania Coal Town"
+    },
+    {
+      "year": 1948,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3000,
+      "rateWritten": "1/3",
+      "commission": 1000,
+      "net": 2000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Clay Bartlett",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "25",
+      "ref": "18128",
+      "section": "Summer Evening",
+      "work": "Summer Evening"
+    },
+    {
+      "year": 1951,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 500,
+      "rateWritten": "1/3",
+      "commission": 166.67,
+      "net": 333.33,
+      "receiptWritten": 333.33,
+      "receiptYear": 1951,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Check from Rehn Gal",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "27",
+      "ref": "16558",
+      "section": "7 A.M.",
+      "work": "7 A.M"
+    },
+    {
+      "year": 1952,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3000,
+      "rateWritten": "1/3",
+      "commission": 1000,
+      "net": 2000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Witchita Mus., Kansas",
+      "ledger": "book-iii",
+      "batch": 3,
+      "leaf": "29",
+      "ref": "17590",
+      "section": "Conference at Night",
+      "work": "Conference at Night"
+    },
+    {
+      "year": 1951,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3000,
+      "rateWritten": "1/3",
+      "commission": 1000,
+      "net": 2000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Anthony Haswell",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "31",
+      "ref": "16818",
+      "section": "High Noon",
+      "work": "High Noon"
+    },
+    {
+      "year": 1950,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 1200,
+      "rateWritten": "1/3",
+      "commission": 400,
+      "net": 800,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Lynn Farnol",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "33",
+      "ref": "16952",
+      "section": "Summer in the City",
+      "work": "Summer in the City"
+    },
+    {
+      "year": 1953,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3500,
+      "rateWritten": "1/3",
+      "commission": 1166.67,
+      "net": 2333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Rockefeller",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "35",
+      "ref": "16202",
+      "section": "Portrait of Orleans",
+      "work": "Portrait of Orleans"
+    },
+    {
+      "year": 1956,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 4050,
+      "rateWritten": "1/3",
+      "commission": 1350,
+      "net": 2700,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "John Barnes Foundation incl. Museum reduction",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "37",
+      "ref": "18415",
+      "section": "Cape Cod Morning",
+      "work": "Cape Cod Morning"
+    },
+    {
+      "year": 1954,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3500,
+      "rateWritten": "1/3",
+      "commission": 1166.67,
+      "net": 2333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Jos. H. Hirshhorn - Sept. 30, 1954",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "39",
+      "ref": "17809",
+      "section": "First Row Orchestra",
+      "work": "First Row Orchestra"
+    },
+    {
+      "year": 1952,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 4000,
+      "rateWritten": "1/3",
+      "commission": 1333.33,
+      "net": 2666.67,
+      "receiptWritten": 2666.67,
+      "receiptYear": 1952,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Check from Rehn Gallery Ap. 7, 52",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "41",
+      "ref": "18347",
+      "section": "Rooms by the Sea",
+      "work": "Rooms by the Sea"
+    },
+    {
+      "year": 1954,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3500,
+      "rateWritten": "1/3",
+      "commission": 1166.67,
+      "net": 2333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "activity": "art",
+      "buyer": "Columbus Mus. Ap. 12, 54",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "43",
+      "ref": "16521",
+      "section": "Morning Sun",
+      "work": "Morning Sun"
+    },
+    {
+      "year": 1954,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3500,
+      "rateWritten": "1/3",
+      "commission": 1166.67,
+      "net": 2333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Jos. H. Hirshhorn",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "45",
+      "ref": "17302",
+      "section": "Hotel by a Railroad",
+      "work": "Hotel by a Railroad"
+    },
+    {
+      "year": 1956,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 4500,
+      "rateWritten": "1/3",
+      "commission": 1500,
+      "net": 3000,
+      "receiptWritten": 3000,
+      "receiptYear": 1956,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Ralph L. Rittes of Ohio?",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "47",
+      "ref": "18177",
+      "section": "Sea Watchers",
+      "work": "Sea Watchers"
+    },
+    {
+      "year": 1955,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3500,
+      "rateWritten": "1/3",
+      "commission": 1166.67,
+      "net": 2333.33,
+      "receiptWritten": null,
+      "receiptYear": 1955,
+      "check": null,
+      "activity": "art",
+      "buyer": "Jos. H. Hirshorn (July 2, 55 bought -)",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "51",
+      "ref": "17200",
+      "section": "City Sunlight",
+      "work": "City Sunlight"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 4500,
+      "rateWritten": "1/3",
+      "commission": 1500,
+      "net": 3000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Mrs. Otto Spaeth",
+      "ledger": "book-iii",
+      "batch": 4,
+      "leaf": "53",
+      "ref": "18558",
+      "section": "South Carolina Morning",
+      "work": "South Carolina Morning"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 7000,
+      "rateWritten": "1/3",
+      "commission": 2333.33,
+      "net": 4666.67,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Mrs. Olga Knoepke",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "55",
+      "ref": "16671",
+      "section": "Hotel Window",
+      "work": "Hotel Window"
+    },
+    {
+      "year": 1958,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 5000,
+      "rateWritten": "1/3",
+      "commission": 1666.67,
+      "net": 3333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Murdock Collection",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "57",
+      "ref": "18433",
+      "section": "Sunlight on Brownstones",
+      "work": "Sunlight on Brownstones"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 3500,
+      "rateWritten": "1/3",
+      "commission": 1166.67,
+      "net": 2333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Milton B. Eulau",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "59",
+      "ref": "16459",
+      "section": "House by an Inlet",
+      "work": "House by an Inlet"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 6000,
+      "rateWritten": "1/3",
+      "commission": 2000,
+      "net": 4000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Mr. + Mrs. Malcolm C. Chace",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "61",
+      "ref": "16622",
+      "section": "Four Lane Road",
+      "work": "Four Lane Road"
+    },
+    {
+      "year": 1958,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 6500,
+      "rateWritten": "1/3",
+      "commission": 2166.67,
+      "net": 4333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Stephen C. Clark",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "63",
+      "ref": "16508",
+      "section": "Western Motel",
+      "work": "Western Motel"
+    },
+    {
+      "year": 1959,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 9000,
+      "rateWritten": "1/3",
+      "commission": 3000,
+      "net": 6000,
+      "receiptWritten": 6000,
+      "receiptYear": 1959,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Stephen C. Clark - Summer 1958 - Check recorded 1959",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "65",
+      "ref": "17966",
+      "section": "Sunlight in a Cafeteria",
+      "work": "Sunlight in a Cafeteria"
+    },
+    {
+      "year": 1960,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 10000,
+      "rateWritten": "1/3",
+      "commission": 3333.33,
+      "net": 6666.67,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Mrs. Sterling Morton - Santa Barbara Mus",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "67",
+      "ref": "16582",
+      "section": "November, Washington Square",
+      "work": "November, Wash. Square"
+    },
+    {
+      "year": 1962,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 14500,
+      "rateWritten": "1/3",
+      "commission": 4833.33,
+      "net": 9666.67,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Olga Knoepke",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "69",
+      "ref": "18472",
+      "section": "Excursion into Philosophy",
+      "work": "Excursion into Philosophy"
+    },
+    {
+      "year": 1962,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 15000,
+      "rateWritten": "1/3",
+      "commission": 5000,
+      "net": 10000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Lee Nordness Gallery - 831 Mad. Ave",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "71",
+      "ref": "16283",
+      "section": "People in the Sun",
+      "work": "People in the Sun"
+    },
+    {
+      "year": 1963,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 15000,
+      "rateWritten": "1/3",
+      "commission": 5000,
+      "net": 10000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "activity": "art",
+      "buyer": "Mr. + Mrs. Albert Hackett",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "75",
+      "ref": "17107",
+      "section": "A Woman in the Sun",
+      "work": "A Woman in the Sun"
+    },
+    {
+      "year": 1963,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 16500,
+      "rateWritten": "1/3",
+      "commission": 5500,
+      "net": 11000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Lawrence Fleishman",
+      "ledger": "book-iii",
+      "batch": 5,
+      "leaf": "77",
+      "ref": "17521",
+      "section": "New York Office",
+      "work": "New York Office"
+    },
+    {
+      "year": 1966,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 25000,
+      "rateWritten": "1/3",
+      "commission": 8333.33,
+      "net": 16666.67,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Howard Mack - Payment on account",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "81",
+      "ref": "17386",
+      "section": "Intermission",
+      "work": "Intermission"
+    },
+    {
+      "year": 1964,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 25000,
+      "rateWritten": "1/3",
+      "commission": 8333.33,
+      "net": 16666.67,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "The Detroit Museum",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "83",
+      "ref": "17402",
+      "section": "Sun in an Empty Room",
+      "work": "Sun in an Empty Room"
+    },
+    {
+      "year": 1965,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 15000,
+      "rateWritten": "1/3",
+      "commission": 5000,
+      "net": 10000,
+      "receiptWritten": 10000,
+      "receiptYear": 1965,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Dr. Irving Levitt Rec'd June 23, 1965",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "87",
+      "ref": "17816",
+      "section": "East River",
+      "work": "East River"
+    },
+    {
+      "year": 1946,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 600,
+      "rateWritten": "1/3",
+      "commission": 200,
+      "net": 400,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": null,
+      "activity": "art",
+      "buyer": "Rand",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "101",
+      "ref": "17944",
+      "section": "Palmas at Saltillo, Saltillo Mansion",
+      "work": "Palmas at Saltillo"
+    },
+    {
+      "year": 1946,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 600,
+      "rateWritten": "1/3",
+      "commission": 200,
+      "net": 400,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Metropolitan Museum - Check from Rehn Gal. Ap",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "101",
+      "ref": "17944",
+      "section": "Palmas at Saltillo, Saltillo Mansion",
+      "work": "Saltillo Mansion"
+    },
+    {
+      "year": 1947,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Mrs. John H. Betty Beal 1251 Sheriden Ave. Pittsburgh, Pa",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "103",
+      "ref": "16198",
+      "section": "Saltillo Roof Tops, Sierra Madre at Saltillo",
+      "work": "Saltillo Roof Tops"
+    },
+    {
+      "year": 1944,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Paul Mallon",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "103",
+      "ref": "16198",
+      "section": "Saltillo Roof Tops, Sierra Madre at Saltillo",
+      "work": "Sierra Madre at Saltillo"
+    },
+    {
+      "year": 1946,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 500,
+      "rateWritten": "1/3",
+      "commission": 166.67,
+      "net": 333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Philadelphia Mus. Ap. 4, 46",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "105",
+      "ref": "16386",
+      "section": "Monterrey Cathedral, Sierra Madre at Montervey",
+      "work": "Monterrey Cathedral"
+    },
+    {
+      "year": 1944,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Stephen Clark",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "105",
+      "ref": "16386",
+      "section": "Monterrey Cathedral, Sierra Madre at Montervey",
+      "work": "Sierra Madre at Montervey"
+    },
+    {
+      "year": 1948,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Metropolitan Mus. N.Y.C",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "107",
+      "ref": "18465",
+      "section": "Church of San Estoban, El Palacio",
+      "work": "Church of San Estoban"
+    },
+    {
+      "year": 1946,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 750,
+      "rateWritten": "1/3",
+      "commission": 250,
+      "net": 500,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "disagrees",
+      "activity": "art",
+      "buyer": "Stephen C. Clark",
+      "ledger": "book-iii",
+      "batch": 6,
+      "leaf": "109",
+      "ref": "17241",
+      "section": "Construction in Mexico, Mount Moran",
+      "work": "Mount Moran"
+    },
+    {
+      "year": 1959,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 1800,
+      "rateWritten": "1/3",
+      "commission": 600,
+      "net": 1200,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Chas. F. Stein, Jr",
+      "ledger": "book-iii",
+      "batch": 7,
+      "leaf": "113",
+      "ref": "17910",
+      "section": "Cliffs near Mitla, Oaxaca",
+      "work": "Cliffs near Mitla, Oaxaca"
+    },
+    {
+      "year": 1955,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 900,
+      "rateWritten": "1/3",
+      "commission": 300,
+      "net": 600,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Stephen C. Clark",
+      "ledger": "book-iii",
+      "batch": 7,
+      "leaf": "115",
+      "ref": "16302",
+      "section": "Mountains at Guanajuato",
+      "work": "Mountains at Guanajuato"
+    },
+    {
+      "year": 1957,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 2000,
+      "rateWritten": "1/3",
+      "commission": 666.67,
+      "net": 1333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Purchase by Hallmark",
+      "ledger": "book-iii",
+      "batch": 7,
+      "leaf": "116",
+      "ref": "17794",
+      "section": "California Hills",
+      "work": "California Hills"
+    },
+    {
+      "year": 1960,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 1800,
+      "rateWritten": "1/3",
+      "commission": 600,
+      "net": 1200,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Winifred E. Mannion",
+      "ledger": "book-iii",
+      "batch": 7,
+      "leaf": "117",
+      "ref": "17124",
+      "section": "Houses on a Hill",
+      "work": "Houses on a Hill"
+    },
+    {
+      "year": 1962,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 1500,
+      "rateWritten": "1/3",
+      "commission": 500,
+      "net": 1000,
+      "receiptWritten": 1000,
+      "receiptYear": 1962,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "Atlanta Art Assn",
+      "ledger": "book-iii",
+      "batch": 7,
+      "leaf": "119",
+      "ref": "18090",
+      "section": "Cape Elizabeth Shore",
+      "work": "Cape Elizabeth Shore"
+    },
+    {
+      "year": 1960,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 1500,
+      "rateWritten": "1/3",
+      "commission": 500,
+      "net": 1000,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "agrees",
+      "activity": "art",
+      "buyer": "William H. Bender, Jr",
+      "ledger": "book-iii",
+      "batch": 7,
+      "leaf": "119",
+      "ref": "18090",
+      "section": "Cape Elizabeth Shore",
+      "work": "Horse and Vermont Barn"
+    },
+    {
+      "year": 1964,
+      "yearFrom": "the date written beside the sale in the prose of Book III",
+      "gross": 6500,
+      "rateWritten": "1/3",
+      "commission": 2166.67,
+      "net": 4333.33,
+      "receiptWritten": null,
+      "receiptYear": null,
+      "check": "disagrees",
+      "activity": "art",
+      "buyer": "Daniel Lechner",
+      "ledger": "book-iii",
+      "batch": 7,
+      "leaf": "123",
+      "ref": "17866",
+      "section": "Charleston Slum",
+      "work": "Charleston Slum"
     },
     {
       "year": 1913,
@@ -34005,7 +35800,7 @@
     }
   ],
   "unparsed": {
-    "count": 192,
+    "count": 201,
     "sample": [
       {
         "reason": "the date column of this leaf dates the exhibition, not the sale — the sale has no date of its own, only the date its cheque cleared",
@@ -34054,6 +35849,30 @@
           "Keppel to Fr. Crowninshield 25 - 1/3",
           "$16 2/3",
           "Nov. 26, 27"
+        ]
+      },
+      {
+        "reason": "a Book III work whose prose carries figures but no sale written as « price - 1/3 » — a museum sixth over the gallery third, a price with its payments, a prize",
+        "ledger": "book-iii",
+        "batch": 3,
+        "leaf": "9",
+        "ref": "17356",
+        "section": "Solitude \\#56",
+        "work": "Solitude \\#56",
+        "row": [
+          "Winsor + Newton + Blockx Colors. Winsor + Newton (flake) white. Started with linseed oil, finished with poppy oil All linseed oil. Blockx heavy linen canvas. To"
+        ]
+      },
+      {
+        "reason": "a Book III sale written as « price - 1/3 » with no date anywhere in its passage",
+        "ledger": "book-iii",
+        "batch": 6,
+        "leaf": "109",
+        "ref": "17241",
+        "section": "Construction in Mexico, Mount Moran",
+        "work": "Construction in Mexico",
+        "row": [
+          "750 - 1/3"
         ]
       },
       {
@@ -34135,6 +35954,18 @@
         ]
       },
       {
+        "reason": "a Book III work whose prose carries figures but no sale written as « price - 1/3 » — a museum sixth over the gallery third, a price with its payments, a prize",
+        "ledger": "book-iii",
+        "batch": 4,
+        "leaf": "49",
+        "ref": "18028",
+        "section": "Office in a Small City",
+        "work": "Office in a Small City",
+        "row": [
+          "Painted in Truro Studio in September 1953 Winsor & Newton (National) double prime canvas and W & N. colors, Chremnitz White, linseed oil and turpentine. White c"
+        ]
+      },
+      {
         "reason": "a Book IV row whose money columns carry writing that is not a figure in dollars — a sum in pounds sterling, a ditto standing for the sum above, or an expense the leaf writes with a minus sign in front of it",
         "ledger": "book-iv",
         "batch": 7,
@@ -34194,6 +36025,18 @@
           "Downtown Gallery - 25 - 1/3",
           "16 2/3",
           "Feb. 1, 28"
+        ]
+      },
+      {
+        "reason": "a Book III work whose prose carries figures but no sale written as « price - 1/3 » — a museum sixth over the gallery third, a price with its payments, a prize",
+        "ledger": "book-iii",
+        "batch": 5,
+        "leaf": "73",
+        "ref": "17872",
+        "section": "Second Story Sunlight",
+        "work": "Second Story Sunlight",
+        "row": [
+          "Painted in Truro Studio in August, September 1960 Winsor & Newton colors, single prime canvas \"Herga\" Flake White, linseed oil, turpentine A.M. sunlight on whit"
         ]
       },
       {
@@ -34259,6 +36102,18 @@
         ]
       },
       {
+        "reason": "a Book III work whose prose carries figures but no sale written as « price - 1/3 » — a museum sixth over the gallery third, a price with its payments, a prize",
+        "ledger": "book-iii",
+        "batch": 6,
+        "leaf": "79",
+        "ref": "16422",
+        "section": "Road and Trees",
+        "work": "Road and Trees",
+        "row": [
+          "Painted in Truro studio in October 1962 Winsor & Newton Colors single prime W. Newton \"Herga\" linen canvas, Flake White, linseed oil + turpentine. In A Heydenri"
+        ]
+      },
+      {
         "reason": "a Book IV row whose money columns carry writing that is not a figure in dollars — a sum in pounds sterling, a ditto standing for the sum above, or an expense the leaf writes with a minus sign in front of it",
         "ledger": "book-iv",
         "batch": 12,
@@ -34319,83 +36174,6 @@
           "Keppel 30 - 1/3",
           "20",
           "Oct. 18, 29."
-        ]
-      },
-      {
-        "reason": "a Book IV row whose money columns carry writing that is not a figure in dollars — a sum in pounds sterling, a ditto standing for the sum above, or an expense the leaf writes with a minus sign in front of it",
-        "ledger": "book-iv",
-        "batch": 12,
-        "leaf": "138",
-        "ref": "18140",
-        "section": "Leaf 138: April to June 1956",
-        "work": null,
-        "row": [
-          "",
-          "Frame for Dauphinee House",
-          "-48",
-          "00"
-        ]
-      },
-      {
-        "reason": "the date column of this leaf dates the exhibition, not the sale — the sale has no date of its own, only the date its cheque cleared",
-        "receiptYear": 1927,
-        "ledger": "book-i",
-        "batch": 1,
-        "leaf": "2",
-        "ref": "16853",
-        "work": "Evening Wind",
-        "section": "Leaf 2: Evening Wind",
-        "rowText": ", 28 16 2/3 Keppel - 25 - 1/3 Com. Rehn - 25 - 1/3 16.66 Nov. 4, 27",
-        "row": [
-          ", 28",
-          "16 2/3",
-          "Keppel - 25 - 1/3 Com.",
-          "Rehn - 25 - 1/3",
-          "16.66 Nov. 4, 27"
-        ]
-      },
-      {
-        "reason": "a group sale — one transaction written on the leaf of every work in the group, so counting the per-work average here would multiply it",
-        "ledger": "book-i",
-        "batch": 2,
-        "leaf": "9",
-        "ref": "17703",
-        "work": null,
-        "section": "Leaf 9, with the clipping turned back",
-        "rowText": "June 27, 49 Carnegie Inst. purchase of group of 11 etchings for $300, average 27.27 - 1/3 Rehn Gal. = $18 -",
-        "row": [
-          "June 27, 49",
-          "Carnegie Inst. purchase of group of 11 etchings for $300, average 27.27 - 1/3 Rehn Gal. = $18 -"
-        ]
-      },
-      {
-        "reason": "a sale whose date column states no year, and no ditto to carry one from",
-        "ledger": "book-i",
-        "batch": 2,
-        "leaf": "6",
-        "ref": "16548",
-        "work": "Night Shadows",
-        "section": "Leaf 6: Night Shadows",
-        "rowText": "Weyhe 30 - 1/3 20 Oct. 28, 29.",
-        "row": [
-          "Weyhe 30 - 1/3",
-          "20",
-          "Oct. 28, 29."
-        ]
-      },
-      {
-        "reason": "a Book IV row whose money columns carry writing that is not a figure in dollars — a sum in pounds sterling, a ditto standing for the sum above, or an expense the leaf writes with a minus sign in front of it",
-        "ledger": "book-iv",
-        "batch": 12,
-        "leaf": "138",
-        "ref": "18140",
-        "section": "Leaf 138: April to June 1956",
-        "work": null,
-        "row": [
-          "\"",
-          "\" Bridle Path",
-          "-42",
-          "00"
         ]
       }
     ]
