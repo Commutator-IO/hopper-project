@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { Page } from './components/Frame.tsx';
+import { resolveLeaf } from './components/Reader.tsx';
 import accountsData from './content/accounts.json';
 import { LEDGERS } from './content/catalogue.ts';
 import { url } from './lib/base.ts';
@@ -124,6 +125,15 @@ const A = accountsData as unknown as {
       leaf: string | null;
       price: number;
       chargedOn: { leaf: string | null; ref: string | null; year: number };
+    }[];
+    topJobs: {
+      year: number;
+      client: string | null;
+      drawn: string[];
+      charged: number;
+      received: number | null;
+      leaf: string | null;
+      ref: string | null;
     }[];
     pencilSumsExcluded: number;
     readByInk: number;
@@ -441,6 +451,64 @@ export function AccountsPage() {
           {A.activities.map((a) => (
             <Trade key={a.key} a={a} />
           ))}
+        </div>
+
+        <h3 className="mt-8 font-serif text-[17px] text-ink-900">
+          The ten best-paid illustration jobs, 1913–1925
+        </h3>
+        <p className="mt-1 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          One entry of the cash book each — the client’s line, what was drawn, what was billed
+          and what the cheque paid — ranked by what was charged. Prints and pictures sold in the
+          same years stand in the same book in the same shape and are left out by their words;
+          this is the trade, not the volume. The book’s largest single illustration figure is the
+          serial: four parts of « Sacrifice » for Everybodys’ at $200 apiece. Set beside them, the
+          first Rehn water colours of 1924 were $100 each and the oils of the 1960s ten to
+          twenty-five thousand.
+        </p>
+        <div className="mt-3 max-w-4xl overflow-x-auto">
+          <table className="w-full text-[13px]">
+            <thead>
+              <tr className="border-b border-ink-300 text-left text-[11px] uppercase tracking-wider text-ink-400">
+                <th className="py-1.5 pr-3 font-normal">Year</th>
+                <th className="py-1.5 pr-3 font-normal">Client</th>
+                <th className="py-1.5 pr-3 font-normal">What was drawn</th>
+                <th className="py-1.5 pr-3 text-right font-normal">Charged</th>
+                <th className="py-1.5 pr-3 text-right font-normal">Received</th>
+                <th className="py-1.5 font-normal">Leaf</th>
+              </tr>
+            </thead>
+            <tbody>
+              {A.illustration.topJobs.map((j, i) => {
+                const at = j.leaf ? resolveLeaf('book-iv', Number(j.leaf)) : null;
+                return (
+                  <tr key={i} className="border-b border-ink-100 align-top">
+                    <td className="py-1.5 pr-3 tabular text-ink-500">{j.year}</td>
+                    <td className="py-1.5 pr-3 text-ink-900">{j.client ?? '—'}</td>
+                    <td className="py-1.5 pr-3 text-ink-700">
+                      {j.drawn.slice(0, 3).join(' · ')}
+                      {j.drawn.length > 3 ? ` · and ${j.drawn.length - 3} more` : ''}
+                    </td>
+                    <td className="py-1.5 pr-3 text-right tabular text-ink-900">${money(j.charged)}</td>
+                    <td className="py-1.5 pr-3 text-right tabular text-ink-700">
+                      {j.received === null ? '—' : `$${money(j.received)}`}
+                    </td>
+                    <td className="py-1.5">
+                      {at ? (
+                        <a
+                          href={url(`/book-iv/#book-iv/${at.batch}/${at.ref}`)}
+                          className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+                        >
+                          {j.leaf}
+                        </a>
+                      ) : (
+                        j.leaf
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
 
         <p className="prose-note mt-4 max-w-3xl">

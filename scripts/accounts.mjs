@@ -586,6 +586,15 @@ const ivMoneyWritten = (cells) =>
 const IV_RECEIPT =
   /^["'”\s]*(commission\s+[\d,.\s]+,\s*)?(rec['’]?d|received)\b(?!\s+from\b)/i;
 const IV_BILL = /^["'”\s]*(bill|billed)\b/i;
+// A receipt that does not say « rec'd »: leaf 76 answers five monthly bills
+// with « July number by check 65 » and then « August " " " », the dittos
+// standing for « number by check ». « by check » at the end of the line is
+// the cheque, and a month followed by nothing but ditto marks, directly under
+// a receipt, is the same again.
+const IV_BY_CHECK = /\bby check\s*$/i;
+const IV_DITTO_TAILED = /^[A-Za-z.]+\s+["'”″][\s"'”″]*$/;
+// The monthly bills of the same leaf, « July bill », for the jobs pass.
+const IV_MONTH_BILL = /^[A-Za-z.]+\s+bill\s*$/i;
 // A subtraction, and a restatement of what one leaves. Anchored at the head
 // for the reason `IV_BILL` is: « less » loose in the line would match a title.
 const IV_DEDUCTION = /^["'”\s]*less\b/i;
@@ -774,6 +783,8 @@ let ivRubbedReceipts = 0;
 let ivByInk = 0;
 let ivInkConflicts = 0;
 const ivPencil = [];
+// The ten best-paid illustration jobs, 1913–1925.
+const ivJobs = [];
 // Rows whose money columns carry writing the reader would not read as dollars.
 let ivUnreadMoney = 0;
 {
@@ -890,7 +901,9 @@ let ivUnreadMoney = 0;
       // leaf 157's « payment on account / Chair Car 10,000 », the same words
       // introduce the instalment itself, which is the charge.
       const paidOnAccount = IV_PAID_ON_ACCOUNT.test(body) && deductedSinceReceipt;
-      const own = IV_RECEIPT.test(body)
+      const own = IV_RECEIPT.test(body) ||
+        IV_BY_CHECK.test(body) ||
+        (IV_DITTO_TAILED.test(body) && previous?.kind === 'receipt' && previous.where.ref === row.ref)
         ? 'receipt'
         : IV_BILL.test(body)
           ? 'bill'
@@ -1344,9 +1357,71 @@ let ivUnreadMoney = 0;
       // a picture was paid for in parts.
       entryWords: entryWordsAround(rows, i),
     });
+    r.charged = true;
     if (r.kind === 'bill') sinceSettlement = 0;
     else sinceSettlement++;
   }
+
+  /* ------------------------------------- the best-paid illustration jobs */
+
+  // An entry is what stands between two cheques: the client's line, the
+  // items, the bill, the receipt. In the illustration years — Book IV to the
+  // last Hotel Management cover of November 1925 — a job is one such entry,
+  // and its price is the charges in it. Prints and pictures already stand
+  // among the jobs from 1920, in the same book and the same shape, and are
+  // told apart by their words: an etching, a water colour, a dealer, a
+  // museum, a prize. What is left is what a magazine or an agency paid for a
+  // drawing, ranked, so the page can show what the trade was worth.
+  const NOT_A_JOB =
+    /\b(etching|etchings|print|prints|plate|water ?colou?rs?|w\.?\s?c\.?|oils?|canvas|prize|royalt|instruction|weeks?)\b|Rehn|Keppel|Kennedy|Weyhe|Museum|Phillips|Whitney|Print ?Makers|Society of Etchers|Smalley|Halpert|Sterner|Randolph|Milch|Babcock|Whitins/i;
+  // A bill closes a job as a cheque does — the Hotel Management covers of
+  // 1925 are billed month by month and paid month by month, and a run that
+  // waited for the cheque would fold three covers into one. A cheque that
+  // follows a bill with nothing itemised between pays that bill.
+  let run = [];
+  let pending = null;
+  const jobs = [];
+  const closeRun = (settlement) => {
+    const charged = run.filter((r) => r.charged);
+    if (!charged.length) {
+      if (pending && settlement?.kind === 'receipt' && pending.received === null) {
+        pending.received = settlement.amount;
+      }
+      run = [];
+      return;
+    }
+    pending = null;
+    if (charged[0].year !== null && charged[0].year <= 1925) {
+      const words = run.map((r) => r.body).join(' ');
+      if (!NOT_A_JOB.test(words)) {
+        const client = run.find((r) => r.kind === 'item' && r.amount === null && r.body);
+        // What was drawn: the titles — the described rows after the client's
+        // line that are neither the bill nor the cheque, priced or not.
+        const drawn = run
+          .filter((r) => r !== client && r.kind === 'item' && r.body && !/^bill/i.test(r.body))
+          .map((r) => r.body);
+        const job = {
+          year: charged[0].year,
+          client: client?.body ?? null,
+          drawn,
+          charged: Number(charged.reduce((s, r) => s + r.amount, 0).toFixed(2)),
+          received: settlement?.kind === 'receipt' ? settlement.amount : null,
+          leaf: charged[0].where.leaf,
+          ref: charged[0].where.ref,
+        };
+        jobs.push(job);
+        if (job.received === null) pending = job;
+      }
+    }
+    run = [];
+  };
+  for (const r of rows) {
+    if (r.year === null) continue;
+    run.push(r);
+    if (r.kind === 'receipt' || r.kind === 'bill' || (r.charged && IV_MONTH_BILL.test(r.body))) closeRun(r);
+  }
+  closeRun(null);
+  ivJobs.push(...jobs.sort((a, b) => b.charged - a.charged || a.year - b.year).slice(0, 10));
 }
 
 /**
@@ -2007,6 +2082,11 @@ const out = {
     // collapsed into that charge, each saying where the price stands.
     instalmentsCollapsed: instalments.length,
     instalments,
+    // The ten best-paid illustration jobs of 1913–1925: one entry each,
+    // the client's line, what was drawn, what was charged and what the
+    // cheque paid. Prints and pictures in the same years are left out by
+    // their words, so this is the trade and not the book.
+    topJobs: ivJobs,
     receipts: receipts.length,
     subtotalsExcluded: ivSubtotals.length,
     deductionsExcluded: ivDeductions.length,
