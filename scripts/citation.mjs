@@ -75,7 +75,10 @@ const volumes = Object.keys(manifest.read).length;
 // The sheets the archive holds, counted the same way the catalogue counts
 // them: one line per sheet in the generated inventory.
 const catalogue = readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8');
-const sheetsAll = (catalogue.match(/^\s*\{ ref:/gm) ?? []).length;
+// The ledgers only: the notebooks catalogued after them are another document,
+// not transcribed and not what this citation describes.
+const ledgerPart = catalogue.split('export const NOTEBOOKS')[0];
+const sheetsAll = (ledgerPart.match(/^\s*\{ ref:/gm) ?? []).length;
 if (sheetsAll === 0) throw new Error('citation: no sheets in catalogue.ts — run npm run catalogue');
 
 /**
