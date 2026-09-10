@@ -109,6 +109,7 @@ const A = accountsData as unknown as {
   /** Book IV's own counts — what was read as a charge, and what was set aside. */
   illustration: {
     charges: number;
+    batches: number;
     receipts: number;
     subtotalsExcluded: number;
     deductionsExcluded: number;
@@ -276,7 +277,11 @@ function Spans({
   const from = Math.min(...all);
   const to = Math.max(...all);
   const span = Array.from({ length: to - from + 1 }, (_, i) => from + i);
-  const tone: Record<string, string> = { art: 'bg-brand-400', illustration: 'bg-edward-500' };
+  const tone: Record<string, string> = {
+    art: 'bg-brand-400',
+    illustration: 'bg-edward-500',
+    cashbook: 'bg-brand-700',
+  };
 
   return (
     <div className="mt-4 space-y-3">
@@ -396,10 +401,10 @@ export function AccountsPage() {
               <strong className="font-semibold">
                 And every table below this one is his own work only.
               </strong>{' '}
-              Book IV is a pocket cash book of magazine and advertising commissions — a different
-              trade, on a different basis — so it is counted apart rather than added in. It has
-              its own section directly below, and every figure after that is the sale of a
-              picture.
+              Book IV is a pocket cash book — the illustration account to 1925, and after that
+              the same sales the work books record, seen from the cheque — so it is counted apart
+              rather than added in. It has its own cards directly below, and every figure after
+              them is the sale of a picture from the work books.
             </p>
           )}
           {uncounted.length > 0 && (
@@ -438,16 +443,20 @@ export function AccountsPage() {
       </section>
 
       <section className="border-b border-ink-200 py-8">
-        <h2 className="font-serif text-xl text-ink-900">Two trades, and what came of the money</h2>
+        <h2 className="font-serif text-xl text-ink-900">Two trades, three accounts, and what came of the money</h2>
         <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
           Edward Hopper earned in two ways and kept two kinds of book about it. Books I, II, III
-          and V and the dealers’ book record him selling his own work; Book IV is a stationer’s
-          pocket cash book of magazine and advertising commissions. Adding them would make one
-          number out of two trades that barely share a decade, so they stand apart here — and
-          each is split by what actually became of the money.
+          and V and the dealers’ book record him selling his own work. Book IV is a stationer’s
+          pocket cash book that starts in 1913 as the illustration account — two line drawings a
+          week at twenty dollars — and stays open after the illustration stops in November 1925,
+          taking Rehn’s cheques for pictures until 1967. So the cash book is two cards: the
+          illustration, told from the rest by its clients and its years, and his own work as the
+          cash book records it, which is the same money the work books record and is therefore
+          counted apart from them rather than added in. Each card is split by what actually
+          became of the money.
         </p>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {A.activities.map((a) => (
             <Trade key={a.key} a={a} />
           ))}
@@ -548,12 +557,11 @@ export function AccountsPage() {
         </p>
         <Spans activities={A.activities} />
         <p className="prose-note mt-3 max-w-3xl">
-          In what has been read so far the two do not overlap at all: the illustration income
-          stops in {illustration?.years[illustration.years.length - 1]?.year} and the first sale
-          of his own work is booked in {A.years[0]?.year}. That gap is the part of the career the
-          paintings books do not mention — and it is a gap in the <em>transcription</em> before it
-          is a gap in the life: Book IV runs to 1967, and {illustration?.batches} of its{' '}
-          {ivBatches} batches are read.
+          The illustration income stops in{' '}
+          {illustration?.years[illustration.years.length - 1]?.year}, the year Rehn’s first
+          cheques for water colours enter the same book, and the first sale in the work books is
+          booked in {A.years[0]?.year}. The cash book runs to 1967, and{' '}
+          {A.illustration.batches} of its {ivBatches} batches are read.
         </p>
       </section>
 

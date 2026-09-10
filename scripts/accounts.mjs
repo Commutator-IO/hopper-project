@@ -785,6 +785,8 @@ let ivInkConflicts = 0;
 const ivPencil = [];
 // The ten best-paid illustration jobs, 1913–1925.
 const ivJobs = [];
+// And all of them counted: how many jobs, for whom, for how much.
+const ivJobCensus = { count: 0, charged: 0, received: 0, years: [0, 0], byClient: [] };
 // Rows whose money columns carry writing the reader would not read as dollars.
 let ivUnreadMoney = 0;
 {
@@ -1130,7 +1132,8 @@ let ivUnreadMoney = 0;
         netRestated = true;
         continue;
       }
-      receipts.push({ year: r.year, amount: r.amount, date: r.date, ...r.where });
+      r.receiptObj = { year: r.year, amount: r.amount, date: r.date, ...r.where };
+      receipts.push(r.receiptObj);
       sinceSettlement = 0;
       deducting = false;
       continue;
@@ -1307,7 +1310,8 @@ let ivUnreadMoney = 0;
       (above.kind === 'item' || above.kind === 'bare') &&
       Math.abs(above.amount - r.amount) < 0.005
     ) {
-      receipts.push({ year: r.year, amount: r.amount, date: r.date, ...r.where });
+      r.receiptObj = { year: r.year, amount: r.amount, date: r.date, ...r.where };
+      receipts.push(r.receiptObj);
       ivWordless++;
       sinceSettlement = 0;
       deducting = false;
@@ -1358,6 +1362,7 @@ let ivUnreadMoney = 0;
       entryWords: entryWordsAround(rows, i),
     });
     r.charged = true;
+    r.entry = entries[entries.length - 1];
     if (r.kind === 'bill') sinceSettlement = 0;
     else sinceSettlement++;
   }
@@ -1373,7 +1378,9 @@ let ivUnreadMoney = 0;
   // museum, a prize. What is left is what a magazine or an agency paid for a
   // drawing, ranked, so the page can show what the trade was worth.
   const NOT_A_JOB =
-    /\b(etching|etchings|print|prints|plate|water ?colou?rs?|w\.?\s?c\.?|oils?|canvas|prize|royalt|instruction|weeks?)\b|Rehn|Keppel|Kennedy|Weyhe|Museum|Phillips|Whitney|Print ?Makers|Society of Etchers|Smalley|Halpert|Sterner|Randolph|Milch|Babcock|Whitins/i;
+    // Not « oil » and not « week »: « A Case of Oils » is a line drawing for the
+    // Associated Sunday Magazines and Every Week was a magazine.
+    /\b(etching|etchings|print|prints|plate|water ?colou?rs?|w\.?\s?c\.?|canvas|prize|royalt|instruction)\b|Rehn|Keppel|Kennedy|Weyhe|Museum|Phillips|Whitney|Print ?Makers|Society of Etchers|Smalley|Halpert|Sterner|Randolph|Milch|Babcock|Whitins/i;
   // A bill closes a job as a cheque does — the Hotel Management covers of
   // 1925 are billed month by month and paid month by month, and a run that
   // waited for the cheque would fold three covers into one. A cheque that
@@ -1381,19 +1388,32 @@ let ivUnreadMoney = 0;
   let run = [];
   let pending = null;
   const jobs = [];
+  // Every row of the run takes the entry's trade: the charges through the
+  // entry they became, the cheques through the receipt they became, so the
+  // two streams split the same way and a trade's card balances on its own.
+  const assign = (activity) => {
+    for (const r of run) {
+      if (r.entry) r.entry.activity = activity;
+      if (r.receiptObj) r.receiptObj.activity = activity;
+    }
+  };
   const closeRun = (settlement) => {
     const charged = run.filter((r) => r.charged);
     if (!charged.length) {
       if (pending && settlement?.kind === 'receipt' && pending.received === null) {
         pending.received = settlement.amount;
       }
+      // A cheque with nothing itemised before it pays the bill before it.
+      assign(pending?.activity ?? (run[0]?.year <= 1925 ? 'illustration' : 'cashbook'));
       run = [];
       return;
     }
     pending = null;
+    let activity = 'cashbook';
     if (charged[0].year !== null && charged[0].year <= 1925) {
       const words = run.map((r) => r.body).join(' ');
       if (!NOT_A_JOB.test(words)) {
+        activity = 'illustration';
         const client = run.find((r) => r.kind === 'item' && r.amount === null && r.body);
         // What was drawn: the titles — the described rows after the client's
         // line that are neither the bill nor the cheque, priced or not.
@@ -1408,11 +1428,13 @@ let ivUnreadMoney = 0;
           received: settlement?.kind === 'receipt' ? settlement.amount : null,
           leaf: charged[0].where.leaf,
           ref: charged[0].where.ref,
+          activity,
         };
         jobs.push(job);
         if (job.received === null) pending = job;
       }
     }
+    assign(activity);
     run = [];
   };
   for (const r of rows) {
@@ -1422,6 +1444,19 @@ let ivUnreadMoney = 0;
   }
   closeRun(null);
   ivJobs.push(...jobs.sort((a, b) => b.charged - a.charged || a.year - b.year).slice(0, 10));
+  ivJobCensus.count = jobs.length;
+  ivJobCensus.charged = Number(jobs.reduce((n, j) => n + j.charged, 0).toFixed(2));
+  ivJobCensus.received = Number(jobs.reduce((n, j) => n + (j.received ?? 0), 0).toFixed(2));
+  ivJobCensus.years = [Math.min(...jobs.map((j) => j.year)), Math.max(...jobs.map((j) => j.year))];
+  const byClient = new Map();
+  for (const j of jobs) {
+    const k = (j.client ?? "—").replace(/[.,]/g, "").replace(/\s+/g, " ").trim();
+    const c = byClient.get(k) ?? { client: k, jobs: 0, charged: 0 };
+    c.jobs++;
+    c.charged = Number((c.charged + j.charged).toFixed(2));
+    byClient.set(k, c);
+  }
+  ivJobCensus.byClient = [...byClient.values()].sort((a, b) => b.charged - a.charged);
 }
 
 /**
@@ -1480,7 +1515,7 @@ const instalments = [];
       .trim();
   const byTitle = new Map();
   for (const e of entries) {
-    if (e.activity !== 'illustration' || !e.description) continue;
+    if (e.ledger !== 'book-iv' || !e.description) continue;
     const k = titleKey(e.description);
     // A row that says only « on account » names no picture, and two such rows
     // — leaf 127's 3500 and 1000, on account of nothing the book says — are
@@ -1671,15 +1706,24 @@ const receivable = allYears.map((year) => {
  * The last is a fact about the volume, and it is reported per activity so that
  * the difference between the two books is visible rather than absorbed.
  */
+// Book IV is one cash book for two trades, and the page had called all of it
+// « Illustrator » — six hundred thousand dollars under the name of a trade
+// that came to fourteen thousand. The book's entries are told apart by their
+// words and their years (see the jobs pass): what a magazine or an agency
+// paid for a drawing to November 1925 is the illustration; everything else
+// in the volume — prints from 1920, Rehn from 1924, the gallery statements
+// to 1967 — is the same cash book keeping account of his own work, and is
+// counted apart from the work books because they record the same sales.
 const ACTIVITIES = [
   { key: 'art', label: 'Painter and etcher' },
   { key: 'illustration', label: 'Illustrator' },
+  { key: 'cashbook', label: 'His own work, by the cash book' },
 ];
 
 const activities = ACTIVITIES.map(({ key, label }) => {
   const mine =
     key === 'art' ? deduped : entries.filter((e) => e.activity === key && !e.instalmentOf);
-  const cashRows = key === 'art' ? null : receipts;
+  const cashRows = key === 'art' ? null : receipts.filter((r) => r.activity === key);
 
   // Accrual is split at source into the part whose fate the book states and
   // the part it does not, so that the running debt below is a debt and not a
@@ -2077,7 +2121,9 @@ const out = {
     'receipt of any kind, and it is nearly all art, because the pocket book dates its cheques ' +
     'and the work books often do not. Reading it as debt would compare a silence with a sum.',
   illustration: {
-    charges: entries.filter((e) => e.activity === 'illustration' && !e.instalmentOf).length,
+    charges: entries.filter((e) => e.ledger === 'book-iv' && !e.instalmentOf).length,
+    // The batches of Book IV the counted rows come from, both trades together.
+    batches: new Set(entries.filter((e) => e.ledger === 'book-iv').map((e) => e.batch)).size,
     // Pictures paid for in parts, charged once at their price: the entries
     // collapsed into that charge, each saying where the price stands.
     instalmentsCollapsed: instalments.length,
@@ -2087,6 +2133,7 @@ const out = {
     // cheque paid. Prints and pictures in the same years are left out by
     // their words, so this is the trade and not the book.
     topJobs: ivJobs,
+    jobs: ivJobCensus,
     receipts: receipts.length,
     subtotalsExcluded: ivSubtotals.length,
     deductionsExcluded: ivDeductions.length,
