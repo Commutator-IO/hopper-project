@@ -455,6 +455,14 @@ export function AccountsPage() {
           counted apart from them rather than added in. Each card is split by what actually
           became of the money.
         </p>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          So the second and third cards are <strong className="font-semibold text-ink-700">one
+          income seen from two books</strong>, not two incomes. The work books describe the
+          picture — the sketch, the description, the price — and often never the cheque; the
+          cash book records the cheque, and runs without a gap to 1967 where the work books are
+          read in part. The cash book is therefore the fuller count of what his own work earned,
+          and the work books’ figure is a floor beneath the same money, never added to it.
+        </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {A.activities.map((a) => (

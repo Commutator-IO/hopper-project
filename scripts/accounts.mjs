@@ -1715,8 +1715,8 @@ const receivable = allYears.map((year) => {
 // to 1967 — is the same cash book keeping account of his own work, and is
 // counted apart from the work books because they record the same sales.
 const ACTIVITIES = [
-  { key: 'art', label: 'Painter and etcher' },
   { key: 'illustration', label: 'Illustrator' },
+  { key: 'art', label: 'His own work, by the work books' },
   { key: 'cashbook', label: 'His own work, by the cash book' },
 ];
 
