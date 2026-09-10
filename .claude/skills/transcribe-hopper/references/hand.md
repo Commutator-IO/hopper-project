@@ -4355,3 +4355,8 @@ nine leaves in ten, and the reasons are worth knowing before re-reading:
 The eleven leaves it wrote were checked against the reading before the
 `\ink{}` went in, and `scripts/accounts.mjs` came out with the same receipts
 to the cent, which is the check to run after any leaf is marked.
+
+How the volume keeps its accounts period by period — the four shapes, the
+colour rule and its exceptions, the sums she offers as checks, and what the
+reader does with each — is written out in `docs/book-iv-method.md`. Read it
+before reading a Book IV batch.

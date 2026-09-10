@@ -795,6 +795,8 @@ let ivUnreadMoney = 0;
     let sheet = null;
     // A settlement phrase still waiting for its figure, or null.
     let openPhrase = null;
+    // Whether a « less » line has been written since the last cheque.
+    let deductedSinceReceipt = false;
     // Whether an « Expenses » heading is open on this sheet.
     let expensing = false;
     const closeSheet = () => {
@@ -880,11 +882,19 @@ let ivUnreadMoney = 0;
       const previous = rows[rows.length - 1];
       const underDeduction =
         previous !== undefined && previous.kind === 'deduction' && previous.where.ref === row.ref;
+      // « Payment on Account » on a line of its own, with the payer and the
+      // figure on the line below — leaf 153's « Jan 22, 62 Payment on Account
+      // / Hackett — 6666.67 » — is a deduction whose words do not fit on one
+      // line, and the figure inherits the phrase the way a cheque's does. But
+      // only under a commission already taken: at the head of a statement,
+      // leaf 157's « payment on account / Chair Car 10,000 », the same words
+      // introduce the instalment itself, which is the charge.
+      const paidOnAccount = IV_PAID_ON_ACCOUNT.test(body) && deductedSinceReceipt;
       const own = IV_RECEIPT.test(body)
         ? 'receipt'
         : IV_BILL.test(body)
           ? 'bill'
-          : IV_DEDUCTION.test(body) || IV_DEDUCTION_NAMED.test(body)
+          : IV_DEDUCTION.test(body) || IV_DEDUCTION_NAMED.test(body) || paidOnAccount
             ? 'deduction'
             : IV_CARRIED_FORWARD.test(body)
               ? 'carry'
@@ -964,6 +974,8 @@ let ivUnreadMoney = 0;
       // phrase while the second was counted as a charge.
       if ((IV_EXPENSES.test(body) || own === 'deduction') && amount === null) expensing = true;
       else if (own === 'receipt') expensing = false;
+      if (own === 'receipt') deductedSinceReceipt = false;
+      else if (own === 'deduction') deductedSinceReceipt = true;
       // What the block leaves is not one of its costs: leaf 144 takes two
       // photographs off under « less photo » and then writes « check |
       // 8490.40 », which is the net, and the `deducting` pass reads it there.
@@ -1312,12 +1324,119 @@ let ivUnreadMoney = 0;
       // distinguishable from an item that happens to carry a date and no
       // price — « May 25th Initial Letters » is the case that settles it — and
       // a client guessed wrong would be worse than none.
-      description: r.body || null,
+      // A row that says only « on acct. » under a title with no figure —
+      // leaf 150's « Excursion into Philosophy / on acct. 5000 » — is that
+      // title's instalment, and takes the title as its words. Only under an
+      // undated line: a dated line above is the client, and leaf 127's two
+      // payments on account under « May 10 Frank K. M. Rehn » are on account
+      // of nothing the book names.
+      description:
+        /^(on acc(t|ount)?\.?|balance|payment)$/i.test(r.body) &&
+        rows[i - 1]?.kind === 'item' &&
+        rows[i - 1].amount === null &&
+        rows[i - 1].date === ''
+          ? `${rows[i - 1].body} ${r.body}`
+          : r.body || null,
       ...r.where,
       work: null,
+      // The words of the whole entry — from the cheque before to the cheque
+      // after — for the instalment pass below, which needs to know whether
+      // a picture was paid for in parts.
+      entryWords: entryWordsAround(rows, i),
     });
     if (r.kind === 'bill') sinceSettlement = 0;
     else sinceSettlement++;
+  }
+}
+
+/**
+ * The words written in the same entry as row `i`: from the receipt before
+ * it to the receipt after it, either end exclusive of the far receipt.
+ */
+function entryWordsAround(rows, i) {
+  const parts = [];
+  for (let j = i - 1; j >= 0 && rows[j].kind !== 'receipt'; j--) parts.unshift(rows[j].body);
+  for (let j = i; j < rows.length; j++) {
+    parts.push(rows[j].body);
+    if (rows[j].kind === 'receipt') break;
+  }
+  return parts.join(' ');
+}
+
+/* -------------------------------------- one picture, paid in instalments */
+
+/**
+ * A picture paid for in parts is charged once, at its price.
+ *
+ * From 1961 the volume writes each instalment as an entry of its own: leaf
+ * 150 lists « Excursion into Philosophy on acct. 5000 » among a statement's
+ * items, and leaf 152 charges the picture at 14500 and takes « payment on
+ * acount 3333.34 » — the 5000 less a third — off the net. Leaf 152 lists
+ * « A Woman in the Sun 10000 » and leaf 153 charges it at 15000 and deducts
+ * « Payment on Account Hackett 6666.67 »; leaf 154 charges « Road and Trees »
+ * at 15000 twice, once with 7500 received on account and once with 2500 as
+ * the balance; leaf 157 takes 6000 on account for « Intermission » and leaf
+ * 158 charges 25000 as the balance and deducts the 6000. Read row by row
+ * each of those pictures was charged twice, and 1962 and 1963 were the years
+ * that read highest.
+ *
+ * So within Book IV a title charged more than once, where any of its entries
+ * says « on account », « balance » or « part payment », is one picture: the
+ * largest figure is its price and stands, and the others are collapsed and
+ * reported. The words are required, because a print sells at thirty dollars
+ * many times over and is not one picture. Only Book IV: the work books never
+ * write a price in parts.
+ */
+const instalments = [];
+{
+  const INSTALMENT = /\bon acc(t|ount)?\b|\bbalance\b|\bpart payment\b|\bpayment on\b/i;
+  // The title with the instalment's own words taken off — « balance on
+  // Intermission » and « Intermission » are one picture — and the medium.
+  const titleKey = (s) =>
+    (s ?? '')
+      .toLowerCase()
+      .replace(/``|''|["“”«»]/g, '')
+      .replace(/\b(balance|payment|part payment)\s+(on|for|of)\b/g, '')
+      .replace(/\bon acc(t|ount)?\b\.?/g, '')
+      .replace(/\b(1|one)\s+(oil|w\.?\s?c\.?|water\s*colou?r|drawing|etching)\b/g, '')
+      .replace(/\([^)]*\)/g, '')
+      .replace(/[^a-z0-9 ]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  const byTitle = new Map();
+  for (const e of entries) {
+    if (e.activity !== 'illustration' || !e.description) continue;
+    const k = titleKey(e.description);
+    // A row that says only « on account » names no picture, and two such rows
+    // — leaf 127's 3500 and 1000, on account of nothing the book says — are
+    // not one.
+    // One word is a title where it is a word — « Intermission », « Solitude »
+    // — and not where it is a count or an initial.
+    if (k.length < 5 || /^(on acc|payment|balance)/.test(k)) continue;
+    if (!byTitle.has(k)) byTitle.set(k, []);
+    byTitle.get(k).push(e);
+  }
+  for (const [title, group] of byTitle) {
+    if (group.length < 2) continue;
+    const keep = group.reduce((a, b) => (b.gross > a.gross ? b : a));
+    for (const e of group) {
+      if (e === keep) continue;
+      // The collapsed entry must itself be written as an instalment, or the
+      // entry that carries the price must deduct one: a picture's title
+      // recurring with neither — a reproduction fee under the same name a
+      // year later — is another charge and stands.
+      if (!INSTALMENT.test(e.entryWords) && !/\bpayment on acc/i.test(keep.entryWords)) continue;
+      e.instalmentOf = { leaf: keep.leaf, ref: keep.ref, year: keep.year };
+      instalments.push({
+        title,
+        gross: e.gross,
+        year: e.year,
+        leaf: e.leaf,
+        ref: e.ref,
+        price: keep.gross,
+        chargedOn: { leaf: keep.leaf, ref: keep.ref, year: keep.year },
+      });
+    }
   }
 }
 
@@ -1483,7 +1602,8 @@ const ACTIVITIES = [
 ];
 
 const activities = ACTIVITIES.map(({ key, label }) => {
-  const mine = key === 'art' ? deduped : entries.filter((e) => e.activity === key);
+  const mine =
+    key === 'art' ? deduped : entries.filter((e) => e.activity === key && !e.instalmentOf);
   const cashRows = key === 'art' ? null : receipts;
 
   // Accrual is split at source into the part whose fate the book states and
@@ -1882,7 +2002,11 @@ const out = {
     'receipt of any kind, and it is nearly all art, because the pocket book dates its cheques ' +
     'and the work books often do not. Reading it as debt would compare a silence with a sum.',
   illustration: {
-    charges: entries.filter((e) => e.activity === 'illustration').length,
+    charges: entries.filter((e) => e.activity === 'illustration' && !e.instalmentOf).length,
+    // Pictures paid for in parts, charged once at their price: the entries
+    // collapsed into that charge, each saying where the price stands.
+    instalmentsCollapsed: instalments.length,
+    instalments,
     receipts: receipts.length,
     subtotalsExcluded: ivSubtotals.length,
     deductionsExcluded: ivDeductions.length,
@@ -2016,7 +2140,8 @@ process.stdout.write(
     `(${years[0]?.year}–${years[years.length - 1]?.year})\n` +
     `          gross ${tGross.toFixed(2)}, commission ${(tGross - tNet).toFixed(2)}, net ${tNet.toFixed(2)}\n` +
     `          arithmetic checkable on ${checked.length}, ${disagree.length} disagree\n` +
-    `          ${works.length} work(s) named, ${duplicates.length} cross-volume duplicate(s) collapsed\n` +
+    `          ${works.length} work(s) named, ${duplicates.length} cross-volume duplicate(s) collapsed, ` +
+    `${instalments.length} Book IV instalment(s) collapsed into the price\n` +
     `          ${unparsed.length} row(s) the reader could not settle, reported not dropped ` +
     `(${ivUnreadMoney} of them a Book IV money cell that is not a figure in dollars)\n` +
     `          ${dealersRanked.length} dealer(s) and ${buyersRanked.length} named buyer(s) ranked; ` +

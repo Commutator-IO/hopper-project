@@ -520,10 +520,16 @@ function align(rows, read) {
   if (unread.length) {
     const j = Math.min(...unread);
     const i = map.findIndex((m) => m !== null && m > j);
+    // Say what colour the unread lines are: a red one is a receipt the
+    // transcription does not have, which is the costliest thing to lack.
+    const colours = unread
+      .sort((a, b) => a - b)
+      .map((k) => `${k + 1}${read[k].cells.some((c) => c === 'red') ? ' red' : ''}`);
     return {
       map,
       ok: false,
-      reason: `${unread.length} written line(s) with no row, the first being line ${j + 1}`,
+      reason: `${unread.length} written line(s) with no row: ${colours.join(', ')}`,
+      unread: unread.map((k) => ({ line: k + 1, red: read[k].cells.some((c) => c === 'red') })),
       at: { i: i < 0 ? R - 1 : i, j },
     };
   }
@@ -596,6 +602,17 @@ for (const file of files) {
           : '';
         process.stdout.write(`${String(i + 1).padStart(3)}  ${left}  ${right}\n`);
       }
+    }
+    // A strip of the photograph for each written line the transcription
+    // lacks, for a person to read: the whole width of the leaf, the line's
+    // slot and a little either side, all of a leaf's strips in one picture.
+    if (opt('--crops') && aligned.unread?.length) {
+      const strips = aligned.unread.map(({ line }) => {
+        const b = read[line - 1].band;
+        const top = Math.max(0, b.top - 14);
+        return `${image}[${img.w}x${b.bottom - top + 14}+0+${top}]`;
+      });
+      execFileSync('magick', [...strips, '-append', resolve(opt('--crops'), `leaf-${leaf}.png`)]);
     }
     if (!aligned.ok) {
       entry.status = `not aligned: ${aligned.reason}`;

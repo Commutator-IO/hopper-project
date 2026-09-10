@@ -116,6 +116,15 @@ const A = accountsData as unknown as {
     struckExcluded: number;
     wordlessReceipts: number;
     rubbedExcluded: number;
+    instalmentsCollapsed: number;
+    instalments: {
+      title: string;
+      gross: number;
+      year: number;
+      leaf: string | null;
+      price: number;
+      chargedOn: { leaf: string | null; ref: string | null; year: number };
+    }[];
     pencilSumsExcluded: number;
     readByInk: number;
     inkConflicts: number;
