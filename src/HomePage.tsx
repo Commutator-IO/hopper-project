@@ -6,6 +6,9 @@ import { url } from './lib/base.ts';
 export function HomePage() {
   const manifest = useManifest();
   const read = Object.values(manifest?.read ?? {}).reduce((a, b) => a + b, 0);
+  // The notebooks are counted apart from the ledgers' sheets, and observed
+  // the same way: off the files, by `npm run manifest`.
+  const notebookSheets = Object.values(manifest?.readNotebooks ?? {}).reduce((a, b) => a + b, 0);
 
   return (
     <Page path="/">
@@ -106,7 +109,11 @@ export function HomePage() {
           Josephine Hopper also kept diaries — ninety notebooks, now in the Whitney’s Sanborn
           Hopper Archive. They are not a seventh ledger and are not filed as one: nothing in them
           could be read into a timeline or an account. They have their own place on this site,
-          which for now holds the scoping and nothing transcribed.
+          which holds the scoping and{' '}
+          {notebookSheets
+            ? `the ${notebookSheets} sheets of them read so far`
+            : 'for now nothing transcribed'}
+          .
         </p>
         <a
           href={url('/diaries/')}

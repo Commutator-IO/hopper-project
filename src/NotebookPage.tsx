@@ -9,9 +9,10 @@ import type { NotebookKey } from './lib/types.ts';
 /**
  * One of Josephine Hopper's notebooks, as the Whitney has digitised it.
  *
- * The page is the facsimile and the Whitney's own words about it, and
- * nothing else: no transcription exists here, and the page does not pretend
- * to one. The sheets are fetched from the Whitney's server as they are looked
+ * The page is the facsimile and the Whitney's own words about it, and beside
+ * them the transcription where one exists — read sitting by sitting, so the
+ * header counts the sheets the file names and claims no more. The sheets are
+ * fetched from the Whitney's server as they are looked
  * at, exactly as a ledger's are, and none is stored. The coverage mark says
  * only that PAAM publishes a typed transcript for these years — not that it
  * is of this notebook.
@@ -42,6 +43,9 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
   const manifest = useManifest();
   const transcript = manifest?.transcripts?.[`notebook#${id}`];
   const hasTranscript = Boolean(transcript?.html);
+  // Sheets the transcription names, read off the file by `npm run manifest`:
+  // a half-read notebook shows as half read, and nothing here is hard-coded.
+  const readSheets = manifest?.readNotebooks?.[id] ?? 0;
   const frame = useRef<HTMLIFrameElement>(null);
   const transcriptUrl = url(`/transcripts/notebooks/${id}.html`);
   useEffect(() => {
@@ -75,7 +79,8 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
     <Page path={notebookPath(id)}>
       <header className="border-b border-ink-200 py-10">
         <p className="text-[12px] uppercase tracking-wider text-ink-400">
-          Josephine Hopper’s notebooks — nothing transcribed
+          Josephine Hopper’s notebooks —{' '}
+          {readSheets ? `${readSheets} of ${sheets.length} sheets read` : 'nothing transcribed'}
         </p>
         <h1 className="mt-2 font-serif text-3xl leading-tight text-ink-900">
           {notebook.title}

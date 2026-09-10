@@ -1,10 +1,11 @@
 import { Page } from './components/Frame.tsx';
 import { NOTEBOOKS } from './content/catalogue.ts';
+import { useManifest } from './lib/batches.ts';
 import { url } from './lib/base.ts';
 import { paamPartsOverlapping } from './lib/diaries.ts';
 
 /**
- * Josephine Hopper's diaries: the scoping, and nothing transcribed.
+ * Josephine Hopper's diaries: the scoping, and what has been read so far.
  *
  * This page exists so that the diaries have somewhere to be that is not a
  * seventh ledger tab. Everything on it is what could be established from the
@@ -19,10 +20,20 @@ const REPO = 'https://github.com/Commutator-IO/hopper-project';
 const A = 'text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600';
 
 export function DiariesPage() {
+  // Read off the transcriptions by `npm run manifest`, never declared here: the
+  // count is of sheets a file under transcripts/notebooks/ actually names.
+  const manifest = useManifest();
+  const read = Object.entries(manifest?.readNotebooks ?? {}).filter(([, n]) => n > 0);
+  const readSheets = read.reduce((s, [, n]) => s + n, 0);
   return (
     <Page path="/diaries/">
       <header className="border-b border-ink-200 py-10">
-        <p className="text-[12px] uppercase tracking-wider text-ink-400">Scoping — nothing transcribed</p>
+        <p className="text-[12px] uppercase tracking-wider text-ink-400">
+          Scoping —{' '}
+          {readSheets
+            ? `${readSheets} sheets read in ${read.length} notebook${read.length === 1 ? '' : 's'}`
+            : 'nothing transcribed'}
+        </p>
         <h1 className="mt-2 max-w-3xl font-serif text-3xl leading-tight text-ink-900">
           Josephine Hopper’s diaries
         </h1>
@@ -30,8 +41,9 @@ export function DiariesPage() {
           The ledgers record what a work sold for and to whom. The diaries are the other half of
           the same working life, and the ledgers’ own descriptive passages — the anecdotes Jo
           Hopper wrote under pictures her husband would not discuss — are plainly continuous with
-          them. They are not in this corpus, and this page is the account of what would have to
-          be true before a single page of them was read here.
+          them. Four of them, digitised by the Whitney, are read here sheet by sheet as they are
+          transcribed; the rest are not in this corpus, and this page is the account of what
+          would have to be true before a single page of them was read here.
         </p>
       </header>
 

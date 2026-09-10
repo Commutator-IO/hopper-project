@@ -4365,9 +4365,66 @@ before reading a Book IV batch.
 
 ## The notebooks
 
-Nothing yet. No sitting has been made on any of the four notebooks the
-Whitney has digitised, and what the diary hand does that the ledger hand does
-not — a running prose hand across an opening, with no ruled line to hold the
-baseline — is not known until somebody has read twelve sheets of it. Write it
-here after the first sitting, and say which notebook and which sheets taught
-you what.
+*(Battle of Wash Sq., sheets 1–8, the whole notebook, 10 September 2026,
+Fable 5.1.)* One sitting on the smallest of the four, and a warning before
+the habits: **this one is not a diary.** It is a pocket memorandum book — a
+list of the people in the 1947 fight on page 1, another on page 2, one dated
+meeting on page 3 that runs on to page 4, and then memoranda of demolitions,
+deaths and honorary degrees added in ink and then pencil down to 1955. Only
+two passages open with a date, so only two `\entry{}` lines exist; the lists
+are given line for line. Do not expect Garrulities or 3 Wash Sq to be shaped
+like this, and do not carry the shape over.
+
+**What the running hand does here that the ledger hand does not:**
+
+- **« of » is a single loop that reads as « y » or « g ».** « Death of John
+  Sloan » looks like « Death y John Sloan »; « Dr. of Letters » looked like
+  « Dry Letters » until the next line's « Dr. of Fine Arts » settled it. Read
+  the phrase, and expect « of » wherever a lone loop sits between two words.
+- **A `"` after a day number is her ordinal.** « Nov. 30", 48 », « Jan 2", 51 »,
+  « Jan. 1" — 1947 ». Transcribe the mark; it is not a ditto here, though she
+  also uses `"` as a ditto at the head of a line (« " Pierce Trowbridge
+  Wetter », « " of Bishop Wm. T. Manning »).
+- **« + » is her « and »** — « Standards + Appeal », « homes + Educational ».
+  Page 5's « Gilbert & Sullivan » is the one place the stroke looks more like
+  an ampersand, and it is `\uncertain{}`.
+- **The first letters of a line vanish into the gutter** on a recto written
+  close to the sewing (page 1: « Reporter », « Editor », « Bureau »). Read
+  what shows and mark the missing letter `\uncertain{}`; do not supply it from
+  the sense.
+- **A word that turns the line is written without a hyphen** (« devel /
+  opments ») or with one (« advice- / ability »). The renderer joins a break
+  before a lowercase continuation into a space, so a split word cannot be
+  shown with `\\`; write the word whole and say in `\note{}` that it turns
+  the line.
+- **Pencil comes later than ink, and interlines it.** « died » above a name,
+  « Wash. Sq. » after an address, « Fall » above an unstruck « Winter »,
+  « party » beneath « public ». None of it is a correction in the ledger
+  sense; record it in the `\note{}` under the block, since `\ink{}` is for
+  cells.
+- **She draws.** Three small arches after « 2 red brick bldg. » on page 5 are
+  the round-topped windows the next line names; a brace gathers a run of
+  lines twice on page 5 and once on page 4. Braces are described, never
+  transcribed, exactly as in Book I.
+- **A name doubtful on one page is clear on another.** Page 1's reporter read
+  « Saundy »; page 3 writes « Owen Grundy » twice, plainly. The page 1
+  reading stays `\uncertain{Grundy}` with a note pointing at page 3 — the
+  later page settles the field of candidates, not the stroke.
+
+**Readings that would not settle:** « Its lawyer » (page 1, the first word a
+crossed stroke and a « 3 »-shaped « s »); « Isabel » interlined between
+« Miss » and « Bryant »; « P.C. Councilman »; « Surdy - Act. from N.Y.U. »;
+« Mothanes ? » in pencil on page 2; « 2 red brick bldg. » and « House of
+Genius Block » on page 5; « Sommesville » with her own « ? » above it on
+page 6. Two words are `\ill{}` outright: the scribble struck before « round
+tops of windows », and the word after « Gilbert & Sullivan ».
+
+**The stub.** A leaf was cut out between pages 8 and 9, and the beginnings
+of its lines — « Dec », « Dec », « Dec », « Feb », « Jan » — stand on the stub
+in the gutter. They are transcribed as what shows, with a note; the sheet is
+not blank, though everything else on it is.
+
+**Page 10 is written twice, once upside down.** « Space bet. doors - bedroom
+- 30" » at the head, the book the right way up; « Ap. 49 - a roll of canvas »
+at the foot, the book turned. Rotate the crop before reading a line at the
+foot of a last page.
