@@ -337,6 +337,7 @@ npm run render      # transcripts/*.tex → the reading views the left pane show
 npm run tei         # → a TEI P5 file per transcription
 npm run pdf         # → the PDFs the download buttons offer
 npm run manifest    # tell the site which files now exist
+npm run ink -- book-iv [batch] [--apply]   # read the ink off the photographs into \ink{} and \ruledoff (needs archives/ and ImageMagick)
 ```
 
 The `.tex` under `transcripts/` is the source of record and the only thing

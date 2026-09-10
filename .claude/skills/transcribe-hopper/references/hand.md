@@ -4330,3 +4330,28 @@ Three rules, and the reasons for them:
 The twelve earlier batches of Book IV were read without it. Putting the ink
 back is a pass of its own against the photographs, not something to fold into
 a new batch; a batch read after this note records the ink as it goes.
+
+`npm run ink -- book-iv` reads the colour off the photographs in `archives/`
+and writes it into the leaves whose transcription lines up with the
+photograph line for line and whose words agree with the colour; it stops on
+every other leaf and says at which row (`--why`). The first run stopped on
+nine leaves in ten, and the reasons are worth knowing before re-reading:
+
+- **The transcription is missing lines.** Leaf 21 of batch 2 has fourteen
+  rows for a leaf of twenty written lines — the whole first entry (The
+  Country Gentleman, 26 February, 35.00 and its receipt) and the receipt of
+  the second are not there, and « Travellers Checks cover 25 00 » stands
+  where the leaf writes « bill rendered 30 00 ». That is the pass finding a
+  defect in the reading, not in itself.
+- **The earliest hand hangs its figures.** On leaves 3 to 15 the amount sits
+  half a line under the words it belongs to, and the amounts of the bills
+  are in red while the receipts are black — the colour rule of leaf 7 onward
+  is not yet the rule. Do not mark those leaves by the later rule.
+- **A rubbed draft has no line.** Where the edition gives a rubbed-out row
+  (`\uncertain{7} | \uncertain{75}`), the photograph shows paper.
+- **The black net under the red receipt is one line.** Leaf 121 writes 2856.02
+  in black and the red receipt over it; the edition's two rows are one line.
+
+The eleven leaves it wrote were checked against the reading before the
+`\ink{}` went in, and `scripts/accounts.mjs` came out with the same receipts
+to the cent, which is the check to run after any leaf is marked.

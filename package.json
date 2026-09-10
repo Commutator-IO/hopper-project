@@ -25,7 +25,8 @@
     "notes": "node scripts/notes.mjs",
     "streak": "node scripts/streak.mjs",
     "formats": "node scripts/formats.mjs",
-    "materials": "node scripts/materials.mjs"
+    "materials": "node scripts/materials.mjs",
+    "ink": "node scripts/ink.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",

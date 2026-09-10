@@ -116,6 +116,9 @@ const A = accountsData as unknown as {
     struckExcluded: number;
     wordlessReceipts: number;
     rubbedExcluded: number;
+    pencilSumsExcluded: number;
+    readByInk: number;
+    inkConflicts: number;
     blankDescription: number;
     note: string;
   };

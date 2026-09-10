@@ -768,6 +768,12 @@ let ivWordless = 0;
 // the next row repeats, or a receipt standing on the net's own row.
 let ivRubbed = 0;
 let ivRubbedReceipts = 0;
+// Rows the ink decided — red money read as a receipt, pencil money as a sum —
+// where the words alone would have said otherwise, and rows where the ink and
+// the words contradict each other and the words were kept.
+let ivByInk = 0;
+let ivInkConflicts = 0;
+const ivPencil = [];
 // Rows whose money columns carry writing the reader would not read as dollars.
 let ivUnreadMoney = 0;
 {
@@ -962,13 +968,33 @@ let ivUnreadMoney = 0;
       // photographs off under « less photo » and then writes « check |
       // 8490.40 », which is the net, and the `deducting` pass reads it there.
       const restates = IV_NET_CHECK.test(body) || IV_RESTATED.test(body);
-      const kind = expensing && amount !== null && !restates && (own === 'item' || titled !== null)
+      const byWords = expensing && amount !== null && !restates && (own === 'item' || titled !== null)
         ? 'deduction'
         : amount !== null && (own === 'item' || own === 'bare') && openPhrase !== null
           ? openPhrase
           : titled !== null
             ? 'item'
             : own;
+      // The ink, where the transcription records it (#19). Book IV's colour
+      // is its status field — receipts red, sums pencil, charges black — and
+      // a leaf that says so in `\ink{}` is read by that before it is read by
+      // its words: a red figure is money received whatever the words beside
+      // it, which from leaf 157 are nothing at all, and a pencil figure is a
+      // sum and never a charge. The words keep every other distinction — a
+      // bill from an item, a deduction from a charge — and where the two
+      // flatly contradict, a red « bill » or a pencil « rec'd », the words are
+      // kept and the contradiction counted, because one of the two readings
+      // is wrong and this file is not the place to decide which.
+      const moneyInk = row.inks?.[2] ?? row.inks?.[3] ?? null;
+      const byInk =
+        amount === null ? null : moneyInk === 'red' ? 'receipt' : moneyInk === 'pencil' ? 'pencil' : null;
+      const contradicts =
+        byInk !== null &&
+        ((byInk === 'receipt' && (own === 'bill' || own === 'deduction')) ||
+          (byInk === 'pencil' && own === 'receipt'));
+      if (contradicts) ivInkConflicts++;
+      const kind = byInk !== null && !contradicts ? byInk : byWords;
+      if (byInk !== null && !contradicts && kind !== byWords) ivByInk++;
       // A row whose money the reader turned down does *not* close the phrase
       // above it, and leaf 80 is why: « rec'd by cash | £1 » is answered by
       // « 5 | 00 » on the line below, the pounds converted, and the cheque is
@@ -983,6 +1009,9 @@ let ivUnreadMoney = 0;
         date: (cells[0] ?? '').trim(),
         kind,
         rubbed: amount !== null && ivUncertainFigure(row.cells),
+        // A rule she drew above this row's figure, where the transcription
+        // records it: the whole of what says a bare figure is a sum.
+        ruled: row.ruled === true,
         where: {
           ledger: row.ledger,
           batch: row.batch,
@@ -1036,6 +1065,15 @@ let ivUnreadMoney = 0;
         work: null,
         row: r.cells,
       });
+      continue;
+    }
+    // A figure in pencil is a sum — the leaf's, the year's, a subtotal — and
+    // is money already counted line by line, never a charge. Read off the
+    // ink and not the arithmetic, so it holds where the arithmetic does not:
+    // leaf 89's foot sum counts an unreceipted fifteen dollars in with the
+    // cheques, and no test on the run above it could reach that.
+    if (r.kind === 'pencil') {
+      ivPencil.push({ year: r.year, amount: r.amount, ...r.where });
       continue;
     }
     if (r.kind === 'receipt') {
@@ -1164,9 +1202,12 @@ let ivUnreadMoney = 0;
     const repeatedByCheque =
       answer === 'receipt' && next.amount !== null && Math.abs(next.amount - r.amount) < 0.005;
     const underPricedItem = rows[i - 1]?.kind === 'item' && rows[i - 1].amount !== null;
+    // And where the transcription records the rule she drew above the
+    // figure, the arithmetic is not asked at all.
     if (
       r.kind === 'bare' &&
-      (answer === 'bill' ||
+      (r.ruled ||
+        answer === 'bill' ||
         answer === 'deduction' ||
         answer === 'carry' ||
         (answer === 'receipt' && sumsTheRunAbove(rows, i, r.amount)) ||
@@ -1853,6 +1894,12 @@ const out = {
     wordlessReceipts: ivWordless,
     // Rows that are the rubbed-out draft of the row below them, and go.
     rubbedExcluded: ivRubbed + ivRubbedReceipts,
+    // Where the transcription records the ink (#19): sums in pencil set
+    // aside, rows the colour decided against the words, and rows where the
+    // two contradict and the words were kept.
+    pencilSumsExcluded: ivPencil.length,
+    readByInk: ivByInk,
+    inkConflicts: ivInkConflicts,
     blankDescription: ivBlankDescription,
     note:
       'Book IV states a client, then its items one to a line, then « Bill rendered » with their ' +
@@ -1986,5 +2033,7 @@ process.stdout.write(
     `${ivDeductions.length} deduction(s), ${ivNets.length} restated net(s), ` +
     `${ivCarried.length} carried sum(s), ${ivStruckRows} struck row(s); ` +
     `${ivWordless} wordless receipt(s); ${ivRubbed + ivRubbedReceipts} rubbed draft(s) dropped; ` +
+    `${ivPencil.length} pencil sum(s) set aside, ${ivByInk} row(s) the ink decided against the words, ` +
+    `${ivInkConflicts} contradiction(s) kept to the words; ` +
     `${ivBlankDescription} charge(s) with no description written\n`,
 );
