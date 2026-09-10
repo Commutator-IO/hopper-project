@@ -32,12 +32,20 @@ export interface OpenBatch {
 /** Zoom stops, in multiples of fit-to-pane. */
 const ZOOMS = [1, 1.6, 2.5, 4];
 
+/**
+ * What the pane needs of a sheet: its address, the number on the paper and the
+ * Whitney's descriptor. A ledger's `Sheet` has these and a notebook's
+ * `NotebookSheet` has these, and the pane asks for no more so that both can
+ * be turned in it.
+ */
+export type FacsimileSheet = Pick<Sheet, 'ref' | 'leaf' | 'descriptor'>;
+
 export function FacsimilePane({
   sheets,
   current,
   onSelect,
 }: {
-  sheets: Sheet[];
+  sheets: FacsimileSheet[];
   /** The sheet the transcript says is being read, by resource ref. */
   current: number | undefined;
   onSelect: (ref: number) => void;

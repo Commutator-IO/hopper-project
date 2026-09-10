@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { entryOf, transcriptUrl } from '../lib/batches.ts';
+import { entryOf, notebookEntryOf, notebookTranscriptUrl, transcriptUrl } from '../lib/batches.ts';
 import type { Manifest } from '../lib/types.ts';
 
 /**
@@ -29,20 +29,29 @@ export function TranscriptPane({
   manifest,
   ledger,
   batch,
+  notebook,
   /** Called with a resource ref as the reader scrolls. */
   onSheet,
   /** The sheet the pane should scroll to, when the reader picks one. */
   goto,
 }: {
   manifest: Manifest | null;
+  /** A batch of a ledger — or, with `notebook` set, ignored. */
   ledger: string;
   batch: number;
+  /** A notebook's id: one file for the whole notebook, no batch. */
+  notebook?: string;
   onSheet: (ref: number) => void;
   goto: number | undefined;
 }) {
   const frame = useRef<HTMLIFrameElement>(null);
-  const src = useMemo(() => transcriptUrl(ledger, batch, 'html'), [ledger, batch]);
-  const has = Boolean(entryOf(manifest, ledger, batch)?.html);
+  const src = useMemo(
+    () => (notebook ? notebookTranscriptUrl(notebook, 'html') : transcriptUrl(ledger, batch, 'html')),
+    [ledger, batch, notebook],
+  );
+  const has = Boolean(
+    notebook ? notebookEntryOf(manifest, notebook)?.html : entryOf(manifest, ledger, batch)?.html,
+  );
 
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
@@ -77,15 +86,21 @@ export function TranscriptPane({
   if (!has) {
     // The exact command, not the name of the skill. The ledger id is the same
     // string the site uses in its own URLs, and it is the form that works for
-    // all six volumes — Dealers/Etchings has no number.
-    const command = `/transcribe-hopper ${ledger} ${batch}`;
+    // all six volumes — Dealers/Etchings has no number. A notebook takes its
+    // id and a sitting, and the first sitting is always the one to ask for.
+    const command = notebook
+      ? `/transcribe-hopper ${notebook} 1`
+      : `/transcribe-hopper ${ledger} ${batch}`;
     return (
       <div className="grid h-full place-items-center bg-white p-8 text-center">
         <div className="max-w-md">
-          <p className="text-[14px] text-ink-700">No transcription for this batch yet.</p>
+          <p className="text-[14px] text-ink-700">
+            No transcription for this {notebook ? 'notebook' : 'batch'} yet.
+          </p>
           <p className="prose-note mt-2">
-            The sheets are on the right, at the resolution the Whitney publishes. Transcribing
-            this batch is one pass of the transcribe-hopper skill, with these arguments:
+            The sheets are on the right, at the resolution the Whitney publishes. Transcribing{' '}
+            {notebook ? 'its first sitting' : 'this batch'} is one pass of the transcribe-hopper
+            skill, with these arguments:
           </p>
           <button
             type="button"

@@ -155,3 +155,21 @@ export const batchOfSeq = (seq: number) => Math.floor((seq - 1) / BATCH_SIZE) + 
 
 /** A ledger's slug is also its URL. */
 export const ledgerPath = (id: LedgerKey) => `/${id}/`;
+
+/**
+ * A notebook's transcript, beside the batches'.
+ *
+ * A notebook is one file and not a run of batches — `transcripts/notebooks/
+ * <id>.tex`, appended to sitting by sitting — so it is keyed in the manifest
+ * `notebook#<id>` and served from one address per format. The reading panes
+ * take either shape and nothing else changes: the same frame, the same two
+ * messages, the same download row.
+ */
+export const notebookId = (id: string) => `notebook#${id}`;
+
+export const notebookTranscriptUrl = (id: string, ext: string) =>
+  url(`/transcripts/notebooks/${id}.${ext}`);
+
+/** What exists for a notebook, or nothing. */
+export const notebookEntryOf = (m: Manifest | null, id: string) =>
+  m?.transcripts?.[notebookId(id)];

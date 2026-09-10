@@ -1,4 +1,4 @@
-import { entryOf, transcriptUrl } from '../lib/batches.ts';
+import { entryOf, notebookEntryOf, notebookTranscriptUrl, transcriptUrl } from '../lib/batches.ts';
 import type { Manifest } from '../lib/types.ts';
 
 /**
@@ -27,12 +27,15 @@ export function Downloads({
   manifest,
   ledger,
   batch,
+  notebook,
 }: {
   manifest: Manifest | null;
   ledger: string;
   batch: number;
+  /** A notebook's id, whose one file stands where a batch's would. */
+  notebook?: string;
 }) {
-  const entry = entryOf(manifest, ledger, batch);
+  const entry = notebook ? notebookEntryOf(manifest, notebook) : entryOf(manifest, ledger, batch);
   const rows = FORMATS.filter((f) => entry?.[f.ext]);
   if (!rows.length) return null;
 
@@ -43,7 +46,7 @@ export function Downloads({
         <a
           key={f.ext}
           title={f.title}
-          href={transcriptUrl(ledger, batch, f.ext)}
+          href={notebook ? notebookTranscriptUrl(notebook, f.ext) : transcriptUrl(ledger, batch, f.ext)}
           download
           className="rounded-full border border-ink-200 px-2.5 py-0.5 text-[11.5px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
         >

@@ -1,79 +1,83 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Page } from './components/Frame.tsx';
+import { Downloads } from './components/Downloads.tsx';
+import { FacsimilePane } from './components/FacsimilePane.tsx';
+import { STATE_COLOURS } from './components/Reader.tsx';
+import { TranscriptPane } from './components/TranscriptPane.tsx';
 import { BY_NOTEBOOK, NOTEBOOK_BY_ID } from './content/catalogue.ts';
-import { collectionUrl, sheetPageUrl, sheetUrl, useManifest } from './lib/batches.ts';
+import { collectionUrl, notebookEntryOf, notebookId, sheetUrl, useManifest } from './lib/batches.ts';
 import { url } from './lib/base.ts';
 import { PAAM_COLLECTION_URL, notebookPath, paamPartsOverlapping } from './lib/diaries.ts';
-import type { NotebookKey } from './lib/types.ts';
+import { shownState } from './lib/progress.ts';
+import { issueUrl } from './lib/report.ts';
+import type { Manifest, Notebook, NotebookKey, NotebookSheet } from './lib/types.ts';
 
 /**
  * One of Josephine Hopper's notebooks, as the Whitney has digitised it.
  *
- * The page is the facsimile and the Whitney's own words about it, and beside
- * them the transcription where one exists — read sitting by sitting, so the
- * header counts the sheets the file names and claims no more. The sheets are
- * fetched from the Whitney's server as they are looked
- * at, exactly as a ledger's are, and none is stored. The coverage mark says
- * only that PAAM publishes a typed transcript for these years — not that it
- * is of this notebook.
+ * The page is the Whitney's own words about the notebook and a strip of its
+ * sheets; the reading happens in the same full-screen two-pane view the
+ * ledgers get — transcript on the left, photograph on the right, each turning
+ * the other — opened from any thumbnail and addressed by the URL fragment, so
+ * a sheet can be handed to somebody. The sheets are fetched from the
+ * Whitney's server as they are looked at, exactly as a ledger's are, and none
+ * is stored. The header counts the sheets the transcription names, read off
+ * the file, and claims no more.
  */
 const A = 'text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600';
+
+/**
+ * The reader's address: `#read` opens it at the first sheet, `#read/89300`
+ * at that sheet. The ref rather than the page number, for the reason the
+ * ledgers give — an opening photographed whole carries two page numbers and
+ * a cover none, and the ResourceSpace ref is the one stable name a sheet has.
+ */
+function readHash(sheets: NotebookSheet[]): { open: boolean; ref: number | undefined } {
+  const h = /^#read(?:\/(\d+))?$/.exec(location.hash);
+  if (!h) return { open: false, ref: undefined };
+  const ref = h[1] ? Number(h[1]) : undefined;
+  return { open: true, ref: sheets.some((s) => s.ref === ref) ? ref : undefined };
+}
 
 export function NotebookPage({ id }: { id: NotebookKey }) {
   const notebook = NOTEBOOK_BY_ID.get(id)!;
   const sheets = BY_NOTEBOOK.get(id) ?? [];
   const parts = paamPartsOverlapping(notebook);
-  const [seq, setSeq] = useState(() => {
-    try {
-      const n = Number(new URLSearchParams(location.search).get('sheet'));
-      return n >= 1 && n <= sheets.length ? n : 1;
-    } catch {
-      return 1;
-    }
-  });
-  const sheet = sheets[seq - 1];
-
-  // The transcription, where one exists: rendered by `npm run render` from
-  // `transcripts/notebooks/<id>.tex` to the same reading view a batch gets,
-  // shown beside the facsimile and kept in step with it both ways — the
-  // rendered page reports the sheet it is scrolled to, and a thumbnail
-  // chosen here scrolls it to that sheet — over the same two messages the
-  // ledgers' reader uses. Where none exists the pane says so, and shows the
-  // shape one takes.
   const manifest = useManifest();
-  const transcript = manifest?.transcripts?.[`notebook#${id}`];
-  const hasTranscript = Boolean(transcript?.html);
+  const hasTranscript = Boolean(notebookEntryOf(manifest, id)?.html);
   // Sheets the transcription names, read off the file by `npm run manifest`:
   // a half-read notebook shows as half read, and nothing here is hard-coded.
   const readSheets = manifest?.readNotebooks?.[id] ?? 0;
-  const frame = useRef<HTMLIFrameElement>(null);
-  const transcriptUrl = url(`/transcripts/notebooks/${id}.html`);
-  useEffect(() => {
-    const onMessage = (e: MessageEvent) => {
-      const ref = Number(e.data?.hopperSheet);
-      if (!ref) return;
-      const s = sheets.find((x) => x.ref === ref);
-      if (s) setSeq(s.seq);
-    };
-    addEventListener('message', onMessage);
-    return () => removeEventListener('message', onMessage);
-  }, [sheets]);
-  const show = (n: number) => {
-    setSeq(n);
-    const s = sheets[n - 1];
-    if (s && frame.current?.contentWindow) {
-      frame.current.contentWindow.postMessage({ hopperGoto: s.ref }, '*');
-    }
-  };
+
+  const [open, setOpen] = useState(false);
+  const [sheet, setSheet] = useState<number | undefined>(undefined);
+  const [goto, setGoto] = useState<number | undefined>(undefined);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight') show(Math.min(sheets.length, seq + 1));
-      if (e.key === 'ArrowLeft') show(Math.max(1, seq - 1));
+    const apply = () => {
+      const h = readHash(sheets);
+      setOpen(h.open);
+      if (h.open) {
+        setSheet(h.ref);
+        setGoto(h.ref);
+      }
     };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  });
+    apply();
+    addEventListener('hashchange', apply);
+    return () => removeEventListener('hashchange', apply);
+  }, [sheets]);
+
+  const read = useCallback((ref?: number) => {
+    history.replaceState(null, '', `#read${ref ? `/${ref}` : ''}`);
+    setOpen(true);
+    setSheet(ref);
+    setGoto(ref);
+  }, []);
+  const close = useCallback(() => {
+    history.replaceState(null, '', location.pathname);
+    setOpen(false);
+  }, []);
+  const onSheet = useCallback((ref: number) => setSheet(ref), []);
 
   return (
     <Page path={notebookPath(id)}>
@@ -127,29 +131,30 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
             </dd>
           </div>
         </dl>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <button
+            onClick={() => read()}
+            className="rounded-full bg-ink-900 px-4 py-1.5 text-[13px] text-white transition hover:bg-ink-700"
+          >
+            {hasTranscript ? 'Read it beside the sheets' : 'Turn the sheets'}
+          </button>
+          <span className="text-[12.5px] text-ink-400">
+            the same two-pane view as the ledgers — Escape closes it
+          </span>
+        </div>
       </header>
 
       <section className="py-6">
-        <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <h2 className="font-serif text-2xl text-ink-900">Every sheet, in the order it was photographed</h2>
-          <span className="text-[12.5px] text-ink-400">← → to turn</span>
-        </div>
+        <h2 className="font-serif text-2xl text-ink-900">Every sheet, in the order it was photographed</h2>
         <div className="mt-4 flex gap-2 overflow-x-auto pb-2">
           {sheets.map((s) => (
             <button
               key={s.ref}
-              onClick={() => show(s.seq)}
+              onClick={() => read(s.ref)}
               title={s.descriptor}
-              className={`shrink-0 rounded border ${
-                s.seq === seq ? 'border-brand-600' : 'border-ink-200 hover:border-ink-400'
-              } bg-white p-0.5`}
+              className="shrink-0 rounded border border-ink-200 bg-white p-0.5 transition hover:border-ink-400"
             >
-              <img
-                src={sheetUrl(s.ref, 'thm')}
-                alt={s.descriptor}
-                loading="lazy"
-                className="h-20 w-auto"
-              />
+              <img src={sheetUrl(s.ref, 'thm')} alt={s.descriptor} loading="lazy" className="h-20 w-auto" />
               <div className="mt-0.5 text-center text-[10.5px] text-ink-500">
                 {s.leaf === null ? '—' : s.spread === null ? s.leaf : `${s.leaf}–${s.spread}`}
               </div>
@@ -157,85 +162,25 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
           ))}
         </div>
 
-        {sheet && (
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            {/* The transcription pane, on the left as in the ledgers' reader:
-                the rendered page, or the plain statement that none exists. */}
-            <div className="min-w-0">
-              <div className="flex items-baseline justify-between gap-3 text-[12px] uppercase tracking-wider text-ink-400">
-                <span>Transcription</span>
-                <span
-                  className={`rounded-full px-2 py-0.5 text-[11px] normal-case tracking-normal ${
-                    hasTranscript ? 'bg-brand-100 text-brand-700' : 'bg-ink-100 text-ink-500'
-                  }`}
-                >
-                  {hasTranscript ? (manifest?.declared?.[`notebook#${id}`] ?? 'drafted') : 'not transcribed'}
-                </span>
-              </div>
-              {hasTranscript ? (
-                <iframe
-                  ref={frame}
-                  src={transcriptUrl}
-                  title={`Transcription — ${notebook.title}`}
-                  className="mt-2 h-[85vh] w-full rounded border border-ink-200 bg-white"
-                />
-              ) : (
-                <div className="mt-2 rounded border border-dashed border-ink-300 bg-white p-5 text-[14px] leading-relaxed text-ink-700">
-                  <p>
-                    Nothing of this notebook has been read yet. When it is, the transcription
-                    stands here beside the sheet it came from, in the same reading view the
-                    ledgers get: one file for the notebook under{' '}
-                    <code className="font-mono text-[12.5px]">transcripts/notebooks/{id}.tex</code>,
-                    read <strong>in entries</strong> rather than in rows — each opened by the date
-                    as she wrote it, with the date the transcriber assigns beside it, small, as the
-                    one editorial claim an entry carries — and with the same apparatus as the
-                    ledgers: what was illegible, what was read doubtfully, what she struck, and
-                    whose hand.
-                  </p>
-                  <p className="mt-3">
-                    <a href={url('/transcripts/_specimen/notebook.html')} className={A}>
-                      See the specimen ↗
-                    </a>{' '}
-                    — a page in that shape that transcribes nothing, so the layout can be checked
-                    before any reading is published.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            <figure className="min-w-0">
-              <div className="flex items-center justify-between gap-3 text-[13px] text-ink-600">
-                <button
-                  onClick={() => show(Math.max(1, seq - 1))}
-                  disabled={seq === 1}
-                  className="rounded-full border border-ink-200 px-3 py-1 disabled:opacity-40"
-                >
-                  ← previous
-                </button>
-                <figcaption className="min-w-0 truncate">
-                  <span className="text-ink-900">{sheet.descriptor}</span>
-                  <span className="text-ink-400">
-                    {' '}
-                    · sheet {sheet.seq} of {sheets.length} · ref {sheet.ref} ·{' '}
-                    <a href={sheetPageUrl(sheet.ref)} className={A}>
-                      at the Whitney ↗
-                    </a>
-                  </span>
-                </figcaption>
-                <button
-                  onClick={() => show(Math.min(sheets.length, seq + 1))}
-                  disabled={seq === sheets.length}
-                  className="rounded-full border border-ink-200 px-3 py-1 disabled:opacity-40"
-                >
-                  next →
-                </button>
-              </div>
-              <img
-                src={sheetUrl(sheet.ref, 'pre')}
-                alt={sheet.descriptor}
-                className="mt-3 max-h-[85vh] w-auto max-w-full rounded border border-ink-200 bg-white"
-              />
-            </figure>
+        {!hasTranscript && (
+          <div className="mt-6 max-w-3xl rounded border border-dashed border-ink-300 bg-white p-5 text-[14px] leading-relaxed text-ink-700">
+            <p>
+              Nothing of this notebook has been read yet. When it is, the transcription stands
+              beside the sheet it came from, in the same reading view the ledgers get: one file for
+              the notebook under{' '}
+              <code className="font-mono text-[12.5px]">transcripts/notebooks/{id}.tex</code>, read{' '}
+              <strong>in entries</strong> rather than in rows — each opened by the date as she wrote
+              it, with the date the transcriber assigns beside it, small, as the one editorial claim
+              an entry carries — and with the same apparatus as the ledgers: what was illegible,
+              what was read doubtfully, what she struck, and whose hand.
+            </p>
+            <p className="mt-3">
+              <a href={url('/transcripts/_specimen/notebook.html')} className={A}>
+                See the specimen ↗
+              </a>{' '}
+              — a page in that shape that transcribes nothing, so the layout can be checked before
+              any reading is published.
+            </p>
           </div>
         )}
         <p className="prose-note mt-6 max-w-3xl">
@@ -243,6 +188,152 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
           nowhere here. The descriptor above each sheet is the Whitney’s, verbatim.
         </p>
       </section>
+
+      {open && (
+        <NotebookReader
+          manifest={manifest}
+          notebook={notebook}
+          sheets={sheets}
+          sheet={sheet}
+          onSheet={onSheet}
+          goto={goto}
+          setGoto={setGoto}
+          onClose={close}
+        />
+      )}
     </Page>
+  );
+}
+
+/**
+ * The ledgers' two-pane reader, for a notebook.
+ *
+ * The panes are the ledgers' own — `TranscriptPane` and `FacsimilePane`,
+ * unchanged, talking over the same two messages — and only the header
+ * differs, because a notebook has no batch to step through and nothing to
+ * cite by leaf. What the ledgers' `Reader` keeps in one place for the reason
+ * it gives, this keeps in the same place for the same reason.
+ */
+function NotebookReader({
+  manifest,
+  notebook,
+  sheets,
+  sheet,
+  onSheet,
+  goto,
+  setGoto,
+  onClose,
+}: {
+  manifest: Manifest | null;
+  notebook: Notebook;
+  sheets: NotebookSheet[];
+  sheet: number | undefined;
+  onSheet: (ref: number) => void;
+  goto: number | undefined;
+  setGoto: (ref: number | undefined) => void;
+  onClose: () => void;
+}) {
+  const key = notebookId(notebook.id);
+  const state = shownState(manifest?.declared?.[key], {
+    transcribed: Boolean(notebookEntryOf(manifest, notebook.id)?.html),
+  });
+  const current = sheets.find((s) => s.ref === sheet) ?? sheets[0];
+  const read = manifest?.readNotebooks?.[notebook.id] ?? 0;
+
+  const select = useCallback(
+    (ref: number) => {
+      history.replaceState(null, '', `#read/${ref}`);
+      onSheet(ref);
+      setGoto(ref);
+    },
+    [onSheet, setGoto],
+  );
+
+  // Escape closes; the arrows turn, as the page did before it had a reader.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      const i = sheets.findIndex((s) => s.ref === current?.ref);
+      if (e.key === 'ArrowRight' && sheets[i + 1]) select(sheets[i + 1].ref);
+      if (e.key === 'ArrowLeft' && sheets[i - 1]) select(sheets[i - 1].ref);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose, select, sheets, current]);
+
+  return (
+    <div className="fixed inset-0 z-50 flex flex-col bg-ink-50">
+      <header className="flex shrink-0 flex-wrap items-center gap-x-3 gap-y-2 border-b border-ink-200 bg-white px-3 py-2">
+        <button
+          onClick={onClose}
+          className="rounded-full border border-ink-200 px-2.5 py-0.5 text-[12px] text-ink-600 transition hover:border-ink-400"
+        >
+          ← Close
+        </button>
+
+        <div className="min-w-0">
+          <div className="truncate text-[13px] font-semibold text-ink-900">
+            Josephine Hopper — {notebook.title}
+          </div>
+          <div className="text-[11.5px] text-ink-500">
+            {read ? `${read} of ${sheets.length} sheets read` : `${sheets.length} sheets`} ·{' '}
+            {notebook.date}
+            {notebook.archiveNumber && (
+              <>
+                {' '}
+                · <span className="font-mono">{notebook.archiveNumber}</span>
+              </>
+            )}
+          </div>
+        </div>
+
+        <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${STATE_COLOURS[state]}`}>
+          {state}
+        </span>
+
+        <div className="ml-auto" />
+
+        <Downloads manifest={manifest} ledger="notebooks" batch={0} notebook={notebook.id} />
+
+        <a
+          href={url('/method/#glossary')}
+          className="rounded-full border border-ink-200 px-2.5 py-0.5 text-[11.5px] text-ink-600 transition hover:border-ink-400"
+          title="Her abbreviations, and what they mean"
+        >
+          Glossary
+        </a>
+
+        <a
+          href={issueUrl({
+            ledger: notebook.id,
+            ledgerTitle: notebook.title,
+            ref: current?.ref,
+            leaf: current?.leaf,
+          })}
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full border border-alerte-200 px-2.5 py-0.5 text-[11.5px] text-alerte-700 transition hover:border-alerte-500"
+          title="Everything here is first-pass machine work. Corrections are the point of publishing it."
+        >
+          Report a reading
+        </a>
+      </header>
+
+      <div className="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <div className="min-h-0 border-r border-ink-200">
+          <TranscriptPane
+            manifest={manifest}
+            ledger="notebooks"
+            batch={0}
+            notebook={notebook.id}
+            onSheet={onSheet}
+            goto={goto}
+          />
+        </div>
+        <div className="min-h-0 max-lg:hidden">
+          <FacsimilePane sheets={sheets} current={current?.ref} onSelect={select} />
+        </div>
+      </div>
+    </div>
   );
 }
