@@ -4489,3 +4489,84 @@ from July 1927 to the spring of 1928.
   paragraph writes « celui d'un Franck » plainly; and page 20's « of no great
   are light » is « arc light », which the facing page's « Arc light be
   damned! » settles outright. Read the opening through before fixing a word.
+
+### Garrulities, sheets 13–24
+
+*(The openings 22–23 to 44–45, 11 September 2026, Opus 5.)* The same hand and
+the same ink as the first sitting, and the prose runs on without a break from
+page 21 — but **the dates stop being close together.** Page 26 is Nov. 1, 1928;
+page 27 is Nov. 23, 1930; page 29 is Jan. 14, 1931; page 35 is Feb. 1934 and
+carries the whole rest of the sitting. Two of the gaps are visible on the leaf:
+**pages 26 and 34 break off part way down and the rest is left blank**, and the
+next entry starts on the facing recto. Do not read a blank half-page as damage
+or as a missing photograph; it is where she stopped.
+
+- **The crowded margins are pages 30 to 33, and each is crowded differently.**
+  Page 30 carries one long pencil addition that starts up the gutter and turns
+  across the head margin (« and one big suit box to hold all of them like a
+  trunk till… »), so the block must be cropped in two pieces and rotated
+  separately — `-rotate 90` for both, as batch 1 found. Page 31's head margin
+  carries two ruled lines of ink in her joking-catalogue voice. Page 32 carries
+  a note sideways down the **whole outer margin**, top to bottom, which is a
+  single strip crop and rotates cleanly. Page 31 also has a three-line pencil
+  gloss sideways in the gutter beside « like a dumb beast ».
+- **A whole-page band beats the `tiles` grid on these openings.** `npm run
+  tiles -- garrulities N --grid 2x3` spends half of every tile on the mount and
+  the gutter, because the book is about 1580 × 1290 inside a 2000 × 1654
+  photograph. Trim first (`magick … -fuzz 12% -trim -format '%wx%h%O'`), split
+  the book box in half at the gutter, and cut each page into three overlapping
+  full-width bands at 200 %. That is the same six images with about half again
+  the effective resolution. **Sheets 17 and 21 are photographed with a colour
+  chart at the right**, and the trim box includes it — subtract about 180 px
+  from the width for those two or the gutter split lands in the wrong place.
+- **Her contraction rule extends further than batch 1 recorded.** Add « ca'nt »,
+  « hav'nt », « had'nt », « ought'nt », « are'nt », « does'nt », « is'nt »,
+  « has'nt ». Page 23's « one ca'nt get it out of mind » is the clearest
+  instance in the sitting and settles every ambiguous one after it: the
+  apostrophe is before the « n », without exception.
+- **More spellings, all as written:** « tantellize », « abbetting » and
+  « abbet », « immitation », « agressiveness », « authorative », « abhorent »,
+  « stuborn », « carefull », « probeing », « writheing », « descussed »,
+  « revellations », « espontaneous », « anihilate » (beside batch 1's
+  « anhilation »), « nautia », « hyperdermic », « wierd », « hopelessy »,
+  « relevent », « preservation » where « preserve » is meant, and « Valtz
+  Brilliant » for Chopin. « Flusies » on page 39 is « floosies » on page 42, and
+  « Eddie » on page 23 is « Eddy » from page 27 on; both spellings stand.
+- **A name can be corrected by her own interlineation, and the correction is
+  the evidence.** Page 30's « the catalogue of ~~Adela…~~ Watson's exhibition »
+  is struck through the middle with « adele » written above it: only « Adela »
+  survives on the line. Transcribe the struck reading as far as it goes and put
+  the interlineation in `\marginal{}` — do not let the interlineation silently
+  rewrite the line.
+- **Her ordinal is still the raised `''`, and « 3d » is a different mark.**
+  Page 44 has « got to top of 3" flight » and « started down the 3" »; page 39
+  has « the 3d day ». Write what is there; supplying « 3\add{r}d » for either is
+  an editorial claim about a mark she made plainly.
+- **Long horizontals are t-bars, not deletions — again, and it costs real
+  readings here.** Page 29's « How strange that lying there » carries a stroke
+  running from « How » clear across « that lying there ». A deletion would not
+  span three words that plainly stand. The test is whether the sentence survives
+  without them.
+- **A small mark recurs in the fore-edge margin of the rectos** — two or three
+  letters with a figure « 1 » under them, on pages 23, 25, 27, 29, 35, 39 and
+  43, at a different height on each. It is in a darker ink than the text, in the
+  same form every time, and nothing on any of those pages explains it. It is not
+  read here. Somebody was keying passages; the key is not in the notebook.
+- **Two short strokes in red pencil** stand in the gutter margin of page 44, and
+  they are the only red in the sitting. Nothing is written in them.
+- **Readings that would not settle:** « has grandmother » on page 22 (« has » or
+  « had », and the phrase parses under neither); the struck word after « As
+  Peggy Rehn said — the » on page 23; « Alice D's. » on page 23; « Tittle » on
+  page 25 (Walter Tittle would fit, and the leaf will not confirm the second
+  « t »); « Fraecita Tucker » on page 32, whom page 32 also calls Mrs. A.
+  Tucker; « Tauchnitz » on page 33, squeezed through the customs; « Grace
+  Reeb » on page 34; « at th. Polyclinic » interlined on page 29; « so catisfly
+  timid » on page 36, where every letter is clear and no word is; « We-god's
+  perfect model » in page 31's head margin; « bird crop of my Josie » in page
+  32's margin; « Cedarcrist » on page 38, twice; « bits of he had to die for
+  it » on page 35. Page 33's interlineation above the struck « shaking » is one
+  unread word and then, probably, « toss ».
+- **A word doubtful in the margin can be settled by the text it sits beside.**
+  Page 39's « nature (basin please !) » looked like « vas-fin » until page 32's
+  « will serve mouth wash after every meal + basin » fixed the field. Read the
+  opening through, as batch 1 said, and then read the sitting through.
