@@ -4297,3 +4297,36 @@ Batches 12 and 14 dividing what 10, 11 and 13 left whole is exactly why the
 defect of issue #20 stayed invisible: the two most recently read batches
 happened to use the arrangement the old reader admitted, so nothing in the
 output looked wrong while a hundred and forty-four figures went unread.
+
+## The ink is recorded, cell by cell, and so is the rule above a sum
+
+*(after batch 14, issue #19)* Book IV's colour is its status field — charges
+in black, receipts in red, sums in pencil, from leaf 7 to the end — and a
+`ledgertable` row that records the words and the figures and nothing about
+their colour throws that field away. From now on the ink is recorded where
+it says something, with `\ink{red}{…}`, `\ink{pencil}{…}` or `\ink{blue}{…}`
+around **the cell**, and `\ruledoff` at the head of a row whose figure stands
+under a rule she drew. Leaf 121 is the worked example.
+
+Three rules, and the reasons for them:
+
+- **Record the colour, not the status.** `\ink{red}{rec'd by check}` says
+  the words are red. It does not say « receipt »; `scripts/accounts.mjs` says
+  that, and can be argued with. A transcriber who writes what the colour
+  *means* has put an inference inside the document whose whole claim is that
+  nothing in it was inferred.
+- **Per cell, because rows mix.** The rubbed receipt line on leaf 121's
+  subtotal row is red words over a black figure; leaf 126 writes a net once in
+  black and once in red on one row. A cell wholly in one ink is wrapped; a
+  cell that mixes inks is left unmarked, and that is a true statement about
+  it. Black is never marked, so on a leaf that records its inks an unmarked
+  cell is black.
+- **The rule goes on the sum's row.** She rules under the last item and
+  writes the sum beneath the rule; `\ruledoff` heads the row the sum is on,
+  because the rule is the whole of what says that figure is a sum. Where a
+  receipt stands directly under the rule with no sum written — Kennedy's
+  20.00 on leaf 121 — the receipt's row takes it.
+
+The twelve earlier batches of Book IV were read without it. Putting the ink
+back is a pass of its own against the photographs, not something to fold into
+a new batch; a batch read after this note records the ink as it goes.

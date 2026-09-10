@@ -132,6 +132,8 @@ The apparatus inside it:
 | `\marginal{…}` | something written in the margin, and where it stands | `<note place="margin">` |
 | `\sketch{…}` | Edward Hopper's ink record drawing | `<figure type="record-sketch">` |
 | `\clipping{…}` | a cutting pasted to the leaf | `<figure type="clipping">` |
+| `\ink{red}{…}` | the ink a cell is written in — red, pencil or blue; black is unmarked | `<hi rend="ink-red">` |
+| `\ruledoff` at a row's head | a rule drawn above this row's figure | `<row rend="rule-above">` |
 | `ledgertable` | the ruled columns | `<table>`/`<row>`/`<cell>` |
 | `\keywords{…}` | the batch's tags | `<term>` in `<textClass>` |
 

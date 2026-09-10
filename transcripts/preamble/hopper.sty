@@ -165,6 +165,41 @@
 % part of the record and often the more interesting half of it.
 \newcommand{\struck}[1]{\sout{#1}}
 
+% The ink it is written in, where the ink says something.
+%
+% Book IV is a state machine and the colour is its status field: charges in
+% black, receipts in red, the sums in pencil, a rule that holds from leaf 7 to
+% the end of the volume. A transcription that records the words and the
+% figures and nothing about their colour throws that field away, and the
+% accounts then have to guess a receipt from the word « rec'd » --- which the
+% volume stops writing on leaf 157. So the ink is recorded, per cell, as what
+% is on the paper and not as what it means: \ink{red}{rec'd by check} says
+% the words are red, and it is `scripts/accounts.mjs` that says red is money
+% received. Black is the default and is not marked. The inks are the three
+% the volume uses besides black; a fourth would be added here and in
+% `scripts/render.mjs` and `scripts/tei.mjs` in the same commit.
+% The file is \input, not \usepackage'd, so @ is not a letter here without saying so.
+\makeatletter
+\@namedef{hop@ink@red}{red!70!black}
+\@namedef{hop@ink@pencil}{gray!55!black}
+\@namedef{hop@ink@blue}{blue!55!black}
+\newcommand{\ink}[2]{%
+  \ifcsname hop@ink@#1\endcsname
+    \textcolor{\csname hop@ink@#1\endcsname}{#2}%
+  \else
+    \PackageError{hopper}{\string\ink{#1}: unknown ink}{The inks are red, pencil and blue.}%
+  \fi}
+\makeatother
+
+% A rule drawn across the money column above this row's figure.
+%
+% The writer rules off a run of items and writes their sum under the rule,
+% and the rule is the whole of what says « this figure is a sum ». It stands
+% at the head of the row the sum is on: \ruledoff & & 4355 & 00. On paper it
+% is a line under the last two columns of the four a Book IV leaf has; if
+% another volume ever rules a different column, the macro grows an argument.
+\newcommand{\ruledoff}{\cline{3-4}}
+
 % The transcriber's note. Ours, not theirs.
 \newcommand{\note}[1]{\par\smallskip{\small\color{gray!60!black}\textit{[#1]}}\par\smallskip}
 

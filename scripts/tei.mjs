@@ -15,6 +15,8 @@
  * | `\note{…}` | an editorial `<note>` |
  * | `\marginal{…}` | an authorial `<note place="margin">` |
  * | `\hand{jo}{…}` | `<seg hand="#jo">` |
+ * | `\ink{red}{…}` | `<hi rend="ink-red">` — the ink on the paper, not what it means |
+ * | `\ruledoff` at a row's head | `<row rend="rule-above">` |
  * | `\sketch{…}` | `<figure type="record-sketch">` |
  * | `\clipping{…}` | `<figure type="clipping">` |
  * | `\sheet{ref}{leaf}` | `<pb facs="…" n="…"/>` |
@@ -193,6 +195,20 @@ function inline(s) {
       const [body, b] = group(s, a);
       i = b;
       o += `<seg hand="#${who.trim()}">${inline(body)}</seg>`;
+      continue;
+    }
+    // The ink is rendition — how the writing appears — and not a hand, which
+    // `@hand` already carries: a red receipt line is Jo Hopper's hand in red.
+    // The closed list of values is in the ODD.
+    if (name === 'ink') {
+      const [colour, a] = group(s, i);
+      const [body, b] = group(s, a);
+      i = b;
+      const c = colour.trim();
+      if (!['red', 'pencil', 'blue'].includes(c)) {
+        throw new Error(`tei: \\ink{${c}} is not an ink the ODD declares`);
+      }
+      o += `<hi rend="ink-${c}">${inline(body)}</hi>`;
       continue;
     }
     const WRAP = {
@@ -456,15 +472,17 @@ function convert(tex, meta) {
         const stop = s.indexOf('\\end{ledgertable}', i);
         const raw = s.slice(i, stop < 0 ? s.length : stop);
         i = stop < 0 ? s.length : stop;
+        // `\ruledoff` at a row's head is the rule the writer drew above that
+        // row's figure. A row-level fact, read off the row before its cells.
         const body = texRows(raw)
           .map((r) => r.trim())
           .filter(Boolean)
-          .map(
-            (r) =>
-              `<row>${cells(r)
-                .map((cl) => `<cell>${inline(cl.trim())}</cell>`)
-                .join('')}</row>`,
-          );
+          .map((r) => {
+            const rend = /^\\ruledoff\b/.test(r) ? ' rend="rule-above"' : '';
+            return `<row${rend}>${cells(r.replace(/^\\ruledoff\s*/, ''))
+              .map((cl) => `<cell>${inline(cl.trim())}</cell>`)
+              .join('')}</row>`;
+          });
         out.push(
           `<table><row role="label">${cells(head)
             .map((h) => `<cell>${inline(h.trim())}</cell>`)

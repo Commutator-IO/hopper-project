@@ -295,6 +295,8 @@ In priority order:
 | `\sketch{…}` | Edward Hopper's ink record drawing stands here |
 | `\clipping{…}` | something printed and pasted to the leaf |
 | `\work{Evening Wind}` | a work's block opens, under the title exactly as the leaf gives it |
+| `\ink{red}{rec'd by check}` | the ink a **cell** is written in — `red`, `pencil` or `blue`; black is unmarked. Record the colour, never what you take it to mean: Book IV's receipts are red and its sums pencil, and it is `accounts.mjs` that says so |
+| `\ruledoff` at the head of a row | a rule the writer drew across the money column **above** this row's figure. It goes on the sum's row, not on the last item's |
 
 `\note{}` and `\marginal{}` are not interchangeable: the first is ours, the
 second is theirs.
@@ -334,8 +336,9 @@ silently mangled ledger is a table of numbers that look right.
 
 Allowed: `\section` `\subsection` · paragraphs separated by a blank line ·
 `\emph` `\textbf` `\textit` `\texttt` · `\quad` `\qquad` · `\\` for a line
-break · `itemize` `enumerate` `quote` · `ledgertable` · `\keywords` · the ten
-macros above.
+break · `itemize` `enumerate` `quote` · `ledgertable` · `\keywords` · the macros in
+the table above. `\ruledoff` is permitted only at the head of a `ledgertable`
+row, and is refused anywhere else.
 
 The only escapes spelt with a non-letter are `\%` `\$` `\&` `\#` `\_`,
 `\\` for a line break, and `\ ` for a space. **TeX's spacing commands are

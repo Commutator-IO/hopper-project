@@ -57,6 +57,8 @@ export const plainOf = (tex) =>
     .replace(/\\ill\{\}|\\ill\b/g, '')
     .replace(/\\(uncertain|add|struck|emph|textit|textbf|texttt)\{/g, '{')
     .replace(/\\hand\{[a-z]+\}\{/g, '{')
+    .replace(/\\ink\{[a-z]+\}\{/g, '{')
+    .replace(/\\ruledoff\b/g, '')
     .replace(/\\quad|\\qquad/g, '  ')
     .replace(/\\[,;!]/g, ' ')
     .replace(/\\&/g, '&')
@@ -330,6 +332,20 @@ export function readTranscripts(root) {
   return out;
 }
 
+/**
+ * The ink a cell is written in, where the cell says so.
+ *
+ * Only a cell that is *wholly* one `\ink{}{}` names an ink: a cell that mixes
+ * inks — a black figure with a rubbed red word beside it — is a cell whose
+ * colour is a question, and null is the right answer to it.
+ */
+function inkOf(cell) {
+  const m = /^\s*\\ink\{([a-z]+)\}\{/.exec(cell);
+  if (!m) return null;
+  const a = braced(cell, m[0].length - 1);
+  return a && /^\s*$/.test(cell.slice(a.end)) ? m[1] : null;
+}
+
 function parseFile(path, ledger, batch) {
   const src = readFileSync(path, 'utf8');
   const body = src.slice(src.indexOf('\\begin{document}'));
@@ -347,14 +363,23 @@ function parseFile(path, ledger, batch) {
 
   const pushRows = (spec, header, tableBody) => {
     const target = work ? work.rows : looseRows;
+    // A row may open with `\ruledoff` — the rule the writer drew above its
+    // figure — and a cell may be wholly inside `\ink{…}{…}`. Both are facts
+    // about the writing rather than the words, and both are offered beside
+    // the cells so a consumer can read the leaf's own status field where the
+    // transcription records it, and fall back to the words where it does not.
     const rows = rowsOf(tableBody)
-      .map((raw) => ({ raw, cells: cellsOf(raw) }))
+      .map((raw) => {
+        const ruled = /^\s*\\ruledoff\b/.test(raw);
+        const cells = cellsOf(raw.replace(/^\s*\\ruledoff\s*/, ''));
+        return { raw, ruled, cells, inks: cells.map(inkOf) };
+      })
       .filter((r) => r.cells.some((c) => c.trim()));
     // Decided once for the table, not once per row: whether the first column
     // is dates at all is a fact about the column, and a row in the middle of
     // it cannot tell on its own. See `isDateColumn`.
     const dateColumn = isDateColumn(rows.map((r) => plainOf(r.cells[0] ?? '')));
-    for (const { raw, cells } of rows) {
+    for (const { raw, ruled, cells, inks } of rows) {
       target.push({
         dateColumn,
         ledger,
@@ -363,6 +388,11 @@ function parseFile(path, ledger, batch) {
         ref: sheet?.ref ?? null,
         leaf: sheet?.leaf ?? null,
         work: work?.title ?? null,
+        // The ink of each cell — `red`, `pencil`, `blue`, or null where the
+        // cell is unmarked, which on a leaf that records its inks means black
+        // — and whether a rule stands above this row's figure.
+        inks,
+        ruled,
         // The last work declared on an earlier leaf. Offered, never assumed:
         // a consumer that wants it must say so, because on a running-list leaf
         // it names a work the row has nothing to do with.

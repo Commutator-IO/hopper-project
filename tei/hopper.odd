@@ -199,6 +199,40 @@
             </attList>
           </elementSpec>
 
+          <elementSpec ident="hi" module="core" mode="change">
+            <attList>
+              <attDef ident="rend" mode="change" usage="opt">
+                <desc>How the writing appears. The three typographic values
+                   carry the transcription's own emphasis; the three inks
+                   record the colour on the leaf, which in Book IV is its
+                   status field — charges black, receipts red, sums pencil —
+                   and is recorded as what is on the paper, not as what it
+                   means. Black is unmarked.</desc>
+                <valList type="closed">
+                  <valItem ident="italic"/>
+                  <valItem ident="bold"/>
+                  <valItem ident="mono"/>
+                  <valItem ident="ink-red"/>
+                  <valItem ident="ink-pencil"/>
+                  <valItem ident="ink-blue"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="row" module="figures" mode="change">
+            <attList>
+              <attDef ident="rend" mode="change" usage="opt">
+                <desc>A rule the writer drew across the money column above
+                   this row's figure — her own line under the items she is
+                   about to sum. Present only where the leaf has it.</desc>
+                <valList type="closed">
+                  <valItem ident="rule-above"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
           <elementSpec ident="term" module="core" mode="change">
             <attList>
               <attDef ident="type" mode="change" usage="opt">

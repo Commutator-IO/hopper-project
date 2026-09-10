@@ -374,6 +374,8 @@ honesty of the exercise:
 | `\hand{edward\|jo\|later\|unidentified}{…}` | whose hand wrote it |
 | `\sketch{…}` | Edward Hopper's ink record drawing stands here |
 | `\clipping{…}` | something printed and pasted to the leaf |
+| `\ink{red\|pencil\|blue}{…}` | the ink a cell is written in, where the leaf's colour says something — Book IV's charges are black, its receipts red, its sums pencil. What is on the paper, not what it means; black is unmarked |
+| `\ruledoff` at the head of a row | a rule the writer drew across the money column above this row's figure — her own line under the items she is summing |
 | `ledgertable` | the ruled columns |
 
 **A guessed figure is a sale that did not happen.** That is the difference

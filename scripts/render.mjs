@@ -92,6 +92,7 @@ function findWork(rawTitle) {
     .replace(/\\ill\{\}|\\ill\b/g, '')
     .replace(/\\(uncertain|add|struck|emph|textit|textbf|texttt)\{/g, '{')
     .replace(/\\hand\{[a-z]+\}\{/g, '{')
+    .replace(/\\ink\{[a-z]+\}\{/g, '{')
     .replace(/\\quad|\\qquad/g, ' ')
     .replace(/[{}]/g, '')
     .trim();
@@ -253,7 +254,29 @@ const INLINE = {
       return `<span class="hand hand-${who}"><span class="hand-tag">${who}</span>${a[1]}</span>`;
     },
   ],
+  // The ink, where the ink says something: Book IV's charges are black, its
+  // receipts red and its sums pencil, and the colour is the only thing on the
+  // leaf that states which is which once the words stop. Recorded as what is
+  // on the paper — `accounts.mjs` decides what red means — and shown in the
+  // reading view as the colour it is, beside the photograph that has it.
+  ink: [
+    2,
+    (a, ctx) => {
+      const colour = a[0].replace(/<[^>]*>/g, '').trim();
+      if (!INKS.has(colour)) {
+        throw new TexError(
+          ctx.file,
+          ctx.line,
+          `\\ink{${colour}} - must be one of ${[...INKS].join(', ')}`,
+        );
+      }
+      return `<span class="ink ink-${colour}" title="written in ${colour}">${a[1]}</span>`;
+    },
+  ],
 };
+
+/** The inks a leaf uses besides black, which is unmarked. */
+const INKS = new Set(['red', 'pencil', 'blue']);
 
 const BLOCK_CMD = new Set([
   'sheet',
@@ -564,15 +587,20 @@ function render(src, file, meta) {
         line += (bodyText.match(/\n/g) || []).length;
         i = end + '\\end{ledgertable}'.length;
         const cols = cells(head).map((h) => `<th>${inline(h.trim())}</th>`);
+        // `\ruledoff` heads a row whose figure has a rule drawn above it — the
+        // sum under the writer's own line — and is a row-level fact, so it is
+        // read off the row before the cells are, and never reaches `inline`,
+        // where it would be refused as outside the subset.
         const body = rows(bodyText)
           .map((r) => r.trim())
           .filter(Boolean)
-          .map(
-            (r) =>
-              `<tr>${cells(r)
-                .map((cell) => `<td>${inline(cell.trim())}</td>`)
-                .join('')}</tr>`,
-          );
+          .map((r) => {
+            const ruled = /^\\ruledoff\b/.test(r);
+            const cls = ruled ? ' class="ruledoff"' : '';
+            return `<tr${cls}>${cells(r.replace(/^\\ruledoff\s*/, ''))
+              .map((cell) => `<td>${inline(cell.trim())}</td>`)
+              .join('')}</tr>`;
+          });
         out.push(
           `<table class="ledger"><thead><tr>${cols.join('')}</tr></thead>` +
             `<tbody>${body.join('')}</tbody></table>`,
@@ -762,6 +790,10 @@ table.ledger th { text-align: left; border-bottom: 1.5px solid var(--ink);
 .quad2 { width: 2.6em; }
 table.ledger td { border-bottom: 1px solid var(--rule); padding: .3rem .5rem .3rem 0;
   vertical-align: top; }
+.ink-red { color: #b5342a; }
+.ink-pencil { color: #7a7770; }
+.ink-blue { color: #3b62a8; }
+tr.ruledoff td:nth-last-child(-n+2) { border-top: 1.5px solid var(--ink); }
 .keywords { font-size: .8rem; color: var(--dim); font-style: italic; }
 .keywords span { font-style: normal; font-weight: 600; letter-spacing: .07em;
   text-transform: uppercase; font-size: .68rem; }
@@ -824,7 +856,10 @@ function page(meta, html) {
     <span class="uncertain">underlined</span> a doubtful reading &middot;
     <span class="ill">[&hellip;]</span> illegible, and never guessed &middot;
     <span class="add">[bracketed]</span> supplied by the editor &middot;
-    <del>struck</del> crossed out in the book
+    <del>struck</del> crossed out in the book &middot;
+    <span class="ink-red">red</span>, <span class="ink-pencil">grey</span> and
+    <span class="ink-blue">blue</span> the ink it is written in, where the leaf records it, and a
+    rule over a figure the writer's own line above her sum
   </div>
   <div class="legend">
     <span class="works-tag" style="margin:0">see the work</span> links to a museum record for a
