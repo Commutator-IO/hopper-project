@@ -1,6 +1,6 @@
 ---
 name: transcribe-hopper
-description: Transcribes a batch of twelve digitised sheets from the Edward and Josephine Hopper artist's ledgers (Whitney Museum of American Art, 96.208–96.213) into clean LaTeX with a critical apparatus — what was read, what was guessed, what is illegible, and whose hand wrote it. Use whenever someone asks to transcribe, read, decipher or put into LaTeX any sheets of the Hopper ledgers, or names a volume (Book I to Book V, Dealers/Etchings), a batch, a leaf or a resource ref. There is one edition and this skill produces it; /tag-hopper revises the keywords line that closes it. Also covers revisions — correcting a reading, filling a skipped sheet.
+description: Transcribes a batch of twelve digitised sheets from the Edward and Josephine Hopper artist's ledgers (Whitney Museum of American Art, 96.208–96.213), or a sitting of twelve sheets from one of Josephine Hopper's notebooks the Whitney has digitised (Garrulities, 3 Wash Sq, Battle of Wash Sq, the black notebook), into clean LaTeX with a critical apparatus — what was read, what was guessed, what is illegible, and whose hand wrote it. Use whenever someone asks to transcribe, read, decipher or put into LaTeX any sheets of the Hopper ledgers or diaries, or names a volume (Book I to Book V, Dealers/Etchings), a notebook, a batch, a leaf or a resource ref. There is one edition and this skill produces it; /tag-hopper revises the keywords line that closes it. Also covers revisions — correcting a reading, filling a skipped sheet.
 ---
 
 # Transcribing a batch from the Hopper ledgers
@@ -57,6 +57,18 @@ batch can be read straight off the reader's own address bar.
 The batch is 1-based and each is twelve sheets: batch 3 of Book II is sheets 25
 to 36. The reader prints the exact command for a batch that has no
 transcription yet.
+
+**A notebook takes its id and a sitting instead of a batch:**
+
+```
+/transcribe-hopper garrulities 1
+```
+
+The ids are `garrulities`, `three-wash-sq`, `battle-of-wash-sq`,
+`black-notebook` — the site's URLs under `/diaries/`. A sitting is twelve
+sheets by position, like a batch, but it does not get a file of its own: see
+[Transcribing a notebook](#transcribing-a-notebook), which says what differs
+and leaves everything else below in force.
 
 ## What this produces
 
@@ -432,6 +444,124 @@ Two mechanical checks before the human one:
 - **Transcribe an opening that duplicates two leaves you have already
   transcribed.** Give it a `\note{}`.
 - **Extend the LaTeX subset without extending the three files that define it.**
+
+## Transcribing a notebook
+
+The Whitney has digitised four of Josephine Hopper's notebooks — a journal
+subtitled « When artists meet », two on the Washington Square fight of 1947,
+and a black two-ring notebook of lists and travel notes. They are diaries, not
+ledgers, and **everything above holds except what this section changes.** The
+two governing sentences hold with their force intact: an invented word in a
+diary is a thing she never said, and there is no summary and no normalisation.
+
+### One file per notebook, appended sitting by sitting
+
+A notebook is one document, so it gets one file:
+`transcripts/notebooks/<id>.tex` — no batch number in the name. But the
+twelve-sheet rule is about attention, not about files, so a notebook longer
+than twelve sheets is read in **sittings** of twelve, one per conversation,
+each appending to the same file after the last `\sheet{}` already there.
+The site counts a notebook's sheets read off the file, so a half-read notebook
+shows as half read, which is the truth.
+
+The header comment gets **one `Pass:` line per sitting**, so the provenance of
+every stretch of the file is on its face:
+
+```
+% Pass: Opus 5 (claude-opus-5), 2026-09-12 - sheets 1-12, first pass, unchecked.
+% Pass: Opus 5 (claude-opus-5), 2026-09-14 - sheets 13-24, first pass, unchecked.
+```
+
+Mirror by the notebook's id, in twelves:
+
+```bash
+npm run mirror -- garrulities --batches 2     # sheets 13-24
+npm run tiles  -- garrulities 15 --grid 2x2   # an opening, cut in four
+```
+
+### The preamble names a notebook, not a ledger
+
+```latex
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/hopper}
+
+\notebook{battle-of-wash-sq}
+\ledgertitle{Josephine Hopper --- Battle of Wash Sq.}
+\objectnumber{EJHA.1597}
+\sheets{1}{8}
+\dating{1947}
+\watermark{Demonstration edition}
+```
+
+- `\notebook{id}` replaces `\ledger{}`, and there is **no `\batch{}`**.
+- `\ledgertitle{}` carries the Whitney's title for the notebook as the
+  catalogue gives it (`src/content/catalogue.ts`, `NOTEBOOKS`), after her name.
+- `\objectnumber{}` only where the Whitney gives one — Battle of Wash Sq. is
+  EJHA.1597; the other three have none, and the line is then left out rather
+  than invented.
+- `\sheets{1}{N}` is the whole notebook's count, even in a sitting that reads
+  twelve of them; `\dating{}` is the Whitney's range for the notebook, verbatim.
+
+`transcripts/_specimen/notebook.tex` is the shape, end to end, and transcribes
+nothing.
+
+### A notebook is read in entries, not in rows
+
+Her diary runs on in prose under a date, so the unit is the **entry** and not
+the ruled line:
+
+```latex
+\section{Pages 2--3}
+
+\sheet{89300}{2}
+\entry{Tuesday}{1947-03-11}
+\hand{jo}{…the prose, as written, with \\ where she breaks the line…}
+
+\entry{Wed.}{1947-03-12}
+\hand{jo}{…}
+```
+
+- `\entry{as written}{assigned}` — the first argument is the date **exactly as
+  she wrote it**, « Tuesday », « Wed. », « Mar. 14 », even when it is no date
+  at all; the second is the date the transcriber assigns, `YYYY`, `YYYY-MM` or
+  `YYYY-MM-DD`, **as much of one as the page supports and no more**. The
+  second argument is the one editorial claim an entry carries. Where the page
+  gives nothing to assign, leave it empty: `\entry{Later}{}`.
+- An entry runs until the next `\entry{}` or the next `\sheet{}`; one that
+  turns the page is **not restated** on the next sheet.
+- `\sheet{ref}{page}` takes the page number the Whitney's descriptor gives —
+  « Pages 2-3 » is one photograph of an opening, and it is `\sheet{89300}{2}`,
+  the transcription of both pages following in order. The cover and any
+  unnumbered leaf take the empty second argument as before.
+- **`ledgertable` only where she ruled one.** The black notebook carries lists
+  of works with dimensions; those are tables. Her prose is prose, and a
+  paragraph break on the page is a blank line in the file.
+- Her underlining is `\emph{}`; what she struck is `\struck{}`; what will not
+  be read is `\ill{}`, and a diary makes that harder to accept than a ledger
+  does, because prose invites the completing of a sentence. **Do not complete
+  the sentence.**
+
+### The typescripts are not a source
+
+The Provincetown Art Association and Museum holds typed transcripts of the
+diaries it keeps, and the site marks which notebooks they cover. **A typescript
+is not consulted during the pass.** The reading is off the photograph, and a
+file that had a typescript open beside it is a file whose every doubtful word
+was settled by somebody else's guess without saying so. If a divergence from a
+typescript is noticed afterwards, the reading stands and the divergence goes in
+a `\note{}` that names the typescript.
+
+### Checking a notebook
+
+```bash
+npm run render && npm run tei && npm run manifest
+```
+
+Then read the entries beside the photograph at `/diaries/<id>/` — the right
+pane scrolls with the left, and an entry whose sheet ref is wrong turns the
+page to the wrong opening, which is the check that matters. `status.json` keys a
+notebook `notebook#<id>`; the same two states, the same rule that only a person
+who went page by page against the photograph may tick `checked`.
 
 ## Revising a batch
 

@@ -301,6 +301,7 @@ looked at together and cropped without a round trip per glance.
 ```bash
 npm run mirror -- book-i --batches 1
 npm run tiles  -- book-i 9 --grid 2x3
+npm run mirror -- garrulities --batches 1     # a notebook, by its id
 ```
 
 Files land in `archives/`, outside `public/` so a build can never carry them,

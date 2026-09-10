@@ -14,6 +14,7 @@
  *
  *   npm run tiles -- book-i 9          # by position in the book
  *   npm run tiles -- book-i 9 --grid 3x4
+ *   npm run tiles -- garrulities 3     # a notebook's opening, by its id
  *
  * Needs ImageMagick (`brew install imagemagick`). Not needed to read the site —
  * only to transcribe. There is deliberately no fallback; see below.
@@ -31,7 +32,7 @@ const grid = (() => {
 })();
 
 if (!ledger || !seqRaw) {
-  process.stderr.write('usage: npm run tiles -- <ledger> <sheet position> [--grid 2x3]\n');
+  process.stderr.write('usage: npm run tiles -- <ledger|notebook> <sheet position> [--grid 2x3]\n');
   process.exit(1);
 }
 

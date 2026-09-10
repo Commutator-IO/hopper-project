@@ -4360,3 +4360,14 @@ How the volume keeps its accounts period by period — the four shapes, the
 colour rule and its exceptions, the sums she offers as checks, and what the
 reader does with each — is written out in `docs/book-iv-method.md`. Read it
 before reading a Book IV batch.
+
+---
+
+## The notebooks
+
+Nothing yet. No sitting has been made on any of the four notebooks the
+Whitney has digitised, and what the diary hand does that the ledger hand does
+not — a running prose hand across an opening, with no ruled line to hold the
+baseline — is not known until somebody has read twelve sheets of it. Write it
+here after the first sitting, and say which notebook and which sheets taught
+you what.

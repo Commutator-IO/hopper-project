@@ -23,6 +23,10 @@
  *   npm run mirror -- book-i --batches 1
  *   npm run mirror -- book-i --batches 1-3
  *   npm run mirror -- dealers                # the whole volume
+ *   npm run mirror -- garrulities --batches 1   # a notebook, by its id
+ *
+ * A notebook is mirrored the same way, under its own id: its sheets are
+ * counted in twelves too, so a sitting can ask for the next dozen.
  */
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -30,11 +34,15 @@ import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname, '..');
 const BATCH_SIZE = 12;
 
-/** The archive, parsed out of the generated catalogue. See `render.mjs`. */
+/**
+ * The archive, parsed out of the generated catalogue. See `render.mjs`.
+ * The notebooks' sheets say `notebook:` where a ledger's say `ledger:`, and
+ * are filed here under the notebook's id so the same command reaches both.
+ */
 const SHEETS = (() => {
   const src = readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8');
   return [
-    ...src.matchAll(/\{ ref: (\d+), ledger: '([^']+)', seq: (\d+), leaf: (null|\d+),/g),
+    ...src.matchAll(/\{ ref: (\d+), (?:ledger|notebook): '([^']+)', seq: (\d+), leaf: (null|\d+),/g),
   ].map((m) => ({
     ref: Number(m[1]),
     ledger: m[2],
@@ -52,15 +60,16 @@ const flag = (name) => {
 
 if (!ledger) {
   process.stderr.write(
-    'usage: npm run mirror -- <ledger> [--batches 1-3] [--delay 10]\n' +
-      '       ledgers: book-i book-ii book-iii book-iv book-v dealers\n',
+    'usage: npm run mirror -- <ledger|notebook> [--batches 1-3] [--delay 10]\n' +
+      '       ledgers:   book-i book-ii book-iii book-iv book-v dealers\n' +
+      '       notebooks: garrulities three-wash-sq battle-of-wash-sq black-notebook\n',
   );
   process.exit(1);
 }
 
 const all = SHEETS.filter((s) => s.ledger === ledger);
 if (!all.length) {
-  process.stderr.write(`mirror: no such ledger “${ledger}”\n`);
+  process.stderr.write(`mirror: no such ledger or notebook “${ledger}”\n`);
   process.exit(1);
 }
 
