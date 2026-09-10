@@ -115,6 +115,7 @@ const A = accountsData as unknown as {
     carriedSumsExcluded: number;
     struckExcluded: number;
     wordlessReceipts: number;
+    rubbedExcluded: number;
     blankDescription: number;
     note: string;
   };
@@ -446,13 +447,17 @@ export function AccountsPage() {
             Book IV’s « still owed » is not all debt either
           </strong>
           , and it is read high rather than low. {A.illustration.blankDescription} of its charges
-          describe nothing at all, and a figure with no words beside it is as often a sum the
-          writer ruled off under her own items as a price she forgot to name. Where a cheque, a
-          bill or a « less » line stands under such a sum it is recognised and excluded; where
-          nothing answers it, or where the leaf’s own arithmetic disagrees with itself — leaf 125
-          rules off 2700 over two oils of 1200 — it is counted as a charge and inflates both the
-          gross and what looks unpaid. That is the largest open question in this volume, and it
-          is stated here rather than smoothed.
+          describe nothing at all — most of them the water colours of leaves 71 to 73, numbered
+          down the column at a hundred apiece under one heading — and a figure with no words
+          beside it is as often a sum the writer ruled off under her own items as a price she
+          forgot to name. Where a cheque, a bill, a « less » line or a page total carried forward
+          stands under such a sum it is recognised and excluded, and so is a sum the cheque below
+          repeats to the cent even where the leaf’s own arithmetic disagrees with itself — leaf
+          122 rules off 305.49 over two items that make 278.49. A figure directly under a title
+          that carries none of its own is that title’s price, and is charged with its words.
+          What nothing on the leaf answers is counted as a charge and inflates both the gross and
+          what looks unpaid: leaf 89’s foot sum of 3615.34, which adds an unreceipted fifteen
+          dollars in with the cheques, is the largest. That is stated here rather than smoothed.
         </p>
 
         <h3 className="mt-8 font-serif text-[17px] text-ink-900">When each trade earned</h3>

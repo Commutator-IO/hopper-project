@@ -589,7 +589,44 @@ const IV_BILL = /^["'”\s]*(bill|billed)\b/i;
 // A subtraction, and a restatement of what one leaves. Anchored at the head
 // for the reason `IV_BILL` is: « less » loose in the line would match a title.
 const IV_DEDUCTION = /^["'”\s]*less\b/i;
+// The one place the volume puts a name in front of the word: leaf 131's
+// « John Clancey less 33 1/3 % | 1166.66 », where the commission is a third
+// of the 3500.00 on the line above and the cheque below is what is left. It
+// cannot be reached by unanchoring « less », because « less » loose in a line
+// is how the volume prices a print sold at a discount — « 2 East Side Interior
+// less 50% | 18 », « 1 canvas at 400. less 15% », « @ 12 less 33 1/2 % » —
+// and every one of those is a charge at the figure written. What tells the
+// two apart is that a discounted print carries a count or a price before the
+// word and a commission does not: nothing but letters may stand in front of
+// « less », and only the two things the volume actually writes after it,
+// « commission » or the third, are admitted behind.
+const IV_DEDUCTION_NAMED = /^[^\d@]*\bless\s+(commission\b|33\s*1\/3)/i;
+// A row that continues the deduction above it. « less commission 1016.66 »
+// is followed on leaves 115, 118, 119 and 145 by « " photos 29.10 » — the
+// ditto standing for « less » — and on leaf 145 by « " frames 48.00 » under
+// that; leaf 131 writes « and $10.00 for cleaning | 10. » under its
+// commission. Each is a cost taken off the net, and each was counted as a
+// charge, which put the photographs down as income and the net ruled off
+// under them down as a charge on top of that. The ditto wants a space after
+// it: a title opens with quote marks too, and « "Excursion into Philosophy" »
+// is not a ditto for anything.
+const IV_DITTO_HEADED = /^["'”″]+\s+\S/;
+const IV_AND = /^and\b/i;
 const IV_RESTATED = /^["'”\s]*total\b/i;
+// A sum carried to the head of the next leaf. Leaf 126 opens « from
+// preceeding page total | 4790.00 », which is leaf 125's three ruled-off sums
+// — 140, 1950 and 2700 — added, and then takes the commission off it. The
+// figure restates what was itemised on the leaf before and is not a charge;
+// and the bare sum standing directly above it, the last of the three, is a
+// subtotal for the same reason a bare sum above a « less » line is: nothing
+// else can stand where a page total is about to be carried.
+const IV_CARRIED_FORWARD = /^["'”\s]*from\s+prece+ding\s+page\b/i;
+// A sum being worked in pencil across the columns. Leaf 121 adds the year up
+// on the leaf itself — « 1800 + 560 | 53 » over « 2360.53 » — and the 53 in
+// the dollars cell is the cents of that addition, not a figure of its own.
+// Read as dollars it was a charge of fifty-three, and the year total under
+// it, having something unsettled above it, was a charge too.
+const IV_WORKING = /\d\s*\+\s*\d/;
 // « Total », alone or with the year it totals, and nothing else. A « total »
 // that says what it totals is a different thing and is a charge: leaf 124's
 // « total etchings 300 » gathers six etchings listed without prices, and it is
@@ -653,6 +690,24 @@ const ivStruck = (raw) => {
 };
 
 /**
+ * Whether a row's figure is wholly a doubtful reading.
+ *
+ * The same test on `\uncertain{}`, for a different reason. A figure the
+ * transcriber could only offer is still read — a doubtful reading is a
+ * reading — unless the row below it on the same leaf carries the same figure
+ * plainly, in which case the doubtful one is the draft of it. Leaf 130 writes
+ * the Artex dividend across the client's own row, rubs it out, and writes it
+ * again on the line below; the edition gives the rubbed line as
+ * `\uncertain{7} | \uncertain{75}` and says in its note that it was written
+ * again. Read as two rows it was two dividends.
+ */
+const IV_UNCERTAIN_CELL = /^\\uncertain\s*\{[^{}]*\}$/;
+const ivUncertainFigure = (raw) => {
+  const money = [raw[raw.length - 2] ?? '', raw[raw.length - 1] ?? ''].map((c) => c.trim());
+  return money.some((c) => c !== '') && money.every((c) => c === '' || IV_UNCERTAIN_CELL.test(c));
+};
+
+/**
  * Whether a bare figure is the sum of the lines ruled off above it.
  *
  * She draws the rule and the transcription does not record it, so the rule
@@ -709,6 +764,10 @@ let ivBlankDescription = 0;
 let ivStruckRows = 0;
 // Receipts recognised by repetition alone, because the row carries no word.
 let ivWordless = 0;
+// Rows that are the rubbed-out draft of the row below them: a doubtful figure
+// the next row repeats, or a receipt standing on the net's own row.
+let ivRubbed = 0;
+let ivRubbedReceipts = 0;
 // Rows whose money columns carry writing the reader would not read as dollars.
 let ivUnreadMoney = 0;
 {
@@ -735,7 +794,8 @@ let ivUnreadMoney = 0;
     const closeSheet = () => {
       if (sheet !== null && pencil.has(sheet)) year = pencil.get(sheet);
     };
-    for (const row of file.looseRows) {
+    for (let k = 0; k < file.looseRows.length; k++) {
+      const row = file.looseRows[k];
       if (row.ref !== sheet) {
         closeSheet();
         sheet = row.ref;
@@ -746,7 +806,27 @@ let ivUnreadMoney = 0;
         .slice(1, cells.length - 2)
         .join(' ')
         .trim();
-      const amount = bookIVAmount(cells);
+      const read = bookIVAmount(cells);
+      // A sum being worked across the columns is not a figure in the money
+      // column, whatever stands there: the cell holds the cents of the
+      // addition written to its left. Said out loud, like every other cell the
+      // reader turns down, and read as nothing.
+      const working = read !== null && IV_WORKING.test(body) && !/[A-Za-z]/.test(body);
+      if (working) {
+        unparsed.push({
+          reason:
+            'a Book IV row that works a sum in pencil across the columns — « 1800 + 560 | 53 » — ' +
+            'so the money cell holds the cents of the addition and not a figure of its own',
+          ledger: row.ledger,
+          batch: row.batch,
+          leaf: row.leaf,
+          ref: row.ref,
+          section: row.section,
+          work: null,
+          row: cells,
+        });
+      }
+      const amount = working ? null : read;
       // A cancelled entry is not a charge, not a receipt, and not something
       // the rows around it can be read against. Dropped here rather than
       // skipped below, so that it does not stand between a ruled-off sum and
@@ -761,7 +841,7 @@ let ivUnreadMoney = 0;
       // must never pass in silence: `^\d+$` on the dollars cell refused a
       // hundred and forty-four of them for years, and nothing on the page or
       // in the output showed it.
-      const unread = amount === null && ivMoneyWritten(cells) && !ivStruck(row.cells);
+      const unread = amount === null && !working && ivMoneyWritten(cells) && !ivStruck(row.cells);
       if (unread) {
         ivUnreadMoney++;
         unparsed.push({
@@ -792,17 +872,74 @@ let ivUnreadMoney = 0;
       // the nine has no letters in it, which is to say it is a bare figure,
       // and it was counted as a fresh charge for a drawing nobody made.
       const previous = rows[rows.length - 1];
+      const underDeduction =
+        previous !== undefined && previous.kind === 'deduction' && previous.where.ref === row.ref;
       const own = IV_RECEIPT.test(body)
         ? 'receipt'
         : IV_BILL.test(body)
           ? 'bill'
-          : IV_DEDUCTION.test(body)
+          : IV_DEDUCTION.test(body) || IV_DEDUCTION_NAMED.test(body)
             ? 'deduction'
-            : (isDitto(body) || isDittoDated(body)) && previous !== undefined
-              ? previous.kind
-              : /[A-Za-z]/.test(body)
-                ? 'item'
-                : 'bare';
+            : IV_CARRIED_FORWARD.test(body)
+              ? 'carry'
+              : (isDitto(body) || isDittoDated(body)) && previous !== undefined
+                ? previous.kind
+                : underDeduction && (IV_DITTO_HEADED.test(body) || IV_AND.test(body))
+                  ? 'deduction'
+                  : /[A-Za-z]/.test(body)
+                    ? 'item'
+                    : 'bare';
+      // The price on the line below its title. All through the volume an item
+      // whose words fill the description column carries its figure on the
+      // next line, in a row that says nothing: leaf 39's « The House that
+      // Patty built | | » and then « | | 100 », leaf 152's « "Excursion into
+      // Philosophy" | | » and then « | | $14500.00 ». That row is the item's
+      // own price and not an undescribed figure, and the difference is not
+      // what it is charged at — a bare figure is charged too — but what the
+      // rows below it can be read against: leaf 152's 24500.00 is the sum of
+      // that 14500 and the 10000 under it, and a run of items that is broken
+      // by a bare row does not add. Leaf 133's 5500.00 under « First Row
+      // Orchestra » and « Eleven A. M. » was worse — the only price the
+      // entry has, and it was taken for a subtotal of nothing and dropped.
+      //
+      // Only a title with nothing at all in its money columns is continued —
+      // leaf 132's « payment on acct. | -2000 » is a figure the reader turns
+      // down, not a title waiting for one — only on the same sheet, and a row
+      // with no letters and no money between the two, leaf 81's « ? » for a
+      // third water colour, is looked through. The numbered water colours of
+      // leaves 71 to 73, « 1 | 100 » under « 5 Water colors at 33 1/3 % »,
+      // take the heading as their words the same way, and are charged as they
+      // were.
+      //
+      // And it is the entry's *first* figure. Where something priced already
+      // stands unsettled above, a bare figure under a name is the sum ruled
+      // off: leaf 153 prices « A Woman in the Sun » at 15000.00, names the
+      // Hacketts under it, prices « New York Office » at 16500.00, names
+      // Fleischman, and rules off 31500.00 — a subtotal, under a buyer. Nor
+      // is it the last figure on the leaf. Leaf 82's entry of 23 April lists
+      // its titles and runs on to leaf 83 for the rest of them, its deduction
+      // and its cheque; the 726.34 at the foot under « Andersons House » is
+      // the leaf's three receipts added in pencil, and leaf 101's 2423.34
+      // under « commission to Rehn 250. » is the same figure for 1934. A price
+      // has something after it on the leaf that answers it.
+      const titled = (() => {
+        if (own !== 'bare' || amount === null || openPhrase !== null) return null;
+        const later = file.looseRows
+          .slice(k + 1)
+          .some((r) => r.ref === row.ref && bookIVAmount(r.plain) !== null);
+        if (!later) return null;
+        let title = null;
+        for (let j = rows.length - 1; j >= 0; j--) {
+          const p = rows[j];
+          if (p.where.ref !== row.ref || p.kind === 'receipt' || p.kind === 'bill') break;
+          if (p.amount !== null) return null;
+          if (title === null && !(p.kind === 'bare' && !ivMoneyWritten(p.cells))) {
+            if (p.kind !== 'item' || ivMoneyWritten(p.cells)) return null;
+            title = p;
+          }
+        }
+        return title;
+      })();
       // A settlement whose words do not fit on one ruled line finishes on the
       // next, and the figure goes with the end of the phrase rather than with
       // the beginning: leaf 134 writes « Rec'd by check from | John Clancy
@@ -815,13 +952,23 @@ let ivUnreadMoney = 0;
       // subtractions until a cheque closes the block. The bare rows are left
       // alone: the sum of the costs and the net below it are read by the
       // `deducting` pass, which is already looking for exactly that shape.
-      if (IV_EXPENSES.test(body) && amount === null) expensing = true;
+      // A « less » line that carries no figure of its own opens the same
+      // block: leaf 126's « less expenses » heads a frame and a photograph,
+      // each priced on its own line, and the first of them inherited the
+      // phrase while the second was counted as a charge.
+      if ((IV_EXPENSES.test(body) || own === 'deduction') && amount === null) expensing = true;
       else if (own === 'receipt') expensing = false;
-      const kind = expensing && amount !== null && own === 'item'
+      // What the block leaves is not one of its costs: leaf 144 takes two
+      // photographs off under « less photo » and then writes « check |
+      // 8490.40 », which is the net, and the `deducting` pass reads it there.
+      const restates = IV_NET_CHECK.test(body) || IV_RESTATED.test(body);
+      const kind = expensing && amount !== null && !restates && (own === 'item' || titled !== null)
         ? 'deduction'
         : amount !== null && (own === 'item' || own === 'bare') && openPhrase !== null
           ? openPhrase
-          : own;
+          : titled !== null
+            ? 'item'
+            : own;
       // A row whose money the reader turned down does *not* close the phrase
       // above it, and leaf 80 is why: « rec'd by cash | £1 » is answered by
       // « 5 | 00 » on the line below, the pounds converted, and the cheque is
@@ -831,10 +978,11 @@ let ivUnreadMoney = 0;
       openPhrase = amount !== null ? null : own === 'item' || own === 'bare' ? openPhrase : own;
       rows.push({
         amount,
-        body,
+        body: titled !== null ? `${titled.body}${body ? ` ${body}` : ''}` : body,
         year,
         date: (cells[0] ?? '').trim(),
         kind,
+        rubbed: amount !== null && ivUncertainFigure(row.cells),
         where: {
           ledger: row.ledger,
           batch: row.batch,
@@ -848,10 +996,34 @@ let ivUnreadMoney = 0;
     closeSheet();
   }
 
-  // How much has been itemised since the last bill or cheque closed a run, and
-  // whether a « less » line is currently working a subtotal down to a cheque.
+  // A doubtful figure that the row below repeats plainly is the rubbed-out
+  // draft of that row, and goes. Plainly: leaf 156 writes its net of 20628.00
+  // twice into a blot, in black and then in red, and the edition marks both
+  // doubtful — two readings of two figures, and neither the draft of the
+  // other. Taken out before the passes below so that it stands between
+  // nothing and nothing.
+  for (let i = rows.length - 1; i >= 0; i--) {
+    const r = rows[i];
+    const n = rows[i + 1];
+    if (
+      r.rubbed &&
+      n !== undefined &&
+      !n.rubbed &&
+      n.where.ref === r.where.ref &&
+      n.amount !== null &&
+      Math.abs(n.amount - r.amount) < 0.005
+    ) {
+      rows.splice(i, 1);
+      ivRubbed++;
+    }
+  }
+
+  // How much has been itemised since the last bill or cheque closed a run,
+  // whether a « less » line is currently working a subtotal down to a cheque,
+  // and whether the net it leaves has been written yet.
   let sinceSettlement = 0;
   let deducting = false;
+  let netRestated = false;
   for (let i = 0; i < rows.length; i++) {
     const r = rows[i];
     if (r.amount === null) continue;
@@ -867,6 +1039,34 @@ let ivUnreadMoney = 0;
       continue;
     }
     if (r.kind === 'receipt') {
+      // A receipt written across the row that already carried the net, rubbed
+      // out, and written again on the line below. Leaf 111 does it and says
+      // so: « the 380 standing on that row is the black subtotal it was
+      // written over, not part of the receipt », and leaves 115, 121 and 122
+      // do it again. What survives of the rubbed line is its words — a date
+      // and « rec'd by check » in pale red, or `\uncertain{rec'd} \ill{}` —
+      // so the row reads as a receipt, and the figure under it, which is the
+      // net in black, was counted a second time: 1947 came to 2860.53
+      // against the 2360.53 the leaf adds up to. The shape is the receipt
+      // standing where the net would be written and none is — directly under
+      // the « less » line — repeated to the cent by the receipt on the line
+      // below. Leaf 134's two Clancy cheques of 3666.67 on consecutive days
+      // are the same figure twice too, and stand under no deduction.
+      const next = rows[i + 1];
+      if (
+        deducting &&
+        !netRestated &&
+        next !== undefined &&
+        next.kind === 'receipt' &&
+        next.where.ref === r.where.ref &&
+        next.amount !== null &&
+        Math.abs(next.amount - r.amount) < 0.005
+      ) {
+        ivNets.push({ year: r.year, amount: r.amount, ...r.where });
+        ivRubbedReceipts++;
+        netRestated = true;
+        continue;
+      }
       receipts.push({ year: r.year, amount: r.amount, date: r.date, ...r.where });
       sinceSettlement = 0;
       deducting = false;
@@ -880,6 +1080,13 @@ let ivUnreadMoney = 0;
     if (r.kind === 'deduction') {
       ivDeductions.push({ year: r.year, amount: r.amount, ...r.where });
       deducting = true;
+      netRestated = false;
+      continue;
+    }
+    // A page total carried forward restates the sums ruled off on the leaf
+    // before it, which were read there.
+    if (r.kind === 'carry') {
+      ivCarried.push({ year: r.year, amount: r.amount, ...r.where });
       continue;
     }
     // And what a subtraction leaves. Between a « less » line and the cheque
@@ -890,6 +1097,7 @@ let ivUnreadMoney = 0;
     if (deducting) {
       if ((r.kind === 'bare' && r.body === '') || IV_RESTATED.test(r.body)) {
         ivNets.push({ year: r.year, amount: r.amount, ...r.where });
+        netRestated = true;
         continue;
       }
       if (IV_PAID_ON_ACCOUNT.test(r.body)) {
@@ -898,6 +1106,7 @@ let ivUnreadMoney = 0;
       }
       if (IV_NET_CHECK.test(r.body)) {
         ivNets.push({ year: r.year, amount: r.amount, ...r.where });
+        netRestated = true;
         continue;
       }
       deducting = false;
@@ -932,22 +1141,36 @@ let ivUnreadMoney = 0;
     // its 100.00 of 11 February for sums of the charges they repeat, and lost
     // both cheques.
     //
-    // It reaches what the arithmetic reaches and no further. Leaf 152's
-    // 24500.00 is a subtotal too, of « Excursion into Philosophy » at 14500.00
-    // and « A Woman in the Sun » at 10000.00 — but the first of those has its
-    // price on the line *below* its title, in a row with an empty description,
-    // so the run above the sum is not a run of items and does not add. And
-    // leaf 125's 2700.00 stands over two oils of 1200.00 each, which the
-    // leaf's own note says is three hundred dollars out. Both are still
-    // counted as charges. Neither can be settled by arithmetic that is not
-    // there, and both belong to the older question of what an undescribed
-    // figure is, which this file has fifty rows of and has not closed.
-    const answer = rows[i + 1]?.kind;
+    // Where the leaf disagrees with itself the arithmetic cannot speak, and
+    // the cheque has to. Leaf 122 rules off 305.49 over items of 42.40 and
+    // 236.09, which make 278.49, and the cheque below it is 305.49: the
+    // subtotal is wrong and it is what was paid. A bare figure that the
+    // cheque on the next line repeats to the cent, standing directly under a
+    // priced item, is that sum — because the volume never pays an
+    // undescribed figure alone and leaves the item over it unsettled.
+    // Directly: leaf 76's 175 stands under three unpriced titles and a cheque
+    // of 175 answers it, with an entry of 65 out of order above the titles,
+    // and it is the price of those titles and a charge. Leaf 39's 100, the
+    // undescribed charge a cheque of 100 answers, has nothing priced above
+    // it at all, and is charged as before.
+    //
+    // A page total carried forward on the leaf after — leaf 126's « from
+    // preceeding page total » — answers a bare sum the way a « less » line
+    // does: leaf 125's 2700.00 stands over two oils of 1200.00 each, three
+    // hundred out by the leaf's own note, and is the last of the three sums
+    // the carry adds up.
+    const next = rows[i + 1];
+    const answer = next?.kind;
+    const repeatedByCheque =
+      answer === 'receipt' && next.amount !== null && Math.abs(next.amount - r.amount) < 0.005;
+    const underPricedItem = rows[i - 1]?.kind === 'item' && rows[i - 1].amount !== null;
     if (
       r.kind === 'bare' &&
       (answer === 'bill' ||
         answer === 'deduction' ||
+        answer === 'carry' ||
         (answer === 'receipt' && sumsTheRunAbove(rows, i, r.amount)) ||
+        (r.body === '' && repeatedByCheque && underPricedItem) ||
         (r.body === '' && answer === 'item' && sumsTheRunAbove(rows, i, r.amount, 2)))
     ) {
       ivSubtotals.push({ year: r.year, amount: r.amount, ...r.where });
@@ -1628,17 +1851,27 @@ const out = {
     // Receipts read off the repetition rather than off a word, because from
     // leaf 157 the volume stops writing « rec'd by check » over the repeat.
     wordlessReceipts: ivWordless,
+    // Rows that are the rubbed-out draft of the row below them, and go.
+    rubbedExcluded: ivRubbed + ivRubbedReceipts,
     blankDescription: ivBlankDescription,
     note:
       'Book IV states a client, then its items one to a line, then « Bill rendered » with their ' +
       'total, then « Rec\'d by check » in red. The items are the charge; a bill is counted only ' +
       'where nothing was itemised since the last settlement, or every commission in the volume ' +
-      'would be counted twice. A bare figure with no description is a subtotal where a bill or a ' +
-      '« less » line follows it; where a cheque follows it and the priced lines directly above ' +
-      'add to it; or where another item follows it and two or more priced lines above add to it, ' +
+      'would be counted twice. A bare figure directly under a title that carries no figure of ' +
+      'its own, where nothing priced stands unsettled above and something on the leaf answers ' +
+      'it below, is that title\'s price and is charged as such. Any other bare figure is a ' +
+      'subtotal where a bill, a « less » line or a page total carried forward follows it; where ' +
+      'a cheque follows it and the priced lines directly above add to it, or repeats it to the ' +
+      'cent under a priced item when they do not; or where another item follows it and two or ' +
+      'more priced lines above add to it, ' +
       'which is the sum ruled off part-way down an entry — the oils totalled, then the water ' +
       'colours, and only then the commission. The leaf rules a line above every one of these and ' +
       'the transcription does not record the rule, so the rule is recovered from the arithmetic. ' +
+      'A receipt standing directly under a « less » line, where the net would be written and ' +
+      'none is, and repeated to the cent by the receipt on the line below, is that net with a ' +
+      'rubbed-out draft of the receipt written across it, and is counted once; a doubtful ' +
+      'figure the line below repeats plainly is the draft of that line and is not counted. ' +
       'From the 1930s the volume ' +
       'is a gallery account rather than an invoice book, and one sale is written down the leaf ' +
       'four or five times over: the items, their subtotal, « less commission », the net, « less ' +
@@ -1752,6 +1985,6 @@ process.stdout.write(
     `          Book IV: ${receipts.length} receipt(s); excluded ${ivSubtotals.length} subtotal(s), ` +
     `${ivDeductions.length} deduction(s), ${ivNets.length} restated net(s), ` +
     `${ivCarried.length} carried sum(s), ${ivStruckRows} struck row(s); ` +
-    `${ivWordless} wordless receipt(s); ` +
+    `${ivWordless} wordless receipt(s); ${ivRubbed + ivRubbedReceipts} rubbed draft(s) dropped; ` +
     `${ivBlankDescription} charge(s) with no description written\n`,
 );
