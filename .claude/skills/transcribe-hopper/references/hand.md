@@ -4428,3 +4428,64 @@ not blank, though everything else on it is.
 - 30" » at the head, the book the right way up; « Ap. 49 - a roll of canvas »
 at the foot, the book turned. Rotate the crop before reading a line at the
 foot of a last page.
+
+### Garrulities, sheets 1–12
+
+*(The cover, page 1 and the openings 2–3 to 20–21, 10 September 2026, Opus 5.)*
+**This one is a diary**, and nothing about Battle of Wash Sq. carries over
+except the hand. It is continuous prose, forty-odd lines to the page, running
+from July 1927 to the spring of 1928.
+
+- **The dates are in the left margin, not at the head of the passage.** Only
+  the first entry (« July 28" », page 2) and « Feb. 20, 28 » on page 14 stand
+  in the run of the text. Everything else — « Feb. 6. 28 », « Ap. 25, 28 » — is
+  a small group in the margin beside the paragraph it opens, and one of them
+  (page 2) is smudged past reading and stays `\ill{}`.
+- **She writes in pencil to page 3 and in ink from page 4**, and the ink pages
+  are markedly easier. Page 1's subtitle line and three lines at its foot were
+  rubbed out; nothing in them can be recovered and the page is two `\ill{}`.
+- **The interlineation is constant** — sixty-odd in twelve sheets, far more
+  than any ledger batch. Nearly all are hers, in the same ink, correcting or
+  glossing as she wrote. Book I's convention holds: `\marginal{}` after the
+  block, naming the words it stands over.
+- **The crowded head- and gutter-margins are the hard part, not the ruled
+  text.** Pages 4 and 7 each carry a long addition squeezed into the top margin
+  and written up the slope of the page, three or four words to a line; page 7
+  has a second one down the gutter that crosses the first and the ruling. Crop
+  the block and rotate it — `-rotate 90` in ImageMagick, never `-rotate -90`,
+  which comes out mirrored — and rotate a degree or two further (96° worked on
+  page 7) to bring the slanted lines level. Even then the corners run off the
+  fore-edge; those go `\ill{}` and the `\note{}` says the block is crowded and
+  partly unread.
+- **« of » is a lone loop here too**, as in Battle of Wash Sq., and « + » is
+  her « and » throughout.
+- **Her ordinal is the raised `''`** — « 3'' rate », « 9'' St. » — and inches
+  are not in this notebook at all.
+- **Her spellings, all as written:** « could'nt », « was'nt », « did'nt »,
+  « do'nt », « wo'nt », « is'nt », « has'nt » — the apostrophe is always before
+  the « n », every time, and it is not a slip. Also « gorgious »,
+  « balestrades », « earings », « standerdized », « valliantly »,
+  « anhilation », « sustinance », « embarasses », « sureptitiously »,
+  « tantram » beside « tantrums » on the same page, « blaa », « buz », « jaz »,
+  « dodoes », and « Oppertunity », which is the point of the joke she is
+  telling.
+- **Two openings are not diary at all.** Pages 16–17 and 18–19 are passages
+  copied out — Romain Rolland's *L'Âme enchantée* in French on 16, the
+  *Journal of Katherine Mansfield* on 17 and 18. Transcribe them like anything
+  else; her French keeps her own slips (« tout les dégoûts », « les
+  désillusion ») and they stay.
+- **The dates go backwards across an opening.** Page 19 is « Ap. 25, 28 » and
+  page 16, two leaves earlier, is « Ap. 27 ». Leave the leaves in the book's
+  order, as in Book I.
+- **Readings that would not settle:** the interlineation « the doctor just »
+  on page 2; « chorus to tale » up the gutter of page 3; the name at the top
+  corner of page 4 (« Bertha »?); « Miss Chamberlain » on page 5; « my
+  possessions in excellent » on page 7; « prettify » on page 12; « Adelene
+  Dresser » on page 13; « vaguest » on page 14 (written « vagueist »);
+  « Mrs. Sharpe » and « the Krenbis » on page 15; « Rogentry's Flemish Art »
+  and « an awakened look » on page 21.
+- **A name doubtful on one page can be settled on another, in the same
+  sitting.** Page 16's « tranck » is unreadable until page 16's own next
+  paragraph writes « celui d'un Franck » plainly; and page 20's « of no great
+  are light » is « arc light », which the facing page's « Arc light be
+  damned! » settles outright. Read the opening through before fixing a word.
