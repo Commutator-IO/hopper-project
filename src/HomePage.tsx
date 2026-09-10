@@ -101,6 +101,22 @@ export function HomePage() {
       </section>
 
       <section className="border-b border-ink-200 py-10">
+        <h2 className="font-serif text-2xl text-ink-900">The other half of the same working life</h2>
+        <p className="prose-note mt-1.5 max-w-3xl">
+          Josephine Hopper also kept diaries — ninety notebooks, now in the Whitney’s Sanborn
+          Hopper Archive. They are not a seventh ledger and are not filed as one: nothing in them
+          could be read into a timeline or an account. They have their own place on this site,
+          which for now holds the scoping and nothing transcribed.
+        </p>
+        <a
+          href={url('/diaries/')}
+          className="mt-4 inline-block text-[14px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+        >
+          The diaries →
+        </a>
+      </section>
+
+      <section className="border-b border-ink-200 py-10">
         <h2 className="font-serif text-2xl text-ink-900">Nothing of the archive is stored here</h2>
         <div className="mt-4 max-w-3xl space-y-3 text-[14.5px] leading-relaxed text-ink-700">
           <p>

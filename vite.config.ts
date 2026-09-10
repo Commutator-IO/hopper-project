@@ -87,6 +87,7 @@ export default defineConfig({
         schema: resolve(import.meta.dirname, 'schema/index.html'),
         method: resolve(import.meta.dirname, 'method/index.html'),
         contribute: resolve(import.meta.dirname, 'contribute/index.html'),
+        diaries: resolve(import.meta.dirname, 'diaries/index.html'),
       },
     },
   },

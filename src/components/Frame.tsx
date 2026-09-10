@@ -19,8 +19,33 @@ const OTHER_PAGES: { path: string; label: string }[] = [
   { path: '/contribute/', label: 'Contribute' },
 ];
 
+/**
+ * The two collections this site holds, or will.
+ *
+ * The ledgers are one document in six volumes, and every tab in the header —
+ * the volumes, the timeline, the accounts, the schema — is a way of reading
+ * that document. Josephine Hopper's diaries are another document altogether:
+ * ninety notebooks in the Sanborn Hopper Archive, unruled, undated by leaf,
+ * and with nothing in them a Timeline or an Accounts page could be built from.
+ * Filing them as a seventh tab would have made them look like a seventh
+ * ledger, so the header switches between the two collections first and shows
+ * each one's own pages second. The ledgers' URLs are exactly what they were.
+ */
+type Collection = 'ledgers' | 'diaries';
+
+const COLLECTIONS: { id: Collection; label: string; path: string }[] = [
+  { id: 'ledgers', label: 'Ledgers', path: '/' },
+  { id: 'diaries', label: 'Diaries', path: '/diaries/' },
+];
+
+const DIARY_PAGES: { path: string; label: string }[] = [{ path: '/diaries/', label: 'Scope' }];
+
+export const collectionOf = (path: string): Collection =>
+  path === '/diaries' || path.startsWith('/diaries/') ? 'diaries' : 'ledgers';
+
 export function Header({ path }: { path: string }) {
   const [open, setOpen] = useState(false);
+  const collection = collectionOf(path);
 
   // Escape closes the folded-out menu. On a tablet it opens by tap rather than
   // hover, so without this there is no way out of it.
@@ -37,28 +62,52 @@ export function Header({ path }: { path: string }) {
   // There is no thematic grouping here and there should not be: the Hoppers
   // numbered the books, and a second organisation laid over theirs would only
   // ever be ours.
-  const links = [
-    ...LEDGERS.map((l) => ({ path: `/${l.id}/`, label: l.short })),
+  const ledgerLinks = (full: boolean) => [
+    ...LEDGERS.map((l) => ({ path: `/${l.id}/`, label: full ? l.title : l.short })),
     ...OTHER_PAGES,
   ];
+  const links = collection === 'diaries' ? DIARY_PAGES : ledgerLinks(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/93 backdrop-blur-md backdrop-saturate-150">
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-2.5">
+        {/* The wordmark and the switch read as one phrase — « Hopper · Ledgers »,
+            « Hopper · Diaries » — which is the site's name on each side of it. */}
         <a href={url('/')} className="flex min-w-0 items-center gap-2.5">
           <Mark />
-          <span className="min-w-0 truncate text-[13px] font-semibold tracking-tight text-ink-900">
-            Hopper Ledgers
+          <span className="min-w-0 truncate text-[13px] font-semibold tracking-tight text-ink-900 lg:hidden xl:inline">
+            Hopper
           </span>
         </a>
 
-        <nav className="ml-auto hidden items-center gap-0.5 text-[13px] text-ink-500 lg:flex">
+        <div
+          role="navigation"
+          aria-label="Collection"
+          className="-ml-1.5 hidden shrink-0 items-center rounded-full border border-ink-200 p-0.5 text-[12px] lg:flex"
+        >
+          {COLLECTIONS.map((c) => (
+            <a
+              key={c.id}
+              href={url(c.path)}
+              aria-current={c.id === collection ? 'true' : undefined}
+              className={`rounded-full px-2.5 py-0.5 transition ${
+                c.id === collection
+                  ? 'bg-ink-900 text-white'
+                  : 'text-ink-500 hover:bg-ink-100 hover:text-ink-900'
+              }`}
+            >
+              {c.label}
+            </a>
+          ))}
+        </div>
+
+        <nav className="ml-auto hidden items-center gap-0.5 text-[12px] text-ink-500 lg:flex xl:text-[13px]">
           {links.map((l) => (
             <a
               key={l.path}
               href={url(l.path)}
               aria-current={isCurrent(l.path, path) ? 'page' : undefined}
-              className={`rounded-full px-2.5 py-1 transition ${
+              className={`whitespace-nowrap rounded-full px-2 py-1 transition xl:px-2.5 ${
                 isCurrent(l.path, path)
                   ? 'bg-ink-100 text-ink-900'
                   : 'hover:bg-ink-100 hover:text-ink-900'
@@ -80,17 +129,24 @@ export function Header({ path }: { path: string }) {
 
       {open && (
         <nav className="border-t border-ink-200 bg-white px-5 py-2 lg:hidden">
-          {[
-            ...LEDGERS.map((l) => ({ path: `/${l.id}/`, label: l.title })),
-            ...OTHER_PAGES,
-          ].map((l) => (
-            <a
-              key={l.path}
-              href={url(l.path)}
-              className="block rounded px-2 py-1.5 text-[14px] text-ink-700 hover:bg-ink-100"
-            >
-              {l.label}
-            </a>
+          {COLLECTIONS.map((c) => (
+            <div key={c.id} className="py-1">
+              <a
+                href={url(c.path)}
+                className="block px-2 py-1 text-[11px] font-semibold uppercase tracking-wider text-ink-400 hover:text-ink-900"
+              >
+                {c.label}
+              </a>
+              {(c.id === 'diaries' ? DIARY_PAGES : ledgerLinks(true)).map((l) => (
+                <a
+                  key={l.path}
+                  href={url(l.path)}
+                  className="block rounded px-2 py-1.5 text-[14px] text-ink-700 hover:bg-ink-100"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
           ))}
         </nav>
       )}
