@@ -1,5 +1,7 @@
 import { Page } from './components/Frame.tsx';
+import { NOTEBOOKS } from './content/catalogue.ts';
 import { url } from './lib/base.ts';
+import { paamPartsOverlapping } from './lib/diaries.ts';
 
 /**
  * Josephine Hopper's diaries: the scoping, and nothing transcribed.
@@ -87,6 +89,50 @@ export function DiariesPage() {
           past 1956, is not stated on either institution’s public pages and is the first thing to
           ask rather than infer. Nothing here claims it.
         </p>
+      </section>
+
+      <section className="border-b border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">The four notebooks the Whitney has digitised</h2>
+        <p className="prose-note mt-1.5 max-w-3xl">
+          Subseries A of Series IV of the Sanborn Hopper Archive, harvested from the Whitney’s
+          listing exactly as the ledgers were, one collection to a notebook. The titles are hers,
+          as written on the cover or the first page; the dates and the scope notes are the
+          Whitney’s. Each tab shows every sheet, fetched from the Whitney as it is looked at, and
+          transcribes none of it. The coverage mark says only that PAAM publishes a typed
+          transcript for those years — not that it is of that notebook.
+        </p>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          {NOTEBOOKS.map((n) => {
+            const parts = paamPartsOverlapping(n);
+            return (
+              <a
+                key={n.id}
+                href={url(`/diaries/${n.id}/`)}
+                className="card group flex flex-col p-5 transition hover:border-brand-400"
+              >
+                <div className="flex items-baseline justify-between gap-2">
+                  <h3 className="font-serif text-lg text-ink-900 group-hover:text-brand-700">
+                    {n.title}
+                  </h3>
+                  <span className="shrink-0 text-[11.5px] text-ink-400">{n.date}</span>
+                </div>
+                <p className="prose-note mt-2 flex-1">{n.scope}</p>
+                <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px]">
+                  <span className="tabular text-ink-500">{n.sheets} sheets</span>
+                  {n.archiveNumber && <span className="font-mono text-ink-500">{n.archiveNumber}</span>}
+                  {parts.length > 0 && (
+                    <span
+                      className="rounded-full bg-brand-100 px-2 py-0.5 text-brand-700"
+                      title={`PAAM publishes a typed transcript for ${parts[0].from}–${parts[parts.length - 1].to}; whether it includes this notebook is not established.`}
+                    >
+                      PAAM transcript years: {parts.map((p) => p.part).join(', ')}
+                    </span>
+                  )}
+                </div>
+              </a>
+            );
+          })}
+        </div>
       </section>
 
       <section className="border-b border-ink-200 py-8">

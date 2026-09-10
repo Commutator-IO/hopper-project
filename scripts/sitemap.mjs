@@ -17,13 +17,14 @@ const SITE = 'https://hopper.commutator.io';
 
 // The six volumes, read off the generated catalogue so a new one cannot be
 // forgotten here.
-const ledgers = [
-  ...readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8').matchAll(
-    /^    id: '([\w-]+)',$/gm,
-  ),
-].map((m) => `/${m[1]}/`);
+const catalogue = readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8');
+const idsIn = (text) => [...text.matchAll(/^    id: '([\w-]+)',$/gm)].map((m) => m[1]);
+const [ledgerPart, notebookPart] = catalogue.split('export const NOTEBOOKS');
+const ledgers = idsIn(ledgerPart).map((id) => `/${id}/`);
+// And the notebooks, read the same way, under /diaries/.
+const notebooks = idsIn(notebookPart ?? '').map((id) => `/diaries/${id}/`);
 
-const paths = ['/', ...ledgers, '/timeline/', '/accounts/', '/technique/', '/schema/', '/method/', '/contribute/', '/diaries/'];
+const paths = ['/', ...ledgers, '/timeline/', '/accounts/', '/technique/', '/schema/', '/method/', '/contribute/', '/diaries/', ...notebooks];
 
 const today = new Date().toISOString().slice(0, 10);
 

@@ -151,6 +151,9 @@ const LEDGERS = [
 function leaf(descriptor) {
   const spread = /^Pages?\s+(\d+),\s*Pages?\s+(\d+)/i.exec(descriptor);
   if (spread) return { leaf: Number(spread[1]), spread: Number(spread[2]) };
+  // The notebooks' shape for an opening: « Pages 2-3 ».
+  const opening = /^Pages\s+(\d+)\s*-\s*(\d+)\s*$/i.exec(descriptor);
+  if (opening) return { leaf: Number(opening[1]), spread: Number(opening[2]) };
   const plain = /^Pages?\s+(\d+)/i.exec(descriptor);
   if (plain) return { leaf: Number(plain[1]), spread: null };
   const bracketed = /\[\s*p[./]\s*(\d+)/i.exec(descriptor);
@@ -253,7 +256,74 @@ for (const l of LEDGERS) {
   });
 }
 
-const dup = sheets.map((s) => s.ref).filter((r, i, a) => a.indexOf(r) !== i);
+/**
+ * Josephine Hopper's notebooks, as far as the Whitney has digitised them:
+ * four of the ninety in the Sanborn Hopper Archive, Subseries A of Series IV,
+ * each a ResourceSpace collection harvested exactly as a ledger is. The
+ * title, the recorded date and the scope note are the Whitney's, verbatim;
+ * the archive number is from the caption where the caption gives it.
+ */
+const NOTEBOOKS = [
+  {
+    id: 'garrulities',
+    collection: 191099,
+    title: 'Garrulities + Grouch',
+    short: 'Garrulities',
+    date: '1924-1950',
+    years: [1924, 1950],
+    archiveNumber: null,
+    scope: 'Notebook subtitled "When artists meet." Journal notes by date.',
+  },
+  {
+    id: 'three-wash-sq',
+    collection: 191015,
+    title: 'Re: 3 Wash Sq',
+    short: '3 Wash Sq',
+    date: '1947',
+    years: [1947, 1947],
+    archiveNumber: null,
+    scope:
+      'Notes and drafts of letters on the Washington Square and New York University issue. Sketch on back cover. Spiral bound at top of notebook. Inserts (lists of names) housed separately.',
+  },
+  {
+    id: 'battle-of-wash-sq',
+    collection: 153741,
+    title: 'Battle of Wash Sq.',
+    short: 'Battle of Wash Sq',
+    date: '1947',
+    years: [1947, 1947],
+    archiveNumber: 'EJHA.1597',
+    scope: 'Notes on Washington Square and New York University issue.',
+  },
+  {
+    id: 'black-notebook',
+    collection: 190654,
+    title: '[Black two-ring notebook]',
+    short: 'Black notebook',
+    date: 'circa 1952-1961',
+    years: [1952, 1961],
+    archiveNumber: null,
+    scope:
+      'Various notes including works with dimensions, notes on travel and reading, lists of names. Inserts separated.',
+  },
+];
+
+const notebookSheets = [];
+for (const n of NOTEBOOKS) {
+  const file = resolve(root, 'harvest', `collection-${n.collection}.txt`);
+  const lines = readFileSync(file, 'utf8').split('\n').filter((s) => s.trim());
+  lines.forEach((line, i) => {
+    const cut = line.indexOf('|');
+    if (cut < 0) throw new Error(`${file}:${i + 1} — no “|” separator: ${line}`);
+    const ref = Number(line.slice(0, cut));
+    const descriptor = line.slice(cut + 1).trim();
+    if (!Number.isInteger(ref)) throw new Error(`${file}:${i + 1} — ref is not a number`);
+    const { leaf: lf, spread } = leaf(descriptor);
+    notebookSheets.push({ ref, notebook: n.id, seq: i + 1, leaf: lf, spread, kind: kind(descriptor), descriptor });
+  });
+}
+
+const dup = [...sheets, ...notebookSheets].map((s) => s.ref).filter((r, i, a) => a.indexOf(r) !== i);
 if (dup.length) throw new Error(`Duplicate resource refs across the harvest: ${dup.join(', ')}`);
 
 const q = (s) => `'${String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
@@ -267,7 +337,7 @@ const out = `/**
  * computed in \`scripts/catalogue.mjs\`, where the rule that produced it can be
  * read and argued with.
  */
-import type { Ledger, Sheet } from '../lib/types.ts';
+import type { Ledger, Notebook, NotebookSheet, Sheet } from '../lib/types.ts';
 
 export const LEDGERS: Ledger[] = [
 ${LEDGERS.map(
@@ -309,6 +379,40 @@ export const BY_LEDGER = new Map<string, Sheet[]>(
 export const BY_REF = new Map<number, Sheet>(SHEETS.map((s) => [s.ref, s]));
 
 export const LEDGER_BY_ID = new Map<string, Ledger>(LEDGERS.map((l) => [l.id, l]));
+
+/** Josephine Hopper's notebooks, the four the Whitney has digitised. Not ledgers. */
+export const NOTEBOOKS: Notebook[] = [
+${NOTEBOOKS.map(
+  (n) => `  {
+    id: ${q(n.id)},
+    collection: ${n.collection},
+    title: ${q(n.title)},
+    short: ${q(n.short)},
+    date: ${q(n.date)},
+    years: [${n.years.join(', ')}],
+    archiveNumber: ${n.archiveNumber === null ? 'null' : q(n.archiveNumber)},
+    scope: ${q(n.scope)},
+    sheets: ${notebookSheets.filter((s) => s.notebook === n.id).length},
+  },`,
+).join('\n')}
+];
+
+export const NOTEBOOK_SHEETS: NotebookSheet[] = [
+${notebookSheets
+  .map(
+    (s) =>
+      `  { ref: ${s.ref}, notebook: ${q(s.notebook)}, seq: ${s.seq}, leaf: ${
+        s.leaf === null ? 'null' : s.leaf
+      }, spread: ${s.spread === null ? 'null' : s.spread}, kind: ${q(s.kind)}, descriptor: ${q(s.descriptor)} },`,
+  )
+  .join('\n')}
+];
+
+export const BY_NOTEBOOK = new Map<string, NotebookSheet[]>(
+  NOTEBOOKS.map((n) => [n.id, NOTEBOOK_SHEETS.filter((s) => s.notebook === n.id)]),
+);
+
+export const NOTEBOOK_BY_ID = new Map<string, Notebook>(NOTEBOOKS.map((n) => [n.id, n]));
 `;
 
 writeFileSync(resolve(root, 'src/content/catalogue.ts'), out);
@@ -316,7 +420,8 @@ writeFileSync(resolve(root, 'src/content/catalogue.ts'), out);
 const named = sheets.filter((s) => s.leaf !== null).length;
 const dated = sheets.filter((s) => s.years.length).length;
 process.stdout.write(
-  `catalogue: ${LEDGERS.length} ledgers, ${sheets.length} sheets\n` +
+  `catalogue: ${LEDGERS.length} ledgers, ${sheets.length} sheets; ` +
+    `${NOTEBOOKS.length} notebooks, ${notebookSheets.length} sheets\n` +
     `  with a leaf number written on the paper  ${named}\n` +
     `  unnumbered (covers, flyleaves, insertions) ${sheets.length - named}\n` +
     `  whose descriptor names a year             ${dated}\n`,

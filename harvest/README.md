@@ -43,6 +43,17 @@ Open each collection with every sheet on one page:
 | `collection-1111.txt` | [Book V](https://resourcespace.whitney.org/pages/search.php?search=%21collection1111&per_page=500&order_by=collection&sort=ASC) |
 | `collection-1112.txt` | [Dealers/Etchings](https://resourcespace.whitney.org/pages/search.php?search=%21collection1112&per_page=500&order_by=collection&sort=ASC) |
 
+And the four notebooks of Josephine Nivison Hopper the Whitney has digitised
+so far — Subseries A of Series IV of the Sanborn Hopper Archive — harvested
+the same way, one collection to a notebook:
+
+| File | Notebook |
+|---|---|
+| `collection-191099.txt` | [Garrulities + Grouch, 1924–1950](https://resourcespace.whitney.org/pages/search.php?search=%21collection191099&per_page=500&order_by=collection&sort=ASC) |
+| `collection-191015.txt` | [Re: 3 Wash Sq, 1947](https://resourcespace.whitney.org/pages/search.php?search=%21collection191015&per_page=500&order_by=collection&sort=ASC) |
+| `collection-153741.txt` | [Battle of Wash Sq., 1947](https://resourcespace.whitney.org/pages/search.php?search=%21collection153741&per_page=500&order_by=collection&sort=ASC) |
+| `collection-190654.txt` | [\[Black two-ring notebook\], circa 1952–1961](https://resourcespace.whitney.org/pages/search.php?search=%21collection190654&per_page=500&order_by=collection&sort=ASC) |
+
 Paste `scripts/harvest.js` into the console, copy what it prints, replace the
 file, then `npm run catalogue`. The order of the lines **is** the order of the
 sheets in the book, so do not sort them.

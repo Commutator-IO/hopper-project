@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { LEDGERS } from '../content/catalogue.ts';
+import { LEDGERS, NOTEBOOKS } from '../content/catalogue.ts';
 import { isCurrent, url } from '../lib/base.ts';
 
 /**
@@ -38,7 +38,12 @@ const COLLECTIONS: { id: Collection; label: string; path: string }[] = [
   { id: 'diaries', label: 'Diaries', path: '/diaries/' },
 ];
 
-const DIARY_PAGES: { path: string; label: string }[] = [{ path: '/diaries/', label: 'Scope' }];
+// The notebooks the Whitney has digitised, in the archive's order, and then
+// the scoping page — the same shape as the ledgers' row, for the same reason.
+const DIARY_PAGES: { path: string; label: string }[] = [
+  ...NOTEBOOKS.map((n) => ({ path: `/diaries/${n.id}/`, label: n.short })),
+  { path: '/diaries/', label: 'Scope' },
+];
 
 export const collectionOf = (path: string): Collection =>
   path === '/diaries' || path.startsWith('/diaries/') ? 'diaries' : 'ledgers';
@@ -137,7 +142,13 @@ export function Header({ path }: { path: string }) {
               >
                 {c.label}
               </a>
-              {(c.id === 'diaries' ? DIARY_PAGES : ledgerLinks(true)).map((l) => (
+              {(c.id === 'diaries'
+                ? [
+                    ...NOTEBOOKS.map((n) => ({ path: `/diaries/${n.id}/`, label: n.title })),
+                    { path: '/diaries/', label: 'Scope' },
+                  ]
+                : ledgerLinks(true)
+              ).map((l) => (
                 <a
                   key={l.path}
                   href={url(l.path)}

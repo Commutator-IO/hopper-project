@@ -1,0 +1,8 @@
+89298|Front cover
+89299|Page 1
+89300|Pages 2-3
+89301|Pages 4-5
+89302|Pages 6-7
+89303|Pages 8-9
+89304|Page 10
+89305|Back cover

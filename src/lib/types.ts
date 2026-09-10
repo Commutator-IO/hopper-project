@@ -88,6 +88,50 @@ export interface Sheet {
 export type SheetKind = 'cover' | 'front-matter' | 'leaf' | 'verso' | 'inserted';
 
 /**
+ * A *notebook* of Josephine Nivison Hopper's — one of the ninety in the
+ * Sanborn Hopper Archive at the Whitney, of which four are digitised so far,
+ * as Subseries A of Series IV of that archive.
+ *
+ * Not a ledger and not filed as one: the title is hers, as written on the
+ * cover or the first page, the date is the Whitney's « recorded date », and
+ * the scope note is the Whitney's. Nothing in it has been transcribed here.
+ */
+export interface Notebook {
+  /** This site's slug, under `/diaries/`. */
+  id: NotebookKey;
+  /** ResourceSpace's featured-collection id, which the harvest file is named after. */
+  collection: number;
+  /** Her title, as the Whitney gives it; brackets are the cataloguer's. */
+  title: string;
+  /** For the header tab. */
+  short: string;
+  /** The Whitney's recorded date, verbatim. */
+  date: string;
+  /** The years that date spans, for the coverage mark. */
+  years: [number, number];
+  /** The Sanborn Hopper Archive number, where the Whitney's caption gives it. */
+  archiveNumber: string | null;
+  /** The Whitney's scope and contents note, verbatim. */
+  scope: string;
+  sheets: number;
+}
+
+export type NotebookKey = 'garrulities' | 'three-wash-sq' | 'battle-of-wash-sq' | 'black-notebook';
+
+/** One digitised image of a notebook — the same unit as a ledger's `Sheet`. */
+export interface NotebookSheet {
+  ref: number;
+  notebook: NotebookKey;
+  seq: number;
+  /** The first page the descriptor names, or null for a cover. */
+  leaf: number | null;
+  /** The second page, where the photograph took an opening (« Pages 2-3 »). */
+  spread: number | null;
+  kind: SheetKind;
+  descriptor: string;
+}
+
+/**
  * There is **one** edition here, and that is the interesting difference.
  *
  * The Grothendieck workbench this method comes from carries two: the
