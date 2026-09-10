@@ -882,10 +882,18 @@ let ivUnreadMoney = 0;
       // A year in the date cell. On a line of its own it is only a year; on a
       // row that carries a description as well — leaf 44's « 1920 | 1 rough
       // sketch » — it dates that row too, and the row goes on to be read.
-      const stated = /^(19[0-6]\d)\.?$/.exec((cells[0] ?? '').trim());
+      // And, from leaf 128, in the description cell instead — « | 1952 | | »
+      // — which is the same year line moved one column to the right (#22).
+      // Read there only where the row carries nothing else, so a year inside
+      // a description is not taken for the year line.
+      const stated =
+        /^(19[0-6]\d)\.?$/.exec((cells[0] ?? '').trim()) ??
+        ((cells[0] ?? '').trim() === '' && amount === null
+          ? /^(19[0-6]\d)\.?$/.exec(body)
+          : null);
       if (stated) {
         year = Number(stated[1]);
-        if (!body && amount === null) continue;
+        if (/^(19[0-6]\d)\.?$/.test(body) || (!body && amount === null)) continue;
       }
       // A description that is nothing but ditto marks repeats the row above it
       // and is whatever that row was. Leaf 28 pays the Webb Publishing Co in

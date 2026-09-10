@@ -75,6 +75,13 @@
 
 \newcommand{\ledger}[1]{\gdef\hopLedger{#1}}
 \newcommand{\ledgertitle}[1]{\gdef\hopLedgerTitle{#1}}
+% A notebook of Josephine Hopper's, in place of a ledger: one file to a
+% notebook, filed under transcripts/notebooks/, the argument the site's slug
+% (« battle-of-wash-sq »). Sets the ledger to « notebooks » for everything
+% that reads it, so the title block and the watermark behave as they do for a
+% batch; the rendering checks the sheets against the notebook's own listing.
+\newcommand{\notebook}[1]{\gdef\hopLedger{notebooks}\gdef\hopNotebook{#1}}
+\gdef\hopNotebook{}
 % The Whitney's accession number for the physical volume — 96.208 … 96.213.
 % This is what a citation of the object cites.
 \newcommand{\objectnumber}[1]{\gdef\hopObject{#1}}
@@ -199,6 +206,17 @@
 % is a line under the last two columns of the four a Book IV leaf has; if
 % another volume ever rules a different column, the macro grows an argument.
 \newcommand{\ruledoff}{\cline{3-4}}
+
+% A diary entry begins. #1 is the date as she wrote it — « Mar. 12 »,
+% « Sunday » — and #2 the date the transcriber assigns it, as a year, a month
+% and a day (1947-03-12), or as much of one as the leaf allows. The first is
+% what is on the paper; the second is the one editorial claim a diary needs
+% that a ledger does not, because a ledger's leaf is its own address and an
+% entry's date is its subject. Both are kept, apart, so the claim can be
+% argued with. Used only in the notebooks; a ledger has no entries.
+\newcommand{\entry}[2]{\par\medskip\noindent
+  {\bfseries #1}\ifx\relax#2\relax\else\hspace{0.6em}{\footnotesize\color{gray!60!black}\textsf{#2}}\fi
+  \par\nopagebreak\smallskip}
 
 % The transcriber's note. Ours, not theirs.
 \newcommand{\note}[1]{\par\smallskip{\small\color{gray!60!black}\textit{[#1]}}\par\smallskip}

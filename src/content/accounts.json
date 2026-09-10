@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10T12:57:03.781Z",
+  "generated": "2026-09-10T18:16:05.464Z",
   "basis": "accrual, dated at the leaf's own date column",
   "note": "Sales the transcriptions record, dated at the sale rather than at the cheque. Built only from transcribed leaves, so every figure is a floor under a number nobody knows yet, not a total of Edward Hopper's income. Nothing here is taken from any source but the .tex files.",
   "limit": "The accrual basis reaches the oils and not the etchings, and the ledgers are the reason. On the oils leaves the first column dates the sale. On the etchings leaves it dates the exhibition — the header reads « Date | accepted / Refused | Exhibitions | Sold to, and terms | Received » — and one line carries an impression's whole history, so a sale in it has no date of its own but the day its cheque cleared. Those rows are in `unparsed` with their receipt year rather than dated wrongly, and a cash-basis account could be built from them without re-reading a leaf. Book II rules no columns at all, and it needs the other half of the same rule: a leaf there is one work with one sale line — buyer, price and the cut, the cheque, the date — so the date is in the last column and never in the first. It is read there only on a leaf that rules nothing, only where the first column dates nothing, and only where the last cell holds a date and nothing besides.",
@@ -644,15 +644,29 @@
         },
         {
           "year": 1951,
-          "accrued": 35646.5,
-          "received": 27263.58,
+          "accrued": 4870,
+          "received": 4870,
           "notRecorded": 0,
-          "outstanding": 29005.94
+          "outstanding": 20623.02
+        },
+        {
+          "year": 1952,
+          "accrued": 15625.25,
+          "received": 11371.03,
+          "notRecorded": 0,
+          "outstanding": 24877.24
+        },
+        {
+          "year": 1953,
+          "accrued": 4147.77,
+          "received": 4029.07,
+          "notRecorded": 0,
+          "outstanding": 24995.94
         },
         {
           "year": 1954,
-          "accrued": 20210,
-          "received": 13806.34,
+          "accrued": 31213.48,
+          "received": 20799.82,
           "notRecorded": 0,
           "outstanding": 35409.6
         },
@@ -772,7 +786,7 @@
         "chargedOn": {
           "leaf": "131",
           "ref": "17179",
-          "year": 1951
+          "year": 1954
         }
       },
       {
@@ -24298,7 +24312,7 @@
       "entryWords": "Frank K. M. Rehn on account rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 2706.85,
       "rateWritten": null,
@@ -24316,10 +24330,10 @@
       "ref": "17686",
       "section": "Leaf 128: January to May 1952",
       "work": null,
-      "entryWords": "   1952 Frank K. M. Rehn rec'd by check"
+      "entryWords": "   Frank K. M. Rehn rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 10,
       "rateWritten": null,
@@ -24340,7 +24354,7 @@
       "entryWords": "refer to statement of Dec 29, 1951 N. Y. Times Reproduction Adams House rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 4000,
       "rateWritten": null,
@@ -24361,7 +24375,7 @@
       "entryWords": "Frank K. M. Rehn 1 oil Rooms by the Sea less commission  rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 38.4,
       "rateWritten": null,
@@ -24382,7 +24396,7 @@
       "entryWords": "Artex Prints, inc. royalties on L. House at 2 Lights rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 2750,
       "rateWritten": null,
@@ -24403,7 +24417,7 @@
       "entryWords": "Frank K. M. Rehn 1 oil ``East Wind over Weehawken'' less commission  rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 750,
       "rateWritten": null,
@@ -24421,10 +24435,10 @@
       "ref": "18456",
       "section": "Leaf 129: June to September 1952",
       "work": null,
-      "entryWords": " 2 1952 Frank K. M. Rehn Crossing at Eastham w.c 1 Oil Moonlight Interior \" Conference at Night  less commission  less expenses  rec'd by check"
+      "entryWords": " 2 Frank K. M. Rehn Crossing at Eastham w.c 1 Oil Moonlight Interior \" Conference at Night  less commission  less expenses  rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 2200,
       "rateWritten": null,
@@ -24442,10 +24456,10 @@
       "ref": "18456",
       "section": "Leaf 129: June to September 1952",
       "work": null,
-      "entryWords": " 2 1952 Frank K. M. Rehn Crossing at Eastham w.c 1 Oil Moonlight Interior \" Conference at Night  less commission  less expenses  rec'd by check"
+      "entryWords": " 2 Frank K. M. Rehn Crossing at Eastham w.c 1 Oil Moonlight Interior \" Conference at Night  less commission  less expenses  rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 3000,
       "rateWritten": null,
@@ -24463,10 +24477,10 @@
       "ref": "18456",
       "section": "Leaf 129: June to September 1952",
       "work": null,
-      "entryWords": " 2 1952 Frank K. M. Rehn Crossing at Eastham w.c 1 Oil Moonlight Interior \" Conference at Night  less commission  less expenses  rec'd by check"
+      "entryWords": " 2 Frank K. M. Rehn Crossing at Eastham w.c 1 Oil Moonlight Interior \" Conference at Night  less commission  less expenses  rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 20,
       "rateWritten": null,
@@ -24487,7 +24501,7 @@
       "entryWords": "Kennedy & Co 1 print rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 150,
       "rateWritten": null,
@@ -24508,7 +24522,7 @@
       "entryWords": "Metropolitan Museum honorarium for jury rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 7.75,
       "rateWritten": null,
@@ -24526,10 +24540,10 @@
       "ref": "18488",
       "section": "Leaf 130: February to December 1953",
       "work": null,
-      "entryWords": " 1953 dividend on ``Lighthouse'' rec'd by check"
+      "entryWords": " dividend on ``Lighthouse'' rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 10,
       "rateWritten": null,
@@ -24550,7 +24564,7 @@
       "entryWords": "New York Times Company Reproduction rights Lombards House rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 4000.02,
       "rateWritten": null,
@@ -24571,7 +24585,7 @@
       "entryWords": "Frank H. M. Rehn 1 oil Portrait of Orleans 4 Water colors 6 etchings less expenses and commission rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 100,
       "rateWritten": null,
@@ -24592,7 +24606,7 @@
       "entryWords": "Butler Art Institute honorarium for jury rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 30,
       "rateWritten": null,
@@ -24613,7 +24627,7 @@
       "entryWords": "Kennedy Galleries, inc. 1 etching Lonely House less 15% and 33 1/3 % = $17.00 rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1954,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 3.48,
       "rateWritten": null,
@@ -24631,10 +24645,10 @@
       "ref": "17179",
       "section": "Leaf 131: January to May 1954",
       "work": null,
-      "entryWords": " 1954 Artex Prints dividend on Folios rec'd by check"
+      "entryWords": " Artex Prints dividend on Folios rec'd by check"
     },
     {
-      "year": 1951,
+      "year": 1954,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 4000,
       "rateWritten": null,
@@ -24655,7 +24669,7 @@
       "entryWords": "Frank K. M. Rehn 1 oil ``Office in a Small City'' less 33 1/3 % commission rec'd by check (Zucker)"
     },
     {
-      "year": 1951,
+      "year": 1954,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 3500,
       "rateWritten": null,
@@ -24676,7 +24690,7 @@
       "entryWords": "Frank K. M. Rehn 1 oil ``Ryders House'' Ranger Fund check John Clancey less 33 1/3 % and $10.00 for cleaning  \" rec'd by check (Clancey)"
     },
     {
-      "year": 1951,
+      "year": 1954,
       "yearFrom": "the year the volume last stated, carried forward",
       "gross": 3500,
       "rateWritten": null,
@@ -24761,7 +24775,7 @@
       "instalmentOf": {
         "leaf": "131",
         "ref": "17179",
-        "year": 1951
+        "year": 1954
       }
     },
     {
@@ -33011,7 +33025,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "amount": 2706.85,
       "date": "(Check date",
       "ledger": "book-iv",
@@ -33022,7 +33036,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "amount": 10,
       "date": "\" 4",
       "ledger": "book-iv",
@@ -33033,7 +33047,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "amount": 2666.67,
       "date": "\" 7",
       "ledger": "book-iv",
@@ -33044,7 +33058,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "amount": 38.4,
       "date": "\" 10",
       "ledger": "book-iv",
@@ -33055,7 +33069,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "amount": 1833.34,
       "date": "\" 16",
       "ledger": "book-iv",
@@ -33066,7 +33080,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "amount": 3945.77,
       "date": "\" 27",
       "ledger": "book-iv",
@@ -33077,7 +33091,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "amount": 20,
       "date": "\" 18",
       "ledger": "book-iv",
@@ -33088,7 +33102,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1952,
       "amount": 150,
       "date": "\" 22",
       "ledger": "book-iv",
@@ -33099,7 +33113,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "amount": 7.75,
       "date": "\" 28",
       "ledger": "book-iv",
@@ -33110,7 +33124,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "amount": 10,
       "date": "\" 31",
       "ledger": "book-iv",
@@ -33121,7 +33135,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "amount": 3894.32,
       "date": "",
       "ledger": "book-iv",
@@ -33132,7 +33146,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "amount": 100,
       "date": "",
       "ledger": "book-iv",
@@ -33143,7 +33157,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1953,
       "amount": 17,
       "date": "\" 9",
       "ledger": "book-iv",
@@ -33154,7 +33168,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1954,
       "amount": 3.48,
       "date": "\" 14",
       "ledger": "book-iv",
@@ -33165,7 +33179,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1954,
       "amount": 2666.66,
       "date": "\" 29",
       "ledger": "book-iv",
@@ -33176,7 +33190,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1954,
       "amount": 2323.34,
       "date": "\" 15",
       "ledger": "book-iv",
@@ -33187,7 +33201,7 @@
       "activity": "cashbook"
     },
     {
-      "year": 1951,
+      "year": 1954,
       "amount": 2000,
       "date": "\" 7",
       "ledger": "book-iv",

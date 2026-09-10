@@ -134,6 +134,8 @@ The apparatus inside it:
 | `\clipping{…}` | a cutting pasted to the leaf | `<figure type="clipping">` |
 | `\ink{red}{…}` | the ink a cell is written in — red, pencil or blue; black is unmarked | `<hi rend="ink-red">` |
 | `\ruledoff` at a row's head | a rule drawn above this row's figure | `<row rend="rule-above">` |
+| `\notebook{…}` | this file is one of Josephine Hopper's notebooks, not a ledger | the header's title |
+| `\entry{as written}{YYYY-MM-DD}` | a diary entry begins, dated as she wrote it and as the transcriber assigns it | `<div type="entry"><head><date when>` |
 | `ledgertable` | the ruled columns | `<table>`/`<row>`/`<cell>` |
 | `\keywords{…}` | the batch's tags | `<term>` in `<textClass>` |
 

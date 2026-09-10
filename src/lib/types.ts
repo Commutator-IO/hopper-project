@@ -182,6 +182,8 @@ export interface Manifest {
   /** Sheets per batch. Twelve — see `src/lib/batches.ts` for why that number. */
   batchSize: number;
   generated: string;
+  /** Sheets of each notebook a transcription under `transcripts/notebooks/` names, by notebook id. */
+  readNotebooks?: Record<string, number>;
   /** Transcript artifacts under `public/transcripts/`, keyed `<ledger>#<batch>`. */
   transcripts: Record<string, TranscriptEntry>;
   /**

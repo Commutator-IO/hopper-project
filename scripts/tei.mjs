@@ -23,6 +23,7 @@
  * | `ledgertable` | `<table>` with `<row>`/`<cell>` |
  * | `\section{…}` | `<div type="leaf">` with its `<head>` |
  * | `\work{…}` | `<div type="work">` inside the leaf |
+ * | `\entry{as written}{YYYY-MM-DD}` | `<div type="entry">` with `<head><date when>` — the notebooks only |
  * | `\keywords{…}` | `<term>`s in `<textClass>`, in the header |
  *
  * The divisions are a hierarchy because the leaves are: a leaf, and the works
@@ -315,7 +316,9 @@ function convert(tex, meta) {
   const divs = [];
   /** The batch's tags, for `<textClass>` in the header. */
   let keywords = '';
-  const RANK = { section: 1, subsection: 2, work: 3 };
+  // An entry of a diary ranks with a work of a ledger: inside the leaf it
+  // begins on, closed by the next entry or the next leaf.
+  const RANK = { section: 1, subsection: 2, work: 3, entry: 3 };
   const openDiv = (kind, type, head) => {
     while (divs.length && RANK[divs[divs.length - 1]] >= RANK[kind]) {
       out.push('</div>');
@@ -421,6 +424,25 @@ function convert(tex, meta) {
       i = a;
       flush();
       openDiv('work', 'work', `<head type="work">${inline(t)}</head>`);
+      continue;
+    }
+    // A diary entry: the date as written is the head, and the date the
+    // transcriber assigns it is `@when`, which is where TEI puts the one
+    // editorial claim an entry carries.
+    if (name === 'entry') {
+      const [written, a] = group(s, i);
+      const [when, b] = group(s, a);
+      i = b;
+      flush();
+      const w = when.trim();
+      if (w && !/^\d{4}(-\d{2}(-\d{2})?)?$/.test(w)) {
+        throw new Error(`tei: \\entry{…}{${w}} — the assigned date must be YYYY, YYYY-MM or YYYY-MM-DD`);
+      }
+      openDiv(
+        'entry',
+        'entry',
+        `<head><date${w ? ` when="${w}"` : ''}>${inline(written)}</date></head>`,
+      );
       continue;
     }
     if (name === 'section' || name === 'subsection') {
@@ -605,7 +627,7 @@ ${out.join('\n')}
 `;
 }
 
-const META = ['ledger', 'ledgertitle', 'objectnumber', 'batch', 'dating', 'watermark'];
+const META = ['ledger', 'notebook', 'ledgertitle', 'objectnumber', 'batch', 'dating', 'watermark'];
 
 if (!existsSync(dir)) {
   process.stdout.write('tei: nothing rendered yet — run npm run render first\n');

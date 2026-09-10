@@ -377,6 +377,8 @@ honesty of the exercise:
 | `\clipping{…}` | something printed and pasted to the leaf |
 | `\ink{red\|pencil\|blue}{…}` | the ink a cell is written in, where the leaf's colour says something — Book IV's charges are black, its receipts red, its sums pencil. What is on the paper, not what it means; black is unmarked |
 | `\ruledoff` at the head of a row | a rule the writer drew across the money column above this row's figure — her own line under the items she is summing |
+| `\notebook{battle-of-wash-sq}` | in place of `\ledger{}`: this file transcribes one of Josephine Hopper's notebooks, filed under `transcripts/notebooks/` |
+| `\entry{Mar. 12}{1947-03-12}` | a diary entry begins — the date as she wrote it, then the date the transcriber assigns it, kept apart because the second is the one editorial claim an entry carries. The notebooks only |
 | `ledgertable` | the ruled columns |
 
 **A guessed figure is a sale that did not happen.** That is the difference

@@ -38,16 +38,33 @@ const root = resolve(import.meta.dirname, '..');
  */
 const CATALOGUE = (() => {
   const src = readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8');
+  // The ledgers' sheets, and the notebooks' after them: a notebook's sheet
+  // says `notebook:` where a ledger's says `ledger:`, and is filed here under
+  // the ledger « notebooks » with the notebook's id beside it.
   const rows = [
-    ...src.matchAll(
-      /\{ ref: (\d+), ledger: '([^']+)', seq: (\d+), leaf: (null|\d+), spread: (null|\d+), kind: '([^']+)',/g,
-    ),
-  ].map((m) => ({
-    ref: Number(m[1]),
-    ledger: m[2],
-    seq: Number(m[3]),
-    leaf: m[4] === 'null' ? null : Number(m[4]),
-  }));
+    ...[
+      ...src.matchAll(
+        /\{ ref: (\d+), ledger: '([^']+)', seq: (\d+), leaf: (null|\d+), spread: (null|\d+), kind: '([^']+)',/g,
+      ),
+    ].map((m) => ({
+      ref: Number(m[1]),
+      ledger: m[2],
+      notebook: null,
+      seq: Number(m[3]),
+      leaf: m[4] === 'null' ? null : Number(m[4]),
+    })),
+    ...[
+      ...src.matchAll(
+        /\{ ref: (\d+), notebook: '([^']+)', seq: (\d+), leaf: (null|\d+), spread: (null|\d+), kind: '([^']+)',/g,
+      ),
+    ].map((m) => ({
+      ref: Number(m[1]),
+      ledger: 'notebooks',
+      notebook: m[2],
+      seq: Number(m[3]),
+      leaf: m[4] === 'null' ? null : Number(m[4]),
+    })),
+  ];
   if (!rows.length) throw new Error('render: could not read src/content/catalogue.ts');
   return new Map(rows.map((r) => [r.ref, r]));
 })();
@@ -280,6 +297,7 @@ const INKS = new Set(['red', 'pencil', 'blue']);
 
 const BLOCK_CMD = new Set([
   'sheet',
+  'entry',
   'note',
   'marginal',
   'sketch',
@@ -642,6 +660,13 @@ function render(src, file, meta) {
             `\\sheet{${ref}} belongs to ${rec.ledger}, but this file declares \\ledger{${meta.ledger}}`,
           );
         }
+        if (meta.notebook && rec.notebook !== meta.notebook) {
+          throw new TexError(
+            file,
+            line,
+            `\\sheet{${ref}} belongs to the notebook ${rec.notebook}, but this file declares \\notebook{${meta.notebook}}`,
+          );
+        }
         const leaf = leafRaw.trim() === '' ? null : Number(leafRaw.trim());
         if (leaf !== rec.leaf) {
           throw new TexError(
@@ -672,6 +697,23 @@ function render(src, file, meta) {
         const [t] = args(1);
         flush();
         out.push(`<div class="note" title="the transcriber's note">${t}</div>`);
+        break;
+      }
+      // A diary entry begins: the date as written, and beside it, small, the
+      // date the transcriber assigns — the one claim here that is ours, kept
+      // apart from her words so it can be argued with.
+      case 'entry': {
+        const [written, when] = args(2);
+        flush();
+        const w = when.replace(/<[^>]*>/g, '').trim();
+        if (w && !/^\d{4}(-\d{2}(-\d{2})?)?$/.test(w)) {
+          throw new TexError(file, line, `\\entry{…}{${w}} - the assigned date must be YYYY, YYYY-MM or YYYY-MM-DD`);
+        }
+        out.push(
+          `<h3 class="entry"><span class="entry-written">${written}</span>` +
+            (w ? `<time class="entry-when" datetime="${w}" title="the date the transcriber assigns this entry">${w}</time>` : '') +
+            '</h3>',
+        );
         break;
       }
       case 'marginal': {
@@ -790,6 +832,8 @@ table.ledger th { text-align: left; border-bottom: 1.5px solid var(--ink);
 .quad2 { width: 2.6em; }
 table.ledger td { border-bottom: 1px solid var(--rule); padding: .3rem .5rem .3rem 0;
   vertical-align: top; }
+h3.entry { display: flex; align-items: baseline; gap: .6rem; margin: 1.6rem 0 .3rem; font-size: 1rem; }
+.entry-when { font: 500 .7rem/1 ui-sans-serif, system-ui, sans-serif; letter-spacing: .05em; color: var(--dim); }
 .ink-red { color: #b5342a; }
 .ink-pencil { color: #7a7770; }
 .ink-blue { color: #3b62a8; }
@@ -910,7 +954,7 @@ ${html}
 
 /* --------------------------------------------------------------------- main */
 
-const META = ['ledger', 'ledgertitle', 'objectnumber', 'batch', 'dating', 'watermark'];
+const META = ['ledger', 'notebook', 'ledgertitle', 'objectnumber', 'batch', 'dating', 'watermark'];
 
 function one(file) {
   const src = readFileSync(file, 'utf8');
@@ -922,7 +966,10 @@ function one(file) {
   const sh = /\\sheets\{(\d+)\}\{(\d+)\}/.exec(src);
   meta.first = sh ? sh[1] : '?';
   meta.last = sh ? sh[2] : '?';
-  if (!meta.ledger) throw new TexError(file, 1, 'no \\ledger{} in the preamble');
+  // A notebook declares \notebook{} instead of \ledger{}, and is filed under
+  // « notebooks » for everything that reads a ledger's name.
+  if (meta.notebook) meta.ledger = 'notebooks';
+  if (!meta.ledger) throw new TexError(file, 1, 'no \\ledger{} or \\notebook{} in the preamble');
   if (!meta.watermark) {
     throw new TexError(
       file,

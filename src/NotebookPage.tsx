@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Page } from './components/Frame.tsx';
 import { BY_NOTEBOOK, NOTEBOOK_BY_ID } from './content/catalogue.ts';
-import { collectionUrl, sheetPageUrl, sheetUrl } from './lib/batches.ts';
+import { collectionUrl, sheetPageUrl, sheetUrl, useManifest } from './lib/batches.ts';
+import { url } from './lib/base.ts';
 import { PAAM_COLLECTION_URL, notebookPath, paamPartsOverlapping } from './lib/diaries.ts';
 import type { NotebookKey } from './lib/types.ts';
 
@@ -31,14 +32,44 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
   });
   const sheet = sheets[seq - 1];
 
+  // The transcription, where one exists: rendered by `npm run render` from
+  // `transcripts/notebooks/<id>.tex` to the same reading view a batch gets,
+  // shown beside the facsimile and kept in step with it both ways — the
+  // rendered page reports the sheet it is scrolled to, and a thumbnail
+  // chosen here scrolls it to that sheet — over the same two messages the
+  // ledgers' reader uses. Where none exists the pane says so, and shows the
+  // shape one takes.
+  const manifest = useManifest();
+  const transcript = manifest?.transcripts?.[`notebook#${id}`];
+  const hasTranscript = Boolean(transcript?.html);
+  const frame = useRef<HTMLIFrameElement>(null);
+  const transcriptUrl = url(`/transcripts/notebooks/${id}.html`);
+  useEffect(() => {
+    const onMessage = (e: MessageEvent) => {
+      const ref = Number(e.data?.hopperSheet);
+      if (!ref) return;
+      const s = sheets.find((x) => x.ref === ref);
+      if (s) setSeq(s.seq);
+    };
+    addEventListener('message', onMessage);
+    return () => removeEventListener('message', onMessage);
+  }, [sheets]);
+  const show = (n: number) => {
+    setSeq(n);
+    const s = sheets[n - 1];
+    if (s && frame.current?.contentWindow) {
+      frame.current.contentWindow.postMessage({ hopperGoto: s.ref }, '*');
+    }
+  };
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight') setSeq((s) => Math.min(sheets.length, s + 1));
-      if (e.key === 'ArrowLeft') setSeq((s) => Math.max(1, s - 1));
+      if (e.key === 'ArrowRight') show(Math.min(sheets.length, seq + 1));
+      if (e.key === 'ArrowLeft') show(Math.max(1, seq - 1));
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [sheets.length]);
+  });
 
   return (
     <Page path={notebookPath(id)}>
@@ -102,7 +133,7 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
           {sheets.map((s) => (
             <button
               key={s.ref}
-              onClick={() => setSeq(s.seq)}
+              onClick={() => show(s.seq)}
               title={s.descriptor}
               className={`shrink-0 rounded border ${
                 s.seq === seq ? 'border-brand-600' : 'border-ink-200 hover:border-ink-400'
@@ -122,39 +153,85 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
         </div>
 
         {sheet && (
-          <figure className="mt-6">
-            <div className="flex items-center justify-between gap-3 text-[13px] text-ink-600">
-              <button
-                onClick={() => setSeq((s) => Math.max(1, s - 1))}
-                disabled={seq === 1}
-                className="rounded-full border border-ink-200 px-3 py-1 disabled:opacity-40"
-              >
-                ← previous
-              </button>
-              <figcaption>
-                <span className="text-ink-900">{sheet.descriptor}</span>
-                <span className="text-ink-400">
-                  {' '}
-                  · sheet {sheet.seq} of {sheets.length} · ref {sheet.ref} ·{' '}
-                  <a href={sheetPageUrl(sheet.ref)} className={A}>
-                    at the Whitney ↗
-                  </a>
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            {/* The transcription pane, on the left as in the ledgers' reader:
+                the rendered page, or the plain statement that none exists. */}
+            <div className="min-w-0">
+              <div className="flex items-baseline justify-between gap-3 text-[12px] uppercase tracking-wider text-ink-400">
+                <span>Transcription</span>
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[11px] normal-case tracking-normal ${
+                    hasTranscript ? 'bg-brand-100 text-brand-700' : 'bg-ink-100 text-ink-500'
+                  }`}
+                >
+                  {hasTranscript ? (manifest?.declared?.[`notebook#${id}`] ?? 'drafted') : 'not transcribed'}
                 </span>
-              </figcaption>
-              <button
-                onClick={() => setSeq((s) => Math.min(sheets.length, s + 1))}
-                disabled={seq === sheets.length}
-                className="rounded-full border border-ink-200 px-3 py-1 disabled:opacity-40"
-              >
-                next →
-              </button>
+              </div>
+              {hasTranscript ? (
+                <iframe
+                  ref={frame}
+                  src={transcriptUrl}
+                  title={`Transcription — ${notebook.title}`}
+                  className="mt-2 h-[85vh] w-full rounded border border-ink-200 bg-white"
+                />
+              ) : (
+                <div className="mt-2 rounded border border-dashed border-ink-300 bg-white p-5 text-[14px] leading-relaxed text-ink-700">
+                  <p>
+                    Nothing of this notebook has been read yet. When it is, the transcription
+                    stands here beside the sheet it came from, in the same reading view the
+                    ledgers get: one file for the notebook under{' '}
+                    <code className="font-mono text-[12.5px]">transcripts/notebooks/{id}.tex</code>,
+                    read <strong>in entries</strong> rather than in rows — each opened by the date
+                    as she wrote it, with the date the transcriber assigns beside it, small, as the
+                    one editorial claim an entry carries — and with the same apparatus as the
+                    ledgers: what was illegible, what was read doubtfully, what she struck, and
+                    whose hand.
+                  </p>
+                  <p className="mt-3">
+                    <a href={url('/transcripts/_specimen/notebook.html')} className={A}>
+                      See the specimen ↗
+                    </a>{' '}
+                    — a page in that shape that transcribes nothing, so the layout can be checked
+                    before any reading is published.
+                  </p>
+                </div>
+              )}
             </div>
-            <img
-              src={sheetUrl(sheet.ref, 'pre')}
-              alt={sheet.descriptor}
-              className="mt-3 max-h-[85vh] w-auto max-w-full rounded border border-ink-200 bg-white"
-            />
-          </figure>
+
+            <figure className="min-w-0">
+              <div className="flex items-center justify-between gap-3 text-[13px] text-ink-600">
+                <button
+                  onClick={() => show(Math.max(1, seq - 1))}
+                  disabled={seq === 1}
+                  className="rounded-full border border-ink-200 px-3 py-1 disabled:opacity-40"
+                >
+                  ← previous
+                </button>
+                <figcaption className="min-w-0 truncate">
+                  <span className="text-ink-900">{sheet.descriptor}</span>
+                  <span className="text-ink-400">
+                    {' '}
+                    · sheet {sheet.seq} of {sheets.length} · ref {sheet.ref} ·{' '}
+                    <a href={sheetPageUrl(sheet.ref)} className={A}>
+                      at the Whitney ↗
+                    </a>
+                  </span>
+                </figcaption>
+                <button
+                  onClick={() => show(Math.min(sheets.length, seq + 1))}
+                  disabled={seq === sheets.length}
+                  className="rounded-full border border-ink-200 px-3 py-1 disabled:opacity-40"
+                >
+                  next →
+                </button>
+              </div>
+              <img
+                src={sheetUrl(sheet.ref, 'pre')}
+                alt={sheet.descriptor}
+                className="mt-3 max-h-[85vh] w-auto max-w-full rounded border border-ink-200 bg-white"
+              />
+            </figure>
+          </div>
         )}
         <p className="prose-note mt-6 max-w-3xl">
           The image is fetched from the Whitney’s own server as it is looked at and is stored

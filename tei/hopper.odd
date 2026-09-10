@@ -97,7 +97,7 @@
           <!-- The reading itself: what is illegible, what is doubtful, what is
                struck, what the transcriber says about it, and the tags. -->
           <moduleRef key="core"
-                     include="author bibl del gap head hi item lb list name note p pb
+                     include="author bibl date del gap head hi item lb list name note p pb
                               publisher resp respStmt term title unclear"/>
 
           <!-- Provenance: the model that read the sheets, the date, the
@@ -143,6 +143,12 @@
                   <valItem ident="work">
                     <desc>The record of one work, which is what a leaf of the
                        paintings books is organised around.</desc>
+                  </valItem>
+                  <valItem ident="entry">
+                    <desc>One entry of a notebook, headed by its date as
+                       written; the date the transcriber assigns it is the
+                       <att>when</att> of the <gi>date</gi> in the head. The
+                       notebooks only.</desc>
                   </valItem>
                 </valList>
               </attDef>

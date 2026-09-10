@@ -63,9 +63,14 @@ if (existsSync(out)) {
     if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
     const ledger = dir.name;
     for (const f of readdirSync(resolve(out, ledger))) {
-      const m = /^batch-(\d+)\.(html|tex|pdf|xml)$/.exec(f);
+      // The notebooks are one file each, named by the notebook: keyed
+      // `notebook#<id>` beside the ledgers' `<ledger>#<batch>`.
+      const m =
+        ledger === 'notebooks'
+          ? /^([\w-]+)\.(html|tex|pdf|xml)$/.exec(f)
+          : /^batch-(\d+)\.(html|tex|pdf|xml)$/.exec(f);
       if (!m) continue;
-      const key = `${ledger}#${Number(m[1])}`;
+      const key = ledger === 'notebooks' ? `notebook#${m[1]}` : `${ledger}#${Number(m[1])}`;
       const e = (transcripts[key] ??= { html: false, tex: false, pdf: false, xml: false });
       e[m[2]] = true;
       if (m[2] === 'tex') e.pass = passOf(readFileSync(resolve(out, ledger, f), 'utf8'));
@@ -94,7 +99,21 @@ for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : 
     for (const m of src.matchAll(/\\sheet\{(\d+)\}/g)) set.add(m[1]);
   }
 }
-for (const [ledger, set] of seen) readCount[ledger] = set.size;
+// The notebooks' sheets are counted apart: the site's « sheets transcribed »
+// is the ledgers', 504 of them, and a notebook is another document.
+const readNotebooks = {};
+for (const [ledger, set] of seen) {
+  if (ledger === 'notebooks') readNotebooks.all = set.size;
+  else readCount[ledger] = set.size;
+}
+if (existsSync(resolve(out, 'notebooks'))) {
+  for (const f of readdirSync(resolve(out, 'notebooks'))) {
+    if (!f.endsWith('.tex')) continue;
+    const src = readFileSync(resolve(out, 'notebooks', f), 'utf8');
+    readNotebooks[f.replace(/\.tex$/, '')] = new Set([...src.matchAll(/\\sheet\{(\d+)\}/g)].map((m) => m[1])).size;
+  }
+}
+delete readNotebooks.all;
 
 /**
  * Tags, from the `\keywords{}` line each transcription carries.
@@ -207,6 +226,7 @@ const manifest = {
   declared,
   tags,
   read: readCount,
+  readNotebooks,
   apparatus,
 };
 
