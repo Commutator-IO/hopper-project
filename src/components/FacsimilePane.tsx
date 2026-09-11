@@ -38,7 +38,7 @@ const ZOOMS = [1, 1.6, 2.5, 4];
  * `NotebookSheet` has these, and the pane asks for no more so that both can
  * be turned in it.
  */
-export type FacsimileSheet = Pick<Sheet, 'ref' | 'leaf' | 'descriptor'>;
+export type FacsimileSheet = Pick<Sheet, 'ref' | 'leaf' | 'descriptor' | 'restamped'>;
 
 export function FacsimilePane({
   sheets,
@@ -198,7 +198,14 @@ export function FacsimilePane({
 
       {/* The descriptor, verbatim, and the link out. The descriptor is the
           Whitney's sentence and not ours, which is why it is quoted whole
-          rather than shortened to fit. */}
+          rather than shortened to fit.
+
+          Where `restamped` is set, the descriptor and the number on the paper
+          disagree and the reader is told so here. Saying nothing would leave
+          « leaf 68 » standing beside « Pages 66-67 » with no account of it,
+          which reads as a bug in this site rather than a slip in the
+          cataloguing — and the whole point of keeping the descriptor verbatim
+          is lost if the disagreement it creates is left unexplained. */}
       <div className="shrink-0 border-t border-ink-200 bg-white/70 px-3 py-2 text-[11.5px] leading-snug text-ink-600">
         <span className="text-ink-800">{active.descriptor}</span>
         <a
@@ -209,6 +216,14 @@ export function FacsimilePane({
         >
           at the Whitney ↗
         </a>
+        {active.restamped && active.leaf !== null && (
+          <span className="mt-1 block text-ink-500">
+            <span className="font-medium text-ink-700">{active.leaf}</span> is the numeral stamped on
+            this page. The descriptor above is the Whitney&rsquo;s, verbatim, and names a different
+            one &mdash; its numbering for this notebook was assigned by position and runs behind the
+            paper from here on.
+          </span>
+        )}
       </div>
     </div>
   );

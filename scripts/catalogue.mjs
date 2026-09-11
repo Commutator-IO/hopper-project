@@ -197,9 +197,18 @@ const STAMPED = new Map([
   [97182, { leaf: 108, spread: null }], //  Page 78
 ]);
 
-/** `leaf()`, then the stamped number where one has been read. */
+/**
+ * `leaf()`, then the stamped number where one has been read.
+ *
+ * `restamped` travels with the sheet so the reading view can say why the
+ * number on its strip and the descriptor under the photograph disagree. A
+ * reader who sees « leaf 68 » beside « Pages 66-67 » and is told nothing will
+ * read it as a bug in the site, which is the one outcome worse than the
+ * Whitney's own slip.
+ */
 function stamped(ref, descriptor) {
-  return STAMPED.get(ref) ?? leaf(descriptor);
+  const s = STAMPED.get(ref);
+  return s ? { ...s, restamped: true } : { ...leaf(descriptor), restamped: false };
 }
 
 /**
@@ -279,10 +288,11 @@ for (const l of LEDGERS) {
     const ref = Number(line.slice(0, cut));
     const descriptor = line.slice(cut + 1);
     if (!Number.isInteger(ref)) throw new Error(`${file}:${i + 1} — ref is not a number`);
-    const { leaf: lf, spread } = stamped(ref, descriptor);
+    const { leaf: lf, spread, restamped } = stamped(ref, descriptor);
     sheets.push({
       ref,
       ledger: l.id,
+      restamped,
       /** Position in the book, 1-based — the only numbering every sheet has. */
       seq: i + 1,
       descriptor,
@@ -357,8 +367,8 @@ for (const n of NOTEBOOKS) {
     const ref = Number(line.slice(0, cut));
     const descriptor = line.slice(cut + 1).trim();
     if (!Number.isInteger(ref)) throw new Error(`${file}:${i + 1} — ref is not a number`);
-    const { leaf: lf, spread } = stamped(ref, descriptor);
-    notebookSheets.push({ ref, notebook: n.id, seq: i + 1, leaf: lf, spread, kind: kind(descriptor), descriptor });
+    const { leaf: lf, spread, restamped } = stamped(ref, descriptor);
+    notebookSheets.push({ ref, notebook: n.id, seq: i + 1, leaf: lf, spread, kind: kind(descriptor), descriptor, restamped });
   });
 }
 
@@ -406,7 +416,9 @@ ${sheets
         s.leaf === null ? 'null' : s.leaf
       }, spread: ${s.spread === null ? 'null' : s.spread}, kind: ${q(s.kind)}, quoted: [${s.quoted
         .map(q)
-        .join(', ')}], years: [${s.years.join(', ')}], descriptor: ${q(s.descriptor)} },`,
+        .join(', ')}], years: [${s.years.join(', ')}], descriptor: ${q(s.descriptor)}${
+        s.restamped ? ', restamped: true' : ''
+      } },`,
   )
   .join('\n')}
 ];
@@ -442,7 +454,9 @@ ${notebookSheets
     (s) =>
       `  { ref: ${s.ref}, notebook: ${q(s.notebook)}, seq: ${s.seq}, leaf: ${
         s.leaf === null ? 'null' : s.leaf
-      }, spread: ${s.spread === null ? 'null' : s.spread}, kind: ${q(s.kind)}, descriptor: ${q(s.descriptor)} },`,
+      }, spread: ${s.spread === null ? 'null' : s.spread}, kind: ${q(s.kind)}, descriptor: ${q(
+        s.descriptor,
+      )}${s.restamped ? ', restamped: true' : ''} },`,
   )
   .join('\n')}
 ];

@@ -54,7 +54,9 @@ export interface Sheet {
   /** Position in the digitised book, 1-based. Every sheet has one. */
   seq: number;
   /**
-   * The number written on the paper, where the Whitney's descriptor gives one.
+   * The number written on the paper, where it can be had — from the Whitney's
+   * descriptor, or read off the photograph where the descriptor is wrong and
+   * `restamped` says so.
    *
    * `null` for a cover, a flyleaf, an index, a loose insertion — about one
    * sheet in nine. That is not a defect in the record: those leaves carry no
@@ -83,6 +85,15 @@ export interface Sheet {
   years: number[];
   /** The Whitney's File or Component Descriptor, verbatim and unshortened. */
   descriptor: string;
+  /**
+   * `leaf` was read off the photograph because it disagrees with
+   * `descriptor`. Seven sheets of Garrulities carry it: the Whitney's
+   * descriptors there were assigned by position in the collection rather than
+   * read off the paper, and run two pages behind the stamped numerals. The
+   * descriptor is still shown verbatim; this is what lets the reading view say
+   * why the two numbers differ instead of looking broken.
+   */
+  restamped?: boolean;
 }
 
 export type SheetKind = 'cover' | 'front-matter' | 'leaf' | 'verso' | 'inserted';
@@ -123,12 +134,14 @@ export interface NotebookSheet {
   ref: number;
   notebook: NotebookKey;
   seq: number;
-  /** The first page the descriptor names, or null for a cover. */
+  /** The first page written on the paper, or null for a cover. */
   leaf: number | null;
   /** The second page, where the photograph took an opening (« Pages 2-3 »). */
   spread: number | null;
   kind: SheetKind;
   descriptor: string;
+  /** See `Sheet.restamped`. */
+  restamped?: boolean;
 }
 
 /**
