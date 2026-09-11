@@ -164,6 +164,45 @@ function leaf(descriptor) {
 }
 
 /**
+ * The leaf number stamped on the paper, where a transcriber has read it off
+ * the photograph and it disagrees with the Whitney's descriptor.
+ *
+ * This is the second thing inferred here, and like `leaf` it is inferred out
+ * loud. Garrulities is why it exists. Its descriptors run `Pages 2-3`,
+ * `Pages 4-5` … `Pages 76-77`, `Page 78` — an unbroken arithmetic sequence —
+ * but the opening 66-67 was never photographed, so from ref 96247 on every
+ * descriptor names two pages fewer than the leaf it shows. The last sheet
+ * settles it: the descriptor says `Page 78` and the leaf is stamped **108**,
+ * which no off-by-one could produce. The numbers were assigned by position in
+ * the collection, not read off the paper.
+ *
+ * So the descriptor stays exactly as the Whitney wrote it — it is still what
+ * the site prints beside the sheet — and `leaf` becomes the number a citation
+ * can use, which is the one on the page. `spread` follows it.
+ *
+ * **A ref goes in here only when somebody has read the stamped number off the
+ * photograph and said so in the transcription.** Nothing is extrapolated: the
+ * seven refs below were each checked against the blue stamped numerals on
+ * 11 September 2026, and the unphotographed opening is recorded in a
+ * `\note{}` at page 68 of `transcripts/notebooks/garrulities.tex`.
+ */
+const STAMPED = new Map([
+  // ref      leaf  spread   descriptor says
+  [96247, { leaf: 68, spread: 69 }], //  Pages 66-67
+  [96268, { leaf: 70, spread: 71 }], //  Pages 68-69
+  [96115, { leaf: 72, spread: 73 }], //  Pages 70-71
+  [97142, { leaf: 74, spread: 75 }], //  Pages 72-73
+  [97417, { leaf: 76, spread: 77 }], //  Pages 74-75
+  [96074, { leaf: 78, spread: 79 }], //  Pages 76-77
+  [97182, { leaf: 108, spread: null }], //  Page 78
+]);
+
+/** `leaf()`, then the stamped number where one has been read. */
+function stamped(ref, descriptor) {
+  return STAMPED.get(ref) ?? leaf(descriptor);
+}
+
+/**
  * Whether the sheet is the back of a leaf, or something loose laid inside it.
  *
  * Both are the Whitney's own words — `- Verso`, `Loose sheet between pages
@@ -240,7 +279,7 @@ for (const l of LEDGERS) {
     const ref = Number(line.slice(0, cut));
     const descriptor = line.slice(cut + 1);
     if (!Number.isInteger(ref)) throw new Error(`${file}:${i + 1} — ref is not a number`);
-    const { leaf: lf, spread } = leaf(descriptor);
+    const { leaf: lf, spread } = stamped(ref, descriptor);
     sheets.push({
       ref,
       ledger: l.id,
@@ -318,7 +357,7 @@ for (const n of NOTEBOOKS) {
     const ref = Number(line.slice(0, cut));
     const descriptor = line.slice(cut + 1).trim();
     if (!Number.isInteger(ref)) throw new Error(`${file}:${i + 1} — ref is not a number`);
-    const { leaf: lf, spread } = leaf(descriptor);
+    const { leaf: lf, spread } = stamped(ref, descriptor);
     notebookSheets.push({ ref, notebook: n.id, seq: i + 1, leaf: lf, spread, kind: kind(descriptor), descriptor });
   });
 }

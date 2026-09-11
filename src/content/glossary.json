@@ -53,8 +53,8 @@
       "written": "Amer.",
       "means": "American.",
       "match": "\\bAmer\\.",
-      "count": 167,
-      "sheets": 75,
+      "count": 170,
+      "sheets": 77,
       "seen": [
         {
           "ledger": "dealers",
@@ -96,8 +96,8 @@
       "written": "Bklyn.",
       "means": "Brooklyn — most often the Brooklyn Society of Etchers, whose annual he showed in from 1921, and the Brooklyn Museum that bought from it.",
       "match": "\\bBklyn",
-      "count": 83,
-      "sheets": 47,
+      "count": 85,
+      "sheets": 48,
       "seen": [
         {
           "ledger": "book-i",
@@ -139,8 +139,8 @@
       "written": "Com. · com.",
       "means": "Commission — the dealer's share, and the thing that turns a price into a receipt. See `30 - 1/3` below.",
       "match": "\\b[Cc]om\\b\\.?",
-      "count": 131,
-      "sheets": 82,
+      "count": 133,
+      "sheets": 84,
       "seen": [
         {
           "ledger": "book-i",
@@ -226,9 +226,17 @@
       "written": "E. H. · J. H.",
       "means": "Edward Hopper · Josephine Hopper — herself. She initials her own hand as readily as his.",
       "match": "\\b[EJ]\\.\\s*H\\.",
-      "count": 159,
-      "sheets": 68,
+      "count": 243,
+      "sheets": 96,
       "seen": [
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "10",
+          "ref": "97273",
+          "count": 10,
+          "shows": "rest snapped up. This right on the return from our honeymoon. And since then all the beautiful encouragement that E.H. has received + how gorgious it was for hi"
+        },
         {
           "ledger": "book-iii",
           "batch": 1,
@@ -246,20 +254,12 @@
           "shows": "Ap. 8, 25 A Corner \\ E. P. Jennings Don Juixote \\ Dec. 24, 25 Cat Boat - Mrs. John Osgord Blanchard Dec. 25, 25 Bull Fight to Edwina Behre Jan. 15, 26 Amer. Lan"
         },
         {
-          "ledger": "book-iii",
-          "batch": 2,
-          "leaf": null,
-          "ref": "16917",
-          "count": 7,
-          "shows": "Venice Biennial 24 canvases of E. H. 4 men selected E. H. Kuniyoshi Stuart Davis Alex Calder"
-        },
-        {
-          "ledger": "dealers",
-          "batch": 1,
-          "leaf": null,
-          "ref": "17913",
-          "count": 7,
-          "shows": "Etchings of E. H. owned by J. H."
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "70",
+          "ref": "96268",
+          "count": 8,
+          "shows": "He cited the case of Martha Kantor, Morris told her she was wasting her time! How dared he. No wonder she is no longer the extremely beautiful creature she was,"
         }
       ]
     },
@@ -441,8 +441,8 @@
       "written": "Mus.",
       "means": "Museum.",
       "match": "\\bMus\\.",
-      "count": 335,
-      "sheets": 142,
+      "count": 341,
+      "sheets": 147,
       "seen": [
         {
           "ledger": "book-iii",
@@ -744,8 +744,8 @@
       "written": "16 2/3 · 33 1/3 · 66 2/3",
       "means": "A sum in dollars and a vulgar fraction of one, which is what a third of a price comes to before anybody rounds. On the leaf the fraction is raised over lowered figures; the transcription sets it on the line as `2/3`.",
       "match": "\\d+\\s+\\d\\s*/\\s*\\d\\b",
-      "count": 482,
-      "sheets": 161,
+      "count": 487,
+      "sheets": 165,
       "seen": [
         {
           "ledger": "dealers",
@@ -788,8 +788,8 @@
       "written": "16.66 · 12.60 · 3959.84",
       "means": "The same money written as a decimal, which is what the right-hand columns hold. Book IV writes the point three ways — after the dollars, across the ruled division between the columns, or not at all — and all three are hers.",
       "match": "\\d+\\.\\d{2}\\b",
-      "count": 327,
-      "sheets": 99,
+      "count": 330,
+      "sheets": 101,
       "seen": [
         {
           "ledger": "dealers",
@@ -921,8 +921,8 @@
       "written": "$18 · $1200.",
       "means": "The dollar sign, which she writes above and to the left of the figure and often detached from it. It is easy to attach to the wrong column when reading, and it reaches Book IV's money column only in the 1940s and only on the largest sums.",
       "match": "\\$",
-      "count": 412,
-      "sheets": 128,
+      "count": 414,
+      "sheets": 129,
       "seen": [
         {
           "ledger": "dealers",

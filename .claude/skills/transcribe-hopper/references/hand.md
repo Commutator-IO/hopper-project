@@ -4570,3 +4570,101 @@ or as a missing photograph; it is where she stopped.
   Page 39's « nature (basin please !) » looked like « vas-fin » until page 32's
   « will serve mouth wash after every meal + basin » fixed the field. Read the
   opening through, as batch 1 said, and then read the sitting through.
+
+### Garrulities, sheets 25–36
+
+*(The openings 46–47 to 70–71, 11 September 2026, Opus 5.)* The same hand and
+the same ink again, and the prose runs on from page 45 — but **this sitting is
+two different documents.** Pages 47 to 50 are a set piece: an entry of
+Sept. 6, 1939 that tells the whole of the wedding day of 9 July 1924, written
+out because Guy Pène du Bois had been telling it wrong at an exhibition.
+Everything after page 51 is 1947 to 1954 and is about her own work being kept
+out. The second half is angrier and harder to read than the first, because she
+writes faster when she is angry; the wedding pages are the easiest prose in the
+notebook so far.
+
+- **Check the page numbers against the descriptor on every sheet of a
+  notebook, not just the first.** The Whitney's descriptors for Garrulities run
+  `Pages 2-3`, `Pages 4-5` … `Pages 76-77`, `Page 78` — an unbroken arithmetic
+  sequence — and from ref 96247 on they are each **two pages behind the
+  numerals stamped on the leaf**. The opening 66–67 was never photographed, and
+  the descriptors were assigned by position in the collection rather than read
+  off the paper. The last sheet proves it: the descriptor says `Page 78` and the
+  leaf is stamped **108**. The page numbers here are printed in blue ink, large,
+  in the outer top corner, so a 400 % crop of the corner settles any sheet in
+  one look — do that before reading a line. `scripts/catalogue.mjs` now carries
+  a `STAMPED` table for the seven refs affected; the descriptor stays verbatim.
+- **The gutter tells you whether a leaf was removed.** Sheet 35's gutter shows a
+  clean sewing with no stub, so 66–67 is missing from the *photographs*, not
+  from the book. Battle of Wash Sq's cut leaf left a visible stub; the absence
+  of one is evidence too, and it is worth a crop.
+- **A date can stand at the foot of its entry.** Page 68 copies out a letter to
+  Lloyd Goodrich and then writes « Monday night, Mar. 23, 53 » *under* it.
+  Transcribe the date where it is written and say so in a `\note{}`; do not lift
+  it to the head of the passage to make `\entry{}` look tidy.
+- **Her ink blots cost a reading.** The month of the entry on page 70 is written
+  over a heavy blot and is `\ill{}`; « 5, 1954 » is clear. The next entry is
+  May 10, 54, which narrows the field and does not settle the stroke, so only
+  the year is assigned.
+- **Two long runs list her own pictures, one after another** — the foot of
+  page 61 and the head of page 62. They read like a catalogue and are not one:
+  no titles, just descriptions running on with semicolons, and « 29 x 36 » is
+  the only size in the sitting. Transcribe them as the run of prose they are.
+- **A name doubtful on one page is settled two openings later, again.** Page 61's
+  « the \uncertain{Jenness} house » is unreadable on its own; page 64 writes
+  « Mrs. Jenness » plainly. Same for « Maynard W. — not Hudson » on page 65,
+  which page 71's « The Walkers … Hudson Walker … Maynard W. » confirms. Read
+  the sitting through before fixing a name.
+- **More spellings, all as written:** « occurance », « creton », « precession »
+  for procession, « prodigeously », « preceeded », « dictionnaire »,
+  « Guarding Angel » for guardian, « orteilles » (her own slip between
+  *oreilles* and *orteils*), « competator », « humielity », « embarasing »,
+  « gorgious » and « begining » again, « oppertunity », « richley »,
+  « zinneas », « gladeolas », « notieceably », « nautious », « crystalizes »,
+  « squush », « mantle » for mantel, « petuneas », « obscurely » for obscurity,
+  « diverticulae », « humiliations » where the singular is meant, and
+  « infered ». « Si j'aurais Dieu, j'aurais pitié des Coeur des hommes » on
+  page 63 keeps her French slips exactly as the Rolland passage of the first
+  sitting does.
+- **« More of the Same » is the formula that opens an entry**, and she writes it
+  out on pages 61 and 70 and strikes a first attempt at it on page 51. Where a
+  struck word at the head of an entry will not read, that is the phrase the
+  interlineation above it is heading for.
+- **Readings that would not settle:** « \uncertain{Alas} all
+  \uncertain{Arthurs} » on page 47, where every letter is clear and the phrase
+  parses under no reading; « Hondvicker » on page 48, capitalised and so a name,
+  for the man who received them at the rectory; « Bates ranted over use of the
+  clutch » on page 53; « we came of the deed of 400 ft. » on page 52, whose
+  interlineation « that included » stands over the following « of »; « a monster
+  who \uncertain{cease} » on page 52; « \uncertain{elbulty} » and
+  « \uncertain{smartz} » on page 62, one word each and neither answering to
+  anything; « Same obelisque » struck on page 61; « \uncertain{Rhea} bells
+  flaying » on page 63; « the \uncertain{Guinnees} » twice on page 68;
+  « \uncertain{teed I can} » on page 69; « the noble rocky \uncertain{corn}
+  sidedness » on page 69; « \uncertain{bon mot} " the orgueille" » on page 65;
+  « Su Dutt » on page 64, the sculptor with a husband named Alfred;
+  « \uncertain{Triesells} » and « sitting \uncertain{a tarte} » on page 70;
+  « \uncertain{Hie afterdays go} to » and « obvious \uncertain{man's teeth} » on
+  page 71. « We both both older » on page 54 is « both » twice, as written.
+- **« Mitta » is as written**, on pages 70 and 71, and the leaf's own
+  « Zapotecs » and « that hacienda » sit beside it. Do not correct it to Mitla
+  in the transcription; the identification belongs to `/modernize-hopper`.
+- **The red pencil, third appearance.** A bracket drawn down the left margin of
+  page 58 encloses one paragraph — the notice of the *Magazine of Art* review of
+  December 1948 — and nothing else. Nothing is written in it. It is the only red
+  on the opening and the second red mark in the notebook after the two strokes
+  beside page 44.
+- **Two head margins carry a line of their own**, and both are level rather than
+  written up the slope, so they need no rotation: page 62's « and at bottom E's
+  2 feet crossed on rim of stove, » and page 70's « what a long memory for
+  E.H. ». Page 61's is the slanted kind — six short lines up the slope, and it
+  is a **correction to the complaint below it**: « Oh — I find there are 2
+  references to his marriage + in one of them he does say J.N. a painter. »
+  Crop it and rotate **clockwise** about 30° (`-rotate 30`); batch 1's note that
+  `-rotate 90` is the safe direction is about the 90° case only, and a slanted
+  block that rises to the right needs a positive angle, not a negative one.
+- **A whole-page band still beats the `tiles` grid**, as the second sitting
+  found, and the trim box is steady across these twelve sheets — about
+  1590 × 1290 at +210+183 in a 2000-wide photograph, with sheets 25 and 26 some
+  90 px taller. No colour chart on any of them, so the gutter split lands at
+  half the trimmed width every time.
