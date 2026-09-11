@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T22:07:47.959Z",
+  "generated": "2026-09-11T09:08:27.446Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -15100,6 +15100,14 @@
           "ref": 17173,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "18",
+          "ref": 97113,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -15225,6 +15233,14 @@
           "ref": 17444,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "16",
+          "ref": 97427,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -16240,6 +16256,14 @@
           "ref": 17444,
           "rows": 2,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "60",
+          "ref": 96058,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -16637,6 +16661,14 @@
           "ref": 17125,
           "rows": 1,
           "prose": 3
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "26",
+          "ref": 97533,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -17447,6 +17479,22 @@
           "ref": 16956,
           "rows": 1,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "2",
+          "ref": 97551,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "52",
+          "ref": 96061,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -17858,6 +17906,14 @@
           "batch": 4,
           "leaf": "97",
           "ref": 16956,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "58",
+          "ref": 97050,
           "rows": 0,
           "prose": 1
         }
@@ -19197,6 +19253,22 @@
           "ref": 17436,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "50",
+          "ref": 96260,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "60",
+          "ref": 96058,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -19418,6 +19490,22 @@
           "ref": 17436,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "50",
+          "ref": 96260,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "52",
+          "ref": 96061,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -21262,6 +21350,14 @@
           "ref": 16926,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "1",
+          "ref": 89299,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -21377,6 +21473,14 @@
           "batch": 4,
           "leaf": "97",
           "ref": 16956,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "1",
+          "ref": 89299,
           "rows": 0,
           "prose": 1
         }
@@ -21528,6 +21632,14 @@
           "ref": 17079,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "58",
+          "ref": 97050,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -21725,6 +21837,14 @@
           "ref": 17248,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 89301,
+          "rows": 0,
+          "prose": 2
         }
       ]
     },
@@ -21946,6 +22066,30 @@
           "ref": 18068,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 89301,
+          "rows": 0,
+          "prose": 3
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "6",
+          "ref": 89302,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "54",
+          "ref": 97101,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -22119,6 +22263,14 @@
           "ref": 17161,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 89301,
+          "rows": 0,
+          "prose": 2
         }
       ]
     },
@@ -22329,6 +22481,14 @@
           "ref": 18218,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 89301,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -22478,6 +22638,14 @@
           "ref": 16276,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "6",
+          "ref": 89302,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -22603,6 +22771,14 @@
           "ref": 16577,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "6",
+          "ref": 89302,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
