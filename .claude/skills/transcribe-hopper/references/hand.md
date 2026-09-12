@@ -4925,3 +4925,80 @@ that much does carry.
 - **Faint pencil numerals stand in page 20's left margin** beside four names in
   the tenant list — 19, 2, 20, 23 — and their sense is not established. Do not
   read them as a count without something that says they are one.
+
+### Re: 3 Wash Sq, sheets 25–36
+
+*(Pages 24 to 35, 12 September 2026, Opus 5.)* **The pad becomes a campaign.**
+Sitting 2's shape — six letters to six people — half carries: pages 24 and 25
+are working lists (the press by paper and by desk, magazine editors, radio,
+film and theatre people, the Greenwich Village Association's officers, four
+lines of tax figures under « Dr. Savage », three ringed maxims under
+« Remember »), and pages 26 to 35 are six dated drafts in ten sides — LaGuardia
+again, Paul Sachs twice, Paul Wolf of the Art Digest, Arthur T. Vanderbilt of
+N.Y.U., Geo. Schuller, Robert Moses. The two-side photograph and the « Page N »
+descriptor behave exactly as before.
+
+- **A whole photograph can run backwards, not just two sides of one letter.**
+  Sitting 2 found the Friedlander letter reversed across pages 15 and 16. Page
+  30 reverses the two halves of a single photograph: the upper side is headed
+  « II » and the lower « I », and the sense settles it — the lower side ends
+  « Among former tenants are proudly \uncertain{cited} » and the upper side is
+  the list of tenants. Check the head of both sides for a numeral before
+  assuming a photograph reads downwards.
+- **The same letter written twice, four days apart, is the best control in the
+  notebook.** Paul Sachs Mar. 2 (page 28) and Paul Sachs Mar. 4 (page 29) are
+  one letter; page 28 is fast and interleaved, page 29 slow and nearly clean.
+  Page 29 gives « Thermopylae » underlined three times where page 28's word
+  will only read \uncertain{Thermopoli}; page 29 gives « Schofield Thayer +
+  E. E. Cummings published the Dial » where page 28 stacks the same names into
+  two lines running through each other. **Read page 29 first and then page 28**
+  — and leave page 28's flags where they are.
+- **A name recurring in the same volume can settle a person without settling a
+  stroke.** « Chancellor Chase » on page 27 is supported by the same leaf's
+  « wasn't appreciated at Univ. of Ill. » four lines later, not by its letters.
+  The reading still stands as `\uncertain{}`.
+- **No red anywhere in these twelve sheets, and no second hand.** Sitting 2's
+  red crayon and the « Fiora » in a blunt medium do not continue. The one
+  inscription that is not part of a draft is hers: « Copy filed in big Envelope
+  enclosing Tribune Feb 28" », written large and ringed across the lower side of
+  page 27, over writing already there, in a heavier pencil.
+- **Her cancellations are still replacements written on top.** `\struck{\ill{}}`
+  is used about fifteen times. Page 34 adds a second kind: five consecutive
+  lines struck through with long diagonals rather than word by word, legible in
+  outline and doubtful in every word.
+- **One person, three spellings, across two sittings.** « Albert Paul
+  Waltheim » (page 24) beside sitting 2's « Alfred Paul Waldheim » (page 12) and
+  « Arthur Paul Waltheim » (page 23). Also « Mr. Stewart » (page 26) against
+  « Mr. Stuart » (page 27) on facing sides of one list, « Harvey Corbit » (page
+  27) against sitting 2's « Harvey Wiley Corbett », « Van Wyck Brooks » and
+  « Van Wyke Brooks » in two lists on one side of page 32, and « Conletta
+  Scaravaglioni » (page 30), the fourth writing of that name and the fourth
+  spelling.
+- **More spellings, all as written:** « Bomerang » (page 25), « Naziis » (page
+  31), « despoilation » (page 33), « crystalizations » (page 35), « pro bonum
+  publicae » (page 30), « Paderouski » a third time (pages 28, 29), « Kimon
+  Nicolades » again (page 30), « Ricco LeBrun » (page 30), « Eleanor Wylie »
+  (page 30) beside page 28's « \uncertain{Elean} Wylie », « Archibald McLeigh »
+  for MacLeish (page 24), « Jose Ferer » and « Lillian \uncertain{Helman} »
+  (page 24), « Schofield Thayer » (pages 29, 30).
+- **Readings that would not settle:** « Carall Taylor », « Paul ? Berkley »,
+  « Mildred Faulk », « Franfurter », « Wash. B.C. », « Sidney Postes of Post »,
+  « Nichol Borgea » and « Channing Bldg » and the whole O'Connelly line on page
+  24; the brace note « C. Haup. » beside Waltheim and Whitebook on page 24; the
+  « 7-14 » line, « Rubenstein 21 W. », « Presidents / of publishers » and the
+  Greenwich Village officers' surnames on page 25; « we Can't met » and « to 9
+  J. Kunz » and « would have come if they'd been \ill{} to » on page 26; « So a
+  toward boom » on page 26; « \#15 flr » on page 27; the O.P.A. man, who is
+  « Shilles » once and « Chilles » once on page 27 and « Schuller » on pages 24
+  and 32, and « a Mr. Gurdy » beside him; « old \ill{} actors » and the whole
+  fore-edge marginal on page 28; « Alan Brok », « Blendon Campbells », « Mary
+  Tillinghast Stanis », « Theo. Dreiser », « Hopkinson Smith » on page 30;
+  « Tartuffe » and the fore-edge « (pushing them to his great death) » on page
+  31; « Worthman » and whether « John Bower » is « Bowers » on page 32; the
+  struck word before « first meeting » and « there was a principal » on page 33;
+  « the bent on the E. side » and « Gen. Craig Sherrel » on page 34; « a
+  bloated university » and « they may even be obliged to renovate » on page 35.
+- **Two names are unread because she wrote them twice over themselves**, not
+  because the pencil is faint: the word after « Not » on page 24 and the word
+  before « lions on door posts » on page 27. Magnification past 8× adds nothing
+  to either.
