@@ -34,6 +34,22 @@ const read = (p, fallback) => {
 const declared = read(resolve(root, 'transcripts/status.json'), {});
 
 /**
+ * Every notebook sheet's position in its notebook, by resource ref.
+ *
+ * Read out of the generated catalogue rather than recomputed, so that the
+ * sitting a sheet falls in is the same number here and in the browser. The
+ * regex is the one `scripts/render.mjs` uses on the same file for the same
+ * reason: the catalogue is TypeScript and this is a build script, and a
+ * one-line parse is cheaper than making it importable from both.
+ */
+const notebookSeq = new Map();
+for (const m of readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8').matchAll(
+  /\{ ref: (\d+), notebook: '[^']+', seq: (\d+),/g,
+)) {
+  notebookSeq.set(Number(m[1]), Number(m[2]));
+}
+
+/**
  * The pass that produced a transcription, off the file's own header.
  *
  * Every `.tex` opens with `% Pass: Opus 5 (claude-opus-5), 2026-09-09 - …`,
@@ -106,11 +122,25 @@ for (const [ledger, set] of seen) {
   if (ledger === 'notebooks') readNotebooks.all = set.size;
   else readCount[ledger] = set.size;
 }
+/**
+ * The notebooks' transcribed sheets, and *which* they are.
+ *
+ * The count alone would let the page say « 36 of 42 read » and nothing more.
+ * A notebook is read in sittings of twelve appended to one file, so a page
+ * that offers a sitting to open has to know which sittings exist — and
+ * inferring that from the count assumes the sittings were taken in order from
+ * the first, which the skill asks for but no file proves. The refs are the
+ * observed answer and cost one array.
+ */
+const readNotebookRefs = {};
 if (existsSync(resolve(out, 'notebooks'))) {
   for (const f of readdirSync(resolve(out, 'notebooks'))) {
     if (!f.endsWith('.tex')) continue;
     const src = readFileSync(resolve(out, 'notebooks', f), 'utf8');
-    readNotebooks[f.replace(/\.tex$/, '')] = new Set([...src.matchAll(/\\sheet\{(\d+)\}/g)].map((m) => m[1])).size;
+    const refs = [...new Set([...src.matchAll(/\\sheet\{(\d+)\}/g)].map((m) => Number(m[1])))];
+    const id = f.replace(/\.tex$/, '');
+    readNotebooks[id] = refs.length;
+    readNotebookRefs[id] = refs;
   }
 }
 delete readNotebooks.all;
@@ -161,6 +191,41 @@ for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : 
     }
   }
 }
+/**
+ * The notebooks' tags, keyed by the notebook's own id.
+ *
+ * A notebook is one file with one `\keywords{}` line at its end, so unlike a
+ * ledger's the line cannot name a batch: it describes the notebook as far as
+ * it has been read. `batches` therefore carries the **sittings the file's
+ * sheets fall in**, which is the true scope of the line, and the page says so
+ * rather than offering a filter that would return the same sheets for every
+ * term.
+ */
+if (existsSync(resolve(out, 'notebooks'))) {
+  for (const f of readdirSync(resolve(out, 'notebooks'))) {
+    if (!f.endsWith('.tex')) continue;
+    const id = f.replace(/\.tex$/, '');
+    const src = readFileSync(resolve(out, 'notebooks', f), 'utf8');
+    const sittings = [
+      ...new Set(
+        (readNotebookRefs[id] ?? []).map((ref) => {
+          const seq = notebookSeq.get(ref);
+          return seq ? Math.floor((seq - 1) / 12) + 1 : null;
+        }).filter((k) => k !== null),
+      ),
+    ].sort((a, b) => a - b);
+    const byLabel = (tags[id] ??= new Map());
+    for (const m of src.matchAll(/\\keywords\{([^}]*)\}/g)) {
+      for (const term of keywordTerms(m[1])) {
+        const { facet, label } = parseKeyword(term);
+        const e = byLabel.get(label) ?? { tag: label, facet, batches: sittings };
+        if (e.facet === null && facet !== null) e.facet = facet;
+        byLabel.set(label, e);
+      }
+    }
+  }
+}
+
 for (const [ledger, byLabel] of Object.entries(tags)) {
   tags[ledger] = [...byLabel.values()]
     .map((e) => ({ ...e, batches: e.batches.sort((a, b) => a - b) }))
@@ -227,6 +292,7 @@ const manifest = {
   tags,
   read: readCount,
   readNotebooks,
+  readNotebookRefs,
   apparatus,
 };
 

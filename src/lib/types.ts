@@ -197,6 +197,14 @@ export interface Manifest {
   generated: string;
   /** Sheets of each notebook a transcription under `transcripts/notebooks/` names, by notebook id. */
   readNotebooks?: Record<string, number>;
+  /**
+   * *Which* sheets, by resource ref, so a page can say which sittings exist.
+   *
+   * A notebook is read in sittings of twelve appended to one file. Inferring
+   * the sittings from the count would assume they were taken in order from the
+   * first — which the skill asks for and no file proves.
+   */
+  readNotebookRefs?: Record<string, number[]>;
   /** Transcript artifacts under `public/transcripts/`, keyed `<ledger>#<batch>`. */
   transcripts: Record<string, TranscriptEntry>;
   /**

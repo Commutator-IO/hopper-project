@@ -1,101 +1,11 @@
 import { useState } from 'react';
 import { Page } from './components/Frame.tsx';
+import { TagCloud, hasUnplaced } from './components/Tags.tsx';
 import { BatchGrid, Reader, useReader } from './components/Reader.tsx';
 import { BY_LEDGER, LEDGER_BY_ID } from './content/catalogue.ts';
 import { batchOfSeq, collectionUrl, sheetUrl, whitneyWorkUrl } from './lib/batches.ts';
 import { url } from './lib/base.ts';
-import type { Facet, LedgerKey, Tag } from './lib/types.ts';
-
-/**
- * The facets, in reading order, with the heading each gets.
- *
- * The order is an argument about the archive rather than an alphabet: what the
- * work is, where it was made, who sold it, who bought it, where it came to
- * rest, and last what the leaves themselves do. A reader looking for the
- * museums should not have to read past the places to find them, which is the
- * whole complaint the flat list earned.
- */
-const FACET_LABEL: Record<Facet, string> = {
-  medium: 'Medium',
-  place: 'Places',
-  work: 'Works',
-  person: 'People',
-  dealer: 'Dealers',
-  collection: 'Collections',
-  society: 'Societies and exhibitions',
-  publication: 'Publications',
-  prize: 'Prizes',
-  feature: 'On the leaves',
-};
-const FACET_ORDER = Object.keys(FACET_LABEL) as Facet[];
-
-/**
- * One facet's tags, capped.
- *
- * Book I names a hundred and ten terms across six batches, and shown whole
- * they pushed « Read a batch » a full screen below the fold — reading a batch
- * being the thing the page is for. Capping restores that order without hiding
- * anything: the count is on the button, and the group opens in place.
- */
-function FacetGroup({
-  heading,
-  list,
-  picked,
-  onPick,
-}: {
-  heading: string;
-  list: Tag[];
-  picked: string | null;
-  onPick: (tag: string | null) => void;
-}) {
-  const [all, setAll] = useState(false);
-  const CAP = 8;
-  // A chosen tag stays visible even when its group is closed, so the page
-  // never shows a filter in force with nothing selected to explain it.
-  const shown = all || list.length <= CAP ? list : list.slice(0, CAP);
-  const hidden = list.length - shown.length;
-  const spill = hidden > 0 && picked && !shown.some((t) => t.tag === picked)
-    ? list.filter((t) => t.tag === picked)
-    : [];
-
-  return (
-    <div className="flex flex-wrap content-start items-start gap-1.5">
-      <span className="w-full text-[10.5px] uppercase tracking-wider text-ink-400">{heading}</span>
-      {[...shown, ...spill].map((t) => {
-        const on = picked === t.tag;
-        return (
-          <button
-            key={t.tag}
-            onClick={() => onPick(on ? null : t.tag)}
-            title={`Written in ${t.batches.length === 1 ? 'batch' : 'batches'} ${t.batches.join(', ')}`}
-            className={
-              'rounded-full px-2 py-0.5 text-[11.5px] transition ' +
-              (on ? 'bg-brand-600 text-white' : 'bg-brand-50 text-brand-700 hover:bg-brand-100')
-            }
-          >
-            {t.tag}
-          </button>
-        );
-      })}
-      {hidden > 0 && (
-        <button
-          onClick={() => setAll(true)}
-          className="rounded-full px-2 py-0.5 text-[11.5px] text-ink-500 underline decoration-ink-300 underline-offset-2 hover:text-ink-800"
-        >
-          + {hidden} more
-        </button>
-      )}
-      {all && list.length > CAP && (
-        <button
-          onClick={() => setAll(false)}
-          className="rounded-full px-2 py-0.5 text-[11.5px] text-ink-500 underline decoration-ink-300 underline-offset-2 hover:text-ink-800"
-        >
-          fewer
-        </button>
-      )}
-    </div>
-  );
-}
+import type { LedgerKey, Tag } from './lib/types.ts';
 
 /**
  * One ledger, as the Whitney holds it.
@@ -130,10 +40,6 @@ export function LedgerPage({ id }: { id: LedgerKey }) {
   const shown = active
     ? sheets.filter((s) => active.batches.includes(batchOfSeq(s.seq)))
     : sheets;
-
-  const grouped = [...FACET_ORDER.map((f) => [f, tags.filter((t) => t.facet === f)] as const),
-    ['none', tags.filter((t) => t.facet === null)] as const,
-  ].filter(([, list]) => list.length > 0);
 
   return (
     <Page path={`/${id}/`}>
@@ -204,18 +110,10 @@ export function LedgerPage({ id }: { id: LedgerKey }) {
               their only source — so no tag can describe a sheet nobody has read. Each one names
               the batches it was written in; choosing one narrows the sheet list below to those.
             </p>
-            <div className="mt-3 grid items-start gap-x-8 gap-y-3 sm:grid-cols-2">
-              {grouped.map(([facet, list]) => (
-                <FacetGroup
-                  key={facet}
-                  heading={facet === 'none' ? 'Not placed' : FACET_LABEL[facet as Facet]}
-                  list={list}
-                  picked={picked}
-                  onPick={setPicked}
-                />
-              ))}
+            <div className="mt-3">
+              <TagCloud tags={tags} picked={picked} onPick={setPicked} />
             </div>
-            {grouped.some(([f]) => f === 'none') && (
+            {hasUnplaced(tags) && (
               <p className="prose-note mt-3 max-w-3xl">
                 <em>Not placed</em> is a permitted answer, not a gap: these are names the reading
                 did not settle into a kind. Whether they were dealers or buyers is decided by the

@@ -15,6 +15,7 @@ import {
 import { BY_LEDGER, LEDGER_BY_ID } from '../content/catalogue.ts';
 import { issueUrl } from '../lib/report.ts';
 import { url } from '../lib/base.ts';
+import { shownState } from '../lib/progress.ts';
 import type { State } from '../lib/progress.ts';
 import type { Ledger, Manifest, Sheet } from '../lib/types.ts';
 
@@ -359,6 +360,65 @@ export function BatchGrid({
       })}
       <span className="self-center pl-1 text-[11px] text-ink-400">
         {n} batches of {BATCH_SIZE}
+      </span>
+    </div>
+  );
+}
+
+/**
+ * Sitting chips for one notebook — the notebooks' answer to `BatchGrid`.
+ *
+ * A notebook is one file, not twelve, so a sitting is not a separate document
+ * the way a batch is: choosing one opens the same reader and scrolls the same
+ * transcript to that sitting's first sheet. What it buys is the thing the
+ * ledger pages have and the notebook pages did not — somewhere to start that
+ * is not the top, and a visible answer to « how much of this has been read ».
+ *
+ * State is per sitting and read off the refs the transcription names, so a
+ * gap in the middle shows as a gap. The declaration in `status.json` is keyed
+ * to the whole notebook rather than to a sitting, so it colours every sitting
+ * that has been read and none that has not — coarser than a ledger's, and the
+ * truth of what is declared.
+ */
+export function SittingGrid({
+  sheets,
+  readRefs,
+  declared,
+  onOpen,
+}: {
+  sheets: { ref: number }[];
+  readRefs: number[];
+  declared: 'checked' | 'skipped' | undefined;
+  onOpen: (firstRef: number) => void;
+}) {
+  const n = batchCount(sheets.length);
+  const read = new Set(readRefs);
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {Array.from({ length: n }, (_, i) => i + 1).map((k) => {
+        const { first, last } = batchRange(k, sheets.length);
+        const slice = sheets.slice(first - 1, last);
+        const got = slice.filter((s) => read.has(s.ref)).length;
+        const state = shownState(declared, { transcribed: got > 0 });
+        const how =
+          got === 0
+            ? 'not read'
+            : got === slice.length
+              ? `all ${slice.length} read`
+              : `${got} of ${slice.length} read`;
+        return (
+          <button
+            key={k}
+            onClick={() => onOpen(slice[0].ref)}
+            title={`Sheets ${first}–${last} — ${how}`}
+            className={`rounded-md px-2 py-1 text-[11.5px] tabular transition hover:ring-1 hover:ring-ink-400 ${STATE_COLOURS[state]}`}
+          >
+            {first}–{last}
+          </button>
+        );
+      })}
+      <span className="self-center pl-1 text-[11px] text-ink-400">
+        {n} sittings of {BATCH_SIZE}
       </span>
     </div>
   );
