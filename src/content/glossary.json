@@ -226,8 +226,8 @@
       "written": "E. H. · J. H.",
       "means": "Edward Hopper · Josephine Hopper — herself. She initials her own hand as readily as his.",
       "match": "\\b[EJ]\\.\\s*H\\.",
-      "count": 283,
-      "sheets": 114,
+      "count": 287,
+      "sheets": 115,
       "seen": [
         {
           "ledger": "notebooks",
