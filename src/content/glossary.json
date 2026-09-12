@@ -53,8 +53,8 @@
       "written": "Amer.",
       "means": "American.",
       "match": "\\bAmer\\.",
-      "count": 170,
-      "sheets": 77,
+      "count": 184,
+      "sheets": 88,
       "seen": [
         {
           "ledger": "dealers",
@@ -226,8 +226,8 @@
       "written": "E. H. · J. H.",
       "means": "Edward Hopper · Josephine Hopper — herself. She initials her own hand as readily as his.",
       "match": "\\b[EJ]\\.\\s*H\\.",
-      "count": 254,
-      "sheets": 99,
+      "count": 261,
+      "sheets": 105,
       "seen": [
         {
           "ledger": "notebooks",
@@ -355,8 +355,8 @@
       "written": "Inst.",
       "means": "Institute — the Art Institute of Chicago and the Carnegie Institute, chiefly.",
       "match": "\\bInst\\.",
-      "count": 72,
-      "sheets": 51,
+      "count": 75,
+      "sheets": 54,
       "seen": [
         {
           "ledger": "book-i",
@@ -441,8 +441,8 @@
       "written": "Mus.",
       "means": "Museum.",
       "match": "\\bMus\\.",
-      "count": 343,
-      "sheets": 149,
+      "count": 347,
+      "sheets": 153,
       "seen": [
         {
           "ledger": "book-iii",
@@ -744,8 +744,8 @@
       "written": "16 2/3 · 33 1/3 · 66 2/3",
       "means": "A sum in dollars and a vulgar fraction of one, which is what a third of a price comes to before anybody rounds. On the leaf the fraction is raised over lowered figures; the transcription sets it on the line as `2/3`.",
       "match": "\\d+\\s+\\d\\s*/\\s*\\d\\b",
-      "count": 487,
-      "sheets": 165,
+      "count": 494,
+      "sheets": 171,
       "seen": [
         {
           "ledger": "dealers",
@@ -788,8 +788,8 @@
       "written": "16.66 · 12.60 · 3959.84",
       "means": "The same money written as a decimal, which is what the right-hand columns hold. Book IV writes the point three ways — after the dollars, across the ruled division between the columns, or not at all — and all three are hers.",
       "match": "\\d+\\.\\d{2}\\b",
-      "count": 330,
-      "sheets": 101,
+      "count": 331,
+      "sheets": 102,
       "seen": [
         {
           "ledger": "dealers",
