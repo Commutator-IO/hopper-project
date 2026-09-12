@@ -4766,3 +4766,80 @@ entry on page 77 and the last written words on page 79. The Whitney dates the
 notebook 1924–1950 and `\dating{}` carries that verbatim; the leaves go three
 years past it, and the transcription says so by reading them, not by amending
 the metadata.
+
+### Re: 3 Wash Sq, sheets 1–12
+
+*(The cover and the photographs the Whitney calls pages 1 to 11, 12 September
+2026, Opus 5.)* **This one is neither a memorandum book nor a diary. It is a
+draft**, and the thing to know before opening it is that the same statement is
+written out three times in the first twelve sheets. Nothing carries over from
+Battle of Wash Sq. or Garrulities except the hand.
+
+- **Each photograph shows two written sides.** The pad is spiral-bound at the
+  top, so an opening is the leaf turned back above the spiral and the next leaf
+  below it, and both read the right way up. The two sides run on continuously,
+  and the lower side of one photograph continues into the upper side of the
+  next — there is no overlap between photographs and nothing is transcribed
+  twice. The Whitney's « Page N » names the photograph, not the side. Check
+  this before assuming it holds for sheets 13 on.
+- **The spiral crosses the middle of the frame**, at about y 960–1030 of a
+  2000-pixel sheet. Band the two sides separately: roughly y 150–960 and
+  y 1020–1860, x 170–740 on a sheet 890–910 wide.
+- **Three drafts, and they disagree with each other.** Pages 2–3 are a first
+  draft written fast and corrected over itself; pages 4–7 a second, in a
+  lighter pencil and a much slower hand; pages 8–11 a fair copy addressed to
+  Whitelaw Reid of the Herald Tribune, which she paginates 1 to 7 in her own
+  hand in the head margin. **Read the later draft before fixing a name in the
+  earlier one.** Page 2's « Mr. Cortisoz » is settled as Royal Cortissoz by
+  page 4; page 2's « S. + D. Scott » is « L. + D. Gish » and page 10 writes
+  « Lillian + Dorothy Gish » in full; page 2's « "Moo" » is « "Mad" », the
+  nickname of Jack Kelley; page 3's « Mrs. Van Metes » is « Madame Van Meter »
+  on page 10. In every case the later page settles the field of candidates and
+  not the stroke, so the earlier reading stays `\uncertain{}` with a note.
+- **The whole of the first twelve sheets is pencil.** No ink, no red, no second
+  hand. The first draft is a harder, blacker pencil than the fair copy.
+- **« of » is a lone loop here too**, and « + » is her « and », as in both the
+  other notebooks. Her ordinal is `"` — « Feb. 19" », « Jan. 31" », « 1" step
+  zoning », « 4" floor », « 5" Ave. ».
+- **Read the phrase, not the word.** « the Latin Quarter is to France » on page
+  2 read as « the Salem Inventor » letter by letter until the long t-bar over
+  « Latin » and the looped Q of « Quarter » were seen as what they are. This is
+  the single most useful habit in the notebook.
+- **A word that turns the line is hyphenated about half the time** — « quart-
+  ers », « neigh- borhood », « import- ant », « aborigin- es » — and the
+  renderer joins a break before a lowercase continuation into a space, so the
+  word is written whole and the `\note{}` says it turns the line.
+- **Her spellings, all as written:** « agression », « aggression » (both, four
+  pages apart), « sophistocated » beside « sophisticated », « accomodate »,
+  « perillously », « Pharasees », « Paderouski » beside « Paderewski »,
+  « alerte », « Dimock » beside « Dimmock », « Rico LeBrun » beside « Ricco
+  LeBrun », « Ta bouche, bébé » on pages 6 and 11 and « Ta boucha, bébé » on
+  page 6's lower side, « occupys », « resent » where « recent » is meant.
+- **One name is written three times and never twice the same**: the muralist at
+  Rockefeller Center, « Ganvor Bul Tielman » on pages 3, 5 and 10, whose given
+  name begins with a G with a descender and whose second letter is an a or a u.
+  All three stay `\uncertain{}`.
+- **The marginal up the fore-edge on page 2** is the John Sloan note the
+  asterisk points at: six lines written with the pad turned, crowded and partly
+  unread. Crop it as three overlapping strips of about 310 pixels of page-y
+  each and rotate `-rotate 90`; the lines slope, so a row in one strip is not
+  always the same line as the row at the same height in the next, and the
+  assembly has to be made on the sense.
+- **Readings that would not settle:** « Yoan Village - past. » in the list of
+  associations on page 1; « Are people more sympathetic » on page 1; « S.S. H.
+  Trustees » and « 57 Liberty » on page 1; « 2 Seamans assoc. — officers /
+  Sailors » on page 1, where « Sailors » is the sense and the strokes read
+  « Scilars »; « King Woodredge » and « J. Stanley Hillyer » on page 1, the
+  second of which Battle of Wash Sq. gives as « H. Stanley Hillyer »; the word
+  after « Comptroller » on page 1, written twice over itself and given `\ill{}`;
+  « that [?] of green + trees » and « with proceeds to evict its tenants » in
+  the page 2 marginal; « Conceta Scaravaglioni » on page 2 and « Concerta
+  Scaravaglioni » on pages 4 and 9; « Marjorie Ryerson »; « Grace Randolph » on
+  page 2, « Grace Randol » on page 5, plain on page 10; « Inst. Arts + Letters »
+  on page 2; « John Morron » and « blandly valiant » on page 3; « Carol
+  Delvaille » on pages 5 and 10.
+- **Do not read a figure as an age when it is a tenancy.** « E. Hopper has just
+  turned the 1/3 mark of a century » on page 3 is not his age: page 5 writes
+  « exactly 33 1/2 yrs. which makes 1/3 century » and page 10 dates it « on
+  Jan. 31" last ». The same trap runs the other way with Frederick W. Stokes,
+  who is 88 on three pages and 89 on one, all as written.
