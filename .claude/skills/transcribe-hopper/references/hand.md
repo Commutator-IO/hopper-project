@@ -5359,3 +5359,83 @@ page 35 were.
   « 120 ? Cambridge St. » and « How » (page 67); and the two struck words
   before « down as milk goes in » on page 69, where « heat » suits the sense
   and is not what is written.
+
+### The black notebook, sheets 37–48
+
+*(The openings 70–71 to 92–93, 13 September 2026, Opus 5.)* The recipes that
+closed the third sitting run on to page 76 and stop in two pasted newspaper
+cuttings; from page 78 the notebook becomes a memoir of occasions —
+« Some of the Adventures with Dorothy » — and then, from page 86, luggage
+sizes, four leaves of copied reading, and a column of Roman dates. **This
+sitting is easier than the last two and its difficulty has moved**: the names
+mostly recur from earlier leaves, and what will not settle is the
+interlineation above almost every line.
+
+- **A list of occasions is not a list of names, and it is much the kinder.**
+  Pages 78 to 85 give parties, teas, openings and calls rather than a column
+  of surnames, so the sense of a line carries its doubtful word. Where pages
+  52 and 53 forced whole annotations to be left out, here most of them attach
+  and are given where they stand, as the first sitting's year chronicle was.
+  Leave out only what cannot be attached, and say so.
+- **Blue crayon joins the ink and the red, and does the same job.** Page 79's
+  « Aunt \uncertain{Curtis's} recital » is boxed *and* underlined in blue,
+  page 85's Al Seifert wedding line underlined, page 86's white rawhide case
+  underlined. At the foot of page 80 a blue box is drawn round **nothing** —
+  an empty box on a blank half-leaf. Record it; do not look for the writing it
+  was meant to hold.
+- **The one sideways block is a second copy, not new matter.** Page 90 carries
+  Milton's parenthesis « (to be as active as that soul was whose progeny they
+  are) » in the body of the page *and* again, sideways, up the fore-edge, with
+  a diagonal stroke through the body copy and an arrow beside the line after
+  it. Rotate the fore-edge before deciding it is new — it saved a spurious
+  `\ill{}` here. `-rotate 90` is the right way round for this leaf, as it was
+  for pages 48, 55 and 56.
+- **The first clippings in the notebook are on page 76**, two recipe cuttings
+  pasted one above the other, and she argues with one of them: « two » is
+  struck inside the printed text, « and one-half hours » underlined, and
+  « Bake / 2 1/2 hrs. ! » written in the margin beside it. The clipping is
+  described and its headline given, as in Book I; her marginal answer is
+  `\hand{jo}{}` and is transcribed.
+- **The show-through can be the whole of a page.** Page 87 carries one block
+  at its head — « Brown fabric zipper Airplane - Dale - June 1953. » — and
+  everything below it is page 88 read backwards. Page 82 is the same case with
+  no block at all. Neither is « blank », and the note should say which.
+- **Two nicknames that look like one name, one leaf apart.** « Guy Emerson's »
+  (page 81) against « Gay Emerson's » (page 85); both stand. So « Lou Double »
+  (page 85) against the second sitting's « Lu Duble » (page 33) and « Lu Duro »
+  (page 35) — three forms now, and none settles the others. « Sattillo »
+  (page 85) against « Saltillo » (page 44), as before.
+- **A struck line can be the same entry the next leaf carries unstruck.**
+  Page 78 strikes « 1945 DuBarry - early Spring - or 1944? » under its
+  heading; page 85 writes « Spring 1945 - a chill occurred - DuBarry - + Paint
+  Brush » and lets it stand. The strike is hers deciding where the entry
+  belonged, not deciding against it.
+- **Her spellings, all as written:** « hemeroid » again (page 78, as pages 44
+  and 45), « Moral Rearnament » for Re-Armament with « + Oxford Group »
+  interlined beside it (page 79), « Assunsion » (page 80), « Roularden » for
+  Rouladen (page 73), « Cellery », « spinnach », « buillon » (page 74),
+  « need'nt » and « does'nt » and « would weight » (pages 71, 72),
+  « Terrence » for Terence, « Cataline » for Catiline, « distruction »
+  (page 92), « Sandborn's » and « San Angeles » (page 84), « Lillian »
+  (page 90).
+- **Readings that would not settle:** « trip to Pacif. » and « Costy » before
+  « Crime + Punishment » (page 78); « Aunt Curtis's », « buy on du Maurier
+  dress », « Bound Brook 20' » (page 79); « Mrs. Poulsel » with « Party »
+  struck and « poem » interlined, « vampire spilling wine », « Manh. Opera
+  House » (page 80); « Alice Mary absent », and the sideways annotation up the
+  fore-edge of which only « my Sherry » and « bedroom for » read (page 81);
+  « Sharkey's » and « Mrs. Berne » (page 83); « Alcomen Monastery » (page 84);
+  « Butchers » in the Rutgers line, and the « 1952 » written over another
+  figure (page 85); « Return to Nyack », « blankets », « Roughly », « toes »
+  (page 86); « Schiertaum's » (page 74); « angel's weep » (page 91);
+  « Assassination », where the sense is plain and the number of s's is not
+  (page 92). Two words are `\ill{}` outright: the figure struck between « 4 »
+  and « hrs. » (page 71) and the word written over another inside « (Dixey
+  \ill{}) » (page 74).
+- **Page 88 copies a translation still in copyright.** Kuan Tao-sheng's poem
+  in Lin Yutang's English of 1937, off « The Importance of Living », which she
+  names at the head of the leaf. It is transcribed like everything else,
+  because omitting it would misreport the page; the question of whether the
+  edition should carry it belongs to the rights notice. The Euripides below
+  it (Gilbert Murray's Alcestis and Bacchae), the Milton and the Shakespeare
+  on pages 90 and 91 raise no such question.
