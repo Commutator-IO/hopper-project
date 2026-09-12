@@ -226,8 +226,8 @@
       "written": "E. H. · J. H.",
       "means": "Edward Hopper · Josephine Hopper — herself. She initials her own hand as readily as his.",
       "match": "\\b[EJ]\\.\\s*H\\.",
-      "count": 243,
-      "sheets": 96,
+      "count": 254,
+      "sheets": 99,
       "seen": [
         {
           "ledger": "notebooks",
@@ -441,8 +441,8 @@
       "written": "Mus.",
       "means": "Museum.",
       "match": "\\bMus\\.",
-      "count": 341,
-      "sheets": 147,
+      "count": 343,
+      "sheets": 149,
       "seen": [
         {
           "ledger": "book-iii",

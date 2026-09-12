@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-09T23:42:50.457Z",
+ "generated": "2026-09-12T09:51:24.757Z",
  "basis": "Every row of the six ledgers whose date column resolves to a calendar day. These are the days the books record a transaction, not the days Edward Hopper worked, and Josephine Hopper wrote almost all of them.",
  "span": [
   1913,
@@ -13,14 +13,14 @@
   "book-v",
   "dealers"
  ],
- "rowsDated": 2136,
- "distinctDays": 1197,
+ "rowsDated": 2140,
+ "distinctDays": 1198,
  "rowsWithMonthUnresolved": 142,
  "yearRolls": 7,
  "perLedger": {
   "book-i": 358,
   "book-ii": 2,
-  "book-iv": 1283,
+  "book-iv": 1287,
   "book-v": 15,
   "dealers": 478
  },
@@ -33,15 +33,15 @@
   34,
   197,
   197,
-  178,
-  214,
+  177,
+  215,
   205,
-  172
+  173
  ],
  "mon": [
   144,
   118,
-  141,
+  142,
   110,
   103,
   112,
@@ -75,8 +75,8 @@
   ],
   [
    1917,
-   73,
-   77
+   74,
+   81
   ],
   [
    1918,
@@ -215,8 +215,8 @@
   ],
   [
    1945,
-   7,
-   14
+   8,
+   16
   ],
   [
    1946,
@@ -315,8 +315,8 @@
   ],
   [
    1965,
-   6,
-   9
+   5,
+   7
   ],
   [
    1966,
@@ -1226,7 +1226,7 @@
   ],
   [
    "1917-02-26",
-   1,
+   4,
    8,
    "book-iv/2/16636"
   ],
@@ -1244,6 +1244,12 @@
   ],
   [
    "1917-03-07",
+   1,
+   8,
+   "book-iv/2/16484"
+  ],
+  [
+   "1917-03-08",
    1,
    8,
    "book-iv/2/16484"
@@ -6577,6 +6583,12 @@
    "book-iv/10/17430"
   ],
   [
+   "1945-02-10",
+   2,
+   8,
+   "book-iv/14/16483"
+  ],
+  [
    "1945-04-23",
    1,
    32,
@@ -7511,12 +7523,6 @@
    2,
    8,
    "book-iv/14/16307"
-  ],
-  [
-   "1965-02-10",
-   2,
-   8,
-   "book-iv/14/16483"
   ],
   [
    "1965-06-23",

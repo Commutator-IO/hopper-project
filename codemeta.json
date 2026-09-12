@@ -6,8 +6,8 @@
   "codeRepository": "https://github.com/Commutator-IO/hopper-project",
   "url": "https://hopper.commutator.io",
   "license": "https://spdx.org/licenses/CC0-1.0",
-  "version": "2026.09.09",
-  "dateModified": "2026-09-09",
+  "version": "2026.09.10",
+  "dateModified": "2026-09-10",
   "programmingLanguage": [
     "JavaScript",
     "TypeScript"
