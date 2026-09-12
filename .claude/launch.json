@@ -1,6 +1,15 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "hopper", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 5173 }
+    {
+      "name": "hopper",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 5173,
+      "autoPort": true
+    }
   ]
 }
