@@ -5002,3 +5002,98 @@ descriptor behave exactly as before.
   because the pencil is faint: the word after « Not » on page 24 and the word
   before « lions on door posts » on page 27. Magnification past 8× adds nothing
   to either.
+
+### Re: 3 Wash Sq, sheets 37–48
+
+*(Pages 36 to 47, 12 September 2026, Opus 5.)* **The pad turns twice.** Pages
+36 to 43 finish sitting 3's campaign of letters — Moses, a copied reply from
+Peter Grimm, two drafts to « Anne », Mayor O'Dwyer, Ben Wolf, Maurice Stern,
+and on page 43 a letter to Whitelaw Reid written the day the fight was won.
+Then page 44 drops the drafts and starts a **dated chronicle of the whole
+fight**, and it is a different document: short entries, few interlineations,
+the most legible writing in the notebook.
+
+- **The chronicle runs backwards through the photographs.** Page 44 is March 1
+  to 25, page 45 the last three days of February, page 46 February 18 to 27,
+  page 47 February 12 to 18. She is writing from the far end of the pad towards
+  the front, so reading the pad forwards walks the record backwards. Within a
+  page the two sides still read upper then lower, and the dates inside one side
+  are themselves out of order (page 44: Mar. 4, then Mar. 1, then Mar. 10).
+  **Check the dates at the head of a new side before assuming it continues the
+  one before it.**
+- **Four sides carry writing set at an angle, and two of them disagree about
+  which angle.** Page 40's foot has ten short lines written with the pad turned;
+  page 42 has a fore-edge note and a line upside down at its foot; page 43 has
+  *two* turned blocks that read from **opposite** directions — the press list
+  rotates clockwise to read, the marginal finishing « he phoned 1/2 hr. ago to
+  announce » rotates counter-clockwise. Try both on every turned block: a block
+  that comes out upside down under one rotation is not illegible, it is the
+  other way up. Crop each block on its own; a crop that catches both wastes the
+  magnification on whichever one is inverted.
+- **One side is not pencil.** The whole upper side of page 37 — Peter Grimm's
+  letter, copied out — is in a much darker, wetter medium and is taken for ink.
+  It is the only copied-in document so far, and the upside-down line at the foot
+  of page 42 (« Ap. 1" — Dirty Palette, Art Digest. ») is in the same medium.
+  Sitting 3's « no red, no second hand » otherwise holds.
+- **This is the sitting that settles the earlier sittings' names**, and it
+  settles them because the chronicle writes people out in full where the drafts
+  only glanced at them. « Ira A. Schiller, O.P.A. area rent attorney » (page 47)
+  ends sitting 3's Shilles / Chilles / Schuller; « Harry Woodburn Chase —
+  Chancellor of N.Y.U. » (page 47) ends « Chancellor Chase »; « Carl Hauptman »
+  (pages 44, 45, 46) ends sitting 3's brace note « C. Haup. »; « Henry Seidel
+  Canby » (page 45) corrects sitting 2's « Henry Sudd Canby »; « Pierce Wetter »
+  (page 46) is Battle of Wash Sq.'s « Pierce Trowbridge Wetter »; « Mildred
+  Faulk » (pages 46, 47) confirms sitting 3's flagged page 24 reading. **The
+  earlier flags still stand where they were written** — the later page settles
+  the person, not the stroke.
+- **A leaf can disagree with itself about a name.** Page 47 interlines what
+  reads « Chas. LeRoy Kimbal » on its upper side and writes « Roy E. Kimbal »
+  plainly on its lower. Both stand. So do « Ben Wolf » (pages 40, 43, 44)
+  against sitting 3's « Paul Wolf » (page 30), and « Gen. Sherrell » (page 39)
+  against sitting 3's « Gen. Craig Sherrel » (page 34).
+- **The press and museum lists are the highest-risk writing in the notebook**,
+  because a wrong digit in a telephone number looks exactly like a right one.
+  Page 43 carries five exchanges (Pl. 9-7621, Pl. 3-5067, Ci. 7-3491,
+  Ch. 2-3433, Wat. 9-0061) and three street addresses; page 47 carries the
+  Museum of Modern Art's staff and a table of what each tenant paid. Tile these
+  and read them at 5× or better even though the hand is clear — the hand being
+  clear is what makes a misread digit invisible.
+- **Names that are right and look wrong.** She writes real people slightly
+  askew and the strokes support the askew version: « Herman Moore » for Hermon
+  More, « Warren Wheeler » for Monroe Wheeler, « Wm. Watson Gilder » for Richard
+  Watson Gilder, « Maurice Stern » for Sterne, « Rozamond Gilder » for Rosamond,
+  « Reggie Marsh », « Jimmy Chapin », « Bob Moses ». **Do not correct any of
+  them**, and do not let the real name pull a reading the strokes will not
+  carry. The ones that come out exactly right — Juliana Force, Alfred Barr,
+  Dorothy Miller, Stephen Clark, Emily Genauer, Isabel Bishop, Emma Bugbee,
+  Sarah Newmeyer, Lloyd Goodrich, Talbot Hamlin, Morris Ernst, Homer St.
+  Gaudens, Frederic S. Fleming, Edward Root, Frank Rehn — are right on the leaf
+  and need no flag.
+- **Her spellings, all as written:** « expatriots » (page 40), « assett »
+  (page 42), « regretable » (page 37), « pretentions » (page 37),
+  « dissention » (page 43), « personel » (page 47), « Gimbals » for Gimbels
+  (page 45), « Bklyn Mus. » , « Solus Club » beside « Lotus Cl. » on one side of
+  page 45.
+- **Readings that would not settle:** the word after « Wash Sq. becoming
+  another » on page 36, written once and given `\ill{}`; « Mgr. » above Stanley
+  Hillyer and « responsors » on pages 36 and 37; « in put to any obligations »
+  on page 38, where « in » will not resolve; « maximation » on page 41;
+  « Hauptman, you » in the parenthesis of signatures on page 41; « drive on for
+  huge funds » up page 42's fore-edge; « S.S.H., that can sell nothing » on page
+  42, where the abbreviation reads as readily « S. Sqt »; « Wilfred Conrad »,
+  « Geo. Edith Sagerson », « Henley — Bowker », « Jill Jessel », « Walter R.
+  Hartfield » and « E. Moore » on page 43; « Wm. Bauer of Bklyn Mus. », « Two
+  Place of Mone's », « Cais Chase a vestry man », « Sonier », « Preferomially »
+  and « Miss Regerson » on page 44; « Gumbach », « Salomon », « Cormes »,
+  « Frued », « Swartz », « Gurdy », « Detweiler » on page 45; « Bataine »,
+  « Peppino Mangiavatti », « Harvey Wylie C. », « Stumph », « M. Carrie »,
+  « Mario Sternes », « Jane Ros », « Pierre Apol » and « Sims » on page 46;
+  « Nancy Keal », « Clara Bocklin », « Raasch », « Queesbey », « Swartzer »,
+  « Teco Gallon », « Phelps Wright » and « Maxie Fritz » on page 47.
+- **The one line worth knowing you are looking for**, because it is the end of
+  the story the whole notebook has been telling: page 43's « Fri. May 16" —
+  O.P.A. refuses certif. of eviction », with the Times and Tribune carrying it
+  the next day, and under it a tally — written with the pad turned — of every
+  letter sent and whether it was answered. Page 47 ends on E.H.'s comment that
+  since nobody from N.Y.U. came, « We tore at our own heartstrings », with
+  « with eloquence unheard » interlined beneath.

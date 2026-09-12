@@ -53,8 +53,8 @@
       "written": "Amer.",
       "means": "American.",
       "match": "\\bAmer\\.",
-      "count": 184,
-      "sheets": 88,
+      "count": 204,
+      "sheets": 100,
       "seen": [
         {
           "ledger": "dealers",
@@ -96,8 +96,8 @@
       "written": "Bklyn.",
       "means": "Brooklyn — most often the Brooklyn Society of Etchers, whose annual he showed in from 1921, and the Brooklyn Museum that bought from it.",
       "match": "\\bBklyn",
-      "count": 85,
-      "sheets": 48,
+      "count": 89,
+      "sheets": 51,
       "seen": [
         {
           "ledger": "book-i",
@@ -139,8 +139,8 @@
       "written": "Com. · com.",
       "means": "Commission — the dealer's share, and the thing that turns a price into a receipt. See `30 - 1/3` below.",
       "match": "\\b[Cc]om\\b\\.?",
-      "count": 133,
-      "sheets": 84,
+      "count": 138,
+      "sheets": 87,
       "seen": [
         {
           "ledger": "book-i",
@@ -226,8 +226,8 @@
       "written": "E. H. · J. H.",
       "means": "Edward Hopper · Josephine Hopper — herself. She initials her own hand as readily as his.",
       "match": "\\b[EJ]\\.\\s*H\\.",
-      "count": 261,
-      "sheets": 105,
+      "count": 283,
+      "sheets": 114,
       "seen": [
         {
           "ledger": "notebooks",
@@ -312,8 +312,8 @@
       "written": "Gal.",
       "means": "Gallery. « Rehn Gal. », « Downtown Gal. », « Babcock Gal. » — the same dealers she elsewhere writes out in full.",
       "match": "\\bGal\\.",
-      "count": 112,
-      "sheets": 65,
+      "count": 113,
+      "sheets": 66,
       "seen": [
         {
           "ledger": "book-i",
@@ -355,8 +355,8 @@
       "written": "Inst.",
       "means": "Institute — the Art Institute of Chicago and the Carnegie Institute, chiefly.",
       "match": "\\bInst\\.",
-      "count": 75,
-      "sheets": 54,
+      "count": 78,
+      "sheets": 57,
       "seen": [
         {
           "ledger": "book-i",
@@ -441,8 +441,8 @@
       "written": "Mus.",
       "means": "Museum.",
       "match": "\\bMus\\.",
-      "count": 347,
-      "sheets": 153,
+      "count": 360,
+      "sheets": 160,
       "seen": [
         {
           "ledger": "book-iii",
@@ -571,8 +571,8 @@
       "written": "Rec'd",
       "means": "Received. In Book I it heads the column of what actually came in; in Book IV it opens the red line under a charge — « rec'd by check » — that says the account is settled.",
       "match": "[Rr]ec['’]d",
-      "count": 710,
-      "sheets": 244,
+      "count": 711,
+      "sheets": 245,
       "seen": [
         {
           "ledger": "book-iv",
@@ -657,8 +657,8 @@
       "written": "Soc.",
       "means": "Society — the printmakers' and etchers' societies whose annuals Book I follows year by year.",
       "match": "\\bSoc\\.",
-      "count": 61,
-      "sheets": 34,
+      "count": 62,
+      "sheets": 35,
       "seen": [
         {
           "ledger": "book-i",
@@ -744,8 +744,8 @@
       "written": "16 2/3 · 33 1/3 · 66 2/3",
       "means": "A sum in dollars and a vulgar fraction of one, which is what a third of a price comes to before anybody rounds. On the leaf the fraction is raised over lowered figures; the transcription sets it on the line as `2/3`.",
       "match": "\\d+\\s+\\d\\s*/\\s*\\d\\b",
-      "count": 494,
-      "sheets": 171,
+      "count": 496,
+      "sheets": 173,
       "seen": [
         {
           "ledger": "dealers",
@@ -921,8 +921,8 @@
       "written": "$18 · $1200.",
       "means": "The dollar sign, which she writes above and to the left of the figure and often detached from it. It is easy to attach to the wrong column when reading, and it reaches Book IV's money column only in the 1940s and only on the largest sums.",
       "match": "\\$",
-      "count": 414,
-      "sheets": 129,
+      "count": 417,
+      "sheets": 132,
       "seen": [
         {
           "ledger": "dealers",
