@@ -50,7 +50,7 @@ for (const m of readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8').
 }
 
 /**
- * The pass that produced a transcription, off the file's own header.
+ * Every pass that produced a transcription, off the file's own header.
  *
  * Every `.tex` opens with `% Pass: Opus 5 (claude-opus-5), 2026-09-09 - …`,
  * and `scripts/tei.mjs` already lifts that line into the TEI `<respStmt>`. It
@@ -58,13 +58,31 @@ for (const m of readFileSync(resolve(root, 'src/content/catalogue.ts'), 'utf8').
  * of this site cites a *reading*, and a reading has a model and a date. One
  * source, so the deposited file and the copied citation cannot disagree.
  *
- * A file whose header does not match returns `null` rather than a guess, and
- * the citation then says the date is unrecorded — which is true, and better
- * than a plausible date nobody wrote.
+ * **A file can carry more than one.** A ledger batch is read in a single pass
+ * and has exactly one line. A notebook is one file read in sittings of twelve
+ * sheets, and gets a `Pass:` line per sitting, so the provenance of every
+ * stretch of it is on its face. Reading only the first was a real defect: the
+ * corpus release date is cut from the most recent pass anywhere, and with
+ * `.exec()` on a `/m` regex it froze at a notebook's *first* sitting, so
+ * Garrulities read to the end on 12 September still dated the corpus to the
+ * 10th — and the gap would have widened with every sitting after it.
+ *
+ * Returned oldest first, by date rather than by position, so that a header
+ * whose lines were ever appended out of order still yields the first pass
+ * first. Callers want different ends of this: the site's citation names the
+ * *first* machine pass, and `scripts/citation.mjs` cuts the corpus version
+ * from the *last*. Both are right, which is why the list is what is published
+ * and neither end is privileged here.
+ *
+ * A file whose header does not match returns `[]` rather than a guess, and the
+ * citation then says the date is unrecorded — which is true, and better than a
+ * plausible date nobody wrote.
  */
-function passOf(tex) {
-  const m = /^%\s*Pass:\s*(.+?)\s*\((\S+?)\)\s*,\s*(\d{4}-\d{2}-\d{2})\b/m.exec(tex);
-  return m ? { model: m[1], id: m[2], date: m[3] } : null;
+function passesOf(tex) {
+  const re = /^%\s*Pass:\s*(.+?)\s*\((\S+?)\)\s*,\s*(\d{4}-\d{2}-\d{2})\b/gm;
+  return [...tex.matchAll(re)]
+    .map((m) => ({ model: m[1], id: m[2], date: m[3] }))
+    .sort((a, b) => a.date.localeCompare(b.date));
 }
 
 const transcripts = {};
@@ -89,7 +107,15 @@ if (existsSync(out)) {
       const key = ledger === 'notebooks' ? `notebook#${m[1]}` : `${ledger}#${Number(m[1])}`;
       const e = (transcripts[key] ??= { html: false, tex: false, pdf: false, xml: false });
       e[m[2]] = true;
-      if (m[2] === 'tex') e.pass = passOf(readFileSync(resolve(out, ledger, f), 'utf8'));
+      if (m[2] === 'tex') {
+        const passes = passesOf(readFileSync(resolve(out, ledger, f), 'utf8'));
+        // `pass` is the first of them and stays the name the site's citation
+        // reads, because that clause says « first machine pass by … » and
+        // means it. Both are written here from one list, so they cannot come
+        // to disagree.
+        e.passes = passes;
+        e.pass = passes[0] ?? null;
+      }
     }
   }
 }

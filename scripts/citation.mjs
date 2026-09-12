@@ -60,8 +60,13 @@ const manifest = read('public/transcripts/manifest.json');
 
 /* ------------------------------------------------------ what is here now */
 
+// Every pass of every file, not one per file. A notebook is read in sittings
+// and carries a `Pass:` line for each, so taking one apiece would date the
+// corpus by the *first* sitting of the newest notebook and would miss a model
+// that only ever read a later one. `passes` is the manifest's full list;
+// `pass` is its first entry and is what the site's citation clause names.
 const passes = Object.values(manifest.transcripts)
-  .map((t) => t.pass)
+  .flatMap((t) => t.passes ?? (t.pass ? [t.pass] : []))
   .filter(Boolean);
 const dates = passes.map((p) => p.date).filter(Boolean).sort();
 const released = dates[dates.length - 1];

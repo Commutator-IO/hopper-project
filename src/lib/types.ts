@@ -268,16 +268,31 @@ export interface TranscriptEntry {
   /** The TEI P5 export, derived from the `.tex` by `npm run tei`. */
   xml: boolean;
   /**
-   * Which model read the sheets, and when — off the `.tex` header's own
-   * `% Pass:` line, the same line the TEI `<respStmt>` carries.
+   * The **first** model to read the sheets, and when — off the `.tex` header's
+   * own `% Pass:` line, the same line the TEI `<respStmt>` carries.
    *
    * It is in the manifest so that a citation can name it. A citation of this
    * site cites a reading rather than a fact, and a reading that cannot be
    * dated cannot be superseded: « the site says X » stays true forever and is
    * therefore worth nothing. `null` where the header does not parse, which the
    * citation reports rather than papers over.
+   *
+   * It is the first and not the latest because the clause built from it reads
+   * « first machine pass by … » — see `reading()` in `src/lib/cite.ts`. For a
+   * file read more than once, the rest are in `passes`.
    */
   pass?: Pass | null;
+  /**
+   * Every pass the file's header records, oldest first.
+   *
+   * A ledger batch is read in one pass and has one. A notebook is one file
+   * read in sittings of twelve sheets and carries a line per sitting, so its
+   * provenance is a list and not a date. `scripts/citation.mjs` cuts the
+   * corpus release date from the last of these and the « Transcribed by »
+   * note from all of them; the site's citation clause takes `pass`, the first.
+   * Written from one list in `scripts/manifest.mjs`, so the two cannot drift.
+   */
+  passes?: Pass[];
 }
 
 /** The model that read a batch's sheets, and the day it did. */
