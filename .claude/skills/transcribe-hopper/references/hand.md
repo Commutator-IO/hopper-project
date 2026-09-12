@@ -5097,3 +5097,92 @@ the most legible writing in the notebook.
   letter sent and whether it was answered. Page 47 ends on E.H.'s comment that
   since nobody from N.Y.U. came, « We tore at our own heartstrings », with
   « with eloquence unheard » interlined beneath.
+
+### The black notebook, sheets 1–12
+
+*(The cover, page 1 and the openings 2–3 to 20–21, 12 September 2026, Opus 5.)*
+**This one is neither a diary nor a campaign.** It is a household and studio
+memorandum book, and its subject changes every page or two with no transition
+and no chronology: an address block, a phonograph's spare-part numbers, French
+phrases with their English beside them, a fountain pen, frame sizes, paper
+sizes, a consignment of her own water colours, a monograph mailing list, the
+Truro insurance, which Broadway theatres have a usable second balcony, Edward
+Hopper's suit measurements, and a year-by-year travel chronicle. Expect to
+change register every twenty lines and do not look for a thread.
+
+- **One `\entry{}` in twelve sheets, and then twenty-six at once.** Only page
+  15's « Spring 1946. » heads a block. Several blocks carry a date at their
+  *foot* instead — « Jan. 20. 1954, », « Jan 16, 60. », « Sat. Jan. 22, 44. » —
+  and those head nothing and must not be promoted. The exception is the year
+  chronicle from page 19 on, where every line opens with its year and every
+  line is its own memorandum; those take one `\entry{}` each.
+- **The chronicle runs backwards and spans three sheets.** 1961 to 1957 on page
+  19, 1956 to 1946 on page 20, 1945 to 1936 on page 21. Page 19's last line and
+  page 20's first record the same winter at Pacific Palisades, in different
+  words; the repetition is hers and is not merged.
+- **Page 20 is the densest sheet, and the hazard is the interlineations, not
+  the hand.** Nearly every year line has a second line squeezed above it, and
+  some of those sit between two years. Which year an interlineation belongs to
+  is often not recoverable; say so rather than choosing.
+- **A small letter under a macron stands where « with » would.** « c̄ B.
+  Hartman » heads the frame recipe on page 6; « Truro, trip c̄ Manchester »
+  opens 1959 on page 19. The two together are what make it a letter and not a
+  blot. Transcribe the mark; the combining macron passes the renderer.
+- **One frame maker, three spellings, three pages apart.** « Heidenryk »
+  (page 9), « Heinrich » (page 10), « Heydenryk » (page 18). So with the
+  Mexican town: « Sortillo » (pages 15, 21), « Saltillo » and « Sattillo » on
+  one page (20). And « San Estoban » (pages 3, 10) against « SanEsteban »
+  written as one word (page 6); « Barbazon » (page 3) against « Barbizon »
+  (page 10); « Siera Madre » (page 6) against « Sierra Madre » (page 10);
+  « Pochards » (page 19) against « Pochardes » (page 18). **Check the other
+  pages of the sitting before flagging one of these as doubtful** — the
+  variation is hers and both forms stand.
+- **Her raised `"` does four jobs here and they are not interchangeable.** The
+  ordinal (« Dec. 6" 1956 », « 3" trip », « 2" visit »); the street ordinal
+  (« 2 W. 15" — 96" 5" Ave », « E. of 6" »); the inch mark (« 4 3/4" x 6 1/4" »,
+  « 46 x 35 1/2" »); and the ditto, which is what « " \quad " \quad " » under a
+  column of frame sizes means. « "12" Night" » on page 13 is Twelfth Night with
+  the ordinal inside quotation marks, which is all three at once.
+- **A block can be rubbed out and leave its apparatus behind.** The middle of
+  page 3 carries five ink arrows and five strokes of red crayon with nothing
+  between them: the lines were erased and only the marks against them survive.
+  What shows under the crayon is the show-through of page 4 and reads
+  backwards. Do not chase it; it is `\ill{}` and the note says why.
+- **The boxes are hers and they group.** Page 1 has two, page 5 one, page 10
+  one, page 16 one round the suit table. They are drawn in ink round a block
+  she wanted kept together, like the braces, and like the braces they are
+  described and not transcribed.
+- **The one ruled table in twelve sheets is the suit measurements** (page 16),
+  and she headed only its right-hand column, « 1952 ». Leave the other two
+  headings empty rather than supplying « Measurement » and « Earlier »: the
+  second would be an invented claim about what the unlabelled column means.
+- **Page 15 is the sheet to budget for.** Some thirty names in two columns, the
+  right-hand one added later, smaller, and written across the left, so a name
+  in one column cannot be reliably paired with one in the other — give the
+  columns in order and say the pairing is not recoverable. One surname
+  (« Howard + Anne ___ ») is overwritten past reading.
+- **Her spellings, all as written:** « Tuscon », « Huricane »,
+  « Diverticulisis », « Benficiaries », « Watman" » for Whatman, « Coper Union »,
+  « to small » for too small, « Sheafer » for Sheaffer, « Lindenmeyer »,
+  « Sommerfield », « Dauphinée » beside « Dauphines House », « Contes Comme ça »
+  and « d'élephant » for Kipling in French, « Snta. » for Señorita.
+- **Readings that would not settle:** « Her book » at the foot of page 1's
+  address box; the three part numbers on page 1; « burglars » on page 3, and
+  the single word after « from back of frame », which is `\ill{}`; « backs » in
+  the Silverfish line and the « 37 1/2 » whose 3 carries a closed upper loop;
+  « barges » on page 4; « Maries Sterners »; « remove do. » and « Hotel » on
+  page 6; « Dauphines », « Saidelyn », « epoxy » on page 9; « St. Frans Ch.
+  Buxton » on page 10, and « Series \$1000 » and the « T » of the windstorm
+  policy on page 11; « gold lace » interlined over the Fulton line on page 13
+  — it begins with a clear g; most of page 15's right-hand column, and
+  « Sicanteri », « O'Keil », « Hélène Felenfeld » in the left; « Peters fath. »
+  and « the Cole » in the struck line on page 17; « wid. insert » on page 17;
+  « pinkish », « Pochardes », « Each priced », « 12.05 », « Path from Studio »
+  and « whimsical » on pages 18 and 19; « Bravos Colons » in the 1946 entry and
+  « Du Barry caps. » in 1945.
+- **Two plays settle themselves and one does not.** Page 13's Belasco line
+  reads « Guets People » letter by letter and is « Gentle People », which the
+  t-bar over the compressed middle carries; the Cort's address reads « 48 E. of
+  Bd. », which « Empire - Bd. 39" » four lines above settles as Broadway. The
+  interlineation over the Fulton line does not settle: « gold lace » is what is
+  written, whatever play was meant.
