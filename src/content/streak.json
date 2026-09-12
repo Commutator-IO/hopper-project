@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-12T18:45:57.820Z",
+ "generated": "2026-09-12T22:24:20.659Z",
  "basis": "Every row of the six ledgers whose date column resolves to a calendar day. These are the days the books record a transaction, not the days Edward Hopper worked, and Josephine Hopper wrote almost all of them.",
  "span": [
   1913,
@@ -13,16 +13,17 @@
   "book-v",
   "dealers"
  ],
- "rowsDated": 2140,
- "distinctDays": 1198,
- "rowsWithMonthUnresolved": 142,
+ "rowsDated": 2146,
+ "distinctDays": 1204,
+ "rowsWithMonthUnresolved": 152,
  "yearRolls": 7,
  "perLedger": {
   "book-i": 358,
   "book-ii": 2,
   "book-iv": 1287,
   "book-v": 15,
-  "dealers": 478
+  "dealers": 478,
+  "notebooks": 6
  },
  "longestRun": [
   7,
@@ -33,24 +34,24 @@
   34,
   197,
   197,
-  177,
+  179,
   215,
-  205,
-  173
+  207,
+  175
  ],
  "mon": [
-  144,
+  145,
   118,
   142,
-  110,
-  103,
+  111,
+  104,
   112,
   67,
   31,
   53,
   96,
-  97,
-  125
+  98,
+  127
  ],
  "years": [
   [
@@ -250,18 +251,18 @@
   ],
   [
    1952,
-   5,
-   8
+   7,
+   10
   ],
   [
    1953,
-   9,
-   20
+   12,
+   23
   ],
   [
    1954,
-   15,
-   23
+   16,
+   24
   ],
   [
    1955,
@@ -6895,6 +6896,18 @@
    "book-iv/11/17686"
   ],
   [
+   "1952-04-18",
+   1,
+   0,
+   "notebooks/0/96131"
+  ],
+  [
+   "1952-05-14",
+   1,
+   0,
+   "notebooks/0/96504"
+  ],
+  [
    "1952-06-27",
    2,
    8,
@@ -6967,16 +6980,40 @@
    "book-i/8/17216"
   ],
   [
+   "1953-11-18",
+   1,
+   0,
+   "notebooks/0/97539"
+  ],
+  [
+   "1953-12-05",
+   1,
+   0,
+   "notebooks/0/97539"
+  ],
+  [
    "1953-12-09",
    2,
    8,
    "book-iv/11/18488"
   ],
   [
+   "1953-12-19",
+   1,
+   0,
+   "notebooks/0/97539"
+  ],
+  [
    "1954-01-14",
    2,
    8,
    "book-iv/11/17179"
+  ],
+  [
+   "1954-01-15",
+   1,
+   0,
+   "notebooks/0/97539"
   ],
   [
    "1954-01-29",

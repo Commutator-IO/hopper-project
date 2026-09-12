@@ -5270,3 +5270,92 @@ than pages 1–18 did, and three of them are genuinely tabular.
   a note pointing at page 33, because the later leaf narrows the field and not
   the stroke. « Lu Duble » on page 33 against « Lu Duro » on page 35 does not
   settle either way, and both stand as written.
+
+### The black notebook, sheets 25–36
+
+*(The openings 46–47 to 68–69, 13 September 2026, Opus 5.)* The forward
+chronicle of pages 44 to 47 ends at the burglary of February 1958; from page
+48 the book is the Greenwich Gallery year and then miscellany again. Two
+things make this sitting different from the first two: **three of its blocks
+are written sideways**, and its two worst leaves are worse than page 15 or
+page 35 were.
+
+- **Turn the crop before deciding a page is blank.** Page 48 looks empty in
+  the whole-sheet view and is not: a ten-line list of every Mexican journey
+  from 1943 to 1957 stands at its foot, the book turned a quarter turn,
+  reading up from the fore-edge. Page 55 and page 56 carry the same kind of
+  block in the fore-edge margin. `magick <sheet> -crop WxH+X+Y +repage -rotate
+  90` is the right way round for all three; `-rotate -90` gives them upside
+  down, which is how you find out you guessed.
+- **Pages 52 and 53 are the sitting's cost, and the honest answer is to leave
+  things out.** Some hundred and thirty names in two unruled columns a leaf,
+  most carrying a tick, a note of who came, or a second smaller pencil written
+  *across* the first. The names mostly read; the annotations mostly do not,
+  and the ones that do cannot be attached to a name with confidence. Give the
+  columns in order with a note saying what was left out, rather than
+  transcribing half an interlineation onto the wrong person.
+- **Her two tick keys disagree with each other, one leaf apart.** Page 52
+  closes « √ = came or wrote »; page 53 closes « √ = wrote or rec'd. by hand)
+  √√ came ». Both are hers, both stand, and neither governs the other page.
+- **The one ruled table is the frame bill** (page 54, Burges-Revel, Feb. 1958),
+  ruled in four vertical strokes into five columns of which she headed three —
+  « Frame No. », « Size », « Finish ». The second and fifth are hers to leave
+  blank. A word is interlined above the second heading and cannot be read;
+  supplying « Quantity » would be inventing the claim.
+- **An unruled two-column list is still one column after another.** Page 55's
+  works, page 61's names, pages 52 and 53's announcements: none is ruled, and
+  all are set downward, left column then right, as page 33 was in the second
+  sitting. Page 54's table is the only thing in twelve sheets she ruled.
+- **The same sentence can be on the leaf twice and not be a repetition.**
+  Page 64 carries Edward Hopper's « the arrestation of a moment in time - with
+  the most acute realization », then, in a second red-crayon box below it, her
+  own recasting: « to arrest / a moment in time / ~~with~~ that moment / most
+  acutely realized. » The second is hers, not a second saying of his, and the
+  struck « with » is the hinge. Both boxes are red crayon, as page 42's
+  Who's Who entry was.
+- **Her spelling variants go on multiplying and both forms keep standing.**
+  « Surburban » (page 46); « Saltillo » against « Sattillo » on the same
+  sideways list (page 48); « Athenaeum » (page 55) against page 31's
+  « Athenuem » and « Athenium »; « Dauphinée » (page 54) against « Dauphines
+  House » of page 9; « Guanajuato » (pages 46, 48) against page 45's
+  « \uncertain{Guanacinato} »; « ANFA » in capitals on page 46 against « Anfa »
+  on page 48. **Check the other leaves of the sitting first.**
+- **A doubtful name on one leaf can be the same doubtful name on another, and
+  that settles nothing.** « Zuckerman » interlined on page 46 against page 45's
+  « Zugerman »; « Teilman » on page 56 against page 40's « Tielman »; « How »
+  on page 67 against page 29's « Calvin How ». Each pair narrows the field and
+  leaves the stroke where it was.
+- **Her own Who's Who entry is on page 57, and the surname is written with a
+  plain V.** « Hopper. Jo Vivison (Mrs. Edward Hopper, artist; » — copied off
+  the A. N. Marquis galley proof of Who's Who of American Women, 1958. It is
+  her maiden name and the leaf gives a V; whether the slip is the printer's or
+  hers cannot be told from the page, and it is not corrected. The same leaf
+  gives « Audiney's » for the author of « The Love of One's Neighbour ».
+- **Her spellings, all as written:** « Surburban » (page 46), « Colonica
+  Heights » (page 59), « Sees good model » (page 60), « whiterish » (page 60),
+  « collander » (page 69), « Catherene Rogers », « Vivison », « Audiney's »
+  and « Gilbour » (page 57), « Wittenburg Garden » (page 49), « Sheaffer » for
+  the Brooklyn critic (page 53) against the first sitting's « Sheafer » for the
+  pen.
+- **Readings that would not settle:** the word after « E. has » on page 46
+  (five or six letters between a capital E and a final s; « Exhibs. » offered
+  and doubted), « J. Bertram H. », « L'astre », « Frissell », « Torro's »,
+  « Perea », and the interlined « Zuckerman did surgery Jan. » (page 46);
+  « Ji » after « Feb. » and « Bigarbels » before « Hopper, Pollock », the
+  year of « 1957. Cape - July 22 », and « contact » closing the Amer. Fed. of
+  Art line (page 47); « S. tc » after « El Paso » and the mark closing « To get
+  this straight » (page 48); « opp. » after « Convent », « Fanny in nurse
+  dress », « Morron » (page 49); « 49 q. 33. » and « Silvia's bqt. » (page 51);
+  most of pages 52 and 53, and in particular « Dunree », « Higson », « Wilder
+  Stein », « Nessler », « Dillman », « Herritage », « Freilick », « Hantz »,
+  « Kraess », « Krumsteg », « Ricord », « Cafelent », « DeVillier »,
+  « Frankenfuler », « Beckenbach », « Schlesinger », « Whacker », « Organ »,
+  « Tolo », « Rsiiba », « Canamare »; « Fredericks L. Watkins » and « Friedly,
+  Mass » (page 56); « Condon Riley » (page 58); the whole third title of the
+  canvas list and « Colonica Heights » (page 59); « 31 x 27 » with her own
+  « ? » above it, « Sees », « Paints Water colors » (page 60); « Kroll » and
+  « Lene Briggs » (page 61); « these blankets » (page 62); « Seguin Hall » and
+  « S. Wellfleet Station » (page 63); « Safe down position » (page 65);
+  « 120 ? Cambridge St. » and « How » (page 67); and the two struck words
+  before « down as milk goes in » on page 69, where « heat » suits the sense
+  and is not what is written.
