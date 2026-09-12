@@ -5186,3 +5186,87 @@ change register every twenty lines and do not look for a thread.
   Bd. », which « Empire - Bd. 39" » four lines above settles as Broadway. The
   interlineation over the Fulton line does not settle: « gold lace » is what is
   written, whatever play was meant.
+
+### The black notebook, sheets 13–24
+
+*(The openings 22–23 to 44–45, 12 September 2026, Opus 5.)* The backwards
+chronicle runs on to the foot of page 24 and stops at 1906; from page 25 the
+book goes back to memoranda and changes subject every page or two, as in the
+first sitting. Two things are new: the leaves carry far more interlineation
+than pages 1–18 did, and three of them are genuinely tabular.
+
+- **A ruled column divider is the test for `ledgertable`, and this sitting has
+  both answers on facing leaves.** Page 34's two columns of « Reality »
+  recipients are divided by a drawn vertical rule and are a table; page 33's
+  two columns of the same list are not ruled and are set as one. Page 26's eye
+  test is ruled in three strokes and headed in all four columns — the only
+  table in the notebook she headed completely. Page 28's « Arts + Letters »
+  block stands in three unruled columns whose middle column carries dittos, so
+  it is read *downward* even though it is written across; give it as written
+  and say so, because a reader who takes the lines across gets « Truro Hills »
+  attached to the wrong title.
+- **The chronicle's years can be blank, and the blank is the record.** 1913, 12
+  and 11 on page 24 have nothing written against them. An `\entry{}` with an
+  empty `\hand{}` is right; skipping them would make the run look continuous.
+- **A year can be written twice, the second time rubbed.** Page 22 carries 1933
+  at the head of the Quebec entry and again, faint and erased, at the head of
+  the Bird's Cage entry below. Read the faint one rather than assuming a
+  mis-set year.
+- **« back to Cape. » is a formula, not a reading to labour over.** It recurs
+  on pages 21 and 22 and at low magnification reads « +ock or Coke ». The
+  descender under the p of « Cape » is what settles it.
+- **The Whitney's descriptor governs the section heading even when half the
+  opening is blank.** Pages 27 and 32 are blank; the sections are still
+  « Page 26 » and « Pages 32--33 », because that is what the photograph is
+  called and what the reader's page turn lands on.
+- **Her spelling variants go on multiplying, and both forms stand.**
+  « Saltillo » on page 44's 1943 line against « Sattillo » on its 1946 line and
+  on page 45's 1951 line; « Wadsworth Athenuem » against « Hartford Athenium »
+  on the same leaf (page 31), and « Athenuem » again on page 35;
+  « Diverticulosis » (page 45) against the first sitting's
+  « Diverticulisis »; « Watmans » and « Watman » on page 41 beside the first
+  sitting's « Watman" ». **Check the other leaves of the sitting before
+  flagging one of these.**
+- **Her spellings, all as written:** « tourist Roots » (page 22),
+  « Santo'Fe' » and « James Mt. » (page 22, and « James Mt. » again on page
+  41), « Vinyard », « Siasconset », « Haarlem » (page 24), « Personelle »,
+  « Cochran » for the Corcoran, « Rollings Coll. » for Rollins (pages 31, 34),
+  « Appolonio Umbro » and « Biennias de Venezia » (page 33), « Malcom Cowley »
+  (page 33), « Marc Connolly » (page 34), « Rhinlander » (page 39),
+  « sigle control » (page 38), « questinaire » (page 43), « hemeroid »,
+  « hemmorhages » and « Guanacinato » (pages 44, 45), « Antonins Raymond »
+  (page 40), « Bertrams Hartman » throughout.
+- **The ± is hers and is a real ± .** « Ap. 17 ±, 1953 » (page 25),
+  « 1954 ± » (page 39), « met at Architects League ± 1943 » (page 40) — a plus
+  over a bar, meaning about. It passes the renderer as a literal character, as
+  the first sitting's « July - 17 ± Truro » already showed.
+- **Red crayon boxes a block she wanted found again.** Page 25's « Jean C. -
+  Jarvis Foundation » is boxed in pencil and underlined in red; page 42's whole
+  Who's Who entry for herself is boxed in red crayon; a red stroke stands
+  against « Reality » on page 25. As with the ink boxes of the first sitting,
+  describe and do not transcribe.
+- **A circled « ? » is her doubt, not the transcriber's.** Page 25 closes
+  « Jarvis Foundation » with one. Write it; it is on the paper.
+- **Readings that would not settle:** « Grece » or « Green » House sold, at the
+  head of page 24; « Vandenberg Studios » and the word over the 1922 line
+  (« Sept. » ?) on page 24; « Pattesons studio » (page 22); the circled figure
+  and « 1/5 » at the fore-edge of page 29, which is `\ill{}`; « Quincy Fleet »
+  and « Calvin How » (page 29); « Harrocks » (page 28); « Keith » and the
+  rubbed word after it, and « Davies » (page 30); « Hunneman », « McKellar »,
+  « Baurer », « Malone », « Dopolos Southall » (page 31); « Elmore D. Clark »,
+  « Marianne Morett », « Paul Beckley », « Edward Nilson », « Lu Duble »
+  (page 33); « Charles Pearsons », « Norman Herzkel », « Koivumaky Alex »,
+  « Dmitry Kessarinsky », « Ada Gabriel », « Daghlee Torre » (page 34);
+  « Mullhrs », « Reinhold Niebuhr », « Gertrud Kagen », « Kadman », « Cortz »,
+  « Lu Duro » (page 35); « Charlestown Witt. », « Promises », « Albert Cork
+  Church » (page 37); « Pintz » (page 38); « dig » in the Lyman Stowe line
+  (page 39); « designed » at the end of page 40's first line, whose letters
+  will not give a g; « Rosika », « Grunthbach », « Kierney », « Tielman »,
+  « Gerdis » (page 40); « Limps » and « Ponies » (page 41); « Guladt » (page
+  43); « Zugerman » (page 45).
+- **One name settles across leaves and one does not.** Page 31's « Dr. Sewrio
+  Webster Jones - Pres. Rutgers Univ. » is settled toward *Lewis* by page 33's
+  plain « Rutgers \quad Lewis W. Jones »; the reading stays `\uncertain{}` with
+  a note pointing at page 33, because the later leaf narrows the field and not
+  the stroke. « Lu Duble » on page 33 against « Lu Duro » on page 35 does not
+  settle either way, and both stand as written.
