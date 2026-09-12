@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11T09:08:27.446Z",
+  "generated": "2026-09-12T10:35:44.737Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -19269,6 +19269,14 @@
           "ref": 96058,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "72",
+          "ref": 96115,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -21231,6 +21239,14 @@
           "batch": 10,
           "leaf": "119",
           "ref": 18551,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "book-iv",
+          "batch": 14,
+          "leaf": "156",
+          "ref": 16483,
           "rows": 1,
           "prose": 0
         },
@@ -23375,6 +23391,14 @@
           "ref": 17886,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "batch": 0,
+          "leaf": "78",
+          "ref": 96074,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -24093,14 +24117,6 @@
           "ref": 17816,
           "rows": 0,
           "prose": 1
-        },
-        {
-          "ledger": "book-iv",
-          "batch": 14,
-          "leaf": "156",
-          "ref": 16483,
-          "rows": 1,
-          "prose": 0
         },
         {
           "ledger": "book-iv",
