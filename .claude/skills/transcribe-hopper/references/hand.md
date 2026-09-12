@@ -4668,3 +4668,101 @@ notebook so far.
   1590 × 1290 at +210+183 in a 2000-wide photograph, with sheets 25 and 26 some
   90 px taller. No colour chart on any of them, so the gutter split lands at
   half the trimmed width every time.
+
+### Garrulities, sheets 37–42
+
+*(The openings 72–73 to 78–79, page 108 and the back cover — the end of the
+notebook, 12 September 2026, Opus 5.)* Six sheets, not twelve, because the
+notebook runs out. The prose runs on from page 71 without a break and is the
+same hand, the same black ink and the same subject as the third sitting until
+page 77, where two things change at once.
+
+- **A sitting can be shorter than twelve and that is not a defect.** Sheets
+  37–42 are all that remain: four openings, one last written leaf and the back
+  cover. The reader prints the span as « 37–42 » and counts six.
+- **The blue-grey ink is a whole entry, not a correction.** Feb. 27, 1956 at
+  the head of page 77 is written in a grey-blue ink that appears nowhere else
+  in the notebook, and the entry under it — Mar. 31 – Ap. 15, 1958 — is back in
+  black. Nothing about the hand changes with the ink. Say so in a `\note{}`;
+  `\ink{}` is for a ledger's cells and has no business in a diary.
+- **Red finally carries a word.** Page 74 has « but » interlined in red above a
+  « by » struck with a red stroke, in « I've striven night + day, ~~by~~ how get
+  any one to come ». The two strokes beside page 44 and the bracket on page 58
+  are the only other red in the notebook and neither is writing, so this is the
+  one red word in forty-two sheets and it is worth its own note.
+- **Her own interlineation can correct a fact, not just a wording.** Page 76
+  writes « the stripes of a ~~leopard~~ » with « tiger » over it — and five
+  lines above she had already written « I've fought like a tiger ». Transcribe
+  the struck word on the line and put « tiger » in `\marginal{}`; the
+  correction is the evidence and must not be allowed to rewrite the line
+  silently, exactly as page 30's « Adela / adele » was handled.
+- **The last written leaf is forty pages on and upside down.** Page 79 stops
+  after five lines with « Interrupted » written out to the right and underlined,
+  and everything after it is blank until a leaf stamped **108**, written in
+  pencil with the book turned. Rotate 180° before reading a stroke of it. Two
+  passages are copied out there and nothing else: Milton's *Areopagitica* —
+  she writes « Areopagita » — and a poem under « Arthur Symonds ».
+- **A copied poem can be laid out in two columns with a rule between them.**
+  Page 108's verse runs four lines down the left of a drawn vertical stroke and
+  four down the right, the right column starting level with the left's third
+  line. That is not a `ledgertable`: she ruled one stroke, not a table. Give the
+  two columns as two blocks, left then right, and let a `\note{}` say what the
+  layout is.
+- **A first draft can be erased and rewritten under an asterisk.** The Milton
+  passage breaks off at « bred them. », two lines are rubbed out, and the
+  sentence starts again lower down against a `*`. The erased layer shows
+  « progeny they are » and nothing else recoverable — `\ill{}`, and the note
+  says where the asterisk points.
+- **The back cover is not a sheet with writing on it.** Sheet 42 photographs
+  the printed back cover, torn at two outer corners, and the pencil visible
+  through the tear at its head is the first two lines of page 108 showing past
+  the torn board — already transcribed on the previous sheet. Give it a
+  `\sheet{}` and a `\note{}` and transcribe nothing, as Book I does for an
+  opening that duplicates two leaves.
+- **The descriptor drift holds all the way to the end**, and the last sheet is
+  the proof the third sitting predicted: the Whitney calls it « Page 78 » and
+  the leaf is stamped 108. Crop the outer top corner at 400 % on every sheet
+  before reading a line.
+- **More spellings, all as written:** « relm » for realm, « desideratums »,
+  « plonking », « Areopagita », « Symonds » for Symons, and « ca'nt »,
+  « wo'nt », « did'nt », « was'nt », « is'nt », « hav'nt », « need'nt » exactly
+  as the earlier sittings found them.
+- **Readings that would not settle:** « \uncertain{Macbeth} » and
+  « \uncertain{Teegel} » in the list of galleries on page 72, where
+  « Knoedler », « Seligman » and « Borgenicht » beside them are plain; « to use
+  my \uncertain{Ceer} energy » on page 72; « listened to \uncertain{what
+  Everything} » on page 72; « one \uncertain{just} utmost disdain » on the same
+  page; « \uncertain{Yet hard} it is » and « \uncertain{held by complied} over
+  the others » and « \uncertain{he has just grim jaw} » on page 73; « I'm
+  \uncertain{scared so much, tho'} » and « \uncertain{Life or would} seem » in
+  the June 9 entry; « all this very \uncertain{vehement} » and « not the most
+  \uncertain{gruelling} » on page 74; « every day \uncertain{pleas I hate
+  lamenting} » on page 74; « \uncertain{so feet} he can kick » and
+  « \uncertain{Edna MacGowan} » and « \uncertain{Dr. Herrick} » on page 75;
+  « the practice of \uncertain{fine arts} » on page 75, where her « n » and
+  « r » are the usual difficulty; « Each year has it's \uncertain{flaws} from
+  the next \uncertain{age} » in the blue-grey entry; « \uncertain{Hermon More} » on
+  page 74, where the vowels of both names will not settle and « Lloyd Goodrich »
+  two words earlier is plain. **The guest list on page 77
+  is the densest run of unsettled names in the notebook** — eighteen of them in
+  nine lines, of which « Paul Resika », « Isabel Whitney », « Lloyd Goodrich »,
+  « Helen Appleton Read », « Robt. Coates » and « Parker Tyler » are plain and
+  most of the rest are not. Do not let one legible name in a list vouch for its
+  neighbours.
+- **A doubtful title is still a title.** Page 78's « \uncertain{Sun Ecstasy} +
+  Cape Clothes Line » and page 77's « Fleurs du Temps, Rodeo » are her own
+  pictures, named in the run of the prose. They are not `\work{}` blocks — that
+  macro opens a work's record on a ledger leaf — and identifying them belongs
+  to `/modernize-hopper`.
+- **The trim box holds to the end**: about 1600 × 1300 at +195+184, no colour
+  chart on any of the six, so the gutter split lands at half the trimmed width.
+  Sheet 41 must be rotated 180° *before* trimming, and its own box is
+  1596 × 1286 at +191+194.
+
+### Where Garrulities ends
+
+Forty-two sheets, four sittings, July 1927 to April 1958 with the last dated
+entry on page 77 and the last written words on page 79. The Whitney dates the
+notebook 1924–1950 and `\dating{}` carries that verbatim; the leaves go three
+years past it, and the transcription says so by reading them, not by amending
+the metadata.
