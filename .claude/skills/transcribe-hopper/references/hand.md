@@ -4843,3 +4843,85 @@ Battle of Wash Sq. or Garrulities except the hand.
   « exactly 33 1/2 yrs. which makes 1/3 century » and page 10 dates it « on
   Jan. 31" last ». The same trap runs the other way with Frederick W. Stokes,
   who is 88 on three pages and 89 on one, all as written.
+
+### Re: 3 Wash Sq, sheets 13–24
+
+*(Pages 12 to 23, 12 September 2026, Opus 5.)* **The pad stops being one
+statement written out three times and becomes a correspondence file.** Sitting
+1's shape — one text, three drafts — does not carry over. Page 12's upper side
+finishes the Whitelaw Reid fair copy and its lower side is a working page of
+names, telephone numbers and the O.P.A. tax assessments of four houses on the
+Square. From page 13 there are six separate letters to six named people: John
+Morron of no. 6 and « dear Anita » (pages 13–14), a petition letter to
+Friedlander of 740 Park Ave. (pages 15–16), and three drafts to Mayor LaGuardia
+(pages 17–18, 19–20, 21–22). Page 23 is a guest list for a party. The two-side
+photograph and the « Page N » descriptor behave exactly as in sitting 1, so
+that much does carry.
+
+- **One letter runs backwards, and she says so.** Page 16 is marked I, the
+  lower side of page 15 is marked II, and page 16 ends « This begins on this
+  page marked I + continues on page in back " II ». Transcribe them where they
+  are bound and let the notes say which is which; the direction is hers and is
+  the evidence.
+- **Red crayon and a third medium arrive here.** Sitting 1 recorded that the
+  first twelve sheets are all pencil, no ink, no red. Page 17 carries a red
+  asterisk and a red underline under « Painters require space » and a red curve
+  down the fore-edge; page 20 has « 2 pages back » in red and red dashes and
+  asterisks down the tenant list; page 23 has red underlines and asterisks down
+  the guest list. **And page 21 carries the single word « Fiora », alone in the
+  blank lower half of the side, in a much darker and blunter medium than
+  anything round it.** It is Fiorello LaGuardia's given name and it is on the
+  page of the letter to him, but the hand cannot be placed and it is
+  `\hand{unidentified}`.
+- **The later drafts settle the earlier ones' field and not their strokes, and
+  this batch has the clearest case yet.** Page 18's « + belle Cettro? » at the
+  fore-edge is unreadable on its own; page 19 writes « belle lettre » plainly
+  eight lines from the end. Page 17's « We now learn that … that it has \ill{} »
+  is rubbed and rewritten and will not come; page 19 gives « We now learn that
+  it has long been the ambition of the N.Y.U. ». Page 22's « The wolf of Gubio
+  was a far more charming beastie » makes page 20's tangle of interlineations
+  readable. **In every case the earlier page keeps its `\ill{}` or its
+  `\uncertain{}`** and a note points at the later one.
+- **She interlines constantly here, and most of the interlineations are
+  replacements rather than glosses.** Some lines carry three. Page 18's is the
+  hardest kind: « who has been painting for a lifetime » is written as two
+  interleaved lines squeezed above one, the upper reading « who has … a
+  lifetime » and the lower « been painting for ». Read both before assuming
+  either is a whole phrase.
+- **A struck word is more often unrecoverable here than in the ledgers**, because
+  she cancels by writing the replacement on top rather than through. Page 17's
+  « artist to \ill{} » and page 15's « who are \ill{} trying » are both words
+  written twice over themselves at 8×. `\struck{\ill{}}` is the right answer and
+  it is used twenty-two times in this sitting.
+- **More spellings, all as written:** « is this » for « in this » (page 13),
+  « could'nt » and « need'nt » (pages 19, 21, 22) beside sitting 1's habit,
+  « agression » again (page 18) against « aggression » (pages 19, 20),
+  « chicanerie » (page 18) beside « chicaneries » (pages 20, 22), « Gubio » for
+  Gubbio (pages 18, 20, 22), « Mortage » (page 12), « Paderouski » again
+  (page 17) confirming sitting 1, « Jo Davedson » for Jo Davidson (page 13),
+  « Schofield Thayer » for Scofield (page 20), « Eleanor Wylie » for Elinor
+  (page 20), « Kimon Nicolades » (page 20), « Henry Sudd Canby » for Seidel
+  (page 23), « Bleaker » for Bleecker (page 23), « No cando » as one word
+  (page 23), « beastie » (page 22).
+- **One person is named two ways five pages apart:** « Alfred Paul Waldheim »
+  on page 12 and « Arthur Paul Waltheim » on page 23. Both stand.
+- **Readings that would not settle:** « poaching » on page 12, written over a
+  struck word; « Walter Cook » on page 12, where the letter before the k is a
+  closed loop that will take an o or an r; « Village Sett Shop » and
+  « Mortage Sifs Due » and « 76/3 » on page 12; « Carett. » after « Vice
+  Commander, Amer. Legion » on page 13; « termite but gorgeous » and « arctic
+  explorations » and « (4 pages) » on page 14 — the last two both longer in the
+  strokes than the reading offered; « Mrs. Roche » on pages 15 and 16, and the
+  year of « Feb. 14", 47 » up page 16's fore-edge; « peoples opinion » and
+  « \& endowed » on page 16; « freedoms to their preservation » on page 17,
+  where the sense will not come out of any reading of the word; « Gunvor Bul
+  Tielman » on page 18, the fourth writing of sitting 1's muralist and no
+  clearer; « Conceta Scaravaglioni » a third way on page 20, where the strokes
+  read as readily « Coreata »; « Aileen Dresser », « Wallis Fitts », « Wailes
+  Goedbeck », « the Monines » and « Guggenheimes » on page 20; « Louro More » on
+  page 21; « gains » in « now begins + gains to gobble » on page 22; « E.
+  Dunscombe Marie's », « Hopkins », « Stark Young », « Helen (Alogan) » and
+  « Chas. Chap. Keck » on page 23.
+- **Faint pencil numerals stand in page 20's left margin** beside four names in
+  the tenant list — 19, 2, 20, 23 — and their sense is not established. Do not
+  read them as a count without something that says they are one.
