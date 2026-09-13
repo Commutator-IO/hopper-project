@@ -1,5 +1,5 @@
 {
-  "note": "Edward Hopper's life, kept to what a named source states. Every entry carries the source that says it and a link to that page; nothing here is written from memory, and where two sources disagree the entry says so rather than choosing quietly. This is a reminder for somebody reading a dated ledger leaf — not a biography, and not a substitute for one. From 2026 the black notebook of Josephine Hopper, transcribed on this site, is one of the sources: what it states is quoted in her words and linked to the page she wrote it on, and the pictures and journeys in it are as often hers as his.",
+  "note": "Edward Hopper's life, kept to what a named source states. Every entry carries the source that says it and a link to that page; nothing here is written from memory, and where two sources disagree the entry says so rather than choosing quietly. This is a reminder for somebody reading a dated ledger leaf — not a biography, and not a substitute for one. From 2026 the black notebook of Josephine Hopper, transcribed on this site, is one of the sources: what it states is quoted in her words and linked to the page she wrote it on, and the pictures and journeys in it are as often hers as his. From September 2026 two of the five parts of Madeleine Larson's typed transcripts at PAAM are sources too — Parts I and V, read page by page off the scans, since they carry no text layer; Parts II to IV are not yet read. Each event names the part and the typescript's own page number.",
   "sources": {
     "whitney-artist": {
       "name": "Whitney Museum of American Art, artist page",
@@ -24,6 +24,14 @@
     "black-notebook": {
       "name": "Josephine Hopper's black notebook (Whitney Museum of American Art, Sanborn Hopper Archive), transcribed here",
       "url": "diaries/black-notebook/"
+    },
+    "paam-i": {
+      "name": "Josephine Hopper's diaries, Part I, 1933–1938 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+      "url": "https://drive.google.com/file/d/1mtdnlac-23li3Q0HCny9M4U2_fxzaFWn/view"
+    },
+    "paam-v": {
+      "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+      "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
     }
   },
   "events": [
@@ -203,6 +211,86 @@
       }
     },
     {
+      "year": 1934,
+      "date": "April",
+      "what": "« We had covered the ground of all known alternatives on way down — Quebec, Malbai, 2 Lights, Gloucester — none of them pleased — E.H. liked S. Truro better, so that settled. But not the Cobb Cottage again — then our own cottage. » On April 1, « E. made copy of map of S. Truro land. »",
+      "source": "paam-i",
+      "typescript": {
+        "part": "I",
+        "page": 1
+      }
+    },
+    {
+      "year": 1934,
+      "date": "May–June",
+      "what": "Mr. Campbell, « foreman for Truro house », is shown « E.H's Modern Mus. catalogue so he could see the characteristic style of the man whose studio he is building »; by June 20 « the chimney is way up the roof », the west side and the roof shingled, « a very strongly built little house ». Dunlavy is the builder.",
+      "source": "paam-i",
+      "typescript": {
+        "part": "I",
+        "page": 2
+      }
+    },
+    {
+      "year": 1934,
+      "date": "December",
+      "what": "« E. working on big new canvas » on December 11, in the notebook PAAM numbers 2389.123 — « Bright Orange Cover, inscribed on first page: Late 1934 1935 ». The one place the typescript names the physical diary it is reading.",
+      "source": "paam-i",
+      "typescript": {
+        "part": "I",
+        "page": 7
+      }
+    },
+    {
+      "year": 1935,
+      "date": "January",
+      "what": "« Took House by Evening Park up to Rehn Galleries » on January 9, and « E. got a check for 2 water colors — Coal Box Truro Station — & a little one of Jenners House »; on the 25th, « the news came out E. had been bestowed the Temple Gold Medal for the best picture there at the Philadelphia Academy », Chapin and Moffat on the jury. The typescript carries this January twice, in two typings.",
+      "source": "paam-i",
+      "typescript": {
+        "part": "I",
+        "page": 22
+      }
+    },
+    {
+      "year": 1936,
+      "date": "November",
+      "what": "« Returned from the cape, speeded up by telegram that burglars had broken into N.Y. studio » — November 3; Anne's petit-point bag « that E. had designed » among the losses. On December 13 « Dawn Before Gettysburg is on the high seas — off to Italy », bought for Arturo Grossi. Cape Cod Afternoon was painted « all thru Oct. » of this year, the next summer's diary says.",
+      "source": "paam-i",
+      "typescript": {
+        "part": "I",
+        "page": 24
+      }
+    },
+    {
+      "year": 1937,
+      "date": "January",
+      "what": "Ernest Brace of Bearsville « came here to interview Eddie for ‘Art’, the Washington magazine » on January 28; the next day « E. has letter from Homer St. Gaudens sais E's coming exhibition is going along smoothly » — the Pittsburgh one-man show, « eight canvases invited are not available » by February 26.",
+      "source": "paam-i",
+      "typescript": {
+        "part": "I",
+        "page": 25
+      }
+    },
+    {
+      "year": 1937,
+      "date": "March",
+      "what": "« E. gets telegram from Corcoran in Washington announcing that E. has been given 1st prize and Corcoran gold medal for Cape Cod afternoon » — March 22; on the 26th, at the press view, « had his picture taken with Mrs. Roosevelt by some dozen press photographers in front of his picture ». The six-day bicycle race picture « is finished — needs frame ».",
+      "source": "paam-i",
+      "typescript": {
+        "part": "I",
+        "page": 28
+      }
+    },
+    {
+      "year": 1937,
+      "date": "June–November",
+      "what": "« Letter from Frank R. — to tell that Montclair Mus. has bought Coastguard » (June 15); « Our 13th anniversary » on July 9; in September, « Trip to Vt. Stayed all the time at South Royalton with Mr. & Mrs. Robt. Slater », where « E. got 3 large water colors & 1 small »; in October « Lousy Shacks » begun at the head of the Pamet; « Left Cape — early Nov. »",
+      "source": "paam-i",
+      "typescript": {
+        "part": "I",
+        "page": 32
+      }
+    },
+    {
       "year": 1938,
       "what": "« Cape Huricane », in her spelling, with a second visit to the Slaters in Vermont. In March, four days of his cold with the temperature taken hour by hour — « E.H. 1938. », pages 107 to 125.",
       "source": "black-notebook",
@@ -239,6 +327,16 @@
       }
     },
     {
+      "year": 1944,
+      "date": "September",
+      "what": "« E. has begun a new canvas: here and row of trees of right, broad road on left » — September 25, at South Truro; « E got a fine start with his canvas » on October 1. Page 325 opens with the same four lines of chronicle the black notebook carries on its page 21.",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 325
+      }
+    },
+    {
       "year": 1945,
       "what": "« Xmas 44 E. elected to Instit. of Arts + Letters »; « Cape - ap. Salmagundi Prize ».",
       "source": "black-notebook",
@@ -256,6 +354,36 @@
         "notebook": "black-notebook",
         "ref": 97471,
         "page": "44–45"
+      }
+    },
+    {
+      "year": 1946,
+      "date": "April",
+      "what": "April 22, the Century Club's Henri show « & 5 of his: Bellows, Kent, du Bois, Speicher, Hopper »; April 26, « He has big dinner at Arts & Letters to-night »; and Josephine Hopper's « own homemade one man show » on Washington Square North, which WQXR announced on the air.",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 331
+      }
+    },
+    {
+      "year": 1946,
+      "date": "May–July",
+      "what": "« We finally set forth for Mexico » — May 7; San Antonio and Laredo on the 15th, « climbing one of the Sierra Madres on the way to Monterrey » on the 16th, then Saltillo, where « E. — a watercolor of housetops » and « E. says he feels like a prisoner here — waiting for a sky ». July 2, « Left Sortillo — in Texas three days, corner of N. Mexico, and Colorado »; « Wyoming 10 days », where « E. gets a fine watercolor of Mt. Morain »; through Yellowstone and Shoshone Canyon; « Back to N.Y. City Sat. July 27 ».",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 332
+      }
+    },
+    {
+      "year": 1946,
+      "date": "September",
+      "what": "On the Cape: « This is our 17th year — 16th not counting 1943 in Mexico all summer — so he's about covered all that interests him. » On September 29 « E working on first oil since last spring. A gloomy looking house & fields », and Josephine Hopper signs a contract with Samuel Golden for a reproduction of her Oil Lamp.",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 337
       }
     },
     {
@@ -280,6 +408,66 @@
       }
     },
     {
+      "year": 1948,
+      "date": "January",
+      "what": "« E's show in Jan. — was going over so big — such fine press, so many reproductions & people applauding » — the Rehn show that « started 1st Mon. in Jan. 48 — & kept up until Nov. 7th or 8th & next day E. off to the N.Y. Hospital ». By August, « There hasn't been one picture since the fall of 1947. »",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 341
+      }
+    },
+    {
+      "year": 1948,
+      "date": "June",
+      "what": "« I worked on his ledger, went thru old catalogues to see that any reproduction of his work should be listed in ‘Reproductions and Reviews.’ The ledger — or those ledgers have grown out of rudimentary affairs before success & publicity » — June 24: the record books, in her words, as she kept them. The same week « Duncan Phillips has sent check for ‘Approach to a City’ ».",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 340
+      }
+    },
+    {
+      "year": 1948,
+      "date": "June",
+      "what": "« E. having been chosen as the painter of 1950 to be featured with an entirely too inclusively one man show » — the Whitney retrospective, two years ahead; « Miss Irven bragged that she had all the data from my ledger, so they can go right ahead & put their figures on everything ». Rosalind Irvine of the Whitney stands on the black notebook's page 35.",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 342
+      }
+    },
+    {
+      "year": 1948,
+      "date": "August",
+      "what": "« Telegram comes from Alfred Frankfurter, Arts News, to inquire about date Compartment C was painted. E. does know — can't remember »; she wires back « that Compartment C had been painted about 10 yrs. ago & that the ledger was not here to make exact date » — August 26 and 27, at Truro, the ledgers in New York.",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 346
+      }
+    },
+    {
+      "year": 1948,
+      "date": "September",
+      "what": "« E. drawing in charcoal on a 30 x 40 canvas. It turns out to be a shop window with trees at left [7 A.M.] — & a clock in window » — September 7; « about finished his first canvas since last fall » on the 22nd, « done this canvas in 16 days », stretched on Labor Day. The Babcock Galleries send $20 for an etching of Night Shadows.",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 347
+      }
+    },
+    {
+      "year": 1948,
+      "date": "November",
+      "what": "« E. took new canvas — 7 A.M. up to Rehn Gallery; heard of sale of Office at Night to Minneapolis Mus. » — November 6; on the 10th, the Whitney opening, « E had his Night Hawks there », borrowed back from the Art Institute of Chicago, « to have its old frame back on ».",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 343
+      }
+    },
+    {
       "year": 1950,
       "what": "The Whitney organises his second career retrospective. Leaf 2 of Book I is headed with a note of it.",
       "source": "whitney-hoppers",
@@ -297,6 +485,16 @@
       }
     },
     {
+      "year": 1950,
+      "date": "July–November",
+      "what": "« Left Washington Square » July 18 for Truro; August 18, « the corner of Route 6 & the Main St. of Orleans in down on canvas in blue paint »; August 31, « paper model for High Noon » on the desk; October 12, « E. has about finished his Bay Window picture & is well pleased with it. Says better than High Noon. » November 4, « Note from Met to tell E. his Conference at Night has passed both juries ».",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 356
+      }
+    },
+    {
       "year": 1951,
       "what": "« Mexico - Sattillo in heat wave. On to Santa Fé + return to Cape - began efforts for Electric. » The backwards chronicle puts the Chicago degree here: « E. gets degree Dr. of Fine Arts - Chicago Art Inst. »",
       "source": "black-notebook",
@@ -304,6 +502,16 @@
         "notebook": "black-notebook",
         "ref": 97471,
         "page": "44–45"
+      }
+    },
+    {
+      "year": 1951,
+      "date": "May–July",
+      "what": "« Mexico — Lv. N.Y. May 28, '51 », in the heading of the summer's diary; then « July 22 (in Nyack) », « Tues. 24 (in N.Y.) », « Thurs. July 26 off early to Cape ».",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 356
       }
     },
     {
@@ -339,6 +547,16 @@
       }
     },
     {
+      "year": 1955,
+      "date": "July–November",
+      "what": "« for this he gets the Arts & Letters largest award » — the gold medal, and Time's « Gold for Gold » article of May; the one canvas of the summer, « South Carolina », whose « oil hasn't dried yet so he couldn't send it to the Whitney opening »; the Arts and Letters dinner at the Knickerbocker Club on November 14.",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 361
+      }
+    },
+    {
       "year": 1956,
       "date": "December",
       "what": "« Dec. 6\" 1956 H. H. + Pacific Palisades » until June 6, 1957 — page 47 gives the address as « H. H. F. Pacific Palisades, Calif. », and the initials are not expanded here.",
@@ -347,6 +565,26 @@
         "notebook": "black-notebook",
         "ref": 97496,
         "page": "20–21"
+      }
+    },
+    {
+      "year": 1956,
+      "date": "August–September",
+      "what": "« E. surely much hunted this summer of 1956. Time Mag. doing his head on its cover & a sizeable article. Art News to do long article for their Annual of 1956, the Worcester Telegram Gazette Sun. Mag. doing illustrated article by Frank Crotty. The Huntington Hartford award as their reason for highlighting him — all 3 at once » — August 7; forty photographs by Mr. Vandervert on the 9th; Time's researcher met « at new Texaco Service Station, Truro » on the 23rd; « a fat check for E. had arrived — the award from the Harrington Hartford Foundation » on September 18.",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 370
+      }
+    },
+    {
+      "year": 1956,
+      "date": "September–October",
+      "what": "« E painting all day. Old man sitting outside gas station » — September 26; « The white wall of the gas station will recall the white wall of office in Small City » (October 8); « E. finishing his latest canvas: cold & clear » (October 11). « Late Oct. 1956: He did only that one big oil & an unfinished watercolor of mt. tops — no sky. »",
+      "source": "paam-v",
+      "typescript": {
+        "part": "V",
+        "page": 377
       }
     },
     {
@@ -426,6 +664,14 @@
     {
       "about": "The Boston television date of 1961",
       "what": "Page 19 of the black notebook has « Boston Mus. T.V. Ap. 20 (N.Y. Mar. 29) »; page 61 has « Ap. 10, 1961 », the stay at the Sheraton Plaza « Sat. Ap. 8 - Mon. Ap 10\" », and the tape « recorded in N.Y.C. - Sat. Ap. 29, 61 ». The fuller page is the one quoted above; the other is not corrected."
+    },
+    {
+      "about": "Which Christmas the Institute elected him",
+      "what": "The black notebook's page 21 writes under 1945: « Xmas 44 — E. elected to Instit. of Arts + Letters ». Page 325 of the PAAM typescript, Part V, carries the same four lines of chronicle and writes « xmas '45 few days before E.H. elected to Amer. Institute of Arts and letters ». One is a copy of the other, and the pages do not say which; both stand."
+    },
+    {
+      "about": "How many times the studio was burgled",
+      "what": "Three, if the two sources are read together, and neither says so. The typescript's Part I has the telegram of November 1936; its Part V has « fall of 1947 trunks in cellar pried open with an ax, most everything else toted off by vandals »; the black notebook has « burglar Feb. 11\", 58 » on page 19 and, on page 3, frames put on a shelf « Nov. 1948 — from trunk in basement (burglars) », where the word is doubtful. The 1948 frames and the 1947 trunks may be one event."
     }
   ]
 }

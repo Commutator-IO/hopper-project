@@ -68,6 +68,12 @@ interface LifeEvent {
    * of leaving the site, and the page is named beside the words.
    */
   sheet?: { notebook: string; ref: number; page: string };
+  /**
+   * An event read off one of PAAM's typed transcripts — a scan, so the link
+   * opens the part's PDF and the label gives the typescript's own page
+   * number, which is the only address a reader can find it by.
+   */
+  typescript?: { part: string; page: number };
 }
 
 /**
@@ -389,6 +395,14 @@ export function TimelinePage() {
           than resolved.
         </p>
         <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-ink-700">
+          Three kinds of source stand in the year sections, and the link after each entry says
+          which: the Whitney&rsquo;s own pages; Josephine Hopper&rsquo;s black notebook, read
+          here, where the link opens the page she wrote it on; and Madeleine Larson&rsquo;s typed
+          transcripts of the diaries at Provincetown, read page by page off the scans and cited
+          by the typescript&rsquo;s own page number. The diaries are hers, in her words, and are
+          quoted rather than paraphrased.
+        </p>
+        <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-ink-700">
           It reads in two registers. The <strong>calendar</strong> below is the books&rsquo; own
           working year: {STREAK.rowsDated.toLocaleString('en-GB')} dated rows on{' '}
           {STREAK.distinctDays.toLocaleString('en-GB')} days, read out of the date columns of
@@ -583,6 +597,16 @@ export function TimelinePage() {
                           className="whitespace-nowrap text-[11.5px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
                         >
                           notebook, {e.sheet.page.includes('–') ? 'pages' : 'page'} {e.sheet.page}
+                        </a>
+                      ) : e.typescript ? (
+                        <a
+                          href={src.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          title={src.name}
+                          className="whitespace-nowrap text-[11.5px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+                        >
+                          PAAM typescript {e.typescript.part}, p. {e.typescript.page} ↗
                         </a>
                       ) : (
                         <a
