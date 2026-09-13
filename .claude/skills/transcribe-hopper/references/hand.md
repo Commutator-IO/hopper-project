@@ -5439,3 +5439,59 @@ interlineation above almost every line.
   edition should carry it belongs to the rights notice. The Euripides below
   it (Gilbert Murray's Alcestis and Bacchae), the Milton and the Shakespeare
   on pages 90 and 91 raise no such question.
+
+### The black notebook, sheets 49–60
+
+*(The openings 94–95 to 116–117, 13 September 2026, Fable 5.1.)* Five of
+the twelve leaves are blank but for show-through, and the rest is two long
+runs and some short memoranda: seven pages of DuBarry School exercises in
+ink (pages 100–106), and Edward Hopper's cold of March 1938 taken hour by
+hour in pencil (pages 107–108). **This sitting is the easiest of the five**;
+its cost is page 117.
+
+- **A run of exercises is prose with Roman numerals, not a table.** She
+  numbers I to X, sub-letters (a) and (b), and writes sentences under each;
+  nothing is ruled. Give it line for line and let the numerals stand where
+  they are. « IV » on page 102 is written over « III » — read the correction,
+  not the first figure.
+- **Her ∠ is a drawn angle sign** — « rt ∠s to body », « at rt. ∠ » — and
+  it passes the renderer as a character, as ± and c̄ did. Transcribe the sign;
+  do not expand it to « angles ».
+- **A temperature chart in pencil reads like a diary and takes entries.**
+  « Tues. Mar. 1" », « Wed. Mar. 2" », « Th. Mar. 3" », « Fri. Mar. 4" » each
+  head their own memorandum; the year is on the heading line « E.H. 1938. »
+  with the 8 written over another figure. Her times are « 12 30 », « 8 10 »,
+  « 7 40 P.M. » with no point, and « 10.30 A.M. » once with one.
+- **A tick and a strike on the same title are two different acts.** Page
+  109's reading list ticks four titles and strikes three of the four, plus one
+  unticked. Both marks stand; neither is a correction of the other.
+- **Ringed names are ringed on the leaf, and they cluster.** Page 115's tea
+  list rings a dozen guests; page 110 rings two birthdays; page 117 rings only
+  Glackens. As with the boxes, describe and do not transcribe — except that a
+  ringed « ? » or « + » inside a line is written, as on pages 104 and 110.
+- **Page 117 needs three crops before it is read.** The tenants of 3
+  Washington Square North run down the leaf in the ordinary way, but « this was
+  the Blodget Estate » runs up the fore-edge, the Leaycraft block and « Paul
+  Resika » run diagonally at about 55° beside the du Bois and Pach lines,
+  « sculptor » stands sideways against Scaravaglioni, and « Anne Dunbar »
+  diagonally against Tielman. `-rotate 90` for the fore-edge, `-rotate 55`
+  and `-rotate 45` for the diagonals. The last lines run into the ring binding
+  and three letters there are `\ill{}`.
+- **The same doubtful surname now stands three ways.** « Tielman » (page 40),
+  « Teilman » (page 56), « Tielman » again (page 117); « How » on pages 29, 67
+  and 98 (« Calvin How, Esq. ») — each recurrence narrows the field and none
+  settles the stroke. So « Lindenmeyr » (page 97) against the first sitting's
+  « Lindenmeyer ».
+- **Her spellings, all as written:** « Cocyx », « vertibra », « begining »,
+  « straing », « waste » for waist (page 104, beside « waist » three lines on),
+  « gorgious », « Satayana », « pipituary », « stomache », « Had'nt »,
+  « asperin », « Hanibal », « Gunnor », « Gwendolin », « Collin Cruikshank ».
+- **Readings that would not settle:** « Fernberg » and « Sackenshaw » and the
+  two paper names at the foot of page 97; « Miners » on page 98; « Beauty +
+  board » (page 101); « jelling » (page 102); the two letters interlined above
+  « fingers on shoulders » (page 105); « Schroder » (page 107); « richee kay +
+  hay » (page 108, twice); « Sonward » (page 110); « Eis box » (page 112);
+  « Berlioz free Choral Cern », « Rhythms », « Stewarts » and the word
+  interlined over « Psychology » (page 114); « Lucile Kinley », « Traves »,
+  « Lou Rogers » (page 115); « Md. » after Cape Elizabeth (page 116);
+  « Drabowhee », « Resika », and « change here from » (page 117).
