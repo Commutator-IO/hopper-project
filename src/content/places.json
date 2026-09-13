@@ -1,43 +1,189 @@
 {
-  "note": "Hand-declared. Every place here is one a named source in life.json puts Edward Hopper at, and every move cites the life.json event that states it. Nothing is typed from memory: `npm run places` refuses a move whose event it cannot find, and the coordinates are retrieved from OpenStreetMap rather than written down. What this is not is an itinerary — see `means` below, which is printed on the page beside the drawing.",
+  "note": "Hand-declared. Every place here is one a named source in life.json puts Edward Hopper at, and every move cites the life.json event that states it. Nothing is typed from memory: `npm run places` refuses a move whose event it cannot find, and the coordinates are retrieved from OpenStreetMap rather than written down. What this is not is an itinerary — see `means` below, which is printed on the page beside the drawing. A place's `short` is the name the second drawing uses, where twenty-six places share one frame and the New England ones sit forty pixels apart.",
   "means": "An arrow runs between the places two consecutive place-naming events in life.json name, in year order, and carries the later one's year. It is the order two records fall in, not a journey anybody wrote down: no source here says how or exactly when he went, and the ledgers — which record what left the studio, not where he was — cannot say either. So the chain runs through Gloucester to Cape Cod without returning to Washington Square in between, because no sourced statement stands between them, and not because he was not living there. He was: the 1913 entry says he lived and worked there until his death.",
   "places": [
     {
       "key": "nyack",
       "name": "Nyack, New York",
       "query": "Nyack, New York, USA",
-      "what": "Born here in 1882, in the house his maternal grandparents built, and at home here until 1910."
+      "what": "Born here in 1882, in the house his maternal grandparents built, and at home here until 1910.",
+      "short": "Nyack"
     },
     {
       "key": "new-york",
       "name": "New York",
       "query": "New York City, New York, USA",
-      "what": "The schools: the New York School of Illustrating from 1899, then the New York School of Art under Chase, Henri and Miller."
+      "what": "The schools: the New York School of Illustrating from 1899, then the New York School of Art under Chase, Henri and Miller.",
+      "short": "New York"
     },
     {
       "key": "paris",
       "name": "Paris",
       "query": "Paris, France",
-      "what": "Three extended stays between 1906 and 1910. Book II leaves 60 to 63 are the canvases."
+      "what": "Three extended stays between 1906 and 1910. Book II leaves 60 to 63 are the canvases.",
+      "short": "Paris"
     },
     {
       "key": "washington-square",
       "name": "3 Washington Square North",
       "query": "Washington Square Park, Manhattan, New York, USA",
       "what": "The apartment and studio from 1913 until his death. The inside front cover of Book I gives the address, and the leaves say « Painted in N.Y. Studio » and « Painted in Wash. Sq. studio ».",
-      "note": "The coordinate is the square, not the door: OpenStreetMap is asked for Washington Square Park, and a house number retrieved for a building that has been rebuilt would be a precision nobody checked."
+      "note": "The coordinate is the square, not the door: OpenStreetMap is asked for Washington Square Park, and a house number retrieved for a building that has been rebuilt would be a precision nobody checked.",
+      "short": "Wash. Sq."
     },
     {
       "key": "gloucester",
       "name": "Gloucester, Massachusetts",
       "query": "Gloucester, Massachusetts, USA",
-      "what": "Where he met Josephine Nivison in 1922. Book I leaf 60 books the Gloucester watercolours of 1923."
+      "what": "Where he met Josephine Nivison in 1922. Book I leaf 60 books the Gloucester watercolours of 1923.",
+      "short": "Gloucester"
     },
     {
       "key": "south-truro",
       "name": "South Truro, Massachusetts",
       "query": "South Truro, Massachusetts, USA",
-      "what": "The second home and studio from 1934, kept for the rest of his life. The leaves say « Painted in South Truro studio », and the Truro and Cape Cod pictures in Books I, II and III begin here."
+      "what": "The second home and studio from 1934, kept for the rest of his life. The leaves say « Painted in South Truro studio », and the Truro and Cape Cod pictures in Books I, II and III begin here.",
+      "short": "S. Truro"
+    },
+    {
+      "key": "two-lights",
+      "name": "Two Lights, Maine",
+      "query": "Cape Elizabeth, Maine, USA",
+      "what": "« Two Lights - Coast Guard Cottage » in 1927, the summer of the Dodge.",
+      "short": "Two Lights"
+    },
+    {
+      "key": "ogunquit",
+      "name": "Ogunquit, Maine",
+      "query": "Ogunquit, Maine, USA",
+      "what": "« Ogunquit - Charleston » after Two Lights, 1927.",
+      "short": "Ogunquit"
+    },
+    {
+      "key": "charleston",
+      "name": "Charleston, S.C.",
+      "query": "Charleston, South Carolina, USA",
+      "what": "The end of the 1927 line.",
+      "short": "Charleston"
+    },
+    {
+      "key": "chicago",
+      "name": "Chicago",
+      "query": "Chicago, Illinois, USA",
+      "what": "« Chicago August » on the honeymoon line of 1924; the Art Institute's degree in 1950 or 1951, the notebook says both.",
+      "short": "Chicago"
+    },
+    {
+      "key": "las-vegas",
+      "name": "Las Vegas",
+      "query": "Las Vegas, Nevada, USA",
+      "what": "First stop of the « Trip West » of 1941.",
+      "short": "Las Vegas"
+    },
+    {
+      "key": "los-angeles",
+      "name": "Los Angeles",
+      "query": "Los Angeles, California, USA",
+      "what": "On the 1941 line.",
+      "short": "Los Angeles"
+    },
+    {
+      "key": "san-francisco",
+      "name": "San Francisco",
+      "query": "San Francisco, California, USA",
+      "what": "« Frisco », 1941.",
+      "short": "San Francisco"
+    },
+    {
+      "key": "portland",
+      "name": "Portland, Oregon",
+      "query": "Portland, Oregon, USA",
+      "what": "« Portland, O. », 1941, with « Columbia R. » in the margin.",
+      "short": "Portland"
+    },
+    {
+      "key": "mexico-city",
+      "name": "Mexico City",
+      "query": "Mexico City, Mexico",
+      "what": "First Mexico, 1943, « by R.R.! ».",
+      "short": "Mexico City"
+    },
+    {
+      "key": "saltillo",
+      "name": "Saltillo",
+      "query": "Saltillo, Coahuila, Mexico",
+      "what": "« Saltillo », « Sattillo », « Sortillo » — 1943, 1946 and 1951, and the water colours.",
+      "short": "Saltillo"
+    },
+    {
+      "key": "monterrey",
+      "name": "Monterrey",
+      "query": "Monterrey, Nuevo León, Mexico",
+      "what": "1943 and 1953; « Siera Madre + roofs from Monterrey Hotel » is one of her water colours.",
+      "short": "Monterrey"
+    },
+    {
+      "key": "grand-teton",
+      "name": "Grand Teton",
+      "query": "Grand Teton National Park, Wyoming, USA",
+      "what": "« Grand Titon », 1946, on the way back from Saltillo.",
+      "short": "Grand Teton"
+    },
+    {
+      "key": "santa-fe",
+      "name": "Santa Fe",
+      "query": "Santa Fe, New Mexico, USA",
+      "what": "1951, after Saltillo « in heat wave »; also her 1925 line, « Santo'Fe' + New Mexico ».",
+      "short": "Santa Fe"
+    },
+    {
+      "key": "el-paso",
+      "name": "El Paso",
+      "query": "El Paso, Texas, USA",
+      "what": "« via El Paso, TX. + South », December 1952.",
+      "short": "El Paso"
+    },
+    {
+      "key": "guanajuato",
+      "name": "Guanajuato",
+      "query": "Guanajuato, Mexico",
+      "what": "« Guanacinato (Posada de la Presa », December 1952 to January 1953.",
+      "short": "Guanajuato"
+    },
+    {
+      "key": "oaxaca",
+      "name": "Mitla and Oaxaca",
+      "query": "Oaxaca de Juárez, Oaxaca, Mexico",
+      "what": "« Mitla, Oaxaca, stayed at Museo de Artes Zapotecas », January 1953. The coordinate is the city; Mitla is forty kilometres east.",
+      "short": "Oaxaca"
+    },
+    {
+      "key": "puebla",
+      "name": "Puebla",
+      "query": "Puebla, Mexico",
+      "what": "« Feb. on to Puebla », 1953.",
+      "short": "Puebla"
+    },
+    {
+      "key": "richmond",
+      "name": "Richmond, Virginia",
+      "query": "Richmond, Virginia, USA",
+      "what": "« jury duty at Virginia Mus. at Richmond », March 1953.",
+      "short": "Richmond"
+    },
+    {
+      "key": "pacific-palisades",
+      "name": "Pacific Palisades",
+      "query": "Pacific Palisades, Los Angeles, California, USA",
+      "what": "« H. H. F. Pacific Palisades, Calif. », December 1956 to June 1957.",
+      "short": "Pacific Palisades"
+    },
+    {
+      "key": "boston",
+      "name": "Boston",
+      "query": "Boston, Massachusetts, USA",
+      "what": "« T.V. performance at Boston Mus. », April 1961; the 1950 retrospective's second stop.",
+      "short": "Boston"
     }
   ],
   "moves": [
@@ -82,6 +228,216 @@
       "to": "washington-square",
       "year": 1967,
       "match": "Dies in the studio"
+    },
+    {
+      "from": "washington-square",
+      "to": "gloucester",
+      "year": 1924,
+      "match": "Honeymoon",
+      "graph": "notebook"
+    },
+    {
+      "from": "gloucester",
+      "to": "chicago",
+      "year": 1924,
+      "match": "Honeymoon",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "two-lights",
+      "year": 1927,
+      "match": "Two Lights",
+      "graph": "notebook"
+    },
+    {
+      "from": "two-lights",
+      "to": "ogunquit",
+      "year": 1927,
+      "match": "Two Lights",
+      "graph": "notebook"
+    },
+    {
+      "from": "ogunquit",
+      "to": "charleston",
+      "year": 1927,
+      "match": "Two Lights",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "south-truro",
+      "year": 1930,
+      "match": "Bird's Cage",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "las-vegas",
+      "year": 1941,
+      "match": "Trip West",
+      "graph": "notebook"
+    },
+    {
+      "from": "las-vegas",
+      "to": "los-angeles",
+      "year": 1941,
+      "match": "Trip West",
+      "graph": "notebook"
+    },
+    {
+      "from": "los-angeles",
+      "to": "san-francisco",
+      "year": 1941,
+      "match": "Trip West",
+      "graph": "notebook"
+    },
+    {
+      "from": "san-francisco",
+      "to": "portland",
+      "year": 1941,
+      "match": "Trip West",
+      "graph": "notebook"
+    },
+    {
+      "from": "portland",
+      "to": "south-truro",
+      "year": 1941,
+      "match": "Trip West",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "mexico-city",
+      "year": 1943,
+      "match": "First Mexico",
+      "graph": "notebook"
+    },
+    {
+      "from": "mexico-city",
+      "to": "saltillo",
+      "year": 1943,
+      "match": "First Mexico",
+      "graph": "notebook"
+    },
+    {
+      "from": "saltillo",
+      "to": "monterrey",
+      "year": 1943,
+      "match": "First Mexico",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "saltillo",
+      "year": 1946,
+      "match": "Grand Titon",
+      "graph": "notebook"
+    },
+    {
+      "from": "saltillo",
+      "to": "grand-teton",
+      "year": 1946,
+      "match": "Grand Titon",
+      "graph": "notebook"
+    },
+    {
+      "from": "grand-teton",
+      "to": "south-truro",
+      "year": 1946,
+      "match": "Grand Titon",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "saltillo",
+      "year": 1951,
+      "match": "heat wave",
+      "graph": "notebook"
+    },
+    {
+      "from": "saltillo",
+      "to": "santa-fe",
+      "year": 1951,
+      "match": "heat wave",
+      "graph": "notebook"
+    },
+    {
+      "from": "santa-fe",
+      "to": "south-truro",
+      "year": 1951,
+      "match": "heat wave",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "el-paso",
+      "year": 1952,
+      "match": "via El Paso",
+      "graph": "notebook"
+    },
+    {
+      "from": "el-paso",
+      "to": "guanajuato",
+      "year": 1952,
+      "match": "via El Paso",
+      "graph": "notebook"
+    },
+    {
+      "from": "guanajuato",
+      "to": "oaxaca",
+      "year": 1953,
+      "match": "from Guanajuato",
+      "graph": "notebook"
+    },
+    {
+      "from": "oaxaca",
+      "to": "puebla",
+      "year": 1953,
+      "match": "from Guanajuato",
+      "graph": "notebook"
+    },
+    {
+      "from": "puebla",
+      "to": "monterrey",
+      "year": 1953,
+      "match": "from Guanajuato",
+      "graph": "notebook"
+    },
+    {
+      "from": "monterrey",
+      "to": "washington-square",
+      "year": 1953,
+      "match": "from Guanajuato",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "richmond",
+      "year": 1953,
+      "match": "from Guanajuato",
+      "graph": "notebook"
+    },
+    {
+      "from": "south-truro",
+      "to": "gloucester",
+      "year": 1954,
+      "match": "Gloucester in September",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "pacific-palisades",
+      "year": 1956,
+      "match": "Pacific Palisades",
+      "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "boston",
+      "year": 1961,
+      "match": "Boston Mus.",
+      "graph": "notebook"
     }
   ],
   "refused": [
@@ -93,5 +449,6 @@
       "what": "An arrow between the places two consecutive works were made",
       "why": "The same interpolation the timeline already refuses for dates. A leaf's date column is the day a work went to a dealer, not the day it was painted or the place it was painted in, and the ledgers are not in chronological order — Book I's etchings section correlates leaf number with year of making at r = −0.33."
     }
-  ]
+  ],
+  "notebookMeans": "The second drawing is Josephine Hopper's year chronicle and her list « To get this straight » of the Mexican journeys, read for their places. Each year's arrows start from 3 Washington Square North — the home the 1913 entry gives — and run through the places her line names, in the order she wrote them; a return is drawn only where she wrote one (« - Cape », « return to Cape »). Nothing else is inferred: a year whose line names no journey draws nothing, the winters between the lines are not drawn, and « Frisco » and « Portland, O. » are her words for the two cities. It is her list, so the journeys are the two of them, and some of the places are where she painted rather than he."
 }

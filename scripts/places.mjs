@@ -110,10 +110,15 @@ for (const m of decl.moves) {
     from: m.from,
     to: m.to,
     year: m.year,
+    // Which drawing the arrow belongs to: the museum's chronology (`life`,
+    // the default) or the black notebook's journeys (`notebook`).
+    graph: m.graph ?? 'life',
     // Carried through from life.json rather than restated, so the arrow and the
     // timeline entry above it can never say two different things.
     what: e.what,
     source: { key: e.source, name: src.name, url: src.url },
+    // The page of the notebook the event is read off, when it is one.
+    ...(e.sheet ? { sheet: e.sheet } : {}),
   });
 }
 
@@ -192,6 +197,9 @@ for (const p of decl.places) {
   places.push({
     key: p.key,
     name: p.name,
+    // The name the notebook drawing uses, where there is no room for the
+    // full one; declared beside it rather than abbreviated by a rule.
+    short: p.short ?? p.name,
     what: p.what,
     note: p.note ?? null,
     lat: Number(hit.lat),
@@ -210,6 +218,7 @@ const out = {
   generated: new Date().toISOString(),
   note: decl.note,
   means: decl.means,
+  notebookMeans: decl.notebookMeans ?? null,
   refused: decl.refused,
   attribution: {
     name: 'OpenStreetMap Nominatim',

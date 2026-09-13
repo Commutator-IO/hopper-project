@@ -66,7 +66,7 @@
  *   npm run works
  */
 import { readFileSync, writeFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { basename, resolve } from 'node:path';
 import { readTranscripts, workKey, yearInCell, yearsInProse } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
@@ -470,6 +470,44 @@ for (const file of readTranscripts(root)) {
   }
 }
 
+/**
+ * Where the black notebook names one of these works.
+ *
+ * The notebook carries no `\work{}` and adds no title of its own — its
+ * titles are as often Josephine Hopper's pictures as Edward's, and a title
+ * read out of a memorandum book would be a claim the ledgers do not make.
+ * What it can add is a *mention*: a frame listed for Chop Suey, a drawing
+ * for Light Battery at Gettysburg she owned, the purchase of House at Dusk.
+ * So each work already named by a ledger is searched for, as a whole title
+ * on a word boundary, in the notebook's own writing (`\hand{}` only, never a
+ * note), and a hit is one more leaf under `namedIn`, marked with the
+ * notebook's id so the site can open it under /diaries/. Titles of one short
+ * word — « Roofs », « Fruit » — are not searched: at that length a match is
+ * a word, not a work.
+ */
+for (const file of readTranscripts(root)) {
+  if (file.ledger !== 'notebooks') continue;
+  const notebook = basename(file.path, '.tex');
+  // The black notebook only. The other three are diaries and a campaign, and
+  // a title inside a diary sentence is a remark about a picture rather than a
+  // memorandum of it — « The City » and « A Corner » matched sentences that
+  // were about neither.
+  if (notebook !== 'black-notebook') continue;
+  for (const n of named.values()) {
+    const title = n.title.replace(/[«»"“”]/g, '').trim();
+    // Two words and ten letters, written with the capitals of a title: at
+    // less than that a match is a phrase, and « self portrait » in lower
+    // case on page 128 is her own self portrait, not his.
+    if (!(title.length >= 10 && /\s/.test(title))) continue;
+    const re = new RegExp(`(^|[^A-Za-z])${title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![A-Za-z])`);
+    for (const h of file.hands) {
+      if (!h.leaf || !h.ref || !re.test(h.plain)) continue;
+      if (n.namedIn.some((x) => x.ref === h.ref)) continue;
+      n.namedIn.push({ ledger: 'notebooks', notebook, batch: 0, leaf: h.leaf, ref: h.ref });
+    }
+  }
+}
+
 const index = [...named.values()]
   .map((n) => {
     const held = works.get(n.key) ?? null;
@@ -552,6 +590,10 @@ const noteYear = (year, leaf, from) => {
   if (!m.has(k))
     m.set(k, {
       ledger: leaf.ledger,
+      // A notebook leaf carries the notebook's id, so the year section can
+      // open it under /diaries/ rather than at a ledger path that does not
+      // exist.
+      ...(leaf.notebook ? { notebook: leaf.notebook } : {}),
       batch: leaf.batch,
       leaf: leaf.leaf,
       ref: Number(leaf.ref),
@@ -562,8 +604,9 @@ const noteYear = (year, leaf, from) => {
 };
 
 for (const file of readTranscripts(root)) {
+  const notebook = file.ledger === 'notebooks' ? basename(file.path, '.tex') : undefined;
   for (const rows of [...file.works.map((w) => w.rows), file.looseRows])
-    for (const r of rows) noteYear(yearInCell(r.plain[0], r.dateColumn), r, 'rows');
+    for (const r of rows) noteYear(yearInCell(r.plain[0], r.dateColumn), { ...r, notebook }, 'rows');
 
   /**
    * The same reading, out of the prose, for the volumes that rule nothing.
@@ -580,7 +623,7 @@ for (const file of readTranscripts(root)) {
    * the date column, `prose` the sentences, and a consumer can tell which
    * reading put a leaf under a year.
    */
-  for (const h of file.hands) for (const y of yearsInProse(h.plain)) noteYear(y, h, 'prose');
+  for (const h of file.hands) for (const y of yearsInProse(h.plain)) noteYear(y, { ...h, notebook }, 'prose');
 }
 const transcribedYears = [...leafYears.entries()]
   .sort((a, b) => a[0] - b[0])

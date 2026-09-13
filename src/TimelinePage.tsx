@@ -62,7 +62,34 @@ interface LifeEvent {
    * no later than — and the two senses would be read as one.
    */
   life?: 'born' | 'died';
+  /**
+   * An event the archive itself states — so far the black notebook. The
+   * source link then opens the reader at the page she wrote it on, instead
+   * of leaving the site, and the page is named beside the words.
+   */
+  sheet?: { notebook: string; ref: number; page: string };
 }
+
+/**
+ * Where a leaf opens, and what to call it. A ledger's leaf opens the batch
+ * reader of its volume; a notebook's opens the notebook under /diaries/ at
+ * that sheet, and is called by its page, because a notebook has no leaf
+ * numbers and no batches.
+ */
+type LeafRef = { ledger: string; batch: number; leaf: string | null; ref: string | number; notebook?: string };
+const leafHref = (n: LeafRef) =>
+  n.ledger === 'notebooks' && n.notebook
+    ? `${url(`diaries/${n.notebook}/`)}#read/${n.ref}`
+    : url(`/${n.ledger}/#${n.ledger}/${n.batch}/${n.ref}`);
+const leafLabel = (n: LeafRef) =>
+  n.ledger === 'notebooks'
+    ? `notebook p. ${n.leaf ?? n.ref}`
+    : n.leaf
+      ? `leaf ${n.leaf}`
+      : `ref ${n.ref}`;
+
+/** A source's address: a museum's page, or a path inside this site. */
+const srcHref = (u: string) => (/^https?:/.test(u) ? u : url(u));
 
 interface IndexedWork {
   key: string;
@@ -75,14 +102,14 @@ interface IndexedWork {
   ledgerDisagrees: boolean;
   notLaterThan: number | null;
   holdings: { institution: string; short: string; url: string }[];
-  namedIn: { ledger: string; batch: number; leaf: string | null; ref: string }[];
+  namedIn: { ledger: string; batch: number; leaf: string | null; ref: string; notebook?: string }[];
 }
 
 const WORKS = (worksData as unknown as { index: IndexedWork[] }).index;
 
 interface TranscribedYear {
   year: number;
-  leaves: { ledger: string; batch: number; leaf: string; ref: number; rows: number; prose: number }[];
+  leaves: { ledger: string; batch: number; leaf: string; ref: number; rows: number; prose: number; notebook?: string }[];
 }
 
 /**
@@ -112,7 +139,7 @@ const TRANSCRIBED = (worksData as unknown as { transcribedYears: TranscribedYear
 const LEAVES = new Map<string, { batch: number; ref: string }>();
 for (const w of WORKS) {
   for (const n of w.namedIn) {
-    if (n.leaf === null) continue;
+    if (n.leaf === null || n.ledger === 'notebooks') continue;
     const k = `${n.ledger}/${n.leaf}`;
     if (!LEAVES.has(k)) LEAVES.set(k, { batch: n.batch, ref: n.ref });
   }
@@ -549,15 +576,25 @@ export function TimelinePage() {
                         </span>
                       )}
                       {e.what}{' '}
-                      <a
-                        href={src.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        title={src.name}
-                        className="whitespace-nowrap text-[11.5px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
-                      >
-                        source ↗
-                      </a>
+                      {e.sheet ? (
+                        <a
+                          href={`${url(`diaries/${e.sheet.notebook}/`)}#read/${e.sheet.ref}`}
+                          title={src.name}
+                          className="whitespace-nowrap text-[11.5px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+                        >
+                          notebook, {e.sheet.page.includes('–') ? 'pages' : 'page'} {e.sheet.page}
+                        </a>
+                      ) : (
+                        <a
+                          href={src.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          title={src.name}
+                          className="whitespace-nowrap text-[11.5px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+                        >
+                          source ↗
+                        </a>
+                      )}
                     </p>
                   );
                 })}
@@ -584,9 +621,9 @@ export function TimelinePage() {
                             return (
                               <a
                                 key={w.key}
-                                href={url(`/${at.ledger}/#${at.ledger}/${at.batch}/${at.ref}`)}
+                                href={leafHref(at)}
                                 title={`${w.medium ?? ''}${w.medium ? ' — ' : ''}named on ${w.namedIn
-                                  .map((n) => `${n.ledger} leaf ${n.leaf}`)
+                                  .map((n) => (n.ledger === 'notebooks' ? leafLabel(n) : `${n.ledger} leaf ${n.leaf}`))
                                   .join(', ')}`}
                                 className="rounded-full border border-brand-200 bg-brand-50 px-2 py-0.5 text-[11.5px] text-brand-800 transition hover:border-brand-400 hover:bg-brand-100"
                               >
@@ -614,7 +651,7 @@ export function TimelinePage() {
                           {spread(recorded, 12).map((l) => (
                             <a
                               key={`${l.ledger}-${l.ref}`}
-                              href={url(`/${l.ledger}/#${l.ledger}/${l.batch}/${l.ref}`)}
+                              href={leafHref(l)}
                               title={`${entriesOf(l)} ${
                                 entriesOf(l) === 1 ? 'entry' : 'entries'
                               } dated ${y} — opens the leaf`}
@@ -710,6 +747,28 @@ export function TimelinePage() {
             </dd>
           </div>
           <div>
+            <dt className="font-medium text-ink-900">
+              The black notebook keeps a list the catalogue would want.
+            </dt>
+            <dd className="mt-0.5 text-ink-700">
+              On page 59, under the heading « Owned by J.H. gift of E.H. », Josephine Hopper
+              lists eight of his drawings in her own possession — « Helen Hayes House - ‘Pretty
+              Penny’ preliminary to water color », « Light Battery at Gettysburg - preliminary »,
+              « Girlie Show - preliminary, crayon », « Teddy N. on rug - seated - small penciled
+              drawing » — « Repacked Thu. Jan. 17" 61 ». It is a provenance statement in the
+              owner’s hand, three decades before the catalogue, and the only place in the archive
+              where a preparatory drawing is tied to the canvas it prepared. The frames lists of
+              pages 8, 18 and 122 name his canvases by the frames they stood in. Where a work the
+              ledgers name is among them, the index below says so.{' '}
+              <a
+                href={`${url('diaries/black-notebook/')}#read/97272`}
+                className="whitespace-nowrap text-[11.5px] text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+              >
+                notebook, pages 58–59
+              </a>
+            </dd>
+          </div>
+          <div>
             <dt className="font-medium text-ink-900">The compiler is not named on these pages.</dt>
             <dd className="mt-0.5 text-ink-700">
               The Whitney’s account says when the catalogue raisonné appeared and how long it
@@ -728,7 +787,7 @@ export function TimelinePage() {
             <span key={k}>
               {i > 0 && ' · '}
               <a
-                href={LIFE.sources[k].url}
+                href={srcHref(LIFE.sources[k].url)}
                 target="_blank"
                 rel="noreferrer"
                 title={LIFE.sources[k].name}
@@ -749,7 +808,10 @@ export function TimelinePage() {
       <section className="border-t border-ink-200 py-8">
         <h2 className="font-serif text-2xl text-ink-900">Where the sources put him</h2>
         <p className="prose-note mt-2 max-w-3xl">
-          The same entries as the years above, read for their places instead of their dates.
+          The same entries as the years above, read for their places instead of their dates. Two
+          drawings: the first is the chronology the museum states, six places in fifty years;
+          the second is what Josephine Hopper’s black notebook lists, year by year, of where the
+          two of them went — and it is her list, so the journeys are as often hers as his.
         </p>
         <Travels />
       </section>
@@ -774,6 +836,15 @@ export function TimelinePage() {
           anything happening to it, and a plate cannot be sold before it is cut. The remaining{' '}
           {WORKS.filter((w) => !w.date && !w.ledgerYear && !w.notLaterThan).length} have nothing
           and stay that way.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">
+          Where Josephine Hopper’s black notebook names one of these works — a frame listed for
+          it, a drawing for it that she owned, its purchase — the mention is added to the work’s
+          leaves as <span className="text-brand-700">notebook p. N</span> and opens the notebook
+          at that page. The notebook adds no title of its own: its pictures are as often hers as
+          his, and a title read out of a memorandum book would be a claim the ledgers do not make.
+          {WORKS.filter((w) => w.namedIn.some((n) => n.ledger === 'notebooks')).length > 0 &&
+            ` ${WORKS.filter((w) => w.namedIn.some((n) => n.ledger === 'notebooks')).length} of the works above are named in it.`}
         </p>
         <p className="prose-note mt-2 max-w-3xl">
           <strong className="font-semibold text-ink-700">What is deliberately not done here:</strong>{' '}
@@ -848,11 +919,15 @@ export function TimelinePage() {
                       <span key={`${n.ledger}-${n.ref}`}>
                         {i > 0 && ', '}
                         <a
-                          href={url(`/${n.ledger}/#${n.ledger}/${n.batch}/${n.ref}`)}
-                          title={`Open ${n.ledger} at the batch holding leaf ${n.leaf ?? n.ref}`}
+                          href={leafHref(n)}
+                          title={
+                            n.ledger === 'notebooks'
+                              ? `Open the notebook at page ${n.leaf ?? n.ref}`
+                              : `Open ${n.ledger} at the batch holding leaf ${n.leaf ?? n.ref}`
+                          }
                           className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
                         >
-                          {n.leaf ? `leaf ${n.leaf}` : `ref ${n.ref}`}
+                          {leafLabel(n)}
                         </a>
                       </span>
                     ))}
@@ -962,7 +1037,7 @@ export function TimelinePage() {
           Sources used: {Object.values(LIFE.sources).map((s, i, a) => (
             <span key={s.url}>
               <a
-                href={s.url}
+                href={srcHref(s.url)}
                 target="_blank"
                 rel="noreferrer"
                 className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"

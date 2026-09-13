@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-12T10:35:44.737Z",
+  "generated": "2026-09-13T06:57:35.393Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -8852,6 +8852,13 @@
           "batch": 6,
           "leaf": "89",
           "ref": "16635"
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "58",
+          "ref": "97272"
         }
       ]
     },
@@ -10068,6 +10075,13 @@
           "batch": 1,
           "leaf": "2",
           "ref": "17332"
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "54",
+          "ref": "97360"
         }
       ]
     },
@@ -10890,6 +10904,13 @@
           "batch": 1,
           "leaf": "6",
           "ref": "17606"
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "46",
+          "ref": "97055"
         }
       ]
     },
@@ -11760,6 +11781,13 @@
           "batch": 6,
           "leaf": "81",
           "ref": "16658"
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "58",
+          "ref": "97272"
         }
       ]
     },
@@ -13266,6 +13294,13 @@
           "batch": 1,
           "leaf": "9",
           "ref": "18112"
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "122",
+          "ref": "98173"
         }
       ]
     },
@@ -14606,6 +14641,15 @@
           "ref": 17506,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "120",
+          "ref": 98166,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -14740,6 +14784,15 @@
           "ref": 17933,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "120",
+          "ref": 98166,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -14809,6 +14862,15 @@
           "ref": 17106,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "116",
+          "ref": 98176,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -14917,6 +14979,15 @@
           "ref": 16483,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -14946,6 +15017,15 @@
           "ref": 17736,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -14965,6 +15045,24 @@
           "batch": 5,
           "leaf": "49",
           "ref": 17717,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "three-wash-sq",
+          "batch": 0,
+          "leaf": "31",
+          "ref": 97212,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
           "rows": 0,
           "prose": 1
         }
@@ -15103,9 +15201,19 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "18",
           "ref": 97113,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
           "rows": 0,
           "prose": 1
         }
@@ -15236,9 +15344,19 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "16",
           "ref": 97427,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "24",
+          "ref": 96128,
           "rows": 0,
           "prose": 1
         }
@@ -16259,9 +16377,28 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "60",
           "ref": 96058,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "62",
+          "ref": 98122,
           "rows": 0,
           "prose": 1
         }
@@ -16664,6 +16801,7 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "26",
           "ref": 97533,
@@ -17482,6 +17620,7 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "2",
           "ref": 97551,
@@ -17490,6 +17629,7 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "52",
           "ref": 96061,
@@ -17911,6 +18051,7 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "58",
           "ref": 97050,
@@ -18851,6 +18992,15 @@
           "ref": 16668,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "26",
+          "ref": 96131,
+          "rows": 1,
+          "prose": 0
         }
       ]
     },
@@ -19256,6 +19406,16 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "16",
+          "ref": 97045,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "50",
           "ref": 96260,
@@ -19264,6 +19424,7 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "60",
           "ref": 96058,
@@ -19272,6 +19433,7 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "72",
           "ref": 96115,
@@ -19501,6 +19663,7 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "50",
           "ref": 96260,
@@ -19509,6 +19672,7 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "52",
           "ref": 96061,
@@ -19961,6 +20125,24 @@
           "ref": 17436,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "112",
+          "ref": 98148,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "116",
+          "ref": 98176,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -20198,6 +20380,33 @@
           "ref": 16360,
           "rows": 2,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "36",
+          "ref": 96484,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "106",
+          "ref": 98130,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -20329,6 +20538,69 @@
           "batch": 2,
           "leaf": "63",
           "ref": 18218,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "three-wash-sq",
+          "batch": 0,
+          "leaf": "12",
+          "ref": 97449,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "44",
+          "ref": 97471,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "70",
+          "ref": 98116,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "80",
+          "ref": 98131,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "92",
+          "ref": 98137,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "122",
+          "ref": 98173,
           "rows": 0,
           "prose": 1
         }
@@ -20520,6 +20792,33 @@
           "ref": 17297,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "80",
+          "ref": 98131,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "92",
+          "ref": 98137,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "112",
+          "ref": 98148,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -20667,6 +20966,42 @@
           "batch": 2,
           "leaf": "63",
           "ref": 18218,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "44",
+          "ref": 97471,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "78",
+          "ref": 98144,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "80",
+          "ref": 98131,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "96",
+          "ref": 98139,
           "rows": 0,
           "prose": 1
         }
@@ -20850,6 +21185,42 @@
           "ref": 16433,
           "rows": 1,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "three-wash-sq",
+          "batch": 0,
+          "leaf": "12",
+          "ref": 97449,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "62",
+          "ref": 98122,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "78",
+          "ref": 98144,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "82",
+          "ref": 98142,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -20999,6 +21370,51 @@
           "ref": 16360,
           "rows": 0,
           "prose": 4
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "40",
+          "ref": 97518,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "48",
+          "ref": 97167,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "78",
+          "ref": 98144,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -21098,6 +21514,51 @@
           "batch": 2,
           "leaf": "63",
           "ref": 18218,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 97063,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "78",
+          "ref": 98144,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "118",
+          "ref": 98167,
           "rows": 0,
           "prose": 1
         }
@@ -21257,6 +21718,24 @@
           "ref": 18218,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "78",
+          "ref": 98144,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -21369,9 +21848,46 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "1",
           "ref": 89299,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "14",
+          "ref": 96257,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "48",
+          "ref": 97167,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "64",
+          "ref": 98119,
           "rows": 0,
           "prose": 1
         }
@@ -21494,11 +22010,93 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "1",
           "ref": 89299,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 97063,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "10",
+          "ref": 97318,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "14",
+          "ref": 96257,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "24",
+          "ref": 96128,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "three-wash-sq",
+          "batch": 0,
+          "leaf": "31",
+          "ref": 97212,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "three-wash-sq",
+          "batch": 0,
+          "leaf": "37",
+          "ref": 97279,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "three-wash-sq",
+          "batch": 0,
+          "leaf": "44",
+          "ref": 97538,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "86",
+          "ref": 98135,
+          "rows": 0,
+          "prose": 2
         }
       ]
     },
@@ -21651,9 +22249,37 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "2",
+          "ref": 96248,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 97063,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "58",
           "ref": 97050,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
           "rows": 0,
           "prose": 1
         }
@@ -21856,11 +22482,39 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "4",
           "ref": 89301,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 97063,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "16",
+          "ref": 97045,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -22085,6 +22739,16 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "2",
+          "ref": 96248,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "4",
           "ref": 89301,
@@ -22093,6 +22757,16 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 97063,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "6",
           "ref": 89302,
@@ -22101,11 +22775,75 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "10",
+          "ref": 97318,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "14",
+          "ref": 96257,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "28",
+          "ref": 96130,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "54",
           "ref": 97101,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "120",
+          "ref": 98166,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "122",
+          "ref": 98173,
+          "rows": 0,
+          "prose": 2
         }
       ]
     },
@@ -22282,11 +23020,75 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "4",
           "ref": 89301,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "10",
+          "ref": 97318,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "12",
+          "ref": 97145,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "48",
+          "ref": 97167,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "86",
+          "ref": 98135,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "120",
+          "ref": 98166,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -22370,6 +23172,105 @@
           "batch": 4,
           "leaf": "98",
           "ref": 17161,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "12",
+          "ref": 97145,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "18",
+          "ref": 97168,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "20",
+          "ref": 97496,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "26",
+          "ref": 96131,
+          "rows": 1,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "28",
+          "ref": 96130,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "44",
+          "ref": 97471,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "48",
+          "ref": 97167,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "86",
+          "ref": 98135,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "120",
+          "ref": 98166,
           "rows": 0,
           "prose": 1
         }
@@ -22500,9 +23401,100 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "4",
           "ref": 89301,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "24",
+          "ref": 96128,
+          "rows": 0,
+          "prose": 5
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "28",
+          "ref": 96130,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "30",
+          "ref": 97590,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "32",
+          "ref": 96504,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "34",
+          "ref": 97539,
+          "rows": 3,
+          "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "36",
+          "ref": 96484,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "38",
+          "ref": 96483,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "46",
+          "ref": 97055,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "84",
+          "ref": 98141,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "86",
+          "ref": 98135,
           "rows": 0,
           "prose": 1
         }
@@ -22657,9 +23649,64 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "1",
+          "ref": 96076,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "6",
           "ref": 89302,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "30",
+          "ref": 97590,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "34",
+          "ref": 97539,
+          "rows": 1,
+          "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "38",
+          "ref": 96483,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "46",
+          "ref": 97055,
+          "rows": 0,
+          "prose": 3
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "50",
+          "ref": 97490,
           "rows": 0,
           "prose": 1
         }
@@ -22790,9 +23837,82 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "battle-of-wash-sq",
           "batch": 0,
           "leaf": "6",
           "ref": 89302,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "18",
+          "ref": 97168,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "28",
+          "ref": 96130,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "36",
+          "ref": 96484,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "38",
+          "ref": 96483,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "46",
+          "ref": 97055,
+          "rows": 0,
+          "prose": 5
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "48",
+          "ref": 97167,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "116",
+          "ref": 98176,
           "rows": 0,
           "prose": 1
         }
@@ -22960,6 +24080,105 @@
           "ref": 18131,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "4",
+          "ref": 97063,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "18",
+          "ref": 97168,
+          "rows": 0,
+          "prose": 3
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "20",
+          "ref": 97496,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "36",
+          "ref": 96484,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "38",
+          "ref": 96483,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 3
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "44",
+          "ref": 97471,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "46",
+          "ref": 97055,
+          "rows": 0,
+          "prose": 4
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "48",
+          "ref": 97167,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "122",
+          "ref": 98173,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -23165,6 +24384,60 @@
           "ref": 18118,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "18",
+          "ref": 97168,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "28",
+          "ref": 96130,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "30",
+          "ref": 97590,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "38",
+          "ref": 96483,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "46",
+          "ref": 97055,
+          "rows": 0,
+          "prose": 4
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "50",
+          "ref": 97490,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -23242,6 +24515,87 @@
           "ref": 18525,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "18",
+          "ref": 97168,
+          "rows": 0,
+          "prose": 4
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "28",
+          "ref": 96130,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "38",
+          "ref": 96483,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "46",
+          "ref": 97055,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "50",
+          "ref": 97490,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "52",
+          "ref": 97119,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "54",
+          "ref": 97360,
+          "rows": 0,
+          "prose": 4
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
+          "rows": 0,
+          "prose": 2
         }
       ]
     },
@@ -23394,6 +24748,43 @@
         },
         {
           "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "42",
+          "ref": 97162,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "56",
+          "ref": 97267,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "58",
+          "ref": 97272,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "62",
+          "ref": 98122,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "garrulities",
           "batch": 0,
           "leaf": "78",
           "ref": 96074,
@@ -23522,6 +24913,51 @@
           "batch": 1,
           "leaf": "13",
           "ref": 16409,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "1",
+          "ref": 96076,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "2",
+          "ref": 96248,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "18",
+          "ref": 97168,
+          "rows": 0,
+          "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "50",
+          "ref": 97490,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "54",
+          "ref": 97360,
           "rows": 0,
           "prose": 1
         }
@@ -23705,6 +25141,24 @@
           "ref": 16433,
           "rows": 0,
           "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "58",
+          "ref": 97272,
+          "rows": 0,
+          "prose": 1
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "60",
+          "ref": 97387,
+          "rows": 0,
+          "prose": 2
         }
       ]
     },
@@ -23878,6 +25332,15 @@
           "ref": 17721,
           "rows": 0,
           "prose": 2
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "60",
+          "ref": 97387,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },
@@ -24080,6 +25543,15 @@
           "ref": 16483,
           "rows": 1,
           "prose": 0
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "16",
+          "ref": 97045,
+          "rows": 0,
+          "prose": 1
         }
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "note": "Edward Hopper's life, kept to what a named source states. Every entry carries the source that says it and a link to that page; nothing here is written from memory, and where two sources disagree the entry says so rather than choosing quietly. This is a reminder for somebody reading a dated ledger leaf — not a biography, and not a substitute for one.",
+  "note": "Edward Hopper's life, kept to what a named source states. Every entry carries the source that says it and a link to that page; nothing here is written from memory, and where two sources disagree the entry says so rather than choosing quietly. This is a reminder for somebody reading a dated ledger leaf — not a biography, and not a substitute for one. From 2026 the black notebook of Josephine Hopper, transcribed on this site, is one of the sources: what it states is quoted in her words and linked to the page she wrote it on, and the pictures and journeys in it are as often hers as his.",
   "sources": {
     "whitney-artist": {
       "name": "Whitney Museum of American Art, artist page",
@@ -20,6 +20,10 @@
     "whitney-resources": {
       "name": "Whitney Museum of American Art, “Edward and Josephine Hopper Resources”",
       "url": "https://whitney.org/research/edward-and-josephine-hopper-resources"
+    },
+    "black-notebook": {
+      "name": "Josephine Hopper's black notebook (Whitney Museum of American Art, Sanborn Hopper Archive), transcribed here",
+      "url": "diaries/black-notebook/"
     }
   },
   "events": [
@@ -76,6 +80,16 @@
       "key": true
     },
     {
+      "year": 1913,
+      "what": "« E.H. came in 1913 », in her list of the tenants of number 3 from Glackens on. Her year-by-year chronicle, kept backwards from 1961 to 1906, leaves 1913, 1912 and 1911 blank.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 98176,
+        "page": "117"
+      }
+    },
+    {
       "year": 1915,
       "what": "Begins the printmaking that runs into the early 1920s — the etchings that fill the first forty leaves of Book I.",
       "source": "whitney-artist",
@@ -111,6 +125,26 @@
       "key": true
     },
     {
+      "year": 1924,
+      "what": "« Gloucester. Honeymoon. Watercolors. Chicago August. » — the first joint year of that chronicle; every year before it is hers alone.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97026,
+        "page": "22–23"
+      }
+    },
+    {
+      "year": 1927,
+      "what": "« got car - Dodge », with the summer at Two Lights in the Coast Guard cottage, then Ogunquit and Charleston. Page 116 calls it « the Dodge - 1\" car ».",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97026,
+        "page": "22–23"
+      }
+    },
+    {
       "year": 1928,
       "what": "The Whitney Studio Club closes, to make way for the Whitney Museum of American Art.",
       "source": "whitney-hoppers"
@@ -120,6 +154,16 @@
       "what": "“Early Sunday Morning” is acquired within months of being finished, and becomes part of the Museum’s founding collection.",
       "source": "whitney-artist",
       "key": true
+    },
+    {
+      "year": 1930,
+      "what": "First Cape summer: « Cape - Wellfleet then Bird's Cage S. Truro » — the rented Bird's Cage, three summers before they built.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97026,
+        "page": "22–23"
+      }
     },
     {
       "year": 1931,
@@ -133,10 +177,50 @@
       "key": true
     },
     {
+      "year": 1933,
+      "what": "« Cape - last yr. at Bird's Cage. Bgt. land. »",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97026,
+        "page": "22–23"
+      }
+    },
+    {
       "year": 1934,
       "what": "Builds a second home and studio on Cape Cod, and keeps it for the rest of his life. The Truro and South Truro watercolours in Books I and III begin here.",
       "source": "whitney-artist",
       "key": true
+    },
+    {
+      "year": 1934,
+      "what": "« Cape - Built house. » Her one line for the year, and the whole of it.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97026,
+        "page": "22–23"
+      }
+    },
+    {
+      "year": 1938,
+      "what": "« Cape Huricane », in her spelling, with a second visit to the Slaters in Vermont. In March, four days of his cold with the temperature taken hour by hour — « E.H. 1938. », pages 107 to 125.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97496,
+        "page": "20–21"
+      }
+    },
+    {
+      "year": 1941,
+      "what": "« Trip West - Calif., Oregon, Wyoming. »; the forward chronicle of page 44 gives it as « Las Vegas, Los Angeles, Frisco, Portland, O. - Cape », with « Columbia R. » in the margin.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97471,
+        "page": "44–45"
+      }
     },
     {
       "year": 1942,
@@ -145,10 +229,158 @@
       "key": true
     },
     {
+      "year": 1943,
+      "what": "First Mexico: « Mexico - City, Saltillo, Sept. Monterrey », « by R.R.! », « no Cape ». Page 48 lists every Mexican journey to 1957 under the heading « To get this straight ».",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97471,
+        "page": "44–45"
+      }
+    },
+    {
+      "year": 1945,
+      "what": "« Xmas 44 E. elected to Instit. of Arts + Letters »; « Cape - ap. Salmagundi Prize ».",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97496,
+        "page": "20–21"
+      }
+    },
+    {
+      "year": 1946,
+      "what": "« Mexico - Sattillo Grand Titon Cape. », with « Buick 39 » in the margin — the second Mexico, by car.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97471,
+        "page": "44–45"
+      }
+    },
+    {
+      "year": 1947,
+      "what": "« # 3 invasion by N.Y.U. » — the whole of the year's line, and the beginning of the Washington Square fight that fills two of the other notebooks.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97496,
+        "page": "20–21"
+      }
+    },
+    {
+      "year": 1948,
+      "date": "January",
+      "what": "« Group of 6 or 7 paintings at Rehn. very successful. » Then, in February, « N.Y. Hospital - Prostate », the Grosvenor Hotel after it, « Stayed into May », and « 3 trips to N.Y. Hos. hemmorhages ».",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97471,
+        "page": "44–45"
+      }
+    },
+    {
       "year": 1950,
       "what": "The Whitney organises his second career retrospective. Leaf 2 of Book I is headed with a note of it.",
       "source": "whitney-hoppers",
       "key": true
+    },
+    {
+      "year": 1950,
+      "date": "February",
+      "what": "« Retrospective Ex. Hopper, Man of the Year at Whitney Mus. - W. 8\" St. E. in hospital at opening of Exhib. » The show goes on to Boston and Detroit, and in Chicago « E. degree D.F.A. » at the Art Institute, « stayed at Palmer House. + parties ».",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97471,
+        "page": "44–45"
+      }
+    },
+    {
+      "year": 1951,
+      "what": "« Mexico - Sattillo in heat wave. On to Santa Fé + return to Cape - began efforts for Electric. » The backwards chronicle puts the Chicago degree here: « E. gets degree Dr. of Fine Arts - Chicago Art Inst. »",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97471,
+        "page": "44–45"
+      }
+    },
+    {
+      "year": 1952,
+      "date": "December",
+      "what": "« Dec. 7 or 6 off for Mexico - via El Paso, TX. + South. Stay at Guanacinato (Posada de la Presa », in her spelling — after « Water Color Show at Metrop. » and, in September, « By air to N.Y. for Metrop. jury ».",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97471,
+        "page": "44–45"
+      }
+    },
+    {
+      "year": 1953,
+      "what": "« from Guanajuato - middle of Jan on to Mitla, Oaxaca », « Feb. on to Puebla », Monterrey, and « back to N.Y. Mar. 1\" in time for jury duty at Virginia Mus. at Richmond »; « Whitney Annual Oct. 53 Fire Escape ».",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97055,
+        "page": "46–47"
+      }
+    },
+    {
+      "year": 1954,
+      "date": "February",
+      "what": "« S. Truro. E. N.Y. Hos. hernias - Feb. »; Gloucester in September « trees », and Frank Rehn.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97496,
+        "page": "20–21"
+      }
+    },
+    {
+      "year": 1956,
+      "date": "December",
+      "what": "« Dec. 6\" 1956 H. H. + Pacific Palisades » until June 6, 1957 — page 47 gives the address as « H. H. F. Pacific Palisades, Calif. », and the initials are not expanded here.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97496,
+        "page": "20–21"
+      }
+    },
+    {
+      "year": 1958,
+      "date": "February",
+      "what": "« N.Y. Hos. Jan. 29, 58 », then « burglar Feb. 11\", 58 » — the burglary page 3 may allude to in « from trunk in basement (burglars) ».",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97168,
+        "page": "18–19"
+      }
+    },
+    {
+      "year": 1958,
+      "date": "March",
+      "what": "« Moved to Greenwich Gallery - 71 Washington Place - Mar. 1958 » — her dealer, not his. The notebook lists her group show there, the four hundred announcements she sent, and who came.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97360,
+        "page": "54–55"
+      }
+    },
+    {
+      "year": 1961,
+      "date": "April",
+      "what": "« T.V. performance at Boston Mus. Ap. 10, 1961 », « E. H. + J. H. », at the Sheraton Plaza; « Tape recorded in N.Y.C. - Sat. Ap. 29, 61 » with Brian O'Doherty.",
+      "source": "black-notebook",
+      "sheet": {
+        "notebook": "black-notebook",
+        "ref": 97387,
+        "page": "60–61"
+      }
     },
     {
       "year": 1964,
@@ -185,7 +417,15 @@
   "disputed": [
     {
       "about": "When he took the top floor of 3 Washington Square North",
-      "what": "The Whitney's artist page says he lived and worked in the same Washington Square apartment from 1913 until his death; other chronologies give 1929 for a move to the top floor of the building. Both may describe the same tenancy at different scales. Only the Whitney's wording is used above, because mixing two sources into one sentence is how a date nobody stated gets published."
+      "what": "The Whitney's artist page says he lived and worked in the same Washington Square apartment from 1913 until his death; other chronologies give 1929 for a move to the top floor of the building. Both may describe the same tenancy at different scales. Only the Whitney's wording is used above, because mixing two sources into one sentence is how a date nobody stated gets published. Her black notebook adds a third voice: the list of the tenants of the house on page 117 says « E.H. came in 1913 », while her own year chronicle leaves 1913 blank."
+    },
+    {
+      "about": "When Chicago gave him the degree",
+      "what": "The black notebook says it twice. Page 45's forward chronicle puts « Chicago Art Institute - E. degree D.F.A. » after the Detroit leg of the 1950 retrospective; page 20's backwards chronicle lists « E. gets degree Dr. of Fine Arts - Chicago Art Inst. » under 1951. Both are hers, and both stand above under their own year."
+    },
+    {
+      "about": "The Boston television date of 1961",
+      "what": "Page 19 of the black notebook has « Boston Mus. T.V. Ap. 20 (N.Y. Mar. 29) »; page 61 has « Ap. 10, 1961 », the stay at the Sheraton Plaza « Sat. Ap. 8 - Mon. Ap 10\" », and the tape « recorded in N.Y.C. - Sat. Ap. 29, 61 ». The fuller page is the one quoted above; the other is not corrected."
     }
   ]
 }
