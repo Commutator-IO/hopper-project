@@ -159,25 +159,26 @@ A note on this critical note                                                    
   8.4 The derived files, and the rule that a build must fail . . . . . . . . . . . . . .     40
   8.5 The accounts reader . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      41
   8.6 The ink pass . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   42
-  8.7 What this note added, and how . . . . . . . . . . . . . . . . . . . . . . . . .        42
+  8.7 The working method: a person, two models, a repository and an interface .              42
+  8.8 What this note added, and how . . . . . . . . . . . . . . . . . . . . . . . . .        44
 
-9 What the pictures were made of, and what shape                                             43
-  9.1 The formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    43
-  9.2 The size . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   44
-  9.3 The frames, from the other book . . . . . . . . . . . . . . . . . . . . . . . .        46
+9 What the pictures were made of, and what shape                                             45
+  9.1 The formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    45
+  9.2 The size . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   46
+  9.3 The frames, from the other book . . . . . . . . . . . . . . . . . . . . . . . .        48
 
-10 The money, added up                                                                       47
-   10.1 What can be counted, and what cannot . . . . . . . . . . . . . . . . . . . . .       47
-   10.2 The illustrator, 1913–1925 . . . . . . . . . . . . . . . . . . . . . . . . . . . .   47
-   10.3 The painter, by the work books . . . . . . . . . . . . . . . . . . . . . . . . .     48
-   10.4 The painter, by the cash book . . . . . . . . . . . . . . . . . . . . . . . . . .    48
-   10.5 The days the books were written on . . . . . . . . . . . . . . . . . . . . . . .     49
+10 The money, added up                                                                       49
+   10.1 What can be counted, and what cannot . . . . . . . . . . . . . . . . . . . . .       49
+   10.2 The illustrator, 1913–1925 . . . . . . . . . . . . . . . . . . . . . . . . . . . .   49
+   10.3 The painter, by the work books . . . . . . . . . . . . . . . . . . . . . . . . .     50
+   10.4 The painter, by the cash book . . . . . . . . . . . . . . . . . . . . . . . . . .    50
+   10.5 The days the books were written on . . . . . . . . . . . . . . . . . . . . . . .     51
 
-11 Conclusion: the record and the silence                                                    51
+11 Conclusion: the record and the silence                                                    53
 
-A Tables                                                                                     52
+A Tables                                                                                     54
 
-Sources                                                                                      59
+Sources                                                                                      61
 
 
 
@@ -325,7 +326,7 @@ Sources                                                                         
        from the middle 1940s; the canvas turning from National to Herga and the
        priming from double to single across the 1950s. Only the 43 works dated
        by the leaf itself are plotted. After the Technique tab. Drawn by Claude
-       Fable 5.1, 13 September 2026, from materials.json (undated). . . . . . . 44
+       Fable 5.1, 13 September 2026, from materials.json (undated). . . . . . . 46
    9.2 Every format, plotted: width across, height up, one dot to a format and its
        area standing for how many works were made at it, 78 formats from 199
        work headings that state a size. The diagonal is where a picture would be
@@ -333,12 +334,12 @@ Sources                                                                         
        ing plates are in the corner, the watercolour sheets through the middle, the
        late oils at the top right. After the Technique tab of hopper.commutator.io.
        Drawn by Claude Fable 5.1, 13 September 2026, from formats.json (un-
-       dated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+       dated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
    9.3 The eight formats he came back to, drawn to one scale and to their real pro-
        portions, so that a watercolour half-sheet stands beside a five-foot canvas;
        each is labelled with the number of work headings read at that size. After
        the Technique tab. Drawn by Claude Fable 5.1, 13 September 2026, from
-       formats.json (undated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+       formats.json (undated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
 
    10.1 The money, three ways: what the pocket book receipts each year from 1920
         (dark bars), what the work books state as the net of sales dated in that year
@@ -347,7 +348,7 @@ Sources                                                                         
         cheques as they arrived, the other the studio’s record of what left. Every
         figure is a floor, read from the transcribed rows under the rules of the ac-
         counts chapter. After the Accounts tab of hopper.commutator.io. Drawn by
-        Claude Fable 5.1, 13 September 2026, from accounts.json (2026-09-11). . 49
+        Claude Fable 5.1, 13 September 2026, from accounts.json (2026-09-11). . 51
    10.2 The days the six books record, one row to a year from 1913 to 1967 and one
         cell to a month, the darker the more days that month carry an entry: 1204
         days in all, from 2146 dated rows. A dense cell is a month of transactions,
@@ -356,7 +357,7 @@ Sources                                                                         
         Wed 179, Thu 215, Fri 207, Sat 175, Sunday a sixth of a weekday. After
         the calendar of the Timeline tab, which draws every day; this draws every
         month. Drawn by Claude Fable 5.1, 13 September 2026, from streak.json
-        (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+        (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
 
 
 
@@ -2316,7 +2317,82 @@ and it reports seventy-four leaves with at least one written line the transcript
 have, which is the worklist for the re-reading pass.
 
 
-8.7    What this note added, and how
+8.7    The working method: a person, two models, a repository and an
+       interface
+The pipeline above was not bought and was not assembled from a transcription service. It
+was built by one person, Michel Hua, over a fortnight in September 2026, and the way it
+was built is itself part of the method, because it is what makes the reading checkable.
+
+Claude as the reader
+The transcriptions were made with Claude Code, Anthropic’s command-line agent, running
+the models Claude Opus 5 and Claude Fable 5.1. The work is packaged as skills, small
+instruction files kept in the repository under .claude/skills/: transcribe-hopper reads
+a batch of twelve sheets into the restricted LaTeX and writes its header; tag-hopper writes
+the keywords line that closes a transcription; modernize-hopper writes the per-work notes
+from named museum sources only. The skills accept Fable 5.1, Fable 5 or Opus 5 and refuse
+any other model, and every file records which one read its sheets and on what day, so that
+a batch’s provenance is a fact about the file and not about whichever model happened to
+be selected. Opus 5 read most of the ledgers between 5 and 12 September; Fable 5.1 read
+the last sittings of the black notebook and the Battle of Wash Sq. on 10 and 13 September,
+
+                                               42
+                          The working method: a person, two models, a repository and an interface
+
+
+and drafted this note. The model does what a first transcriber does and no more: it reads
+what it can, marks what it cannot, attributes hands cautiously, and writes a note where a
+decision was made. It does not check itself, and the edition does not pretend it did.
+
+GitHub as the workbench
+The repository on GitHub is the record of the work and the place it is done. Every batch,
+every script and every correction is a commit on the main branch, and the issue tracker
+holds the open questions as numbered issues with a plain convention, a « [P1] » in the title
+meaning that the issue blocks the edition: the ink of Book IV, the Zenodo deposit, the
+per-file revision history a citation will one day need. The continuous integration workflow
+described above runs on every push and refuses a push whose generated files have drifted
+from their sources, and the same workflow builds and deploys the site to GitHub Pages
+under the project’s own domain. Nothing about the edition lives on a machine of its au-
+thor’s: a clone of the repository is the edition entire, minus the photographs, which are the
+museum’s.
+
+An interface built for the purpose
+The site at hopper.commutator.io was written by Michel Hua for this project, and it does
+one thing that no general-purpose tool did: it puts the transcription beside the Whitney’s
+own photograph of the sheet, so that scrolling the reading turns the photograph and a
+doubtful figure can be checked against the hand it came out of on one screen. Everything
+else on it follows from that. The reading view offers a Cite button that builds the three cita-
+tions, sheet, leaf and batch, from what the page already knows; the Accounts, Technique,
+Timeline and Schema tabs are the derived files rendered, with the rules that produced
+them printed beside the figures; the Diaries side serves the four notebooks the same way.
+The interface is the checking instrument. A machine reading that could not be put beside
+its source would be a text nobody could correct, and the whole value of the transcription
+is that it can be.
+
+Working in parallel: Claude Code and remote control
+A corpus of five hundred sheets is not read in one sitting, and it was not read in one session.
+Claude Code runs as a local session on the author’s machine, and several sessions can run at
+once: one transcribing a batch of Book IV while another reads the ink off its photographs,
+another writes the accounts reader and a fourth builds a page of the site to show the
+result. Each session has its own context, which is what the skill demands of a batch, and
+each leaves its work as a commit the others pull. Claude Code’s remote control lets those
+sessions be started, directed and followed from another device, so that the machine at 3
+Washington Square North’s equivalent, a desk in one place, keeps working while its owner
+is elsewhere and answers a question from a telephone. That is an interesting way to work
+for a reason that has nothing to do with convenience: it makes the parallelism explicit. A
+transcription pass and an analysis pass over the same leaves are different jobs with different
+rules, and running them as different sessions, each with its own instructions and its own
+commit, keeps them from contaminating each other in the way a single long conversation
+
+
+                                              43
+How the data was made: the engineering behind the figures
+
+
+would. This note was made the same way: eight readings of the transcripts ran at once,
+one per volume or notebook, and the prose was written from their reports.
+
+
+8.8    What this note added, and how
 This note was written in one session on 13 September 2026. Eight readings of the tran-
 scripts were run in parallel, one per volume or notebook, each instructed to read its files
 whole and return the structure, the quotable passages exactly as transcribed with leaf and
@@ -2335,7 +2411,10 @@ published and their failures loud; the note is a model’s again. Every link can
 and the weakest one, the unchecked reading, is the one every sentence here says it rests
 on.
 
-                                               42
+
+
+
+                                               44
 Chapter 9
 
 
@@ -2377,7 +2456,7 @@ January 1939, « Winton canvas, Winsor & Newton colors. — 1st lead white and l
 oil. 2nd Zinc white » (Book II, leaf 27, ref 16621). The leaf also shows what a formula can
 carry that a list cannot: two whites on one picture, the second over the first.
 
-                                             43
+                                             45
 What the pictures were made of, and what shape
 
 
@@ -2435,7 +2514,7 @@ River at Sharon, Oregon Coast, Jo in Wyoming. Nine at 12 by 18 are the Glouceste
 ings of Book V. The oils cluster differently. Seven at 24 by 29 are the early canvases of
 
 
-                                                 44
+                                                 46
                                                                                                       The size
 
 
@@ -2500,7 +2579,7 @@ September 2026, from formats.json (undated).
 
 
 
-                                                           45
+                                                           47
 What the pictures were made of, and what shape
 
 
@@ -2539,7 +2618,7 @@ canvas », on the same picture, secured by the woman who bought it.
 
 
 
-                                                    46
+                                                    48
 Chapter 10
 
 
@@ -2581,7 +2660,7 @@ the same pocket book, had passed them.
 
 
 
-                                             47
+                                             49
 The money, added up
 
 
@@ -2631,7 +2710,7 @@ stated nets, 93 carried sums and six rubbed-out drafts are excluded by rule; fiv
 ment sales are collapsed to one picture each; thirteen rows have no description. Where
 
 
-                                            48
+                                            50
                                                                                                  The days the books were written on
 
 
@@ -2689,7 +2768,7 @@ not the days anybody worked, and Josephine Hopper wrote almost all of them.
 
 
 
-                                                                          49
+                                                                          51
 The money, added up
 
 
@@ -2754,7 +2833,7 @@ tab, which draws every day; this draws every month. Drawn by Claude Fable 5.1, 1
 
 
 
-                                                      50
+                                                      52
 Chapter 11
 
 
@@ -2799,7 +2878,7 @@ The books were kept so that someone would read them. The inside cover of Book I 
 who wrote them and who drew in them, and the notebooks say what it cost. The rest is on
 the leaves.
 
-                                              51
+                                              53
 Appendix A
 
 
@@ -2847,7 +2926,7 @@ dealer’s third.
                      1927       3,992.71         5,918.08            -1,805.35
 
 
-                                                 52
+                                                 54
 Year      Charged      Received   Running balance
 1928     11,444.02     7,870.68         1,767.99
 1929     10,660.86    10,661.36         1,767.49
@@ -2894,7 +2973,7 @@ Total   544,546.84   432,871.37       111,675.47
 
 
 
-                       53
+                       55
 Tables
 
 
@@ -2945,7 +3024,7 @@ the etchings are largely absent.
                  1961        10   11,295            3,765      7,530              0
                  1962         3   31,000           10,333     20,667          3,667
 
-                                                 54
+                                                 56
                 Year    Sales    Gross    Commission           Net    Receipted
                 1963        2   31,500         10,500       21,000               0
                 1964        2   31,500         10,500       21,000               0
@@ -2991,7 +3070,7 @@ books write them. Gross is the price; net is after the third.
 
 
 
-                                              55
+                                              57
 Tables
 
 
@@ -3051,7 +3130,7 @@ cheques are not in this table.
 
 
 
-                                               56
+                                               58
 Table A.7: The sizes Edward Hopper wrote in the title line, counted once per work heading: the
 twenty formats that recur. Height before width, as he wrote them; nothing is rounded.
 
@@ -3093,7 +3172,7 @@ twenty formats that recur. Height before width, as he wrote them; nothing is rou
 
 
 
-                                             57
+                                             59
 Tables
 
 
@@ -3152,7 +3231,7 @@ resolve to 1204 calendar days between 1913 and 1967.
 
 
 
-                                                  58
+                                                  60
 Sources
 
 The objects
@@ -3192,7 +3271,7 @@ is the source of record; the tables in the appendix are read from src/content/. 
 Every citation in this draft names the leaf as numbered on the paper and the Whitney’s
 
 
-                                             59
+                                             61
 Sources
 
 
@@ -3226,5 +3305,5 @@ date.
 
 
 
-                                            60
+                                            62
 
