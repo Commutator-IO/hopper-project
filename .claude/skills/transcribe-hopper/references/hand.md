@@ -5495,3 +5495,73 @@ its cost is page 117.
   interlined over « Psychology » (page 114); « Lucile Kinley », « Traves »,
   « Lou Rogers » (page 115); « Md. » after Cape Elizabeth (page 116);
   « Drabowhee », « Resika », and « change here from » (page 117).
+
+### The black notebook, sheets 61–68
+
+*(The openings 118–119 to 128–129 and page 130, 13 September 2026, Fable
+5.1.)* Eight sheets, not twelve, because the notebook runs out against its
+back cover. Six of them are lists of people, and the cost of this sitting is
+the cost of pages 52 and 53 again: pencil names by the hundred, in columns,
+in run-on prose, and once diagonally.
+
+- **The Whitney's page numbers slip by one at the end.** Its descriptors run
+  « Pages 124-125 » then « Pages 125-126 », so from seq 65 the descriptor is
+  one behind the page's place in the book. `\sheet{}` takes the descriptor's
+  leaf number, because that is what `catalogue.ts` checks and what the
+  reader's page turn lands on; say so once in the file's head comment and in
+  the note under the first affected sheet, and do not renumber.
+- **A run-on list with commas is still given line for line.** Page 119's
+  « Visitors at 3 - » runs as prose with a comma between names; break it where
+  she breaks the line, as with the year chronicle, so that a reader can find
+  a name against the photograph. Page 118's wide list is the same list in a
+  different shape, with a second name or a note at the right of most lines.
+- **Rotate the crop before deciding what a diagonal block says.** Page 120's
+  « Brian + Barbara O'Doherty » runs up the middle of the leaf at about 70°
+  and reads as nothing at all until `-rotate 70`; the earlier sittings'
+  fore-edge blocks wanted `-rotate 90`. Page 120 also carries a second block
+  at the lower right (« + butlers etc / hall. / figures in front / long full
+  length armored ») that describes something not on the leaf; give it and say
+  so.
+- **Ink and pencil share a leaf, and the pencil is the later hand.** Page
+  122's frames list is in ink to the Truro Hills line, pencil from there to
+  « Roco », and heavy black ink again for the last two lines; every
+  annotation on the ink lines is pencil. Record which is which in the note;
+  `\ink{pencil}` is a cell macro and does not fit a prose block.
+- **A drawing on the leaf is described in a sentence and not further.** Page
+  123 carries a pencil wrist watch with its strap, some four lines high, and
+  nothing written on it; page 103's figure-8 diagram set the precedent.
+- **A ringed name and a struck name are two different acts, and both occur
+  on one leaf.** Page 124 rings ten names and strikes one (« Allen Tucker »,
+  ringed *and* struck); page 126 boxes and strikes « Robt. Hallowell »;
+  page 125's list rings « Dr » and strikes it. As before, rings and boxes are
+  described in the note and the strike is `\struck{}`.
+- **The 1938 cold has one more day.** « Sat. Mar. 5" 38 » on page 125
+  continues pages 107–108 and takes an entry; « Mon. Dec. 7" » beneath it
+  carries no year and takes `\entry{Mon. Dec. 7"}{}`.
+- **The same doubtful surname keeps recurring and keeps narrowing nothing.**
+  « Lou Duble » (page 120) and « Lou Duble Geiffert » (page 126) against the
+  earlier « Lu Duble », « Lu Duro », « Lou Double »; « Albert Gifert » (page
+  120) against « Al ... Geiffert » (page 126); « Dmetri Romanofsky » (page
+  119) against « Dimetri Romanofsky » (page 124); « Sprinchorn » on page 119
+  doubted and on page 125 plain. Each pair is left as written.
+- **Her spellings, all as written:** « Garabaldi », « Grammercy », « Hariet
+  Bain », « Kimbal », « Higgens » (page 119) beside « Higgins » (page 125),
+  « Balantine », « Galatin House », « Macgowan », « Shiela », « Dickinsons »
+  and « Dickenson's », « Emery Lewis » beside « Emory Lewis » on one leaf
+  (page 120), « Roco », « Blenden », « Mangraviti ».
+- **Readings that would not settle:** « Mories », « Megalesco »,
+  « Gerhardt », « 3 yl. Reiser? Kaiser? », « Poley », « Anthony » Raymond,
+  « Dunscombe », « Tangeroff », « Ricci » and what the paper slip covers
+  (page 118); « Ryther », « Rumbaugh », « Romanofsky », « Minnegerode »,
+  « Leighe », and the rubbed words after « Bouche » and « Hapgood » (page
+  119); « Smallens », « Duble », « Albert Gifert », « Chapin », « J. Stuart »,
+  « lived near », « Ed. Cho. », « Delvine », « Lindsley », « at Vantins »,
+  « Sphenseng », « Rondolf », « Grace F. » (page 120); « (Vt.) », « Lungren »,
+  « F. Stokes » (page 121); « green », « post house », the three diagonal
+  pencil words at the Chop Suey line (page 122); « La Foye », « take watch »,
+  « Shepherd » (page 123); « Charlotte » Kruesi, « Fracita », « Bonynge »,
+  « Breuer », « McDougal » (page 124); « Adex », « Cavita », « Lotty »,
+  « Stauffer », « Chamblin », « Mabel Dodge », « Mrs. Tomlin Tatty »,
+  « grace » (page 125); « Magie », « Colly », « Sauche's », « Stephens »,
+  « Buehler », « Cetchini », « Wagenroth's », « Tonnes », « Zwicheimer »
+  (page 126); « Kintergarten » (page 128).
