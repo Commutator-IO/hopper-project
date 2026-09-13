@@ -30,7 +30,17 @@ The words of Josephine and Edward Hopper quoted here are © Heirs of Josephine N
 ii
 A note on this critical note
 
-This is a critical note, combining synthesis of the ten books, analysis of the data derived
+This is an experiment, and the Hopper ledgers are its excuse. What is being tried is a
+way of working: a language model reading an archive sheet by sheet under stated rules,
+a person building the instrument that puts the reading beside the photograph so it can be
+checked, a repository that keeps every reading, rule and figure as a dated commit, and, at
+the end, the same model asked to write up what the archive says. The ledgers were chosen
+because they are the right size for a test, five hundred sheets in one hand with numbers
+in them that either add up or do not, and because the Whitney serves the photographs
+openly. Whatever this note says about Edward and Josephine Hopper is secondary to that,
+and should be read as a demonstration of what the method produces at first pass, with its
+errors left in, rather than as a contribution to the literature on the painter.
+    This is a critical note, combining synthesis of the ten books, analysis of the data derived
 from them, and an evaluation of what the record is and is not. It is a draft of a particular
 kind. It was made using artificial intelligence, and that has to be said first. The tran-
 scription it rests on was made by a language model, Claude Opus 5 and Claude Fable 5.1,
@@ -59,7 +69,9 @@ appendix carry the date they were generated, and every total in the text is a fl
 number nobody yet knows.
     Three readers stand before this one and nothing here claims priority over them. Gail
 Levin wrote the biography from the diaries and the catalogue raisonné from the record
-books; Deborah Lyons published the record books in 1997; Madeleine Larson typed the
+
+                                              iii
+books; Deborah Lyons published the record books in 1997; Madeleine Larson typed the
 Provincetown diaries. Most of what a first reading of these leaves finds surprising is in
 Levin already. What this draft can add is not a discovery but a method: the reading placed
 beside the sheet, so that any sentence in it can be checked against the hand it came out of.
@@ -69,10 +81,7 @@ this document is a working paper and not a publication.
 
 
 Conventions. A citation of the form Book II, leaf 95, ref 17982 names the volume, the leaf
-
-
-                                             iii
-as numbered on the paper, and the Whitney’s ResourceSpace reference for the photograph.
+as numbered on the paper, and the Whitney’s ResourceSpace reference for the photograph.
 Notebooks are cited by page and reference. Quoted matter from the leaves is set between
 guillemets, « like this », and the writer’s own quotation marks inside it are shown as curly
 double quotes; italics inside a quotation are the writer’s own underlining; [illegible] marks a
