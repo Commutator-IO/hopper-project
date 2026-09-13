@@ -5,8 +5,8 @@
                  at the Whitney Museum of American Art
 
 
-                                          A critical note
-                                   Draft of 13 September 2026
+                                         A critical note
+                                  Draft of 13 September 2026
 
 
 Made using AI: the transcriptions were read from the Whitney’s photographs by Claude Opus
@@ -18,15 +18,17 @@ and this note was drafted by Claude Fable 5.1 from those transcriptions, under t
 
 
 
-     Written from the Hopper Ledgers transcriptions at https://hopper.commutator.io
- (Whitney Museum of American Art, 96.208 to 96.213, and the Sanborn Hopper Archive, Series
-                                           IV.A)
+      Written from the Hopper Ledgers transcriptions at https://hopper.commutator.io
+(Whitney Museum of American Art, 96.208 to 96.213, and the Sanborn Hopper Archive, Series
+                                             IV.A)
+Draft prepared for submission to Digital Humanities Quarterly or the Journal of the Text Encoding
+                                           Initiative.
 
-
-
-
-The words of Josephine and Edward Hopper quoted here are © Heirs of Josephine N. Hopper, licensed by Artists
-                  Rights Society (ARS), New York. This is a working draft, not a publication.
+ © 2026 Michel Hua. This note is licensed under a Creative Commons Attribution 4.0 International licence
+ (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/. The words of Josephine and Edward
+Hopper quoted in it are © Heirs of Josephine N. Hopper, licensed by Artists Rights Society (ARS), New York,
+  and are quoted for criticism and study; the data behind the tables and figures are CC0 in the edition’s
+                            repository. This is a working draft, not a publication.
 ii
 A note on this critical note
 
@@ -75,9 +77,19 @@ Levin wrote the biography from the diaries and the catalogue raisonné from the 
 Provincetown diaries. Most of what a first reading of these leaves finds surprising is in
 Levin already. What this draft can add is not a discovery but a method: the reading placed
 beside the sheet, so that any sentence in it can be checked against the hand it came out of.
-    The words of Josephine and Edward Hopper remain in copyright. They are quoted
-here for the purpose of criticism and study, in the quantities that purpose requires, and
-this document is a working paper and not a publication.
+    This draft is being prepared for submission to Digital Humanities Quarterly or the Jour-
+nal of the Text Encoding Initiative, both open-access journals, and it is written to their expec-
+tation that the method, the data and the text be open. The note itself is therefore licensed
+under Creative Commons Attribution 4.0 International (CC BY 4.0): it may be copied, re-
+distributed and built upon for any purpose, provided the source is credited. The licence
+covers the prose, the tables, the figures and the LaTeX sources in the edition’s repository.
+It does not and cannot cover three things, which stay under their own terms: the data files
+the tables and figures are read from, which the repository dedicates to the public domain
+under CC0 and which need no attribution at all; the coordinates in the travels figure, which
+are OpenStreetMap’s under the ODbL; and the words of Josephine and Edward Hopper,
+which remain in copyright. They are quoted here for the purpose of criticism and study,
+in the quantities that purpose requires, and this document is a working paper and not a
+publication.
 
 
 Conventions. A citation of the form Book II, leaf 95, ref 17982 names the volume, the leaf
@@ -99,7 +111,7 @@ data files, the drawings the site makes, and each is signed.
 
 
 
-                                              iv
+                                               iv
 Contents
 
 A note on this critical note                                                                  iii
@@ -2479,11 +2491,11 @@ ref 16582) is the one admission of not knowing, and it concerns a canvas of 1932
 sky was repainted in 1959. The formula is a record of a habit, not a laboratory report, and
 the two agree only as far as the habit was regular. It was very regular.
 
-             zinc white
-            Rembrandt
-              poppy oil
+            zinc white
+           Rembrandt
+             poppy oil
       Winsor & Newton
-                Blockx
+               Blockx
          double prime
             lead white
             linseed oil
@@ -2728,10 +2740,10 @@ and the leaf disagree, as on leaf 156, where the note reads the fore-edge total 
 and the marginal as 21,944, the leaf needs re-reading and this chapter says so rather than
 choosing.
 
-                            40, 000                    Book IV, the cheques receipted, by year
+                            40, 000
+                                                       Book IV, the cheques receipted, by year
                                              Books I, II, III and Dealers, net of the third, by year of sale
                                                       Book IV, illustration receipts, 1913–1925
-
                             30, 000
 
 
@@ -3310,6 +3322,21 @@ Art Gallery, 1961.18.29 (Rooms by the Sea); Des Moines Art Center, 1958.2 (Autom
 Each was retrieved by the edition’s scripts/works.mjs from the museum’s own API and
 checked against the artist field; the per-work notes in work-notes.json carry the retrieval
 date.
+
+
+Licence
+
+This note, its tables, its figures and its LaTeX sources: © 2026 Michel Hua, Cre-
+ative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.
+org/licenses/by/4.0/. Attribution: « Michel Hua, The Books Kept at 3 Washington
+Square North, draft of 13 September 2026, drafted with Claude Fable 5.1, https:
+//github.com/Commutator-IO/hopper-project/tree/main/docs/study ».
+The edition’s software and its generated data, including every file the tables and figures
+are built from: CC0 1.0 Universal, as the repository’s RIGHTS.md states. The transcribed
+words of Josephine and Edward Hopper: © Heirs of Josephine N. Hopper, licensed by
+Artists Rights Society (ARS), New York; quoted here for criticism and study and not licensed
+onward. The place coordinates in the travels figure: © OpenStreetMap contributors, ODbL
+1.0. The museum records cited: the museums’ own, retrieved from their public APIs.
 
 
 
