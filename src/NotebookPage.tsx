@@ -40,8 +40,9 @@ const GRACE_MS = 900;
 const A = 'text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600';
 
 /**
- * The reader's address: `#read` opens it at the first sheet, `#read/89300`
- * at that sheet. The ref rather than the page number, for the reason the
+ * The reader's address: `#read` opens it at the first sheet the transcription
+ * names (the first photograph, if it names none), `#read/89300` at that sheet.
+ * The ref rather than the page number, for the reason the
  * ledgers give — an opening photographed whole carries two page numbers and
  * a cover none, and the ResourceSpace ref is the one stable name a sheet has.
  */
@@ -119,18 +120,27 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
     const apply = () => {
       const h = readHash(sheets);
       setOpen(h.open);
-      if (h.open) pick(h.ref, readRefs);
+      // The manifest may not have landed on the first pass; the effect runs
+      // again when it does, and the reader moves to the first named sheet.
+      if (h.open) pick(h.ref ?? readRefs[0], readRefs);
     };
     apply();
     addEventListener('hashchange', apply);
     return () => removeEventListener('hashchange', apply);
   }, [sheets, readRefs, pick]);
 
+  // Opened with no sheet named, the reader lands on the first sheet the
+  // transcription names rather than the first photograph: a notebook's first
+  // photograph is usually its cover, which no file names, and landing there
+  // put « this sheet is not in the transcription » in front of every reader
+  // before a word of the reading. `readRefs` is in file order, which is the
+  // order of the book.
   const read = useCallback(
     (ref?: number) => {
-      history.replaceState(null, '', `#read${ref ? `/${ref}` : ''}`);
+      const at = ref ?? readRefs[0];
+      history.replaceState(null, '', `#read${at ? `/${at}` : ''}`);
       setOpen(true);
-      pick(ref, readRefs);
+      pick(at, readRefs);
     },
     [pick, readRefs],
   );
@@ -252,7 +262,9 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
             {hasTranscript ? 'Read it beside the sheets' : 'Turn the sheets'}
           </button>
           <span className="text-[12.5px] text-ink-400">
-            opens at the first sheet — Escape closes it
+            {hasTranscript
+              ? 'opens at the first transcribed sheet — Escape closes it'
+              : 'opens at the first sheet — Escape closes it'}
           </span>
         </div>
       </section>
@@ -412,6 +424,13 @@ function NotebookReader({
   const span = batchRange(sitting, sheets.length);
   const firstOf = (k: number) => sheets[(k - 1) * BATCH_SIZE]?.ref;
   const isRead = current ? readRefs.includes(current.ref) : false;
+  // Whether the *sitting* has been read is a different question from whether
+  // this sheet is in the file. A cover, a blank leaf, a sheet photographed
+  // only to show that something came loose: the pass reads them and gives
+  // them nothing, and the gap in the file is the record. Telling the reader
+  // the sitting is unread and offering the command to read it, when it has
+  // been read, is the wrong message twice over.
+  const sittingRead = sheets.slice(span.first - 1, span.last).some((s) => readRefs.includes(s.ref));
 
   const select = onPick;
 
@@ -517,8 +536,27 @@ function NotebookReader({
               onSheet={onSheet}
               goto={goto}
             />
+          ) : sittingRead ? (
+            // The sitting has been read and this sheet is not in the file:
+            // nothing on it to transcribe, and the transcript is not shown
+            // because its nearest page is some other sheet's, and scrolling
+            // it would drag the facsimile there.
+            <div className="grid h-full place-items-center bg-white p-8 text-center">
+              <div className="max-w-md">
+                <p className="text-[14px] text-ink-700">
+                  This sheet is not in the transcription.
+                </p>
+                <p className="prose-note mt-2">
+                  Sitting {sitting} — sheets {span.first}–{span.last} of {sheets.length} — has
+                  been read, and a sheet the file does not name is one the pass found nothing to
+                  transcribe on: a cover, a blank leaf, an opening photographed to record that
+                  something came loose. The photograph is on the right, at the resolution the
+                  Whitney publishes; if it carries writing after all, that is a reading to report.
+                </p>
+              </div>
+            </div>
           ) : (
-            // The notebook has a transcription; this sheet is not in it. Showing
+            // The notebook has a transcription; this sitting is not in it. Showing
             // the file anyway would put somebody else's page beside this
             // photograph and let it scroll — which is how the facsimile got
             // dragged back to sheet 1. The command names *this* sitting.

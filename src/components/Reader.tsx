@@ -399,7 +399,13 @@ export function SittingGrid({
         const { first, last } = batchRange(k, sheets.length);
         const slice = sheets.slice(first - 1, last);
         const got = slice.filter((s) => read.has(s.ref)).length;
-        const state = shownState(declared, { transcribed: got > 0 });
+        // The declaration is the notebook's, not the sitting's — status.json
+        // keys a notebook once — so « checked » is applied only to a sitting
+        // the file actually reaches: a half-read notebook a person has checked
+        // as far as it goes must not show its unread half as checked too.
+        // « skipped » is a judgement about the whole notebook and stands.
+        const applies = declared === 'skipped' || got > 0;
+        const state = shownState(applies ? declared : undefined, { transcribed: got > 0 });
         const how =
           got === 0
             ? 'not read'

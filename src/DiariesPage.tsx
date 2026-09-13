@@ -109,13 +109,15 @@ export function DiariesPage() {
           Subseries A of Series IV of the Sanborn Hopper Archive, harvested from the Whitney’s
           listing exactly as the ledgers were, one collection to a notebook. The titles are hers,
           as written on the cover or the first page; the dates and the scope notes are the
-          Whitney’s. Each tab shows every sheet, fetched from the Whitney as it is looked at, and
-          transcribes none of it. The coverage mark says only that PAAM publishes a typed
-          transcript for those years — not that it is of that notebook.
+          Whitney’s. Each tab shows every sheet, fetched from the Whitney as it is looked at, with
+          the transcription beside it as far as one has been read — the count on each card is
+          read off the file. The coverage mark says only that PAAM publishes a typed transcript
+          for those years — not that it is of that notebook.
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {NOTEBOOKS.map((n) => {
             const parts = paamPartsOverlapping(n);
+            const got = manifest?.readNotebooks?.[n.id] ?? 0;
             return (
               <a
                 key={n.id}
@@ -131,6 +133,9 @@ export function DiariesPage() {
                 <p className="prose-note mt-2 flex-1">{n.scope}</p>
                 <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px]">
                   <span className="tabular text-ink-500">{n.sheets} sheets</span>
+                  <span className={'tabular ' + (got ? 'text-brand-700' : 'text-ink-400')}>
+                    {got ? `${got} of ${n.sheets} read` : 'not read'}
+                  </span>
                   {n.archiveNumber && <span className="font-mono text-ink-500">{n.archiveNumber}</span>}
                   {parts.length > 0 && (
                     <span
