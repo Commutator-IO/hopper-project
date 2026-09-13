@@ -53,8 +53,8 @@
       "written": "Amer.",
       "means": "American.",
       "match": "\\bAmer\\.",
-      "count": 223,
-      "sheets": 110,
+      "count": 224,
+      "sheets": 111,
       "seen": [
         {
           "ledger": "dealers",
@@ -226,8 +226,8 @@
       "written": "E. H. · J. H.",
       "means": "Edward Hopper · Josephine Hopper — herself. She initials her own hand as readily as his.",
       "match": "\\b[EJ]\\.\\s*H\\.",
-      "count": 307,
-      "sheets": 125,
+      "count": 309,
+      "sheets": 127,
       "seen": [
         {
           "ledger": "notebooks",
@@ -441,8 +441,8 @@
       "written": "Mus.",
       "means": "Museum.",
       "match": "\\bMus\\.",
-      "count": 382,
-      "sheets": 174,
+      "count": 384,
+      "sheets": 175,
       "seen": [
         {
           "ledger": "book-iii",
@@ -571,8 +571,8 @@
       "written": "Rec'd",
       "means": "Received. In Book I it heads the column of what actually came in; in Book IV it opens the red line under a charge — « rec'd by check » — that says the account is settled.",
       "match": "[Rr]ec['’]d",
-      "count": 716,
-      "sheets": 250,
+      "count": 717,
+      "sheets": 251,
       "seen": [
         {
           "ledger": "book-iv",
@@ -744,8 +744,8 @@
       "written": "16 2/3 · 33 1/3 · 66 2/3",
       "means": "A sum in dollars and a vulgar fraction of one, which is what a third of a price comes to before anybody rounds. On the leaf the fraction is raised over lowered figures; the transcription sets it on the line as `2/3`.",
       "match": "\\d+\\s+\\d\\s*/\\s*\\d\\b",
-      "count": 575,
-      "sheets": 185,
+      "count": 591,
+      "sheets": 190,
       "seen": [
         {
           "ledger": "dealers",
@@ -788,8 +788,8 @@
       "written": "16.66 · 12.60 · 3959.84",
       "means": "The same money written as a decimal, which is what the right-hand columns hold. Book IV writes the point three ways — after the dollars, across the ruled division between the columns, or not at all — and all three are hers.",
       "match": "\\d+\\.\\d{2}\\b",
-      "count": 343,
-      "sheets": 106,
+      "count": 352,
+      "sheets": 109,
       "seen": [
         {
           "ledger": "dealers",
@@ -921,8 +921,8 @@
       "written": "$18 · $1200.",
       "means": "The dollar sign, which she writes above and to the left of the figure and often detached from it. It is easy to attach to the wrong column when reading, and it reaches Book IV's money column only in the 1940s and only on the largest sums.",
       "match": "\\$",
-      "count": 429,
-      "sheets": 138,
+      "count": 432,
+      "sheets": 139,
       "seen": [
         {
           "ledger": "dealers",
