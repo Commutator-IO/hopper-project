@@ -79,10 +79,12 @@ double quotes; italics inside a quotation are the writer’s own underlining; [i
 passage the transcriber could not read; a superscript query marks a reading the transcriber
 offered as doubtful. Struck-through text was struck through in the book. Nothing inside
 a quotation has been corrected. Every leaf citation is a hyperlink to the transcribed sheet
-beside its photograph on the editions site, and every notebook citation to the notebooks
-reading view. The works discussed are shown as empty frames drawn to the proportions
-of the size in Edward Hoppers hand, with a link to the holding museums own page: the
-images are in copyright and are not reproduced here. The figures redraw, from the same
+beside its photograph on the edition’s site, and every notebook citation to the notebook’s
+reading view. The works discussed are shown as schemas of their composition in main
+masses only, black and white, at the proportions of the size in Edward Hopper’s hand and
+with a link to the holding museum’s own page: the images are in copyright and are not
+reproduced, and the schemas are the writer’s reductions, made from the leaf’s description
+and general knowledge of the picture, not tracings. The figures redraw, from the same
 data files, the drawings the site makes, and each is signed.
 
 
