@@ -73,7 +73,9 @@ the inconsistency is transcribed:
   `Crowninshield` on leaves 6 and 10, `Cromwinshield` on leaf 12. All stay.
 - **Grace Horn's Coffee House** *(leaf 16)* — the Gloucester tea room was Grace
   Horne's. As written.
-- **Shicago** *(leaf 8)* — for Chicago, once, on the Logan Prize line.
+- **Chicago** *(leaf 8)* — the Logan Prize line was read « Shicago » by the
+  first pass and a person checking the leaf found « Chicago »: the C is a C.
+  Do not read a misspelling into a plain letter.
 - **Cuninham**, **Kleeman**, **Milch**, **Babcock**, **H. V. Allison**,
   **Sidney Phillips**, **E. P. Jennings**, **Zigrosser** — all recur.
 - **Zigrosser** — Carl Zigrosser, Philadelphia Museum.
