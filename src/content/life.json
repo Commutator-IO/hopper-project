@@ -1,5 +1,5 @@
 {
-  "note": "Edward Hopper's life, kept to what a named source states. Every entry carries the source that says it and a link to that page; nothing here is written from memory, and where two sources disagree the entry says so rather than choosing quietly. This is a reminder for somebody reading a dated ledger leaf — not a biography, and not a substitute for one. From 2026 the black notebook of Josephine Hopper, transcribed on this site, is one of the sources: what it states is quoted in her words and linked to the page she wrote it on, and the pictures and journeys in it are as often hers as his. From September 2026 two of the five parts of Madeleine Larson's typed transcripts at PAAM are sources too — Parts I and V, read page by page off the scans, since they carry no text layer; Parts II to IV are not yet read. Each event names the part and the typescript's own page number.",
+  "note": "Edward Hopper's life, kept to what a named source states. Every entry carries the source that says it and a link to that page; nothing here is written from memory, and where two sources disagree the entry says so rather than choosing quietly. This is a reminder for somebody reading a dated ledger leaf — not a biography, and not a substitute for one. From 2026 the black notebook of Josephine Hopper, transcribed on this site, is one of the sources: what it states is quoted in her words and linked to the page she wrote it on, and the pictures and journeys in it are as often hers as his. From September 2026 two of the five parts of Madeleine Larson's typed transcripts at PAAM are sources too — all five parts, read page by page off the scans, since they carry no text layer — 389 typescript pages. Each event names the part and the typescript's own page number.",
   "sources": {
     "whitney-artist": {
       "name": "Whitney Museum of American Art, artist page",
@@ -32,6 +32,18 @@
     "paam-v": {
       "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
       "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
+    },
+    "paam-ii": {
+      "name": "Josephine Hopper's diaries, Part II, 1938–1940 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+      "url": "https://drive.google.com/file/d/1PV90IsBXrhs42sCk6op29pJDCUJCAopo/view"
+    },
+    "paam-iii": {
+      "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+      "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+    },
+    "paam-iv": {
+      "name": "Josephine Hopper's diaries, Part IV, 1942–1944 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+      "url": "https://drive.google.com/file/d/15nHPqf5zK_WnU73_XuqXIw6gEKeClXiw/view"
     }
   },
   "events": [
@@ -301,6 +313,136 @@
       }
     },
     {
+      "year": 1938,
+      "date": "February–March",
+      "what": "« Va. Mus. jury at Budworth — Eddy, John Carroll, Karfiol, Hopkinson, Daniel Garber » (February 17); « My Eddy off to Richmond » (February 22); and on March 13, « E. not one canvas for nearly a yr — last Ap — did 5 A.M. — no canvas since. »",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 84
+      }
+    },
+    {
+      "year": 1938,
+      "date": "March",
+      "what": "« Eddy started a little canvas — girl in a pulman. Had me pose for the figure by night light in big pokey hat & hair down. This the first canvas for nearly a year since 5 A.M. (Lighthouse) » — the day before the Architectural League dinner of March 17; « E. showed me his Pulman picture just finished » on the 28th, and it went up to the gallery on the 30th.",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 87
+      }
+    },
+    {
+      "year": 1938,
+      "date": "May",
+      "what": "« E. wants to change over to Windsor Newton oils — So I'm to inherit gold Rembrandt colors. » May 18 — the change of colourman the Technique tab reads off the ledgers, dated by her to the week.",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 91
+      }
+    },
+    {
+      "year": 1938,
+      "date": "June–July",
+      "what": "« Letter from Anne Tucker at Bar Harbor inclosing letter from friend in Paris who had seen the Lighthouse — hung in place of honor at the Jeu de Pommes show » (June 14). July 9: « Anniversary — & E. doing his very best not to start or participate in any fociferous difference ». July 18: « The lease of the Wash. Sq. studio has come — rent raised somewhat », and a beam to be run through the studio.",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 57
+      }
+    },
+    {
+      "year": 1938,
+      "date": "August–September",
+      "what": "Boston, August 1 to 4: Dr. Ragle, then « Mass. General ... At Phillips House the desk sent me to 603 » for two days of tests — « Paid bill at Hospital — 95.14 » — and « so many things that E's symptoms might indicate he has not any at all. No anemia ... extra systoles ... not a thyroid case at all »; Benzedrine and vitamin C prescribed. Then « Aug. 19–Sept. 25 — S. Royalton, Vt. E. got 5 or 6 watercolors — 2 others could not be finished because hurricane had changed the landscape. »",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 71
+      }
+    },
+    {
+      "year": 1938,
+      "date": "November–December",
+      "what": "« Rehn Gal. to bring up pictures — Frank saw us & we all looked over the season's catch — 8 water colors — 4 large, 4 small (14x20) » (November 25); November 6, « E. answers a very nice letter from Homer St. Gaudens about his picture at the Carnegie International & Early Sun. A.M. borrowed from the Whitney Museum »; December 16, « E. busy making crayon drawings — all dark — of curtained entrance to a box at the theatre »; December 29, « Canvas has acquired 1st rough coat of paint — blocked in. »",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 92
+      }
+    },
+    {
+      "year": 1939,
+      "date": "January–February",
+      "what": "« E in studio wrestling with a dark movie interior. It is such a difficult subject. Dusk is always so difficult » (January 1); « Took N.Y. Movie House up to Rehn Gal — where greeted like a new born heir » (February 2), the same day « The City, rescued by auction » from the Duncan Phillips sale « is restored to its original habitat ».",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 96
+      }
+    },
+    {
+      "year": 1939,
+      "date": "April",
+      "what": "« E home in peace — made 2 fine sketches of new canvas. Bridal path in Central Park with the city outside — riders on the path » (April 2); « He starting a new canvas — praise be ... Every A.M. he goes up to Central Park to get more data » (April 4); « E went out early to look up horses in old magazines. He has a little book of horse anatomy » (April 7); « Men Women & Horses finished, signed & varnished in much hurry to get it up to Rehn Gallery » (April 27).",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 109
+      }
+    },
+    {
+      "year": 1939,
+      "date": "September",
+      "what": "« Augustus St. Gaudens came to see us ... I'm invited too to the Carnegie International at Pittsburgh — late in Sept. E. & Speicher to 2 Amer. members of the jury » (May 9); « Pittsburgh Expedition. Tues. Sept. 26–Sat. Sept. 30 Carnegie jury of award » — « E had come to vote for [Utrillo] — had had a wretched canvas ».",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 116
+      }
+    },
+    {
+      "year": 1939,
+      "date": "November–December",
+      "what": "« [Helen Hayes' House] ... they're so anxious for E to paint it and E. has been trying to side step it, but Frank Rehn so wants E. to do it » (November 3); « He hates the imposed job of painting Helen Hayes' house » (November 8); « E. got canvas stretched ... 40 x 28 or so ... He's taking it from his 2\" sketch in crayon » (November 19); « E & I took up to the Rehn Gallery the finished portrait of Pretty Penny » (December 21) — and « E gave me the beautiful drawing of the Helen Hayes house », the drawing the black notebook lists on page 59.",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 117
+      }
+    },
+    {
+      "year": 1940,
+      "date": "February",
+      "what": "« E. has new picture drawn in charcoal — had 2 highly finished crayon sketches ... It's a business office with older man at his desk & secretary, female fishing in a filing cabinet. I'm to pose for the same to night in a light skirt » (February 1); « We take Office at Night up to Rehn Gallery. It most graciously rec'd. Attempts at christening; John Clancy suggesting: Cordially yours; Room 1566 » (February 22). Frank Rehn phoned that « someone in movie world named Robinson has bought Sunlight on Prospect St. »",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 121
+      }
+    },
+    {
+      "year": 1940,
+      "date": "April–May",
+      "what": "« E. wanted to ask whether Frank particularly wanted him to go do jury duty for the Chicago Art Institute next fall. No — said Frank — it would only cut short his summer and fall painting season, that one more canvas would be worth far more ... Chop Suey hangs in the front room — color far richer than when E painted it » (April 25). « E. painting Civil War artillery all day » (April 29); « We took Light Artillery Before Gettysburg up to Rehn Gallery. Frank and John gave it — as usual — the warmest reception » (May 8).",
+      "source": "paam-ii",
+      "typescript": {
+        "part": "II",
+        "page": 124
+      }
+    },
+    {
+      "year": 1940,
+      "date": "June–August",
+      "what": "South Truro from June 2; « We got a P.O. box to day — #51 » (June 12); « the loss of that fine old S. Tr. church has denuded the hills » — the church of the etching, burnt; July 18, Boston: « Dr. Ragle ... E. has been better this past winter than he's been in 10 yrs. »; August 12, « E. painted little grey house ... the find he made down Eastham back road. »",
+      "source": "paam-iii",
+      "typescript": {
+        "part": "III",
+        "page": 129
+      }
+    },
+    {
       "year": 1941,
       "what": "« Trip West - Calif., Oregon, Wyoming. »; the forward chronicle of page 44 gives it as « Las Vegas, Los Angeles, Frisco, Portland, O. - Cape », with « Columbia R. » in the margin.",
       "source": "black-notebook",
@@ -311,10 +453,60 @@
       }
     },
     {
+      "year": 1941,
+      "date": "May–July",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": "paam-iii",
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "year": 1941,
+      "date": "August–October",
+      "what": "« Peggy Rehn dead » (August 4). September 4: « he gets started on 1st canvas in months ... He hadn't done a canvas since last winter — the burlesque queen — that I posed for before stove. He did 3 good watercolors on the 'grand tour' west »; « tall sailboats one sailing parallel with a grassy hill ... a summer cottage at right side of bluff — got a cupola » (September 5); September 19, Boston, « Dr. R. has put E. on an experiment with pituitary gland ». October 15: « E. went down to Eastham to have another look at house & barn formations he's had an eye on for years & has now started a canvas ... a lot of pavement across front »; October 30: « Yesterday E. finished his picture of the long stretch of handsomely kept up farm house & barn on the road along Eastham way. I'm relieved to have him put in the streak of white — traffic line — across big expanse of grey road. » « E. has 2 fine big ones. »",
+      "source": "paam-iii",
+      "typescript": {
+        "part": "III",
+        "page": 192
+      }
+    },
+    {
       "year": 1942,
       "what": "“Nighthawks”, his most acclaimed composition.",
       "source": "whitney-artist",
       "key": true
+    },
+    {
+      "year": 1942,
+      "date": "March–April",
+      "what": "March 17, the Rousseau opening at the Museum of Modern Art: « We met M. Rich of the Chicago Art Inst. there ... He spoke enthusiastically about 'Gas' and I said he must stop in at Rehns to see Nighthawks. » April 20, « E. and I go to funeral of Gertrude Whitney at St. Bartholomew's »; April 21, « E. had changed his canvas — R.R. platform — onto heavier stretchers »; April 28, « E finishes Dawn in Pennsylvania and makes sketch of it in ledger & I write color notes » — the record books being written, in her words.",
+      "source": "paam-iv",
+      "typescript": {
+        "part": "IV",
+        "page": 206
+      }
+    },
+    {
+      "year": 1942,
+      "date": "May",
+      "what": "« Frank Rehn phoned to say the Chicago Art Institute has bought Night Hawks — but is returning a smaller canvas — Girl in Pulman at Night — in partial payment. Not so good to get it back — but fine to have Night Hawks installed in what one hopes a safe place. Frank told E. that he had shown Alfred Barr of the Modern Art Mus. E's latest — Dawn in Pa. — empty R.R. Station & Barr had said he thinks E.H. — the most exciting painter in America » (May 11); « got fat check for Night Hawks. Girl in Pulman returned from Art Inst. in a new frame, most unbecoming » (May 13); « E. collected 2nd load of early canvases left from show of early work, Jan. 41 » (May 28).",
+      "source": "paam-iv",
+      "typescript": {
+        "part": "IV",
+        "page": 211
+      }
+    },
+    {
+      "year": 1942,
+      "date": "June–October",
+      "what": "At South Truro from June 10, and « This is an entirely wasted summer for painting ... E. began a second water color down near Cobb house but paper gets too soaked to work. He can't afford to use tires to go hunting down in his own particular happy hunting ground at Eastham » (September 17); « E isn't getting any pictures this summer with the worst painting weather until just now & gasoline rationing & need to skimp on use of tires » (October 13). « In same mail check from Frank for Dawn in Penn. » (July 18).",
+      "source": "paam-iv",
+      "typescript": {
+        "part": "IV",
+        "page": 217
+      }
     },
     {
       "year": 1943,
@@ -327,6 +519,15 @@
       }
     },
     {
+      "year": 1943,
+      "what": "The whole of the year in the typescript is one sheet of three lines: « Mar. — Trip to Washington — Corcoran Gallery / 1943 Mexico — late June — Oct. 1\" / 1944 — South Truro. »",
+      "source": "paam-iv",
+      "typescript": {
+        "part": "IV",
+        "page": 236
+      }
+    },
+    {
       "year": 1944,
       "date": "September",
       "what": "« E. has begun a new canvas: here and row of trees of right, broad road on left » — September 25, at South Truro; « E got a fine start with his canvas » on October 1. Page 325 opens with the same four lines of chronicle the black notebook carries on its page 21.",
@@ -334,6 +535,36 @@
       "typescript": {
         "part": "V",
         "page": 325
+      }
+    },
+    {
+      "year": 1944,
+      "date": "June–July",
+      "what": "« June 21, '44 Wed. Left N.Y.C. » with a night at the du Bois's in Stonington; June 22, South Truro: no water, « word had gone forth by underground last year that those Hoppers had gone to Mexico, so a gang of mice had moved in »; « we are indeed fortunate to find so little the matter with everything when we'd been gone nearly 2 years ». July: the car's engine out in Boston, and Dr. Butterfield at the Cape Cod Hospital for E.",
+      "source": "paam-iv",
+      "typescript": {
+        "part": "IV",
+        "page": 237
+      }
+    },
+    {
+      "year": 1944,
+      "date": "August–September",
+      "what": "« E. stretches canvas for sketch he has concocted. Praise be — it's a sail boat. It's been so hard for E. to get started this year — the house, the car, his health » (August 10); « Martha, Reggie & E. sailed in little borrowed boat » (August 12); « He is now answering Rolland McKinney's request for drawings for exhibit at Mus. of Hist. Science and Art in Los Angeles » (August 23); « Paris has been retaken! » by the Lombard radio (August 25); « I go out on R.R. wharf to look at guls ... so that E. could get good look at guls for his present canvas » (September 2); « The canvas is getting along fine — it's an all blue picture sea & sky — It might be E. himself at the rigger »; « He sais he isn't painting fact in this picture — but thought » (September 8).",
+      "source": "paam-iv",
+      "typescript": {
+        "part": "IV",
+        "page": 255
+      }
+    },
+    {
+      "year": 1944,
+      "date": "September",
+      "what": "« Fri. Sept. 15\". The Hurricane of 1944 » — « we have known high winds here in the fall & we fell asleep. It was after 1 I awoke — such a din of wind & deluge — it felt as though the house was down on the beach instead of 60 ft. above »; « The little house stands firm, except that windows may have been sand scratched — not a thing the matter. » « E. has one canvas the sail boat with bar guls — which he doesn't like ... this the 15\" year » (September 14); « summer is gone, no pictures » (September 18).",
+      "source": "paam-iv",
+      "typescript": {
+        "part": "IV",
+        "page": 306
       }
     },
     {
@@ -672,6 +903,14 @@
     {
       "about": "How many times the studio was burgled",
       "what": "Three, if the two sources are read together, and neither says so. The typescript's Part I has the telegram of November 1936; its Part V has « fall of 1947 trunks in cellar pried open with an ax, most everything else toted off by vandals »; the black notebook has « burglar Feb. 11\", 58 » on page 19 and, on page 3, frames put on a shelf « Nov. 1948 — from trunk in basement (burglars) », where the word is doubtful. The 1948 frames and the 1947 trunks may be one event."
+    },
+    {
+      "about": "A diary typed twice under two years",
+      "what": "Pages 219 to 235 of Part IV are headed « 1942 II Summer — S. Truro », and every entry on them — the trip west, Peggy Rehn's death, the sailboat canvas of September — is the 1941 diary that Part III already carries on pages 191 to 204 under its own year. The typescript's heading is a slip; nothing from those pages is booked under 1942 here."
+    },
+    {
+      "about": "Which day the Institute dinner fell on in 1955",
+      "what": "Part V's page 360 has the Institute of Arts and Letters dinner at the Knickerbocker Club « on Nov. 15 » in 1950; its page 366 has one on « Mon. 14 Nov. » in 1955. Two dinners five years apart, or one misremembered: the typescript does not say, and both stand."
     }
   ]
 }

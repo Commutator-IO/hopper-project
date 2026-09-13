@@ -1,8 +1,9 @@
 {
-  "generated": "2026-09-13T06:59:38.032Z",
+  "generated": "2026-09-13T16:44:01.838Z",
   "note": "Hand-declared. Every place here is one a named source in life.json puts Edward Hopper at, and every move cites the life.json event that states it. Nothing is typed from memory: `npm run places` refuses a move whose event it cannot find, and the coordinates are retrieved from OpenStreetMap rather than written down. What this is not is an itinerary — see `means` below, which is printed on the page beside the drawing. A place's `short` is the name the second drawing uses, where twenty-six places share one frame and the New England ones sit forty pixels apart.",
   "means": "An arrow runs between the places two consecutive place-naming events in life.json name, in year order, and carries the later one's year. It is the order two records fall in, not a journey anybody wrote down: no source here says how or exactly when he went, and the ledgers — which record what left the studio, not where he was — cannot say either. So the chain runs through Gloucester to Cape Cod without returning to Washington Square in between, because no sourced statement stands between them, and not because he was not living there. He was: the 1913 entry says he lived and worked there until his death.",
   "notebookMeans": "The second drawing is Josephine Hopper's year chronicle and her list « To get this straight » of the Mexican journeys, read for their places. Each year's arrows start from 3 Washington Square North — the home the 1913 entry gives — and run through the places her line names, in the order she wrote them; a return is drawn only where she wrote one (« - Cape », « return to Cape »). Nothing else is inferred: a year whose line names no journey draws nothing, the winters between the lines are not drawn, and « Frisco » and « Portland, O. » are her words for the two cities. It is her list, so the journeys are the two of them, and some of the places are where she painted rather than he.",
+  "typescriptMeans": "The third drawing is the 1941 « Grand Tour of the West » and the 1946 Mexico journey as Madeleine Larson's typescripts of the diaries give them, day by day — a fuller route than the black notebook's one-line years. Each arrow is a place the entry names, in the order named; the source is the typescript's page. Nothing between the named places is drawn, and a stop she names without a date is left out.",
   "refused": [
     {
       "what": "The thirty places the transcriptions tag with `place:`",
@@ -304,6 +305,204 @@
       "lon": -71.0578303,
       "resolved": "Boston, Suffolk County, Massachusetts, United States",
       "query": "Boston, Massachusetts, USA"
+    },
+    {
+      "key": "st-louis",
+      "name": "St. Louis",
+      "short": "St. Louis",
+      "what": "« Yesterday in St. Louis » — May 26, 1941; the Art Museum and Perry Rathbone, « sorry to have no Hopper ».",
+      "note": null,
+      "lat": 38.6254063,
+      "lon": -90.190009,
+      "resolved": "Saint Louis, Missouri, United States",
+      "query": "St. Louis, Missouri, USA"
+    },
+    {
+      "key": "kansas-city",
+      "name": "Kansas City",
+      "short": "Kansas City",
+      "what": "« Kansas City Art Museum to Mr. Paul Gardner », May 28, 1941.",
+      "note": null,
+      "lat": 39.100105,
+      "lon": -94.5781416,
+      "resolved": "Kansas City, Jackson County, Missouri, United States",
+      "query": "Kansas City, Missouri, USA"
+    },
+    {
+      "key": "wichita",
+      "name": "Wichita",
+      "short": "Wichita",
+      "what": "« called at Art Mus. & saw '5 AM' », May 1941.",
+      "note": null,
+      "lat": 37.6922361,
+      "lon": -97.3375448,
+      "resolved": "Wichita, Sedgwick County, Kansas, United States",
+      "query": "Wichita, Kansas, USA"
+    },
+    {
+      "key": "colorado-springs",
+      "name": "Colorado Springs",
+      "short": "Colorado Spr.",
+      "what": "« There 3 days for E. to rest up after one week steady driving — covering 2000 miles », June 1941.",
+      "note": null,
+      "lat": 38.8339578,
+      "lon": -104.825348,
+      "resolved": "Colorado Springs, El Paso County, Colorado, United States",
+      "query": "Colorado Springs, Colorado, USA"
+    },
+    {
+      "key": "salt-lake-city",
+      "name": "Salt Lake City",
+      "short": "Salt Lake",
+      "what": "« E. & I went wading in Great Salt Lake », June 4, 1941.",
+      "note": null,
+      "lat": 40.7596198,
+      "lon": -111.886797,
+      "resolved": "Salt Lake City, Salt Lake County, Utah, United States",
+      "query": "Salt Lake City, Utah, USA"
+    },
+    {
+      "key": "bryce-canyon",
+      "name": "Bryce Canyon",
+      "short": "Bryce",
+      "what": "« Off for Bryce Cannon via Red Cannon », June 6, 1941.",
+      "note": null,
+      "lat": 37.5707948,
+      "lon": -112.1855939,
+      "resolved": "Bryce Canyon National Park, Tropic, Garfield County, Utah, United States",
+      "query": "Bryce Canyon National Park, Utah, USA"
+    },
+    {
+      "key": "grand-canyon",
+      "name": "Grand Canyon",
+      "short": "Grand Canyon",
+      "what": "« Entering Grand Cannon — 10:30 or thereabout. $1 », June 1941.",
+      "note": null,
+      "lat": 36.057807,
+      "lon": -112.128156,
+      "resolved": "Grand Canyon Village, Coconino County, Arizona, United States",
+      "query": "Grand Canyon Village, Arizona, USA"
+    },
+    {
+      "key": "zion",
+      "name": "Zion",
+      "short": "Zion",
+      "what": "« We decided Zion Cannon finest yet », June 1941.",
+      "note": null,
+      "lat": 37.3221673,
+      "lon": -113.0047934,
+      "resolved": "Zion National Park, Washington County, Utah, United States",
+      "query": "Zion National Park, Utah, USA"
+    },
+    {
+      "key": "yuma",
+      "name": "Yuma",
+      "short": "Yuma",
+      "what": "« Yuma — Inspectors — look thru all cavities of car », June 9, 1941.",
+      "note": null,
+      "lat": 32.7210307,
+      "lon": -114.6203217,
+      "resolved": "Yuma, Yuma County, Arizona, United States",
+      "query": "Yuma, Arizona, USA"
+    },
+    {
+      "key": "santa-barbara",
+      "name": "Santa Barbara",
+      "short": "Santa Barbara",
+      "what": "« Leaving Santa Barbara », June 14, 1941.",
+      "note": null,
+      "lat": 34.4221319,
+      "lon": -119.702667,
+      "resolved": "Santa Barbara, Santa Barbara County, California, United States",
+      "query": "Santa Barbara, California, USA"
+    },
+    {
+      "key": "carmel",
+      "name": "Carmel",
+      "short": "Carmel",
+      "what": "« hunt for San Carlos Mission », June 15, 1941.",
+      "note": null,
+      "lat": 36.5552656,
+      "lon": -121.923278,
+      "resolved": "Carmel-by-the-Sea, Monterey County, California, United States",
+      "query": "Carmel-by-the-Sea, California, USA"
+    },
+    {
+      "key": "yosemite",
+      "name": "Yosemite",
+      "short": "Yosemite",
+      "what": "« It's been a second honeymoon », June 17, 1941.",
+      "note": null,
+      "lat": 37.7327236,
+      "lon": -119.6057042,
+      "resolved": "Yosemite Valley, Yosemite Village, Mariposa County, California, United States",
+      "query": "Yosemite Valley, California, USA"
+    },
+    {
+      "key": "san-mateo",
+      "name": "San Mateo",
+      "short": "San Mateo",
+      "what": "« We have been one week now at San Mateo — at the Cobb's Tourists Court », June 1941; the watercolour of the old house with two palms.",
+      "note": null,
+      "lat": 37.496904,
+      "lon": -122.3330573,
+      "resolved": "San Mateo County, California, United States",
+      "query": "San Mateo, California, USA"
+    },
+    {
+      "key": "yellowstone",
+      "name": "Yellowstone",
+      "short": "Yellowstone",
+      "what": "« Via Yellowstone since yesterday », July 1941; « After leave Yellow Stone park, we came into another one — the less publicized Shoshone Valley ». In 1946, « going on thru Yellow Stone » on the way home from the Tetons.",
+      "note": null,
+      "lat": 44.6200885,
+      "lon": -110.5606893,
+      "resolved": "Yellowstone National Park, Wyoming, United States",
+      "query": "Yellowstone National Park, Wyoming, USA"
+    },
+    {
+      "key": "wapiti",
+      "name": "Wapiti, Wyoming",
+      "short": "Wapiti",
+      "what": "« The Green Lantern, Wapiti, Wyoming — Camp & P.O. »; « E. began water color at the base of the Holy City rock formations », July 1941.",
+      "note": null,
+      "lat": 44.4685829,
+      "lon": -109.4376315,
+      "resolved": "Wapiti, Park County, Wyoming, 82450, United States",
+      "query": "Wapiti, Wyoming, USA"
+    },
+    {
+      "key": "cleveland",
+      "name": "Cleveland",
+      "short": "Cleveland",
+      "what": "« Cleveland such a dingy dump », July 21, 1941.",
+      "note": null,
+      "lat": 41.4996574,
+      "lon": -81.6936772,
+      "resolved": "Cleveland, Cuyahoga County, Ohio, United States",
+      "query": "Cleveland, Ohio, USA"
+    },
+    {
+      "key": "san-antonio",
+      "name": "San Antonio",
+      "short": "San Antonio",
+      "what": "« In San Antonio & Loredo », May 15, 1946.",
+      "note": null,
+      "lat": 29.4246002,
+      "lon": -98.4951405,
+      "resolved": "San Antonio, Bexar County, Texas, United States",
+      "query": "San Antonio, Texas, USA"
+    },
+    {
+      "key": "laredo",
+      "name": "Laredo",
+      "short": "Laredo",
+      "what": "The border, May 1946.",
+      "note": null,
+      "lat": 27.5079211,
+      "lon": -99.5069834,
+      "resolved": "Laredo, Webb County, Texas, United States",
+      "query": "Laredo, Texas, USA"
     }
   ],
   "moves": [
@@ -899,6 +1098,438 @@
         "notebook": "black-notebook",
         "ref": 97387,
         "page": "60–61"
+      }
+    },
+    {
+      "from": "washington-square",
+      "to": "st-louis",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "st-louis",
+      "to": "kansas-city",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "kansas-city",
+      "to": "wichita",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "wichita",
+      "to": "colorado-springs",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "colorado-springs",
+      "to": "salt-lake-city",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "salt-lake-city",
+      "to": "bryce-canyon",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "bryce-canyon",
+      "to": "grand-canyon",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "grand-canyon",
+      "to": "zion",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "zion",
+      "to": "las-vegas",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "las-vegas",
+      "to": "yuma",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "yuma",
+      "to": "los-angeles",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "los-angeles",
+      "to": "santa-barbara",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "santa-barbara",
+      "to": "carmel",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "carmel",
+      "to": "yosemite",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "yosemite",
+      "to": "san-mateo",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "san-mateo",
+      "to": "portland",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "portland",
+      "to": "yellowstone",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "yellowstone",
+      "to": "wapiti",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "wapiti",
+      "to": "cleveland",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "cleveland",
+      "to": "nyack",
+      "year": 1941,
+      "graph": "typescript",
+      "what": "« Summer 1941 — Grand Tour of the West »: May 23, « off, full sail, for California »; St. Louis, where Perry Rathbone « said he was sorry to have no Hopper » and E. told him of « E's 'gas' — filing station with familiar taking of the flying red horse ... E. promptly volunteered: 'It's no good!' »; Kansas City, Wichita (« saw '5 AM' »), Colorado Springs, the Berthoud Pass « in our late Buick, 1935 brand. This 39 is doing it beautifully », Salt Lake, Bryce, the Grand Canyon, Zion, Las Vegas, Boulder Dam, Yuma; « E. did Los Angeles on his own all Tues. When he came back said 'Oh boy, you stay right where you are — Los Ang. is horrible!' »; Walter Arensberg's collection; Santa Barbara, Carmel; Yosemite, « a second honeymoon »; San Francisco and a week at San Mateo, where « E. finished sketch of that fine old house with 2 palm trees »; the redwoods, the Oregon coast, Portland, Yellowstone, Wapiti, Wyoming — « E. began water color at the base of the Holy City rock formations » — the Bad Lands, Cleveland, and Nyack on July 22: « This is the 60\" day & the last lap of a gorgeous trip from ocean to ocean and back again ... This is E's birthday ... This A.M. we came to our 10,000 miles. » « E. sais 'curious & wonderful but not moving to him — they have no associations for him.' »",
+      "source": {
+        "key": "paam-iii",
+        "name": "Josephine Hopper's diaries, Part III, 1940–1942 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1cc14lQjV2d8qYY9NxmzD0lupUGfGdXS7/view"
+      },
+      "typescript": {
+        "part": "III",
+        "page": 135
+      }
+    },
+    {
+      "from": "washington-square",
+      "to": "san-antonio",
+      "year": 1946,
+      "graph": "typescript",
+      "what": "« We finally set forth for Mexico » — May 7; San Antonio and Laredo on the 15th, « climbing one of the Sierra Madres on the way to Monterrey » on the 16th, then Saltillo, where « E. — a watercolor of housetops » and « E. says he feels like a prisoner here — waiting for a sky ». July 2, « Left Sortillo — in Texas three days, corner of N. Mexico, and Colorado »; « Wyoming 10 days », where « E. gets a fine watercolor of Mt. Morain »; through Yellowstone and Shoshone Canyon; « Back to N.Y. City Sat. July 27 ».",
+      "source": {
+        "key": "paam-v",
+        "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
+      },
+      "typescript": {
+        "part": "V",
+        "page": 332
+      }
+    },
+    {
+      "from": "san-antonio",
+      "to": "laredo",
+      "year": 1946,
+      "graph": "typescript",
+      "what": "« We finally set forth for Mexico » — May 7; San Antonio and Laredo on the 15th, « climbing one of the Sierra Madres on the way to Monterrey » on the 16th, then Saltillo, where « E. — a watercolor of housetops » and « E. says he feels like a prisoner here — waiting for a sky ». July 2, « Left Sortillo — in Texas three days, corner of N. Mexico, and Colorado »; « Wyoming 10 days », where « E. gets a fine watercolor of Mt. Morain »; through Yellowstone and Shoshone Canyon; « Back to N.Y. City Sat. July 27 ».",
+      "source": {
+        "key": "paam-v",
+        "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
+      },
+      "typescript": {
+        "part": "V",
+        "page": 332
+      }
+    },
+    {
+      "from": "laredo",
+      "to": "monterrey",
+      "year": 1946,
+      "graph": "typescript",
+      "what": "« We finally set forth for Mexico » — May 7; San Antonio and Laredo on the 15th, « climbing one of the Sierra Madres on the way to Monterrey » on the 16th, then Saltillo, where « E. — a watercolor of housetops » and « E. says he feels like a prisoner here — waiting for a sky ». July 2, « Left Sortillo — in Texas three days, corner of N. Mexico, and Colorado »; « Wyoming 10 days », where « E. gets a fine watercolor of Mt. Morain »; through Yellowstone and Shoshone Canyon; « Back to N.Y. City Sat. July 27 ».",
+      "source": {
+        "key": "paam-v",
+        "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
+      },
+      "typescript": {
+        "part": "V",
+        "page": 332
+      }
+    },
+    {
+      "from": "monterrey",
+      "to": "saltillo",
+      "year": 1946,
+      "graph": "typescript",
+      "what": "« We finally set forth for Mexico » — May 7; San Antonio and Laredo on the 15th, « climbing one of the Sierra Madres on the way to Monterrey » on the 16th, then Saltillo, where « E. — a watercolor of housetops » and « E. says he feels like a prisoner here — waiting for a sky ». July 2, « Left Sortillo — in Texas three days, corner of N. Mexico, and Colorado »; « Wyoming 10 days », where « E. gets a fine watercolor of Mt. Morain »; through Yellowstone and Shoshone Canyon; « Back to N.Y. City Sat. July 27 ».",
+      "source": {
+        "key": "paam-v",
+        "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
+      },
+      "typescript": {
+        "part": "V",
+        "page": 332
+      }
+    },
+    {
+      "from": "saltillo",
+      "to": "grand-teton",
+      "year": 1946,
+      "graph": "typescript",
+      "what": "« We finally set forth for Mexico » — May 7; San Antonio and Laredo on the 15th, « climbing one of the Sierra Madres on the way to Monterrey » on the 16th, then Saltillo, where « E. — a watercolor of housetops » and « E. says he feels like a prisoner here — waiting for a sky ». July 2, « Left Sortillo — in Texas three days, corner of N. Mexico, and Colorado »; « Wyoming 10 days », where « E. gets a fine watercolor of Mt. Morain »; through Yellowstone and Shoshone Canyon; « Back to N.Y. City Sat. July 27 ».",
+      "source": {
+        "key": "paam-v",
+        "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
+      },
+      "typescript": {
+        "part": "V",
+        "page": 332
+      }
+    },
+    {
+      "from": "grand-teton",
+      "to": "yellowstone",
+      "year": 1946,
+      "graph": "typescript",
+      "what": "« We finally set forth for Mexico » — May 7; San Antonio and Laredo on the 15th, « climbing one of the Sierra Madres on the way to Monterrey » on the 16th, then Saltillo, where « E. — a watercolor of housetops » and « E. says he feels like a prisoner here — waiting for a sky ». July 2, « Left Sortillo — in Texas three days, corner of N. Mexico, and Colorado »; « Wyoming 10 days », where « E. gets a fine watercolor of Mt. Morain »; through Yellowstone and Shoshone Canyon; « Back to N.Y. City Sat. July 27 ».",
+      "source": {
+        "key": "paam-v",
+        "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
+      },
+      "typescript": {
+        "part": "V",
+        "page": 332
+      }
+    },
+    {
+      "from": "yellowstone",
+      "to": "washington-square",
+      "year": 1946,
+      "graph": "typescript",
+      "what": "« We finally set forth for Mexico » — May 7; San Antonio and Laredo on the 15th, « climbing one of the Sierra Madres on the way to Monterrey » on the 16th, then Saltillo, where « E. — a watercolor of housetops » and « E. says he feels like a prisoner here — waiting for a sky ». July 2, « Left Sortillo — in Texas three days, corner of N. Mexico, and Colorado »; « Wyoming 10 days », where « E. gets a fine watercolor of Mt. Morain »; through Yellowstone and Shoshone Canyon; « Back to N.Y. City Sat. July 27 ».",
+      "source": {
+        "key": "paam-v",
+        "name": "Josephine Hopper's diaries, Part V, 1944–1956 — typed transcript by Madeleine Larson, Provincetown Art Association and Museum (scan, read page by page here)",
+        "url": "https://drive.google.com/file/d/1h4tbq1U98PwFr-EGV7YeiRgwHM5DbGwX/view"
+      },
+      "typescript": {
+        "part": "V",
+        "page": 332
       }
     }
   ]

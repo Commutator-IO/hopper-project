@@ -184,6 +184,132 @@
       "query": "Boston, Massachusetts, USA",
       "what": "« T.V. performance at Boston Mus. », April 1961; the 1950 retrospective's second stop.",
       "short": "Boston"
+    },
+    {
+      "key": "st-louis",
+      "name": "St. Louis",
+      "query": "St. Louis, Missouri, USA",
+      "what": "« Yesterday in St. Louis » — May 26, 1941; the Art Museum and Perry Rathbone, « sorry to have no Hopper ».",
+      "short": "St. Louis"
+    },
+    {
+      "key": "kansas-city",
+      "name": "Kansas City",
+      "query": "Kansas City, Missouri, USA",
+      "what": "« Kansas City Art Museum to Mr. Paul Gardner », May 28, 1941.",
+      "short": "Kansas City"
+    },
+    {
+      "key": "wichita",
+      "name": "Wichita",
+      "query": "Wichita, Kansas, USA",
+      "what": "« called at Art Mus. & saw '5 AM' », May 1941.",
+      "short": "Wichita"
+    },
+    {
+      "key": "colorado-springs",
+      "name": "Colorado Springs",
+      "query": "Colorado Springs, Colorado, USA",
+      "what": "« There 3 days for E. to rest up after one week steady driving — covering 2000 miles », June 1941.",
+      "short": "Colorado Spr."
+    },
+    {
+      "key": "salt-lake-city",
+      "name": "Salt Lake City",
+      "query": "Salt Lake City, Utah, USA",
+      "what": "« E. & I went wading in Great Salt Lake », June 4, 1941.",
+      "short": "Salt Lake"
+    },
+    {
+      "key": "bryce-canyon",
+      "name": "Bryce Canyon",
+      "query": "Bryce Canyon National Park, Utah, USA",
+      "what": "« Off for Bryce Cannon via Red Cannon », June 6, 1941.",
+      "short": "Bryce"
+    },
+    {
+      "key": "grand-canyon",
+      "name": "Grand Canyon",
+      "query": "Grand Canyon Village, Arizona, USA",
+      "what": "« Entering Grand Cannon — 10:30 or thereabout. $1 », June 1941.",
+      "short": "Grand Canyon"
+    },
+    {
+      "key": "zion",
+      "name": "Zion",
+      "query": "Zion National Park, Utah, USA",
+      "what": "« We decided Zion Cannon finest yet », June 1941.",
+      "short": "Zion"
+    },
+    {
+      "key": "yuma",
+      "name": "Yuma",
+      "query": "Yuma, Arizona, USA",
+      "what": "« Yuma — Inspectors — look thru all cavities of car », June 9, 1941.",
+      "short": "Yuma"
+    },
+    {
+      "key": "santa-barbara",
+      "name": "Santa Barbara",
+      "query": "Santa Barbara, California, USA",
+      "what": "« Leaving Santa Barbara », June 14, 1941.",
+      "short": "Santa Barbara"
+    },
+    {
+      "key": "carmel",
+      "name": "Carmel",
+      "query": "Carmel-by-the-Sea, California, USA",
+      "what": "« hunt for San Carlos Mission », June 15, 1941.",
+      "short": "Carmel"
+    },
+    {
+      "key": "yosemite",
+      "name": "Yosemite",
+      "query": "Yosemite Valley, California, USA",
+      "what": "« It's been a second honeymoon », June 17, 1941.",
+      "short": "Yosemite"
+    },
+    {
+      "key": "san-mateo",
+      "name": "San Mateo",
+      "query": "San Mateo, California, USA",
+      "what": "« We have been one week now at San Mateo — at the Cobb's Tourists Court », June 1941; the watercolour of the old house with two palms.",
+      "short": "San Mateo"
+    },
+    {
+      "key": "yellowstone",
+      "name": "Yellowstone",
+      "query": "Yellowstone National Park, Wyoming, USA",
+      "what": "« Via Yellowstone since yesterday », July 1941; « After leave Yellow Stone park, we came into another one — the less publicized Shoshone Valley ». In 1946, « going on thru Yellow Stone » on the way home from the Tetons.",
+      "short": "Yellowstone"
+    },
+    {
+      "key": "wapiti",
+      "name": "Wapiti, Wyoming",
+      "query": "Wapiti, Wyoming, USA",
+      "what": "« The Green Lantern, Wapiti, Wyoming — Camp & P.O. »; « E. began water color at the base of the Holy City rock formations », July 1941.",
+      "short": "Wapiti"
+    },
+    {
+      "key": "cleveland",
+      "name": "Cleveland",
+      "query": "Cleveland, Ohio, USA",
+      "what": "« Cleveland such a dingy dump », July 21, 1941.",
+      "short": "Cleveland"
+    },
+    {
+      "key": "san-antonio",
+      "name": "San Antonio",
+      "query": "San Antonio, Texas, USA",
+      "what": "« In San Antonio & Loredo », May 15, 1946.",
+      "short": "San Antonio"
+    },
+    {
+      "key": "laredo",
+      "name": "Laredo",
+      "query": "Laredo, Texas, USA",
+      "what": "The border, May 1946.",
+      "short": "Laredo"
     }
   ],
   "moves": [
@@ -438,6 +564,195 @@
       "year": 1961,
       "match": "Boston Mus.",
       "graph": "notebook"
+    },
+    {
+      "from": "washington-square",
+      "to": "st-louis",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "st-louis",
+      "to": "kansas-city",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "kansas-city",
+      "to": "wichita",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "wichita",
+      "to": "colorado-springs",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "colorado-springs",
+      "to": "salt-lake-city",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "salt-lake-city",
+      "to": "bryce-canyon",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "bryce-canyon",
+      "to": "grand-canyon",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "grand-canyon",
+      "to": "zion",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "zion",
+      "to": "las-vegas",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "las-vegas",
+      "to": "yuma",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "yuma",
+      "to": "los-angeles",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "los-angeles",
+      "to": "santa-barbara",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "santa-barbara",
+      "to": "carmel",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "carmel",
+      "to": "yosemite",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "yosemite",
+      "to": "san-mateo",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "san-mateo",
+      "to": "portland",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "portland",
+      "to": "yellowstone",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "yellowstone",
+      "to": "wapiti",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "wapiti",
+      "to": "cleveland",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "cleveland",
+      "to": "nyack",
+      "year": 1941,
+      "match": "Grand Tour of the West",
+      "graph": "typescript"
+    },
+    {
+      "from": "washington-square",
+      "to": "san-antonio",
+      "year": 1946,
+      "match": "We finally set forth for Mexico",
+      "graph": "typescript"
+    },
+    {
+      "from": "san-antonio",
+      "to": "laredo",
+      "year": 1946,
+      "match": "We finally set forth for Mexico",
+      "graph": "typescript"
+    },
+    {
+      "from": "laredo",
+      "to": "monterrey",
+      "year": 1946,
+      "match": "We finally set forth for Mexico",
+      "graph": "typescript"
+    },
+    {
+      "from": "monterrey",
+      "to": "saltillo",
+      "year": 1946,
+      "match": "We finally set forth for Mexico",
+      "graph": "typescript"
+    },
+    {
+      "from": "saltillo",
+      "to": "grand-teton",
+      "year": 1946,
+      "match": "We finally set forth for Mexico",
+      "graph": "typescript"
+    },
+    {
+      "from": "grand-teton",
+      "to": "yellowstone",
+      "year": 1946,
+      "match": "We finally set forth for Mexico",
+      "graph": "typescript"
+    },
+    {
+      "from": "yellowstone",
+      "to": "washington-square",
+      "year": 1946,
+      "match": "We finally set forth for Mexico",
+      "graph": "typescript"
     }
   ],
   "refused": [
@@ -450,5 +765,6 @@
       "why": "The same interpolation the timeline already refuses for dates. A leaf's date column is the day a work went to a dealer, not the day it was painted or the place it was painted in, and the ledgers are not in chronological order — Book I's etchings section correlates leaf number with year of making at r = −0.33."
     }
   ],
-  "notebookMeans": "The second drawing is Josephine Hopper's year chronicle and her list « To get this straight » of the Mexican journeys, read for their places. Each year's arrows start from 3 Washington Square North — the home the 1913 entry gives — and run through the places her line names, in the order she wrote them; a return is drawn only where she wrote one (« - Cape », « return to Cape »). Nothing else is inferred: a year whose line names no journey draws nothing, the winters between the lines are not drawn, and « Frisco » and « Portland, O. » are her words for the two cities. It is her list, so the journeys are the two of them, and some of the places are where she painted rather than he."
+  "notebookMeans": "The second drawing is Josephine Hopper's year chronicle and her list « To get this straight » of the Mexican journeys, read for their places. Each year's arrows start from 3 Washington Square North — the home the 1913 entry gives — and run through the places her line names, in the order she wrote them; a return is drawn only where she wrote one (« - Cape », « return to Cape »). Nothing else is inferred: a year whose line names no journey draws nothing, the winters between the lines are not drawn, and « Frisco » and « Portland, O. » are her words for the two cities. It is her list, so the journeys are the two of them, and some of the places are where she painted rather than he.",
+  "typescriptMeans": "The third drawing is the 1941 « Grand Tour of the West » and the 1946 Mexico journey as Madeleine Larson's typescripts of the diaries give them, day by day — a fuller route than the black notebook's one-line years. Each arrow is a place the entry names, in the order named; the source is the typescript's page. Nothing between the named places is drawn, and a stop she names without a date is left out."
 }

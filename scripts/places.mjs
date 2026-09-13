@@ -119,6 +119,8 @@ for (const m of decl.moves) {
     source: { key: e.source, name: src.name, url: src.url },
     // The page of the notebook the event is read off, when it is one.
     ...(e.sheet ? { sheet: e.sheet } : {}),
+    // The typescript part and page, when the event is read off one.
+    ...(e.typescript ? { typescript: e.typescript } : {}),
   });
 }
 
@@ -219,6 +221,7 @@ const out = {
   note: decl.note,
   means: decl.means,
   notebookMeans: decl.notebookMeans ?? null,
+  typescriptMeans: decl.typescriptMeans ?? null,
   refused: decl.refused,
   attribution: {
     name: 'OpenStreetMap Nominatim',

@@ -52,15 +52,17 @@ interface Move {
   from: string;
   to: string;
   year: number;
-  graph: 'life' | 'notebook';
+  graph: 'life' | 'notebook' | 'typescript';
   what: string;
   source: { key: string; name: string; url: string };
   sheet?: { notebook: string; ref: number; page: string };
+  typescript?: { part: string; page: number };
 }
 
 const DATA = travels as unknown as {
   means: string;
   notebookMeans: string | null;
+  typescriptMeans: string | null;
   refused: { what: string; why: string }[];
   attribution: { name: string; url: string; licence: string };
   places: Place[];
@@ -325,8 +327,9 @@ function layout(
   return { pos, clusters, labels, edges };
 }
 
-const LIFE_MOVES = DATA.moves.filter((m) => m.graph !== 'notebook');
+const LIFE_MOVES = DATA.moves.filter((m) => m.graph === 'life');
 const NOTEBOOK_MOVES = DATA.moves.filter((m) => m.graph === 'notebook');
+const TYPESCRIPT_MOVES = DATA.moves.filter((m) => m.graph === 'typescript');
 
 /** The Atlantic is where the life drawing breaks; nothing else separates the panels. */
 const LIFE = layout(placesOf(LIFE_MOVES), LIFE_MOVES, [
@@ -344,10 +347,24 @@ const NOTEBOOK = layout(
   (p) => p.short,
 );
 
+/** The typescripts' two journeys, in the same frame as the notebook's. */
+const TYPESCRIPT = layout(
+  placesOf(TYPESCRIPT_MOVES),
+  TYPESCRIPT_MOVES,
+  [{ of: () => true, box: [110, 800, 60, NH - 40] }],
+  (p) => p.short,
+);
+
 /** The source link of a move: a museum's page, or the notebook open at the page. */
 function sourceHref(m: Move) {
   if (m.sheet) return `${url(`diaries/${m.sheet.notebook}/`)}#read/${m.sheet.ref}`;
   return m.source.url;
+}
+
+function sourceLabel(m: Move) {
+  if (m.sheet) return `notebook, pages ${m.sheet.page}`;
+  if (m.typescript) return `PAAM typescript ${m.typescript.part}, p. ${m.typescript.page} ↗`;
+  return 'source ↗';
 }
 
 function Figure({
@@ -495,7 +512,7 @@ export function Travels() {
                 title={m.source.name}
                 className={LINK}
               >
-                {m.sheet ? `notebook, pages ${m.sheet.page}` : 'source ↗'}
+                {sourceLabel(m)}
               </a>
             </span>
           </li>
@@ -539,13 +556,62 @@ export function Travels() {
                         title={m.source.name}
                         className={LINK}
                       >
-                        {m.sheet ? `notebook, pages ${m.sheet.page}` : 'source ↗'}
+                        {sourceLabel(m)}
                       </a>
                     </span>
                   </span>
                 </li>
               );
             })}
+          </ul>
+        </>
+      )}
+
+      {TYPESCRIPT_MOVES.length > 0 && (
+        <>
+          <h3 className="mt-10 font-serif text-lg text-ink-900">
+            Where the typescripts put them, day by day
+          </h3>
+          <Figure
+            id="ts"
+            lay={TYPESCRIPT}
+            height={NH}
+            label={`${placesOf(TYPESCRIPT_MOVES).length} places the typed diaries name on two journeys, joined by ${TYPESCRIPT_MOVES.length} arrows in the order she wrote them.`}
+          >
+            <text x={110} y={30} className="fill-current text-[11px] font-semibold">
+              North America, at one scale — 1941 and 1946
+            </text>
+          </Figure>
+          {DATA.typescriptMeans && <p className="prose-note mt-3 max-w-3xl">{DATA.typescriptMeans}</p>}
+          <ul className="mt-4 max-w-3xl">
+            {[...new Set(TYPESCRIPT_MOVES.map((m) => m.year))]
+              .sort((a, b) => a - b)
+              .map((y) => {
+                const legs = TYPESCRIPT_MOVES.filter((m) => m.year === y);
+                const m = legs[0];
+                return (
+                  <li
+                    key={y}
+                    className="flex items-baseline gap-3 border-b border-ink-100 py-1.5 text-[13px]"
+                  >
+                    <span className="tabular w-10 shrink-0 text-ink-500">{y}</span>
+                    <span className="min-w-0 flex-1 text-ink-700">
+                      <span className="text-ink-900">{chain(legs).join(' → ')}</span>
+                      <span className="block text-[12.5px] text-ink-600">
+                        <a
+                          href={sourceHref(m)}
+                          target="_blank"
+                          rel="noreferrer"
+                          title={m.source.name}
+                          className={LINK}
+                        >
+                          {sourceLabel(m)}
+                        </a>
+                      </span>
+                    </span>
+                  </li>
+                );
+              })}
           </ul>
         </>
       )}

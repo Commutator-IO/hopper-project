@@ -398,8 +398,8 @@ export function TimelinePage() {
           Three kinds of source stand in the year sections, and the link after each entry says
           which: the Whitney&rsquo;s own pages; Josephine Hopper&rsquo;s black notebook, read
           here, where the link opens the page she wrote it on; and Madeleine Larson&rsquo;s typed
-          transcripts of the diaries at Provincetown, read page by page off the scans and cited
-          by the typescript&rsquo;s own page number. The diaries are hers, in her words, and are
+          transcripts of the diaries at Provincetown — all five parts, read page by page off the
+          scans and cited by the typescript&rsquo;s own page number. The diaries are hers, in her words, and are
           quoted rather than paraphrased.
         </p>
         <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-ink-700">
@@ -834,10 +834,11 @@ export function TimelinePage() {
       <section className="border-t border-ink-200 py-8">
         <h2 className="font-serif text-2xl text-ink-900">Where the sources put him</h2>
         <p className="prose-note mt-2 max-w-3xl">
-          The same entries as the years above, read for their places instead of their dates. Two
-          drawings: the first is the chronology the museum states, six places in fifty years;
-          the second is what Josephine Hopper’s black notebook lists, year by year, of where the
-          two of them went — and it is her list, so the journeys are as often hers as his.
+          The same entries as the years above, read for their places instead of their dates.
+          Three drawings: the first is the chronology the museum states, six places in fifty
+          years; the second is what Josephine Hopper’s black notebook lists, year by year, of
+          where the two of them went; the third is two of those journeys as her typed diaries
+          give them day by day. They are her lists, so the journeys are as often hers as his.
         </p>
         <Travels />
       </section>
