@@ -31,7 +31,13 @@ import { url } from './lib/base.ts';
  */
 export function SchemaPage() {
   const manifest = useManifest();
-  const app = manifest?.apparatus ?? {};
+  // The six volumes' census, without the notebooks: a notebook is keyed
+  // `notebook#<id>` and is another document, read below on its own.
+  const app = Object.fromEntries(
+    Object.entries(manifest?.apparatus ?? {}).filter(([k]) => !k.startsWith('notebook#')),
+  );
+  const nb = manifest?.apparatus?.['notebook#black-notebook'];
+  const nbRead = manifest?.readNotebooks?.['black-notebook'] ?? 0;
 
   const totals = Object.values(app).reduce(
     (a: Apparatus, e) => ({
@@ -168,15 +174,24 @@ export function SchemaPage() {
                   'the dealer’s name',
                   'a secondary index over data held elsewhere',
                 ],
+                [
+                  'black-notebook',
+                  'nothing in particular — a memorandum, a list, a chronicle, a chart',
+                  'nothing, except the year in the chronicle',
+                  'a personal notebook; the control, not a fifth schema',
+                ],
               ].map(([id, record, key, modern]) => {
-                const l = LEDGERS.find((x) => x.id === id)!;
+                const l = LEDGERS.find((x) => x.id === id);
                 return (
                   <tr key={id} className="border-b border-ink-200 align-top">
                     <td className="py-2 pr-4">
-                      <a href={url(`/${id}/`)} className="text-brand-700 hover:underline">
-                        {l.short}
+                      <a
+                        href={url(l ? `/${id}/` : `/diaries/${id}/`)}
+                        className="text-brand-700 hover:underline"
+                      >
+                        {l ? l.short : 'Black notebook'}
                       </a>
-                      <div className="text-[11.5px] text-ink-400">{l.date}</div>
+                      <div className="text-[11.5px] text-ink-400">{l ? l.date : 'circa 1952–1961'}</div>
                     </td>
                     <td className="py-2 pr-4 text-ink-600">{record}</td>
                     <td className="py-2 pr-4 text-ink-600">{key}</td>
@@ -387,6 +402,52 @@ export function SchemaPage() {
           ))}{' '}
           are now credited only where the full name appears — and every one of them was found by
           reading the rows the surname had wrongly matched, not by reasoning about names.
+        </p>
+      </section>
+
+      <section className="border-b border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">The black notebook is not a schema</h2>
+        <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-700">
+          Josephine Hopper’s black notebook is read here too — {nbRead} sheets, one file — and it
+          is the control the six volumes need. It has no record type, no key and no column that
+          means the same thing twice: a phonograph’s part numbers, French phrases, the tenants of
+          the house, a temperature chart, a recipe, forty names with ticks. It is a memorandum
+          book, and its modern counterpart is the file a person keeps for themselves, not a
+          register anybody else could read into.
+        </p>
+        {nb && (
+          <dl className="mt-5 flex flex-wrap gap-x-10 gap-y-4">
+            <Stat n={nb.hands.jo ?? 0} label="passages in her hand" />
+            <Stat n={nb.macros.entry ?? 0} label="dated entries" />
+            <Stat n={nb.tables} label="tables she ruled" />
+            <Stat n={nb.rows} label="rows inside them" />
+          </dl>
+        )}
+        <p className="mt-4 max-w-3xl text-[14.5px] leading-relaxed text-ink-700">
+          Three things in it are nonetheless structured, and each shows what a structure was for
+          when she reached for one. The year chronicle is the one keyed list in the book — one
+          line to a year, 1961 back to 1906 on three pages and 1941 forward to 1958 on four —
+          and the key exists because the question it answers is « where were we in 1943 ». The
+          mailing lists carry a tick against each name, a boolean field, with a key written at
+          the foot; the key on page 52 says « came or wrote » and the key on page 53 says
+          « wrote » with a double tick for « came », and neither governs the other page. And she
+          ruled a table exactly where there were columns of figures — an eye test, his suit
+          measurements, a frame bill with model, size, finish and price — and nowhere else. The
+          rest is prose, because the rest was for her.
+        </p>
+        <p className="prose-note mt-4 max-w-3xl">
+          Its figures are read off the same census as the volumes’ and kept out of the totals
+          above, which are the six ledgers’ alone. What the notebook adds to the ledgers’
+          specification — frames, paper, what a frame shows of a canvas, what things cost — is on
+          the{' '}
+          <a href={url('/technique/')} className="text-brand-700 hover:underline">
+            Technique
+          </a>{' '}
+          and{' '}
+          <a href={url('/accounts/')} className="text-brand-700 hover:underline">
+            Accounts
+          </a>{' '}
+          tabs, as registers checked against its pages.
         </p>
       </section>
 

@@ -282,18 +282,26 @@ const MACROS = [
   'sketch',
   'clipping',
   'work',
+  // A notebook's, and nowhere else: the dated entry. Counted so the schema
+  // page can say how much of a notebook is dated at all.
+  'entry',
 ];
 
 const apparatus = {};
 for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : []) {
   if (!dir.isDirectory() || dir.name.startsWith('_')) continue;
   for (const f of readdirSync(resolve(out, dir.name))) {
-    if (!/^batch-\d+\.tex$/.test(f)) continue;
+    // A ledger's batches, or a notebook's one file. The notebooks are keyed
+    // `notebook#<id>` as they are everywhere else in the manifest, so a
+    // consumer summing the six volumes can leave them out by the key.
+    const isNotebook = dir.name === 'notebooks' && /^[a-z-]+\.tex$/.test(f);
+    if (!isNotebook && !/^batch-\d+\.tex$/.test(f)) continue;
+    const key = isNotebook ? `notebook#${f.replace(/\.tex$/, '')}` : dir.name;
     const src = readFileSync(resolve(out, dir.name, f), 'utf8')
       .split('\n')
       .filter((ln) => !ln.trimStart().startsWith('%'))
       .join('\n');
-    const e = (apparatus[dir.name] ??= {
+    const e = (apparatus[key] ??= {
       macros: Object.fromEntries(MACROS.map((m) => [m, 0])),
       hands: {},
       tables: 0,
