@@ -190,7 +190,7 @@ A note on this critical note                                                    
   4.2 The pictures, and what she said they were . . . . . . . . . . . . . . . . . . .         17
   4.3 The buyers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      19
   4.4 The prices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    21
-  4.5 Paint again . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     21
+  4.5 Paint again . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     22
   4.6 The end of the record . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     22
 
 5 Book IV: the pocket book, fifty-four years without a gap                                    23
@@ -335,7 +335,7 @@ Sources                                                                         
 
 
                                              x
-                                                                     LIST OF FIGURES
+                                                                  LIST OF FIGURES
 
 
 4.2 South Carolina Morning, oil, 1955; « Dinah », 30 x 40 as the leaf writes
@@ -362,10 +362,12 @@ Sources                                                                         
     of American Art, work 6829: https://whitney.org/collection/works/
     6829. Scale: sixty inches to eight centimetres; an upright Mexican sheet
     of 1943 beside a Cape watercolour of 1965 on the full imperial sheet. The
-    frames are drawn to the proportions of the size in Edward Hopper’s hand;
-    the images are not reproduced here and can be seen at the museums’ own
-    pages. Drawn by Claude Fable 5.1, 13 September 2026, from the transcrip-
-    tions and works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . 21
+    drawings are schemas of the composition in its main masses only, at the
+    proportions of the size in Edward Hopper’s hand, made from the leaf’s de-
+    scription and from general knowledge of the picture; nothing is traced and
+    no detail is drawn, and they are not reproductions. The pictures themselves
+    are at the museums’ own pages. Drawn by Claude Fable 5.1, 13 September
+    2026, from the transcriptions and works.json (2026-09-13). . . . . . . . . 21
 
 7.1 Where the black notebook and the Provincetown typescripts put the Hop-
     pers, drawn at true relative position from coordinates retrieved from Open-
@@ -382,7 +384,7 @@ Sources                                                                         
 
 
 
-                                       xi
+                                      xi
 LIST OF FIGURES
 
 
@@ -781,21 +783,17 @@ anniversary present 1955. Signed statement of this in bank box - J.H. » (Book I
 ref 18297).
 
                                                   8
-                                                                                   The oils, written up afterwards
+                                                                                      The oils, written up afterwards
 
 
 
 
-                      House by a Railroad, 24 x 29               The Automat, 28 x 36”
+                      House by a Railroad, 24 x 29                  The Automat, 28 x 36”
 
 
 
 
-                                       Railroad Sunset
-                                           29 x 48
-                                      image not reproduced
-
-
+                                     Railroad Sunset, 29 x 48
 
 
 Figure 2.2: House by a Railroad, oil, 1925; catalogued as House by the Railroad, 24 x 29 as
@@ -815,7 +813,7 @@ pages. Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and
 
 
 
-                                                             9
+                                                                9
 Book I: the plates, and the lists that grew behind them
 
 
@@ -1335,7 +1333,7 @@ the transcriptions and works.json (2026-09-13).
 
 
                                                                   20
-                                                                                       The prices
+                                                                                             The prices
 
 
 4.4    The prices
@@ -1363,12 +1361,8 @@ in December 1964.
 
 
 
-                            Saltillo Mansion
-                           25 1/8” x 19 5/8”             Cape Cod Bay
-                            image not reproduced           20 x 28
-                                                        image not reproduced
 
-
+                          Saltillo Mansion, 25 1/8” x 19 5/8”        Cape Cod Bay, 20 x 28
 
 
 Figure 4.3: Saltillo Mansion, watercolour, August 1943, 25 1/8” x 19 5/8” as the leaf writes
@@ -1377,22 +1371,23 @@ metmuseum.org/art/collection/search/488165. Cape Cod Bay, watercolour, 1965; the
 work leaf photographed, 20 x 28 as the leaf writes it (Book III, leaf 125, ref 16620). Whitney Mu-
 seum of American Art, work 6829: https://whitney.org/collection/works/6829. Scale: sixty
 inches to eight centimetres; an upright Mexican sheet of 1943 beside a Cape watercolour of 1965
-on the full imperial sheet. The frames are drawn to the proportions of the size in Edward Hopper’s
-hand; the images are not reproduced here and can be seen at the museums’ own pages. Drawn by
-Claude Fable 5.1, 13 September 2026, from the transcriptions and works.json (2026-09-13).
+on the full imperial sheet. The drawings are schemas of the composition in its main masses only,
+at the proportions of the size in Edward Hopper’s hand, made from the leaf’s description and from
+general knowledge of the picture; nothing is traced and no detail is drawn, and they are not repro-
+ductions. The pictures themselves are at the museums’ own pages. Drawn by Claude Fable 5.1, 13
+September 2026, from the transcriptions and works.json (2026-09-13).
 
 
 
 
-4.5    Paint again
-The formula continues under nearly every oil, and Book III is where it can be followed
-year by year. Hotel Lobby, 1943: « W. + N. lead white. Blockx & W. + N. Colors, linseed
-oil, turpentine. Winton canvas. » Morning in a City, 1944: « W. + N. flake white # 1 + 2.
-
-                                                   21
+                                                                21
 Book III: the late work, and the lists in front of it
 
 
+4.5     Paint again
+The formula continues under nearly every oil, and Book III is where it can be followed
+year by year. Hotel Lobby, 1943: « W. + N. lead white. Blockx & W. + N. Colors, linseed
+oil, turpentine. Winton canvas. » Morning in a City, 1944: « W. + N. flake white # 1 + 2.
 Blockx + W. + N. colors. Tarr, Ruhl linseed oil + turpentine. Grumbacher’s paint tested
 artists’ canvas (linen). » The Martha McKeen: « Started with Tarr Ruhl linseed oil, finished
 with poppy oil ». From High Noon in 1949 to South Carolina Morning in 1955 the line
@@ -1432,7 +1427,6 @@ Mexico to escape cold. » and « the enforced intimacy with almost affection + a
 an experience shared + the great reward: radiators » (Book III, leaf 170, ref 18199). Thir-
 teen years after the Battle of Washington Square, the university that had tried to turn them
 out put in the heating.
-
 
 
 

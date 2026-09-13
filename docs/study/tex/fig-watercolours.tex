@@ -1,9 +1,24 @@
 \begin{figure}[htbp]\centering
 \begin{tikzpicture}
-\draw[fill=black!4,draw=black!60,line width=0.5pt] (0,0) rectangle (2.6166666666666667,3.35);
-\node[align=center,text=black!55,font=\scriptsize] at (1.3083333333333333,1.675) {Saltillo Mansion\\25 1/8" x 19 5/8"\\\tiny image not reproduced};
-\draw[fill=black!4,draw=black!60,line width=0.5pt] (3.1166666666666667,0) rectangle (6.85,2.6666666666666665);
-\node[align=center,text=black!55,font=\scriptsize] at (4.983333333333333,1.3333333333333333) {Cape Cod Bay\\20 x 28\\\tiny image not reproduced};
+\begin{scope}[shift={(0,0)},x=2.617cm,y=3.350cm]\clip (0,0) rectangle (1,1);
+\fill[black!8] (0,0.7) rectangle (1,1);             % sky
+\fill[black!35] (0,0.6) -- (0.3,0.72) -- (0.6,0.64) -- (1,0.74) -- (1,0.7) -- (1,0.55) -- (0,0.55) -- cycle; % the Sierra Madre
+\fill[black!12] (0.15,0.32) rectangle (0.9,0.6);    % the mansion front
+\fill[black!40] (0.4,0.6) rectangle (0.62,0.68);    % its upper storey
+\foreach \x in {0.22,0.36,0.5,0.64,0.78} \fill[black!55] (\x,0.36) rectangle (\x+0.06,0.52); % the windows
+\fill[black!65] (0,0) rectangle (1,0.3);            % the roof in the foreground, in shadow
+\fill[black!30] (0,0.28) rectangle (1,0.32);        % the parapet
+\end{scope}
+\draw[black!70,line width=0.5pt] (0,0) rectangle (2.6166666666666667,3.35);
+\node[anchor=north,font=\tiny,text=black!60] at (1.3083333333333333,-0.05) {Saltillo Mansion, 25 1/8" x 19 5/8"};
+\begin{scope}[shift={(3.1166666666666667,0)},x=3.733cm,y=2.667cm]\clip (0,0) rectangle (1,1);
+\fill[black!8] (0,0.55) rectangle (1,1);            % sky
+\fill[black!40] (0,0.38) rectangle (1,0.55);        % the bay
+\fill[black!15] (0,0.2) rectangle (1,0.38);         % the sand
+\fill[black!30] (0,0) -- (1,0) -- (1,0.2) -- (0.6,0.26) -- (0,0.22) -- cycle; % the grass in front
+\end{scope}
+\draw[black!70,line width=0.5pt] (3.1166666666666667,0) rectangle (6.85,2.6666666666666665);
+\node[anchor=north,font=\tiny,text=black!60] at (4.983333333333333,-0.05) {Cape Cod Bay, 20 x 28};
 \end{tikzpicture}
-\caption{\textbf{Saltillo Mansion}, watercolour, August 1943, 25 1/8" x 19 5/8" as the leaf writes it (Book III, leaf 101, ref 17944). The Metropolitan Museum of Art, 45.157.2: \url{https://www.metmuseum.org/art/collection/search/488165}. \textbf{Cape Cod Bay}, watercolour, 1965; the last work leaf photographed, 20 x 28 as the leaf writes it (Book III, leaf 125, ref 16620). Whitney Museum of American Art, work 6829: \url{https://whitney.org/collection/works/6829}. Scale: sixty inches to eight centimetres; an upright Mexican sheet of 1943 beside a Cape watercolour of 1965 on the full imperial sheet. The frames are drawn to the proportions of the size in Edward Hopper's hand; the images are not reproduced here and can be seen at the museums' own pages. Drawn by Claude Fable~5.1, 13 September 2026, from the transcriptions and \texttt{works.json} (2026-09-13).}\label{fig:watercolours}
+\caption{\textbf{Saltillo Mansion}, watercolour, August 1943, 25 1/8" x 19 5/8" as the leaf writes it (Book III, leaf 101, ref 17944). The Metropolitan Museum of Art, 45.157.2: \url{https://www.metmuseum.org/art/collection/search/488165}. \textbf{Cape Cod Bay}, watercolour, 1965; the last work leaf photographed, 20 x 28 as the leaf writes it (Book III, leaf 125, ref 16620). Whitney Museum of American Art, work 6829: \url{https://whitney.org/collection/works/6829}. Scale: sixty inches to eight centimetres; an upright Mexican sheet of 1943 beside a Cape watercolour of 1965 on the full imperial sheet. The drawings are schemas of the composition in its main masses only, at the proportions of the size in Edward Hopper's hand, made from the leaf's description and from general knowledge of the picture; nothing is traced and no detail is drawn, and they are not reproductions. The pictures themselves are at the museums' own pages. Drawn by Claude Fable~5.1, 13 September 2026, from the transcriptions and \texttt{works.json} (2026-09-13).}\label{fig:watercolours}
 \end{figure}

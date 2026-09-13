@@ -96,4 +96,29 @@ ${fig(0.2, 0.6, 1.1)} ${fig(0.5, 0.62, 1.1)}       % « Gothic + Elderly », « 
 \\fill[black!35] (0.15,0.1) rectangle (0.5,0.4);          % the sewing machine and its table
 \\fill[black!85] (0.3,0.6) circle (0.05); \\fill[black!85,rounded corners=2pt] (0.2,0.2) rectangle (0.4,0.55); % the woman turned to the window
 `,
+  'railroad-sunset': `
+\\fill[black!10] (0,0.42) rectangle (1,1);          % sky, the sunset in bands
+\\fill[black!25] (0,0.42) rectangle (1,0.5);
+\\fill[black!5] (0,0.5) rectangle (1,0.58);
+\\fill[black!60] (0,0.3) -- (0.3,0.34) -- (0.55,0.3) -- (0.8,0.36) -- (1,0.32) -- (1,0.42) -- (0,0.42) -- cycle; % the dark hills
+\\fill[black!80] (0,0) rectangle (1,0.3);            % the embankment
+\\fill[black!95] (0,0.13) rectangle (1,0.16);        % the rails
+\\fill[black!85] (0.28,0.3) rectangle (0.36,0.62);   % the signal tower
+\\fill[black!85] (0.25,0.62) rectangle (0.39,0.7);
+`,
+  'saltillo-mansion': `
+\\fill[black!8] (0,0.7) rectangle (1,1);             % sky
+\\fill[black!35] (0,0.6) -- (0.3,0.72) -- (0.6,0.64) -- (1,0.74) -- (1,0.7) -- (1,0.55) -- (0,0.55) -- cycle; % the Sierra Madre
+\\fill[black!12] (0.15,0.32) rectangle (0.9,0.6);    % the mansion front
+\\fill[black!40] (0.4,0.6) rectangle (0.62,0.68);    % its upper storey
+\\foreach \\x in {0.22,0.36,0.5,0.64,0.78} \\fill[black!55] (\\x,0.36) rectangle (\\x+0.06,0.52); % the windows
+\\fill[black!65] (0,0) rectangle (1,0.3);            % the roof in the foreground, in shadow
+\\fill[black!30] (0,0.28) rectangle (1,0.32);        % the parapet
+`,
+  'cape-cod-bay': `
+\\fill[black!8] (0,0.55) rectangle (1,1);            % sky
+\\fill[black!40] (0,0.38) rectangle (1,0.55);        % the bay
+\\fill[black!15] (0,0.2) rectangle (1,0.38);         % the sand
+\\fill[black!30] (0,0) -- (1,0) -- (1,0.2) -- (0.6,0.26) -- (0,0.22) -- cycle; % the grass in front
+`,
 };
