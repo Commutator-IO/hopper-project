@@ -25,7 +25,7 @@
  * catalogue raisonné or anybody's memory of Hopper.
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { basename, resolve } from 'node:path';
 
 /**
  * The comparison key for a title — the single copy.
@@ -645,4 +645,47 @@ export function keywordTerms(arg) {
     .split(',')
     .map((s) => s.trim())
     .filter(Boolean);
+}
+
+/**
+ * Every passage of the books' own writing, with the sheet it stands on.
+ *
+ * A marginal is split at the em-dash the edition uses to separate what is
+ * written from where it is written: « 160 \\ 35 \\ 195 --- in pencil at the
+ * head of the money column » is the book's as far as the dash and the
+ * transcriber's after it.
+ */
+export function leafPassages(files) {
+  const out = [];
+  const at = (r) => ({ ledger: r.ledger, batch: r.batch, leaf: r.leaf, ref: r.ref });
+  // A notebook is one file and its id is the file's name; the passages carry
+  // it so that a page can link the sheet under `/diaries/<id>/`.
+  const idOf = (f) => (f.ledger === 'notebooks' ? basename(f.path, '.tex') : undefined);
+  for (const f of files) {
+    const notebook = idOf(f);
+    const tag = (o) => (notebook ? { ...o, notebook } : o);
+    for (const w of f.works) {
+      out.push(tag({ text: w.raw, ...at(w) }));
+      for (const r of w.rows) out.push(tag({ text: r.plain.join(' │ '), ...at(r) }));
+    }
+    for (const r of f.looseRows) out.push(tag({ text: r.plain.join(' │ '), ...at(r) }));
+    // The stationer's columns are unheaded in Book IV and headed in Book I,
+    // and where they are headed the heading is the book's own writing —
+    // « Date | Rec'd | - com. » is where several of these forms are commonest.
+    const headers = new Set();
+    for (const r of [...f.looseRows, ...f.works.flatMap((w) => w.rows)]) {
+      const h = (r.header ?? []).join(' │ ').trim();
+      if (h) headers.add(`${h} ${r.ref} ${r.leaf} ${f.ledger} ${f.batch}`);
+    }
+    for (const h of headers) {
+      const [text, ref, leaf, ledger, batch] = h.split(' ');
+      out.push(tag({ text, ledger, batch: Number(batch), leaf: leaf || null, ref }));
+    }
+    for (const h of f.hands) out.push(tag({ text: h.plain, ...at(h) }));
+    for (const m of f.marginals) {
+      const said = m.plain.split(/\s*---\s*/)[0] ?? '';
+      if (said.trim()) out.push(tag({ text: said, ...at(m) }));
+    }
+  }
+  return out;
 }

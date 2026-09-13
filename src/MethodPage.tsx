@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Page } from './components/Frame.tsx';
-import { LEDGERS, BY_LEDGER, SHEETS } from './content/catalogue.ts';
+import { LEDGERS, BY_LEDGER, NOTEBOOKS, SHEETS } from './content/catalogue.ts';
 import { BATCH_SIZE, batchCount, batchState, useManifest } from './lib/batches.ts';
 import { STATES, tally, type State } from './lib/progress.ts';
 import { STATE_COLOURS } from './components/Reader.tsx';
@@ -10,6 +10,21 @@ import glossaryData from './content/glossary.json';
 
 /** The volume, as the cards name it. Two other pages carry the same one line. */
 const named = (id: string) => LEDGERS.find((l) => l.id === id)?.short ?? id;
+
+/**
+ * Where a glossary occurrence opens. A ledger's is a batch of a volume; a
+ * notebook's is one file under /diaries/, addressed by the sheet's ref, and
+ * the passage carries the notebook's id so the link can say which.
+ */
+type Seen = { ledger: string; batch: number; leaf: string | null; ref: string; notebook?: string };
+const evidenceHref = (s: Seen) =>
+  s.ledger === 'notebooks' && s.notebook
+    ? `${url(`diaries/${s.notebook}/`)}#read/${s.ref}`
+    : `${url(`${s.ledger}/`)}#${s.ledger}/${s.batch}/${s.ref}`;
+const evidenceName = (s: Seen) =>
+  s.ledger === 'notebooks' && s.notebook
+    ? `${NOTEBOOKS.find((n) => n.id === s.notebook)?.short ?? s.notebook}, ${s.leaf ? `page ${s.leaf}` : 'unnumbered sheet'}`
+    : `${named(s.ledger)}, ${s.leaf ? `leaf ${s.leaf}` : 'unnumbered leaf'}`;
 
 /**
  * The three kinds, and what a reader is being told by each.
@@ -210,11 +225,8 @@ export function MethodPage() {
                     <div className="mt-2 space-y-1">
                       {e.seen.map((s) => (
                         <div key={s.ref} className="text-[12px] leading-relaxed text-ink-500">
-                          <a
-                            className="text-brand-700 hover:underline"
-                            href={`${url(`${s.ledger}/`)}#${s.ledger}/${s.batch}/${s.ref}`}
-                          >
-                            {named(s.ledger)}, {s.leaf ? `leaf ${s.leaf}` : 'unnumbered leaf'}
+                          <a className="text-brand-700 hover:underline" href={evidenceHref(s)}>
+                            {evidenceName(s)}
                           </a>{' '}
                           <span className="text-ink-400">— {s.shows}</span>
                         </div>

@@ -2,6 +2,8 @@ import { useMemo } from 'react';
 import { Page } from './components/Frame.tsx';
 import formatsData from './content/formats.json';
 import materialsData from './content/materials.json';
+import framingData from './content/framing.json';
+import { url } from './lib/base.ts';
 import { LEDGERS } from './content/catalogue.ts';
 
 /**
@@ -103,6 +105,30 @@ const M = materialsData as unknown as {
 };
 
 const named = (id: string) => LEDGERS.find((l) => l.id === id)?.short ?? id;
+
+interface FramingEntry {
+  term: string;
+  kind: string;
+  written: string;
+  means: string;
+  match: string;
+  note?: string;
+  count: number;
+  sheets: number;
+  seen: { page: string | null; ref: string; count: number; shows: string }[];
+}
+
+const R = framingData as unknown as {
+  note: string;
+  notebook: string;
+  kinds: Record<string, { label: string; note: string }>;
+  pages: number;
+  pagesRead: number;
+  entries: FramingEntry[];
+};
+
+/** The reader, open at that sheet of the notebook. */
+const sheetHref = (ref: string) => `${url(`diaries/${R.notebook}/`)}#read/${ref}`;
 
 /** One colour per group, so a formula reads as a sequence of kinds. */
 const GROUP_TINT: Record<string, string> = {
@@ -692,7 +718,7 @@ export function TechniquePage() {
 
       {/* ========================================================== the gaps */}
 
-      <section className="py-8">
+      <section className="border-b border-ink-200 py-8">
         <h2 className="font-serif text-xl text-ink-900">What is not counted</h2>
         <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
           {F.unsized.count} of the {F.headings} work headings read so far state no size at all,
@@ -714,6 +740,91 @@ export function TechniquePage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* ============================================================ framing */}
+
+      <section className="py-8">
+        <h2 className="font-serif text-2xl text-ink-900">
+          What the ledgers never say: the frame and the paper
+        </h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          The ledgers stop at the canvas. Nothing in six volumes says what a picture was framed
+          in or what a water colour was painted on. Josephine Hopper’s black notebook does,
+          because that is what a studio memorandum book is for: between 1948 and 1961 she wrote
+          down the frame makers and their bills, the frames standing in the rack by size and by
+          the picture they fitted, what a frame shows of a canvas, the sheet sizes of water
+          colour paper and mat board and what they cost by the pound, and — taken down with
+          Bertram Hartman — how to finish a plain wood frame.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">
+          Two cautions. The pictures are mostly hers — the frames list her own show of 1958 and
+          her water colours, with Edward Hopper’s Chop Suey and Shakespeare at Dusk among them —
+          and the sizes are of frames and mats rather than of works, so none of them enters the
+          formats census above, which stays his hand. And the register is declared by hand and
+          checked against the page: every entry below carries a pattern that{' '}
+          <code className="font-mono text-[12px]">scripts/framing.mjs</code> must find on a
+          transcribed page of the notebook, and one that matches nothing fails the build. The
+          counts and the pages are read off the file, and each page opens in the reader beside
+          the Whitney’s photograph.
+        </p>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-4">
+          {[
+            { k: 'Entries', v: String(R.entries.length) },
+            { k: 'Frame makers named', v: String(R.entries.filter((e) => e.kind === 'framer').length) },
+            { k: 'Pages that carry one', v: `${R.pages} of ${R.pagesRead}` },
+            {
+              k: 'Occurrences',
+              v: String(R.entries.reduce((s, e) => s + e.count, 0)),
+            },
+          ].map((c) => (
+            <div key={c.k}>
+              <div className="text-[11px] uppercase tracking-wider text-ink-400">{c.k}</div>
+              <div className="font-serif text-2xl tabular text-ink-900">{c.v}</div>
+            </div>
+          ))}
+        </div>
+
+        {Object.entries(R.kinds).map(([kind, k]) => {
+          const rows = R.entries.filter((e) => e.kind === kind);
+          if (!rows.length) return null;
+          return (
+            <div key={kind} className="mt-8">
+              <h3 className="font-serif text-lg text-ink-900">{k.label}</h3>
+              <p className="prose-note mt-1 max-w-3xl">{k.note}</p>
+              <ul className="mt-3 divide-y divide-ink-100 border-t border-ink-200">
+                {rows.map((e) => (
+                  <li key={e.term} className="grid gap-x-6 gap-y-1 py-3 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+                    <div>
+                      <div className="flex flex-wrap items-baseline gap-x-2">
+                        <span className="font-medium text-ink-900">{e.term}</span>
+                        <span className="tabular text-[11.5px] text-ink-400">
+                          {e.count} on {e.sheets} page{e.sheets === 1 ? '' : 's'}
+                        </span>
+                      </div>
+                      <div className="mt-0.5 font-mono text-[12px] text-ink-500">{e.written}</div>
+                    </div>
+                    <div>
+                      <p className="text-[13.5px] leading-relaxed text-ink-700">{e.means}</p>
+                      {e.note ? <p className="prose-note mt-1">{e.note}</p> : null}
+                      <div className="mt-1.5 space-y-0.5">
+                        {e.seen.map((s) => (
+                          <div key={s.ref} className="text-[12px] leading-relaxed text-ink-500">
+                            <a className="text-brand-700 hover:underline" href={sheetHref(s.ref)}>
+                              {s.page ? `page ${s.page}` : 'unnumbered sheet'}
+                            </a>{' '}
+                            <span className="text-ink-400">— {s.shows}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
       </section>
     </Page>
   );

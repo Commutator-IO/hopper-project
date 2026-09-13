@@ -1,0 +1,839 @@
+{
+  "note": "What the black notebook says about frames, finishes, papers and supports — the specification the ledgers stop short of. Declared by hand, and every entry's pattern must be found on a transcribed page of the notebook or the build fails. The counts and the pages are read off the file.",
+  "notebook": "black-notebook",
+  "kinds": {
+    "framer": {
+      "label": "Frame makers, and where a frame came from",
+      "note": "Named on a bill, on a frame in the rack, or as the giver."
+    },
+    "finish": {
+      "label": "Finishes and fittings",
+      "note": "Her words for what a frame looked like, and the model numbers on the bills."
+    },
+    "paper": {
+      "label": "Paper, board and mats",
+      "note": "By the sheet and the half sheet, and by the pound where she priced it."
+    },
+    "support": {
+      "label": "Panels and canvas",
+      "note": "What was painted on, where the notebook names it."
+    },
+    "recipe": {
+      "label": "A recipe",
+      "note": "The one instruction for making anything, in a book of lists."
+    }
+  },
+  "pages": 17,
+  "pagesRead": 67,
+  "entries": [
+    {
+      "term": "Heydenryk",
+      "kind": "framer",
+      "written": "Heidenryk · Heinrich · Heydenryk",
+      "means": "A New York frame maker, written three ways on three pages and named again on the last frames list in the notebook: a 25 x 30 « goldish + white » at 11.50, a « grey white frame » on San Estoban, and a 29 x 36 whose sight is 27 3/4 x 34 3/4.",
+      "match": "Heidenryk|Heinrich|Heydenryk",
+      "count": 4,
+      "sheets": 4,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 1,
+          "shows": "Barbizon frames 20 x 24 - 3. 20 x 24 Cape Bedroom Obituary - dead flowers, cat, Petunias - on Cape 29 x 36 - made for St. Frans Ch. Buxton 27 3/4 x 34 3/4 - 1\" "
+        },
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Frames. Usui - May, 53 - 25 x 30. Chez Hopper - 29 x 36 Fruit - 20 x 24 Church - 22 x 38. Dauphines House 20 x 28. Sommerfield frame 22 x 38. Saidelyn (Judson o"
+        },
+        {
+          "page": "122",
+          "ref": "98173",
+          "count": 1,
+          "shows": "25 x 30 - gold - Chez Hopper - no feet 29 x 36 \" \" feet - 29 x 36 - Wash. Sq. winter - plain wood 22 x 38 - S. Truro Church - whitish 20 x 24 - Fruit - green wh"
+        }
+      ]
+    },
+    {
+      "term": "Burges-Revel",
+      "kind": "framer",
+      "written": "Burges - Revel Corp. · Revel · Ravel",
+      "means": "The frame maker of La Porte, Indiana. She copied two of its bills: four frames of February 1958 with their model numbers, sizes, finish codes and prices, and twenty-seven frames of June 1961 listed by size against the pictures they went on.",
+      "match": "Burges\\s*-\\s*Revel|\\bRevel\\b|\\bRavel\\b",
+      "note": "« Ravel » twice, for the same firm's model 214.",
+      "count": 5,
+      "sheets": 3,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 2,
+          "shows": "Ravel - Cape Bedroom - 29 x 36 Wash. Sq. Bedroom - June 1956. 27 x 32 Cape Petunias 20 x 24 Portrait - E. H. not 12 x 16 - 11+ x 15+ 7 Pochardes - 10 x 14. Tree"
+        },
+        {
+          "page": "54",
+          "ref": "97360",
+          "count": 2,
+          "shows": "Frames Feb. 28, 58 bill from Burges - Revel Corp. La Porte, Indiana."
+        },
+        {
+          "page": "60",
+          "ref": "97387",
+          "count": 1,
+          "shows": "Revel Frames - June 20, 61. 27 frames 36 x 29 \\#200 of Cape Cod Bedroom - grey Park from studio window - Jan 1\" (grey) \" \" Heavy model - Judson Tower + bus. 43 "
+        }
+      ]
+    },
+    {
+      "term": "Robinson",
+      "kind": "framer",
+      "written": "Robinson · Robinsons",
+      "means": "Frames « fancy French » and « French Elaborate », one of them of 1948 on San Estoban; also where she priced water colour paper by the pound.",
+      "match": "Robinson 1948|Robinson -|See Robinson|Robinsons",
+      "count": 4,
+      "sheets": 3,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 2,
+          "shows": "Frames. Usui - May, 53 - 25 x 30. Chez Hopper - 29 x 36 Fruit - 20 x 24 Church - 22 x 38. Dauphines House 20 x 28. Sommerfield frame 22 x 38. Saidelyn (Judson o"
+        },
+        {
+          "page": "2",
+          "ref": "96248",
+          "count": 1,
+          "shows": "20 x 24 - French Elaborate - Robinson 1948 on San Estoban 29 x 36 fits in - but 5/8\" covered all around 1950 - insert removed to fit 29 x 36."
+        },
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 1,
+          "shows": "Robinsons"
+        }
+      ]
+    },
+    {
+      "term": "Barbizon",
+      "kind": "framer",
+      "written": "Barbizon · Barbazon",
+      "means": "Three 20 x 24 frames, « grey - antique », for the Cape bedroom, the obituary flowers and the petunias.",
+      "match": "Barb[ai]zon",
+      "count": 2,
+      "sheets": 2,
+      "seen": [
+        {
+          "page": "2",
+          "ref": "96248",
+          "count": 1,
+          "shows": "Barbazon frame"
+        },
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 1,
+          "shows": "Barbizon frames 20 x 24 - 3. 20 x 24 Cape Bedroom Obituary - dead flowers, cat, Petunias - on Cape 29 x 36 - made for St. Frans Ch. Buxton 27 3/4 x 34 3/4 - 1\" "
+        }
+      ]
+    },
+    {
+      "term": "Usui",
+      "kind": "framer",
+      "written": "Usui",
+      "means": "A 25 x 30 of May 1953, « gold, pinkish », at $18.",
+      "match": "Usui",
+      "count": 2,
+      "sheets": 2,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Frames. Usui - May, 53 - 25 x 30. Chez Hopper - 29 x 36 Fruit - 20 x 24 Church - 22 x 38. Dauphines House 20 x 28. Sommerfield frame 22 x 38. Saidelyn (Judson o"
+        }
+      ]
+    },
+    {
+      "term": "Matt",
+      "kind": "framer",
+      "written": "Matt · made by Matt - E. 54\" St.",
+      "means": "The new frames of 1952. The 25 x 30 « was aluminum + gold + no good on anything. Too raw sienna - awful in north light » — the one verdict on a frame in the notebook.",
+      "match": "1952 Matt\\.|made by Matt|Matt - 25 x 30|Matt frame",
+      "count": 4,
+      "sheets": 2,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 3,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 1,
+          "shows": "Need frame for Bed room, desk, fire place, clock 27 x 32 Mexico - Sierra Madre + roofs - San Juan 24 (+ +) x 39 could be cut 2 gold from Rehn Gal. 28 1/4 x 36 1"
+        }
+      ]
+    },
+    {
+      "term": "Sommerfield",
+      "kind": "framer",
+      "written": "Sommerfield frame",
+      "means": "One frame, 22 x 38.",
+      "match": "Sommerfield",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Frames. Usui - May, 53 - 25 x 30. Chez Hopper - 29 x 36 Fruit - 20 x 24 Church - 22 x 38. Dauphines House 20 x 28. Sommerfield frame 22 x 38. Saidelyn (Judson o"
+        }
+      ]
+    },
+    {
+      "term": "Royal Art Framing",
+      "kind": "framer",
+      "written": "Royal Art Framing",
+      "means": "« ancient », « white, soft trim », on Dauphinée House of Truro, 20 x 28.",
+      "match": "Royal Art Framing",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "54",
+          "ref": "97360",
+          "count": 1,
+          "shows": "ancient = Royal Art Framing - white, soft trim - on Dauphinée House of Truro. 20 x 28."
+        }
+      ]
+    },
+    {
+      "term": "Fitzgerald",
+      "kind": "framer",
+      "written": "Fitzgerald frames · Mrs Fitzgerald's frame",
+      "means": "Frames that came from Mrs. Fitzgerald of Nyack rather than from a shop: one of 51 1/2 x 35, and an old one of 30 3/4 x 41 1/2 kept at Marion's.",
+      "match": "Fitzgerald",
+      "count": 3,
+      "sheets": 3,
+      "seen": [
+        {
+          "page": "2",
+          "ref": "96248",
+          "count": 1,
+          "shows": "Little white frames - inside 4 3/4\" x 6 1/4\" 4 of them on top shelf rear studio \\#3. Put there Nov. 1948 - from trunk in basement (burglars) Fitzgerald frames. "
+        },
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Mrs Fitzgerald's frame. 30 3/4 x 41 1/2. Old Silver on Back of Cape Houses - pond, sandhills, church 37 1/2 x 23"
+        }
+      ]
+    },
+    {
+      "term": "Hartman",
+      "kind": "framer",
+      "written": "Hartman frame · Bertram H. · c̄ B. Hartman",
+      "means": "Bertram Hartman, painter and neighbour: a frame of his at 17 1/2 x 24 1/2 « not large enough », frames made for him in 1952, and the recipe below for finishing plain wood, taken down with him.",
+      "match": "Hartman frame|B\\. Hartman|Bertram H\\. \\d",
+      "count": 3,
+      "sheets": 3,
+      "seen": [
+        {
+          "page": "6",
+          "ref": "96080",
+          "count": 1,
+          "shows": "To finish plain wood frames. c̄ B. Hartman 1. Shellac. 2. White shoe polish liquid 3. Rub in dry color - pastel - remove do. 4. Wax."
+        },
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 1,
+          "shows": "Need frame for Bed room, desk, fire place, clock 27 x 32 Mexico - Sierra Madre + roofs - San Juan 24 (+ +) x 39 could be cut 2 gold from Rehn Gal. 28 1/4 x 36 1"
+        }
+      ]
+    },
+    {
+      "term": "Rehn Gallery",
+      "kind": "framer",
+      "written": "from Rehn Gal.",
+      "means": "Frames that came from Edward Hopper's dealer: a silver one on Hills and Pond, 37 1/2 x 23 1/4, and two gold at 28 1/4 x 36 1/2.",
+      "match": "from Rehn Gal",
+      "count": 4,
+      "sheets": 3,
+      "seen": [
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 2,
+          "shows": "Need frame for Bed room, desk, fire place, clock 27 x 32 Mexico - Sierra Madre + roofs - San Juan 24 (+ +) x 39 could be cut 2 gold from Rehn Gal. 28 1/4 x 36 1"
+        },
+        {
+          "page": "2",
+          "ref": "96248",
+          "count": 1,
+          "shows": "cuts off bottom of canvas. asking E. from back of frame Silverfish - from Rehn Gal. on hill + pond backs ? Inside 23 3/8 x 37 1/2 Shows - 22 5/8 x 36 5/8 what s"
+        },
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        }
+      ]
+    },
+    {
+      "term": "Daniel Gallery",
+      "kind": "framer",
+      "written": "Daniel Gallery",
+      "means": "On the oldest frame of page 122's list, « Old - heavy gold (glass) », 15 1/2 x 18 3/8 with a deep rabbet: the gallery's name, and nothing else about it.",
+      "match": "Daniel Gallery",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "122",
+          "ref": "98173",
+          "count": 1,
+          "shows": "Frames. Old - heavy gold (glass) Daniel Gallery 15 1/2 x 18 3/8 - deep rabbit 3/8 ± 2 oval frames - 1 black - 7 1/2 x 9 1/2\" gold"
+        }
+      ]
+    },
+    {
+      "term": "Kuehne",
+      "kind": "framer",
+      "written": "Kuehne frame",
+      "means": "One frame, 16 x 20, on Margaret VanEpps; Max Kuehne, painter, was a neighbour and a guest on the same leaves.",
+      "match": "Kuehne frame",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "122",
+          "ref": "98173",
+          "count": 1,
+          "shows": "25 x 30 - gold - Chez Hopper - no feet 29 x 36 \" \" feet - 29 x 36 - Wash. Sq. winter - plain wood 22 x 38 - S. Truro Church - whitish 20 x 24 - Fruit - green wh"
+        }
+      ]
+    },
+    {
+      "term": "Whistler moulding",
+      "kind": "framer",
+      "written": "Old Whistler moulding",
+      "means": "« in rack - 38 x 48, heavy with insert »: a profile, not a maker, and the largest frame she lists.",
+      "match": "Whistler moulding",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "16",
+          "ref": "97045",
+          "count": 1,
+          "shows": "Old frames Old Whistler moulding - in rack - 38 x 48. heavy with insert Frame of Peters fath. - the Cole 29 x 36. (Chez Hopper \" size.) 26 x 38 1/2 insert of 1 "
+        }
+      ]
+    },
+    {
+      "term": "gold",
+      "kind": "finish",
+      "written": "gold · goldish · gold insert · white + gold · grey gold",
+      "means": "The commonest word on any frame line, and the finish of nearly every frame that came from the Rehn Gallery.",
+      "match": "\\bgold(ish)?\\b",
+      "count": 21,
+      "sheets": 8,
+      "seen": [
+        {
+          "page": "122",
+          "ref": "98173",
+          "count": 7,
+          "shows": "Frames. Old - heavy gold (glass) Daniel Gallery 15 1/2 x 18 3/8 - deep rabbit 3/8 ± 2 oval frames - 1 black - 7 1/2 x 9 1/2\" gold"
+        },
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 4,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "60",
+          "ref": "97387",
+          "count": 4,
+          "shows": "Revel Frames - June 20, 61. 27 frames 36 x 29 \\#200 of Cape Cod Bedroom - grey Park from studio window - Jan 1\" (grey) \" \" Heavy model - Judson Tower + bus. 43 "
+        },
+        {
+          "page": "40",
+          "ref": "97518",
+          "count": 2,
+          "shows": "James Mt. (N.M) tree. 18 3/8 x 12 3/4 gold insert. Ruth Wittenbergs garden 20 x 24. Grand Titons 22 1/2 x 24 + Old mats - outside - 19 x 25 gold insert - inside"
+        }
+      ]
+    },
+    {
+      "term": "silver",
+      "kind": "finish",
+      "written": "Silver frame · Old Silver · silver on band",
+      "means": "Silver on the Rehn Gallery frame and on the Back of Cape Houses frame; « a wide streak of silver on band » on the Judson Tower frame, tarnished by 1961.",
+      "match": "Silver frame|Old Silver|silver on band",
+      "count": 4,
+      "sheets": 4,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 1,
+          "shows": "Need frame for Bed room, desk, fire place, clock 27 x 32 Mexico - Sierra Madre + roofs - San Juan 24 (+ +) x 39 could be cut 2 gold from Rehn Gal. 28 1/4 x 36 1"
+        },
+        {
+          "page": "54",
+          "ref": "97360",
+          "count": 1,
+          "shows": "1960, 61. 29 x 36 - Judson Tower - thus tarnished chez - wide streak of silver on band right side grey 29 x 36 - French - gr. carved - Park Jan. 1\" 20 x 24 \" \" "
+        },
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Mrs Fitzgerald's frame. 30 3/4 x 41 1/2. Old Silver on Back of Cape Houses - pond, sandhills, church 37 1/2 x 23"
+        }
+      ]
+    },
+    {
+      "term": "whitish",
+      "kind": "finish",
+      "written": "whitish · whiterish · grey white · white + gold · white met. + gold edge",
+      "means": "Her word for the pale frames of the 1950s: on the Truro church, on the Revel frames of 1961, and down page 122's list.",
+      "match": "whit(ish|erish)\\b|white \\+ gold|white and gold|white met\\.|grey white|white insert|white frames|white, soft trim",
+      "count": 14,
+      "sheets": 5,
+      "seen": [
+        {
+          "page": "122",
+          "ref": "98173",
+          "count": 5,
+          "shows": "25 x 30 - gold - Chez Hopper - no feet 29 x 36 \" \" feet - 29 x 36 - Wash. Sq. winter - plain wood 22 x 38 - S. Truro Church - whitish 20 x 24 - Fruit - green wh"
+        },
+        {
+          "page": "60",
+          "ref": "97387",
+          "count": 4,
+          "shows": "Revel Frames - June 20, 61. 27 frames 36 x 29 \\#200 of Cape Cod Bedroom - grey Park from studio window - Jan 1\" (grey) \" \" Heavy model - Judson Tower + bus. 43 "
+        },
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 2,
+          "shows": "Barbizon frames 20 x 24 - 3. 20 x 24 Cape Bedroom Obituary - dead flowers, cat, Petunias - on Cape 29 x 36 - made for St. Frans Ch. Buxton 27 3/4 x 34 3/4 - 1\" "
+        },
+        {
+          "page": "54",
+          "ref": "97360",
+          "count": 2,
+          "shows": "1960, 61. 29 x 36 - Judson Tower - thus tarnished chez - wide streak of silver on band right side grey 29 x 36 - French - gr. carved - Park Jan. 1\" 20 x 24 \" \" "
+        }
+      ]
+    },
+    {
+      "term": "old metal",
+      "kind": "finish",
+      "written": "old metal",
+      "means": "On Chop Suey, 32 x 38 — Edward Hopper's canvas, in the frames list of page 122.",
+      "match": "old metal",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "122",
+          "ref": "98173",
+          "count": 1,
+          "shows": "25 x 30 - gold - Chez Hopper - no feet 29 x 36 \" \" feet - 29 x 36 - Wash. Sq. winter - plain wood 22 x 38 - S. Truro Church - whitish 20 x 24 - Fruit - green wh"
+        }
+      ]
+    },
+    {
+      "term": "insert",
+      "kind": "finish",
+      "written": "insert · 1\" white insert · insert of 1 1/2\"",
+      "means": "The slip inside a frame that takes up the difference between frame and canvas: « insert of 1 1/2\" - so could be used on larger canvas », « 1950 - insert removed to fit 29 x 36 ».",
+      "match": "\\binserts?\\b",
+      "count": 10,
+      "sheets": 6,
+      "seen": [
+        {
+          "page": "16",
+          "ref": "97045",
+          "count": 3,
+          "shows": "Old frames Old Whistler moulding - in rack - 38 x 48. heavy with insert Frame of Peters fath. - the Cole 29 x 36. (Chez Hopper \" size.) 26 x 38 1/2 insert of 1 "
+        },
+        {
+          "page": "40",
+          "ref": "97518",
+          "count": 3,
+          "shows": "James Mt. (N.M) tree. 18 3/8 x 12 3/4 gold insert. Ruth Wittenbergs garden 20 x 24. Grand Titons 22 1/2 x 24 + Old mats - outside - 19 x 25 gold insert - inside"
+        },
+        {
+          "page": "2",
+          "ref": "96248",
+          "count": 1,
+          "shows": "20 x 24 - French Elaborate - Robinson 1948 on San Estoban 29 x 36 fits in - but 5/8\" covered all around 1950 - insert removed to fit 29 x 36."
+        },
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "insert"
+        }
+      ]
+    },
+    {
+      "term": "model numbers",
+      "kind": "finish",
+      "written": "#200 · Model 200 · No. 214 · 241",
+      "means": "Burges-Revel's models, by number: 200 with an insert for the 29 x 36 and 25 x 30, 214 for the 22 x 32 and 20 x 28, 241 in « 819 beige » for the Pochards.",
+      "match": "\\#\\s?200|Model 200|\\b200 (?:-|of|│)|No\\. 214|\\b214 (?:│|\\()|\\b241 \\(",
+      "count": 8,
+      "sheets": 3,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 3,
+          "shows": "Frames: Pochards - 10 x 14 - 1956 June 25\" Each priced Ravel. No. 214 (1) 18 x 14\" finish 19 12.05 241 (5) 819 beige 8.30 Order \\# 08722 - June 25, 1955"
+        },
+        {
+          "page": "54",
+          "ref": "97360",
+          "count": 3,
+          "shows": "200 │ 1 │ 29 x 36 with insert │ 2R │ 30.75"
+        },
+        {
+          "page": "60",
+          "ref": "97387",
+          "count": 2,
+          "shows": "Revel Frames - June 20, 61. 27 frames 36 x 29 \\#200 of Cape Cod Bedroom - grey Park from studio window - Jan 1\" (grey) \" \" Heavy model - Judson Tower + bus. 43 "
+        }
+      ]
+    },
+    {
+      "term": "Whatman",
+      "kind": "paper",
+      "written": "Watman\" · Watmans",
+      "means": "Whatman water colour paper, by the half sheet: « 1/2 sheet Watmans = 22 1/2 x 15 1/2 », « Watman\" 1/2 sheet - 15 x 22 ».",
+      "match": "Watmans?",
+      "count": 4,
+      "sheets": 2,
+      "seen": [
+        {
+          "page": "40",
+          "ref": "97518",
+          "count": 3,
+          "shows": "Sizes Water colors Purple petunia, white etc. 15 1/2 x 17 1/2 Tree. 20's (22 1/4) x 15 1/2 1/2 sheet Watmans = 22 1/2 x 15 1/2"
+        },
+        {
+          "page": "6",
+          "ref": "96080",
+          "count": 1,
+          "shows": "Water Colors - SanEsteban Interior 30 x 22 3/4 Siera Madre + roofs from Monterrey Hotel. 24 + or - x 30 Wittenberg Garden - 20 x 24 Ascension 20 1/2 x 25 1/2 Sh"
+        }
+      ]
+    },
+    {
+      "term": "Lindenmeyr",
+      "kind": "paper",
+      "written": "Lindenmeyer · Lindenmeyr",
+      "means": "Mat paper from Lindenmeyr, the paper merchant: 25 x 38 the sheet, 19 x 25 the half.",
+      "match": "Lindenmey(e)?r",
+      "count": 3,
+      "sheets": 2,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 2,
+          "shows": "Water color paper - 22 x 30 1/2 sheet = 15 x 22. Water color pad - 14 x 20. Lindenmeyer mat paper - - - - - 25 x 38. 1/2 sheet - - - 19 x 25 Grey pulp board 1/2"
+        },
+        {
+          "page": "96",
+          "ref": "98139",
+          "count": 1,
+          "shows": "(white) — No. 7461 Rec'd by R. Paper for mats. Sackenshaw 11, 9, 37. Henry Lindenmeyr + Sons Paper Merchants 486 Canal St. Phone Ca. 6 - 5600. 6 sheets: 25 X 38"
+        }
+      ]
+    },
+    {
+      "term": "Cooper Union",
+      "kind": "paper",
+      "written": "Coper Union",
+      "means": "Water colour paper priced by weight: 72 lb at 20¢ and 140 lb at 39¢, against Robinson's 23¢, 37¢ and 50¢ for 72, 90 and 140.",
+      "match": "Coper Union",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Water color paper. Wat. mat's roughs 22 x 30\" Coper Union - 72 lbs. - 20 ¢ 140 \" 39 ¢ See Robinson - 72 \" 23 ¢ 90 \" 37 ¢ 140 \" 50 ¢"
+        }
+      ]
+    },
+    {
+      "term": "water color pad",
+      "kind": "paper",
+      "written": "Water color pad · Water Color pads",
+      "means": "14 x 20, written on page 8 and again on page 121.",
+      "match": "[Ww]ater [Cc]olor pads?",
+      "count": 2,
+      "sheets": 2,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Water color paper - 22 x 30 1/2 sheet = 15 x 22. Water color pad - 14 x 20. Lindenmeyer mat paper - - - - - 25 x 38. 1/2 sheet - - - 19 x 25 Grey pulp board 1/2"
+        },
+        {
+          "page": "120",
+          "ref": "98166",
+          "count": 1,
+          "shows": "Water Color pads 14\" x 20 Silver sugar bowl + flowers (Vt.) 14 7/8 x 21 7/8 inside paper in 4\" mat - Could be reduced to 19 1/4 cardboard at top Largest mat 23\""
+        }
+      ]
+    },
+    {
+      "term": "half sheet",
+      "kind": "paper",
+      "written": "1/2 sheet",
+      "means": "Her unit for a water colour: half of a 22 x 30 sheet, 15 x 22, or of a sheet of mat paper.",
+      "match": "1/2 sheet",
+      "count": 8,
+      "sheets": 4,
+      "seen": [
+        {
+          "page": "40",
+          "ref": "97518",
+          "count": 3,
+          "shows": "Sizes Water colors Purple petunia, white etc. 15 1/2 x 17 1/2 Tree. 20's (22 1/4) x 15 1/2 1/2 sheet Watmans = 22 1/2 x 15 1/2"
+        },
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 3,
+          "shows": "Water color paper - 22 x 30 1/2 sheet = 15 x 22. Water color pad - 14 x 20. Lindenmeyer mat paper - - - - - 25 x 38. 1/2 sheet - - - 19 x 25 Grey pulp board 1/2"
+        },
+        {
+          "page": "6",
+          "ref": "96080",
+          "count": 1,
+          "shows": "Water Colors - SanEsteban Interior 30 x 22 3/4 Siera Madre + roofs from Monterrey Hotel. 24 + or - x 30 Wittenberg Garden - 20 x 24 Ascension 20 1/2 x 25 1/2 Sh"
+        },
+        {
+          "page": "4",
+          "ref": "97063",
+          "count": 1,
+          "shows": "Provincetown from Websters Shack + field - Fall's Village - gets new mat Children in Gramercy baby carriage largish water color paper 1/2 sheet Boats - Gloucest"
+        }
+      ]
+    },
+    {
+      "term": "mat",
+      "kind": "paper",
+      "written": "mat · Mats 19 x 25 · Largest mat 23\" x 30\" · in 4\" mat",
+      "means": "The mount a water colour sits in, with its width: « Mat 2\" - bottom 2 1/2 », « Old mats - outside - 19 x 25 ».",
+      "match": "\\b[Mm]ats?\\b",
+      "count": 16,
+      "sheets": 8,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 4,
+          "shows": "Water color paper - 22 x 30 1/2 sheet = 15 x 22. Water color pad - 14 x 20. Lindenmeyer mat paper - - - - - 25 x 38. 1/2 sheet - - - 19 x 25 Grey pulp board 1/2"
+        },
+        {
+          "page": "4",
+          "ref": "97063",
+          "count": 3,
+          "shows": "Provincetown from Websters Shack + field - Fall's Village - gets new mat Children in Gramercy baby carriage largish water color paper 1/2 sheet Boats - Gloucest"
+        },
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 2,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "40",
+          "ref": "97518",
+          "count": 2,
+          "shows": "James Mt. (N.M) tree. 18 3/8 x 12 3/4 gold insert. Ruth Wittenbergs garden 20 x 24. Grand Titons 22 1/2 x 24 + Old mats - outside - 19 x 25 gold insert - inside"
+        }
+      ]
+    },
+    {
+      "term": "pulp board",
+      "kind": "paper",
+      "written": "Grey pulp board",
+      "means": "« 1/2 sheet 20 1/2 x 31 », listed with the mat papers.",
+      "match": "pulp board",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Water color paper - 22 x 30 1/2 sheet = 15 x 22. Water color pad - 14 x 20. Lindenmeyer mat paper - - - - - 25 x 38. 1/2 sheet - - - 19 x 25 Grey pulp board 1/2"
+        }
+      ]
+    },
+    {
+      "term": "shelf paper",
+      "kind": "paper",
+      "written": "Shelf paper",
+      "means": "« 13 x 19 ? », with her own question mark, among the water colour sizes of page 6.",
+      "match": "Shelf paper",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "6",
+          "ref": "96080",
+          "count": 1,
+          "shows": "Water Colors - SanEsteban Interior 30 x 22 3/4 Siera Madre + roofs from Monterrey Hotel. 24 + or - x 30 Wittenberg Garden - 20 x 24 Ascension 20 1/2 x 25 1/2 Sh"
+        }
+      ]
+    },
+    {
+      "term": "sketch box panels",
+      "kind": "support",
+      "written": "Oil sketch box panels · Wood panels · Small oils - 10 x 14",
+      "means": "10 x 14, the size of the oil sketch box and of the early Provincetown oils listed under it.",
+      "match": "(sketch box|Wood) panels",
+      "count": 3,
+      "sheets": 3,
+      "seen": [
+        {
+          "page": "2",
+          "ref": "96248",
+          "count": 1,
+          "shows": "Little white frames - inside 4 3/4\" x 6 1/4\" 4 of them on top shelf rear studio \\#3. Put there Nov. 1948 - from trunk in basement (burglars) Fitzgerald frames. "
+        },
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "Oil sketch box panels - old Early - Prov. from Wharf. 10 x 14. Sail boats tangled spars 10 x 14. From Websters. Provincetown - Bay. \" Quincy Boats - \" 7 framed "
+        },
+        {
+          "page": "122",
+          "ref": "98173",
+          "count": 1,
+          "shows": "25 x 30 - gold - Chez Hopper - no feet 29 x 36 \" \" feet - 29 x 36 - Wash. Sq. winter - plain wood 22 x 38 - S. Truro Church - whitish 20 x 24 - Fruit - green wh"
+        }
+      ]
+    },
+    {
+      "term": "canvas",
+      "kind": "support",
+      "written": "canvas · Canvas = 36 x 25",
+      "means": "Named only for what a frame shows of it: « what shows of canvas = 21 3/4 x 37 5/8 », « Canvas 36 x more than 23 1/2 ». The ledgers state a canvas's size; the notebook states what is left of it inside a frame.",
+      "match": "of canvas|larger canvas|Canvas (?:=|\\d|from|- Wash)|\\d canvases",
+      "count": 9,
+      "sheets": 7,
+      "seen": [
+        {
+          "page": "2",
+          "ref": "96248",
+          "count": 2,
+          "shows": "cuts off bottom of canvas. asking E. from back of frame Silverfish - from Rehn Gal. on hill + pond backs ? Inside 23 3/8 x 37 1/2 Shows - 22 5/8 x 36 5/8 what s"
+        },
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 2,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        },
+        {
+          "page": "16",
+          "ref": "97045",
+          "count": 1,
+          "shows": "Old frames Old Whistler moulding - in rack - 38 x 48. heavy with insert Frame of Peters fath. - the Cole 29 x 36. (Chez Hopper \" size.) 26 x 38 1/2 insert of 1 "
+        },
+        {
+          "page": "58",
+          "ref": "97272",
+          "count": 1,
+          "shows": "Canvas - Wash. Sq. Treetop = 27 x 43. From Colonica Heights 32 x 38 16 x 24 Buick in Calif. 22 x 32 Pochardes 10 x 14"
+        }
+      ]
+    },
+    {
+      "term": "portfolio",
+      "kind": "support",
+      "written": "Black portfolios",
+      "means": "20 x 26 1/2.",
+      "match": "portfolios",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 1,
+          "shows": "1/2 water color \" 15 x 22 2 )4 3 Margin - = 2 1 1/2 to small. Black portfolios 20 x 26 1/2"
+        }
+      ]
+    },
+    {
+      "term": "To finish plain wood frames",
+      "kind": "recipe",
+      "written": "To finish plain wood frames.",
+      "means": "Four numbered steps taken down with B. Hartman — shellac; white liquid shoe polish; dry colour, pastel, rubbed in; wax — the one recipe for a frame in the archive, beside the paint formulae the ledgers carry for the canvases.",
+      "match": "To finish plain wood frames",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "6",
+          "ref": "96080",
+          "count": 1,
+          "shows": "To finish plain wood frames. c̄ B. Hartman 1. Shellac. 2. White shoe polish liquid 3. Rub in dry color - pastel - remove do. 4. Wax."
+        }
+      ]
+    }
+  ]
+}

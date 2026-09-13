@@ -1,0 +1,252 @@
+{
+  "note": "What the black notebook says about frames, finishes, papers and supports — the specification the ledgers stop short of. Declared by hand, and every entry's pattern must be found on a transcribed page of the notebook or the build fails. The counts and the pages are read off the file.",
+  "kinds": {
+    "framer": {
+      "label": "Frame makers, and where a frame came from",
+      "note": "Named on a bill, on a frame in the rack, or as the giver."
+    },
+    "finish": {
+      "label": "Finishes and fittings",
+      "note": "Her words for what a frame looked like, and the model numbers on the bills."
+    },
+    "paper": {
+      "label": "Paper, board and mats",
+      "note": "By the sheet and the half sheet, and by the pound where she priced it."
+    },
+    "support": {
+      "label": "Panels and canvas",
+      "note": "What was painted on, where the notebook names it."
+    },
+    "recipe": {
+      "label": "A recipe",
+      "note": "The one instruction for making anything, in a book of lists."
+    }
+  },
+  "entries": [
+    {
+      "term": "Heydenryk",
+      "kind": "framer",
+      "written": "Heidenryk · Heinrich · Heydenryk",
+      "means": "A New York frame maker, written three ways on three pages and named again on the last frames list in the notebook: a 25 x 30 « goldish + white » at 11.50, a « grey white frame » on San Estoban, and a 29 x 36 whose sight is 27 3/4 x 34 3/4.",
+      "match": "Heidenryk|Heinrich|Heydenryk"
+    },
+    {
+      "term": "Burges-Revel",
+      "kind": "framer",
+      "written": "Burges - Revel Corp. · Revel · Ravel",
+      "means": "The frame maker of La Porte, Indiana. She copied two of its bills: four frames of February 1958 with their model numbers, sizes, finish codes and prices, and twenty-seven frames of June 1961 listed by size against the pictures they went on.",
+      "match": "Burges\\s*-\\s*Revel|\\bRevel\\b|\\bRavel\\b",
+      "note": "« Ravel » twice, for the same firm's model 214."
+    },
+    {
+      "term": "Robinson",
+      "kind": "framer",
+      "written": "Robinson · Robinsons",
+      "means": "Frames « fancy French » and « French Elaborate », one of them of 1948 on San Estoban; also where she priced water colour paper by the pound.",
+      "match": "Robinson 1948|Robinson -|See Robinson|Robinsons"
+    },
+    {
+      "term": "Barbizon",
+      "kind": "framer",
+      "written": "Barbizon · Barbazon",
+      "means": "Three 20 x 24 frames, « grey - antique », for the Cape bedroom, the obituary flowers and the petunias.",
+      "match": "Barb[ai]zon"
+    },
+    {
+      "term": "Usui",
+      "kind": "framer",
+      "written": "Usui",
+      "means": "A 25 x 30 of May 1953, « gold, pinkish », at $18.",
+      "match": "Usui"
+    },
+    {
+      "term": "Matt",
+      "kind": "framer",
+      "written": "Matt · made by Matt - E. 54\" St.",
+      "means": "The new frames of 1952. The 25 x 30 « was aluminum + gold + no good on anything. Too raw sienna - awful in north light » — the one verdict on a frame in the notebook.",
+      "match": "1952 Matt\\.|made by Matt|Matt - 25 x 30|Matt frame"
+    },
+    {
+      "term": "Sommerfield",
+      "kind": "framer",
+      "written": "Sommerfield frame",
+      "means": "One frame, 22 x 38.",
+      "match": "Sommerfield"
+    },
+    {
+      "term": "Royal Art Framing",
+      "kind": "framer",
+      "written": "Royal Art Framing",
+      "means": "« ancient », « white, soft trim », on Dauphinée House of Truro, 20 x 28.",
+      "match": "Royal Art Framing"
+    },
+    {
+      "term": "Fitzgerald",
+      "kind": "framer",
+      "written": "Fitzgerald frames · Mrs Fitzgerald's frame",
+      "means": "Frames that came from Mrs. Fitzgerald of Nyack rather than from a shop: one of 51 1/2 x 35, and an old one of 30 3/4 x 41 1/2 kept at Marion's.",
+      "match": "Fitzgerald"
+    },
+    {
+      "term": "Hartman",
+      "kind": "framer",
+      "written": "Hartman frame · Bertram H. · c̄ B. Hartman",
+      "means": "Bertram Hartman, painter and neighbour: a frame of his at 17 1/2 x 24 1/2 « not large enough », frames made for him in 1952, and the recipe below for finishing plain wood, taken down with him.",
+      "match": "Hartman frame|B\\. Hartman|Bertram H\\. \\d"
+    },
+    {
+      "term": "Rehn Gallery",
+      "kind": "framer",
+      "written": "from Rehn Gal.",
+      "means": "Frames that came from Edward Hopper's dealer: a silver one on Hills and Pond, 37 1/2 x 23 1/4, and two gold at 28 1/4 x 36 1/2.",
+      "match": "from Rehn Gal"
+    },
+    {
+      "term": "Daniel Gallery",
+      "kind": "framer",
+      "written": "Daniel Gallery",
+      "means": "On the oldest frame of page 122's list, « Old - heavy gold (glass) », 15 1/2 x 18 3/8 with a deep rabbet: the gallery's name, and nothing else about it.",
+      "match": "Daniel Gallery"
+    },
+    {
+      "term": "Kuehne",
+      "kind": "framer",
+      "written": "Kuehne frame",
+      "means": "One frame, 16 x 20, on Margaret VanEpps; Max Kuehne, painter, was a neighbour and a guest on the same leaves.",
+      "match": "Kuehne frame"
+    },
+    {
+      "term": "Whistler moulding",
+      "kind": "framer",
+      "written": "Old Whistler moulding",
+      "means": "« in rack - 38 x 48, heavy with insert »: a profile, not a maker, and the largest frame she lists.",
+      "match": "Whistler moulding"
+    },
+    {
+      "term": "gold",
+      "kind": "finish",
+      "written": "gold · goldish · gold insert · white + gold · grey gold",
+      "means": "The commonest word on any frame line, and the finish of nearly every frame that came from the Rehn Gallery.",
+      "match": "\\bgold(ish)?\\b"
+    },
+    {
+      "term": "silver",
+      "kind": "finish",
+      "written": "Silver frame · Old Silver · silver on band",
+      "means": "Silver on the Rehn Gallery frame and on the Back of Cape Houses frame; « a wide streak of silver on band » on the Judson Tower frame, tarnished by 1961.",
+      "match": "Silver frame|Old Silver|silver on band"
+    },
+    {
+      "term": "whitish",
+      "kind": "finish",
+      "written": "whitish · whiterish · grey white · white + gold · white met. + gold edge",
+      "means": "Her word for the pale frames of the 1950s: on the Truro church, on the Revel frames of 1961, and down page 122's list.",
+      "match": "whit(ish|erish)\\b|white \\+ gold|white and gold|white met\\.|grey white|white insert|white frames|white, soft trim"
+    },
+    {
+      "term": "old metal",
+      "kind": "finish",
+      "written": "old metal",
+      "means": "On Chop Suey, 32 x 38 — Edward Hopper's canvas, in the frames list of page 122.",
+      "match": "old metal"
+    },
+    {
+      "term": "insert",
+      "kind": "finish",
+      "written": "insert · 1\" white insert · insert of 1 1/2\"",
+      "means": "The slip inside a frame that takes up the difference between frame and canvas: « insert of 1 1/2\" - so could be used on larger canvas », « 1950 - insert removed to fit 29 x 36 ».",
+      "match": "\\binserts?\\b"
+    },
+    {
+      "term": "model numbers",
+      "kind": "finish",
+      "written": "#200 · Model 200 · No. 214 · 241",
+      "means": "Burges-Revel's models, by number: 200 with an insert for the 29 x 36 and 25 x 30, 214 for the 22 x 32 and 20 x 28, 241 in « 819 beige » for the Pochards.",
+      "match": "\\#\\s?200|Model 200|\\b200 (?:-|of|│)|No\\. 214|\\b214 (?:│|\\()|\\b241 \\("
+    },
+    {
+      "term": "Whatman",
+      "kind": "paper",
+      "written": "Watman\" · Watmans",
+      "means": "Whatman water colour paper, by the half sheet: « 1/2 sheet Watmans = 22 1/2 x 15 1/2 », « Watman\" 1/2 sheet - 15 x 22 ».",
+      "match": "Watmans?"
+    },
+    {
+      "term": "Lindenmeyr",
+      "kind": "paper",
+      "written": "Lindenmeyer · Lindenmeyr",
+      "means": "Mat paper from Lindenmeyr, the paper merchant: 25 x 38 the sheet, 19 x 25 the half.",
+      "match": "Lindenmey(e)?r"
+    },
+    {
+      "term": "Cooper Union",
+      "kind": "paper",
+      "written": "Coper Union",
+      "means": "Water colour paper priced by weight: 72 lb at 20¢ and 140 lb at 39¢, against Robinson's 23¢, 37¢ and 50¢ for 72, 90 and 140.",
+      "match": "Coper Union"
+    },
+    {
+      "term": "water color pad",
+      "kind": "paper",
+      "written": "Water color pad · Water Color pads",
+      "means": "14 x 20, written on page 8 and again on page 121.",
+      "match": "[Ww]ater [Cc]olor pads?"
+    },
+    {
+      "term": "half sheet",
+      "kind": "paper",
+      "written": "1/2 sheet",
+      "means": "Her unit for a water colour: half of a 22 x 30 sheet, 15 x 22, or of a sheet of mat paper.",
+      "match": "1/2 sheet"
+    },
+    {
+      "term": "mat",
+      "kind": "paper",
+      "written": "mat · Mats 19 x 25 · Largest mat 23\" x 30\" · in 4\" mat",
+      "means": "The mount a water colour sits in, with its width: « Mat 2\" - bottom 2 1/2 », « Old mats - outside - 19 x 25 ».",
+      "match": "\\b[Mm]ats?\\b"
+    },
+    {
+      "term": "pulp board",
+      "kind": "paper",
+      "written": "Grey pulp board",
+      "means": "« 1/2 sheet 20 1/2 x 31 », listed with the mat papers.",
+      "match": "pulp board"
+    },
+    {
+      "term": "shelf paper",
+      "kind": "paper",
+      "written": "Shelf paper",
+      "means": "« 13 x 19 ? », with her own question mark, among the water colour sizes of page 6.",
+      "match": "Shelf paper"
+    },
+    {
+      "term": "sketch box panels",
+      "kind": "support",
+      "written": "Oil sketch box panels · Wood panels · Small oils - 10 x 14",
+      "means": "10 x 14, the size of the oil sketch box and of the early Provincetown oils listed under it.",
+      "match": "(sketch box|Wood) panels"
+    },
+    {
+      "term": "canvas",
+      "kind": "support",
+      "written": "canvas · Canvas = 36 x 25",
+      "means": "Named only for what a frame shows of it: « what shows of canvas = 21 3/4 x 37 5/8 », « Canvas 36 x more than 23 1/2 ». The ledgers state a canvas's size; the notebook states what is left of it inside a frame.",
+      "match": "of canvas|larger canvas|Canvas (?:=|\\d|from|- Wash)|\\d canvases"
+    },
+    {
+      "term": "portfolio",
+      "kind": "support",
+      "written": "Black portfolios",
+      "means": "20 x 26 1/2.",
+      "match": "portfolios"
+    },
+    {
+      "term": "To finish plain wood frames",
+      "kind": "recipe",
+      "written": "To finish plain wood frames.",
+      "means": "Four numbered steps taken down with B. Hartman — shellac; white liquid shoe polish; dry colour, pastel, rubbed in; wax — the one recipe for a frame in the archive, beside the paint formulae the ledgers carry for the canvases.",
+      "match": "To finish plain wood frames"
+    }
+  ]
+}
