@@ -140,11 +140,11 @@ const A = J('accounts.json');
   out['fig-money'] = `\\begin{figure}[htbp]\\centering
 \\begin{tikzpicture}
 \\begin{axis}[width=13cm,height=8cm,xmin=1912,xmax=1968,ymin=0,ymax=42000,xlabel={year},ylabel={dollars, as written},grid=major,grid style={black!10},tick label style={font=\\footnotesize},label style={font=\\footnotesize},axis line style={black!50},legend style={font=\\scriptsize,at={(0.03,0.97)},anchor=north west,draw=none},scaled y ticks=false,y tick label style={/pgf/number format/fixed,/pgf/number format/1000 sep={,}},x tick label style={/pgf/number format/1000 sep=}]
-\\addplot[ybar,bar width=2.2pt,fill=black!70,draw=none] coordinates {${cb}};
+\\addplot[ybar,bar width=2.2pt,fill=black!70,draw=none,area legend] coordinates {${cb}};
 \\addlegendentry{Book IV, the cheques receipted, by year}
 \\addplot[thick,black,mark=*,mark size=1.1pt] coordinates {${art}};
 \\addlegendentry{Books I, II, III and Dealers, net of the third, by year of sale}
-\\addplot[ybar,bar width=2.2pt,fill=black!25,draw=none] coordinates {${ill}};
+\\addplot[ybar,bar width=2.2pt,fill=black!25,draw=none,area legend] coordinates {${ill}};
 \\addlegendentry{Book IV, illustration receipts, 1913--1925}
 \\end{axis}
 \\end{tikzpicture}

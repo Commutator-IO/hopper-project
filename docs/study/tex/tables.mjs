@@ -9,7 +9,7 @@ let out = '';
 
 // 1. Illustration years (1913-1925)
 const ill = a.activities.find(x => x.key === 'illustration');
-out += `% illustration\n\\begin{table}[htbp]\\centering\\small\n\\caption{Book IV, the illustration decade: what was charged and what was received, by year, as the transcribed leaves state it. Accrual at the leaf's own date column; a negative balance is a cheque with no charge line behind it.}\\label{tab:ill}\n\\begin{tabular}{lrrr}\\toprule Year & Charged & Received & Balance\\\\\\midrule\n`;
+out += `% illustration\n\\begin{table}[htbp]\\centering\\small\n\\caption{Book IV, the illustration decade: what was charged and what was received, by year, as the transcribed leaves state it. Accrual at the leaf's own date column; a negative balance is a cheque with no charge line behind it. There is no row for 1921 because leaf 53's year line reads 1920 above entries of 1921 and the reader keeps the year as written; that year's income is counted under 1920.}\\label{tab:ill}\n\\begin{tabular}{lrrr}\\toprule Year & Charged & Received & Balance\\\\\\midrule\n`;
 for (const y of ill.years) out += `${y.year} & ${money(y.accrued)} & ${money(y.received)} & ${money(y.outstanding)}\\\\\n`;
 out += `\\midrule Total & ${money(ill.totals.accrued)} & ${money(ill.totals.collected)} & ${money(ill.totals.outstanding)}\\\\\\bottomrule\\end{tabular}\\end{table}\n\n`;
 

@@ -18,11 +18,11 @@ and this note was drafted by Claude Fable 5.1 from those transcriptions, under t
 
 
 
-      Written from the Hopper Ledgers transcriptions at https://hopper.commutator.io
-(Whitney Museum of American Art, 96.208 to 96.213, and the Sanborn Hopper Archive, Series
-                                             IV.A)
-Draft prepared for submission to Digital Humanities Quarterly or the Journal of the Text Encoding
-                                           Initiative.
+     Written from the Hopper Ledgers transcriptions at https://hopper.commutator.io
+ (Whitney Museum of American Art, 96.208 to 96.213, and the Sanborn Hopper Archive, Series
+                                              IV.A)
+   Working draft; a shorter article drawn from it is being prepared for the Journal of the Text
+                                       Encoding Initiative.
 
  © 2026 Michel Hua. This note is licensed under a Creative Commons Attribution 4.0 International licence
  (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/. The words of Josephine and Edward
@@ -30,6 +30,45 @@ Hopper quoted in it are © Heirs of Josephine N. Hopper, licensed by Artists Rig
   and are quoted for criticism and study; the data behind the tables and figures are CC0 in the edition’s
                             repository. This is a working draft, not a publication.
 ii
+Abstract
+
+The six artist’s ledgers of Edward and Josephine Hopper at the Whitney Museum of Amer-
+ican Art, 504 digitised sheets kept from 1913 to 1967, and four of Josephine Hopper’s
+notebooks from the Sanborn Hopper Archive were transcribed in September 2026 by a
+language model, sheet by sheet against the museum’s photographs, into a restricted LaTeX
+with a critical apparatus that marks what was read, what was doubted, what could not be
+read and whose hand wrote it. This note reads that transcription whole. It describes the
+ten books and the division of labour between the two hands; follows each ledger through
+its prices, buyers, exhibitions and descriptions; reads the notebooks as the other half of
+the same working life; derives from the leaves a chronology of the painter’s materials and
+a census of his formats; and adds up, under stated rules, what the books say was charged
+and received over fifty-four years. Every quotation is cited by leaf and by the museum’s
+reference and hyperlinked to the transcribed sheet beside its photograph; every figure is
+a floor under a published rule. The note argues that the edition’s contribution is a condi-
+tion rather than a finding, that any sentence read from these books can now be checked
+against the hand it came out of on one screen, and it presents itself as an experiment in
+that method, made with the Hopper corpus as its occasion and with the model’s reading,
+still unchecked by a person, left in view. The methodology chapter sets out the pipeline,
+from the harvested inventory to the accounts readers, and the working method: Claude
+Code with Opus 5 and Fable 5.1, a GitHub repository as workbench, an interface built for
+checking, and parallel sessions by remote control.
+
+Keywords. Edward Hopper; Josephine Nivison Hopper; artist’s ledgers; transcription; crit-
+ical apparatus; TEI; machine reading; provenance; art market; digital humanities.
+
+Data availability. The transcriptions, the derived data, the site and the sources of this note
+are in the public repository at https://github.com/Commutator-IO/hopper-project,
+the site at https://hopper.commutator.io; the transcriptions are also exported as TEI
+P5. A Zenodo deposit with a DOI is planned and is tracked as issue 16 of that repository;
+until it exists, the repository at a named commit is the citable form. The photographs are
+the Whitney Museum’s and are served from its own ResourceSpace; none is stored by the
+edition.
+
+
+
+
+                                             iii
+iv
 A note on this critical note
 
 This is an experiment, and the Hopper ledgers are its excuse. What is being tried is a
@@ -53,43 +92,49 @@ set the task and the scope but has not yet read every sentence against the leave
 allel readings of the transcripts, each by the same model, supplied the quotations and the
 figures; the prose, the selection and the argument are the model’s. A reader should treat
 the whole as the work of a careful research assistant whose notes have not been checked,
-which is what it is. It is written from a transcription of the six Hopper ledgers and four
-of Josephine Hopper’s notebooks that was made, sheet by sheet, against the Whitney Mu-
-seum’s photographs, and it is written before any person has checked that transcription
-against the photographs sheet by sheet. Every quotation below is therefore a quotation of
-a reading, and the reading is dated. Where I quote the leaves I quote them as the transcrip-
-tion gives them, with Josephine Hopper’s spelling, her abbreviations and her arithmetic
-intact, and I give the leaf number she wrote on the paper and the resource reference the
-museum assigned to the photograph, because the first is what a reader holding the volume
-can find and the second is the only number that names exactly one image.
+which is what it is. Two exceptions are recorded where they occur: the two quotations the
+argument leans on hardest, the Goethe line under October on Cape Cod and the sentence
+of Edward Hopper’s purpose in the black notebook, were compared with the Whitney’s
+photographs of those two sheets by the model on 13 September 2026, at the museum’s
+published resolution, and the readings held; that is a machine’s comparison and not the
+human check the edition reserves the word checked for. It is written from a transcription
+of the six Hopper ledgers and four of Josephine Hopper’s notebooks that was made, sheet
+by sheet, against the Whitney Museum’s photographs, and it is written before any person
+has checked that transcription against the photographs sheet by sheet. Every quotation
+below is therefore a quotation of a reading, and the reading is dated. Where I quote the
+leaves I quote them as the transcription gives them, with Josephine Hopper’s spelling, her
+abbreviations and her arithmetic intact, and I give the leaf number she wrote on the paper
+and the resource reference the museum assigned to the photograph, because the first is
+what a reader holding the volume can find and the second is the only number that names
+exactly one image.
     The figures are of the same kind. Where I say that the pictures of a year sold for so
 much, I mean that the rows of the transcribed leaves, read by a reader whose rules are
 stated, add up to so much; I do not mean that Edward Hopper earned it. The distinction
-is not modesty. A ledger row with a price in it looks like data in a way a sentence of prose
+
+                                              v
+is not modesty. A ledger row with a price in it looks like data in a way a sentence of prose
 does not, and it will be cited as data whatever caveats stand beside it. So the tables in the
 appendix carry the date they were generated, and every total in the text is a floor under a
 number nobody yet knows.
-    Three readers stand before this one and nothing here claims priority over them. Gail
+     Three readers stand before this one and nothing here claims priority over them. Gail
 Levin wrote the biography from the diaries and the catalogue raisonné from the record
-
-                                              iii
-books; Deborah Lyons published the record books in 1997; Madeleine Larson typed the
+books; Deborah Lyons published the record books in 1997; Madeleine Larson typed the
 Provincetown diaries. Most of what a first reading of these leaves finds surprising is in
 Levin already. What this draft can add is not a discovery but a method: the reading placed
 beside the sheet, so that any sentence in it can be checked against the hand it came out of.
-    This draft is being prepared for submission to Digital Humanities Quarterly or the Jour-
-nal of the Text Encoding Initiative, both open-access journals, and it is written to their expec-
-tation that the method, the data and the text be open. The note itself is therefore licensed
-under Creative Commons Attribution 4.0 International (CC BY 4.0): it may be copied, re-
-distributed and built upon for any purpose, provided the source is credited. The licence
-covers the prose, the tables, the figures and the LaTeX sources in the edition’s repository.
-It does not and cannot cover three things, which stay under their own terms: the data files
-the tables and figures are read from, which the repository dedicates to the public domain
-under CC0 and which need no attribution at all; the coordinates in the travels figure, which
-are OpenStreetMap’s under the ODbL; and the words of Josephine and Edward Hopper,
-which remain in copyright. They are quoted here for the purpose of criticism and study,
-in the quantities that purpose requires, and this document is a working paper and not a
-publication.
+     A shorter article drawn from this draft is being prepared for the Journal of the Text
+Encoding Initiative, an open-access journal, and this draft is written to its expectation that
+the method, the data and the text be open, and that any use of generative AI be declared,
+as it is here. The note itself is therefore licensed under Creative Commons Attribution 4.0
+International (CC BY 4.0): it may be copied, redistributed and built upon for any purpose,
+provided the source is credited. The licence covers the prose, the tables, the figures and the
+LaTeX sources in the edition’s repository. It does not and cannot cover three things, which
+stay under their own terms: the data files the tables and figures are read from, which the
+repository dedicates to the public domain under CC0 and which need no attribution at
+all; the coordinates in the travels figure, which are OpenStreetMap’s under the ODbL; and
+the words of Josephine and Edward Hopper, which remain in copyright. They are quoted
+here for the purpose of criticism and study, in the quantities that purpose requires, and this
+document is a working paper and not a publication.
 
 
 Conventions. A citation of the form Book II, leaf 95, ref 17982 names the volume, the leaf
@@ -111,10 +156,12 @@ data files, the drawings the site makes, and each is signed.
 
 
 
-                                               iv
+                                              vi
 Contents
 
-A note on this critical note                                                                  iii
+Abstract                                                                                      iii
+
+A note on this critical note                                                                   v
 
 1 Ten books and two hands                                                                      1
   1.1 What the books are . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       1
@@ -122,89 +169,88 @@ A note on this critical note                                                    
   1.3 What a leaf is . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     3
   1.4 How the reading was made . . . . . . . . . . . . . . . . . . . . . . . . . . .           3
 
-2 Book I: the plates, and the lists that grew behind them                                 4
-  2.1 A Woolworth ledger . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
-  2.2 One plate to a leaf . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
-  2.3 The oils, written up afterwards . . . . . . . . . . . . . . . . . . . . . . . . . 6
-  2.4 Her own collection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
-  2.5 Lists, and the money that vanishes . . . . . . . . . . . . . . . . . . . . . . . 10
-  2.6 What is lost, and what is doubtful . . . . . . . . . . . . . . . . . . . . . . . . 10
+2 Book I: the plates, and the lists that grew behind them                                 5
+  2.1 A Woolworth ledger . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+  2.2 One plate to a leaf . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+  2.3 The oils, written up afterwards . . . . . . . . . . . . . . . . . . . . . . . . . 7
+  2.4 Her own collection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+  2.5 Lists, and the money that vanishes . . . . . . . . . . . . . . . . . . . . . . . 11
+  2.6 What is lost, and what is doubtful . . . . . . . . . . . . . . . . . . . . . . . . 11
 
-3 Book II: one picture to an opening                                                          11
-  3.1 The shape of the record . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       11
-  3.2 The descriptions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      11
-  3.3 Herself . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   13
-  3.4 Paint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
-  3.5 The money, and what came back . . . . . . . . . . . . . . . . . . . . . . . .           14
-  3.6 Arithmetic . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    15
+3 Book II: one picture to an opening                                                          12
+  3.1 The shape of the record . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       12
+  3.2 The descriptions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      12
+  3.3 Herself . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   14
+  3.4 Paint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   15
+  3.5 The money, and what came back . . . . . . . . . . . . . . . . . . . . . . . .           15
+  3.6 Arithmetic . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    16
 
-4 Book III: the late work, and the lists in front of it                                       16
-  4.1 A book with its lists at the front . . . . . . . . . . . . . . . . . . . . . . . . .    16
-  4.2 The pictures, and what she said they were . . . . . . . . . . . . . . . . . . .         16
-  4.3 The buyers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      18
-  4.4 The prices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    20
-  4.5 Paint again . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     20
-  4.6 The end of the record . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     21
+4 Book III: the late work, and the lists in front of it                                       17
+  4.1 A book with its lists at the front . . . . . . . . . . . . . . . . . . . . . . . . .    17
+  4.2 The pictures, and what she said they were . . . . . . . . . . . . . . . . . . .         17
+  4.3 The buyers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      19
+  4.4 The prices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    21
+  4.5 Paint again . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     21
+  4.6 The end of the record . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     22
 
-5 Book IV: the pocket book, fifty-four years without a gap                                    22
-  5.1 An object unlike the others . . . . . . . . . . . . . . . . . . . . . . . . . . . .     22
-  5.2 Charges black, receipts red, sums pencil . . . . . . . . . . . . . . . . . . . .        22
-  5.3 The pictures arrive . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     23
-  5.4 Four ways of writing a commission . . . . . . . . . . . . . . . . . . . . . . .         24
-  5.5 The instalments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     25
-  5.6 What the book says it counts . . . . . . . . . . . . . . . . . . . . . . . . . . .      25
+5 Book IV: the pocket book, fifty-four years without a gap                                    23
+  5.1 An object unlike the others . . . . . . . . . . . . . . . . . . . . . . . . . . . .     23
+  5.2 Charges black, receipts red, sums pencil . . . . . . . . . . . . . . . . . . . .        23
+  5.3 The pictures arrive . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     24
+  5.4 Four ways of writing a commission . . . . . . . . . . . . . . . . . . . . . . .         25
+  5.5 The instalments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     26
 
-
-                                               v
+                                              vii
 CONTENTS
 
 
-   5.7 The last leaf . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+   5.6 What the book says it counts . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+   5.7 The last leaf . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
 
-6 Book V and the dealers’ book: the prints by whose hands they passed through 27
-  6.1 Book V, for drawings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
-  6.2 The dealers’ book . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
-  6.3 Her own leaves . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+6 Book V and the dealers’ book: the prints by whose hands they passed through 28
+  6.1 Book V, for drawings . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+  6.2 The dealers’ book . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+  6.3 Her own leaves . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
 
-7 The notebooks: the other half of the same working life                                     31
-  7.1 Four of ninety . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   31
-  7.2 Garrulities + Grouch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     31
-  7.3 The Battle of Washington Square . . . . . . . . . . . . . . . . . . . . . . . .        33
-  7.4 The black notebook . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     35
-  7.5 What the notebooks do to the ledgers . . . . . . . . . . . . . . . . . . . . . .       37
+7 The notebooks: the other half of the same working life                                     32
+  7.1 Four of ninety . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   32
+  7.2 Garrulities + Grouch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     32
+  7.3 The Battle of Washington Square . . . . . . . . . . . . . . . . . . . . . . . .        34
+  7.4 The black notebook . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     36
+  7.5 What the notebooks do to the ledgers . . . . . . . . . . . . . . . . . . . . . .       38
 
-8 How the data was made: the engineering behind the figures                                  39
-  8.1 The inventory: harvested by a person, committed as text . . . . . . . . . . .          39
-  8.2 Nothing of the archive is stored . . . . . . . . . . . . . . . . . . . . . . . . .     39
-  8.3 The transcription: a restricted language, and what it refuses . . . . . . . . .        40
-  8.4 The derived files, and the rule that a build must fail . . . . . . . . . . . . . .     40
-  8.5 The accounts reader . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      41
-  8.6 The ink pass . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   42
-  8.7 The working method: a person, two models, a repository and an interface .              42
-  8.8 What this note added, and how . . . . . . . . . . . . . . . . . . . . . . . . .        44
+8 How the data was made: the engineering behind the figures                                  40
+  8.1 The inventory: harvested by a person, committed as text . . . . . . . . . . .          40
+  8.2 Nothing of the archive is stored . . . . . . . . . . . . . . . . . . . . . . . . .     40
+  8.3 The transcription: a restricted language, and what it refuses . . . . . . . . .        41
+  8.4 The derived files, and the rule that a build must fail . . . . . . . . . . . . . .     41
+  8.5 The accounts reader . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      42
+  8.6 The ink pass . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   43
+  8.7 The working method: a person, two models, a repository and an interface .              44
+  8.8 What this note added, and how . . . . . . . . . . . . . . . . . . . . . . . . .        45
 
-9 What the pictures were made of, and what shape                                             45
-  9.1 The formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    45
-  9.2 The size . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   46
-  9.3 The frames, from the other book . . . . . . . . . . . . . . . . . . . . . . . .        48
+9 What the pictures were made of, and what shape                                             46
+  9.1 The formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    46
+  9.2 The size . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   47
+  9.3 The frames, from the other book . . . . . . . . . . . . . . . . . . . . . . . .        49
 
-10 The money, added up                                                                       49
-   10.1 What can be counted, and what cannot . . . . . . . . . . . . . . . . . . . . .       49
-   10.2 The illustrator, 1913–1925 . . . . . . . . . . . . . . . . . . . . . . . . . . . .   49
-   10.3 The painter, by the work books . . . . . . . . . . . . . . . . . . . . . . . . .     50
-   10.4 The painter, by the cash book . . . . . . . . . . . . . . . . . . . . . . . . . .    50
-   10.5 The days the books were written on . . . . . . . . . . . . . . . . . . . . . . .     51
+10 The money, added up                                                                       50
+   10.1 What can be counted, and what cannot . . . . . . . . . . . . . . . . . . . . .       50
+   10.2 The illustrator, 1913–1925 . . . . . . . . . . . . . . . . . . . . . . . . . . . .   50
+   10.3 The painter, by the work books . . . . . . . . . . . . . . . . . . . . . . . . .     51
+   10.4 The painter, by the cash book . . . . . . . . . . . . . . . . . . . . . . . . . .    51
+   10.5 The days the books were written on . . . . . . . . . . . . . . . . . . . . . . .     52
 
-11 Conclusion: the record and the silence                                                    53
+11 Conclusion: the record and the silence                                                    54
 
-A Tables                                                                                     54
+A Tables                                                                                     56
 
-Sources                                                                                      61
-
-
+Sources                                                                                      63
 
 
-                                              vi
+
+
+                                             viii
 List of Figures
 
  2.1 Evening Wind, etching, 1921, 7 x 8 3/8” as the leaf writes it (Book I, leaf
@@ -222,7 +268,7 @@ Sources                                                                         
      of the picture; nothing is traced and no detail is drawn, and they are not
      reproductions. The pictures themselves are at the museums’ own pages.
      Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions
-     and works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . .   6
+     and works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . .   7
  2.2 House by a Railroad, oil, 1925; catalogued as House by the Railroad, 24 x
      29 as the leaf writes it (Book I, leaf 52, ref 18056). The Museum of Mod-
      ern Art, 3.1930: https://www.moma.org/collection/works/78330. The
@@ -238,12 +284,12 @@ Sources                                                                         
      from general knowledge of the picture; nothing is traced and no detail is
      drawn, and they are not reproductions. The pictures themselves are at the
      museums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026,
-     from the transcriptions and works.json (2026-09-13). . . . . . . . . . . . .     8
+     from the transcriptions and works.json (2026-09-13). . . . . . . . . . . . .     9
 
 
 
 
-                                         vii
+                                         ix
 LIST OF FIGURES
 
 
@@ -256,7 +302,7 @@ Sources                                                                         
        nothing is traced and no detail is drawn, and they are not reproductions.
        The pictures themselves are at the museums’ own pages. Drawn by Claude
        Fable 5.1, 13 September 2026, from the transcriptions and works.json
-       (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   9
+       (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
 
    3.1 Night Hawks, oil, finished 21 January 1942; catalogued as Nighthawks,
        33 x 60 as the leaf writes it (Book II, leaf 95, ref 17982). Art Institute
@@ -267,7 +313,7 @@ Sources                                                                         
        edge of the picture; nothing is traced and no detail is drawn, and they are
        not reproductions. The pictures themselves are at the museums’ own pages.
        Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and
-       works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+       works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
 
    4.1 Rooms by the Sea, oil, September 1951; alias « The Jumping Off Place
        », 29 x 40 as the leaf writes it (Book III, leaf 41, ref 18347). Yale Uni-
@@ -283,12 +329,12 @@ Sources                                                                         
        knowledge of the picture; nothing is traced and no detail is drawn, and
        they are not reproductions. The pictures themselves are at the museums’
        own pages. Drawn by Claude Fable 5.1, 13 September 2026, from the
-       transcriptions and works.json (2026-09-13). . . . . . . . . . . . . . . . . . 18
+       transcriptions and works.json (2026-09-13). . . . . . . . . . . . . . . . . . 19
 
 
 
 
-                                             viii
+                                             x
                                                                      LIST OF FIGURES
 
 
@@ -307,7 +353,7 @@ Sources                                                                         
     the leaf’s description and from general knowledge of the picture; nothing is
     traced and no detail is drawn, and they are not reproductions. The pictures
     themselves are at the museums’ own pages. Drawn by Claude Fable 5.1, 13
-    September 2026, from the transcriptions and works.json (2026-09-13). . . 19
+    September 2026, from the transcriptions and works.json (2026-09-13). . . 20
 4.3 Saltillo Mansion, watercolour, August 1943, 25 1/8” x 19 5/8” as the
     leaf writes it (Book III, leaf 101, ref 17944). The Metropolitan Museum
     of Art, 45.157.2: https://www.metmuseum.org/art/collection/search/
@@ -319,7 +365,7 @@ Sources                                                                         
     frames are drawn to the proportions of the size in Edward Hopper’s hand;
     the images are not reproduced here and can be seen at the museums’ own
     pages. Drawn by Claude Fable 5.1, 13 September 2026, from the transcrip-
-    tions and works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . 20
+    tions and works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . 21
 
 7.1 Where the black notebook and the Provincetown typescripts put the Hop-
     pers, drawn at true relative position from coordinates retrieved from Open-
@@ -331,12 +377,12 @@ Sources                                                                         
     der two records fall in, not an itinerary; the ledgers, which record what left
     the studio and not where anybody was, cannot draw this. After the Timeline
     tab. Drawn by Claude Fable 5.1, 13 September 2026, from travels.json
-    (2026-09-13); coordinates © OpenStreetMap contributors, ODbL 1.0. . . . . 38
+    (2026-09-13); coordinates © OpenStreetMap contributors, ODbL 1.0. . . . . 39
 
 
 
 
-                                       ix
+                                       xi
 LIST OF FIGURES
 
 
@@ -347,7 +393,7 @@ Sources                                                                         
        from the middle 1940s; the canvas turning from National to Herga and the
        priming from double to single across the 1950s. Only the 43 works dated
        by the leaf itself are plotted. After the Technique tab. Drawn by Claude
-       Fable 5.1, 13 September 2026, from materials.json (undated). . . . . . . 46
+       Fable 5.1, 13 September 2026, from materials.json (undated). . . . . . . 47
    9.2 Every format, plotted: width across, height up, one dot to a format and its
        area standing for how many works were made at it, 78 formats from 199
        work headings that state a size. The diagonal is where a picture would be
@@ -355,12 +401,12 @@ Sources                                                                         
        ing plates are in the corner, the watercolour sheets through the middle, the
        late oils at the top right. After the Technique tab of hopper.commutator.io.
        Drawn by Claude Fable 5.1, 13 September 2026, from formats.json (un-
-       dated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+       dated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
    9.3 The eight formats he came back to, drawn to one scale and to their real pro-
        portions, so that a watercolour half-sheet stands beside a five-foot canvas;
        each is labelled with the number of work headings read at that size. After
        the Technique tab. Drawn by Claude Fable 5.1, 13 September 2026, from
-       formats.json (undated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+       formats.json (undated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
 
    10.1 The money, three ways: what the pocket book receipts each year from 1920
         (dark bars), what the work books state as the net of sales dated in that year
@@ -369,7 +415,7 @@ Sources                                                                         
         cheques as they arrived, the other the studio’s record of what left. Every
         figure is a floor, read from the transcribed rows under the rules of the ac-
         counts chapter. After the Accounts tab of hopper.commutator.io. Drawn by
-        Claude Fable 5.1, 13 September 2026, from accounts.json (2026-09-11). . 51
+        Claude Fable 5.1, 13 September 2026, from accounts.json (2026-09-11). . 52
    10.2 The days the six books record, one row to a year from 1913 to 1967 and one
         cell to a month, the darker the more days that month carry an entry: 1204
         days in all, from 2146 dated rows. A dense cell is a month of transactions,
@@ -378,12 +424,12 @@ Sources                                                                         
         Wed 179, Thu 215, Fri 207, Sat 175, Sunday a sixth of a weekday. After
         the calendar of the Timeline tab, which draws every day; this draws every
         month. Drawn by Claude Fable 5.1, 13 September 2026, from streak.json
-        (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
+        (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
 
 
 
 
-                                              x
+                                             xii
 Chapter 1
 
 
@@ -510,25 +556,35 @@ dollars and cents by two printed red rules, and nobody heads a column anywhere i
 
 
 1.4    How the reading was made
-The transcription this study is written from was made in September 2026 by a language
-model, in batches of twelve sheets, each batch a fresh reading with a header that says what
-the batch covers, what was hard about it and what was decided. It is a first pass, and it says
-so on every file. A critical apparatus marks what was read, what was guessed, what could
-not be read and whose hand it was; nothing illegible is guessed, because, as the edition’s
-method page puts it, « a guessed figure is a sale that did not happen ». The transcribed
-text is the source of record; the tables, the counts and the timeline are derived from it by
-scripts whose rules are published, and every figure in this study can be traced to a row.
+The claim this note makes is stated here so that every chapter can be measured against
+it: what the edition adds to the study of these books is not a finding but a condition, that
+any sentence read from them can be checked against the photograph of the leaf it came
+from, on one screen, by anybody. The transcription this study is written from was made
+in September 2026 by a language model, in batches of twelve sheets, each batch a fresh
+reading with a header that says what the batch covers, what was hard about it and what
+was decided. It is a first pass, and it says so on every file. A critical apparatus marks what
+was read, what was guessed, what could not be read and whose hand it was; nothing
+illegible is guessed, because, as the edition’s method page puts it, « a guessed figure is a
+sale that did not happen ». The transcribed text is the source of record; the tables, the
+counts and the timeline are derived from it by scripts whose rules are published, and every
+figure in this study can be traced to a row.
     I say this not to praise the method but to fix the status of what follows. The quotations
 are accurate to a reading that may be wrong in detail and that a second reader is expected
 to correct. The figures are accurate to rules that are stated and that a second reader may
 reject. What cannot be wrong, because it does not rest on any reading, is the shape of the
+
+
+                                              3
+Ten books and two hands
+
+
 archive: two hands, ten books, fifty-four years, and a woman recording, in a voice that is
 unmistakably her own, the work of a man who would not talk about it.
 
 
 
 
-                                              3
+                                            4
 Chapter 2
 
 
@@ -570,11 +626,11 @@ unless it says so. The edition says so, leaf by leaf, and this study depends on 
 
 
 
-                                                4
-                                                                              One plate to a leaf
+                                                5
+Book I: the plates, and the lists that grew behind them
 
 
-2.2    One plate to a leaf
+2.2     One plate to a leaf
 Leaves 2 to 44 hold the etchings, one plate to an odd leaf with the record continuing on
 the even leaf behind it. At the head of each is a halftone of the print, hinged; beside it
 the title and the plate size in Edward Hopper’s drawn lettering, « the only words on this
@@ -620,8 +676,8 @@ funds to buy » (Book I, leaf 89, ref 18152). A pound and then five dollars, so 
 be listed as a sale: the sentence is about the record as much as about the money, and it is
 
 
-                                               5
-Book I: the plates, and the lists that grew behind them
+                                                  6
+                                                                      The oils, written up afterwards
 
 
 one of many places where she is visibly keeping the book for the museum that would one
@@ -657,7 +713,7 @@ Fable 5.1, 13 September 2026, from the transcriptions and works.json (2026-09-13
 
 
 
-2.3     The oils, written up afterwards
+2.3    The oils, written up afterwards
 From leaf 45 the volume changes character, and the change is instructive. She had a plate-
 by-plate book; she needed somewhere for everything else; and so the second half of Book
 I became, in no fixed order, a set of running lists: Notes and Explanations, Pre-Rehn Sales,
@@ -672,8 +728,8 @@ them in binding order and says so.
 are written up afterwards: the watercolour leaves of 1924 to 1926 carry, in a later ink, the
 resales of June 1962, on rows first written forty years before. Here is the first canvas sold,
 
-                                                       6
-                                                                  The oils, written up afterwards
+                                                       7
+Book I: the plates, and the lists that grew behind them
 
 
 twice over. On leaf 45: « Bought out of famous Armory Sale 1913 — NewYork — by —
@@ -724,20 +780,20 @@ Sunset: « A real beauty this one. » and « Given to Jo Hopper - along with Jo 
 anniversary present 1955. Signed statement of this in bank box - J.H. » (Book I, leaf 58,
 ref 18297).
 
-                                               7
-Book I: the plates, and the lists that grew behind them
+                                                  8
+                                                                                   The oils, written up afterwards
 
 
 
 
-                        House by a Railroad, 24 x 29               The Automat, 28 x 36”
+                      House by a Railroad, 24 x 29               The Automat, 28 x 36”
 
 
 
 
-                                         Railroad Sunset
-                                             29 x 48
-                                        image not reproduced
+                                       Railroad Sunset
+                                           29 x 48
+                                      image not reproduced
 
 
 
@@ -759,13 +815,13 @@ pages. Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and
 
 
 
-                                                               8
-                                                                                Her own collection
+                                                             9
+Book I: the plates, and the lists that grew behind them
 
 
 
 
-                                         Tables for Ladies, 4 x 5 ft.
+                                           Tables for Ladies, 4 x 5 ft.
 
 
 Figure 2.3: Tables for Ladies, oil, 1930, 4 x 5 ft. as the leaf writes it (Book I, leaf 59, ref
@@ -802,11 +858,11 @@ presents.
 
 
 
-                                                     9
-Book I: the plates, and the lists that grew behind them
+                                                      10
+                                                             Lists, and the money that vanishes
 
 
-2.5     Lists, and the money that vanishes
+2.5    Lists, and the money that vanishes
 The Current Exhibitions leaves (84 to 89) and the Reviews, Reproductions and Photographs
 leaves (90 to 93) hold ten leaves without a dollar sign, except the pound and the five
 dollars of the British Museum. The One Man Shows leaf gives the career in a column:
@@ -839,7 +895,7 @@ house at S. Truro … Not so much painting done - except watercolor of Jenness H
 (Book I, flyleaf, ref 17234). The years 1957 to 1959 are not written.
 
 
-2.6     What is lost, and what is doubtful
+2.6    What is lost, and what is doubtful
 A reader should know where Book I cannot be read. The hinged clippings are the chief loss:
 the Worcester halftone on leaf 2 hides every price from January 1921 to December 1922;
 leaf 56 is « the most nearly lost leaf »; the Camel’s Hump halftone on leaf 81 is pasted flat
@@ -851,7 +907,7 @@ four. None is corrected, and the reason is the same as for the prices: a correct
 a ledger is a claim about who bought a picture, and the leaf did not make it.
     Only one reading in the entire volume is marked as checked by a person against the
 photograph: « Chicago », first read « Shicago », on leaf 8. That is the state of the edition,
-and this study inherits it.                    10
+and this study inherits it.                    11
 Chapter 3
 
 
@@ -895,8 +951,8 @@ the earliest leaves the voice is that of a painter looking at a landscape:
 Dauphinée House, on the same leaf: « Painted late in afternoon thru many changes of light
 til too dark to see. Peaceful before dark. House closed up + for sale. Built by a Capt.
 
-                                                  11
-Book II: one picture to an opening
+                                                  12
+                                                                                      The descriptions
 
 
 Kelly. » East Wind over Weehawken, with the painter in it: « Such cold raw weather, E.
@@ -948,8 +1004,8 @@ The record books are a closed world and everything in them refers to everything 
       tops of surrounding stools; lights on metal tanks at rear right; brilliant streak of jade
       green tiles 3/4 across canvas - at base of glass of window. … Very good looking blond
 
-                                                 12
-                                                                                              Herself
+                                                 13
+Book II: one picture to an opening
 
 
       boy in white (coat, cap) inside counter. Girl in red blouse, brown hair eating sandwich.
@@ -998,8 +1054,8 @@ dry thoroughly. » Its sale line reads « Given to wife, Jo N. Hopper as anniver
 slightly olive. … Girl with gold hair, flesh colored legs dressed in my purple wool jersey
 dress + black hat. … On seat Reader’s Digest in purple cover. » (Book II, leaf 25, ref
 
-                                                  13
-Book II: one picture to an opening
+                                                  14
+                                                                                        Paint
 
 
 18545). The transcriber’s note is exact: « the dress she puts on the girl is her own ». The
@@ -1022,7 +1078,7 @@ Truro - 1933. Rained all summer. » (Book II, leaf 39, ref 17049); « 1934 - The
 the house, not much painting done. » (Book II, leaf 42, ref 17766).
 
 
-3.4     Paint
+3.4    Paint
 Under nearly every oil, in the same words for thirty years, stands the formula. On the leaves
 of 1932 to 1936 it is « Zinc white, Rembrandt colors, poppy oil »; in 1937–38, « Belgian
 canvas, Rembrandt colors, lead white, linseed oil »; from 1939 the colourman changes
@@ -1041,15 +1097,15 @@ of the leaf that is neither a measurement nor a report of an event, but her hand
 his practice.
 
 
-3.5     The money, and what came back
+3.5    The money, and what came back
 The prices in Book II run from nine hundred dollars to eleven thousand. Cape Cod After-
 noon went to the Carnegie for 3000 in 1938; New York Movie to Stephen Clark for 2500 in
 1939; Gas to the Museum of Modern Art for 1800 in 1943; the Sheridan Theatre to Newark
 for 900 in 1940; Sun on Prospect Street to Edward G. Robinson, « someone in movie world
 named Robinson » as the diary has it, for 1000 the same year. The pictures that stayed
 
-                                             14
-                                                                                  Arithmetic
+                                             15
+Book II: one picture to an opening
 
 
 longest sold highest: Dauphinée House, painted in October 1932, went to Huntington
@@ -1083,7 +1139,7 @@ through a dying dealer’s gallery, did not reach the painter until June 1956, a
 widow of the painter wrote it down.
 
 
-3.6    Arithmetic
+3.6     Arithmetic
 Five rows in the whole archive fail the check that the receipt equals the price less the
 commission, and two are in Book II: 2550 less a third written as 1660 on leaf 45, and 1250
 less a third written as 850 on leaf 85 against 1275 to 850 on leaf 81, both cheques dated
@@ -1095,7 +1151,7 @@ archive that the record was kept from the cheque and not from memory.
 
 
 
-                                             15
+                                             16
 Chapter 4
 
 
@@ -1137,8 +1193,8 @@ leaf 47, ref 18177); Dinah in South Carolina Morning; Toots in Second Story Sunl
 painter quoted » (Book III, leaf 73, ref 17872); Nora in Intermission, « E. H. says she is
 
 
-                                             16
-                                                       The pictures, and what she said they were
+                                             17
+Book III: the late work, and the lists in front of it
 
 
 “Nora”. … E. says Nora is on the way of becoming an “egg head”! An efficient secretary
@@ -1188,13 +1244,13 @@ by Frances Hackett in the one + only perfect frame. Secured by Frances H., the o
 frame ever worn by a Hopper canvas. » (Book III, leaf 194, ref 17259).
 
 
-                                              17
-Book III: the late work, and the lists in front of it
+                                                        18
+                                                                                              The buyers
 
 
 
 
-                        Rooms by the Sea, 29 x 40            Office in a Small City, 28 x 40
+                      Rooms by the Sea, 29 x 40             Office in a Small City, 28 x 40
 
 
 Figure 4.1: Rooms by the Sea, oil, September 1951; alias « The Jumping Off Place », 29 x 40 as the
@@ -1217,10 +1273,10 @@ owned by Griswold of Yale »; Rooms by the Sea in 1952, « snapped up at once be
 publicly »; Western Motel in 1958; Sunlight in a Cafeteria in 1958 at 9000; four Mexican
 and Wyoming watercolours besides. And then the note in pencil at the foot of Excursion
 into Philosophy:
-       On hearing about this canvas, Stephen Clark had come to see it. At old 5” Ave. address,
-       he learned of gallery moving to E. 64” St., but when he got there, gallery locked, no
-       one there. He wrote to tell us of his disappointment, but died a short time after that.
-       It should have been his picture.                        (Book III, leaf 69, ref 18472)
+      On hearing about this canvas, Stephen Clark had come to see it. At old 5” Ave. address,
+      he learned of gallery moving to E. 64” St., but when he got there, gallery locked, no
+      one there. He wrote to tell us of his disappointment, but died a short time after that.
+      It should have been his picture.                        (Book III, leaf 69, ref 18472)
 
 Joseph Hirshhorn bought First Row Orchestra and 11 A.M. together for 5500 in Septem-
 ber 1954, Hotel by a Railroad the same month and City Sunlight the year after; Lawrence
@@ -1237,8 +1293,8 @@ collector’s doubt: « Stephen Clark wagging his head, predicted “You’ll ha
 disposing of this one.” » (ref 16404). It went to Lawrence Bloedel in 1955 for 6000, the
 highest price in the book to that date.
 
-                                                        18
-                                                                                                         The buyers
+                                                  19
+Book III: the late work, and the lists in front of it
 
 
     One sale went wrong, and the book follows it for eight years. Solitude, of 1944, was
@@ -1255,12 +1311,12 @@ fault line: payments « caught up in Rehn Estate », October on Cape Cod paid on
 
 
 
-                South Carolina Morning, 30 x 40                       Second Story Sunlight, 40” x 50”
+                 South Carolina Morning, 30 x 40                       Second Story Sunlight, 40” x 50”
 
 
 
 
-                            A Woman in the Sun, 40 x 60 inches
+                             A Woman in the Sun, 40 x 60 inches
 
 
 Figure 4.2: South Carolina Morning, oil, 1955; « Dinah », 30 x 40 as the leaf writes it (Book III, leaf
@@ -1278,11 +1334,11 @@ themselves are at the museums’ own pages. Drawn by Claude Fable 5.1, 13 Septem
 the transcriptions and works.json (2026-09-13).
 
 
-                                                                 19
-Book III: the late work, and the lists in front of it
+                                                                  20
+                                                                                       The prices
 
 
-4.4     The prices
+4.4    The prices
 The sale sentence is the same as Book II’s, and the sequence it yields is the clearest state-
 ment of what happened to the market for Hopper’s work in the last twenty years of his
 life. Hotel Lobby, 1943: 2500. Summer in the City, 1949: 1200, the lowest oil price in
@@ -1307,10 +1363,10 @@ in December 1964.
 
 
 
-                                Saltillo Mansion
-                               25 1/8” x 19 5/8”              Cape Cod Bay
-                                image not reproduced            20 x 28
-                                                             image not reproduced
+                            Saltillo Mansion
+                           25 1/8” x 19 5/8”             Cape Cod Bay
+                            image not reproduced           20 x 28
+                                                        image not reproduced
 
 
 
@@ -1328,13 +1384,13 @@ Claude Fable 5.1, 13 September 2026, from the transcriptions and works.json (202
 
 
 
-4.5     Paint again
+4.5    Paint again
 The formula continues under nearly every oil, and Book III is where it can be followed
 year by year. Hotel Lobby, 1943: « W. + N. lead white. Blockx & W. + N. Colors, linseed
 oil, turpentine. Winton canvas. » Morning in a City, 1944: « W. + N. flake white # 1 + 2.
 
-                                                        20
-                                                                          The end of the record
+                                                   21
+Book III: the late work, and the lists in front of it
 
 
 Blockx + W. + N. colors. Tarr, Ruhl linseed oil + turpentine. Grumbacher’s paint tested
@@ -1353,7 +1409,7 @@ on corners of house. » (Book III, leaf 31, ref 16818). The diary of 31 August 1
 « paper model for High Noon » on the desk.
 
 
-4.6    The end of the record
+4.6     The end of the record
 The last picture leaf is dated 10 November 1966. The last money is Chair Car’s balance
 on 16 December 1966, with « 1967 » in an unresolved line at the foot. The last date in the
 whole volume is « 1967 Death of Arnold Slade of Truro » on a Memoranda leaf. Nothing in
@@ -1380,7 +1436,7 @@ out put in the heating.
 
 
 
-                                              21
+                                                        22
 Chapter 5
 
 
@@ -1424,8 +1480,8 @@ IV would not be a reproduction of it.
 
 
 
-                                              22
-                                                                             The pictures arrive
+                                              23
+Book IV: the pocket book, fifty-four years without a gap
 
 
 A client, its items one to a line with their prices, and the cheque a week later. Twenty
@@ -1456,7 +1512,7 @@ Management cover billed on 3 December 1925 and paid on Christmas Eve (Book IV, l
 the difference is one cover, and it is the kind of thing a second reader is for.
 
 
-5.3    The pictures arrive
+5.3     The pictures arrive
 The first painting in the book is two lines, out of date order: « Nov 16 Bklyn Museum / The
 Mansarde Roof 100 / Dec 14 rec’d by check 100 » (Book IV, leaf 66, ref 17008), in 1923.
 The first etching sold is on leaf 49, in 1920, to the Print Makers of Los Angeles: « The
@@ -1475,14 +1531,14 @@ Adobe Houses 133 34 / La Penitente 133 34 / rec’d 400 » (Book IV, leaf 77, re
 illustration stops the same month. The two trades, which the work books never mention
 
 
-                                              23
-Book IV: the pocket book, fifty-four years without a gap
+                                                 24
+                                                             Four ways of writing a commission
 
 
 together, hand over to one another on one leaf.
 
 
-5.4     Four ways of writing a commission
+5.4    Four ways of writing a commission
 The edition’s method note for Book IV divides the volume into four periods by how the
 commission is written, and the division is the best account we have of how a dealer’s
 statement looked to the person who received it. In 1924–27 the rate is written, « at 33 1/3
@@ -1526,11 +1582,11 @@ painter’s.
 
 
 
-                                                 24
-                                                                               The instalments
+                                             25
+Book IV: the pocket book, fifty-four years without a gap
 
 
-5.5    The instalments
+5.5     The instalments
 In the 1960s a picture is paid for in parts, and the book writes each part as an entry of its
 own. « Excursion into Philosophy / on acct. 5000 00 » among the items of 24 January 1962;
 then, on 23 June, the picture at $14,500 with « Less payment on acount / ” 1/24/1962 /
@@ -1552,7 +1608,7 @@ and says so. A historian using this book for income has to know that the book wa
 for that purpose. It was kept to know what had come in.
 
 
-5.6    What the book says it counts
+5.6     What the book says it counts
 Once, in fifty-four years, the book states a rule about itself. Against a Kennedy sale of a Cat
 Boat print on 14 January 1944, in a smaller upright pencil, « Take note » and « not included
 in income. », with a pencil cross in the money column where a figure would be (Book IV, leaf
@@ -1576,8 +1632,8 @@ also moves money between years and says so: seven thousand dollars of 1954 recei
 again in 1955 with « delayed receipt Re Zucker — p income Tax » beside it; a cheque of 27
 
 
-                                              25
-Book IV: the pocket book, fifty-four years without a gap
+                                                 26
+                                                                                The last leaf
 
 
 December 1955 « Jan 3 deposited »; the Chair Car balance dated 15 December 1966 and
@@ -1586,7 +1642,7 @@ cash-basis accounts against a tax year, and the tax year was the reason the tota
 be labelled at all.
 
 
-5.7     The last leaf
+5.7    The last leaf
 Leaf 158 carries the only writing in the volume the edition cannot place. « Dec. 15, 1966
 / Balance on Chair Car » is « written in blue and then written again in black over the blue,
 word for word and a little out of register », and the deposit note « in red and then written
@@ -1607,7 +1663,7 @@ working life is between them, and the book never once says what any of it was fo
 
 
 
-                                                 26
+                                            27
 Chapter 6
 
 
@@ -1648,8 +1704,8 @@ what the gallery had before that; then « From Kleeman Gallery 1953. »; then, a
 a question: « Where did Rehn? gallery get these 4/3 that they sold ? » The transcription
 warns that leaf 51 is « by a long way the densest leaf in the volume » and was read thirteenth
 
-                                              27
-Book V and the dealers’ book: the prints by whose hands they passed through
+                                              28
+                                                                                     The dealers’ book
 
 
 in a batch of twelve; a checking pass should start there. Leaf 52 copies a Rehn receipt of 2
@@ -1700,8 +1756,8 @@ nine dollars each in November, a 40 per cent discount on fifteen; two of its pri
 took 30 per cent. From 1927 the third is general, and on 8 December 1928 the price rose:
 « Increase in prices - 25 to 30 / R. R. Crossing 18 to 25 », with the new figures written over
 
-                                                  28
-                                                                              Her own leaves
+                                                  29
+Book V and the dealers’ book: the prints by whose hands they passed through
 
 
 the struck old ones row by row on the Downtown Gallery’s leaf (Dealers, leaf 71, ref 17690;
@@ -1751,8 +1807,8 @@ jury of [illegible]ush Club (thy lowest depths [illegible] Pen & Brush! » (Deal
 ref 16956). The hole in the leaf at that line is missing paper, the transcriber says, not a
 
 
-                                             29
-Book V and the dealers’ book: the prints by whose hands they passed through
+                                               30
+                                                                                Her own leaves
 
 
 hard reading. The last line of the book is hers: « Interior of the Ascensions - water color -
@@ -1767,7 +1823,7 @@ chapter.
 
 
 
-                                               30
+                                              31
 Chapter 7
 
 
@@ -1809,8 +1865,8 @@ fact that she too was an artist -! That did something to me from which I’ve ne
 … For 3 1/2 yrs. my water colors have roosted on their rack and no living mortal passing
 
 
-                                             31
-The notebooks: the other half of the same working life
+                                             32
+                                                                            Garrulities + Grouch
 
 
 our threshold has had the vaguest curiosity regarding the nature of them. » (Garrulities,
@@ -1860,8 +1916,8 @@ date: « Married July 9, 1924. »
 has telephoned about the 1950 retrospective: « The Whitney has made of itself a clearing
 
 
-                                                 32
-                                                              The Battle of Washington Square
+                                               33
+The notebooks: the other half of the same working life
 
 
 house + if one is’nt seen there, no dealer will look at one, it has the effect of an official
@@ -1901,7 +1957,7 @@ under the paintings are not naive. They are the work of a writer who knew exactl
 she was doing and did it in the only book anybody would read.
 
 
-7.3    The Battle of Washington Square
+7.3     The Battle of Washington Square
 In August 1946 the trustees of Sailors’ Snug Harbor, ground landlords of the north side of
 Washington Square, gave New York University a twenty-one-year lease on numbers 1, 2
 and 3, and the university applied to the Office of Price Administration for certificates of
@@ -1911,8 +1967,8 @@ followed.
     Re: 3 Wash Sq is a stenographer’s spiral pad with « Re. 3 Wash. Sq » pencilled on
 
 
-                                             33
-The notebooks: the other half of the same working life
+                                                 34
+                                                               The Battle of Washington Square
 
 
 the cover. It is not a diary. The transcription calls it a working draft, and its editorial
@@ -1962,8 +2018,8 @@ for visit to see my work by Macbeth Gal.) much depressed. » on 13 March; « Lou
 invited me to hold show in their studio » / « E. H. thinks better not. » on the 20th or 21st
 
 
-                                                 34
-                                                                             The black notebook
+                                              35
+The notebooks: the other half of the same working life
 
 
 (p. 44). The fight and the neglect are on the same page, and she did not separate them.
@@ -1993,7 +2049,7 @@ Washington Sq. 1947. » (Black notebook, p. 57, ref 97267). He died in the house
 the university has it still.
 
 
-7.4    The black notebook
+7.4     The black notebook
 The black two-ring notebook has nothing written on its cover and no object number. It is,
 in the transcription’s words, « a household and studio memorandum book », and its subject
 changes every page or two. Its dated content runs from a driver’s licence of August 1937
@@ -2013,8 +2069,8 @@ February 1958: model 200 with insert, 29 by 36, finish 2R, 30.75; the same in 25
 26.75; two of model 214 at 22.75 and 21.00; and a key to what went in them, « 29 x 36
 
 
-                                              35
-The notebooks: the other half of the same working life
+                                                 36
+                                                                                The black notebook
 
 
 = Wash. Sq. from Studio window / 25 x 30 = Fire Escape + Convent opposite / 22 x 32
@@ -2065,8 +2121,8 @@ A second boxed version below it, « to arrest / a moment in time / that moment /
 acutely realized. », the transcription is careful to say, is « her own recasting of the first, not
 
 
-                                                 36
-                                                            What the notebooks do to the ledgers
+                                                37
+The notebooks: the other half of the same working life
 
 
 a second saying of his ». Cruelly pinned down: the phrase is hers, and the word for what
@@ -2095,7 +2151,7 @@ and Sortillo and Saltillo, Athenuem and Athenium, and the transcription lets eac
 because the leaf did.
 
 
-7.5    What the notebooks do to the ledgers
+7.5     What the notebooks do to the ledgers
 Read on their own, the ledgers are the record of a successful painter kept by a devoted
 wife. Read beside the notebooks, they are the record of two painters kept by the one
 whose work was not being recorded, in a house they had to fight to keep, with money that
@@ -2108,27 +2164,27 @@ the same hand.
 
 
 
-                                              37
-The notebooks: the other half of the same working life
+                                                 38
+                                                                                             What the notebooks do to the ledgers
 
 
 
 
         Portland
-                         Yellowstone                                                                                           Two Lights
-                               Grand Teton                                                                                    Gloucester
-                                                                                   Chicago                             Boston
-                                                                                             Cleveland                         S. Truro
-                                                                                                           Wash. Sq.
+                         Yellowstone                                                                                             Two Lights
+                               Grand Teton                                                                                      Gloucester
+                                                                                   Chicago                               Boston
+                                                                                               Cleveland                         S. Truro
+                                                                                                             Wash. Sq.
 
                                                                              St. Louis
-         San Francisco                                                                                        Richmond
+         San Francisco                                                                                          Richmond
 
                      Las Vegas
                                              Santa Fe
                    Pacific Palisades
                     Los Angeles
-                                                                                                         Charleston
+                                                                                                           Charleston
 
                                        El Paso
 
@@ -2163,7 +2219,7 @@ Drawn by Claude Fable 5.1, 13 September 2026, from travels.json (2026-09-13); co
 
 
 
-                                                                        38
+                                                                        39
 Chapter 8
 
 
@@ -2206,8 +2262,8 @@ requesting origin into its CORS header, to hold a current certificate, to check 
 to honour byte ranges, so no relay is needed. The largest published size, 1292 by 2000 pix-
 
 
-                                             39
-How the data was made: the engineering behind the figures
+                                             40
+                                      The transcription: a restricted language, and what it refuses
 
 
 els, is about 170 pixels per inch across a leaf, and was checked to be legible for Josephine
@@ -2256,8 +2312,8 @@ the project’s own customisation of fourteen element specifications, because, a
 records, the export was well-formed XML and invalid TEI for as long as nothing had asked.
 scripts/citation.mjs generates the citation files from a census of what is transcribed, on
 
-                                               40
-                                                                          The accounts reader
+                                              41
+How the data was made: the engineering behind the figures
 
 
 the ground that a hand-written figure « is wrong from the next batch onward ». scripts/
@@ -2307,8 +2363,8 @@ the transcription does not record the rule, so the rule is recovered from the ar
 A « less » line is a deduction whichever thing it names. What stands between it and the
 
 
-                                             41
-How the data was made: the engineering behind the figures
+                                               42
+                                                                                     The ink pass
 
 
 cheque is the net restated. A red receipt rubbed out and rewritten is counted once. A title
@@ -2336,6 +2392,26 @@ it. Where it has run, twelve leaves so far, red money is a receipt and pencil mo
 before any word is read. It also found, on leaf 21, a whole entry the transcription lacked,
 and it reports seventy-four leaves with at least one written line the transcription does not
 have, which is the worklist for the re-reading pass.
+     That figure needs stating for what it is, because it bears on this note and not only on the
+accounts. The ink pass has run on Book IV alone, so the seventy-four leaves are Book IV
+leaves, about half of that volume; many of the lines it flags are the alignment’s own noise,
+and each has to be looked at, but at least one, the Country Gentleman entry of 26 February
+1917 on leaf 21, was a real omission. The consequence for this note is bounded and can be
+said exactly. The Book IV chapter quotes the pocket book for its shape and its last leaves,
+and those quotations are of lines the transcription has, not of lines it lacks; what a missing
+line changes is a sum, so the figures of the cash book, Tables A.1 and A.2 and Figure 10.1,
+are floors in a second sense as well as the first: a leaf may hold a charge or a receipt the
+reader never saw. No such pass has run on the other five volumes or the notebooks, so
+nothing is known about their omissions, which is a different and larger uncertainty than a
+counted one. The quotations from Books I to III and from the notebooks in this note are
+readings of lines that exist on the sheet; whether a neighbouring line was skipped is not
+something any reading here can rule out.
+
+
+
+
+                                               43
+How the data was made: the engineering behind the figures
 
 
 8.7    The working method: a person, two models, a repository and an
@@ -2355,11 +2431,6 @@ any other model, and every file records which one read its sheets and on what da
 a batch’s provenance is a fact about the file and not about whichever model happened to
 be selected. Opus 5 read most of the ledgers between 5 and 12 September; Fable 5.1 read
 the last sittings of the black notebook and the Battle of Wash Sq. on 10 and 13 September,
-
-                                               42
-                          The working method: a person, two models, a repository and an interface
-
-
 and drafted this note. The model does what a first transcriber does and no more: it reads
 what it can, marks what it cannot, attributes hands cautiously, and writes a note where a
 decision was made. It does not check itself, and the edition does not pretend it did.
@@ -2385,6 +2456,11 @@ else on it follows from that. The reading view offers a Cite button that builds 
 tions, sheet, leaf and batch, from what the page already knows; the Accounts, Technique,
 Timeline and Schema tabs are the derived files rendered, with the rules that produced
 them printed beside the figures; the Diaries side serves the four notebooks the same way.
+
+                                               44
+                                                                 What this note added, and how
+
+
 The interface is the checking instrument. A machine reading that could not be put beside
 its source would be a text nobody could correct, and the whole value of the transcription
 is that it can be.
@@ -2403,12 +2479,6 @@ for a reason that has nothing to do with convenience: it makes the parallelism e
 transcription pass and an analysis pass over the same leaves are different jobs with different
 rules, and running them as different sessions, each with its own instructions and its own
 commit, keeps them from contaminating each other in the way a single long conversation
-
-
-                                              43
-How the data was made: the engineering behind the figures
-
-
 would. This note was made the same way: eight readings of the transcripts ran at once,
 one per volume or notebook, and the prose was written from their reports.
 
@@ -2435,7 +2505,7 @@ on.
 
 
 
-                                               44
+                                              45
 Chapter 9
 
 
@@ -2477,8 +2547,8 @@ January 1939, « Winton canvas, Winsor & Newton colors. — 1st lead white and l
 oil. 2nd Zinc white » (Book II, leaf 27, ref 16621). The leaf also shows what a formula can
 carry that a list cannot: two whites on one picture, the second over the first.
 
-                                             45
-What the pictures were made of, and what shape
+                                             46
+                                                                                          The size
 
 
     Two things should be said against reading too much into this. The formula is present
@@ -2508,7 +2578,7 @@ the two agree only as far as the habit was regular. It was very regular.
           single prime
       Chremnitz white
                Herga
-                          1930   1935    1940         1945   1950    1955      1960     1965
+                          1930   1935    1940        1945   1950     1955      1960     1965
 
 
 Figure 9.1: A succession, not a preference: each material against the years the leaves date it to,
@@ -2535,8 +2605,8 @@ River at Sharon, Oregon Coast, Jo in Wyoming. Nine at 12 by 18 are the Glouceste
 ings of Book V. The oils cluster differently. Seven at 24 by 29 are the early canvases of
 
 
-                                                 46
-                                                                                                      The size
+                                                47
+What the pictures were made of, and what shape
 
 
 Book I, Corner Saloon, House by a Railroad, Sailing, Moonlight Interior; six at 23 1/2 by
@@ -2600,20 +2670,20 @@ September 2026, from formats.json (undated).
 
 
 
-                                                           47
-What the pictures were made of, and what shape
+                                                           48
+                                                                       The frames, from the other book
 
 
 
 
-        20 × 28                14 × 20                   12 × 18                    20 × 25
-        22 works               20 works                  9 works                    7 works
+        20 × 28                14 × 20                   12 × 18                       20 × 25
+        22 works               20 works                  9 works                       7 works
 
 
 
 
-         24 × 29                          28 × 40            21 × 29              23 1/2 × 28 3/4
-         7 works                          7 works            6 works                  6 works
+         24 × 29                          28 × 40            21 × 29                 23 1/2 × 28 3/4
+         7 works                          7 works            6 works                     6 works
 
 
 Figure 9.3: The eight formats he came back to, drawn to one scale and to their real proportions, so
@@ -2639,7 +2709,7 @@ canvas », on the same picture, secured by the woman who bought it.
 
 
 
-                                                    48
+                                                    49
 Chapter 10
 
 
@@ -2670,19 +2740,25 @@ for nearly every charge; the work books often name none.
 
 
 10.2     The illustrator, 1913–1925
-Table A.1 gives the illustration decade. Charged, 14,455.87 dollars over twelve years;
-received, 14,654.87; the balance negative by 199, because the book receipts money it
-never charged, the Shipping Board’s three hundred for « Smash the Hun » being the largest
-instance. The best years are 1920, at 2950 charged, and 1917–18, at about 1500 each; the
-worst is 1915, at 500. These are not large sums even for the time, and they are the whole
-of what the paintings books do not mention. By 1925 the picture sales through Rehn, in
-the same pocket book, had passed them.
+Table A.1 gives the illustration decade. Charged, 14,455.87 dollars over the thirteen calen-
+dar years from 1913 to 1925; received, 14,654.87; the balance negative by 199, because
+the book receipts money it never charged, the Shipping Board’s three hundred for « Smash
+the Hun » being the largest instance. The best years are 1920, at 2950 charged, and 1917–
+18, at about 1500 each; the worst is 1915, at 500. There is no row for 1921, and the
+reason is on leaf 53 of the book: its year line reads « 1920 » above entries that are 1921’s,
+the transcription keeps the line as written, and the reader carries the year from the last one
+the volume states, so 1921’s income sits under 1920 in the table. It is the kind of defect
+the method is designed to expose rather than repair silently, and it is listed for correction
+at source. These are not large sums even for the time, and they are the whole of what
 
 
 
+                                             50
+                                                               The painter, by the work books
 
-                                             49
-The money, added up
+
+the paintings books do not mention. By 1925 the picture sales through Rehn, in the same
+pocket book, had passed them.
 
 
 10.3     The painter, by the work books
@@ -2726,15 +2802,14 @@ the 1930s trough at 77 in 1933 and recover to 10,032 in 1938; the 1940s run betw
 died. The receipts, which are the figures her pencil sums check, run 40,218 in 1962 and
 25,657 in 1963. In no year of his life did Edward Hopper’s cheques from his dealer exceed
 forty-one thousand dollars, and in only nine years did they exceed twenty.
+
+                                            51
+The money, added up
+
+
     The reader knows what it cannot read. Fifty-eight subtotals, 124 deductions, 81 re-
 stated nets, 93 carried sums and six rubbed-out drafts are excluded by rule; five instal-
 ment sales are collapsed to one picture each; thirteen rows have no description. Where
-
-
-                                            50
-                                                                                                 The days the books were written on
-
-
 the year’s pencil total closes, the receipts reconcile to the cent. Where the transcription
 and the leaf disagree, as on leaf 156, where the note reads the fore-edge total as 21,949
 and the marginal as 21,944, the leaf needs re-reading and this chapter says so rather than
@@ -2759,8 +2834,8 @@ choosing.
 
 
                                  0
-                                      1915   1920     1925     1930     1935     1940     1945     1950        1955   1960   1965
-                                                                                 year
+                                      1915    1920     1925     1930     1935     1940     1945     1950       1955   1960   1965
+                                                                                  year
 
 Figure 10.1: The money, three ways: what the pocket book receipts each year from 1920 (dark
 bars), what the work books state as the net of sales dated in that year (line), and the illustration
@@ -2789,8 +2864,8 @@ not the days anybody worked, and Josephine Hopper wrote almost all of them.
 
 
 
-                                                                          51
-The money, added up
+                                                                           52
+                                                                              The days the books were written on
 
 
 
@@ -2854,7 +2929,7 @@ tab, which draws every day; this draws every month. Drawn by Claude Fable 5.1, 1
 
 
 
-                                                      52
+                                                      53
 Chapter 11
 
 
@@ -2883,6 +2958,11 @@ it. Her descriptions have been quoted by every writer on Hopper since Levin, and
 ally as evidence of what the pictures are about. They are evidence of what she thought
 worth recording on the day the picture left the studio, and the notebooks show, with some
 bitterness, that what she recorded of his was what nobody was recording of hers.
+    One of the quietest facts in the archive says the same thing from the other side: the
+only frames priced anywhere in the ten books are the ones Josephine Hopper bought for
+her own canvases, from a maker in Indiana, and wrote down in the notebook she headed
+« Her book »; his were the gallery’s, and they appear in the ledgers as deductions on the
+dealer’s statement.
     The silence that the books surround is his. In fifty-four years of Book IV the hand that
 kept it wrote no sentence that was not a charge, a receipt or a sum. In the three work
 books his contribution is a drawing, a title and a size. The two sentences of his purpose
@@ -2894,12 +2974,16 @@ has been written from her sentences without saying so.
     What the edition adds is not a fact but a condition: that every sentence quoted here
 can be checked against the photograph of the leaf it came from, on one screen, by anybody.
 The reading is first-pass, unchecked, and dated; its errors will be found; the address of the
-sheet will not move when they are. That is the right state for a source like this to be in.
+                                               54
+sheet will not move when they are. That is the right state for a source like this to be in.
 The books were kept so that someone would read them. The inside cover of Book I says
 who wrote them and who drew in them, and the notebooks say what it cost. The rest is on
 the leaves.
 
-                                              53
+
+
+
+                                            55
 Appendix A
 
 
@@ -2914,7 +2998,8 @@ the value of money.
 
 Table A.1: Book IV, the illustration decade: what was charged and what was received, by year, as
 the transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque
-with no charge line behind it.
+with no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above
+entries of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
 
                              Year      Charged      Received     Balance
                              1913       160.00        160.00        0.00
@@ -2938,17 +3023,17 @@ not a debt but the gap between what the gallery listed and what its cheques carr
 dealer’s third.
 
                      Year        Charged         Received      Running balance
-                     1920          71.00            71.00                 0.00
-                     1922         141.00           141.00                 0.00
-                     1923         326.20           301.20                25.00
-                     1924       1,360.10         1,260.10               125.00
-                     1925       1,528.36         1,528.34               125.02
-                     1926       2,523.49         2,528.49               120.02
-                     1927       3,992.71         5,918.08            -1,805.35
+                     1920          71.00            71.00                    0.00
+                     1922         141.00           141.00                    0.00
+                     1923         326.20           301.20                   25.00
+                     1924       1,360.10         1,260.10                  125.00
+                     1925       1,528.36         1,528.34                  125.02
+                     1926       2,523.49         2,528.49                  120.02
 
 
-                                                 54
+                                                 56
 Year      Charged      Received   Running balance
+1927      3,992.71     5,918.08        -1,805.35
 1928     11,444.02     7,870.68         1,767.99
 1929     10,660.86    10,661.36         1,767.49
 1930      5,513.41     5,533.41         1,747.49
@@ -2993,8 +3078,7 @@ Total   544,546.84   432,871.37       111,675.47
 
 
 
-
-                       55
+                       57
 Tables
 
 
@@ -3045,7 +3129,7 @@ the etchings are largely absent.
                  1961        10   11,295            3,765      7,530              0
                  1962         3   31,000           10,333     20,667          3,667
 
-                                                 56
+                                                 58
                 Year    Sales    Gross    Commission           Net    Receipted
                 1963        2   31,500         10,500       21,000               0
                 1964        2   31,500         10,500       21,000               0
@@ -3091,7 +3175,7 @@ books write them. Gross is the price; net is after the third.
 
 
 
-                                              57
+                                              59
 Tables
 
 
@@ -3151,7 +3235,7 @@ cheques are not in this table.
 
 
 
-                                               58
+                                               60
 Table A.7: The sizes Edward Hopper wrote in the title line, counted once per work heading: the
 twenty formats that recur. Height before width, as he wrote them; nothing is rounded.
 
@@ -3193,7 +3277,7 @@ twenty formats that recur. Height before width, as he wrote them; nothing is rou
 
 
 
-                                             59
+                                             61
 Tables
 
 
@@ -3202,25 +3286,25 @@ twenty formats that recur. Height before width, as he wrote them; nothing is rou
 Table A.8: The paint formula as the leaves state it, counted once per work: 77 of 270 work headings
 carry one. Years are the first and last a dated formula names the material.
 
-              Group                           Material                 Works    Years
-              Colourmen                       Winsor & Newton            55     1939–1964
-              Colourmen                       Blockx                     18     1939–1949
-              Colourmen                       Rembrandt                  17     1932–1932
-              Colourmen                       Grumbacher                  1     1944–1944
-              Whites                          flake white                30     1944–1964
-              Whites                          zinc white                 19     1929–1932
-              Whites                          lead white                 12     1943–1957
-              Whites                          Chremnitz white             9     1952–1956
-              Whites                          silver white                8     1949–1949
-              Oils                            linseed oil                45     1943–1964
-              Oils                            poppy oil                  26     1932–1944
-              Thinners                        turpentine                 40     1943–1964
-              Canvas makers and grades        National                   12     1949–1955
-              Canvas makers and grades        Herga                      10     1956–1963
-              Canvas makers and grades        Winton                      8     1943–1958
-              Canvas makers and grades        Fornet                      2     undated
-              Priming                         double prime               19     1939–1955
-              Priming                         single prime               13     1949–1964
+              Group                           Material           Works        Years
+              Colourmen                       Winsor & Newton          55     1939–1964
+              Colourmen                       Blockx                   18     1939–1949
+              Colourmen                       Rembrandt                17     1932–1932
+              Colourmen                       Grumbacher                1     1944–1944
+              Whites                          flake white              30     1944–1964
+              Whites                          zinc white               19     1929–1932
+              Whites                          lead white               12     1943–1957
+              Whites                          Chremnitz white           9     1952–1956
+              Whites                          silver white              8     1949–1949
+              Oils                            linseed oil              45     1943–1964
+              Oils                            poppy oil                26     1932–1944
+              Thinners                        turpentine               40     1943–1964
+              Canvas makers and grades        National                 12     1949–1955
+              Canvas makers and grades        Herga                    10     1956–1963
+              Canvas makers and grades        Winton                    8     1943–1958
+              Canvas makers and grades        Fornet                    2     undated
+              Priming                         double prime             19     1939–1955
+              Priming                         single prime             13     1949–1964
 
 
 
@@ -3228,31 +3312,31 @@ carry one. Years are the first and last a dated formula names the material.
 Table A.9: Days on which the six ledgers record a transaction, and rows dated, by year: 2146 rows
 resolve to 1204 calendar days between 1913 and 1967.
 
-                      Year   Days   Rows Year     Days   Rows Year       Days   Rows
-                      1913     5       6   1932    12      21   1951      10      25
-                      1914    48      55   1933    12      17   1952       7      10
-                      1915    27      29   1934    17      48   1953      12      23
-                      1916    44      46   1935    14      17   1954      16      24
-                      1917    74      81   1936    11      24   1955       8      15
-                      1918    69      83   1937    11      20   1956      11      24
-                      1919    56      64   1938    15      40   1957      11      41
-                      1920    86     102   1939     2       3   1958       7      12
-                      1921    24      32   1940    11      34   1959       3       6
-                      1922    35      47   1941     7       8   1960       5      12
-                      1923    65      94   1942     7      11   1961       6      25
-                      1924    47      72   1943    12      21   1962      13      20
-                      1925    49      79   1944     4       8   1963       6       9
-                      1926    36      92   1945     8      16   1964       6       9
-                      1927    54     164   1946     2       4   1965       5       7
-                      1928    59     138   1947     6      11   1966       2       3
-                      1929    51     189   1948     5       9   1967       5       7
-                      1930    42      90   1949     8      17
-                      1931    23      55   1950    13      27
+                Year   Days   Rows     Year      Days    Rows   Year        Days   Rows
+                1913      5       6    1932        12      21   1951         10       25
+                1914     48      55    1933        12      17   1952          7       10
+                1915     27      29    1934        17      48   1953         12       23
+                1916     44      46    1935        14      17   1954         16       24
+                1917     74      81    1936        11      24   1955          8       15
+                1918     69      83    1937        11      20   1956         11       24
+                1919     56      64    1938        15      40   1957         11       41
+                1920     86     102    1939         2       3   1958          7       12
+                1921     24      32    1940        11      34   1959          3        6
+                1922     35      47    1941         7       8   1960          5       12
+                1923     65      94    1942         7      11   1961          6       25
+                1924     47      72    1943        12      21   1962         13       20
+                1925     49      79    1944         4       8   1963          6        9
+                1926     36      92    1945         8      16   1964          6        9
+                1927     54     164    1946         2       4   1965          5        7
+                1928     59     138    1947         6      11   1966          2        3
+                1929     51     189    1948         5       9   1967          5        7
+                1930     42      90    1949         8      17
+                1931     23      55    1950        13      27
 
 
 
 
-                                                  60
+                                                  62
 Sources
 
 The objects
@@ -3283,21 +3367,19 @@ The reading
 
 Hopper Ledgers, https://hopper.commutator.io. Transcriptions of the six ledgers (46
 batches, 543 sheets) and the four notebooks, first machine pass by Claude Opus 5 and
-Claude Fable 5.1, 5 to 13 September 2026, unchecked against the photographs by a per-
-son except where a leaf’s note says otherwise. This critical note was itself drafted by Claude
-Fable 5.1 on 13 September 2026, under the direction of Michel Hua, from those transcrip-
-tions and the derived files; see the front note and Chapter 8. The .tex under transcripts/
-is the source of record; the tables in the appendix are read from src/content/. Method:
-/method/; Book IV’s reader: docs/book-iv-method.md; the glossary of forms: /schema/.
+Claude Fable 5.1, 5 to 13 September 2026, unchecked against the photographs by a person
+except where a leaf’s note says otherwise. The .tex under transcripts/ is the source of
+record; the tables in the appendix are read from src/content/. Method: /method/; Book
+IV’s reader: docs/book-iv-method.md; the glossary of forms: /schema/.
 Every citation in this draft names the leaf as numbered on the paper and the Whitney’s
+ResourceSpace reference for the photograph. A sheet is at hopper.commutator.io/ fol-
+lowed by the volume, a hash, and the volume, batch and ref, and its photograph is fetched
 
 
-                                             61
+                                           63
 Sources
 
 
-ResourceSpace reference for the photograph. A sheet is at hopper.commutator.io/ fol-
-lowed by the volume, a hash, and the volume, batch and ref, and its photograph is fetched
 from the museum as it is looked at; nothing of the archive is stored by the edition.
 
 
@@ -3341,5 +3423,5 @@ onward. The place coordinates in the travels figure: © OpenStreetMap contributo
 
 
 
-                                            62
+                                            64
 
