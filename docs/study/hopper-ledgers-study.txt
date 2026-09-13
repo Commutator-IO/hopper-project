@@ -104,7 +104,7 @@ A note on this critical note                                                    
   2.2 One plate to a leaf . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
   2.3 The oils, written up afterwards . . . . . . . . . . . . . . . . . . . . . . . . . 7
   2.4 Her own collection . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-  2.5 Lists, and the money that vanishes . . . . . . . . . . . . . . . . . . . . . . . 10
+  2.5 Lists, and the money that vanishes . . . . . . . . . . . . . . . . . . . . . . . 11
   2.6 What is lost, and what is doubtful . . . . . . . . . . . . . . . . . . . . . . . . 11
 
 3 Book II: one picture to an opening                                                          13
@@ -192,10 +192,13 @@ Sources                                                                         
      the leaf writes it (Book I, leaf 8, ref 17539). The Metropolitan Museum
      of Art, 25.31.1: https://www.metmuseum.org/art/collection/search/
      366204. Scale: ten inches to four centimetres, four times the scale of the
-     canvases in the other figures. The frames are drawn to the proportions of
-     the size in Edward Hopper’s hand; the images are not reproduced here and
-     can be seen at the museums’ own pages. Drawn by Claude Fable 5.1, 13
-     September 2026, from the transcriptions and works.json (2026-09-13). . .          7
+     canvases in the other figures. The drawings are schemas of the composi-
+     tion in its main masses only, at the proportions of the size in Edward Hop-
+     per’s hand, made from the leaf’s description and from general knowledge
+     of the picture; nothing is traced and no detail is drawn, and they are not
+     reproductions. The pictures themselves are at the museums’ own pages.
+     Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions
+     and works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . .   7
  2.2 House by a Railroad, oil, 1925; catalogued as House by the Railroad, 24 x
      29 as the leaf writes it (Book I, leaf 52, ref 18056). The Museum of Mod-
      ern Art, 3.1930: https://www.moma.org/collection/works/78330. The
@@ -205,18 +208,13 @@ Sources                                                                         
      oil, 1929; « A real beauty this one. », 29 x 48 as the leaf writes it (Book
      I, leaf 58, ref 18297). Whitney Museum of American Art, work 5874:
      https://whitney.org/collection/works/5874. Scale: sixty inches to
-     eight centimetres, the scale of every canvas frame in this note. The frames
-     are drawn to the proportions of the size in Edward Hopper’s hand; the im-
-     ages are not reproduced here and can be seen at the museums’ own pages.
-     Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions
-     and works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . .    9
- 2.3 Tables for Ladies, oil, 1930, 4 x 5 ft. as the leaf writes it (Book I, leaf 59,
-     ref 16991). The Metropolitan Museum of Art, Hearn Fund, 1931: https://
-     www.metmuseum.org/art/collection/search/487695. Scale: sixty inches
-     to eight centimetres. The frames are drawn to the proportions of the size
-     in Edward Hopper’s hand; the images are not reproduced here and can be
-     seen at the museums’ own pages. Drawn by Claude Fable 5.1, 13 September
-     2026, from the transcriptions and works.json (2026-09-13). . . . . . . . .        9
+     eight centimetres, the scale of every canvas frame in this note. The drawings
+     are schemas of the composition in its main masses only, at the proportions
+     of the size in Edward Hopper’s hand, made from the leaf’s description and
+     from general knowledge of the picture; nothing is traced and no detail is
+     drawn, and they are not reproductions. The pictures themselves are at the
+     museums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026,
+     from the transcriptions and works.json (2026-09-13). . . . . . . . . . . . .     9
 
 
 
@@ -225,13 +223,27 @@ Sources                                                                         
 LIST OF FIGURES
 
 
-   3.1 Night Hawks, oil, finished 21 January 1942; catalogued as Nighthawks, 33
-       x 60 as the leaf writes it (Book II, leaf 95, ref 17982). Art Institute of Chicago,
-       1942.51: https://www.artic.edu/artworks/111628. Scale: sixty inches
-       to eight centimetres. The frames are drawn to the proportions of the size
-       in Edward Hopper’s hand; the images are not reproduced here and can be
-       seen at the museums’ own pages. Drawn by Claude Fable 5.1, 13 September
-       2026, from the transcriptions and works.json (2026-09-13). . . . . . . . . 15
+   2.3 Tables for Ladies, oil, 1930, 4 x 5 ft. as the leaf writes it (Book I, leaf 59,
+       ref 16991). The Metropolitan Museum of Art, Hearn Fund, 1931: https://
+       www.metmuseum.org/art/collection/search/487695. Scale: sixty inches
+       to eight centimetres. The drawings are schemas of the composition in its
+       main masses only, at the proportions of the size in Edward Hopper’s hand,
+       made from the leaf’s description and from general knowledge of the picture;
+       nothing is traced and no detail is drawn, and they are not reproductions.
+       The pictures themselves are at the museums’ own pages. Drawn by Claude
+       Fable 5.1, 13 September 2026, from the transcriptions and works.json
+       (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+
+   3.1 Night Hawks, oil, finished 21 January 1942; catalogued as Nighthawks,
+       33 x 60 as the leaf writes it (Book II, leaf 95, ref 17982). Art Institute
+       of Chicago, 1942.51: https://www.artic.edu/artworks/111628. Scale:
+       sixty inches to eight centimetres. The drawings are schemas of the com-
+       position in its main masses only, at the proportions of the size in Edward
+       Hopper’s hand, made from the leaf’s description and from general knowl-
+       edge of the picture; nothing is traced and no detail is drawn, and they are
+       not reproductions. The pictures themselves are at the museums’ own pages.
+       Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and
+       works.json (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
 
    4.1 Rooms by the Sea, oil, September 1951; alias « The Jumping Off Place
        », 29 x 40 as the leaf writes it (Book III, leaf 41, ref 18347). Yale Uni-
@@ -239,35 +251,39 @@ Sources                                                                         
        view/object/63bdda22-a6be-413d-9a35-5e2649c14c21. Office in a
        Small City, oil, September 1953, 28 x 40 as the leaf writes it (Book
        III, leaf 49, ref 18028). The Metropolitan Museum of Art, 53.183:
-       https://www.metmuseum.org/art/collection/search/488730.                    Scale:
+       https://www.metmuseum.org/art/collection/search/488730.              Scale:
        sixty inches to eight centimetres; the two 28-by-40 and 29-by-40 formats
-       of the studio pictures of 1949 to 1954. The frames are drawn to the
-       proportions of the size in Edward Hopper’s hand; the images are not repro-
-       duced here and can be seen at the museums’ own pages. Drawn by Claude
-       Fable 5.1, 13 September 2026, from the transcriptions and works.json
-       (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
-   4.2 South Carolina Morning, oil, 1955; « Dinah », 30 x 40 as the leaf writes
-       it (Book III, leaf 53, ref 18558). Whitney Museum of American Art, 67.13:
-       https://whitney.org/collection/works/789. Second Story Sunlight,
-       oil, 25 August to 15 September 1960; « Toots », 40” x 50” as the leaf writes
-       it (Book III, leaf 73, ref 17872). Whitney Museum of American Art, 60.54:
-       https://whitney.org/collection/works/873. A Woman in the Sun, oil,
-       October 1961; « the WISE TRAMP », 40 x 60 inches as the leaf writes it (Book
-       III, leaf 75, ref 17107). Whitney Museum of American Art, 84.31: https:
-       //whitney.org/collection/works/1337. Scale: sixty inches to eight cen-
-       timetres; the three formats of the last decade, 30 by 40, 40 by 50 and 40 by
-       60. The frames are drawn to the proportions of the size in Edward Hopper’s
-       hand; the images are not reproduced here and can be seen at the muse-
-       ums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026, from the
-       transcriptions and works.json (2026-09-13). . . . . . . . . . . . . . . . . . 22
+       of the studio pictures of 1949 to 1954. The drawings are schemas of the
+       composition in its main masses only, at the proportions of the size in Ed-
+       ward Hopper’s hand, made from the leaf’s description and from general
+       knowledge of the picture; nothing is traced and no detail is drawn, and
+       they are not reproductions. The pictures themselves are at the museums’
+       own pages. Drawn by Claude Fable 5.1, 13 September 2026, from the
+       transcriptions and works.json (2026-09-13). . . . . . . . . . . . . . . . . . 21
 
 
 
 
                                             viii
-                                                                           LIST OF FIGURES
+                                                                     LIST OF FIGURES
 
 
+4.2 South Carolina Morning, oil, 1955; « Dinah », 30 x 40 as the leaf writes
+    it (Book III, leaf 53, ref 18558). Whitney Museum of American Art, 67.13:
+    https://whitney.org/collection/works/789. Second Story Sunlight,
+    oil, 25 August to 15 September 1960; « Toots », 40” x 50” as the leaf writes
+    it (Book III, leaf 73, ref 17872). Whitney Museum of American Art, 60.54:
+    https://whitney.org/collection/works/873. A Woman in the Sun, oil,
+    October 1961; « the WISE TRAMP », 40 x 60 inches as the leaf writes it (Book
+    III, leaf 75, ref 17107). Whitney Museum of American Art, 84.31: https:
+    //whitney.org/collection/works/1337. Scale: sixty inches to eight cen-
+    timetres; the three formats of the last decade, 30 by 40, 40 by 50 and 40
+    by 60. The drawings are schemas of the composition in its main masses
+    only, at the proportions of the size in Edward Hopper’s hand, made from
+    the leaf’s description and from general knowledge of the picture; nothing is
+    traced and no detail is drawn, and they are not reproductions. The pictures
+    themselves are at the museums’ own pages. Drawn by Claude Fable 5.1, 13
+    September 2026, from the transcriptions and works.json (2026-09-13). . . 22
 4.3 Saltillo Mansion, watercolour, August 1943, 25 1/8” x 19 5/8” as the
     leaf writes it (Book III, leaf 101, ref 17944). The Metropolitan Museum
     of Art, 45.157.2: https://www.metmuseum.org/art/collection/search/
@@ -293,32 +309,34 @@ Sources                                                                         
     tab. Drawn by Claude Fable 5.1, 13 September 2026, from travels.json
     (2026-09-13); coordinates © OpenStreetMap contributors, ODbL 1.0. . . . . 42
 
-9.1 A succession, not a preference: each material against the years the leaves
-    date it to, earliest first, one dot to a year and its size standing for how many
-    works that year names it. Rembrandt colours and zinc white in poppy oil
-    at the start; Winsor & Newton and flake white in linseed oil and turpentine
-    from the middle 1940s; the canvas turning from National to Herga and the
-    priming from double to single across the 1950s. Only the 43 works dated
-    by the leaf itself are plotted. After the Technique tab. Drawn by Claude
-    Fable 5.1, 13 September 2026, from materials.json (undated). . . . . . . 48
-9.2 Every format, plotted: width across, height up, one dot to a format and its
-    area standing for how many works were made at it, 78 formats from 199
-    work headings that state a size. The diagonal is where a picture would be
-    square; 190 of the 199 works lie below it, 9 above, none on it. The etch-
-    ing plates are in the corner, the watercolour sheets through the middle, the
-    late oils at the top right. After the Technique tab of hopper.commutator.io.
-    Drawn by Claude Fable 5.1, 13 September 2026, from formats.json (un-
-    dated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
-9.3 The eight formats he came back to, drawn to one scale and to their real pro-
-    portions, so that a watercolour half-sheet stands beside a five-foot canvas;
-    each is labelled with the number of work headings read at that size. After
-    the Technique tab. Drawn by Claude Fable 5.1, 13 September 2026, from
-    formats.json (undated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
 
 
-                                           ix
+
+                                       ix
 LIST OF FIGURES
 
+
+   9.1 A succession, not a preference: each material against the years the leaves
+       date it to, earliest first, one dot to a year and its size standing for how many
+       works that year names it. Rembrandt colours and zinc white in poppy oil
+       at the start; Winsor & Newton and flake white in linseed oil and turpentine
+       from the middle 1940s; the canvas turning from National to Herga and the
+       priming from double to single across the 1950s. Only the 43 works dated
+       by the leaf itself are plotted. After the Technique tab. Drawn by Claude
+       Fable 5.1, 13 September 2026, from materials.json (undated). . . . . . . 48
+   9.2 Every format, plotted: width across, height up, one dot to a format and its
+       area standing for how many works were made at it, 78 formats from 199
+       work headings that state a size. The diagonal is where a picture would be
+       square; 190 of the 199 works lie below it, 9 above, none on it. The etch-
+       ing plates are in the corner, the watercolour sheets through the middle, the
+       late oils at the top right. After the Technique tab of hopper.commutator.io.
+       Drawn by Claude Fable 5.1, 13 September 2026, from formats.json (un-
+       dated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+   9.3 The eight formats he came back to, drawn to one scale and to their real pro-
+       portions, so that a watercolour half-sheet stands beside a five-foot canvas;
+       each is labelled with the number of work headings read at that size. After
+       the Technique tab. Drawn by Claude Fable 5.1, 13 September 2026, from
+       formats.json (undated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
 
    10.1 The money, three ways: what the pocket book receipts each year from 1920
         (dark bars), what the work books state as the net of sales dated in that year
@@ -585,7 +603,7 @@ be listed as a sale: the sentence is about the record as much as about the money
 
 
                                                   6
-                                                                    The oils, written up afterwards
+                                                                      The oils, written up afterwards
 
 
 one of many places where she is visibly keeping the book for the museum that would one
@@ -601,14 +619,8 @@ should begin with the fact that their keeper did not always know.
 
 
 
-                                                                   East Side Interior
-                Evening Wind            Night Shadows
-                                                                        8”x10”
-                  7 x 8 3/8”              7”x8 3/8”
-                                                                   image not reproduced
-               image not reproduced     image not reproduced
 
-
+              Evening Wind, 7 x 8 3/8”   Night Shadows, 7”x8 3/8”   East Side Interior, 8”x10”
 
 
 Figure 2.1: Evening Wind, etching, 1921, 7 x 8 3/8” as the leaf writes it (Book I, leaf 2,
@@ -618,14 +630,16 @@ I, leaf 6, ref 16548). The Metropolitan Museum of Art, 25.31.2: https://www.metm
 art/collection/search/366206. East Side Interior, etching, 1922, 8”x10” as the leaf writes it
 (Book I, leaf 8, ref 17539). The Metropolitan Museum of Art, 25.31.1: https://www.metmuseum.
 org/art/collection/search/366204. Scale: ten inches to four centimetres, four times the scale
-of the canvases in the other figures. The frames are drawn to the proportions of the size in Edward
-Hopper’s hand; the images are not reproduced here and can be seen at the museums’ own pages.
-Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and works.json (2026-
-09-13).
+of the canvases in the other figures. The drawings are schemas of the composition in its main
+masses only, at the proportions of the size in Edward Hopper’s hand, made from the leaf’s descrip-
+tion and from general knowledge of the picture; nothing is traced and no detail is drawn, and they
+are not reproductions. The pictures themselves are at the museums’ own pages. Drawn by Claude
+Fable 5.1, 13 September 2026, from the transcriptions and works.json (2026-09-13).
 
 
 
-2.3     The oils, written up afterwards
+
+2.3    The oils, written up afterwards
 From leaf 45 the volume changes character, and the change is instructive. She had a plate-
 by-plate book; she needed somewhere for everything else; and so the second half of Book
 I became, in no fixed order, a set of running lists: Notes and Explanations, Pre-Rehn Sales,
@@ -639,13 +653,13 @@ them in binding order and says so.
     The oils leaves (52 to 59, 80 and 81) are where the early career is written up, and they
 are written up afterwards: the watercolour leaves of 1924 to 1926 carry, in a later ink, the
 resales of June 1962, on rows first written forty years before. Here is the first canvas sold,
-twice over. On leaf 45: « Bought out of famous Armory Sale 1913 — NewYork — by —
-Geo. Vietor. Sold by Arthur B. Davies. » and « This the first oil sold — (turned up in fall
 
-                                                    7
+                                                       7
 Book I: the plates, and the lists that grew behind them
 
 
+twice over. On leaf 45: « Bought out of famous Armory Sale 1913 — NewYork — by —
+Geo. Vietor. Sold by Arthur B. Davies. » and « This the first oil sold — (turned up in fall
 of 1949 — in different frame.) » On leaf 52, Sailing, « Sold at International Armory Show
 1913 — $225 » and then « Sold to Mr. Vietor, 25” & Mad. Ave. 250 - 10% », with « Sold
 by Arthur B. Davies » struck out (Book I, leaf 52, ref 18056). Book II gives « ± $250 », the
@@ -664,7 +678,6 @@ Morning » in her hand, 3000 less a third, 2000, to the Whitney on 5 May 1934. A
 Hotel Room to the Spingolds at 5500 in 1955.
      On the Ex Lax leaf the descriptive habit becomes something else, an anecdote about a
 title:
-
       It was suggested that E. Hopper change name to ES LAX. But the 2 X’s in Ex Lax com-
       pose so much better, E. H. just made the change in water color. So soon after this,
       the canvas was bought by J. Spalding (Boston) who had no scruples about EX LAX, so
@@ -693,61 +706,58 @@ Sunset: « A real beauty this one. » and « Given to Jo Hopper - along with Jo 
 anniversary present 1955. Signed statement of this in bank box - J.H. » (Book I, leaf 58,
 ref 18297).
 
-
-
                                                   8
-                                                                                         The oils, written up afterwards
+                                                                                   The oils, written up afterwards
 
 
 
 
-                                                                          The Automat
-                       House by a Railroad                                  28 x 36”
-                            24 x 29                                     image not reproduced
-                        image not reproduced
+                      House by a Railroad, 24 x 29               The Automat, 28 x 36”
 
 
 
 
-                                    Railroad Sunset
-                                        29 x 48
-                                    image not reproduced
+                                       Railroad Sunset
+                                           29 x 48
+                                      image not reproduced
 
 
 
 
-Figure 2.2: House by a Railroad, oil, 1925; catalogued as House by the Railroad, 24 x 29 as the
-leaf writes it (Book I, leaf 52, ref 18056). The Museum of Modern Art, 3.1930: https://www.
-moma.org/collection/works/78330. The Automat, oil, 1927, 28 x 36” as the leaf writes it (Book
-I, leaf 54; Dealers, leaf 56). Des Moines Art Center, 1958.2: https://desmoinesartcenter.org/
-wp-content/uploads/2022/04/cc-hopper.pdf. Railroad Sunset, oil, 1929; « A real beauty this
-one. », 29 x 48 as the leaf writes it (Book I, leaf 58, ref 18297). Whitney Museum of American
-Art, work 5874: https://whitney.org/collection/works/5874. Scale: sixty inches to eight
-centimetres, the scale of every canvas frame in this note. The frames are drawn to the proportions
-of the size in Edward Hopper’s hand; the images are not reproduced here and can be seen at the
-museums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and
-works.json (2026-09-13).
+Figure 2.2: House by a Railroad, oil, 1925; catalogued as House by the Railroad, 24 x 29 as
+the leaf writes it (Book I, leaf 52, ref 18056). The Museum of Modern Art, 3.1930: https:
+//www.moma.org/collection/works/78330. The Automat, oil, 1927, 28 x 36” as the leaf writes it
+(Book I, leaf 54; Dealers, leaf 56). Des Moines Art Center, 1958.2: https://desmoinesartcenter.
+org/wp-content/uploads/2022/04/cc-hopper.pdf. Railroad Sunset, oil, 1929; « A real beauty
+this one. », 29 x 48 as the leaf writes it (Book I, leaf 58, ref 18297). Whitney Museum of Ameri-
+can Art, work 5874: https://whitney.org/collection/works/5874. Scale: sixty inches to eight
+centimetres, the scale of every canvas frame in this note. The drawings are schemas of the com-
+position in its main masses only, at the proportions of the size in Edward Hopper’s hand, made
+from the leaf’s description and from general knowledge of the picture; nothing is traced and no
+detail is drawn, and they are not reproductions. The pictures themselves are at the museums’ own
+pages. Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and works.json
+(2026-09-13).
 
 
 
 
-                                                 Tables for Ladies
-                                                     4 x 5 ft.
-                                                 image not reproduced
+                                                             9
+Book I: the plates, and the lists that grew behind them
 
 
+
+
+                                           Tables for Ladies, 4 x 5 ft.
 
 
 Figure 2.3: Tables for Ladies, oil, 1930, 4 x 5 ft. as the leaf writes it (Book I, leaf 59, ref
-16991). The Metropolitan Museum of Art, Hearn Fund, 1931: https://www.metmuseum.org/
-art/collection/search/487695. Scale: sixty inches to eight centimetres. The frames are drawn
-to the proportions of the size in Edward Hopper’s hand; the images are not reproduced here and
-can be seen at the museums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026, from the
-transcriptions and works.json (2026-09-13).
-
-
-                                                           9
-Book I: the plates, and the lists that grew behind them
+16991). The Metropolitan Museum of Art, Hearn Fund, 1931: https://www.metmuseum.org/art/
+collection/search/487695. Scale: sixty inches to eight centimetres. The drawings are schemas
+of the composition in its main masses only, at the proportions of the size in Edward Hopper’s hand,
+made from the leaf’s description and from general knowledge of the picture; nothing is traced
+and no detail is drawn, and they are not reproductions. The pictures themselves are at the mu-
+seums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and
+works.json (2026-09-13).
 
 
 2.4     Her own collection
@@ -773,7 +783,12 @@ or was thought to have been won, in May 1947, and the ledger records the thank-y
 presents.
 
 
-2.5     Lists, and the money that vanishes
+
+                                                      10
+                                                             Lists, and the money that vanishes
+
+
+2.5    Lists, and the money that vanishes
 The Current Exhibitions leaves (84 to 89) and the Reviews, Reproductions and Photographs
 leaves (90 to 93) hold ten leaves without a dollar sign, except the pound and the five
 dollars of the British Museum. The One Man Shows leaf gives the career in a column:
@@ -794,12 +809,6 @@ records the one fee he earned as a writer: « Review by E. Hopper — for The Ar
 on the last leaf, turned ninety degrees, in the accounts of the Rehn show of February 1927:
 advertising 161.50, window signs 3, photographs 44.80, frames for four oils 64, a frame
 for Two on the Aisle 20.74, ten watercolours 24.45, one etching 24, total 342.49; and
-
-
-                                                  10
-                                                             What is lost, and what is doubtful
-
-
 against it the settlement of 4 November, « F. Rehn - 1452.68 »: Two on the Aisle 1000, two
 watercolours 333.34, eight etchings 119.34 (Book I, leaf 100, ref 17174). The costs of the
 first one-man show at a commercial gallery were a quarter of what it brought in.
@@ -823,14 +832,14 @@ are the buyers’: Crowninshield is spelt three ways, Sheafer three, Spaulding t
 four. None is corrected, and the reason is the same as for the prices: a corrected name in
 a ledger is a claim about who bought a picture, and the leaf did not make it.
     Only one reading in the entire volume is marked as checked by a person against the
-photograph: « Chicago », first read « Shicago », on leaf 8. That is the state of the edition,
-and this study inherits it.
-
-
 
 
                                              11
 Book I: the plates, and the lists that grew behind them
+
+
+photograph: « Chicago », first read « Shicago », on leaf 8. That is the state of the edition,
+and this study inherits it.
 
 
 
@@ -956,24 +965,22 @@ names.
 
 
 
-                                             Night Hawks
-                                               33 x 60
-                                           image not reproduced
+                                           Night Hawks, 33 x 60
+
+
+Figure 3.1: Night Hawks, oil, finished 21 January 1942; catalogued as Nighthawks, 33 x 60 as the
+leaf writes it (Book II, leaf 95, ref 17982). Art Institute of Chicago, 1942.51: https://www.artic.
+edu/artworks/111628. Scale: sixty inches to eight centimetres. The drawings are schemas of the
+composition in its main masses only, at the proportions of the size in Edward Hopper’s hand, made
+from the leaf’s description and from general knowledge of the picture; nothing is traced and no
+detail is drawn, and they are not reproductions. The pictures themselves are at the museums’ own
+pages. Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and works.json
+(2026-09-13).
 
 
 
 
-Figure 3.1: Night Hawks, oil, finished 21 January 1942; catalogued as Nighthawks, 33 x 60 as
-the leaf writes it (Book II, leaf 95, ref 17982). Art Institute of Chicago, 1942.51: https://www.
-artic.edu/artworks/111628. Scale: sixty inches to eight centimetres. The frames are drawn to
-the proportions of the size in Edward Hopper’s hand; the images are not reproduced here and can
-be seen at the museums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026, from the
-transcriptions and works.json (2026-09-13).
-
-
-
-
-3.3    Herself
+3.3     Herself
 She is in the book as model, as painter and as owner. Jo Painting (Book II, leaf 13, ref
 16839), a portrait of her, gets a description in the third person that is plainly a self-portrait
 in words: « Head against light. warm flesh tones against white background (painted on
@@ -983,13 +990,13 @@ dry thoroughly. » Its sale line reads « Given to wife, Jo N. Hopper as anniver
 1955 ». Compartment C, Car 293: « A green picture (veridian + Cadmium deep) - green
 slightly olive. … Girl with gold hair, flesh colored legs dressed in my purple wool jersey
 dress + black hat. … On seat Reader’s Digest in purple cover. » (Book II, leaf 25, ref
-18545). The transcriber’s note is exact: « the dress she puts on the girl is her own ». The
-Provincetown diary confirms that she posed, « by night light in big pokey hat & hair down »,
 
-                                                   15
+                                                  15
 Book II: one picture to an opening
 
 
+18545). The transcriber’s note is exact: « the dress she puts on the girl is her own ». The
+Provincetown diary confirms that she posed, « by night light in big pokey hat & hair down »,
 in March 1938, and again for Office at Night, « in a light skirt », in February 1940. The
 women in the pictures of these years are Josephine Hopper in her own clothes, and the
 ledger says so in passing.
@@ -1033,13 +1040,13 @@ noon went to the Carnegie for 3000 in 1938; New York Movie to Stephen Clark for 
 1939; Gas to the Museum of Modern Art for 1800 in 1943; the Sheridan Theatre to Newark
 for 900 in 1940; Sun on Prospect Street to Edward G. Robinson, « someone in movie world
 named Robinson » as the diary has it, for 1000 the same year. The pictures that stayed
-longest sold highest: Dauphinée House, painted in October 1932, went to Huntington
-Hartford for 5000 in June 1956; Men, Women and Horses, of April 1939, to Leistner for
 
                                              16
                                                                                   Arithmetic
 
 
+longest sold highest: Dauphinée House, painted in October 1932, went to Huntington
+Hartford for 5000 in June 1956; Men, Women and Horses, of April 1939, to Leistner for
 4500 in 1958; and Girlie Show, of April 1941, to Charles Stein in July 1961 for 11,000,
 « the highest price in Book II » as the transcriber notes (Book II, leaf 89, ref 16635). A
 canvas of 1913, Corner Saloon, was bought by the Museum of Modern Art out of the show
@@ -1181,16 +1188,12 @@ frame ever worn by a Hopper canvas. » (Book III, leaf 194, ref 17259).
 
 
                                                         20
-                                                                                        The buyers
+                                                                                              The buyers
 
 
 
 
-                       Rooms by the Sea                     Office in a Small City
-                           29 x 40                                 28 x 40
-                       image not reproduced                   image not reproduced
-
-
+                      Rooms by the Sea, 29 x 40             Office in a Small City, 28 x 40
 
 
 Figure 4.1: Rooms by the Sea, oil, September 1951; alias « The Jumping Off Place », 29 x 40 as the
@@ -1199,10 +1202,11 @@ collections.yale.edu/view/object/63bdda22-a6be-413d-9a35-5e2649c14c21. Office in
 Small City, oil, September 1953, 28 x 40 as the leaf writes it (Book III, leaf 49, ref 18028). The
 Metropolitan Museum of Art, 53.183: https://www.metmuseum.org/art/collection/search/
 488730. Scale: sixty inches to eight centimetres; the two 28-by-40 and 29-by-40 formats of the
-studio pictures of 1949 to 1954. The frames are drawn to the proportions of the size in Edward
-Hopper’s hand; the images are not reproduced here and can be seen at the museums’ own pages.
-Drawn by Claude Fable 5.1, 13 September 2026, from the transcriptions and works.json (2026-
-09-13).
+studio pictures of 1949 to 1954. The drawings are schemas of the composition in its main masses
+only, at the proportions of the size in Edward Hopper’s hand, made from the leaf’s description and
+from general knowledge of the picture; nothing is traced and no detail is drawn, and they are not re-
+productions. The pictures themselves are at the museums’ own pages. Drawn by Claude Fable 5.1,
+13 September 2026, from the transcriptions and works.json (2026-09-13).
 
 
 4.3     The buyers
@@ -1212,7 +1216,6 @@ owned by Griswold of Yale »; Rooms by the Sea in 1952, « snapped up at once be
 publicly »; Western Motel in 1958; Sunlight in a Cafeteria in 1958 at 9000; four Mexican
 and Wyoming watercolours besides. And then the note in pencil at the foot of Excursion
 into Philosophy:
-
       On hearing about this canvas, Stephen Clark had come to see it. At old 5” Ave. address,
       he learned of gallery moving to E. 64” St., but when he got there, gallery locked, no
       one there. He wrote to tell us of his disappointment, but died a short time after that.
@@ -1232,12 +1235,12 @@ ber 1950, and Wichita bought it in 1952. The verso facing Morning in a City pres
 collector’s doubt: « Stephen Clark wagging his head, predicted “You’ll have a hard time
 disposing of this one.” » (ref 16404). It went to Lawrence Bloedel in 1955 for 6000, the
 highest price in the book to that date.
-    One sale went wrong, and the book follows it for eight years. Solitude, of 1944, was
 
-                                                21
+                                                  21
 Book III: the late work, and the lists in front of it
 
 
+    One sale went wrong, and the book follows it for eight years. Solitude, of 1944, was
 « Sold 1953 - Septm 4500 - to be paid weekly installments of 500. Chambers? ? Caught
 up on litigation* … Paid 500 down. … Who has the picture? No news. Feb. 1958 +
 no further payments - than first 500. » The asterisk: « Caused by death of Frank Rehn +
@@ -1251,20 +1254,12 @@ fault line: payments « caught up in Rehn Estate », October on Cape Cod paid on
 
 
 
-                                                              Second Story Sunlight
-                                                                   40” x 50”
-                 South Carolina Morning                         image not reproduced
-                        30 x 40
-                     image not reproduced
+                 South Carolina Morning, 30 x 40                       Second Story Sunlight, 40” x 50”
 
 
 
 
-                               A Woman in the Sun
-                                 40 x 60 inches
-                                  image not reproduced
-
-
+                             A Woman in the Sun, 40 x 60 inches
 
 
 Figure 4.2: South Carolina Morning, oil, 1955; « Dinah », 30 x 40 as the leaf writes it (Book III, leaf
@@ -1274,15 +1269,15 @@ the leaf writes it (Book III, leaf 73, ref 17872). Whitney Museum of American Ar
 //whitney.org/collection/works/873. A Woman in the Sun, oil, October 1961; « the WISE
 TRAMP », 40 x 60 inches as the leaf writes it (Book III, leaf 75, ref 17107). Whitney Museum
 of American Art, 84.31: https://whitney.org/collection/works/1337. Scale: sixty inches to
-eight centimetres; the three formats of the last decade, 30 by 40, 40 by 50 and 40 by 60. The frames
-are drawn to the proportions of the size in Edward Hopper’s hand; the images are not reproduced
-here and can be seen at the museums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026,
-from the transcriptions and works.json (2026-09-13).
+eight centimetres; the three formats of the last decade, 30 by 40, 40 by 50 and 40 by 60. The
+drawings are schemas of the composition in its main masses only, at the proportions of the size
+in Edward Hopper’s hand, made from the leaf’s description and from general knowledge of the
+picture; nothing is traced and no detail is drawn, and they are not reproductions. The pictures
+themselves are at the museums’ own pages. Drawn by Claude Fable 5.1, 13 September 2026, from
+the transcriptions and works.json (2026-09-13).
 
 
-
-
-                                                         22
+                                                                  22
                                                                                        The prices
 
 
@@ -2423,12 +2418,12 @@ ref 16582) is the one admission of not knowing, and it concerns a canvas of 1932
 sky was repainted in 1959. The formula is a record of a habit, not a laboratory report, and
 the two agree only as far as the habit was regular. It was very regular.
 
-            zinc white
+             zinc white
             Rembrandt
-             poppy oil
+              poppy oil
       Winsor & Newton
                 Blockx
-          double prime
+         double prime
             lead white
             linseed oil
             turpentine
@@ -2672,8 +2667,7 @@ and the leaf disagree, as on leaf 156, where the note reads the fore-edge total 
 and the marginal as 21,944, the leaf needs re-reading and this chapter says so rather than
 choosing.
 
-                            40, 000
-                                                       Book IV, the cheques receipted, by year
+                            40, 000                    Book IV, the cheques receipted, by year
                                              Books I, II, III and Dealers, net of the third, by year of sale
                                                       Book IV, illustration receipts, 1913–1925
 

@@ -1,9 +1,25 @@
 \begin{figure}[htbp]\centering
 \begin{tikzpicture}
-\draw[fill=black!4,draw=black!60,line width=0.5pt] (0,0) rectangle (5.333333333333333,3.8666666666666667);
-\node[align=center,text=black!55,font=\scriptsize] at (2.6666666666666665,1.9333333333333333) {Rooms by the Sea\\29 x 40\\\tiny image not reproduced};
-\draw[fill=black!4,draw=black!60,line width=0.5pt] (5.833333333333333,0) rectangle (11.166666666666666,3.7333333333333334);
-\node[align=center,text=black!55,font=\scriptsize] at (8.5,1.8666666666666667) {Office in a Small City\\28 x 40\\\tiny image not reproduced};
+\begin{scope}[shift={(0,0)},x=5.333cm,y=3.867cm]\clip (0,0) rectangle (1,1);
+\fill[black!8] (0,0) rectangle (1,1);
+\fill[black!30] (0.42,0.02) rectangle (1,0.98);     % the open doorway
+\fill[black!55] (0.44,0.04) rectangle (0.98,0.5);   % sea
+\fill[white] (0.44,0.5) rectangle (0.98,0.96);      % sky
+\fill[white] (0.06,0.04) -- (0.42,0.04) -- (0.34,0.4) -- (0.06,0.4) -- cycle; % light on the floor
+\fill[black!20] (0,0.3) rectangle (0.18,0.95);      % the further room
+\end{scope}
+\draw[black!70,line width=0.5pt] (0,0) rectangle (5.333333333333333,3.8666666666666667);
+\node[anchor=north,font=\tiny,text=black!60] at (2.6666666666666665,-0.05) {Rooms by the Sea, 29 x 40};
+\begin{scope}[shift={(5.833333333333333,0)},x=5.333cm,y=3.733cm]\clip (0,0) rectangle (1,1);
+\fill[black!12] (0,0.7) rectangle (1,1);            % sky
+\fill[black!40] (0,0.45) rectangle (0.32,0.7);      % rooftops beyond
+\fill[white] (0.3,0) rectangle (1,0.85);            % the white wall
+\fill[black!25] (0.4,0.2) rectangle (0.92,0.62);    % the corner window
+\fill[black!80] (0.62,0.438) circle (0.0286); \fill[black!80,rounded corners=1pt] (0.5875,0.204) rectangle (0.6525,0.412);
+\fill[black!45] (0.66,0.24) rectangle (0.9,0.3);    % desk
+\end{scope}
+\draw[black!70,line width=0.5pt] (5.833333333333333,0) rectangle (11.166666666666666,3.7333333333333334);
+\node[anchor=north,font=\tiny,text=black!60] at (8.5,-0.05) {Office in a Small City, 28 x 40};
 \end{tikzpicture}
-\caption{\textbf{Rooms by the Sea}, oil, September 1951; alias « The Jumping Off Place », 29 x 40 as the leaf writes it (Book III, leaf 41, ref 18347). Yale University Art Gallery, 1961.18.29: \url{https://lux.collections.yale.edu/view/object/63bdda22-a6be-413d-9a35-5e2649c14c21}. \textbf{Office in a Small City}, oil, September 1953, 28 x 40 as the leaf writes it (Book III, leaf 49, ref 18028). The Metropolitan Museum of Art, 53.183: \url{https://www.metmuseum.org/art/collection/search/488730}. Scale: sixty inches to eight centimetres; the two 28-by-40 and 29-by-40 formats of the studio pictures of 1949 to 1954. The frames are drawn to the proportions of the size in Edward Hopper's hand; the images are not reproduced here and can be seen at the museums' own pages. Drawn by Claude Fable~5.1, 13 September 2026, from the transcriptions and \texttt{works.json} (2026-09-13).}\label{fig:roomsoffice}
+\caption{\textbf{Rooms by the Sea}, oil, September 1951; alias « The Jumping Off Place », 29 x 40 as the leaf writes it (Book III, leaf 41, ref 18347). Yale University Art Gallery, 1961.18.29: \url{https://lux.collections.yale.edu/view/object/63bdda22-a6be-413d-9a35-5e2649c14c21}. \textbf{Office in a Small City}, oil, September 1953, 28 x 40 as the leaf writes it (Book III, leaf 49, ref 18028). The Metropolitan Museum of Art, 53.183: \url{https://www.metmuseum.org/art/collection/search/488730}. Scale: sixty inches to eight centimetres; the two 28-by-40 and 29-by-40 formats of the studio pictures of 1949 to 1954. The drawings are schemas of the composition in its main masses only, at the proportions of the size in Edward Hopper's hand, made from the leaf's description and from general knowledge of the picture; nothing is traced and no detail is drawn, and they are not reproductions. The pictures themselves are at the museums' own pages. Drawn by Claude Fable~5.1, 13 September 2026, from the transcriptions and \texttt{works.json} (2026-09-13).}\label{fig:roomsoffice}
 \end{figure}

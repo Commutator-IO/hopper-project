@@ -2,6 +2,7 @@
 // proportions of the size in Edward Hopper's hand (images not reproduced), and
 // the site's drawings redrawn from the same JSON. Every figure is signed.
 import { readFileSync, writeFileSync } from 'node:fs';
+import { SCHEMAS } from './schemas.mjs';
 const C = '/Users/michel/Commutator/hopper-project/src/content/';
 const J = (p) => JSON.parse(readFileSync(C + p, 'utf8'));
 const esc = (t) => String(t).replace(/&/g, '\\&').replace(/%/g, '\\%').replace(/#/g, '\\#').replace(/_/g, '\\_');
@@ -33,16 +34,20 @@ const BY = Object.fromEntries(WORKS.map((w) => [w[0], w]));
 const frame = (w, cmPerIn, x0 = 0, y0 = 0) => {
   const [slug, title, h, wd, size] = w;
   const W = wd * cmPerIn, H = h * cmPerIn;
+  const sch = SCHEMAS[slug];
+  if (sch) return `\\begin{scope}[shift={(${x0},${y0})},x=${W.toFixed(3)}cm,y=${H.toFixed(3)}cm]\\clip (0,0) rectangle (1,1);${sch}\\end{scope}
+\\draw[black!70,line width=0.5pt] (${x0},${y0}) rectangle (${x0 + W},${y0 + H});
+\\node[anchor=north,font=\\tiny,text=black!60] at (${x0 + W / 2},${y0 - 0.05}) {${esc(title)}, ${esc(size)}};`;
   return `\\draw[fill=black!4,draw=black!60,line width=0.5pt] (${x0},${y0}) rectangle (${x0 + W},${y0 + H});
 \\node[align=center,text=black!55,font=\\scriptsize] at (${x0 + W / 2},${y0 + H / 2}) {${esc(title)}\\\\${esc(size)}\\\\\\tiny image not reproduced};`;
 };
-const frameCaption = (ws, scaleNote) => ws.map((w) => `\\textbf{${esc(w[1])}}, ${esc(w[9])}, ${esc(w[4])} as the leaf writes it (${esc(w[8])}). ${esc(w[5])}, ${esc(w[6])}: \\url{${w[7]}}.`).join(' ') + ` ${scaleNote} The frames are drawn to the proportions of the size in Edward Hopper's hand; the images are not reproduced here and can be seen at the museums' own pages. ${SIGN}, from the transcriptions and \\texttt{works.json} (${gen('works.json')}).`;
+const frameCaption = (ws, scaleNote) => ws.map((w) => `\\textbf{${esc(w[1])}}, ${esc(w[9])}, ${esc(w[4])} as the leaf writes it (${esc(w[8])}). ${esc(w[5])}, ${esc(w[6])}: \\url{${w[7]}}.`).join(' ') + ` ${scaleNote} ` + (ws.some((w) => SCHEMAS[w[0]]) ? 'The drawings are schemas of the composition in its main masses only, at the proportions of the size in Edward Hopper\'s hand, made from the leaf\'s description and from general knowledge of the picture; nothing is traced and no detail is drawn, and they are not reproductions. The pictures themselves are at the museums\' own pages.' : 'The frames are drawn to the proportions of the size in Edward Hopper\'s hand; the images are not reproduced here and can be seen at the museums\' own pages.') + ` ${SIGN}, from the transcriptions and \\texttt{works.json} (${gen('works.json')}).`;
 const figFrames = (name, slugs, cmPerIn, scaleNote, label) => {
   const ws = slugs.map((s) => BY[s]);
   const MAXW = 14.6; let x = 0, y = 0, rowH = 0; const parts = [];
   for (const w of ws) {
     const W = w[3] * cmPerIn, H = w[2] * cmPerIn;
-    if (x > 0 && x + W > MAXW) { x = 0; y -= rowH + 0.6; rowH = 0; }
+    if (x > 0 && x + W > MAXW) { x = 0; y -= rowH + 0.9; rowH = 0; }
     parts.push(frame(w, cmPerIn, x, y)); x += W + 0.5; rowH = Math.max(rowH, H);
   }
   out[name] = `\\begin{figure}[htbp]\\centering
