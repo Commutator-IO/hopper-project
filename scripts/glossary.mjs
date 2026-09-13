@@ -102,6 +102,9 @@ for (const e of decl.entries) {
     else
       bySheet.set(key, {
         ledger: p.ledger,
+        // A notebook passage carries the notebook's id, so the Method page
+        // can open the page under /diaries/ rather than a ledger path.
+        ...(p.notebook ? { notebook: p.notebook } : {}),
         batch: p.batch,
         leaf: p.leaf,
         ref: p.ref,

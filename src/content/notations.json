@@ -1,5 +1,5 @@
 {
-  "note": "Hand-declared, and checked against the leaves. What a form means is a judgement and no script has it, so every entry here is written by a person. What no person is trusted with is whether the form is actually in the books: each entry declares a pattern, `npm run glossary` searches the transcribed leaves for it, and an entry that matches nothing fails the build. The search runs over the books' own writing — the ruled rows, the headings the leaf carries, the work titles, the hands and the margins — and never over a `\\note{}`, because the notes are where we discuss these forms and an entry could otherwise cite as evidence the sentence written because of it.",
+  "note": "Hand-declared, and checked against the leaves. What a form means is a judgement and no script has it, so every entry here is written by a person. What no person is trusted with is whether the form is actually in the books: each entry declares a pattern, `npm run glossary` searches the transcribed leaves for it, and an entry that matches nothing fails the build. The search runs over the books' own writing — the ruled rows, the headings the leaf carries, the work titles, the hands and the margins — and never over a `\\note{}`, because the notes are where we discuss these forms and an entry could otherwise cite as evidence the sentence written because of it. The four notebooks are searched with the ledgers, and from 2026 the black notebook adds its own forms — her « c̄ » for with, her « ± » for about, the tick on a mailing list, the ordinal that looks like an inch mark.",
   "means": "Two columns, and the division is the whole point. « As written » is the leaf's, exactly, and is not a claim of ours. « Means » is ours, it is an expansion the transcription deliberately does not make, and it may be wrong. Nothing in the transcription is expanded — `Inv.` stays `Inv.` and `30 - 1/3` stays as written — because expanding would be normalisation, which is the one thing this edition refuses. This page is the key, kept outside the text it unlocks. In the lines quoted as evidence, │ marks a ruled column division on the leaf: what falls between two of them stood in one cell of the book's own ruling.",
   "entries": [
     {
@@ -192,14 +192,6 @@
       "match": "\\bCromwinshield\\b"
     },
     {
-      "term": "Shicago",
-      "kind": "spelling",
-      "standard": "Chicago",
-      "written": "Shicago",
-      "means": "Once, on the Logan Prize line. Not a hand this project would correct: the letter is unambiguous.",
-      "match": "\\bShicago\\b"
-    },
-    {
       "term": "Grace Horn's",
       "sort": "Grace Horn",
       "kind": "spelling",
@@ -240,6 +232,107 @@
       "written": "Fog Museum",
       "means": "One g, on leaves 62, 64, 66 and 86. She writes « Fogg » correctly elsewhere in the same book, which is why both forms have to be searched for and neither can be normalised away.",
       "match": "\\bFog Museum\\b"
+    },
+    {
+      "term": "c̄",
+      "sort": "c",
+      "kind": "abbreviation",
+      "written": "c̄",
+      "means": "With — a small c under a macron, the prescription's abbreviation: « c̄ B. Hartman » heads the frame recipe, « Truro, trip c̄ Manchester » opens 1959. The black notebook's; the ledgers never use it.",
+      "match": "c̄"
+    },
+    {
+      "term": "bgt.",
+      "kind": "abbreviation",
+      "written": "bgt. · Bgt.",
+      "means": "Bought — « Bgt. by » before a buyer's name throughout Book I's etching leaves, and in the black notebook « bgt. Ap. 4, 1960 » for the phonograph and « Bgt. land. » under 1933 for the Truro plot.",
+      "match": "\\b[Bb]gt\\."
+    },
+    {
+      "term": "Hos.",
+      "kind": "abbreviation",
+      "written": "Hos. · N.Y. Hos.",
+      "means": "Hospital — New York Hospital, in the black notebook's chronicle of operations from 1948, where « 3\" trip N.Y. Hos. » is a third stay; the ledgers' Book I has it too.",
+      "match": "\\bHos\\."
+    },
+    {
+      "term": "Wash. Sq.",
+      "sort": "Wash",
+      "kind": "abbreviation",
+      "written": "Wash. Sq. · Wash. Sq. N.",
+      "means": "Washington Square — 3 Washington Square North, the studio. The ledgers' « Painted in Wash. Sq. studio », the notebooks' lists of who lived and visited there, and the Square itself in the campaign of 1947.",
+      "match": "Wash\\.? Sq\\.?"
+    },
+    {
+      "term": "Metrop.",
+      "kind": "abbreviation",
+      "written": "Metrop.",
+      "means": "The Metropolitan Museum of Art, throughout: its purchases in the ledgers, and in the notebook the jury she flew to New York for in 1952 and its water colour show.",
+      "match": "Metrop\\."
+    },
+    {
+      "term": "±",
+      "sort": "about",
+      "kind": "notation",
+      "written": "± · Ap. 17 ±, 1953 · 1954 ±",
+      "means": "About. A plus over a bar after a date, a figure or a size she was not sure of: Book III's sizes carry it, Book I gives it once for a Paris watercolour, and the black notebook dates by it — « Ap. 17 ±, 1953 », « 1954 ± ».",
+      "match": "±"
+    },
+    {
+      "term": "√",
+      "sort": "tick",
+      "kind": "notation",
+      "written": "√ · √√",
+      "means": "A tick against a name on a mailing list. Her two keys disagree, one leaf apart: page 52 of the black notebook says « √ = came or wrote », page 53 « √ = wrote or rec'd. by hand) √√ came ». Both are hers, and neither governs the other page.",
+      "match": "√"
+    },
+    {
+      "term": "6\"",
+      "sort": "ordinal",
+      "kind": "notation",
+      "written": "Dec. 6\" 1956 · Feb. 11\", 58 · 3\" trip",
+      "means": "An ordinal, not an inch mark: the raised double stroke after a day of the month or a count is her « th », in the ledgers' receipt dates as in the notebook's — Dec. 6th, the third trip. The same stroke after a dimension is inches, and alone in a column it is a ditto; which it is depends on what stands before it.",
+      "match": "(?:Jan|Feb|Mar|Ap|Apr|May|June|July|Aug|Sept|Oct|Nov|Dec)\\.? \\d{1,2}\"|\\d\" (?:trip|visit|step)"
+    },
+    {
+      "term": "Sattillo",
+      "kind": "spelling",
+      "written": "Sattillo · Sortillo",
+      "standard": "Saltillo, Coahuila — which she also spells correctly, once on the same page as « Sattillo »",
+      "match": "Sattillo|Sortillo",
+      "means": "Three times « Sattillo » and three « Sortillo » across the black notebook's chronicles and its list of the Mexican journeys, against « Saltillo » on page 44 and in the ledgers' titles."
+    },
+    {
+      "term": "Watman",
+      "kind": "spelling",
+      "written": "Watman\" · Watmans",
+      "standard": "Whatman, the water colour paper, by the half sheet",
+      "match": "Watman",
+      "means": "On the water colour sizes of pages 6 and 40: « Watman\" 1/2 sheet - 15 x 22 », « 1/2 sheet Watmans = 22 1/2 x 15 1/2 »."
+    },
+    {
+      "term": "Athenuem",
+      "kind": "spelling",
+      "written": "Athenuem · Athenium",
+      "standard": "The Wadsworth Atheneum, Hartford — two spellings on one leaf, neither the museum's",
+      "match": "Athen(?:uem|ium)",
+      "means": "On the museum staff list of page 31, where the Wadsworth is written both ways within six lines, and again on page 35."
+    },
+    {
+      "term": "Huricane",
+      "kind": "spelling",
+      "written": "Huricane",
+      "standard": "Hurricane — the Cape, 1938",
+      "match": "Huricane",
+      "means": "Under 1938 in the year chronicle, « Cape Huricane », and once more."
+    },
+    {
+      "term": "Coper Union",
+      "kind": "spelling",
+      "written": "Coper Union",
+      "standard": "Cooper Union, where she priced water colour paper by the pound",
+      "match": "Coper Union",
+      "means": "On page 8, pricing 72 lb and 140 lb paper against Robinson's."
     }
   ]
 }

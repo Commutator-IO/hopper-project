@@ -47,7 +47,7 @@ const GLOSSARY_BLURB = {
   notation:
     'Forms that are not short for anything. They mean something other than what they look like, and the first of them is the one that has misled every reader of these books at least once.',
   spelling:
-    'Not corrections. She spells several names more than one way, and the transcription keeps every form as written — which means a reader searching for the right spelling will miss the leaf. These are finding aids: the wrong form, and the leaf that has it.',
+    'Not corrections. She spells several names more than one way, and the transcription keeps every form as written — which means a reader searching for the right spelling will miss the leaf. These are finding aids: the wrong form, and the leaf that has it. The notebooks are searched with the ledgers, and a form found on a notebook page opens that page.',
 } as const;
 
 /**
@@ -86,6 +86,11 @@ export function MethodPage() {
   });
   const t = tally(batches);
   const read = Object.values(manifest?.read ?? {}).reduce((a, b) => a + b, 0);
+  // The notebooks are counted apart from the ledgers, as the manifest counts
+  // them: a notebook sheet is another document, and adding it to the ledgers'
+  // figure would inflate a number the citation metadata quotes.
+  const readNotebooks = Object.values(manifest?.readNotebooks ?? {}).reduce((a, b) => a + b, 0);
+  const notebookSheets = NOTEBOOKS.reduce((a, n) => a + n.sheets, 0);
 
   return (
     <Page path="/method/">
@@ -113,6 +118,7 @@ export function MethodPage() {
           <Stat n={read} label="sheets transcribed" />
           <Stat n={t.sheetsChecked} label="sheets checked by a person" />
           <Stat n={t.total} label="batches in all" />
+          <Stat n={readNotebooks} label={`of ${notebookSheets} notebook sheets transcribed`} />
         </dl>
 
         <table className="mt-7 w-full max-w-3xl text-[13.5px]">
@@ -171,6 +177,8 @@ export function MethodPage() {
               ['\\sketch{…}', 'Edward Hopper’s ink record drawing stands here. The argument is what is written on it, never a description of it'],
               ['\\clipping{…}', 'something printed and pasted to the leaf; the argument transcribes its printed text'],
               ['ledgertable', 'the ruled columns. Jo Hopper ruled them herself; the table is not a presentation of the content, it is the content'],
+              ['\\notebook{black-notebook}', 'a notebook rather than a ledger: one file for the whole notebook, appended to sitting by sitting, and no batch. Everything above holds in it, and two macros are added'],
+              ['\\entry{Sat. Mar. 5" 38}{1938-03-05}', 'a diary entry begins: the date exactly as she wrote it, and beside it the date the transcriber assigns — as much of one as the page supports and no more, which is the one editorial claim an entry carries. Where the page gives nothing to assign, the second argument is left empty'],
             ].map(([macro, meaning]) => (
               <tr key={macro} className="border-b border-ink-200 align-top">
                 <td className="w-64 py-2 pr-4 font-mono text-[12px] text-brand-700">{macro}</td>
@@ -383,6 +391,22 @@ export function MethodPage() {
             “16.66” — none of which can be skimmed and any one of which is wrong if it is
             guessed. Twelve is what one pass of sustained attention actually covers.
           </Diff>
+          <Diff title="A notebook is read in entries, in sittings, into one file">
+            The Whitney has digitised four of Josephine Hopper’s notebooks, and the black
+            notebook is now read whole: sixty-eight sheets in six sittings of twelve, appended to
+            one file, so a half-read notebook shows as half read and nothing has to be declared.
+            Her prose is read in entries under the date as she wrote it, and only a ruled list
+            becomes a table. Three things were decided on the way. The typed transcripts of the
+            diaries that Provincetown publishes were <em>not</em> open beside the photograph, so
+            every doubtful word here was settled or flagged off the page and not off somebody
+            else’s guess. The Whitney’s descriptors give the page numbers even where they slip —
+            the black notebook’s « Pages 125–126 » follows its « Pages 124–125 » — because that
+            is what a reader’s page turn lands on, and the file says so once. And what she drew
+            round a block — a ring, a box, a brace, a stroke of red crayon — is described in a
+            note and never transcribed, while a block written up the fore-edge or across the leaf
+            at an angle is rotated before anybody decides the page is blank: « Brian + Barbara
+            O’Doherty » reads as nothing at all until the crop is turned seventy degrees.
+          </Diff>
           <Diff title="No grouping of ours, anywhere">
             The archive’s six volumes are the site’s six pages. An earlier version offered
             reading books that were threads we had drawn across the volumes, and each had to
@@ -509,6 +533,38 @@ export function MethodPage() {
                 <td className="py-2 text-ink-600">{l.date}</td>
                 <td className="py-2 text-right tabular">{(BY_LEDGER.get(l.id) ?? []).length}</td>
                 <td className="py-2 text-right tabular">{manifest?.read?.[l.id] ?? 0}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <h3 className="mt-8 font-serif text-[17px] text-ink-900">The four notebooks</h3>
+        <p className="prose-note mt-1.5 max-w-3xl">
+          Josephine Hopper’s, under <a href={url('/diaries/')} className="text-brand-700 hover:underline">the diaries</a>{' '}
+          rather than beside the ledgers, because none of the ledgers’ pages — the timeline, the
+          accounts, the schema — could be built from a diary. Each is one file, read in sittings
+          of twelve sheets; the count is read off the file.
+        </p>
+        <table className="mt-4 w-full max-w-3xl text-[13.5px]">
+          <thead>
+            <tr className="border-b border-ink-300 text-left text-[11.5px] uppercase tracking-wider text-ink-400">
+              <th className="py-1.5">Notebook</th>
+              <th className="py-1.5">Dated</th>
+              <th className="py-1.5 text-right">Sheets</th>
+              <th className="py-1.5 text-right">Transcribed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {NOTEBOOKS.map((n) => (
+              <tr key={n.id} className="border-b border-ink-200">
+                <td className="py-2">
+                  <a href={url(`/diaries/${n.id}/`)} className="text-brand-700 hover:underline">
+                    {n.title}
+                  </a>
+                </td>
+                <td className="py-2 text-ink-600">{n.date}</td>
+                <td className="py-2 text-right tabular">{n.sheets}</td>
+                <td className="py-2 text-right tabular">{manifest?.readNotebooks?.[n.id] ?? 0}</td>
               </tr>
             ))}
           </tbody>
