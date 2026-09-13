@@ -769,14 +769,16 @@ export function TimelinePage() {
             </dd>
           </div>
           <div>
-            <dt className="font-medium text-ink-900">The compiler is not named on these pages.</dt>
+            <dt className="font-medium text-ink-900">The compiler is Gail Levin.</dt>
             <dd className="mt-0.5 text-ink-700">
               The Whitney’s account says when the catalogue raisonné appeared and how long it
-              took, and does not say who compiled it. The gap is left standing rather than filled
-              in from elsewhere, on the same rule as every date above: this page states what a
-              named source states, and a name supplied from memory would be the one thing it
-              refuses. Worth noticing, on a site whose whole method is marking which hand wrote
-              what.
+              took, and does not say who compiled it; the catalogue’s own title page does —{' '}
+              <em>Edward Hopper: A Catalogue Raisonné</em>, Gail Levin, Whitney Museum of American
+              Art with W. W. Norton, 1995 — and so does the published edition of these record
+              books, Deborah Lyons’s <em>Edward Hopper: A Journal of His Work</em> of 1997. For a
+              while this card said the name was not stated and left the gap standing; the gap was
+              in the source consulted, not in the record, and a site whose whole method is marking
+              which hand wrote what should name the hands that read these books before it.
             </dd>
           </div>
         </dl>

@@ -17,7 +17,14 @@ import {
   useManifest,
 } from './lib/batches.ts';
 import { url } from './lib/base.ts';
-import { PAAM_COLLECTION_URL, notebookPath, paamPartsOverlapping } from './lib/diaries.ts';
+import {
+  PAAM_COLLECTION_URL,
+  PAAM_FOLDER_URL,
+  PAAM_PARALLELS,
+  PAAM_TRANSCRIBER,
+  notebookPath,
+  paamPartsOverlapping,
+} from './lib/diaries.ts';
 import { shownState } from './lib/progress.ts';
 import { issueUrl } from './lib/report.ts';
 import type { Manifest, Notebook, NotebookKey, NotebookSheet, Tag } from './lib/types.ts';
@@ -195,14 +202,35 @@ export function NotebookPage({ id }: { id: NotebookKey }) {
             <dd className="text-ink-700">
               {parts.length ? (
                 <>
-                  <span className="rounded-full bg-brand-100 px-2 py-0.5 text-[11.5px] text-brand-700">
-                    PAAM {parts.map((p) => p.part).join(', ')}
-                  </span>{' '}
-                  covers {parts[0].from}–{parts[parts.length - 1].to}; whether it includes this
-                  notebook is not established —{' '}
+                  {parts.map((p, i) => (
+                    <span key={p.part}>
+                      {i > 0 && ' '}
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        title={`${p.part}, ${p.from}–${p.to}, typed by ${PAAM_TRANSCRIBER}`}
+                        className="rounded-full bg-brand-100 px-2 py-0.5 text-[11.5px] text-brand-700 hover:bg-brand-200"
+                      >
+                        PAAM {p.part} ↗
+                      </a>
+                    </span>
+                  ))}{' '}
+                  covers {parts[0].from}–{parts[parts.length - 1].to}, typed by Madeleine Larson
+                  at PAAM; the years overlap, and whether the typescript is of this notebook is
+                  not established —{' '}
+                  <a href={PAAM_FOLDER_URL} target="_blank" rel="noreferrer" className={A}>
+                    the folder ↗
+                  </a>
+                  {' · '}
                   <a href={PAAM_COLLECTION_URL} className={A}>
                     PAAM ↗
                   </a>
+                  {PAAM_PARALLELS.filter((x) => x.notebook === id).map((x) => (
+                    <span key={x.page} className="mt-1 block text-[12.5px] text-ink-600">
+                      Seen on the scan: {x.part}, typescript page {x.page}, carries {x.what}.
+                    </span>
+                  ))}
                 </>
               ) : (
                 'none known'

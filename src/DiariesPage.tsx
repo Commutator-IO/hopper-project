@@ -2,7 +2,7 @@ import { Page } from './components/Frame.tsx';
 import { NOTEBOOKS } from './content/catalogue.ts';
 import { useManifest } from './lib/batches.ts';
 import { url } from './lib/base.ts';
-import { paamPartsOverlapping } from './lib/diaries.ts';
+import { PAAM_FOLDER_URL, PAAM_PARTS, paamPartsOverlapping } from './lib/diaries.ts';
 
 /**
  * Josephine Hopper's diaries: the scoping, and what has been read so far.
@@ -41,9 +41,10 @@ export function DiariesPage() {
           The ledgers record what a work sold for and to whom. The diaries are the other half of
           the same working life, and the ledgers’ own descriptive passages — the anecdotes Jo
           Hopper wrote under pictures her husband would not discuss — are plainly continuous with
-          them. Four of them, digitised by the Whitney, are read here sheet by sheet as they are
-          transcribed; the rest are not in this corpus, and this page is the account of what
-          would have to be true before a single page of them was read here.
+          them. Four of them, digitised by the Whitney, are read here whole — every sheet that
+          carries writing, beside its photograph. The rest are not in this corpus, and this page
+          is the account of what would have to be true before a single page of them was read
+          here, and of the typed transcripts that already exist.
         </p>
       </header>
 
@@ -140,9 +141,9 @@ export function DiariesPage() {
                   {parts.length > 0 && (
                     <span
                       className="rounded-full bg-brand-100 px-2 py-0.5 text-brand-700"
-                      title={`PAAM publishes a typed transcript for ${parts[0].from}–${parts[parts.length - 1].to}; whether it includes this notebook is not established.`}
+                      title={`PAAM's typescript for ${parts[0].from}–${parts[parts.length - 1].to} shares these years; whether it is of this notebook is not established. The parts are linked on the notebook's page.`}
                     >
-                      PAAM transcript years: {parts.map((p) => p.part).join(', ')}
+                      PAAM typescript years: {parts.map((p) => p.part).join(', ')}
                     </span>
                   )}
                 </div>
@@ -157,12 +158,37 @@ export function DiariesPage() {
         <div className="mt-2 max-w-3xl space-y-3 text-[14.5px] leading-relaxed text-ink-700">
           <p>
             The diaries are not, as the ledgers were, an unread hand waiting for a first pass.
-            PAAM publishes <strong>transcripts</strong> of Josephine Hopper’s diaries — including,
-            it says, diaries not in its own collection — and holds microfilm images of the diaries
-            from 1933 to 1965, which it makes available to researchers on request. Gail Levin’s
-            biography of 1995 drew on the diaries at length, and the prior this site states for
-            the ledgers applies here with more force than anywhere: most of what a first reading
-            finds surprising is in Levin already, and nothing here may claim priority.
+            PAAM publishes <strong>typed transcripts</strong> of Josephine Hopper’s diaries in five
+            parts, the work of Madeleine Larson at PAAM — including, it says, diaries not in its
+            own collection — and holds microfilm images of the diaries from 1933 to 1965, which
+            it makes available to researchers on request. Gail Levin’s <em>Edward Hopper: An
+            Intimate Biography</em> (1995) was written from the diaries and her catalogue raisonné
+            of the same year from the record books, and the prior this site states for the
+            ledgers applies here with more force than anywhere: most of what a first reading
+            finds surprising is in Levin already, and nothing here may claim priority. The record
+            books themselves were published by Deborah Lyons in 1997; the diaries have never
+            been.
+          </p>
+          <p>
+            The five parts, as PAAM shares them —{' '}
+            {PAAM_PARTS.map((p, i) => (
+              <span key={p.part}>
+                {i > 0 && ' · '}
+                <a href={p.url} target="_blank" rel="noreferrer" className={A}>
+                  {p.part}, {p.from}–{p.to} ↗
+                </a>
+              </span>
+            ))}{' '}
+            — in{' '}
+            <a href={PAAM_FOLDER_URL} target="_blank" rel="noreferrer" className={A}>
+              one folder ↗
+            </a>
+            . They are scans of a typescript, organised by dated entry with the typescript’s own
+            page numbers, and they carry no text layer, so nothing on this site was searched
+            against them: the transcription rule keeps them closed during a pass, and a
+            divergence noticed afterwards goes in a note that names the typescript. Where a
+            notebook read here shares a part’s years, the notebook’s page links that part, so
+            the two readings can be put side by side.
           </p>
           <p>
             That changes what a transcription project could add. For the ledgers the value is
@@ -177,9 +203,11 @@ export function DiariesPage() {
         <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-700">
           The ledgers work on this site for one measured reason: the Whitney serves each sheet at
           1292 × 2000 to any browser that asks, so a transcription can sit beside its facsimile
-          and be wrong in public. The diaries have no such image. A transcription nobody can
-          check against the page is the one kind this site refuses to publish, so the questions
-          below are in the order they block.
+          and be wrong in public. The four notebooks above are read here because the Whitney
+          serves them the same way. PAAM’s twenty-two diaries have no such image, and a typescript
+          is a reading, not a facsimile. A transcription nobody can check against the page is the
+          one kind this site refuses to publish, so the questions below are in the order they
+          block.
         </p>
         <ol className="mt-4 max-w-3xl list-decimal space-y-2 pl-6 text-[14.5px] leading-relaxed text-ink-700">
           <li>

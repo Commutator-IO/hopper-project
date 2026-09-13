@@ -22,6 +22,13 @@ export function HomePage() {
           Museum of American Art — {SHEETS.length} digitised sheets, 1907 to 1967. Every
           transcription sits beside the photograph it came from, so that any reading can be
           checked against the hand it was read out of, on one screen.
+          {read > 0 && read >= SHEETS.length - 8 && (
+            <>
+              {' '}All six volumes are now transcribed: {read} of the {SHEETS.length} sheets, the
+              rest being back covers and the chipboard folded round Book IV — a first pass by a
+              machine, checked by a person leaf by leaf nowhere yet, and open for correction.
+            </>
+          )}
         </p>
 
         <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
@@ -108,12 +115,13 @@ export function HomePage() {
         <p className="prose-note mt-1.5 max-w-3xl">
           Josephine Hopper also kept diaries — ninety notebooks, now in the Whitney’s Sanborn
           Hopper Archive. They are not a seventh ledger and are not filed as one: nothing in them
-          could be read into a timeline or an account. They have their own place on this site,
-          which holds the scoping and{' '}
+          could be read into a timeline or an account. Four of them, the ones the Whitney has
+          digitised, are read whole on their own pages —{' '}
           {notebookSheets
-            ? `the ${notebookSheets} sheets of them read so far`
-            : 'for now nothing transcribed'}
-          .
+            ? `${notebookSheets} sheets of a journal, two notebooks of the Washington Square fight of 1947, and a studio memorandum book that says what the ledgers never do: what a picture was framed in, what things cost, and where the two of them went each year.`
+            : 'for now nothing transcribed.'}
+          {' '}The rest are at Provincetown, in typed transcripts and not in facsimile, and the
+          diaries page says what would have to be true before they were read here.
         </p>
         <a
           href={url('/diaries/')}
@@ -121,6 +129,48 @@ export function HomePage() {
         >
           The diaries →
         </a>
+      </section>
+
+      <section className="border-b border-ink-200 py-10">
+        <h2 className="font-serif text-2xl text-ink-900">Whose work this rests on</h2>
+        <p className="prose-note mt-1.5 max-w-3xl">
+          Nothing here is a first reading of these books in the sense that matters. Three people
+          read them before this site did, and their work is the prior every page states.
+        </p>
+        <dl className="mt-4 grid max-w-5xl gap-4 md:grid-cols-3">
+          <div className="card p-5">
+            <dt className="font-serif text-lg text-ink-900">Gail Levin</dt>
+            <dd className="prose-note mt-2">
+              <em>Edward Hopper: A Catalogue Raisonné</em> (Whitney Museum of American Art with
+              W. W. Norton, 1995), compiled from these record books and the diaries, and{' '}
+              <em>Edward Hopper: An Intimate Biography</em> (1995), written from the diaries. Most
+              of what a first reading here finds surprising is in Levin already, and nothing on
+              this site claims priority over it.
+            </dd>
+          </div>
+          <div className="card p-5">
+            <dt className="font-serif text-lg text-ink-900">Deborah Lyons</dt>
+            <dd className="prose-note mt-2">
+              <em>Edward Hopper: A Journal of His Work</em> (Whitney Museum of American Art with
+              W. W. Norton, 1997), the published edition of the record books — the leaves in
+              facsimile with a reading beside them, which is the form this site takes on a
+              screen. Where a reading here differs from Lyons’s, the leaf decides and the note
+              says so.
+            </dd>
+          </div>
+          <div className="card p-5">
+            <dt className="font-serif text-lg text-ink-900">Madeleine Larson</dt>
+            <dd className="prose-note mt-2">
+              The typed transcripts of Josephine Hopper’s diaries, 1933 to 1956, in five parts,
+              at the Provincetown Art Association and Museum — the reading that exists for the
+              diaries this site cannot show in facsimile, and the one it keeps closed during a
+              pass so that a doubtful word is settled off the page.{' '}
+              <a href={url('/diaries/')} className="text-brand-700 hover:underline">
+                The diaries →
+              </a>
+            </dd>
+          </div>
+        </dl>
       </section>
 
       <section className="border-b border-ink-200 py-10">
