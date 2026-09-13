@@ -1,0 +1,295 @@
+{
+  "note": "Every sum the black notebook states, as written. The Accounts tab is the ledgers' sales; these are the costs the ledgers never record — frames, insurance, paper, the studio painted, a phonograph, two watches — and the few receipts, which are hers. Declared by hand and checked against the page by scripts/framing.mjs, as the framing register is: an entry whose pattern matches nothing fails the build. Nothing is totalled, converted or adjusted, on the rule the transcriptions follow.",
+  "notebook": "black-notebook",
+  "kinds": {
+    "frames": {
+      "label": "Frames",
+      "note": "The bills and the prices, by maker."
+    },
+    "insurance": {
+      "label": "Insurance",
+      "note": "The Truro policies, on a page she afterwards cancelled."
+    },
+    "materials": {
+      "label": "Materials",
+      "note": "Priced by the pound."
+    },
+    "household": {
+      "label": "Household and studio",
+      "note": "What was bought, mended or painted, with what it cost."
+    },
+    "received": {
+      "label": "Received",
+      "note": "The few sums that came in, and none of them for a picture."
+    },
+    "unplaced": {
+      "label": "Not placed",
+      "note": "Sums on the page whose object the page does not state."
+    }
+  },
+  "pages": 12,
+  "pagesRead": 67,
+  "entries": [
+    {
+      "term": "Burges-Revel, bill of Feb. 28, 58",
+      "kind": "frames",
+      "written": "30.75 · 26.75 · 22.75 · 21.00",
+      "means": "Four frames with insert from La Porte, Indiana — two of model 200 for the 29 x 36 and the 25 x 30, two of model 214 for the 22 x 32 and the 20 x 28 — the one bill she ruled as a table.",
+      "match": "30\\.75|26\\.75|22\\.75|21\\.00",
+      "count": 5,
+      "sheets": 2,
+      "seen": [
+        {
+          "page": "54",
+          "ref": "97360",
+          "count": 4,
+          "shows": "200 │ 1 │ 29 x 36 with insert │ 2R │ 30.75"
+        },
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "Path from Studio 200 - 29 x 36 finish. 2R = 30.75 Fire Escape 200 25 x 30 0 = 26.50 Feb. 3, 58 Order No. 04413"
+        }
+      ]
+    },
+    {
+      "term": "Revel, the orders of 1955 and 1958",
+      "kind": "frames",
+      "written": "12.05 · 8.30 · 2R = 30.75 · 0 = 26.50",
+      "means": "Order 08722 of June 25, 1955, for the Pochards' frames, model 214 at 12.05 and five of 241 in « 819 beige » at 8.30; and order 04413 of Feb. 3, 58, the same two model-200 frames as the bill, at 30.75 and 26.50 — a quarter under the bill's 26.75 for the second.",
+      "match": "12\\.05|8\\.30|= 30\\.75|= 26\\.50",
+      "count": 4,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 4,
+          "shows": "Frames: Pochards - 10 x 14 - 1956 June 25\" Each priced Ravel. No. 214 (1) 18 x 14\" finish 19 12.05 241 (5) 819 beige 8.30 Order \\# 08722 - June 25, 1955"
+        }
+      ]
+    },
+    {
+      "term": "Usui",
+      "kind": "frames",
+      "written": "$18",
+      "means": "A 25 x 30, « gold, pinkish », of May 1953.",
+      "match": "\\$18\\b",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        }
+      ]
+    },
+    {
+      "term": "Heydenryk",
+      "kind": "frames",
+      "written": "11.50",
+      "means": "A 25 x 30, « goldish + white ».",
+      "match": "11\\.50",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 1,
+          "shows": "New frames 1952 Matt. Water Color - on made by Matt - E. 54\" St. Ascension - 20 x 25 + mat Bertram H. 14 x 20 1/2 18 x 25 19 1/2 x 26 1/2 Mat 2\" - bottom 2 1/2 "
+        }
+      ]
+    },
+    {
+      "term": "Matt",
+      "kind": "frames",
+      "written": "$14 · $16",
+      "means": "The new frames of 1952, the sums written above the Ascension and Bertram H. lines.",
+      "match": "\\$14|\\$16",
+      "count": 2,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "18",
+          "ref": "97168",
+          "count": 2,
+          "shows": "$14"
+        }
+      ]
+    },
+    {
+      "term": "Insurance on South Truro, 1947–48",
+      "kind": "insurance",
+      "written": "Premium - 22.50 · Prem. 22.50. · 1000. · Prem. 5.",
+      "means": "A family theft policy of $1000 with American Employers of Boston, taken out Dec. 18, 47 and expiring Dec. 18, 1950, at 22.50; and standard windstorm on « Cottage + Garage » for 1000. with the North British & Mercantile at 5., expiring Jan 30, 51. The whole side is cancelled with a pencil cross.",
+      "match": "Premium - 22\\.50|Prem\\. 22\\.50|Prem\\. 5\\.|Cottage \\+ Garage - 1000\\.",
+      "count": 4,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "10",
+          "ref": "97318",
+          "count": 4,
+          "shows": "Insurance 1947, 48 So. Truro - Family Theft F.T. 62458. Amer. Employers, Edward Stone Pres. Boston Mass. Expires Dec. 18, 1950. taken out Dec. 18, 47. Premium -"
+        }
+      ]
+    },
+    {
+      "term": "Water colour paper, by the pound",
+      "kind": "materials",
+      "written": "20 ¢ · 39 ¢ · 23 ¢ · 37 ¢ · 50 ¢",
+      "means": "Cooper Union against Robinson: 72 lb at 20¢ or 23¢, 90 lb at 37¢, 140 lb at 39¢ or 50¢.",
+      "match": "\\d+ ¢",
+      "count": 5,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "8",
+          "ref": "97564",
+          "count": 5,
+          "shows": "Water color paper. Wat. mat's roughs 22 x 30\" Coper Union - 72 lbs. - 20 ¢ 140 \" 39 ¢ See Robinson - 72 \" 23 ¢ 90 \" 37 ¢ 140 \" 50 ¢"
+        }
+      ]
+    },
+    {
+      "term": "Painting the studio and bedroom, May 1953",
+      "kind": "household",
+      "written": "$250 or 350?",
+      "means": "« Studio + Bedroom painted 2 Coats - Casein, May 19 1953. - 4 day job », with « + bath » interlined, and the price left as a question between two figures.",
+      "match": "\\$250 or 350",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "24",
+          "ref": "96128",
+          "count": 1,
+          "shows": "Studio + Bedroom painted 2 Coats - Casein May 19 1953. - 4 day job. $250 or 350?"
+        }
+      ]
+    },
+    {
+      "term": "The phonograph, 1960",
+      "kind": "household",
+      "written": "$153.99",
+      "means": "A Capital bought Ap. 4, 1960 in « Even exchange for Colombia bgt. Mar 28, 60 », delivered by United Parcels and reported undelivered to Mrs. Payne at Schirmer on Ap. 19.",
+      "match": "\\$153\\.99",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "50",
+          "ref": "97490",
+          "count": 1,
+          "shows": "bgt. Ap. 4, 1960. Even exchange for Colombia bgt. Mar 28, 60 $153.99 - delivered by United Parcels. ± Mar. 30\" Collected \" \" \" Ap. - \\#75399 - United Parcels no"
+        }
+      ]
+    },
+    {
+      "term": "The wrist watches",
+      "kind": "household",
+      "written": "$10. · 2.49 · 3.98 · 7.47 · 7.67 · $13. · $8.50",
+      "means": "A Macy wrist watch bought 5, 21, 45 for $10.; a balance and a cleaning on June 2\", 50 at 2.49 and 3.98, totalled 7.47 and then 7.67 — « Why? » — against a present price of $13.; the Abercrombie watch cleaned on University Place for $8.50 in Feb. 1956.",
+      "match": "\\$10\\. -|2\\.49|3\\.98|7\\.47|7\\.67|\\$13\\.|\\$8\\.50",
+      "count": 7,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "122",
+          "ref": "98173",
+          "count": 7,
+          "shows": "Macy wrist watch bgt 5, 21, 45 - $10. - La Foye take watch June 2\", 50. Ball and Shepherd 2.49 Clean - 3.98 Present price $13. Total 7.47 Repairs take 2 weeks )"
+        }
+      ]
+    },
+    {
+      "term": "The fountain pen",
+      "kind": "household",
+      "written": "cost ?",
+      "means": "« Fountain pen - Altman - Spring 1956 - cost ? » — the one purchase she costed with a question mark.",
+      "match": "cost \\?",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "4",
+          "ref": "97063",
+          "count": 1,
+          "shows": "Fountain pen - Altman - Spring 1956 - cost ? Sheafer medium flexible L. E. Waterman 1 Detroit St., Seymour, Conn."
+        }
+      ]
+    },
+    {
+      "term": "Reality, the subscriptions",
+      "kind": "received",
+      "written": "$5. · $10.",
+      "means": "The only money coming in that the notebook records, and it is hers: on the mailing lists of « Reality », Isabel Whitney $5. Ap. 55, Max Eastman $10., Dr. Slack - Feb $10 54, and a « $5. » in the margin of page 35.",
+      "match": "Isabel Whitney \\$5\\.|Max Eastman \\$10\\.|Dr\\. Slack - Feb \\$10|^\\$5\\.$",
+      "count": 4,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "34",
+          "ref": "97539",
+          "count": 4,
+          "shows": "Dr. Slack - Feb $10 54. II │ Mr. Mrs. Marty Reed"
+        }
+      ]
+    },
+    {
+      "term": "Frank Crotty, Jan 27, 59",
+      "kind": "received",
+      "written": "Rec'd ± 1 M.",
+      "means": "Under the Worcester Telegram interview of Feb. 1\", 1959: « Rec'd ± 1 M. Jan 27, 59 from Frank C. » Whether « 1 M. » is a sum, a month or something else is not decided here; it is given as written.",
+      "match": "Rec'd ± 1 M\\.",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "58",
+          "ref": "97272",
+          "count": 1,
+          "shows": "Worcester, Mass. Telegram + Gazette Feature Parade - p. 21, 22 Sun. Feb. 1\", 1959 Jo Hopper - Interview by Frank Crotty. Sections ±. Rec'd ± 1 M. Jan 27, 59 fro"
+        }
+      ]
+    },
+    {
+      "term": "Three sums of 1940",
+      "kind": "unplaced",
+      "written": "378.72 · 406.08 · 167.70 deduct",
+      "means": "On page 112, under « 1940 » with the year written over other figures: 378.72 against « 14. », 406.08 against « 21 », and 167.70 « deduct ». What they account is not on the page.",
+      "match": "378\\.72|406\\.08|167\\.70",
+      "count": 3,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "112",
+          "ref": "98148",
+          "count": 3,
+          "shows": "1940 378.72 14. 406.08. 21 167.70 deduct"
+        }
+      ]
+    },
+    {
+      "term": "« call $55 »",
+      "kind": "unplaced",
+      "written": "call $55",
+      "means": "A marginal on page 30's list of museum staff, against the Rutgers line; what is priced is not stated.",
+      "match": "call \\$55",
+      "count": 1,
+      "sheets": 1,
+      "seen": [
+        {
+          "page": "30",
+          "ref": "97590",
+          "count": 1,
+          "shows": "call $55"
+        }
+      ]
+    }
+  ]
+}

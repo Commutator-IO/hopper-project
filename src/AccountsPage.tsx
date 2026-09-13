@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Page } from './components/Frame.tsx';
 import { resolveLeaf } from './components/Reader.tsx';
 import accountsData from './content/accounts.json';
+import spentData from './content/spent.json';
 import { LEDGERS } from './content/catalogue.ts';
 import { url } from './lib/base.ts';
 
@@ -28,6 +29,34 @@ import { url } from './lib/base.ts';
  *
  * Nothing on this page is computed from anything but the `.tex` files.
  */
+
+interface SpentEntry {
+  term: string;
+  kind: string;
+  written: string;
+  means: string;
+  match: string;
+  note?: string;
+  count: number;
+  sheets: number;
+  seen: { page: string | null; ref: string; count: number; shows: string }[];
+}
+
+/**
+ * The sums the black notebook states — the costs the ledgers never record.
+ * Read off the notebook by the same script and the same check as the
+ * framing register on the Technique tab; nothing here is totalled.
+ */
+const S = spentData as unknown as {
+  note: string;
+  notebook: string;
+  kinds: Record<string, { label: string; note: string }>;
+  pages: number;
+  pagesRead: number;
+  entries: SpentEntry[];
+};
+
+const notebookHref = (ref: string) => `${url(`diaries/${S.notebook}/`)}#read/${ref}`;
 
 interface Year {
   year: number;
@@ -854,7 +883,8 @@ export function AccountsPage() {
           these leaves. Searching all {A.coverage.sheets} transcribed sheets for an outgoing
           turns up exactly two lines, and one of them is income: a New York State sales tax of $15
           at one per cent on Night Windows, and an insurance payment of $1,000{' '}
-          <em>received</em> in November 1929.
+          <em>received</em> in November 1929. Some of it is costed in Josephine Hopper’s black
+          notebook, and the section after this one reads it.
         </p>
         <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
           So no profit figure can be derived from this archive, and none is shown. The dealer’s
@@ -871,6 +901,62 @@ export function AccountsPage() {
           note, carrying that source — never in a table derived from the sheets, where it would
           be indistinguishable from something Jo Hopper wrote down.
         </p>
+      </section>
+
+      <section className="border-t border-ink-200 py-8">
+        <h2 className="font-serif text-xl text-ink-900">What the black notebook costs</h2>
+        <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-ink-700">
+          The ledgers record what came in; the black notebook, a studio memorandum book, is where
+          Josephine Hopper wrote down some of what went out — the frame makers’ bills, the
+          insurance on the Truro cottage, water colour paper by the pound, the studio painted,
+          a phonograph, two wrist watches and their repairs — and the few sums that came in, all
+          of them hers. They are given here as she wrote them, and{' '}
+          <strong className="font-semibold">nothing is totalled</strong>: a sum of a frame bill of
+          1958, a premium of 1947 and a watch repair of 1950 would be a figure nobody wrote and
+          nothing could check. None of these enters the tables above, which are the ledgers’
+          sales and only those.
+        </p>
+        <p className="prose-note mt-2 max-w-3xl">
+          The register is declared by hand and checked against the page: every entry carries a
+          pattern that <code className="font-mono text-[12px]">scripts/framing.mjs spending</code>{' '}
+          must find on a transcribed page of the notebook, and one that matches nothing fails the
+          build. {S.entries.length} entries on {S.pages} of the notebook’s {S.pagesRead} read
+          pages; each page opens in the reader beside the Whitney’s photograph.
+        </p>
+        {Object.entries(S.kinds).map(([kind, k]) => {
+          const rows = S.entries.filter((e) => e.kind === kind);
+          if (!rows.length) return null;
+          return (
+            <div key={kind} className="mt-6">
+              <h3 className="font-serif text-[15px] text-ink-900">{k.label}</h3>
+              <p className="prose-note mt-0.5 max-w-3xl">{k.note}</p>
+              <ul className="mt-2 divide-y divide-ink-100 border-t border-ink-200">
+                {rows.map((e) => (
+                  <li key={e.term} className="grid gap-x-6 gap-y-1 py-2.5 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+                    <div>
+                      <div className="font-medium text-ink-900">{e.term}</div>
+                      <div className="mt-0.5 font-mono text-[12px] tabular text-ink-600">{e.written}</div>
+                    </div>
+                    <div>
+                      <p className="text-[13px] leading-relaxed text-ink-700">{e.means}</p>
+                      {e.note ? <p className="prose-note mt-1">{e.note}</p> : null}
+                      <div className="mt-1 space-y-0.5">
+                        {e.seen.map((s) => (
+                          <div key={s.ref} className="text-[12px] leading-relaxed text-ink-500">
+                            <a className="text-brand-700 hover:underline" href={notebookHref(s.ref)}>
+                              {s.page ? `page ${s.page}` : 'unnumbered sheet'}
+                            </a>{' '}
+                            <span className="text-ink-400">— {s.shows}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
       </section>
 
       <section className="border-t border-ink-200 py-8">

@@ -30,13 +30,30 @@
  * the formats census, which stays Edward Hopper's hand.
  *
  *   npm run framing
+ *   npm run spending
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { leafPassages, readTranscripts } from './lib/ledger.mjs';
 
 const root = resolve(import.meta.dirname, '..');
-const decl = JSON.parse(readFileSync(resolve(root, 'src/content/frames.json'), 'utf8'));
+
+/**
+ * The registers this runs, by name. `framing` is the frames and papers;
+ * `spending` is every sum the notebook states — the costs the ledgers never
+ * record, for the Accounts page. Same design, same check, different file.
+ */
+const REGISTERS = {
+  framing: { decl: 'src/content/frames.json', out: 'src/content/framing.json' },
+  spending: { decl: 'src/content/spending.json', out: 'src/content/spent.json' },
+};
+const NAME = process.argv[2] ?? 'framing';
+const REG = REGISTERS[NAME];
+if (!REG) {
+  process.stderr.write(`usage: node scripts/framing.mjs <${Object.keys(REGISTERS).join('|')}>\n`);
+  process.exit(1);
+}
+const decl = JSON.parse(readFileSync(resolve(root, REG.decl), 'utf8'));
 const NOTEBOOK = 'black-notebook';
 
 const passages = leafPassages(readTranscripts(root)).filter((p) => p.notebook === NOTEBOOK);
@@ -102,7 +119,7 @@ for (const e of decl.entries) {
 }
 
 if (problems.length) {
-  process.stderr.write(`framing: ${problems.length} problem(s)\n`);
+  process.stderr.write(`${NAME}: ${problems.length} problem(s)\n`);
   for (const p of problems) process.stderr.write(`  ${p}\n`);
   process.exit(1);
 }
@@ -120,11 +137,11 @@ const out = {
   pagesRead: new Set(passages.map((p) => p.ref)).size,
   entries,
 };
-writeFileSync(resolve(root, 'src/content/framing.json'), `${JSON.stringify(out, null, 2)}\n`);
+writeFileSync(resolve(root, REG.out), `${JSON.stringify(out, null, 2)}\n`);
 
 const kinds = entries.reduce((m, e) => ({ ...m, [e.kind]: (m[e.kind] ?? 0) + 1 }), {});
 process.stdout.write(
-  `framing: ${entries.length} entr(ies) on ${pages.size} page(s) of the ${NOTEBOOK} — ` +
+  `${NAME}: ${entries.length} entr(ies) on ${pages.size} page(s) of the ${NOTEBOOK} — ` +
     Object.entries(kinds)
       .map(([k, n]) => `${n} ${k}`)
       .join(', ') +

@@ -78,6 +78,8 @@ jobs:
       # a notebook, and is checked the same way.
       - run: npm run framing
       - run: git diff --exit-code src/content/framing.json
+      - run: npm run spending
+      - run: git diff --exit-code src/content/spent.json
 
       # Tectonic, pinned, for the transcript PDFs. A static musl binary from
       # the project's own releases rather than a piped install script or the
