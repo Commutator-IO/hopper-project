@@ -256,6 +256,8 @@
                   <valItem ident="society"/>
                   <valItem ident="publication"/>
                   <valItem ident="prize"/>
+                  <valItem ident="client"/>
+                  <valItem ident="subject"/>
                   <valItem ident="feature"/>
                 </valList>
               </attDef>

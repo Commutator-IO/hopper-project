@@ -189,6 +189,8 @@ export type Facet =
   | 'society'
   | 'publication'
   | 'prize'
+  | 'client'
+  | 'subject'
   | 'feature';
 
 export interface Manifest {

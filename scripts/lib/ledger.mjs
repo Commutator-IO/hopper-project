@@ -579,9 +579,16 @@ export const FACET_LABEL = {
   person: 'People',
   dealer: 'Dealers',
   collection: 'Collections',
-  society: 'Societies and exhibitions',
+  society: 'Societies, institutions and exhibitions',
   publication: 'Publications',
   prize: 'Prizes',
+  // Book IV's payers: magazines are publications, but an advertising agency,
+  // a shipyard, a hotel or a frame maker is none of the above and was being
+  // left unplaced for want of a heading.
+  client: 'Clients and companies',
+  // The diaries' matters - a marriage, a fight over a square, a recipe -
+  // which are what a notebook is about and which no ledger facet names.
+  subject: 'Subjects',
   feature: 'On the leaves',
 };
 export const FACETS = Object.keys(FACET_LABEL);

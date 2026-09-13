@@ -17,9 +17,11 @@ export const FACET_LABEL: Record<Facet, string> = {
   person: 'People',
   dealer: 'Dealers',
   collection: 'Collections',
-  society: 'Societies and exhibitions',
+  society: 'Societies, institutions and exhibitions',
   publication: 'Publications',
   prize: 'Prizes',
+  client: 'Clients and companies',
+  subject: 'Subjects',
   feature: 'On the leaves',
 };
 export const FACET_ORDER = Object.keys(FACET_LABEL) as Facet[];
