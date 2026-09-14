@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-13T06:57:35.393Z",
+  "generated": "2026-09-14T14:39:04.984Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -43,6 +43,26 @@
       "to": "nighthawks",
       "mapping": "certain",
       "why": "Book II leaf 95 heads the canvas « Night Hawks » at 33 x 60, dates it finished 21 January 1942, and books its sale to the Chicago Art Institute on 13 May 1942; the Art Institute catalogues a 1942 oil of 33 1/8 x 60 in. as « Nighthawks », accession 1942.51, and gives its provenance as consigned to Rehn and sold to the museum in 1942. One canvas and one sale, written in two words on the leaf and in one by the museum."
+    },
+    "ex lax": {
+      "to": "drug store",
+      "mapping": "likely",
+      "why": "Book I leaf 55 heads the picture « Ex Lax », after the brand on the shop window, and describes it as « Drugstore. Side walk, red & green drug store bottles »; its size, 29 x 40, and its passage from John T. Spaulding to the Boston museum are those of the painting the Museum of Fine Arts, Boston catalogues as Drug Store (1927). A judgement from outside the leaf, so likely rather than certain."
+    },
+    "7 ave shops": {
+      "to": "early sunday morning",
+      "mapping": "certain",
+      "why": "The ledger says so itself. Book I leaf 58 heads the 35 x 60 canvas « 7\" Ave. Shops », and the list of museum purchases a few leaves on writes « Whitney Amer. Museum - 7\" Ave. Shops. Spring 1930. Gallery opened Nov. 1931. Otherwise known as Early Sunday Morning », which is the title the Whitney catalogues it under."
+    },
+    "7 a m": {
+      "to": "seven a m",
+      "mapping": "certain",
+      "why": "The numeral written as a figure on the leaf and spelled out in the Whitney's catalogue; one title."
+    },
+    "light house at two lights": {
+      "to": "lighthouse at two lights",
+      "mapping": "certain",
+      "why": "Book I leaf 58 writes « Light House » as two words; the Met catalogues the 1929 oil as one. A spelling, not two works."
     }
   },
   "works": [
@@ -8957,13 +8977,21 @@
       ]
     },
     {
-      "key": "7 a m",
+      "key": "seven a m",
       "title": "7 A.M",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "Seven A.M.",
+      "date": "1948",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "732",
+          "url": "https://whitney.org/collection/works/732",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -8977,16 +9005,24 @@
       ]
     },
     {
-      "key": "7 ave shops",
+      "key": "early sunday morning",
       "title": "7\" Ave. Shops",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "Early Sunday Morning",
+      "date": "1930",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "46345",
+          "url": "https://whitney.org/collection/works/46345",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1930,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-i",
@@ -9280,6 +9316,26 @@
           "batch": 3,
           "leaf": "37",
           "ref": "18172"
+        }
+      ]
+    },
+    {
+      "key": "barber shop",
+      "title": "Barber Shop",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "81",
+          "ref": "18310"
         }
       ]
     },
@@ -10379,7 +10435,7 @@
       ]
     },
     {
-      "key": "ex lax",
+      "key": "drug store",
       "title": "Ex Lax",
       "museumTitle": null,
       "date": null,
@@ -10844,6 +10900,26 @@
           "batch": 2,
           "leaf": "1",
           "ref": "16279"
+        }
+      ]
+    },
+    {
+      "key": "hotel room",
+      "title": "Hotel Room",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "80",
+          "ref": "17529"
         }
       ]
     },
@@ -11792,16 +11868,24 @@
       ]
     },
     {
-      "key": "light house at two lights",
+      "key": "lighthouse at two lights",
       "title": "Light House at Two Lights",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "The Lighthouse at Two Lights",
+      "date": "1929",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "489258",
+          "url": "https://www.metmuseum.org/art/collection/search/489258",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1929,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-i",
@@ -12236,6 +12320,26 @@
           "batch": 2,
           "leaf": "27",
           "ref": "16621"
+        }
+      ]
+    },
+    {
+      "key": "n y new haven hartford",
+      "title": "N.Y., New Haven + Hartford",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "80",
+          "ref": "17529"
         }
       ]
     },
@@ -12950,6 +13054,53 @@
           "batch": 1,
           "leaf": "1",
           "ref": "16775"
+        }
+      ]
+    },
+    {
+      "key": "room in brooklyn",
+      "title": "Room in Brooklyn",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "80",
+          "ref": "17529"
+        }
+      ]
+    },
+    {
+      "key": "room in n y",
+      "title": "Room in N.Y",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "81",
+          "ref": "18310"
+        },
+        {
+          "ledger": "notebooks",
+          "notebook": "black-notebook",
+          "batch": 0,
+          "leaf": "44",
+          "ref": "97471"
         }
       ]
     },
@@ -13846,6 +13997,26 @@
           "batch": 4,
           "leaf": "43",
           "ref": "16638"
+        }
+      ]
+    },
+    {
+      "key": "camel s hump",
+      "title": "The Camel's Hump",
+      "museumTitle": null,
+      "date": null,
+      "medium": null,
+      "held": false,
+      "holdings": [],
+      "ledgerYear": null,
+      "ledgerDisagrees": false,
+      "notLaterThan": null,
+      "namedIn": [
+        {
+          "ledger": "book-i",
+          "batch": 8,
+          "leaf": "80",
+          "ref": "17529"
         }
       ]
     },
