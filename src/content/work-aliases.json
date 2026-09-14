@@ -46,5 +46,41 @@
     "to": "Lighthouse at Two Lights",
     "mapping": "certain",
     "why": "Book I leaf 58 writes « Light House » as two words; the Met catalogues the 1929 oil as one. A spelling, not two works."
+  },
+  {
+    "from": "House by a Railroad",
+    "to": "House by the Railroad",
+    "mapping": "certain",
+    "why": "Book I leaf 52 heads the 1925 canvas « House by a Railroad »; the list of museum purchases in the same volume writes « Modern Museum - Given by Stephen Clark - House by R.R. », and MoMA catalogues that gift as House by the Railroad. The article differs, not the picture."
+  },
+  {
+    "from": "Church of San Estoban",
+    "to": "Church of San Esteban",
+    "mapping": "certain",
+    "why": "Book III leaf 107 spells the saint « Estoban »; the Met catalogues the 1946 Saltillo watercolour as Church of San Esteban. A spelling, not two works."
+  },
+  {
+    "from": "Les Poilhus",
+    "to": "Les Poilus",
+    "mapping": "certain",
+    "why": "Book I leaf 41 writes « Les Poilhus » for the etching the Whitney catalogues as Les Poilus. The misspelling stays in the transcription; this only lets the link work."
+  },
+  {
+    "from": "Railroad Crossing - drypoint",
+    "to": "Railroad Crossing",
+    "mapping": "certain",
+    "why": "Book I leaf 24 runs the medium into the title line; the plate is Railroad Crossing, catalogued under that title by the Met, the Art Institute, the Whitney and MoMA."
+  },
+  {
+    "from": "The Rail Road",
+    "to": "The Railroad",
+    "mapping": "certain",
+    "why": "Book I leaf 12 writes « Rail Road » as two words in the etchings section; MoMA catalogues the 1922 etching as The Railroad. A spelling, not two works."
+  },
+  {
+    "from": "N.Y. Movie House",
+    "to": "New York Movie",
+    "mapping": "likely",
+    "why": "Book II leaf 27 heads the picture « N.Y. Movie House », 32 x 40, finished 29 January 1939 and bought by Stephen C. Clark; Book I's list of reproductions writes « Movie House - the Mus. of Mod. Art », and MoMA catalogues the 1939 canvas as New York Movie. The size, the year and the museum agree; the title is a judgement, so likely rather than certain."
   }
 ]

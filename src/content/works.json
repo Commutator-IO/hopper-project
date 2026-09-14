@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T14:39:04.984Z",
+  "generated": "2026-09-14T15:11:48.243Z",
   "sources": [
     {
       "institution": "The Metropolitan Museum of Art",
@@ -20,9 +20,21 @@
     {
       "institution": "Victoria and Albert Museum",
       "api": "https://api.vam.ac.uk/v2"
+    },
+    {
+      "institution": "The Museum of Modern Art",
+      "api": "https://github.com/MuseumofModernArt/collection"
+    },
+    {
+      "institution": "National Gallery of Art",
+      "api": "https://github.com/NationalGalleryOfArt/opendata"
+    },
+    {
+      "institution": "Yale University Art Gallery",
+      "api": "https://lux.collections.yale.edu/api"
     }
   ],
-  "note": "Every holding here was retrieved by scripts/works.mjs and its artist field checked against \"Edward Hopper\". Four of the five sources supply the URL themselves; the Whitney supplies an id, and the path built from it is checked against the museum's own page on every run. A link says a work of this title is held there and can be looked at; it does not say that the ledger row you are reading concerns that copy, and where a museum holds several impressions or versions each is listed separately.",
+  "note": "Every holding here was retrieved by scripts/works.mjs and its artist field checked against \"Edward Hopper\", or, for the open datasets, matched to his ULAN number. Six of the eight sources supply the URL themselves; the Whitney supplies an id, and the path built from it is checked against the museum's own page on every run; the National Gallery supplies an id, and its path is the one the gallery's data dictionary documents. A link says a work of this title is held there and can be looked at; it does not say that the ledger row you are reading concerns that copy, and where a museum holds several impressions or versions each is listed separately.",
   "aliases": {
     "les deux pigeon": {
       "to": "les deux pigeons",
@@ -63,6 +75,36 @@
       "to": "lighthouse at two lights",
       "mapping": "certain",
       "why": "Book I leaf 58 writes « Light House » as two words; the Met catalogues the 1929 oil as one. A spelling, not two works."
+    },
+    "house by a railroad": {
+      "to": "house by the railroad",
+      "mapping": "certain",
+      "why": "Book I leaf 52 heads the 1925 canvas « House by a Railroad »; the list of museum purchases in the same volume writes « Modern Museum - Given by Stephen Clark - House by R.R. », and MoMA catalogues that gift as House by the Railroad. The article differs, not the picture."
+    },
+    "church of san estoban": {
+      "to": "church of san esteban",
+      "mapping": "certain",
+      "why": "Book III leaf 107 spells the saint « Estoban »; the Met catalogues the 1946 Saltillo watercolour as Church of San Esteban. A spelling, not two works."
+    },
+    "les poilhus": {
+      "to": "les poilus",
+      "mapping": "certain",
+      "why": "Book I leaf 41 writes « Les Poilhus » for the etching the Whitney catalogues as Les Poilus. The misspelling stays in the transcription; this only lets the link work."
+    },
+    "railroad crossing drypoint": {
+      "to": "railroad crossing",
+      "mapping": "certain",
+      "why": "Book I leaf 24 runs the medium into the title line; the plate is Railroad Crossing, catalogued under that title by the Met, the Art Institute, the Whitney and MoMA."
+    },
+    "rail road": {
+      "to": "railroad",
+      "mapping": "certain",
+      "why": "Book I leaf 12 writes « Rail Road » as two words in the etchings section; MoMA catalogues the 1922 etching as The Railroad. A spelling, not two works."
+    },
+    "n y movie house": {
+      "to": "new york movie",
+      "mapping": "likely",
+      "why": "Book II leaf 27 heads the picture « N.Y. Movie House », 32 x 40, finished 29 January 1939 and bought by Stephen C. Clark; Book I's list of reproductions writes « Movie House - the Mus. of Mod. Art », and MoMA catalogues the 1939 canvas as New York Movie. The size, the year and the museum agree; the title is a judgement, so likely rather than certain."
     }
   },
   "works": [
@@ -157,7 +199,7 @@
       ]
     },
     {
-      "key": "apr s midi de juin or l apr s midi de printemps",
+      "key": "apres midi de juin or l apres midi de printemps",
       "title": "(Après-midi de juin or L'après-midi de printemps)",
       "date": "1907",
       "medium": "Oil on canvas",
@@ -187,7 +229,7 @@
       ]
     },
     {
-      "key": "at the caf",
+      "key": "at the cafe",
       "title": "(At the Café)",
       "date": "1906–1907",
       "medium": "Watercolor and graphite pencil on paper",
@@ -227,21 +269,6 @@
           "short": "Whitney",
           "id": "6862",
           "url": "https://whitney.org/collection/works/6862",
-          "openImage": false
-        }
-      ]
-    },
-    {
-      "key": "back street gloucester",
-      "title": "(Back Street, Gloucester)",
-      "date": "1923–1924",
-      "medium": "Watercolor and graphite pencil on paper",
-      "holdings": [
-        {
-          "institution": "Whitney Museum of American Art",
-          "short": "Whitney",
-          "id": "6856",
-          "url": "https://whitney.org/collection/works/6856",
           "openImage": false
         }
       ]
@@ -867,7 +894,7 @@
       ]
     },
     {
-      "key": "dandy seated at caf table",
+      "key": "dandy seated at cafe table",
       "title": "(Dandy Seated at Café Table)",
       "date": "1906–1907",
       "medium": "Watercolor and graphite pencil on board",
@@ -1579,7 +1606,7 @@
       ]
     },
     {
-      "key": "l anne terrible at the barricade",
+      "key": "l annee terrible at the barricade",
       "title": "(L'Anneé Terrible: At the Barricade)",
       "date": "1906",
       "medium": "Transparent and opaque watercolor, brush and ink, and graphite pencil on paper",
@@ -1594,7 +1621,7 @@
       ]
     },
     {
-      "key": "l anne terrible on the rooftops",
+      "key": "l annee terrible on the rooftops",
       "title": "(L'Anneé Terrible: On the Rooftops)",
       "date": "1906",
       "medium": "Pen and ink and watercolor on paper",
@@ -2006,7 +2033,7 @@
       ]
     },
     {
-      "key": "men seated at caf table",
+      "key": "men seated at cafe table",
       "title": "(Men Seated at Café Table)",
       "date": "1906",
       "medium": "Transparent and opaque watercolor, pen and ink, brush and ink, and graphite pencil on paper",
@@ -5704,7 +5731,7 @@
       ]
     },
     {
-      "key": "woman at caf table",
+      "key": "woman at cafe table",
       "title": "(Woman at Café Table)",
       "date": "1906–1907",
       "medium": "Watercolor and graphite pencil on board",
@@ -5734,7 +5761,7 @@
       ]
     },
     {
-      "key": "woman seated at caf table",
+      "key": "woman seated at cafe table",
       "title": "(Woman Seated at Café Table)",
       "date": "1906–1907",
       "medium": "Watercolor and graphite pencil on board",
@@ -5824,7 +5851,7 @@
       ]
     },
     {
-      "key": "1870 71 l anne terrible",
+      "key": "1870 71 l annee terrible",
       "title": "1870-71: L'Anneé Terrible",
       "date": "1906–1907",
       "medium": "Opaque and transparent watercolor, pen and brush and brown ink and graphite pencil on paper",
@@ -5953,6 +5980,27 @@
           "id": "4373",
           "url": "https://whitney.org/collection/works/4373",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74954",
+          "url": "https://www.moma.org/collection/works/74954",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "36511",
+          "url": "https://www.nga.gov/collection/art-object-page.36511.html",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "57456",
+          "url": "https://www.nga.gov/collection/art-object-page.57456.html",
+          "openImage": false
         }
       ]
     },
@@ -6050,6 +6098,35 @@
           "id": "50115",
           "url": "https://www.artic.edu/artworks/50115",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "71990",
+          "url": "https://www.moma.org/collection/works/71990",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "back street gloucester",
+      "title": "Back Street, Gloucester",
+      "date": "1923–1924",
+      "medium": "Watercolor and graphite pencil on paper",
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "6856",
+          "url": "https://whitney.org/collection/works/6856",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "4242",
+          "url": "https://artgallery.yale.edu/collections/objects/4242",
+          "openImage": false
         }
       ]
     },
@@ -6099,7 +6176,7 @@
       ]
     },
     {
-      "key": "boat landing at gare d orl ans",
+      "key": "boat landing at gare d orleans",
       "title": "Boat Landing at Gare d'Orléans",
       "date": "1907",
       "medium": "Oil on canvas",
@@ -6109,6 +6186,21 @@
           "short": "Whitney",
           "id": "6089",
           "url": "https://whitney.org/collection/works/6089",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "box factory gloucester",
+      "title": "Box Factory, Gloucester",
+      "date": "1928",
+      "medium": "Watercolor and pencil on paper",
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "33748",
+          "url": "https://www.moma.org/collection/works/33748",
           "openImage": false
         }
       ]
@@ -6159,7 +6251,22 @@
       ]
     },
     {
-      "key": "caf scene",
+      "key": "burlesque theatre times square",
+      "title": "Burlesque Theatre, Times Square",
+      "date": "early 1940s",
+      "medium": "charcoal on wove paper",
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "179597",
+          "url": "https://www.nga.gov/collection/art-object-page.179597.html",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "cafe scene",
       "title": "Café Scene",
       "date": "c. 1915, posthumous print",
       "medium": "Etching",
@@ -6199,6 +6306,36 @@
           "short": "Whitney",
           "id": "6774",
           "url": "https://whitney.org/collection/works/6774",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "cape ann pasture",
+      "title": "Cape Ann Pasture",
+      "date": "1928",
+      "medium": "Watercolor",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "4241",
+          "url": "https://artgallery.yale.edu/collections/objects/4241",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "cape cod evening",
+      "title": "Cape Cod Evening",
+      "date": "1939",
+      "medium": "oil on canvas",
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "61252",
+          "url": "https://www.nga.gov/collection/art-object-page.61252.html",
           "openImage": false
         }
       ]
@@ -6266,6 +6403,13 @@
           "short": "AIC",
           "id": "50087",
           "url": "https://www.artic.edu/artworks/50087",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "36513",
+          "url": "https://www.nga.gov/collection/art-object-page.36513.html",
           "openImage": false
         }
       ]
@@ -6346,6 +6490,21 @@
       ]
     },
     {
+      "key": "composition study for sunlight in a cafeteria",
+      "title": "Composition study for Sunlight in a Cafeteria",
+      "date": "ca. 1958",
+      "medium": "Black chalk/charcoal and graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "31660",
+          "url": "https://artgallery.yale.edu/collections/objects/31660",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "cover illustration for bulletin of the new york edison company",
       "title": "Cover illustration for Bulletin of the New York Edison Company",
       "date": "1906–1907",
@@ -6406,6 +6565,13 @@
           "short": "Whitney",
           "id": "6993",
           "url": "https://whitney.org/collection/works/6993",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "72004",
+          "url": "https://www.moma.org/collection/works/72004",
           "openImage": false
         }
       ]
@@ -6538,11 +6704,39 @@
           "id": "O1035894",
           "url": "https://collections.vam.ac.uk/item/O1035894/",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74946",
+          "url": "https://www.moma.org/collection/works/74946",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "36512",
+          "url": "https://www.nga.gov/collection/art-object-page.36512.html",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "169717",
+          "url": "https://www.nga.gov/collection/art-object-page.169717.html",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "33692",
+          "url": "https://artgallery.yale.edu/collections/objects/33692",
+          "openImage": false
         }
       ]
     },
     {
-      "key": "cluse de la monnaie",
+      "key": "ecluse de la monnaie",
       "title": "Écluse de la Monnaie",
       "date": "1909",
       "medium": "Oil on canvas",
@@ -6589,6 +6783,27 @@
           "id": "O71802",
           "url": "https://collections.vam.ac.uk/item/O71802/",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74950",
+          "url": "https://www.moma.org/collection/works/74950",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "7779",
+          "url": "https://www.nga.gov/collection/art-object-page.7779.html",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "102151",
+          "url": "https://artgallery.yale.edu/collections/objects/102151",
+          "openImage": false
         }
       ]
     },
@@ -6603,6 +6818,21 @@
           "short": "Whitney",
           "id": "7029",
           "url": "https://whitney.org/collection/works/7029",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "figure studies for western motel",
+      "title": "Figure Studies for \"Western Motel\"",
+      "date": "1957",
+      "medium": "Charcoal",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29748",
+          "url": "https://artgallery.yale.edu/collections/objects/29748",
           "openImage": false
         }
       ]
@@ -6648,6 +6878,21 @@
           "short": "Met",
           "id": "487834",
           "url": "https://www.metmuseum.org/art/collection/search/487834",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "gas",
+      "title": "Gas",
+      "date": "1940",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "80000",
+          "url": "https://www.moma.org/collection/works/80000",
           "openImage": false
         }
       ]
@@ -6730,6 +6975,36 @@
           "short": "Whitney",
           "id": "4378",
           "url": "https://whitney.org/collection/works/4378",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "ground swell",
+      "title": "Ground Swell",
+      "date": "1939",
+      "medium": "oil on canvas",
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "131206",
+          "url": "https://www.nga.gov/collection/art-object-page.131206.html",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "haskell s house",
+      "title": "Haskell's House",
+      "date": "1924",
+      "medium": "watercolor over graphite on paperboard",
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "95419",
+          "url": "https://www.nga.gov/collection/art-object-page.95419.html",
           "openImage": false
         }
       ]
@@ -6819,6 +7094,43 @@
           "id": "6766",
           "url": "https://whitney.org/collection/works/6766",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74934",
+          "url": "https://www.moma.org/collection/works/74934",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "house by the railroad",
+      "title": "House by the Railroad",
+      "date": "1925",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "78330",
+          "url": "https://www.moma.org/collection/works/78330",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "house of the fog horn iii",
+      "title": "House of the Fog Horn III",
+      "date": "1929",
+      "medium": "Watercolor, with graphite underdrawing",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "33722",
+          "url": "https://artgallery.yale.edu/collections/objects/33722",
+          "openImage": false
         }
       ]
     },
@@ -6875,6 +7187,21 @@
       ]
     },
     {
+      "key": "houses gloucester",
+      "title": "Houses, Gloucester",
+      "date": "c. 1923",
+      "medium": "charcoal on wove paper",
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "169442",
+          "url": "https://www.nga.gov/collection/art-object-page.169442.html",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "ibsen",
       "title": "Ibsen",
       "date": "c. 1900–1906",
@@ -6905,7 +7232,7 @@
       ]
     },
     {
-      "key": "le saint louis",
+      "key": "ile saint louis",
       "title": "île Saint-Louis",
       "date": "1909",
       "medium": "Oil on canvas",
@@ -6995,6 +7322,21 @@
       ]
     },
     {
+      "key": "jimmy corsini",
+      "title": "Jimmy Corsini",
+      "date": "c. 1901",
+      "medium": "charcoal in black (and gray?) on laid paper",
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "67354",
+          "url": "https://www.nga.gov/collection/art-object-page.67354.html",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "jo painting",
       "title": "Jo Painting",
       "date": "1936",
@@ -7010,7 +7352,7 @@
       ]
     },
     {
-      "key": "la barri re",
+      "key": "la barriere",
       "title": "La Barrière",
       "date": "1915–1918, posthumous print",
       "medium": "Drypoint",
@@ -7143,6 +7485,13 @@
           "openImage": false
         },
         {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "182750",
+          "url": "https://www.nga.gov/collection/art-object-page.182750.html",
+          "openImage": false
+        },
+        {
           "institution": "Art Institute of Chicago",
           "short": "AIC",
           "id": "50094",
@@ -7207,6 +7556,21 @@
           "short": "Whitney",
           "id": "7033",
           "url": "https://whitney.org/collection/works/7033",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "light falling on an interior study for sunlight in a cafeteria",
+      "title": "Light Falling on an Interior (Study for Sunlight in a Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Charcoal",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29192",
+          "url": "https://artgallery.yale.edu/collections/objects/29192",
           "openImage": false
         }
       ]
@@ -7286,6 +7650,21 @@
       ]
     },
     {
+      "key": "maid in a slatback chair",
+      "title": "Maid in a Slatback Chair",
+      "date": "1900-1905",
+      "medium": "graphite on paperboard",
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "173841",
+          "url": "https://www.nga.gov/collection/art-object-page.173841.html",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "maine in fog",
       "title": "Maine in Fog",
       "date": "1926–1929",
@@ -7331,6 +7710,36 @@
       ]
     },
     {
+      "key": "mountains at guanajuato",
+      "title": "Mountains at Guanajuato",
+      "date": "1953–54",
+      "medium": "Watercolor",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "57822",
+          "url": "https://artgallery.yale.edu/collections/objects/57822",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "mrs acorn s parlor",
+      "title": "Mrs. Acorn's Parlor",
+      "date": "1926",
+      "medium": "Watercolor and pencil on paper",
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "33771",
+          "url": "https://www.moma.org/collection/works/33771",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "new york and its houses",
       "title": "New York and Its Houses",
       "date": "c. 1906–1910",
@@ -7356,6 +7765,21 @@
           "short": "Whitney",
           "id": "5908",
           "url": "https://whitney.org/collection/works/5908",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "new york movie",
+      "title": "New York Movie",
+      "date": "1939",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "79616",
+          "url": "https://www.moma.org/collection/works/79616",
           "openImage": false
         }
       ]
@@ -7399,6 +7823,20 @@
           "short": "Whitney",
           "id": "5791",
           "url": "https://whitney.org/collection/works/5791",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74926",
+          "url": "https://www.moma.org/collection/works/74926",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "46853",
+          "url": "https://www.nga.gov/collection/art-object-page.46853.html",
           "openImage": false
         }
       ]
@@ -7472,6 +7910,35 @@
           "id": "7014",
           "url": "https://whitney.org/collection/works/7014",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74938",
+          "url": "https://www.moma.org/collection/works/74938",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "56960",
+          "url": "https://artgallery.yale.edu/collections/objects/56960",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "night windows",
+      "title": "Night Windows",
+      "date": "1928",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "79270",
+          "url": "https://www.moma.org/collection/works/79270",
+          "openImage": false
         }
       ]
     },
@@ -7521,7 +7988,7 @@
       ]
     },
     {
-      "key": "n rnberg",
+      "key": "nurnberg",
       "title": "Nürnberg",
       "date": "c. 1907",
       "medium": "Brush and ink, opaque watercolor, and graphite pencil on paper",
@@ -7581,7 +8048,7 @@
       ]
     },
     {
-      "key": "pont du carrousel and gare d orl ans",
+      "key": "pont du carrousel and gare d orleans",
       "title": "Pont du Carrousel and Gare d'Orléans",
       "date": "1907",
       "medium": "Oil on canvas",
@@ -7711,6 +8178,13 @@
           "id": "5860",
           "url": "https://whitney.org/collection/works/5860",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "72018",
+          "url": "https://www.moma.org/collection/works/72018",
+          "openImage": false
         }
       ]
     },
@@ -7819,6 +8293,36 @@
       ]
     },
     {
+      "key": "rooms by the sea",
+      "title": "Rooms by the Sea",
+      "date": "1951",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "52939",
+          "url": "https://artgallery.yale.edu/collections/objects/52939",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "rooms for tourists",
+      "title": "Rooms for Tourists",
+      "date": "1945",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "52638",
+          "url": "https://artgallery.yale.edu/collections/objects/52638",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "saltillo mansion",
       "title": "Saltillo Mansion",
       "date": "1943",
@@ -7844,6 +8348,21 @@
           "short": "Whitney",
           "id": "6826",
           "url": "https://whitney.org/collection/works/6826",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "seated couple study for sunlight in a cafeteria",
+      "title": "Seated Couple (Study for Sunlight in a Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Black chalk, charcoal",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29191",
+          "url": "https://artgallery.yale.edu/collections/objects/29191",
           "openImage": false
         }
       ]
@@ -7889,6 +8408,35 @@
           "short": "Whitney",
           "id": "732",
           "url": "https://whitney.org/collection/works/732",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "sheet of studies for sunlight in a cafeteria",
+      "title": "Sheet of studies for Sunlight in a Cafeteria",
+      "date": "ca. 1958",
+      "medium": "Graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "31661",
+          "url": "https://artgallery.yale.edu/collections/objects/31661",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "31662",
+          "url": "https://artgallery.yale.edu/collections/objects/31662",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "31667",
+          "url": "https://artgallery.yale.edu/collections/objects/31667",
           "openImage": false
         }
       ]
@@ -8021,6 +8569,21 @@
       ]
     },
     {
+      "key": "studies of a woman s leg study for sunlight in a cafeteria",
+      "title": "Studies of a Woman's Leg (Study for Sunlight in A Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Black chalk/charcoal and graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29193",
+          "url": "https://artgallery.yale.edu/collections/objects/29193",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "study for eva moore adams shady scribner s magazine 76 december 1924 p 632",
       "title": "Study for Eva Moore Adams, \"Shady\", Scribner's Magazine, 76 (December 1924) p. 632",
       "date": "1924",
@@ -8141,6 +8704,148 @@
       ]
     },
     {
+      "key": "study for western motel",
+      "title": "Study for Western Motel",
+      "date": "1957",
+      "medium": "Charcoal and graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "135573",
+          "url": "https://artgallery.yale.edu/collections/objects/135573",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of a building s facade study for sunlight in a cafeteria",
+      "title": "Study of a Building's facade (Study for Sunlight in a Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "31666",
+          "url": "https://artgallery.yale.edu/collections/objects/31666",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of a chair study for sunlight in a cafeteria",
+      "title": "Study of a chair (Study for Sunlight in a Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "31665",
+          "url": "https://artgallery.yale.edu/collections/objects/31665",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of a chair potted palm and cornice study for sunlight in a cafeteria",
+      "title": "Study of a Chair, Potted Palm, and Cornice (Study for Sunlight in A Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29196",
+          "url": "https://artgallery.yale.edu/collections/objects/29196",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of a condiment stand study for sunlight in a cafeteria",
+      "title": "Study of a condiment stand (Study for Sunlight in a Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "31663",
+          "url": "https://artgallery.yale.edu/collections/objects/31663",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of a hand with cigarette study for sunlight in a cafeteria",
+      "title": "Study of a Hand With Cigarette (Study for Sunlight in A Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Black chalk/charcoal and graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29195",
+          "url": "https://artgallery.yale.edu/collections/objects/29195",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of a revolving brass door study for sunlight in a cafeteria",
+      "title": "Study of a Revolving Brass Door (Study for Sunlight in a Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "31664",
+          "url": "https://artgallery.yale.edu/collections/objects/31664",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29198",
+          "url": "https://artgallery.yale.edu/collections/objects/29198",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of a revolving door study for sunlight in a cafeteria",
+      "title": "Study of a Revolving Door (Study for Sunlight in A Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29199",
+          "url": "https://artgallery.yale.edu/collections/objects/29199",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of a woman s arm and torso study for sunlight in a cafeteria",
+      "title": "Study of a Woman's Arm and Torso (Study for Sunlight in A Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Black chalk/charcoal and graphite\r",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29194",
+          "url": "https://artgallery.yale.edu/collections/objects/29194",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "study of figure in harem pants rear view",
       "title": "Study of Figure in Harem Pants, Rear View)",
       "date": "1899–1906",
@@ -8151,6 +8856,21 @@
           "short": "Whitney",
           "id": "21781",
           "url": "https://whitney.org/collection/works/21781",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "study of windows study for sunlight in a cafeteria",
+      "title": "Study of Windows (Study for Sunlight in a Cafeteria)",
+      "date": "ca. 1958",
+      "medium": "Graphite",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "29197",
+          "url": "https://artgallery.yale.edu/collections/objects/29197",
           "openImage": false
         }
       ]
@@ -8188,6 +8908,21 @@
           "short": "Whitney",
           "id": "7016",
           "url": "https://whitney.org/collection/works/7016",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "sunlight in a cafeteria",
+      "title": "Sunlight in a Cafeteria",
+      "date": "1958",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "52642",
+          "url": "https://artgallery.yale.edu/collections/objects/52642",
           "openImage": false
         }
       ]
@@ -8285,6 +9020,13 @@
           "short": "Whitney",
           "id": "4376",
           "url": "https://whitney.org/collection/works/4376",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74942",
+          "url": "https://www.moma.org/collection/works/74942",
           "openImage": false
         }
       ]
@@ -8411,6 +9153,27 @@
           "id": "7009",
           "url": "https://whitney.org/collection/works/7009",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74930",
+          "url": "https://www.moma.org/collection/works/74930",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "137001",
+          "url": "https://www.nga.gov/collection/art-object-page.137001.html",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "33512",
+          "url": "https://artgallery.yale.edu/collections/objects/33512",
+          "openImage": false
         }
       ]
     },
@@ -8439,6 +9202,13 @@
           "short": "Whitney",
           "id": "7010",
           "url": "https://whitney.org/collection/works/7010",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74920",
+          "url": "https://www.moma.org/collection/works/74920",
           "openImage": false
         }
       ]
@@ -8587,6 +9357,13 @@
           "short": "Whitney",
           "id": "7015",
           "url": "https://whitney.org/collection/works/7015",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74923",
+          "url": "https://www.moma.org/collection/works/74923",
           "openImage": false
         }
       ]
@@ -8739,6 +9516,21 @@
       ]
     },
     {
+      "key": "two studies for rooms by the sea recto and verso",
+      "title": "Two Studies for Rooms by the Sea (recto and verso)",
+      "date": "1951",
+      "medium": "Charcoal",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "132659",
+          "url": "https://artgallery.yale.edu/collections/objects/132659",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "uncaptioned illustration",
       "title": "Uncaptioned illustration",
       "date": "1923",
@@ -8754,6 +9546,21 @@
       ]
     },
     {
+      "key": "untitled portrait head",
+      "title": "Untitled (Portrait Head)",
+      "date": "ca. 1902",
+      "medium": "Monotype",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "77222",
+          "url": "https://artgallery.yale.edu/collections/objects/77222",
+          "openImage": false
+        }
+      ]
+    },
+    {
       "key": "valley of the seine",
       "title": "Valley of the Seine",
       "date": "1909",
@@ -8764,6 +9571,21 @@
           "short": "Whitney",
           "id": "5893",
           "url": "https://whitney.org/collection/works/5893",
+          "openImage": false
+        }
+      ]
+    },
+    {
+      "key": "western motel",
+      "title": "Western Motel",
+      "date": "1957",
+      "medium": "Oil on canvas",
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "52875",
+          "url": "https://artgallery.yale.edu/collections/objects/52875",
           "openImage": false
         }
       ]
@@ -9130,6 +9952,27 @@
           "id": "4373",
           "url": "https://whitney.org/collection/works/4373",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74954",
+          "url": "https://www.moma.org/collection/works/74954",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "36511",
+          "url": "https://www.nga.gov/collection/art-object-page.36511.html",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "57456",
+          "url": "https://www.nga.gov/collection/art-object-page.57456.html",
+          "openImage": false
         }
       ],
       "ledgerYear": 1920,
@@ -9284,6 +10127,13 @@
           "short": "AIC",
           "id": "50115",
           "url": "https://www.artic.edu/artworks/50115",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "71990",
+          "url": "https://www.moma.org/collection/works/71990",
           "openImage": false
         }
       ],
@@ -9552,11 +10402,19 @@
     {
       "key": "cape cod evening",
       "title": "Cape Cod Evening*",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "Cape Cod Evening",
+      "date": "1939",
+      "medium": "oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "61252",
+          "url": "https://www.nga.gov/collection/art-object-page.61252.html",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -9738,13 +10596,21 @@
       ]
     },
     {
-      "key": "church of san estoban",
+      "key": "church of san esteban",
       "title": "Church of San Estoban",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "Church of San Esteban",
+      "date": "1946",
+      "medium": "Watercolor over graphite on paper",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "488273",
+          "url": "https://www.metmuseum.org/art/collection/search/488273",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -10080,6 +10946,13 @@
           "id": "6993",
           "url": "https://whitney.org/collection/works/6993",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "72004",
+          "url": "https://www.moma.org/collection/works/72004",
+          "openImage": false
         }
       ],
       "ledgerYear": null,
@@ -10115,7 +10988,7 @@
       ]
     },
     {
-      "key": "dauphin e house",
+      "key": "dauphinee house",
       "title": "Dauphinée House",
       "museumTitle": null,
       "date": null,
@@ -10325,6 +11198,34 @@
           "id": "O1035894",
           "url": "https://collections.vam.ac.uk/item/O1035894/",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74946",
+          "url": "https://www.moma.org/collection/works/74946",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "36512",
+          "url": "https://www.nga.gov/collection/art-object-page.36512.html",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "169717",
+          "url": "https://www.nga.gov/collection/art-object-page.169717.html",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "33692",
+          "url": "https://artgallery.yale.edu/collections/objects/33692",
+          "openImage": false
         }
       ],
       "ledgerYear": 1922,
@@ -10368,11 +11269,19 @@
     {
       "key": "ecluse de la monnaie",
       "title": "Ecluse de La Monnaie",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "Écluse de la Monnaie",
+      "date": "1909",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "6070",
+          "url": "https://whitney.org/collection/works/6070",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -10419,6 +11328,27 @@
           "short": "V&A",
           "id": "O71802",
           "url": "https://collections.vam.ac.uk/item/O71802/",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74950",
+          "url": "https://www.moma.org/collection/works/74950",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "7779",
+          "url": "https://www.nga.gov/collection/art-object-page.7779.html",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "102151",
+          "url": "https://artgallery.yale.edu/collections/objects/102151",
           "openImage": false
         }
       ],
@@ -10578,13 +11508,21 @@
       "key": "gas",
       "title": "Gas",
       "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "date": "1940",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "80000",
+          "url": "https://www.moma.org/collection/works/80000",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1943,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-ii",
@@ -10739,13 +11677,21 @@
       "key": "ground swell",
       "title": "Ground Swell",
       "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "date": "1939",
+      "medium": "oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "131206",
+          "url": "https://www.nga.gov/collection/art-object-page.131206.html",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1943,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-ii",
@@ -11086,16 +12032,24 @@
       ]
     },
     {
-      "key": "house by a railroad",
+      "key": "house by the railroad",
       "title": "House by a Railroad",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "House by the Railroad",
+      "date": "1925",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "78330",
+          "url": "https://www.moma.org/collection/works/78330",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1925,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-i",
@@ -11145,6 +12099,13 @@
           "short": "Whitney",
           "id": "6766",
           "url": "https://whitney.org/collection/works/6766",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74934",
+          "url": "https://www.moma.org/collection/works/74934",
           "openImage": false
         }
       ],
@@ -11432,11 +12393,19 @@
     {
       "key": "ile saint louis",
       "title": "Ile Saint Louis",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "île Saint-Louis",
+      "date": "1909",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "5909",
+          "url": "https://whitney.org/collection/works/5909",
+          "openImage": false
+        }
+      ],
       "ledgerYear": 1909,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -11606,13 +12575,21 @@
       ]
     },
     {
-      "key": "le louvre et la s ine",
+      "key": "le louvre et la seine",
       "title": "Le Louvre et la Sëine",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "Le Louvre et la Seine",
+      "date": "1907",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "5545",
+          "url": "https://whitney.org/collection/works/5545",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -11801,6 +12778,13 @@
           "openImage": false
         },
         {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "182750",
+          "url": "https://www.nga.gov/collection/art-object-page.182750.html",
+          "openImage": false
+        },
+        {
           "institution": "Art Institute of Chicago",
           "short": "AIC",
           "id": "50094",
@@ -11821,16 +12805,31 @@
       ]
     },
     {
-      "key": "les poilhus",
+      "key": "les poilus",
       "title": "Les Poilhus",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "Les Poilus",
+      "date": "1915–1918",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "7034",
+          "url": "https://whitney.org/collection/works/7034",
+          "openImage": false
+        },
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "7033",
+          "url": "https://whitney.org/collection/works/7033",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1920,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-i",
@@ -12187,10 +13186,18 @@
       "key": "mountains at guanajuato",
       "title": "Mountains at Guanajuato",
       "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "date": "1953–54",
+      "medium": "Watercolor",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "57822",
+          "url": "https://artgallery.yale.edu/collections/objects/57822",
+          "openImage": false
+        }
+      ],
       "ledgerYear": 1953,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -12304,13 +13311,21 @@
       ]
     },
     {
-      "key": "n y movie house",
+      "key": "new york movie",
       "title": "N.Y. Movie House",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "New York Movie",
+      "date": "1939",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "79616",
+          "url": "https://www.moma.org/collection/works/79616",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -12539,6 +13554,20 @@
           "id": "7014",
           "url": "https://whitney.org/collection/works/7014",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74938",
+          "url": "https://www.moma.org/collection/works/74938",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "56960",
+          "url": "https://artgallery.yale.edu/collections/objects/56960",
+          "openImage": false
         }
       ],
       "ledgerYear": 1921,
@@ -12557,13 +13586,21 @@
       "key": "night windows",
       "title": "Night Windows",
       "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "date": "1928",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "79270",
+          "url": "https://www.moma.org/collection/works/79270",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1928,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-i",
@@ -12950,16 +13987,45 @@
       ]
     },
     {
-      "key": "railroad crossing drypoint",
+      "key": "railroad crossing",
       "title": "Railroad Crossing - drypoint",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "Railroad Crossing",
+      "date": "1923",
+      "medium": "Drypoint",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366218",
+          "url": "https://www.metmuseum.org/art/collection/search/366218",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50078",
+          "url": "https://www.artic.edu/artworks/50078",
+          "openImage": false
+        },
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "5860",
+          "url": "https://whitney.org/collection/works/5860",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "72018",
+          "url": "https://www.moma.org/collection/works/72018",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1924,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-i",
@@ -13108,10 +14174,18 @@
       "key": "rooms by the sea",
       "title": "Rooms by the Sea",
       "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "date": "1951",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "52939",
+          "url": "https://artgallery.yale.edu/collections/objects/52939",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -13128,10 +14202,18 @@
       "key": "rooms for tourists",
       "title": "Rooms for Tourists",
       "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "date": "1945",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "52638",
+          "url": "https://artgallery.yale.edu/collections/objects/52638",
+          "openImage": false
+        }
+      ],
       "ledgerYear": 1945,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -13839,28 +14921,8 @@
       ]
     },
     {
-      "key": "sunday or hoboken fa ade",
-      "title": "Sunday - or Hoboken façade",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
-      "ledgerYear": null,
-      "ledgerDisagrees": false,
-      "notLaterThan": null,
-      "namedIn": [
-        {
-          "ledger": "dealers",
-          "batch": 1,
-          "leaf": "54",
-          "ref": "18235"
-        }
-      ]
-    },
-    {
       "key": "sunday or hoboken facade",
-      "title": "Sunday --- or Hoboken Facade",
+      "title": "Sunday - or Hoboken façade",
       "museumTitle": null,
       "date": null,
       "medium": null,
@@ -13875,6 +14937,12 @@
           "batch": 5,
           "leaf": "52",
           "ref": "18056"
+        },
+        {
+          "ledger": "dealers",
+          "batch": 1,
+          "leaf": "54",
+          "ref": "18235"
         }
       ]
     },
@@ -13882,10 +14950,18 @@
       "key": "sunlight in a cafeteria",
       "title": "Sunlight in a Cafeteria",
       "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "date": "1958",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "52642",
+          "url": "https://artgallery.yale.edu/collections/objects/52642",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,
@@ -14041,6 +15117,13 @@
           "id": "50087",
           "url": "https://www.artic.edu/artworks/50087",
           "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "36513",
+          "url": "https://www.nga.gov/collection/art-object-page.36513.html",
+          "openImage": false
         }
       ],
       "ledgerYear": 1922,
@@ -14184,6 +15267,27 @@
           "id": "7009",
           "url": "https://whitney.org/collection/works/7009",
           "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74930",
+          "url": "https://www.moma.org/collection/works/74930",
+          "openImage": false
+        },
+        {
+          "institution": "National Gallery of Art",
+          "short": "NGA",
+          "id": "137001",
+          "url": "https://www.nga.gov/collection/art-object-page.137001.html",
+          "openImage": false
+        },
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "33512",
+          "url": "https://artgallery.yale.edu/collections/objects/33512",
+          "openImage": false
         }
       ],
       "ledgerYear": 1922,
@@ -14225,6 +15329,13 @@
           "short": "Whitney",
           "id": "7010",
           "url": "https://whitney.org/collection/works/7010",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74920",
+          "url": "https://www.moma.org/collection/works/74920",
           "openImage": false
         }
       ],
@@ -14343,16 +15454,45 @@
       ]
     },
     {
-      "key": "rail road",
+      "key": "railroad",
       "title": "The Rail Road",
-      "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "museumTitle": "The Railroad",
+      "date": "1922",
+      "medium": "Etching",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "The Metropolitan Museum of Art",
+          "short": "Met",
+          "id": "366219",
+          "url": "https://www.metmuseum.org/art/collection/search/366219",
+          "openImage": false
+        },
+        {
+          "institution": "Art Institute of Chicago",
+          "short": "AIC",
+          "id": "50069",
+          "url": "https://www.artic.edu/artworks/50069",
+          "openImage": false
+        },
+        {
+          "institution": "Whitney Museum of American Art",
+          "short": "Whitney",
+          "id": "7015",
+          "url": "https://whitney.org/collection/works/7015",
+          "openImage": false
+        },
+        {
+          "institution": "The Museum of Modern Art",
+          "short": "MoMA",
+          "id": "74923",
+          "url": "https://www.moma.org/collection/works/74923",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
-      "notLaterThan": 1922,
+      "notLaterThan": null,
       "namedIn": [
         {
           "ledger": "book-i",
@@ -14616,10 +15756,18 @@
       "key": "western motel",
       "title": "Western Motel",
       "museumTitle": null,
-      "date": null,
-      "medium": null,
-      "held": false,
-      "holdings": [],
+      "date": "1957",
+      "medium": "Oil on canvas",
+      "held": true,
+      "holdings": [
+        {
+          "institution": "Yale University Art Gallery",
+          "short": "Yale",
+          "id": "52875",
+          "url": "https://artgallery.yale.edu/collections/objects/52875",
+          "openImage": false
+        }
+      ],
       "ledgerYear": null,
       "ledgerDisagrees": false,
       "notLaterThan": null,

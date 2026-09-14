@@ -19,10 +19,12 @@
  * ## Why it is fetched rather than typed
  *
  * A hand-typed museum URL is a claim nobody verified. Every source below is a
- * public API with no key, returning stable object records, so every link in
- * `works.json` is one this script actually retrieved and whose artist field it
- * checked against the string `Edward Hopper`. Re-run it and a link that has
- * rotted disappears rather than sitting in the site being wrong.
+ * public API with no key, or a museum's own open-data export, returning stable
+ * object records, so every link in `works.json` is one this script actually
+ * retrieved and whose artist it checked — against the string `Edward Hopper`,
+ * or, for MoMA, the National Gallery and Yale, against his ULAN number.
+ * Re-run it and a link that has rotted disappears rather than sitting in the
+ * site being wrong.
  *
  * Four of the five give the URL themselves: the Met returns `objectURL`
  * outright, the Art Institute returns `config.website_url` from which its
@@ -32,6 +34,10 @@
  * so `/collection/works/<id>` is an *observed* path rather than a supplied
  * one. It is not left on trust: `whitney()` fetches one such page every run
  * and fails the build unless the museum's own accession number is on it.
+ *
+ * The three added on 14 September 2026 are described where they are fetched:
+ * MoMA's export and Yale's LUX supply the page, and the National Gallery's
+ * export supplies an id whose path its own data dictionary documents.
  *
  * For the other four, verification stops at the API, and that is a real limit
  * worth stating: their web front ends refuse automated requests — `artic.edu`
@@ -47,6 +53,9 @@
  * | Cleveland Museum of Art | `openaccess-api.clevelandart.org` |
  * | Whitney Museum of American Art | `whitney.org/api` |
  * | Victoria and Albert Museum | `api.vam.ac.uk` |
+ * | The Museum of Modern Art | open data, `github.com/MuseumofModernArt/collection` |
+ * | National Gallery of Art | open data, `github.com/NationalGalleryOfArt/opendata` |
+ * | Yale University Art Gallery | `lux.collections.yale.edu/api` |
  *
  * This file used to say the Whitney published no API and that its listing
  * ignored every search parameter tried. The second half is true and is now
@@ -350,6 +359,227 @@ async function vam() {
   return out;
 }
 
+/* ---------------------------------------------- open collection data */
+
+/**
+ * The identity every source below is checked against: Edward Hopper's number
+ * in the Getty's Union List of Artist Names, which the Whitney's own artist
+ * record carries. A museum's name for him can be spelt many ways and shared
+ * with three other Hoppers; this number cannot.
+ */
+const ULAN = '500031212';
+
+/**
+ * Parse a CSV text into rows of fields — quoted fields, doubled quotes and
+ * newlines inside quotes, which the National Gallery's inscriptions are full
+ * of. A dependency for this would be the only one the script had.
+ */
+function* csvRows(text) {
+  let row = [];
+  let field = '';
+  let quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c === '"') {
+        if (text[i + 1] === '"') {
+          field += '"';
+          i++;
+        } else quoted = false;
+      } else field += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ',') {
+      row.push(field);
+      field = '';
+    } else if (c === '\n' || c === '\r') {
+      if (c === '\r' && text[i + 1] === '\n') i++;
+      row.push(field);
+      yield row;
+      row = [];
+      field = '';
+    } else field += c;
+  }
+  if (field || row.length) {
+    row.push(field);
+    yield row;
+  }
+}
+
+/** Rows of a CSV as objects keyed by its header, keeping only those `keep` accepts. */
+function csvObjects(text, keep) {
+  const out = [];
+  let header = null;
+  for (const r of csvRows(text)) {
+    if (!header) {
+      header = r;
+      continue;
+    }
+    const o = Object.fromEntries(header.map((h, i) => [h, r[i] ?? '']));
+    if (keep(o)) out.push(o);
+  }
+  return out;
+}
+
+const text = async (url) => {
+  const r = await fetch(url, { headers: { 'User-Agent': UA } });
+  if (!r.ok) throw new Error(`${url} -> ${r.status}`);
+  return r.text();
+};
+
+/* ------------------------------------------ The Museum of Modern Art */
+
+/**
+ * MoMA, added for the pictures the five sources above could not date: House
+ * by a Railroad, Night Windows, New York Movie and Gas are all MoMA's, and all
+ * four are named in the transcriptions.
+ *
+ * MoMA publishes no search API, but it publishes the whole collection as open
+ * data (CC0) in its own GitHub repository, refreshed monthly, and every record
+ * carries the object page's `URL`. The artist is found in `Artists.json` by
+ * his ULAN number, not his name, and the works are those whose
+ * `ConstituentID` lists that artist. Records with no `URL` are uncatalogued
+ * and are skipped: they have no page to send a reader to.
+ *
+ * The file is 140 MB. It is fetched once a run, which is the price of a
+ * source that is exact.
+ */
+async function moma() {
+  const base = 'https://media.githubusercontent.com/media/MuseumofModernArt/collection/main';
+  const artists = JSON.parse(await text(`${base}/Artists.json`));
+  const him = artists.find((a) => String(a.ULAN) === ULAN);
+  if (!him || him.DisplayName !== 'Edward Hopper')
+    throw new Error(`moma: no artist with ULAN ${ULAN} named Edward Hopper in Artists.json`);
+  const all = JSON.parse(await text(`${base}/Artworks.json`));
+  return all
+    .filter((o) => (o.ConstituentID ?? []).includes(him.ConstituentID) && o.URL)
+    .map((o) => ({
+      institution: 'The Museum of Modern Art',
+      short: 'MoMA',
+      id: String(o.ObjectID),
+      title: o.Title,
+      date: o.Date || null,
+      medium: o.Medium || null,
+      url: o.URL,
+      openImage: false,
+    }));
+}
+
+/* ---------------------------------------- National Gallery of Art */
+
+/**
+ * The National Gallery of Art, for Cape Cod Evening and Ground Swell.
+ *
+ * Like MoMA it offers open data rather than an API: CSV exports in its GitHub
+ * repository (CC0), refreshed daily. Three files are joined — the constituent
+ * found by its ULAN number, the object links that name that constituent in
+ * the role of artist, and the objects themselves. A photograph *of* a Hopper
+ * (« Ground Swell by Hopper », 2007) names somebody else as its artist and so
+ * does not come in.
+ *
+ * The export gives an object id and no URL. The path built from it,
+ * `/collection/art-object-page.<id>.html`, is the one the gallery's own data
+ * dictionary uses in its examples and the one Wikidata's property P4683
+ * prefers; on 14 September 2026 it resolved in a browser to the current
+ * Cape Cod Evening page, accession 1982.76.6 on it. nga.gov answers scripts
+ * with a 403, so, as for the Met and the Art Institute, that check cannot be
+ * repeated on every run.
+ */
+async function nga() {
+  const base = 'https://github.com/NationalGalleryOfArt/opendata/raw/main/data';
+  const people = csvObjects(await text(`${base}/constituents.csv`), (c) => c.ulanid === ULAN);
+  const him = people.find((c) => c.forwarddisplayname === 'Edward Hopper');
+  if (!him) throw new Error(`nga: no constituent with ULAN ${ULAN} named Edward Hopper`);
+  const ids = new Set(
+    csvObjects(
+      await text(`${base}/objects_constituents.csv`),
+      (l) => l.constituentid === him.constituentid && l.roletype === 'artist',
+    ).map((l) => l.objectid),
+  );
+  return csvObjects(await text(`${base}/objects.csv`), (o) => ids.has(o.objectid)).map((o) => ({
+    institution: 'National Gallery of Art',
+    short: 'NGA',
+    id: o.objectid,
+    title: o.title,
+    date: o.displaydate || null,
+    medium: o.medium || null,
+    url: `https://www.nga.gov/collection/art-object-page.${o.objectid}.html`,
+    openImage: false,
+  }));
+}
+
+/* --------------------------------------- Yale University Art Gallery */
+
+/**
+ * Yale, for Rooms by the Sea, Western Motel and Sunlight in a Cafeteria.
+ *
+ * LUX, Yale's collections platform, is a keyless Linked Art API. A search by
+ * the name « Edward Hopper » is generous — it returns Henry Hopper's
+ * candlestick — so the person is resolved first: of the agents the name
+ * search offers, the one whose record is equivalent to his ULAN entry. The
+ * objects are then those produced by that person, and each record is fetched
+ * for its title, display date and the Art Gallery's own web page, which LUX
+ * supplies as an access point. An object with no gallery page — a book, a
+ * letter in the Beinecke — has nowhere to send a reader and is skipped.
+ */
+async function yale() {
+  const api = 'https://lux.collections.yale.edu/api/search';
+  const q = (o) => encodeURIComponent(JSON.stringify(o));
+  const agents = await json(`${api}/agent?q=${q({ name: 'Edward Hopper' })}`);
+  let person = null;
+  for (const a of agents.orderedItems ?? []) {
+    const r = await json(a.id);
+    if (JSON.stringify(r.equivalent ?? []).includes(`ulan/${ULAN}`)) {
+      person = a.id;
+      break;
+    }
+  }
+  if (!person) throw new Error(`yale: no LUX person equivalent to ULAN ${ULAN}`);
+
+  const items = [];
+  for (let url = `${api}/item?q=${q({ producedBy: { id: person } })}&pageLength=100`; url; ) {
+    const page = await json(url);
+    items.push(...(page.orderedItems ?? []));
+    url = page.next?.id ?? null;
+  }
+
+  const labelled = (xs, label) =>
+    (xs ?? []).find((x) => (x.classified_as ?? []).some((c) => c._label === label));
+  const out = [];
+  for (const it of items) {
+    const r = await json(it.id);
+    const makers = JSON.stringify(r.produced_by ?? {});
+    if (!makers.includes(person)) continue;
+    const page = (r.subject_of ?? [])
+      .flatMap((s) => s.digitally_carried_by ?? [])
+      .flatMap((d) => d.access_point ?? [])
+      .map((p) => p.id)
+      .find((u) => u.startsWith('https://artgallery.yale.edu/collections/objects/'));
+    if (!page) continue;
+    out.push({
+      institution: 'Yale University Art Gallery',
+      short: 'Yale',
+      id: page.split('/').pop(),
+      title: labelled(r.identified_by, 'Primary Title')?.content ?? r._label,
+      date: labelled(r.produced_by?.timespan?.identified_by, 'Display Date')?.content ?? null,
+      medium: labelled(r.referred_to_by, 'Medium')?.content ?? null,
+      url: page,
+      openImage: false,
+    });
+    await sleep(120);
+  }
+  return out;
+}
+
+/*
+ * Tried and refused, 14 September 2026, so nobody spends the afternoon again:
+ *
+ * - The Smithsonian's Open Access API (SAAM, the Hirshhorn): keyed, and its
+ *   index carries only open-access records, which no in-copyright Hopper is.
+ *   « People in the Sun » returns a library catalogue entry and nothing else.
+ * - The Museum of Fine Arts, Boston (Drug Store, Room in Brooklyn): no API,
+ *   and its collection site answers scripts with a 403.
+ */
+
 /* ------------------------------------------------------------ go */
 
 const holdings = [
@@ -358,6 +588,9 @@ const holdings = [
   ...(await cma()),
   ...(await whitney()),
   ...(await vam()),
+  ...(await moma()),
+  ...(await nga()),
+  ...(await yale()),
 ];
 
 /**
@@ -645,11 +878,16 @@ const out = {
     { institution: 'Cleveland Museum of Art', api: 'https://openaccess-api.clevelandart.org/api' },
     { institution: 'Whitney Museum of American Art', api: 'https://whitney.org/api' },
     { institution: 'Victoria and Albert Museum', api: 'https://api.vam.ac.uk/v2' },
+    { institution: 'The Museum of Modern Art', api: 'https://github.com/MuseumofModernArt/collection' },
+    { institution: 'National Gallery of Art', api: 'https://github.com/NationalGalleryOfArt/opendata' },
+    { institution: 'Yale University Art Gallery', api: 'https://lux.collections.yale.edu/api' },
   ],
   note:
     'Every holding here was retrieved by scripts/works.mjs and its artist field checked against ' +
-    '"Edward Hopper". Four of the five sources supply the URL themselves; the Whitney supplies an ' +
-    'id, and the path built from it is checked against the museum\'s own page on every run. ' +
+    '"Edward Hopper", or, for the open datasets, matched to his ULAN number. Six of the eight ' +
+    'sources supply the URL themselves; the Whitney supplies an id, and the path built from it is ' +
+    'checked against the museum\'s own page on every run; the National Gallery supplies an id, ' +
+    'and its path is the one the gallery\'s data dictionary documents. ' +
     'A link says a work of this title is held there and can be looked at; it does not say that ' +
     'the ledger row you are reading concerns that copy, and where a museum holds several ' +
     'impressions or versions each is listed separately.',

@@ -38,6 +38,11 @@ import { basename, resolve } from 'node:path';
 export const workKey = (title) =>
   title
     .toLowerCase()
+    // Accents are folded, not dropped: without this « Écluse » keyed as
+    // « cluse » and « façade » as « fa ade », so a title written with its accent
+    // could never meet the same title written without one.
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(/&/g, ' and ')
     .replace(/^(the|a|an)\s+/, '')
     .replace(/[^a-z0-9 ]+/g, ' ')

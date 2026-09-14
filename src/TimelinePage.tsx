@@ -113,6 +113,9 @@ interface IndexedWork {
 
 const WORKS = (worksData as unknown as { index: IndexedWork[] }).index;
 
+/** A title's letters and figures only, for telling a retitling from a stray asterisk. */
+const bare = (t: string) => t.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, '');
+
 interface TranscribedYear {
   year: number;
   leaves: { ledger: string; batch: number; leaf: string; ref: number; rows: number; prose: number; notebook?: string }[];
@@ -652,6 +655,14 @@ export function TimelinePage() {
                                 className="rounded-full border border-brand-200 bg-brand-50 px-2 py-0.5 text-[11.5px] text-brand-800 transition hover:border-brand-400 hover:bg-brand-100"
                               >
                                 {w.title}
+                                {/* The ledger's title leads, and the museum's
+                                    follows where it differs: « 7" Ave. Shops »
+                                    alone does not tell a reader this is Early
+                                    Sunday Morning. A difference of
+                                    punctuation alone is not shown. */}
+                                {w.museumTitle && bare(w.museumTitle) !== bare(w.title) && (
+                                  <span className="text-brand-600"> · {w.museumTitle}</span>
+                                )}
                               </a>
                             );
                           })}
