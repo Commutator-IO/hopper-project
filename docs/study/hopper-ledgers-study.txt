@@ -226,26 +226,27 @@ A note on this critical note                                                    
   8.4 The derived files, and the rule that a build must fail . . . . . . . . . . . . . .     41
   8.5 The accounts reader . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      42
   8.6 The ink pass . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   43
-  8.7 The working method: a person, two models, a repository and an interface .              44
-  8.8 What this note added, and how . . . . . . . . . . . . . . . . . . . . . . . . .        45
+  8.7 The rules, proved: two certificates in Lean . . . . . . . . . . . . . . . . . . .      43
+  8.8 The working method: a person, two models, a repository and an interface .              45
+  8.9 What this note added, and how . . . . . . . . . . . . . . . . . . . . . . . . .        46
 
-9 What the pictures were made of, and what shape                                             46
-  9.1 The formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    46
-  9.2 The size . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   47
-  9.3 The frames, from the other book . . . . . . . . . . . . . . . . . . . . . . . .        49
+9 What the pictures were made of, and what shape                                             48
+  9.1 The formula . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    48
+  9.2 The size . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   49
+  9.3 The frames, from the other book . . . . . . . . . . . . . . . . . . . . . . . .        51
 
-10 The money, added up                                                                       50
-   10.1 What can be counted, and what cannot . . . . . . . . . . . . . . . . . . . . .       50
-   10.2 The illustrator, 1913–1925 . . . . . . . . . . . . . . . . . . . . . . . . . . . .   50
-   10.3 The painter, by the work books . . . . . . . . . . . . . . . . . . . . . . . . .     51
-   10.4 The painter, by the cash book . . . . . . . . . . . . . . . . . . . . . . . . . .    51
-   10.5 The days the books were written on . . . . . . . . . . . . . . . . . . . . . . .     52
+10 The money, added up                                                                       52
+   10.1 What can be counted, and what cannot . . . . . . . . . . . . . . . . . . . . .       52
+   10.2 The illustrator, 1913–1925 . . . . . . . . . . . . . . . . . . . . . . . . . . . .   52
+   10.3 The painter, by the work books . . . . . . . . . . . . . . . . . . . . . . . . .     53
+   10.4 The painter, by the cash book . . . . . . . . . . . . . . . . . . . . . . . . . .    53
+   10.5 The days the books were written on . . . . . . . . . . . . . . . . . . . . . . .     54
 
-11 Conclusion: the record and the silence                                                    54
+11 Conclusion: the record and the silence                                                    56
 
-A Tables                                                                                     56
+A Tables                                                                                     58
 
-Sources                                                                                      63
+Sources                                                                                      65
 
 
 
@@ -395,7 +396,7 @@ Sources                                                                         
        from the middle 1940s; the canvas turning from National to Herga and the
        priming from double to single across the 1950s. Only the 43 works dated
        by the leaf itself are plotted. After the Technique tab. Drawn by Claude
-       Fable 5.1, 13 September 2026, from materials.json (undated). . . . . . . 47
+       Fable 5.1, 13 September 2026, from materials.json (undated). . . . . . . 49
    9.2 Every format, plotted: width across, height up, one dot to a format and its
        area standing for how many works were made at it, 78 formats from 199
        work headings that state a size. The diagonal is where a picture would be
@@ -403,12 +404,12 @@ Sources                                                                         
        ing plates are in the corner, the watercolour sheets through the middle, the
        late oils at the top right. After the Technique tab of hopper.commutator.io.
        Drawn by Claude Fable 5.1, 13 September 2026, from formats.json (un-
-       dated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+       dated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
    9.3 The eight formats he came back to, drawn to one scale and to their real pro-
        portions, so that a watercolour half-sheet stands beside a five-foot canvas;
        each is labelled with the number of work headings read at that size. After
        the Technique tab. Drawn by Claude Fable 5.1, 13 September 2026, from
-       formats.json (undated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+       formats.json (undated). . . . . . . . . . . . . . . . . . . . . . . . . . . . . 51
 
    10.1 The money, three ways: what the pocket book receipts each year from 1920
         (dark bars), what the work books state as the net of sales dated in that year
@@ -417,7 +418,7 @@ Sources                                                                         
         cheques as they arrived, the other the studio’s record of what left. Every
         figure is a floor, read from the transcribed rows under the rules of the ac-
         counts chapter. After the Accounts tab of hopper.commutator.io. Drawn by
-        Claude Fable 5.1, 13 September 2026, from accounts.json (2026-09-11). . 52
+        Claude Fable 5.1, 13 September 2026, from accounts.json (2026-09-11). . 54
    10.2 The days the six books record, one row to a year from 1913 to 1967 and one
         cell to a month, the darker the more days that month carry an entry: 1204
         days in all, from 2146 dated rows. A dense cell is a month of transactions,
@@ -426,7 +427,7 @@ Sources                                                                         
         Wed 179, Thu 215, Fri 207, Sat 175, Sunday a sixth of a weekday. After
         the calendar of the Timeline tab, which draws every day; this draws every
         month. Drawn by Claude Fable 5.1, 13 September 2026, from streak.json
-        (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+        (2026-09-13). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
 
 
 
@@ -2327,7 +2328,8 @@ scripts/notes.mjs refuses a per-work note whose source key does not resolve. scr
 places.mjs refuses a journey whose sourced event it cannot find in the timeline. The CI
 workflow runs the catalogue, the renderer, the TEI export and validation, the manifest, the
 citation, the glossary, the framing and the spending scripts, compares each generated file
-with the committed one, and only then builds the site.
+with the committed one, proves the accounts and the Book IV reader in Lean (next section
+but two), and only then builds the site.
 
 
 8.5    The accounts reader
@@ -2354,13 +2356,13 @@ settlement, or every commission in the volume would be counted twice. A bare fig
 is a subtotal where a bill, a « less » line or a carried total follows it, or where a cheque
 follows it and the priced lines above add to it; the leaf rules a line above a subtotal and
 the transcription does not record the rule, so the rule is recovered from the arithmetic.
-A « less » line is a deduction whichever thing it names. What stands between it and the
 
 
                                                42
                                                                                      The ink pass
 
 
+A « less » line is a deduction whichever thing it names. What stands between it and the
 cheque is the net restated. A red receipt rubbed out and rewritten is counted once. A title
 charged more than once, where one entry says on account or balance, is one picture at
 the largest figure and the others are reported as instalments. The year is carried from the
@@ -2402,13 +2404,78 @@ readings of lines that exist on the sheet; whether a neighbouring line was skipp
 something any reading here can rule out.
 
 
-
+8.7    The rules, proved: two certificates in Lean
+A reader’s rules written in prose and applied by a script can drift apart without anyone
+noticing, and a total can be right by accident. The last addition to the method, made
 
                                                43
 How the data was made: the engineering behind the figures
 
 
-8.7    The working method: a person, two models, a repository and an
+on 14 September 2026 after this note was first drafted, restates the accounts in the Lean
+theorem prover, so that the build fails if the script and its stated rules disagree. The proofs
+are in lean/ in the repository, were written by Claude Opus 5 under Michel Hua’s direction,
+and use nothing but Lean itself. Every figure in the ledgers is dollars and cents, and every
+commission is a third, a quarter, a tenth or fifteen per cent, so money is counted in sixtieths
+of a cent, in which all of them, including « 33 2/3 », are whole numbers and the arithmetic
+is exact. General lemmas are proved for every input; the data is checked by the kernel’s
+own evaluation and never by compiled code, and a proof left unfinished counts as a failure
+of the build.
+    The first certificate concerns what the accounts publish about money. For each activity,
+painter and illustrator, it recomputes every published year from the rows, the running
+balance and the totals, and proves from the rows, rather than reading it off the totals, that
+what accrued equals what was collected plus what is still owed plus what was not recorded.
+It proves of the dealer’s third, for every price, that the third truncated to the cent is never
+over the exact third and never under it by more than two thirds of a cent, so the reader’s
+two-cent test passes every figure written to the cent and never a slip of a third of a dollar.
+It proves that of the ninety-five rows where a price, a rate and a written receipt stand
+together, ninety agree, and that the five that do not are the five the reader names. And it
+proves that, for each year whose pencil total is declared by hand, the receipts equal the
+total written on the leaf plus what the book is declared to leave out, to the cent.
+    The second certificate concerns the Book IV reader described two sections above. Its
+four passes (carrying the year and the title, dropping a doubtful figure the next row re-
+peats plainly, deciding each figure’s disposition, and collapsing instalments) are written as
+Lean functions, and the properties docs/book-iv-method.md asserts in prose are proved
+of them for every possible book, not only this one. A « bill » is charged only where nothing
+was itemised since the last settlement, so no commission is counted twice; a « less » line
+is never a charge, whatever state the reader is in; a bare figure is a subtotal exactly when
+the answering line or the arithmetic above says so; a receipt rubbed out on the net’s row
+counts once; a picture charged more than once and paid in parts is charged once, at a fig-
+ure no smaller than any instalment; the year does not carry across a gap between batches,
+and a figure without a year is reported unread. Then the kernel runs the functions over all
+3,281 transcribed rows of the volume, which takes it about two and a half minutes, and
+proves that every row is decided exactly once and that the Lean reader keeps, classifies,
+dates and disposes of each one as scripts/accounts.mjs does, and that the counts the
+site publishes, 858 charges, 579 receipts, 124 deductions and the rest, are counts of those
+decisions. Changing a single disposition in the data makes the build fail, which was tried.
+    Writing the rules as functions sharpened them in one place and explained a defect in
+another. The prose said that a « less » line is a deduction whichever thing it names; the
+proof would not go through until the exception was stated, that a « less » line which is also
+a ditto directly under a receipt reads as that receipt. And the year 1921, which the accounts
+chapter notes is missing from the cash book, is now a theorem: the year line on leaf 53
+reads 1920 over entries of 1921, the next year line reads 1922, every row between them
+is booked under 1920 and none under 1921. The rule is applied as written; the defect is
+the line, and the theorem is meant to fail on the day the line is corrected at source.
+    What the certificates do not prove must be said as plainly, because the word proved
+
+
+                                               44
+                          The working method: a person, two models, a repository and an interface
+
+
+invites more trust than it earns. They do not touch a reading: whether a leaf says « 16.66 »
+is a question for the photograph, and a figure misread consistently in the rows and in the
+sums would pass. They do not prove the regular expressions that recognise what a row’s
+words are, « rec’d by check », « bill », « less », a ditto; those arrive as data, and only what is
+decided from them is proved. And they prove that the script agrees with the stated rules,
+not that the rules are the right reading of Josephine Hopper’s method; that remains an
+argument, made in the method note, to be had with the leaves. Two further formalisations,
+of the leaf and page numberings and of the conversion to TEI, are tracked as issue 28. The
+certificates are checked on every push by the same workflow that builds the site, and a
+configuration for GitLab’s continuous integration runs the same two steps.
+
+
+8.8    The working method: a person, two models, a repository and an
        interface
 The pipeline above was not bought and was not assembled from a transcription service. It
 was built by one person, Michel Hua, over a fortnight in September 2026, and the way it
@@ -2439,6 +2506,12 @@ described above runs on every push and refuses a push whose generated files have
 from their sources, and the same workflow builds and deploys the site to GitHub Pages
 under the project’s own domain. Nothing about the edition lives on a machine of its au-
 thor’s: a clone of the repository is the edition entire, minus the photographs, which are the
+
+
+                                               45
+How the data was made: the engineering behind the figures
+
+
 museum’s.
 
 An interface built for the purpose
@@ -2450,11 +2523,6 @@ else on it follows from that. The reading view offers a Cite button that builds 
 tions, sheet, leaf and batch, from what the page already knows; the Accounts, Technique,
 Timeline and Schema tabs are the derived files rendered, with the rules that produced
 them printed beside the figures; the Diaries side serves the four notebooks the same way.
-
-                                               44
-                                                                 What this note added, and how
-
-
 The interface is the checking instrument. A machine reading that could not be put beside
 its source would be a text nobody could correct, and the whole value of the transcription
 is that it can be.
@@ -2477,7 +2545,7 @@ would. This note was made the same way: eight readings of the transcripts ran at
 one per volume or notebook, and the prose was written from their reports.
 
 
-8.8    What this note added, and how
+8.9    What this note added, and how
 This note was written in one session on 13 September 2026. Eight readings of the tran-
 scripts were run in parallel, one per volume or notebook, each instructed to read its files
 whole and return the structure, the quotable passages exactly as transcribed with leaf and
@@ -2488,6 +2556,11 @@ ducible from them. The prose was then written from those readings and from the d
 data, chapter by chapter, and compiled with Tectonic. Nothing in it was checked against a
 photograph. Where the readings disagreed with a batch header, both are reported; where
 a reading found a defect in the transcription, it is listed for correction at source and not
+
+                                               46
+                                                                 What this note added, and how
+
+
 corrected here, on the edition’s own rule that a corrected reading goes to the .tex with
 the name of who checked it.
     That is the chain. The photograph is the museum’s; the harvest is a person’s; the
@@ -2499,7 +2572,7 @@ on.
 
 
 
-                                              45
+                                              47
 Chapter 9
 
 
@@ -2541,7 +2614,7 @@ January 1939, « Winton canvas, Winsor & Newton colors. — 1st lead white and l
 oil. 2nd Zinc white » (Book II, leaf 27, ref 16621). The leaf also shows what a formula can
 carry that a list cannot: two whites on one picture, the second over the first.
 
-                                             46
+                                             48
                                                                                           The size
 
 
@@ -2599,7 +2672,7 @@ River at Sharon, Oregon Coast, Jo in Wyoming. Nine at 12 by 18 are the Glouceste
 ings of Book V. The oils cluster differently. Seven at 24 by 29 are the early canvases of
 
 
-                                                47
+                                                49
 What the pictures were made of, and what shape
 
 
@@ -2664,7 +2737,7 @@ September 2026, from formats.json (undated).
 
 
 
-                                                           48
+                                                           50
                                                                        The frames, from the other book
 
 
@@ -2703,7 +2776,7 @@ canvas », on the same picture, secured by the woman who bought it.
 
 
 
-                                                    49
+                                                    51
 Chapter 10
 
 
@@ -2747,7 +2820,7 @@ at source. These are not large sums even for the time, and they are the whole of
 
 
 
-                                             50
+                                             52
                                                                The painter, by the work books
 
 
@@ -2797,7 +2870,7 @@ died. The receipts, which are the figures her pencil sums check, run 40,218 in 1
 25,657 in 1963. In no year of his life did Edward Hopper’s cheques from his dealer exceed
 forty-one thousand dollars, and in only nine years did they exceed twenty.
 
-                                            51
+                                            53
 The money, added up
 
 
@@ -2858,7 +2931,7 @@ not the days anybody worked, and Josephine Hopper wrote almost all of them.
 
 
 
-                                                                           52
+                                                                           54
                                                                               The days the books were written on
 
 
@@ -2923,7 +2996,7 @@ tab, which draws every day; this draws every month. Drawn by Claude Fable 5.1, 1
 
 
 
-                                                      53
+                                                      55
 Chapter 11
 
 
@@ -2968,7 +3041,7 @@ has been written from her sentences without saying so.
     What the edition adds is not a fact but a condition: that every sentence quoted here
 can be checked against the photograph of the leaf it came from, on one screen, by anybody.
 The reading is first-pass, unchecked, and dated; its errors will be found; the address of the
-                                               54
+                                               56
 sheet will not move when they are. That is the right state for a source like this to be in.
 The books were kept so that someone would read them. The inside cover of Book I says
 who wrote them and who drew in them, and the notebooks say what it cost. The rest is on
@@ -2977,7 +3050,7 @@ the leaves.
 
 
 
-                                            55
+                                            57
 Appendix A
 
 
@@ -3025,7 +3098,7 @@ dealer’s third.
                      1926       2,523.49         2,528.49                  120.02
 
 
-                                                 56
+                                                 58
 Year      Charged      Received   Running balance
 1927      3,992.71     5,918.08        -1,805.35
 1928     11,444.02     7,870.68         1,767.99
@@ -3072,7 +3145,7 @@ Total   544,546.84   432,871.37       111,675.47
 
 
 
-                       57
+                       59
 Tables
 
 
@@ -3123,7 +3196,7 @@ the etchings are largely absent.
                  1961        10   11,295            3,765      7,530              0
                  1962         3   31,000           10,333     20,667          3,667
 
-                                                 58
+                                                 60
                 Year    Sales    Gross    Commission           Net    Receipted
                 1963        2   31,500         10,500       21,000               0
                 1964        2   31,500         10,500       21,000               0
@@ -3169,7 +3242,7 @@ books write them. Gross is the price; net is after the third.
 
 
 
-                                              59
+                                              61
 Tables
 
 
@@ -3229,7 +3302,7 @@ cheques are not in this table.
 
 
 
-                                               60
+                                               62
 Table A.7: The sizes Edward Hopper wrote in the title line, counted once per work heading: the
 twenty formats that recur. Height before width, as he wrote them; nothing is rounded.
 
@@ -3271,7 +3344,7 @@ twenty formats that recur. Height before width, as he wrote them; nothing is rou
 
 
 
-                                             61
+                                             63
 Tables
 
 
@@ -3330,7 +3403,7 @@ resolve to 1204 calendar days between 1913 and 1967.
 
 
 
-                                                  62
+                                                  64
 Sources
 
 The objects
@@ -3370,7 +3443,7 @@ ResourceSpace reference for the photograph. A sheet is at hopper.commutator.io/ 
 lowed by the volume, a hash, and the volume, batch and ref, and its photograph is fetched
 
 
-                                           63
+                                           65
 Sources
 
 
@@ -3417,5 +3490,5 @@ onward. The place coordinates in the travels figure: © OpenStreetMap contributo
 
 
 
-                                            64
+                                            66
 
