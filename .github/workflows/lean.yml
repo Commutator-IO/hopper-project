@@ -46,6 +46,16 @@ jobs:
             exit 1
           fi
 
+      # The toolchain, from GitHub's cache rather than releases.lean-lang.org,
+      # which answered a deploy with a 504 on 14 September 2026 and failed it
+      # before a line was built. lean-action reinstalls elan on every run but
+      # keeps a toolchain already under ~/.elan/toolchains, so only a change to
+      # lean/lean-toolchain downloads one.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.elan/toolchains
+          key: lean-toolchain-${{ runner.os }}-${{ hashFiles('lean/lean-toolchain') }}
+
       # Installs elan at the toolchain lean/lean-toolchain names, caches .lake,
       # then runs `lake build` over the Hopper library. The reader certificate
       # has the kernel evaluate all 3,281 rows of Book IV: about a minute here.
