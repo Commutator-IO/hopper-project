@@ -1,0 +1,80 @@
+name: lean
+
+# The Lean certificates in lean/: the accounts arithmetic (issue #26) and Book
+# IV's reader (issue #27). Runs on its own for pull requests and by hand, and is
+# called by deploy.yml on every push to main, so the site is not published from
+# numbers the proofs reject — one run per push, not two.
+on:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    name: lake build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The data Lean checks is generated from src/content/accounts.json and
+      # lean/book-iv-rows.json. It is regenerated and compared, as every derived
+      # file in this repository is, so the proofs are about what is published
+      # and not about a stale copy. The generator needs Node and nothing else.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Regenerate the data and compare
+        run: |
+          node scripts/lean.mjs
+          if ! git diff --exit-code -- lean/Hopper/Data; then
+            echo "::error::lean/Hopper/Data is out of date - run 'npm run lean' and commit the result."
+            exit 1
+          fi
+
+      # No certificate may rest on a statement it does not prove, nor on code
+      # the kernel did not check: `native_decide` trusts the compiler, and an
+      # `axiom` is an assumption. `sorry` is caught by the build itself, since
+      # lakefile.toml makes every warning an error; it is listed here too, so
+      # that the failure names the file.
+      - name: No sorry, native_decide or axiom
+        run: |
+          if grep -rnE '\b(sorry|native_decide)\b|^axiom ' lean/Hopper --include='*.lean'; then
+            echo "::error::a certificate must be proved and kernel-checked."
+            exit 1
+          fi
+
+      # Installs elan at the toolchain lean/lean-toolchain names, caches .lake,
+      # then runs `lake build` over the Hopper library. The reader certificate
+      # has the kernel evaluate all 3,281 rows of Book IV: about a minute here.
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: lean
+
+      # The axioms the headline theorems rest on, written into the build log.
+      # Anything beyond Lean's three standard axioms fails: `sorryAx` would be
+      # an unproved step, `Lean.ofReduceBool` a compiled `native_decide`.
+      - name: List the axioms
+        working-directory: lean
+        shell: bash
+        run: |
+          {
+            echo 'import Hopper'
+            for t in Certificate.art_certified Certificate.illustration_certified \
+                     Certificate.cashbook_certified Certificate.checked_same_verdict \
+                     Certificate.pencil_sums_reconcile ReaderCertificate.certified \
+                     ReaderCertificate.rule_disposes_as_reader \
+                     ReaderCertificate.counts_as_published \
+                     ReaderCertificate.leaf53_books_1921_under_1920; do
+              echo "#print axioms Hopper.$t"
+            done
+          } > "$RUNNER_TEMP/Axioms.lean"
+          lake env lean "$RUNNER_TEMP/Axioms.lean" | tee "$RUNNER_TEMP/axioms.txt"
+          standard='(propext|Classical\.choice|Quot\.sound)'
+          if [ "$(wc -l < "$RUNNER_TEMP/axioms.txt")" -ne 9 ] ||
+             grep -qvE "^'[^']+' (depends on axioms: \[$standard(, $standard)*\]|does not depend on any axioms)$" "$RUNNER_TEMP/axioms.txt"; then
+            echo "::error::a certificate depends on a non-standard axiom, or was not found."
+            exit 1
+          fi

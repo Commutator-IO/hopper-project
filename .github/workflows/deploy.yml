@@ -15,7 +15,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # The Lean certificates (lean.yml): the accounts arithmetic and Book IV's
+  # reader. The site is built only once they prove, so it never publishes a
+  # figure the proofs reject.
+  lean:
+    uses: ./.github/workflows/lean.yml
+
   build:
+    needs: lean
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -80,32 +87,6 @@ jobs:
       - run: git diff --exit-code src/content/framing.json
       - run: npm run spending
       - run: git diff --exit-code src/content/spent.json
-
-      # The accounts arithmetic, certified (issue #26). The data Lean checks is
-      # regenerated from src/content/accounts.json and compared, as every
-      # derived file here is; then Lean proves that what the reader publishes
-      # follows from its own rows. elan is a pinned release at a checked
-      # digest, the toolchain is the one lean/lean-toolchain names, and the
-      # build fails on a warning, so a `sorry` cannot pass as a proof.
-      - run: npm run lean
-      - run: git diff --exit-code lean/Hopper/Data
-      - uses: actions/cache@v4
-        with:
-          path: ~/.elan
-          key: elan-4.2.4-${{ hashFiles('lean/lean-toolchain') }}
-      - name: Install elan
-        run: |
-          if [ ! -x "$HOME/.elan/bin/elan" ]; then
-            curl -fsSL --proto '=https' --tlsv1.2 -o /tmp/elan.tar.gz \
-              https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz
-            echo "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63  /tmp/elan.tar.gz" | sha256sum -c -
-            tar -xzf /tmp/elan.tar.gz -C /tmp
-            /tmp/elan-init -y --default-toolchain none
-          fi
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Prove the accounts
-        working-directory: lean
-        run: lake build
 
       # Tectonic, pinned, for the transcript PDFs. A static musl binary from
       # the project's own releases rather than a piped install script or the
