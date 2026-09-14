@@ -23,6 +23,7 @@
     "sitemap": "node scripts/sitemap.mjs",
     "tiles": "node scripts/tiles.mjs",
     "accounts": "node scripts/accounts.mjs",
+    "lean": "node scripts/lean.mjs",
     "places": "node scripts/places.mjs",
     "notes": "node scripts/notes.mjs",
     "streak": "node scripts/streak.mjs",

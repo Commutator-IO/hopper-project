@@ -1,0 +1,10 @@
+name = "hopper"
+defaultTargets = ["Hopper"]
+
+# A `sorry` is a warning, and a certificate with a warning in it certifies
+# nothing: the build fails on either.
+[leanOptions]
+warningAsError = true
+
+[[lean_lib]]
+name = "Hopper"

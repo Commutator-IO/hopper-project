@@ -397,6 +397,10 @@ for (const file of files) {
           receiptWritten: sales.length === 1 ? receipt : null,
           receiptYear,
           check,
+          // The figure the check compared, kept whole — « 33 2/3 » stays a
+          // third — so that the arithmetic can be certified from this file
+          // alone (lean/, issue #26) without re-reading a leaf.
+          written: check === null ? null : receipt,
           activity: 'art',
           ...where,
         });
@@ -565,6 +569,9 @@ const iiiFigures = (text) =>
           receiptWritten: f.received && f.written !== null ? Number(f.written.toFixed(2)) : null,
           receiptYear: f.received ? f.year : null,
           check,
+          // As above: the figure after « = », whether or not the sentence
+          // says the money came, because it is what the check compared.
+          written: check === null ? null : f.written,
           activity: 'art',
           buyer: f.buyer,
           ...where,

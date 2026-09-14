@@ -1,0 +1,16 @@
+{
+  "note": "Hand-declared, and checked against the leaves. The year totals Book IV writes for itself, in pencil, from leaf 114 on. What a total leaves out is a judgement the book makes and no script can, so it is declared here with the reason; that the figure is on the sheet is not trusted to a person, and `npm run lean` fails if `match` is not found between that sheet's \\sheet{} and the next. Lean then proves that the reader's receipts for the year equal the written total plus what is declared left out, to the cent.",
+  "totals": [
+    { "year": 1946, "batch": 11, "leaf": "120", "ref": 16926, "written": "5341.57", "match": "& & 5341 & 57 \\\\", "omits": [] },
+    { "year": 1947, "batch": 11, "leaf": "121", "ref": 16778, "written": "2360.53", "match": "\\ink{pencil}{2360} & \\ink{pencil}{53}", "omits": [] },
+    { "year": 1949, "batch": 11, "leaf": "124", "ref": 17734, "written": "3661.14", "match": "1949 total & 3661 & 14", "omits": [] },
+    { "year": 1951, "batch": 11, "leaf": "127", "ref": 17181, "written": "4870.00", "match": "& & 4870.00 &", "omits": [] },
+    { "year": 1961, "batch": 13, "leaf": "150", "ref": 17889, "written": "15637.21", "match": "& & 15637.21 &", "omits": [] },
+    {
+      "year": 1962, "batch": 13, "leaf": "152", "ref": 17664, "written": "39842.56", "match": "Total & 39842.56",
+      "omits": [
+        { "ref": 16161, "leaf": "153", "amount": "375.00", "why": "Fire insurance on the 1957 Buick, receipted 22 December 1962. The book leaves insurance money out of its sums — the rule leaf 116 wrote down — and batch 13's note on leaf 152 says this is the only 1962 receipt the total does not count." }
+      ]
+    }
+  ]
+}
