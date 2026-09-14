@@ -1,0 +1,42 @@
+# The Lean certificates, checked on GitLab as they are on GitHub.
+#
+# lean/ proves that what src/content/accounts.json publishes about money
+# follows from its own rows (issue #26), and that Book IV's reader decides
+# every transcribed row as the rules in docs/book-iv-method.md say it must
+# (issue #27). The data Lean checks is regenerated from the committed JSON and
+# compared, as every derived file in this repository is; then `lake build`
+# proves it, and fails on any warning, so a `sorry` cannot pass as a proof.
+#
+# elan is a pinned release at a checked digest, and the Lean toolchain is the
+# one lean/lean-toolchain names. Nothing else in the repository is built here:
+# the site is built and deployed by .github/workflows/deploy.yml.
+
+stages:
+  - prove
+
+lean:
+  stage: prove
+  image: node:22-bookworm
+  variables:
+    ELAN_HOME: "$CI_PROJECT_DIR/.elan"
+  cache:
+    key:
+      files:
+        - lean/lean-toolchain
+    paths:
+      - .elan/
+      - lean/.lake/
+  before_script:
+    - |
+      if [ ! -x "$ELAN_HOME/bin/elan" ]; then
+        curl -fsSL --proto '=https' --tlsv1.2 -o /tmp/elan.tar.gz \
+          https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz
+        echo "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63  /tmp/elan.tar.gz" | sha256sum -c -
+        tar -xzf /tmp/elan.tar.gz -C /tmp
+        /tmp/elan-init -y --default-toolchain none
+      fi
+    - export PATH="$ELAN_HOME/bin:$PATH"
+  script:
+    - node scripts/lean.mjs
+    - git diff --exit-code lean/Hopper/Data
+    - cd lean && lake build

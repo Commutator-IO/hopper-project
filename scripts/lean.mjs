@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Writes the data the Lean certificate checks (issue #26).
+ * Writes the data the Lean certificates check (issues #26 and #27).
  *
  * `lean/Hopper/Certificate.lean` proves that what `src/content/accounts.json`
  * publishes about money follows from its own rows: the three buckets, the
@@ -225,3 +225,60 @@ console.log(
   `lean: ${checkedRows.length} checked row(s), ${artRows.length} work-book row(s), ` +
     `${pencilYears.length} pencil total(s) written to lean/Hopper/Data/`,
 );
+
+/* ------------------------------------------------- Book IV's reader (#27) */
+
+// Every Book IV row as the reader saw it and what it decided, written by
+// `npm run accounts`. The model in lean/Hopper/BookIV.lean decides every row
+// again from the same cells and words, and the certificate proves the two
+// agree row by row.
+const ivRows = JSON.parse(readFileSync(resolve(root, 'lean/book-iv-rows.json'), 'utf8')).rows;
+const BITS = [
+  'working', 'money', 'struck', 'rubbed', 'ruled', 'inkRed', 'inkPencil', 'dateEmpty',
+  'bodyEmpty', 'bodyDashes', 'bodyIsYear', 'wReceipt', 'wDittoTailed', 'wBill', 'wDeduction',
+  'wPaidOnAcct', 'wCarry', 'wDitto', 'wDittoHeadedOrAnd', 'wLetters', 'wExpenses', 'wRestated',
+  'wNetCheck', 'wYearTotal', 'wTotalOnly',
+];
+const KINDS = new Set(['receipt', 'bill', 'deduction', 'carry', 'item', 'bare', 'pencil']);
+const DISPS = new Set([
+  'yearLine', 'struck', 'text', 'rubbedDraft', 'unread', 'pencilSum', 'receipt', 'rubbedReceipt',
+  'deduction', 'carriedForward', 'netRestated', 'subtotal', 'carriedSum', 'billRestating',
+  'wordlessReceipt', 'chargeItem', 'chargeBare', 'chargeBill', 'instalment',
+]);
+const keyIds = new Map();
+const opt = (v) => (v === undefined || v === null ? 'none' : `(some ${v})`);
+const bits = (names, t) => names.reduce((n, name, i) => n + (t[name] ? 2 ** i : 0), 0);
+const ivRaw = ivRows.map((t, i) => {
+  const what = `Book IV row ${i} (ref ${t.ref})`;
+  const inks = { ...t, inkRed: t.ink === 'red', inkPencil: t.ink === 'pencil' };
+  if (t.kind !== undefined && !KINDS.has(t.kind)) fail(`${what}: kind « ${t.kind} » is not one the model knows`);
+  if (!DISPS.has(t.disp)) fail(`${what}: disposition « ${t.disp} » is not one the model knows`);
+  if (t.read !== undefined && !Number.isInteger(t.read)) fail(`${what}: figure ${t.read} is not in cents`);
+  let key = 'none';
+  if (t.key) {
+    if (!keyIds.has(t.key)) keyIds.set(t.key, keyIds.size);
+    key = `(some ${keyIds.get(t.key)})`;
+  }
+  const body = bits(['titled', 'fEmpty', 'fRestated', 'fPaidOnAcct', 'fNetCheck', 'fYearTotal'], t);
+  return (
+    `⟨${t.batch}, ${Number(t.ref)}, ${opt(t.pencil)}, ${opt(t.read)}, ${opt(t.dateYear)}, ${opt(t.bodyYear)}, ` +
+    `${bits(BITS, inks)}, ${t.kind ? `(some .${t.kind})` : 'none'}, ${opt(t.year)}, ${body}, .${t.disp}, ` +
+    `${key}, ${bits(['instWords', 'payWords'], t)}⟩`
+  );
+});
+const ill = accounts.illustration;
+writeFileSync(
+  resolve(outDir, 'BookIV.lean'),
+  header("# Book IV's rows, as the reader saw them and what it decided").replace(
+    'import Hopper.Accounts',
+    'import Hopper.BookIVRaw',
+  ) +
+    `namespace Hopper.Data.BookIV\nopen Hopper.BookIV\n\n` +
+    `/-- The reader's own counters, from \`illustration\` in accounts.json. -/\n` +
+    `def claimed : Claims := ⟨${ill.charges}, ${ill.receipts}, ${ill.subtotalsExcluded}, ` +
+    `${ill.deductionsExcluded}, ${ill.netsExcluded}, ${ill.carriedSumsExcluded}, ${ill.struckExcluded}, ` +
+    `${ill.wordlessReceipts}, ${ill.rubbedExcluded}, ${ill.pencilSumsExcluded}, ${ill.instalmentsCollapsed}⟩\n\n` +
+    list('raw', 'Raw', ivRaw) +
+    `\nend Hopper.Data.BookIV\n`,
+);
+console.log(`lean: ${ivRaw.length} Book IV row(s), ${keyIds.size} picture title(s)`);

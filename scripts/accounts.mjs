@@ -965,6 +965,11 @@ const ivJobs = [];
 const ivJobCensus = { count: 0, charged: 0, received: 0, years: [0, 0], byClient: [] };
 // Rows whose money columns carry writing the reader would not read as dollars.
 let ivUnreadMoney = 0;
+// Every Book IV row as the rules below see it — the words recognised, the
+// figure, the ink — and what they made of it, for the Lean model of this
+// reader to be checked against (lean/, issue #27). Nothing below reads it.
+const ivTrace = [];
+const ivEntryTrace = new Map();
 {
   const ivFiles = files.filter((f) => activityOf(f.ledger) === 'illustration');
   const rows = [];
@@ -1024,12 +1029,61 @@ let ivUnreadMoney = 0;
         });
       }
       const amount = working ? null : read;
+      const dateCell = (cells[0] ?? '').trim();
+      const trace = {
+        batch: row.batch,
+        ref: row.ref,
+        leaf: row.leaf,
+        pencil: pencil.get(row.ref) ?? null,
+        read: read === null ? null : Math.round(read * 100),
+        working,
+        money: ivMoneyWritten(cells),
+        struck: ivStruck(row.cells),
+        rubbed: ivUncertainFigure(row.cells),
+        ruled: row.ruled === true,
+        ink: (row.inks?.[2] ?? row.inks?.[3] ?? null) === 'red' ? 'red'
+          : (row.inks?.[2] ?? row.inks?.[3] ?? null) === 'pencil' ? 'pencil' : null,
+        dateYear: /^(19[0-6]\d)\.?$/.exec(dateCell) ? Number(/^(19[0-6]\d)/.exec(dateCell)[1]) : null,
+        dateEmpty: dateCell === '',
+        bodyYear: /^(19[0-6]\d)\.?$/.exec(body) ? Number(/^(19[0-6]\d)/.exec(body)[1]) : null,
+        bodyEmpty: body === '',
+        bodyDashes: /^[-–—\s]*$/.test(body),
+        bodyIsYear: /^19[0-6]\d$/.test(body),
+        wReceipt: IV_RECEIPT.test(body) || IV_BY_CHECK.test(body),
+        wDittoTailed: IV_DITTO_TAILED.test(body),
+        wBill: IV_BILL.test(body),
+        wDeduction: IV_DEDUCTION.test(body) || IV_DEDUCTION_NAMED.test(body),
+        wPaidOnAcct: IV_PAID_ON_ACCOUNT.test(body),
+        wCarry: IV_CARRIED_FORWARD.test(body),
+        wDitto: isDitto(body) || isDittoDated(body),
+        wDittoHeadedOrAnd: IV_DITTO_HEADED.test(body) || IV_AND.test(body),
+        wLetters: /[A-Za-z]/.test(body),
+        wExpenses: IV_EXPENSES.test(body),
+        wRestated: IV_RESTATED.test(body),
+        wNetCheck: IV_NET_CHECK.test(body),
+        wYearTotal: IV_YEAR_TOTAL.test(body),
+        wTotalOnly: /^["'”\s]*total\s*$/i.test(body),
+        kind: null,
+        year: null,
+        titled: false,
+        fEmpty: null,
+        fRestated: null,
+        fPaidOnAcct: null,
+        fNetCheck: null,
+        fYearTotal: null,
+        disp: null,
+        key: null,
+        instWords: null,
+        payWords: null,
+      };
+      ivTrace.push(trace);
       // A cancelled entry is not a charge, not a receipt, and not something
       // the rows around it can be read against. Dropped here rather than
       // skipped below, so that it does not stand between a ruled-off sum and
       // the figure it sums.
       if (amount !== null && ivStruck(row.cells)) {
         ivStruckRows++;
+        trace.disp = 'struck';
         continue;
       }
       // A figure the reader turned down. Said out loud, because the money
@@ -1069,7 +1123,10 @@ let ivUnreadMoney = 0;
           : null);
       if (stated) {
         year = Number(stated[1]);
-        if (/^(19[0-6]\d)\.?$/.test(body) || (!body && amount === null)) continue;
+        if (/^(19[0-6]\d)\.?$/.test(body) || (!body && amount === null)) {
+          trace.disp = 'yearLine';
+          continue;
+        }
       }
       // A description that is nothing but ditto marks repeats the row above it
       // and is whatever that row was. Leaf 28 pays the Webb Publishing Co in
@@ -1213,9 +1270,21 @@ let ivUnreadMoney = 0;
       // any writing in the money columns would be the tidier rule and would
       // lose the only receipt in the volume paid in another currency.
       openPhrase = amount !== null ? null : own === 'item' || own === 'bare' ? openPhrase : own;
+      const finalBody = titled !== null ? `${titled.body}${body ? ` ${body}` : ''}` : body;
+      Object.assign(trace, {
+        kind,
+        year,
+        titled: titled !== null,
+        fEmpty: finalBody === '',
+        fRestated: IV_RESTATED.test(finalBody),
+        fPaidOnAcct: IV_PAID_ON_ACCOUNT.test(finalBody),
+        fNetCheck: IV_NET_CHECK.test(finalBody),
+        fYearTotal: IV_YEAR_TOTAL.test(finalBody),
+      });
       rows.push({
+        trace,
         amount,
-        body: titled !== null ? `${titled.body}${body ? ` ${body}` : ''}` : body,
+        body: finalBody,
         year,
         date: (cells[0] ?? '').trim(),
         kind,
@@ -1253,6 +1322,7 @@ let ivUnreadMoney = 0;
       n.amount !== null &&
       Math.abs(n.amount - r.amount) < 0.005
     ) {
+      r.trace.disp = 'rubbedDraft';
       rows.splice(i, 1);
       ivRubbed++;
     }
@@ -1266,8 +1336,12 @@ let ivUnreadMoney = 0;
   let netRestated = false;
   for (let i = 0; i < rows.length; i++) {
     const r = rows[i];
-    if (r.amount === null) continue;
+    if (r.amount === null) {
+      r.trace.disp = 'text';
+      continue;
+    }
     if (r.year === null) {
+      r.trace.disp = 'unread';
       unparsed.push({
         reason:
           'a money row in Book IV standing after a gap in the transcribed batches, so no year ' +
@@ -1285,6 +1359,7 @@ let ivUnreadMoney = 0;
     // cheques, and no test on the run above it could reach that.
     if (r.kind === 'pencil') {
       ivPencil.push({ year: r.year, amount: r.amount, ...r.where });
+      r.trace.disp = 'pencilSum';
       continue;
     }
     if (r.kind === 'receipt') {
@@ -1314,12 +1389,14 @@ let ivUnreadMoney = 0;
         ivNets.push({ year: r.year, amount: r.amount, ...r.where });
         ivRubbedReceipts++;
         netRestated = true;
+        r.trace.disp = 'rubbedReceipt';
         continue;
       }
       r.receiptObj = { year: r.year, amount: r.amount, date: r.date, ...r.where };
       receipts.push(r.receiptObj);
       sinceSettlement = 0;
       deducting = false;
+      r.trace.disp = 'receipt';
       continue;
     }
     // A subtraction, and never money the book is owed — under either reading
@@ -1331,12 +1408,14 @@ let ivUnreadMoney = 0;
       ivDeductions.push({ year: r.year, amount: r.amount, ...r.where });
       deducting = true;
       netRestated = false;
+      r.trace.disp = 'deduction';
       continue;
     }
     // A page total carried forward restates the sums ruled off on the leaf
     // before it, which were read there.
     if (r.kind === 'carry') {
       ivCarried.push({ year: r.year, amount: r.amount, ...r.where });
+      r.trace.disp = 'carriedForward';
       continue;
     }
     // And what a subtraction leaves. Between a « less » line and the cheque
@@ -1348,15 +1427,18 @@ let ivUnreadMoney = 0;
       if ((r.kind === 'bare' && r.body === '') || IV_RESTATED.test(r.body)) {
         ivNets.push({ year: r.year, amount: r.amount, ...r.where });
         netRestated = true;
+        r.trace.disp = 'netRestated';
         continue;
       }
       if (IV_PAID_ON_ACCOUNT.test(r.body)) {
         ivDeductions.push({ year: r.year, amount: r.amount, ...r.where });
+        r.trace.disp = 'deduction';
         continue;
       }
       if (IV_NET_CHECK.test(r.body)) {
         ivNets.push({ year: r.year, amount: r.amount, ...r.where });
         netRestated = true;
+        r.trace.disp = 'netRestated';
         continue;
       }
       deducting = false;
@@ -1427,6 +1509,7 @@ let ivUnreadMoney = 0;
         (r.body === '' && answer === 'item' && sumsTheRunAbove(rows, i, r.amount, 2)))
     ) {
       ivSubtotals.push({ year: r.year, amount: r.amount, ...r.where });
+      r.trace.disp = 'subtotal';
       continue;
     }
     // A sum carried at the foot of a leaf. From leaf 66 the volume rules off
@@ -1460,12 +1543,14 @@ let ivUnreadMoney = 0;
       answersHere !== 'receipt'
     ) {
       ivCarried.push({ year: r.year, amount: r.amount, ...r.where });
+      r.trace.disp = 'carriedSum';
       continue;
     }
     // A bill restates what was itemised above it; only an unitemised one is a
     // charge in its own right.
     if (r.kind === 'bill' && sinceSettlement > 0) {
       sinceSettlement = 0;
+      r.trace.disp = 'billRestating';
       continue;
     }
     // The red receipt with its words gone. From leaf 157 the volume stops
@@ -1499,6 +1584,7 @@ let ivUnreadMoney = 0;
       ivWordless++;
       sinceSettlement = 0;
       deducting = false;
+      r.trace.disp = 'wordlessReceipt';
       continue;
     }
     if (r.kind === 'bare') ivBlankDescription++;
@@ -1547,6 +1633,8 @@ let ivUnreadMoney = 0;
     });
     r.charged = true;
     r.entry = entries[entries.length - 1];
+    r.trace.disp = r.kind === 'bill' ? 'chargeBill' : r.kind === 'bare' ? 'chargeBare' : 'chargeItem';
+    ivEntryTrace.set(r.entry, r.trace);
     if (r.kind === 'bill') sinceSettlement = 0;
     else sinceSettlement++;
   }
@@ -1699,6 +1787,13 @@ const instalments = [];
       .trim();
   const byTitle = new Map();
   for (const e of entries) {
+    const t = ivEntryTrace.get(e);
+    if (t) {
+      const k = e.description ? titleKey(e.description) : '';
+      t.key = !e.description || k.length < 5 || /^(on acc|payment|balance)/.test(k) ? null : k;
+      t.instWords = INSTALMENT.test(e.entryWords);
+      t.payWords = /\bpayment on acc/i.test(e.entryWords);
+    }
     if (e.ledger !== 'book-iv' || !e.description) continue;
     const k = titleKey(e.description);
     // A row that says only « on account » names no picture, and two such rows
@@ -1721,6 +1816,7 @@ const instalments = [];
       // year later — is another charge and stands.
       if (!INSTALMENT.test(e.entryWords) && !/\bpayment on acc/i.test(keep.entryWords)) continue;
       e.instalmentOf = { leaf: keep.leaf, ref: keep.ref, year: keep.year };
+      ivEntryTrace.get(e).disp = 'instalment';
       instalments.push({
         title,
         gross: e.gross,
@@ -2446,6 +2542,17 @@ const out = {
 };
 
 writeFileSync(resolve(root, 'src/content/accounts.json'), JSON.stringify(out, null, 2) + '\n');
+// The Book IV rows for the Lean model of this reader (issue #27): one line a
+// row, what the words and the cells say and what the rules above made of it.
+// No timestamp, so that it changes only when a reading or a rule does.
+writeFileSync(
+  resolve(root, 'lean/book-iv-rows.json'),
+  '{"note": "Generated by scripts/accounts.mjs: every Book IV row as its Book IV reader saw it and what it decided. Read by scripts/lean.mjs for the Lean model of the reader (issue #27). Do not edit.",\n"rows": [\n' +
+    // Only what is said: a false or empty field is left out, and read back
+    // as false or empty.
+    ivTrace.map((t) => JSON.stringify(t, (k, v) => (v === false || v === null ? undefined : v))).join(',\n') +
+    '\n]}\n',
+);
 
 const tGross = years.reduce((n, y) => n + y.gross, 0);
 const tNet = years.reduce((n, y) => n + y.net, 0);

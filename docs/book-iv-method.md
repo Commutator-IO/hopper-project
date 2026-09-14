@@ -143,3 +143,18 @@ entry's « bill rendered 30 00 » and receipt missing too. Seventy-four leaves
 show at least one written line the transcription lacks, thirty of them red;
 many are the alignment's own noise and each has to be looked at. That is the
 re-reading pass, and `npm run ink -- book-iv --why` is its worklist.
+
+## Stated as functions, and proved
+
+The rules above are also stated in Lean, in
+[`lean/Hopper/BookIV.lean`](../lean/Hopper/BookIV.lean), and the properties this
+note asserts in prose are proved of them for every input in
+[`lean/Hopper/BookIVTheorems.lean`](../lean/Hopper/BookIVTheorems.lean): a bill is
+charged only where nothing was itemised since the last settlement; a « less »
+line is never a charge; a subtotal is recovered exactly as the answering line or
+the arithmetic says; a receipt rubbed out on the net's row counts once; a picture
+paid in parts is charged once at its price; the year is not carried across a gap
+between batches. [`lean/Hopper/ReaderCertificate.lean`](../lean/Hopper/ReaderCertificate.lean)
+proves that the Lean model decides every one of the volume's 3,281 rows as
+`scripts/accounts.mjs` does, so a change to one that is not made to the other
+fails the build (issue #27).

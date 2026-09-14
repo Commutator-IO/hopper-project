@@ -5,3 +5,7 @@ import Hopper.Data.Checked
 import Hopper.Data.Activities
 import Hopper.Data.PencilSums
 import Hopper.Certificate
+import Hopper.BookIVRaw
+import Hopper.Data.BookIV
+import Hopper.BookIVTheorems
+import Hopper.ReaderCertificate
