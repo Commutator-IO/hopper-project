@@ -86,6 +86,12 @@ So **a citation from here prints both**: the leaf, because it is what the book
 itself says and the only number a reader of the photograph can see, and the
 ref, because it is the one the museum can be asked about.
 
+### The corpus itself
+
+Archived on Zenodo, one version per release. Cite all versions with
+[doi:10.5281/zenodo.22770550](https://doi.org/10.5281/zenodo.22770550), or the
+version DOI shown on the record when quoting a specific reading.
+
 ### The form
 
 > Josephine Nivison Hopper and Edward Hopper, Artist's ledger — Book I, leaf 58 (ref 18297).

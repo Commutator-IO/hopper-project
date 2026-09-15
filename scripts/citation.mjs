@@ -54,7 +54,7 @@ const read = (p) => JSON.parse(readFileSync(resolve(root, p), 'utf8'));
  * the one that always resolves to the newest version — not a version DOI.
  * `docs/preservation.md` says what to do and in what order.
  */
-const CONCEPT_DOI = null;
+const CONCEPT_DOI = '10.5281/zenodo.22770550';
 
 const manifest = read('public/transcripts/manifest.json');
 

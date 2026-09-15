@@ -28,6 +28,10 @@ keywords:
   - "TEI"
   - "digital humanities"
   - "Whitney Museum of American Art"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22770550"
+    description: "The concept DOI, which resolves to the most recent archived version."
 references:
   - type: historical-work
     title: "Artist’s ledgers, Books I–V and Dealers/Etchings"

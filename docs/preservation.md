@@ -73,9 +73,14 @@ This is the part a person has to do, and it has an order.
    ```
 3. **Take the concept DOI** — the one Zenodo shows as *« Cite all versions »*,
    not the version DOI — and put it in `CONCEPT_DOI` in
-   `scripts/citation.mjs`. Then `npm run citation`, and `CITATION.cff`,
-   `codemeta.json` and `.zenodo.json` all carry it.
+   `scripts/citation.mjs`. Then `npm run citation`, and `CITATION.cff` and
+   `codemeta.json` carry it. `.zenodo.json` does not, on purpose: it is the
+   metadata Zenodo reads to mint the record, and the record's own DOI has no
+   place in it.
 4. **Say so in the README**, under How to cite.
+
+Done on 15 September 2026: release `v2026.09.13`, concept DOI
+[10.5281/zenodo.22770550](https://doi.org/10.5281/zenodo.22770550).
 
 Until step 3, `CITATION.cff` carries **no DOI at all** rather than a
 placeholder. A citation file with a DOI that resolves to nothing is a worse
