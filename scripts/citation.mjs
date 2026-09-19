@@ -56,6 +56,17 @@ const read = (p) => JSON.parse(readFileSync(resolve(root, p), 'utf8'));
  */
 const CONCEPT_DOI = '10.5281/zenodo.22770550';
 
+/**
+ * The Software Heritage snapshot of the repository — history, branches and
+ * tags, archived under a second institution. It identifies *the software*, so
+ * it goes on `codemeta.json` and nowhere else; the corpus is cited by the DOI.
+ *
+ * A snapshot SWHID names one visit, not the newest one: the archive of
+ * 15 September 2026, which holds `main` at a5fd672 and the tag v2026.09.13.
+ * Replace it only with the SWHID of a later successful visit.
+ */
+const SWHID = 'swh:1:snp:4c71f0b7308d7d6c97aceb53f01673a558ee85a3';
+
 const manifest = read('public/transcripts/manifest.json');
 
 /* ------------------------------------------------------ what is here now */
@@ -212,6 +223,7 @@ const codemeta = {
     'its validator, the accounts and catalogue readers, and the static site that puts ' +
     'a transcription beside the museum’s photograph of the sheet it came from.',
   codeRepository: REPO,
+  ...(SWHID ? { identifier: SWHID } : {}),
   url: SITE,
   license: 'https://spdx.org/licenses/CC0-1.0',
   version,
