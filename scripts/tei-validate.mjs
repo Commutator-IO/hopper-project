@@ -220,6 +220,33 @@ for (const f of files) {
   }
 }
 
+/**
+ * Every hand a file points at is a hand that file declares.
+ *
+ * The schema does not check this and cannot be made to across a corpus: RELAX
+ * NG sees `hand="#edward"` as a pointer and asks nothing about where it lands.
+ * So a mark could name a hand no `<handNote>` declares, and the file would
+ * validate while attributing a page to nobody. The attribution is the one
+ * judgement in this apparatus that no arithmetic can check (see #15), which is
+ * exactly why the part a machine *can* check is checked here.
+ */
+const danglingHands = [];
+for (const f of files) {
+  const text = readFileSync(f, 'utf8');
+  const ids = new Set([...text.matchAll(/<handNote[^>]*xml:id="([^"]+)"/g)].map((m) => m[1]));
+  for (const m of text.matchAll(/\shand="#([^"]+)"/g))
+    if (!ids.has(m[1])) danglingHands.push(`${f.replace(`${root}/`, '')}: hand="#${m[1]}"`);
+}
+if (danglingHands.length) {
+  failed = true;
+  process.stderr.write(
+    'tei: a mark names a hand its own file does not declare —\n' +
+      danglingHands.map((d) => `       ${d}`).join('\n') +
+      '\n     Either the handNote is missing or the attribution is wrong; both\n' +
+      '     are editorial, and neither is a default.\n',
+  );
+}
+
 const undeclared = [...seen.keys()].filter((e) => !declaredElements.has(e)).sort();
 if (undeclared.length) {
   failed = true;

@@ -306,7 +306,8 @@ In priority order:
 | `\note{…}` | the transcriber's note — **ours** |
 | `\marginal{…}` | a note written in the margin of the book — **theirs** |
 | `\hand{jo}{…}` | whose hand |
-| `\sketch{…}` | Edward Hopper's ink record drawing stands here |
+| `\sketch{…}` | Edward Hopper's ink record drawing stands here. In Books I, II and III the TEI export attributes it — `hand="#edward"` — on the authority of Book I's inside cover, « Drawings in the 3 books done by Edward Hopper »; in Book V and the notebooks, which that sentence does not name, it does not |
+| — | in Books I, II and III the export attributes it, `hand="#edward"`, on the inside cover's own declaration; in Book V and the notebooks it does not |
 | `\clipping{…}` | something printed and pasted to the leaf |
 | `\work{Evening Wind}` | a work's block opens, under the title exactly as the leaf gives it |
 | `\ink{red}{rec'd by check}` | the ink a **cell** is written in — `red`, `pencil` or `blue`; black is unmarked. Record the colour, never what you take it to mean: Book IV's receipts are red and its sums pencil, and it is `accounts.mjs` that says so |

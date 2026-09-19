@@ -456,9 +456,23 @@ function convert(tex, meta) {
       i = a;
       flush();
       const type = name === 'sketch' ? 'record-sketch' : 'clipping';
+      // Whose hand the drawing is, where the archive itself says so. The
+      // inside front cover of Book I declares the division — « Recorded by
+      // Jo N Hopper … Drawings in the 3 books done by Edward Hopper » — and
+      // the three books it names are Books I, II and III. So a record sketch
+      // in those three carries `@hand`, and the same mark in Book V or in a
+      // notebook does not: the declaration does not reach them, and an
+      // attribution made by a converter beyond what the leaf says is the thing
+      // the apparatus exists to prevent. The `<head>` said « by Edward
+      // Hopper » in prose long before this; the attribute is the same claim,
+      // where a reader of the XML will find it.
+      const declared = ['book-i', 'book-ii', 'book-iii'].includes(meta.ledger ?? '');
+      const byEdward = name === 'sketch' && declared;
       out.push(
-        `<figure type="${type}">` +
-          (name === 'sketch' ? '<head>Ink record sketch by Edward Hopper</head>' : '') +
+        `<figure type="${type}"${byEdward ? ' hand="#edward"' : ''}>` +
+          (name === 'sketch'
+            ? `<head>Ink record sketch${byEdward ? ' by Edward Hopper' : ''}</head>`
+            : '') +
           (t.trim() ? `<p>${inline(t)}</p>` : '') +
           '</figure>',
       );
