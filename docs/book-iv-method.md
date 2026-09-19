@@ -155,7 +155,8 @@ Acres = 500 » and then three ruled rows — « 1'' payment | 500 »,
 « 2'' '' | 1700 », « 3'' '' | 300 » — each with its third taken off and its own
 date, from January 1932 to January 1934. Read row by row that is three sales of
 one picture. Read as she wrote it, it is one sale of 2500 paid in three parts,
-and that is how it is booked: once, on the first part, at the sum of the parts, with the rate the
+and that is how it is booked: once, on the first part, at the sum of the parts,
+with the rate the
 first row states. The others are reported as instalments and excluded.
 
 What identifies them is her words and not the arithmetic: a row whose first cell
@@ -209,12 +210,15 @@ a rule the reader does not apply.
 The rules above are also stated in Lean, in
 [`lean/Hopper/BookIV.lean`](../lean/Hopper/BookIV.lean), and the properties this
 note asserts in prose are proved of them for every input in
-[`lean/Hopper/BookIVTheorems.lean`](../lean/Hopper/BookIVTheorems.lean): a bill is
+[`lean/Hopper/BookIVTheorems.lean`](../lean/Hopper/BookIVTheorems.lean): a bill
+is
 charged only where nothing was itemised since the last settlement; a « less »
 line is never a charge; a subtotal is recovered exactly as the answering line or
-the arithmetic says; a receipt rubbed out on the net's row counts once; a picture
+the arithmetic says; a receipt rubbed out on the net's row counts once; a
+picture
 paid in parts is charged once at its price; the year is not carried across a gap
-between batches. [`lean/Hopper/ReaderCertificate.lean`](../lean/Hopper/ReaderCertificate.lean)
+between batches.
+[`lean/Hopper/ReaderCertificate.lean`](../lean/Hopper/ReaderCertificate.lean)
 proves that the Lean model decides every one of the volume's 3,281 rows as
 `scripts/accounts.mjs` does, so a change to one that is not made to the other
 fails the build (issue #27).
