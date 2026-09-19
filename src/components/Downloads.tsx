@@ -1,4 +1,5 @@
-import { entryOf, notebookEntryOf, notebookTranscriptUrl, transcriptUrl } from '../lib/batches.ts';
+import { batchName, entryOf, notebookEntryOf, notebookTranscriptUrl, transcriptUrl } from '../lib/batches.ts';
+import { REPO } from '../lib/report.ts';
 import type { Manifest, Pass } from '../lib/types.ts';
 
 /**
@@ -89,6 +90,31 @@ export function Downloads({
           {f.label}
         </a>
       ))}
+      {entry?.changed && (
+        /* When the reading was last corrected, and where to see what changed.
+           The passes beside this say who read the sheets and never move; this
+           is the other fact, and only git holds it. The link goes to the
+           file's history rather than reproducing the commit subjects here:
+           they are written for the repository, at the repository's length. */
+        <a
+          href={`${REPO}/commits/main/transcripts/${notebook ? 'notebooks' : ledger}/${
+            notebook ? notebook : batchName(batch)
+          }.tex`}
+          target="_blank"
+          rel="noreferrer"
+          title={
+            entry.changed.commits > 1
+              ? `${entry.changed.commits} commits have touched this file, the first on ${day(
+                  entry.changed.first,
+                )}. Corrections are made to the LaTeX and everything else is rebuilt.`
+              : 'The commit that added this file; it has not been corrected since'
+          }
+          className="text-[11.5px] text-ink-400 underline decoration-ink-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-600"
+        >
+          {entry.changed.commits > 1 ? 'Last changed ' : 'Added '}
+          {day(entry.changed.last)}
+        </a>
+      )}
       {passes.length > 0 && (
         <span
           className="text-[11.5px] text-ink-400"

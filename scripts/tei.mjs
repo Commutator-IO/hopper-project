@@ -47,6 +47,7 @@
  * number — as structured statements, so provenance stays a fact about the file.
  */
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
+import { fileHistory } from './lib/history.mjs';
 import { resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { keywordTerms, parseKeyword, FACET_LABEL } from './lib/ledger.mjs';
@@ -289,6 +290,32 @@ function texRows(body) {
   }
   out.push(cur);
   return out;
+}
+
+/**
+ * The file's revisions, as `<revisionDesc>`, from git and from nowhere else.
+ *
+ * Every commit that touched the `.tex`, newest first, with its subject line as
+ * written and its short hash — so a deposited file says not only who read the
+ * sheets but that the reading was corrected on such a day, for the reason the
+ * repository gives. `@status` on the file stays what the `respStmt` says it is;
+ * this adds the history under it.
+ *
+ * Empty where git cannot answer (a shallow clone, an export with no `.git`),
+ * and then the element is omitted rather than emitted empty: a `revisionDesc`
+ * with no `change` in it would assert that nothing ever changed.
+ */
+function revisionDesc(source) {
+  if (!source) return '';
+  const log = fileHistory(source);
+  if (!log.length) return '';
+  const changes = log
+    .map((c) => `        <change when="${c.date}" n="${c.short}">${xml(c.subject)}</change>`)
+    .join('\n');
+  return `
+    <revisionDesc>
+${changes}
+    </revisionDesc>`;
 }
 
 function convert(tex, meta) {
@@ -618,7 +645,7 @@ ${Object.entries(FACET_LABEL)
            Doubtful readings are <unclear/>. Prices, dates and names are given as written
            and are not normalised.</p>
       </editorialDecl>
-    </encodingDesc>
+    </encodingDesc>${revisionDesc(meta_.source)}
   </teiHeader>
   <text><body><div>
 ${out.join('\n')}
@@ -650,6 +677,8 @@ for (const d of readdirSync(dir, { withFileTypes: true })) {
     // deposited file keeps its provenance without this site.
     const pass = /^%\s*Pass:\s*(.+)$/m.exec(tex);
     meta.pass = pass ? pass[1].trim() : undefined;
+    // The path as git knows it, so the header can carry the file's revisions.
+    meta.source = `transcripts/${d.name}/${f}`;
 
     const target = resolve(dir, d.name, f.replace(/\.tex$/, '.xml'));
     writeFileSync(target, convert(tex, meta));

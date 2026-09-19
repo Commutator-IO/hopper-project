@@ -295,6 +295,20 @@ export interface TranscriptEntry {
    * Written from one list in `scripts/manifest.mjs`, so the two cannot drift.
    */
   passes?: Pass[];
+  /**
+   * What git knows about the file: the day it was last changed, the day it
+   * first appeared, and how many commits have touched it.
+   *
+   * The passes above are the *reading* and do not move when a figure is
+   * corrected; this is the only record that a correction happened at all. Only
+   * the dates and the count are carried here — the subjects of the commits are
+   * in the TEI export's `revisionDesc` and in the repository itself, and a
+   * manifest the browser loads on every page should not carry fifty commit
+   * messages to show one date. Absent where the build could not read git,
+   * which is a shallow clone, and then the reader shows nothing rather than a
+   * date that would be false.
+   */
+  changed?: { last: string; first: string; commits: number };
 }
 
 /** The model that read a batch's sheets, and the day it did. */

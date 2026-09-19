@@ -103,10 +103,10 @@
           <!-- Provenance: the model that read the sheets, the date, the
                accession number, the rights, the facets. -->
           <moduleRef key="header"
-                     include="availability catDesc category classDecl edition editionStmt
+                     include="availability catDesc category change classDecl edition editionStmt
                               editorialDecl encodingDesc fileDesc handNote idno keywords
-                              profileDesc publicationStmt sourceDesc taxonomy teiHeader
-                              textClass titleStmt"/>
+                              profileDesc publicationStmt revisionDesc sourceDesc taxonomy
+                              teiHeader textClass titleStmt"/>
 
           <!-- The object at the Whitney, as the museum identifies it. -->
           <moduleRef key="msdescription"

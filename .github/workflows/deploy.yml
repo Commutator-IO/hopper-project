@@ -25,7 +25,15 @@ jobs:
     needs: lean
     runs-on: ubuntu-latest
     steps:
+      # The whole history, not the tip: `scripts/manifest.mjs` and
+      # `scripts/tei.mjs` read `git log` for each transcription, so that the
+      # site can say when a reading was last corrected and the TEI can carry
+      # its revisions. A shallow clone reports every file as changed once, on
+      # the day of the last commit, and both are written to say nothing rather
+      # than that.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22

@@ -16,6 +16,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { keywordTerms, parseKeyword } from './lib/ledger.mjs';
+import { fileHistory, historyAvailable } from './lib/history.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const out = resolve(root, 'public/transcripts');
@@ -109,6 +110,20 @@ if (existsSync(out)) {
       e[m[2]] = true;
       if (m[2] === 'tex') {
         const passes = passesOf(readFileSync(resolve(out, ledger, f), 'utf8'));
+        /**
+         * What git knows about the file, which is the only record that a
+         * reading was ever corrected. The passes above say who read the
+         * sheets and when; they do not move when somebody fixes a figure, and
+         * a reader who cited a figure last month has no other way to see that
+         * it changed (#7).
+         *
+         * Only the last change and the count are published: the whole list is
+         * in the TEI's `revisionDesc` and in the repository, and a manifest
+         * the browser loads on every page should not carry fifty commit
+         * subjects to show one date.
+         */
+        const log = fileHistory(`transcripts/${ledger}/${f}`);
+        if (log.length) e.changed = { last: log[0].date, first: log[log.length - 1].date, commits: log.length };
         // `pass` is the first of them and stays the name the site's citation
         // reads, because that clause says « first machine pass by … » and
         // means it. Both are written here from one list, so they cannot come
