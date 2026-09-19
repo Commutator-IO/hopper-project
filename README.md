@@ -57,7 +57,11 @@ it meant every URL named something the museum could not be asked about.
 | [`/dealers/`](https://hopper.commutator.io/dealers/) | **Dealers/Etchings** · 96.213 · 1921–1951 — indexed by dealer rather than by work |
 | [`/timeline/`](https://hopper.commutator.io/timeline/) | Hopper's life beside the dated leaves — every entry sourced |
 | [`/technique/`](https://hopper.commutator.io/technique/) | What the pictures were made of, and what shape — the paint formula in her hand, the sizes in his |
+| [`/diaries/`](https://hopper.commutator.io/diaries/) | Josephine Hopper's notebooks — four digitised by the Whitney, read in sittings, and the twenty-two at Provincetown that are not here |
+| [`/accounts/`](https://hopper.commutator.io/accounts/) | What the books say about money, recovered from the rows under published rules |
+| [`/schema/`](https://hopper.commutator.io/schema/) | The transcription's macros, the TEI they map onto, and what the customisation declares |
 | [`/method/`](https://hopper.commutator.io/method/) | How the reading is done, what it costs, what it does not claim |
+| [`/contribute/`](https://hopper.commutator.io/contribute/) | How to report a reading, and what the tooling refuses |
 
 Every volume page links to the Whitney's own catalogue record for the object,
 so a citation from here is a citation the museum can answer — see

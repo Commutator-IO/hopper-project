@@ -84,6 +84,33 @@ that builds one.
 
 ---
 
+### Notebook
+
+**One of Josephine Hopper's notebooks**, digitised by the Whitney and held in
+the Sanborn Hopper Archive rather than among the six ledgers. A sibling of
+`Ledger`, not a kind of it: a notebook has no accession number of the ledgers'
+series, its sheets are pages and openings rather than ruled leaves, and its
+unit of work is a sitting rather than a batch. Four are digitised, and the type
+is a closed union of their four ids, so a fifth cannot be added without the
+decision being made in the types.
+
+| Field | What it is |
+|---|---|
+| `id` | `garrulities`, `three-wash-sq`, `battle-of-wash-sq`, `black-notebook`. This site's slug, and the URL under `/diaries/`. |
+| `collection` | ResourceSpace's featured-collection id, as for a ledger. |
+| `title` | Her title, as the Whitney gives it; brackets are the cataloguer's. |
+| `date`, `years` | The Whitney's recorded date, verbatim, and the years it spans. |
+| `archiveNumber` | The Sanborn Hopper Archive number, where the caption gives one. |
+| `scope` | The Whitney's scope and contents note, verbatim. |
+| `sheets` | How many photographs the digitisation holds. Counted, never declared. |
+
+A `NotebookSheet` is the ledgers' `Sheet` with one addition: `spread`, the
+second page number where the photograph took an opening, because « Pages 2-3 »
+is one image of two pages and a cover is an image of none.
+
+Defined in `src/lib/types.ts`; generated into `src/content/catalogue.ts` beside
+the ledgers.
+
 ## The reading's units
 
 ### Batch
@@ -105,6 +132,19 @@ One `.tex` file per batch, `batch-NN.tex`, and no register in the name because
 [there is one edition](#one-edition-and-why).
 
 Defined in `src/lib/batches.ts` and `.claude/skills/transcribe-hopper/`.
+
+### Sitting
+
+**Twelve consecutive sheets of a notebook**, appended to that notebook's one
+file. The batch's unit of attention without the batch's unit of storage: a
+ledger's batches are separate files because a volume is read a hundred sheets
+at a time and a citation names the batch, while a notebook is one document
+whose file grows until it is read whole, so that a half-read notebook shows as
+half read and nothing has to be declared.
+
+Each sitting adds a `% Pass:` line to the file's header, so a notebook's
+provenance is a list of passes where a batch's is a single one, and the
+citation clause takes the first of them.
 
 ### Transcription
 
@@ -201,6 +241,25 @@ The facets are declared in `scripts/lib/ledger.mjs` and published as a
 and `npm run tei:validate` refuses a facet outside it.
 
 ---
+
+## What may enter the corpus
+
+A document may be read here when the institution that holds it publishes a
+photograph of every sheet, openly, at a resolution at which the writing can be
+read. That is not a preference; it follows from the one rule the interface
+exists to serve — the reading stands beside the photograph, and a reader
+settles a doubtful figure by looking. A transcription with no facsimile beside
+it asks to be trusted, which is the thing this edition refuses to ask.
+
+So a document with no public digitisation does not get a reading view. It can
+still be cited as a source, the way the Provincetown typescripts are: named,
+addressed by the holder's own reference, quoted where a claim rests on it, and
+never presented as something a reader of this site can check here. If the
+holder later publishes the sheets, the document becomes transcribable and
+nothing else about it changes.
+
+This is the answer that governs any proposal to read a corpus the museums have
+not digitised, and it was written down because a proposal was waiting on it.
 
 ## Two things the model deliberately does not have
 

@@ -501,6 +501,55 @@ export function MethodPage() {
         </p>
       </section>
 
+      {/* Who is behind this, and where a rights holder writes.
+          An archive that asks to be trusted with readings of a copyrighted
+          manuscript, and that calls its own transcriptions unauthorised working
+          documents, is in a weaker position when it is also anonymous. The
+          rights are stated in the footer and above; this is the other half —
+          a name, an address, and what happens when somebody objects. */}
+      <section className="border-b border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">Who keeps this, and how to write</h2>
+        <div className="mt-3 max-w-3xl space-y-3 text-[14.5px] leading-relaxed text-ink-700">
+          <p>
+            This edition is made and maintained by <strong className="text-ink-800">Michel
+            Hua</strong> at <a
+              href="https://www.commutator.io"
+              className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+            >Commutator</a>, Paris, who set the task and directs the reading; the transcriptions
+            themselves were made by the models named on each sheet. Write to{' '}
+            <a
+              href="mailto:michel@commutator.io"
+              className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+            >michel@commutator.io</a>, or open an issue on{' '}
+            <a
+              href="https://github.com/Commutator-IO/hopper-project/issues"
+              className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+            >GitHub</a>. A correction to a reading is the most useful letter this project can
+            receive, and <a
+              href={url('/contribute/')}
+              className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+            >Contribute</a> says what it needs to contain.
+          </p>
+          <p>
+            The project has <strong className="text-ink-800">no connection to the Whitney Museum
+            of American Art, to the Sanborn Hopper Archive, or to the Artists Rights
+            Society</strong>, and speaks for none of them. The photographs are the museum’s and
+            are fetched from its server as they are looked at; the words are © Heirs of Josephine
+            N. Hopper, licensed by ARS, New York, and are transcribed here for study and
+            criticism without permission having been sought.
+          </p>
+          <p>
+            <strong className="text-ink-800">If a rights holder or the museum asks for something
+            to come down</strong>, write to the address above. The material named will be removed
+            from the site and from the repository’s working tree on receipt, before any argument
+            about whether it had to be; what was removed and at whose request is then recorded in
+            a public issue, so that the archive’s gaps are visible rather than silent. Requests
+            that concern the museum’s photographs are for the museum to make, since nothing here
+            stores one.
+          </p>
+        </div>
+      </section>
+
       <section className="py-8">
         <h2 className="font-serif text-2xl text-ink-900">The six volumes</h2>
         <p className="prose-note mt-1.5 max-w-3xl">

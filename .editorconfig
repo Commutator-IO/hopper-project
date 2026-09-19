@@ -1,0 +1,25 @@
+# Shared by every editor that reads this file, so that a diff is the change and
+# not a reflow. The prose conventions themselves are in CONTRIBUTING.md.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+max_line_length = 80
+# Two trailing spaces are a hard line break in Markdown, and nothing here uses
+# one; trimming them is therefore safe and keeps diffs clean.
+
+# The transcriptions are LaTeX and are wrapped by hand at the width of a ruled
+# leaf's line, so no editor may reflow them.
+[transcripts/**.tex]
+max_line_length = off
+trim_trailing_whitespace = false
+
+[*.{json,cff,yml,yaml}]
+indent_size = 2

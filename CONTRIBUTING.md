@@ -92,6 +92,75 @@ the same.
 - **Never extend the LaTeX subset** without extending `scripts/render.mjs`,
   `scripts/tei.mjs` and `transcripts/preamble/hopper.sty` in the same commit.
 
+## Typography is presentation, and never a reading
+
+The apparatus only works if a reader can tell an editorial mark from the
+writer's own at a glance, and the two renderers — `scripts/render.mjs` for the
+screen and `transcripts/preamble/hopper.sty` for the PDF — must not disagree
+about which is which. The rule is this: **a macro's meaning is in the macro,
+never in how it looks, and the two renderings of one macro must be
+distinguishable in the same way.** A reading is never changed to make it set
+better, and a mark is never given the writer's own typography.
+
+The case that decides it: `\uncertain{}` is ours and Josephine Hopper's
+underlining is hers, so they must never both be a plain underline. They are
+not — the PDF underlines the doubtful reading and the HTML gives it a dotted
+border — but the constraint is the thing to keep, not the particular choice.
+
+| Macro | PDF (`hopper.sty`) | HTML (`render.mjs`) | Agree? |
+|---|---|---|---|
+| `\uncertain{}` | underlined, not coloured | dotted underline, gold | yes on the underline, not on colour |
+| `\ill{}` | red `[…]` | red `.ill` | yes |
+| `\add{}` | blue `[…]` | blue `.add` | yes |
+| `\struck{}` | struck through | `<del>`, struck through | yes |
+| `\marginal{}` | indented, grey | set apart from the text block | yes |
+| `\note{}` | set apart from the writer's text | set apart, and folded | yes |
+| `\hand{}` | not marked in the body | not marked in the body | yes |
+| `\emph{}` — hers | italic | `<em>` | yes |
+
+Two things follow and are worth writing down because neither is obvious.
+**Colour is not the distinction**; it is an aid to it, which is why the PDF can
+leave `\uncertain{}` uncoloured where the screen colours it without the two
+disagreeing about anything that matters. A distinction that existed only in
+colour would be lost in a photocopy and on a colour-blind reader, so no macro
+may rely on one.
+And **vulgar fractions pass through as written** — « 16 2/3 » is set as the
+writer set it, in both renderers, because rendering it as a stacked fraction
+would be a normalisation performed by a stylesheet, which is the one place
+nobody would look for it.
+
+## Markdown is for the repository's prose, and never for a transcription
+
+`README.md`, `CONTRIBUTING.md`, the files under `docs/` and the skill
+documents are Markdown. **A transcription is not, and never will be.** The
+source of record is the restricted LaTeX under `transcripts/`, because
+`scripts/render.mjs` accepts a defined subset and fails loudly outside it,
+which is what stops a converter silently mangling a ruled table, and because
+Markdown has no way to say `\ill{}`, `\hand{}` or `\uncertain{}` — the marks
+that are the whole honesty of the exercise.
+
+For the prose itself:
+
+- **One sentence is not one line, and one line is not one sentence.** Wrap at
+  80 columns, which is what `.editorconfig` declares and what every diff in
+  this repository is shaped for.
+- **ATX headings** (`##`), sentence case, no trailing `#`.
+- **Tables** are pipe tables with a leading and trailing pipe, and are not
+  padded into alignment: a padded table is re-padded by the next editor and the
+  diff is the whole table.
+- **Emphasis** is `*italic*` and `**bold**`; `_underscores_` are not used,
+  because they appear inside identifiers.
+- **Guillemets** (« ») quote the books' own words, in the prose as in the
+  transcriptions; ordinary double quotes quote everybody else.
+- **Em dashes** are written as the character —, spaced, and never as `--`.
+  `--` in Markdown is `--`, and the difference shows.
+- **Links** are inline; reference-style links are not used, because a link
+  whose target sits forty lines away is a link nobody checks.
+
+There is no Markdown linter to enforce any of this: issue #13 was closed as
+completed without landing one, and until it does, these are conventions kept by
+hand — see #5.
+
 ## What you can and cannot license to us
 
 The repository is CC0, and a pull request contributes your own work to the
