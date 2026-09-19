@@ -12,10 +12,16 @@
  * by sheet against the photograph, and whether a batch holds nothing to
  * transcribe, are two things no file can show. They are declared there, where
  * a change is a diff somebody can review.
+ *
+ * It writes two files, from one reading of the sources. `manifest.json` is
+ * what every page of the site fetches. `keywords.json` is the index of terms
+ * merged across the volumes, which one page fetches — see the comment above
+ * `byLabel` for why it is beside the manifest and not inside it, and for what
+ * the merge does and does not claim.
  */
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { keywordTerms, parseKeyword } from './lib/ledger.mjs';
+import { keywordTerms, parseKeyword, FACETS } from './lib/ledger.mjs';
 import { fileHistory } from './lib/history.mjs';
 
 const root = resolve(import.meta.dirname, '..');
@@ -276,6 +282,69 @@ for (const [ledger, byLabel] of Object.entries(tags)) {
 }
 
 /**
+ * The same terms again, keyed by the label instead of by the volume: the
+ * index.
+ *
+ * `tags` above is per volume, which is what a ledger page wants — there a term
+ * is a filter over that volume's own sheets. It is also why a reader looking
+ * for Kraushaar has to know which volume to open first: the dealer runs
+ * through five of them and appears five times, as five unrelated pills that
+ * nothing joins. Keyed by the label, the term becomes the entry and the
+ * volumes become what it points at, which is what an index is.
+ *
+ * ## What it merges, and what it therefore is not
+ *
+ * **It merges across volumes and nothing else.** The key is the label exactly
+ * as somebody wrote it: « Keppel » and « Kepple » are two entries, and so are
+ * « Wm. Macbeth » and « Macbeth Gallery ». The spelling as written is how an
+ * entry is found, and a build script that folded them would be performing the
+ * one thing this edition refuses, in the one place nobody would look for it.
+ * So this is **not** an authority file and no entry here is a person: an entry
+ * is a string that somebody wrote after reading a leaf, and the leaves are
+ * what say whether two of them are the same man.
+ *
+ * **It does not settle the facet either.** Inside a volume the first batch to
+ * declare one fixes it, above. Across volumes two readings may differ —
+ * Duncan Phillips is a `person` in Book I and a `collection` in Book III, and
+ * both are true of him — so the entry keeps every facet any volume declared
+ * and the page stands the term under each. Picking one would decide from a
+ * build script a question only the sheets decide, and seven terms currently
+ * turn on it.
+ *
+ * ## Why it is written beside the manifest and not into it
+ *
+ * It is about as large as `tags` itself, and every page of the site fetches
+ * the manifest while one page fetches this. The manifest already declines to
+ * carry a file's commit subjects for the same reason.
+ */
+const byLabel = new Map();
+// The volume keys in a fixed order, because the loops above walked them in
+// `readdirSync` order — which is the filesystem's, not ours. An index whose
+// sources came out in a different order on two machines reading the same
+// corpus would be a derived file that cannot be compared.
+for (const ledger of Object.keys(tags).sort()) {
+  for (const t of tags[ledger]) {
+    const e = byLabel.get(t.tag) ?? { label: t.tag, facets: [], volumes: [] };
+    e.volumes.push({ ledger, facet: t.facet, batches: t.batches });
+    if (t.facet !== null && !e.facets.includes(t.facet)) e.facets.push(t.facet);
+    byLabel.set(t.tag, e);
+  }
+}
+const keywordIndex = [...byLabel.values()]
+  // In the vocabulary's own order rather than in the order the volumes happen
+  // to be read, so that a term placed twice reads « person, collection » the
+  // way the facets are published everywhere else.
+  .map((e) => ({ ...e, facets: FACETS.filter((f) => e.facets.includes(f)) }))
+  // `localeCompare` leaves ties — two labels differing only in case or in an
+  // accent compare equal — and a tie is exactly where a sort stops being
+  // reproducible. The code-point comparison behind it is the tie-break, so the
+  // order is total and two runs write the same bytes.
+  .sort(
+    (a, b) =>
+      a.label.localeCompare(b.label, 'en') || (a.label < b.label ? -1 : a.label > b.label ? 1 : 0),
+  );
+
+/**
  * A census of the apparatus itself, per ledger.
  *
  * The schema page argues that these books are a data model, and an argument
@@ -349,8 +418,15 @@ const manifest = {
 
 writeFileSync(resolve(out, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 
+// No `generated` on this one, deliberately. The manifest carries a timestamp
+// because the site shows one; the index is a pure function of the `.tex`
+// files, and stamping it would make two runs over an unchanged corpus differ
+// by the only line nobody could check.
+writeFileSync(resolve(out, 'keywords.json'), JSON.stringify(keywordIndex, null, 2) + '\n');
+
 process.stdout.write(
   `manifest: ${Object.keys(transcripts).length} batch(es), ` +
     `${Object.values(readCount).reduce((a, b) => a + b, 0)} sheets transcribed, ` +
+    `${keywordIndex.length} term(s) indexed, ` +
     `${Object.keys(tags).length} ledger(s) tagged\n`,
 );

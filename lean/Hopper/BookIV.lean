@@ -243,10 +243,15 @@ def classify (s : AState) (l : Loose) (amount : Option Int) (later : Bool) : Cla
     else if amount.isSome && (own == .item || own == .bare) && s.openPhrase.isSome then
       s.openPhrase.getD own
     else if title.isSome then .item else own
+  -- The ink, where the leaf records it. Red says « received » whatever stands
+  -- beside it, and from leaf 157 nothing does. Pencil says « a sum » only of a
+  -- bare figure or one the writer ruled off: a whole entry can be written in
+  -- pencil — leaf 89's last is — and its charge is a charge for all that the
+  -- medium changed.
   let byInk : Option Kind :=
     if amount.isNone then none
     else if l.inkRed then some .receipt
-    else if l.inkPencil then some .pencil else none
+    else if l.inkPencil && (own == .bare || l.ruled) then some .pencil else none
   let contradicts :=
     (byInk == some .receipt && (own == .bill || own == .deduction)) ||
     (byInk == some .pencil && own == .receipt)

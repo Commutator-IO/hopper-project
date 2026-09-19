@@ -24,7 +24,7 @@ const ledgers = idsIn(ledgerPart).map((id) => `/${id}/`);
 // And the notebooks, read the same way, under /diaries/.
 const notebooks = idsIn(notebookPart ?? '').map((id) => `/diaries/${id}/`);
 
-const paths = ['/', ...ledgers, '/timeline/', '/accounts/', '/technique/', '/schema/', '/method/', '/contribute/', '/diaries/', ...notebooks];
+const paths = ['/', ...ledgers, '/index/', '/timeline/', '/accounts/', '/technique/', '/schema/', '/method/', '/contribute/', '/diaries/', ...notebooks];
 
 const today = new Date().toISOString().slice(0, 10);
 

@@ -165,6 +165,16 @@ read off the middle of a volume and applied to its opening will do that, and it
 is the reason the colour is recorded as a fact on the cell and interpreted
 here, where the interpretation can be argued with.
 
+Pencil, for its part, says « a sum » only of a figure with no words of its own,
+or one the writer ruled off. A whole entry can be written in pencil — leaf 89's
+last is, « Dec 9. | Bette Martin | 1 Night in Park | 15 » — and its charge is a
+charge for all that the medium changed. What the pencil settles is the bare
+figure at the foot, which has no words to be read instead: leaf 89's 3615.34,
+under a rule, is the leaf carried, and it is the five receipts above it plus
+that unsettled 15. Red needs no such guard, since a red figure is money
+received whether or not anything is written beside it, and from leaf 157
+nothing is.
+
 What the export carries into `lean/book-iv-rows.json` is therefore the ink the
 reader may hear, not every ink the leaf bears — the certificate recomputes the
 dispositions from those features and would otherwise be proving agreement with

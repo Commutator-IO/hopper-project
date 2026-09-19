@@ -164,7 +164,7 @@ theorem classify_less {s : AState} {l : Loose} {amount : Option Int} {later : Bo
     (classify s l amount later).kind = .deduction ∨ (classify s l amount later).kind = .pencil := by
   have hown : ownKind s l = .deduction := by simp [ownKind, h1, h2, h3, h4]
   simp only [classify, hown]
-  cases amount <;> cases l.inkRed <;> cases l.inkPencil <;> simp
+  cases amount <;> cases l.inkRed <;> cases l.inkPencil <;> cases l.ruled <;> simp
 
 /-- So, under any state and whatever surrounds it, such a row is never charged. -/
 theorem less_never_charged {s : AState} {l : Loose} {amount : Option Int} {later : Bool}

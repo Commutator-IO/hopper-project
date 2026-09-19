@@ -1297,8 +1297,22 @@ const ivEntryTrace = new Map();
       // kind of thing a rule invented from the volume's middle does to its
       // opening.
       const moneyInk = inkSpeaks(row.leaf, row) ? (row.inks?.[2] ?? row.inks?.[3] ?? null) : null;
+      //
+      // Pencil says « a sum » only of a figure with no words of its own. A
+      // whole entry can be written in pencil — leaf 89's last, « Dec 9. |
+      // Bette Martin | 1 Night in Park | 15 », is — and its charge is a charge
+      // for all that the medium changed. What the pencil settles is the bare
+      // figure at the foot, which has no words to be read instead. Red needs
+      // no such guard: a red figure is money received whether or not anything
+      // is written beside it, and from leaf 157 nothing is.
       const byInk =
-        amount === null ? null : moneyInk === 'red' ? 'receipt' : moneyInk === 'pencil' ? 'pencil' : null;
+        amount === null
+          ? null
+          : moneyInk === 'red'
+            ? 'receipt'
+            : moneyInk === 'pencil' && (own === 'bare' || row.ruled === true)
+              ? 'pencil'
+              : null;
       const contradicts =
         byInk !== null &&
         ((byInk === 'receipt' && (own === 'bill' || own === 'deduction')) ||
