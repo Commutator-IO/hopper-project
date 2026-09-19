@@ -101,6 +101,11 @@ jobs:
       - run: git diff --exit-code src/content/framing.json
       - run: npm run spending
       - run: git diff --exit-code src/content/spent.json
+      # The calendar of dated rows. It had drifted from the transcriptions
+      # unnoticed — three rows and a day — because it was the one derived file
+      # in src/content/ that nothing regenerated and compared here.
+      - run: npm run streak
+      - run: git diff --exit-code src/content/streak.json
 
       # Tectonic, pinned, for the transcript PDFs. A static musl binary from
       # the project's own releases rather than a piped install script or the

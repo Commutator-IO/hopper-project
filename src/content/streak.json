@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-13T16:44:30.168Z",
+ "generated": "2026-09-19T21:00:50.977Z",
  "basis": "Every row of the six ledgers whose date column resolves to a calendar day. These are the days the books record a transaction, not the days Edward Hopper worked, and Josephine Hopper wrote almost all of them.",
  "span": [
   1913,
@@ -13,12 +13,12 @@
   "book-v",
   "dealers"
  ],
- "rowsDated": 2146,
- "distinctDays": 1204,
+ "rowsDated": 2143,
+ "distinctDays": 1203,
  "rowsWithMonthUnresolved": 152,
  "yearRolls": 7,
  "perLedger": {
-  "book-i": 358,
+  "book-i": 355,
   "book-ii": 2,
   "book-iv": 1287,
   "book-v": 15,
@@ -35,7 +35,7 @@
   197,
   197,
   179,
-  215,
+  214,
   207,
   175
  ],
@@ -51,7 +51,7 @@
   53,
   96,
   98,
-  127
+  126
  ],
  "years": [
   [
@@ -151,8 +151,8 @@
   ],
   [
    1932,
-   12,
-   21
+   11,
+   19
   ],
   [
    1933,
@@ -162,7 +162,7 @@
   [
    1934,
    17,
-   48
+   47
   ],
   [
    1935,
@@ -5787,7 +5787,7 @@
   ],
   [
    "1932-01-19",
-   2,
+   1,
    1,
    "book-i/8/17216"
   ],
@@ -5832,12 +5832,6 @@
    1,
    32,
    "dealers/1/16206"
-  ],
-  [
-   "1932-12-29",
-   1,
-   1,
-   "book-i/8/17529"
   ],
   [
    "1933-01-03",
@@ -5913,7 +5907,7 @@
   ],
   [
    "1934-01-05",
-   3,
+   2,
    33,
    "book-i/1/17443"
   ],

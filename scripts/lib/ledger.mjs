@@ -646,7 +646,17 @@ const printing = (s) => s.replace(/\\([%$&#_{}])/g, '$1');
  */
 export function parseKeyword(term) {
   const m = /^([a-z]+):\s*(.+)$/.exec(term.trim());
-  if (!m || !FACETS.includes(m[1])) return { facet: null, label: printing(term.trim()) };
+  // A prefix that looks like a facet and is not one is a mistake, not a term.
+  // « material:Flake White » stood unplaced for months, printed with its
+  // prefix as part of the name, beside the « medium:Flake White » it meant;
+  // the index of #11 is what made it visible. A term with no prefix at all is
+  // still allowed — plenty are — but an undeclared prefix stops the build.
+  if (m && !FACETS.includes(m[1]))
+    throw new Error(
+      `keywords: "${m[1]}:" is not a facet. The facets are ${FACETS.join(', ')}; ` +
+        `write the term without a prefix if none of them fits (in « ${term.trim()} »)`,
+    );
+  if (!m) return { facet: null, label: printing(term.trim()) };
   return { facet: m[1], label: printing(m[2].trim()) };
 }
 
