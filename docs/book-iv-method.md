@@ -144,6 +144,32 @@ show at least one written line the transcription lacks, thirty of them red;
 many are the alignment's own noise and each has to be looked at. That is the
 re-reading pass, and `npm run ink -- book-iv --why` is its worklist.
 
+## When the ink speaks, and when it does not
+
+Book IV's colour is its status field — receipts red, sums pencil, charges
+black — and the reader takes a red figure for money received whatever the words
+beside it say. That rule has a beginning, and before it the red does the
+opposite work.
+
+On leaf 3 and through the first four entries of leaf 7 it is the drawings'
+**prices** that are written in red, and the receipts that are black. The last
+line of leaf 7 — « May 23rd | Rec'd by check | 40 | 00 » — is the first receipt
+in red, and the leaf's own note says the convention runs from there. So
+`inkSpeaks` in `scripts/accounts.mjs` lets the ink decide only from that line
+onward: leaf 7 is taken row by row, since it changes mid-sheet, and everything
+from leaf 8 on speaks freely.
+
+The rule was found by recording the colour and watching the receipts rise: the
+first pass over leaves 3 and 7 turned eleven prices into money received. A rule
+read off the middle of a volume and applied to its opening will do that, and it
+is the reason the colour is recorded as a fact on the cell and interpreted
+here, where the interpretation can be argued with.
+
+What the export carries into `lean/book-iv-rows.json` is therefore the ink the
+reader may hear, not every ink the leaf bears — the certificate recomputes the
+dispositions from those features and would otherwise be proving agreement with
+a rule the reader does not apply.
+
 ## Stated as functions, and proved
 
 The rules above are also stated in Lean, in

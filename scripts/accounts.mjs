@@ -953,6 +953,29 @@ let ivWordless = 0;
 // the next row repeats, or a receipt standing on the net's own row.
 let ivRubbed = 0;
 let ivRubbedReceipts = 0;
+/**
+ * Whether the ink may be read as a status on this leaf.
+ *
+ * Book IV's colour becomes its status field at a stated point and not before:
+ * the last line of leaf 7 is the first receipt written in red, and the leaves
+ * before it use red for the prices of the drawings instead. A rule read off
+ * the volume's middle and applied to its opening reads those prices as money
+ * received.
+ *
+ * Leaf 7 itself is mixed, so it is taken line by line: only its final row, the
+ * one the leaf's note names, is allowed to speak. Everything from leaf 8 on
+ * speaks freely.
+ */
+const INK_FIRST_LEAF = 7;
+const inkSpeaks = (leaf, row) => {
+  const n = Number(leaf);
+  if (!Number.isFinite(n)) return true;
+  if (n > INK_FIRST_LEAF) return true;
+  if (n < INK_FIRST_LEAF) return false;
+  // On leaf 7, the red receipt is the only row whose date cell is red as well.
+  return (row.inks?.[0] ?? null) === 'red';
+};
+
 // Rows the ink decided — red money read as a receipt, pencil money as a sum —
 // where the words alone would have said otherwise, and rows where the ink and
 // the words contradict each other and the words were kept.
@@ -1041,8 +1064,18 @@ const ivEntryTrace = new Map();
         struck: ivStruck(row.cells),
         rubbed: ivUncertainFigure(row.cells),
         ruled: row.ruled === true,
-        ink: (row.inks?.[2] ?? row.inks?.[3] ?? null) === 'red' ? 'red'
-          : (row.inks?.[2] ?? row.inks?.[3] ?? null) === 'pencil' ? 'pencil' : null,
+        // The ink the reader is allowed to hear, which is not every ink on the
+        // leaf: before the convention starts, on leaf 7's last line, red marks
+        // the prices and not the receipts (see `inkSpeaks`). The certificate
+        // in `lean/` recomputes every disposition from these features, so what
+        // is exported here has to be the feature the rule actually reads.
+        ink: !inkSpeaks(row.leaf, row)
+          ? null
+          : (row.inks?.[2] ?? row.inks?.[3] ?? null) === 'red'
+            ? 'red'
+            : (row.inks?.[2] ?? row.inks?.[3] ?? null) === 'pencil'
+              ? 'pencil'
+              : null,
         dateYear: /^(19[0-6]\d)\.?$/.exec(dateCell) ? Number(/^(19[0-6]\d)/.exec(dateCell)[1]) : null,
         dateEmpty: dateCell === '',
         bodyYear: /^(19[0-6]\d)\.?$/.exec(body) ? Number(/^(19[0-6]\d)/.exec(body)[1]) : null,
@@ -1253,7 +1286,17 @@ const ivEntryTrace = new Map();
       // flatly contradict, a red « bill » or a pencil « rec'd », the words are
       // kept and the contradiction counted, because one of the two readings
       // is wrong and this file is not the place to decide which.
-      const moneyInk = row.inks?.[2] ?? row.inks?.[3] ?? null;
+      //
+      // The convention has a beginning, and before it the red means the
+      // opposite. On leaf 3 and on the first four entries of leaf 7 it is the
+      // drawings' *prices* that are written in red and the receipts that are
+      // black; the last line of leaf 7 — « May 23rd | Rec'd by check | 40 | 00 »
+      // — is the first receipt in red, and the leaf's own note says the
+      // convention runs from there. So the ink speaks only from that line on.
+      // Reading it earlier turned eleven prices into receipts, which is the
+      // kind of thing a rule invented from the volume's middle does to its
+      // opening.
+      const moneyInk = inkSpeaks(row.leaf, row) ? (row.inks?.[2] ?? row.inks?.[3] ?? null) : null;
       const byInk =
         amount === null ? null : moneyInk === 'red' ? 'receipt' : moneyInk === 'pencil' ? 'pencil' : null;
       const contradicts =

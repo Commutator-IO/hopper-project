@@ -242,10 +242,12 @@ for (const dir of existsSync(out) ? readdirSync(out, { withFileTypes: true }) : 
  * rather than offering a filter that would return the same sheets for every
  * term.
  */
+const notebookKeys = new Set();
 if (existsSync(resolve(out, 'notebooks'))) {
   for (const f of readdirSync(resolve(out, 'notebooks'))) {
     if (!f.endsWith('.tex')) continue;
     const id = f.replace(/\.tex$/, '');
+    notebookKeys.add(id);
     const src = readFileSync(resolve(out, 'notebooks', f), 'utf8');
     const sittings = [
       ...new Set(
