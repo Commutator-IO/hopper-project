@@ -151,7 +151,16 @@
 
 % Illegible: never guessed. On a ledger leaf this is most often a figure, and
 % a guessed figure is a fabricated transaction.
-\newcommand{\ill}{\textcolor{red!60!black}{[\,\ldots\,]}}
+%
+% The optional argument says *why* the reading failed, where the leaf shows it:
+% \ill[blot]{}, \ill[under paper]{}, \ill[trimmed]{}. It is not decoration.
+% A word lost under a blot is gone, and a block hidden under a pasted clipping
+% is legible the day somebody lifts the paper or the museum photographs the
+% verso --- and the export carries the difference as TEI's @reason, so a reader
+% of the XML can tell the two apart without reading the notes. The bare form
+% stays valid and exports as it always did, because the cause is often not
+% known and inventing one would be the same sin as guessing the word.
+\NewDocumentCommand{\ill}{o}{\textcolor{red!60!black}{[\,\ldots\,]}}
 
 % A doubtful reading: the word or figure is given, and flagged as uncertain.
 %
@@ -162,7 +171,14 @@
 % underlines. Which of them keeps the underline is decided by consequence: an
 % emphasis shown as italic loses nothing, and a doubtful figure shown as a
 % certain one loses everything.
-\newcommand{\uncertain}[1]{\uline{#1}}
+% The optional argument is the confidence, and it has one value: `low`, for a
+% reading the transcriber offers without having read it --- « offered rather
+% than read », as some twenty notes in this corpus put it. « I read this and
+% doubt it » and « I propose this having failed to read it » are different
+% claims about the sheet, and until now both were \uncertain{} with the
+% difference explained in prose. It exports as @cert, which is where a reader
+% of the TEI will look for it.
+\NewDocumentCommand{\uncertain}{om}{\uline{#2}}
 
 % An editorial addition — an expanded abbreviation, an implied dollar sign.
 \newcommand{\add}[1]{\textcolor{blue!50!black}{[#1]}}

@@ -237,7 +237,23 @@ function plain(s) {
  */
 const HANDS = new Set(['edward', 'jo', 'later', 'unidentified']);
 
+/**
+ * The optional arguments the subset allows, macro by macro, and the values
+ * each may take.
+ *
+ * `\ill[…]` is the exception with an open list: the cause is whatever the leaf
+ * shows — a blot, paper pasted over it, a trimmed edge — and a closed list
+ * would have to be guessed in advance. `\uncertain[…]` takes one value, since
+ * the distinction it draws is binary: a reading doubted, or a reading offered
+ * without having been read.
+ */
+const OPTIONAL = { ill: null, uncertain: ['low'] };
+
 const ILL = '<span class="ill" title="illegible - not guessed">[&hellip;]</span>';
+
+/** The same mark, carrying the cause the leaf shows: « blot », « under paper ». */
+const ill = (why) =>
+  `<span class="ill" title="illegible (${esc(why)}) - not guessed">[&hellip;]</span>`;
 
 /** Inline commands: name -> [arity, render]. */
 const INLINE = {
@@ -254,7 +270,13 @@ const INLINE = {
   // at the head of every reading view explains, so a reader meeting the mark
   // for the first time is one glance from knowing that it means "illegible,
   // and not guessed".
-  uncertain: [1, (a) => `<span class="uncertain" title="doubtful reading">${a[0]}</span>`],
+  uncertain: [
+    1,
+    (a, ctx) =>
+      `<span class="uncertain" title="${
+        ctx?.opt === 'low' ? 'offered rather than read' : 'doubtful reading'
+      }">${a[0]}</span>`,
+  ],
   add: [1, (a) => `<span class="add" title="editorial addition">[${a[0]}]</span>`],
   struck: [1, (a) => `<del title="struck out in the book">${a[0]}</del>`],
   hand: [
@@ -474,12 +496,26 @@ function render(src, file, meta) {
         // Written `\ill{}` by every transcriber, because that is how it looks
         // in every other apparatus macro. The macro takes no argument, so the
         // empty group is swallowed here rather than left to render as `{}`.
+        // The optional argument, where there is one, is the cause: it is shown
+        // in the title so a reader hovering the mark learns why the reading
+        // failed without opening the notes.
+        const why = /^\[([^\]]{1,40})\]/.exec(s.slice(j));
+        if (why) j += why[0].length;
         if (s.slice(j, j + 2) === '{}') j += 2;
-        o += ILL;
+        o += why ? ill(why[1]) : ILL;
         continue;
       }
       const spec = INLINE[name];
       if (!spec) throw new TexError(file, line, `\\${name} is outside the permitted subset`);
+      // An optional argument, where a macro takes one: `\uncertain[low]{…}`.
+      // Only the macros that declare one may carry it, and the renderer says
+      // so rather than dropping it silently.
+      const o1 = /^\[([^\]]{1,40})\]/.exec(s.slice(j));
+      if (o1) {
+        if (!(name in OPTIONAL) || (OPTIONAL[name] !== null && !OPTIONAL[name].includes(o1[1])))
+          throw new TexError(file, line, `\\${name}[${o1[1]}] is not a value this macro takes`);
+        j += o1[0].length;
+      }
       const got = [];
       for (let k = 0; k < spec[0]; k++) {
         while (s[j] === ' ') j++;
@@ -488,7 +524,7 @@ function render(src, file, meta) {
         got.push(inline(g));
         j = next;
       }
-      o += spec[1](got, { file, line });
+      o += spec[1](got, { file, line, opt: o1?.[1] ?? null });
     }
     return o;
   }

@@ -155,6 +155,22 @@
             </attList>
           </elementSpec>
 
+          <!-- A doubtful reading against an offered one. `low` is the only
+               value: the distinction is binary, and a scale of five would be
+               five ways of saying the same two things. -->
+          <elementSpec ident="unclear" module="core" mode="change">
+            <attList>
+              <attDef ident="cert" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                  <valItem ident="low">
+                    <desc>Offered rather than read: the transcriber proposes a
+                    reading without having read it.</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
           <elementSpec ident="figure" module="figures" mode="change">
             <attList>
               <attDef ident="type" mode="change" usage="req">

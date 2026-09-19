@@ -184,8 +184,16 @@ function inline(s) {
     const name = m[1];
     i += m[0].length;
     if (name === 'ill') {
+      // The optional argument is the cause, where the leaf shows one, and it
+      // goes into @reason beside « illegible »: a word under a blot is lost,
+      // a block under a pasted clipping is legible the day the paper is
+      // lifted, and a flat `reason="illegible"` says neither.
+      const why = /^\[([^\]]{1,40})\]/.exec(s.slice(i));
+      if (why) i += why[0].length;
       if (s.slice(i, i + 2) === '{}') i += 2;
-      o += '<gap reason="illegible"/>';
+      o += why
+        ? `<gap reason="illegible ${xml(why[1].trim().replace(/\s+/g, '-'))}"/>`
+        : '<gap reason="illegible"/>';
       continue;
     }
     if (name === 'quad' || name === 'qquad') {
@@ -223,8 +231,18 @@ function inline(s) {
       texttt: ['<hi rend="mono">', '</hi>'],
     };
     if (WRAP[name]) {
+      // `\uncertain[low]{…}` is a reading offered without having been read,
+      // as against one read and doubted. It exports as @cert, which is where
+      // a reader of the TEI looks for the difference; the bare form keeps the
+      // plain <unclear> it has always had.
+      const cert = /^\[([a-z]+)\]/.exec(s.slice(i));
+      if (cert) i += cert[0].length;
       const [body, a] = group(s, i);
       i = a;
+      if (cert && name === 'uncertain') {
+        o += `<unclear cert="${xml(cert[1])}">${inline(body)}</unclear>`;
+        continue;
+      }
       o += WRAP[name][0] + inline(body) + WRAP[name][1];
       continue;
     }

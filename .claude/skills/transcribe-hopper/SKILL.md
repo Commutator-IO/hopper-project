@@ -299,6 +299,8 @@ In priority order:
 | `\sheet{16853}{2}` | this sheet begins — ref, then the leaf number written on the paper (empty if none) |
 | `\ill{}` | illegible, or under a clipping — **never guessed** |
 | `\uncertain{16.66}` | a reading offered, and flagged as doubtful |
+| `\uncertain[low]{Cohn}` | a reading **offered rather than read** — you propose it, having failed to read it. Exports as `<unclear cert="low">` |
+| `\ill[blot]{}` | illegible, with the cause the leaf shows: `blot`, `under paper`, `trimmed`. Exports into `@reason`. Use it only where you can see the cause |
 | `\add{s}` | an editorial addition: an expanded abbreviation, an implied dollar sign |
 | `\struck{$18}` | struck out in the book |
 | `\note{…}` | the transcriber's note — **ours** |
