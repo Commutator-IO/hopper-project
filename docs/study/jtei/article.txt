@@ -6,7 +6,7 @@
                                            Commutator, Paris
                                         michel@commutator.io
 
-         Draft of 13 September 2026, prepared for the Journal of the Text Encoding Initiative
+         Draft of 19 September 2026, prepared for the Journal of the Text Encoding Initiative
 
 
 
@@ -14,7 +14,7 @@
       This article reports an experiment in the transcription and encoding of an artist’s record
       books by a large language model under editorial constraints, using the six ledgers of Ed-
       ward and Josephine Hopper at the Whitney Museum of American Art (504 digitised sheets,
-      1913–1967) and four of Josephine Hopper’s notebooks from the Sanborn Hopper Archive
+      1907–1967) and four of Josephine Hopper’s notebooks from the Sanborn Hopper Archive
       as its corpus. The model (Claude Opus 5 and Claude Fable 5.1) transcribed the sheets from
       the museum’s published photographs into a deliberately restricted LaTeX whose macros
       correspond one to one with elements of a TEI P5 customisation; a mechanical conversion
@@ -38,21 +38,22 @@ ward Hopper; reproducibility.
 1     Introduction
 Edward Hopper (1882–1967) recorded his finished work in a set of ledgers that his wife, the
 painter Josephine Nivison Hopper (1883–1968), kept from their marriage in 1924 until his
-death. Six volumes survive at the Whitney Museum of American Art, accessioned as 96.208
-to 96.213, and the museum has digitised and published every sheet with a catalogue descrip-
-tor. The volumes are heterogeneous. Three are work books in which Edward Hopper drew a
-small ink record of each finished picture with its title and size, and Josephine Hopper wrote
-everything else: the paint used, a description, the buyer, the price, the dealer’s commission,
-the exhibitions and their verdicts, and the date the cheque cleared. One is a pocket cash book
-kept without a gap from 15 November 1913 to 23 March 1967, in a hand that predates the
+death. Six volumes survive at the Whitney Museum of American Art, accessioned as 96.208 to
+96.213, and the museum has digitised and published every sheet with a catalogue descriptor
+(Whitney Museum of American Art, n.d.). The volumes are heterogeneous. Three are work
+books in which Edward Hopper drew a small ink record of each finished picture with its title
+and size, and Josephine Hopper wrote everything else: the paint used, a description, the
+buyer, the price, the dealer’s commission, the exhibitions and their verdicts, and the date the
+cheque cleared. One is a pocket cash book kept without a gap from 15 November 1913 to
 
                                                     1
-marriage by eleven years and that the present edition does not attribute. One is a book of
-drawings and etching stock-takes, and one is a cash book indexed by dealer. Beside them,
-the Whitney’s Sanborn Hopper Archive holds some ninety notebooks of Josephine Hopper’s,
-four of which have been digitised: a diary of the marriage as it bore on her own painting, two
-working files from the 1947 fight against New York University’s attempt to evict the tenants of
-3 Washington Square North, and a two-ring memorandum book of lists.
+23 March 1967, in a hand that predates the marriage by eleven years and that the present
+edition does not attribute. One is a book of drawings and etching stock-takes, and one is a
+cash book indexed by dealer. Beside them, the Whitney’s Sanborn Hopper Archive holds some
+ninety notebooks of Josephine Hopper’s, four of which have been digitised: a diary of the
+marriage as it bore on her own painting, two working files from the 1947 fight against New
+York University’s attempt to evict the tenants of 3 Washington Square North, and a two-ring
+memorandum book of lists.
     The ledgers have been used before. Gail Levin’s catalogue raisonné was written from the
 record books and her biography from the diaries (Levin 1995a, 1995b); Deborah Lyons pub-
 lished the record books in 1997 (Lyons 1997); Madeleine Larson’s typescript of the Province-
@@ -92,11 +93,11 @@ output is regenerated on each build (Section 6). The present corpus is also unli
 entry book in that its writer kept no consistent form; the reader that recovers transactions
 from Book IV has to change its rule four times across the volume’s fifty-four years, and Section
 4 describes why.
-     The transcription of handwriting by large language models has moved quickly. Humphries
 
 
                                                 2
-and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English
+    The transcription of handwriting by large language models has moved quickly. Humphries
+and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English
 manuscripts, general-purpose language models achieved character error rates of about six to
 seven per cent, an improvement on specialised handwritten text recognition software; Crosilla,
 Klic and Colavizza (2025) benchmark several models on the same task and discuss the con-
@@ -143,10 +144,10 @@ the photograph can see, and the reference, which is the only thing the museum ca
 about.
     Second, the volumes were written by two people and annotated by more. The inside
 front cover of Book I states the division: « Recorded by Jo N Hopper (Mrs. Edward Hopper)
-at time each work is finished, or before it leaves studio. Drawings in the 3 books done by
 
                                                 3
-Edward Hopper. » The size in the title line of each work is the one figure Edward Hopper
+at time each work is finished, or before it leaves studio. Drawings in the 3 books done by
+Edward Hopper. » The size in the title line of each work is the one figure Edward Hopper
 wrote; everything else in the work books is hers. Book IV is in a hand the edition cannot
 place. A transcription that flattened the hands would destroy the archive’s chief documentary
 value, and the encoding of hands is accordingly the one element of the apparatus that has no
@@ -193,7 +194,6 @@ fetched as it is looked at, and the repository refuses image files. The inventor
 harvested by a person in a browser, because the museum’s listing pages sit behind a bot-check
 that the edition does not circumvent, and the harvest is committed as text so that it can be
 reviewed in a diff.
-
 
                                                  4
 4     The transcription method
@@ -334,20 +334,20 @@ identifies a converter bug or a macro misuse without any ambiguity about whose j
 is at fault.
 
 5.2   The customisation
-The customisation is an ODD, hopper.odd, served at the URL every exported file names, from
-which both the schema and its documentation derive. It declares fifty-five elements, and the
-fifty-five are not a sample of TEI’s six hundred but the exact reach of the conversion: every
-element exists because a macro maps onto it. The modules and elements included are shown
-in Table 4. Five attribute value lists are declared closed, so that a @type on a division, a
-figure, a note, a term or a rendition value on a highlighted cell is drawn from a list and
+The customisation is an ODD, hopper.odd, in the form the Guidelines define for one (TEI
+Consortium 2026), served at the URL every exported file names, from which both the schema
+and its documentation derive. It declares fifty-eight elements, and the fifty-eight are not a
+sample of TEI’s six hundred but the exact reach of the conversion: every element exists because
+a macro maps onto it. The modules and elements included are shown in Table 4. Seven
+attribute value lists are declared closed, so that a @type on a division, a figure, a head, a
+note or a term, and a @rend on a highlighted cell or a ruled row, is drawn from a list and
 not invented per file, and the validator refuses any other value. The value lists are: division
-types (leaf, work, entry, part, editorial); figure types (record-sketch, clipping); note types
-(editorial); the keyword facets (person, place, collection, dealer, society, publication,
-prize, medium, client, subject, feature, hopper); and renditions (bold, italic, mono, ink-red,
-ink-pencil, ink-blue, rule-above).
-     The header of each file carries the provenance that the method requires. The two au-
+types (leaf, part, work, entry); figure types (record-sketch, clipping); head types (work);
+note types (editorial); the keyword facets (medium, place, work, person, dealer, collection,
+society, publication, prize, client, subject, feature); renditions on a cell (italic, bold,
+mono, ink-red, ink-pencil, ink-blue); and the one rendition a row may carry (rule-above).
+    The header of each file carries the provenance that the method requires. The two au-
 thors are named in the order the inside cover gives them; the responsibility statement names
-the model that read the sheets and the date, and states that the pass is a first machine pass
 
 
                                                 7
@@ -367,6 +367,7 @@ the model that read the sheets and the date, and states that the pass is a first
          linking          seg
 
 
+the model that read the sheets and the date, and states that the pass is a first machine pass
 unchecked by a person; the availability statement records that the transcribed text is in copy-
 right and that the file is an unauthorised working document; the manuscript description car-
 ries the museum’s accession number and the volume’s dates; the hand notes declare the four
@@ -405,12 +406,12 @@ receipt whose day and word could not be read.
    <cell><hi rend="ink-red"><unclear>rec'd</unclear> <gap reason="illegible"/></hi></cell>
    <cell>500</cell><cell>00</cell></row>
  <row><cell><hi rend="ink-red">" 12</hi></cell><cell><hi rend="ink-red">rec'd by check</hi></cell>
-   <cell><hi rend="ink-red">500</hi></cell><cell><hi rend="ink-red">00</hi></cell></row>
 
 
 
                                                    8
- [...]
+   <cell><hi rend="ink-red">500</hi></cell><cell><hi rend="ink-red">00</hi></cell></row>
+ [...]
  <row><cell></cell><cell><hi rend="ink-pencil">1800    +   560</hi></cell>
    <cell><hi rend="ink-pencil">53</hi></cell><cell></cell></row>
  <row rend="rule-above"><cell></cell><cell></cell>
@@ -562,7 +563,7 @@ the workflow that builds the site, and an equivalent GitLab CI configuration is 
 
                                                11
 6.4    What the data shows, as an illustration of the condition
-Figures 1 to 4 reproduce three of the interface’s drawings from the derived files, and are given
+Figures 1 to 4 reproduce four of the interface’s drawings from the derived files, and are given
 here not for their findings but to show what a fully derived figure looks like: each names its
 source file and that file’s generation date, and each is regenerable by anyone with a clone of
 the repository.
@@ -756,12 +757,12 @@ two quotations on which its accompanying critical note leans hardest were compar
 museum’s photographs by the model itself on 13 September 2026, at the published resolution
 of 1292 by 2000 pixels; Table 5 gives the result cell by cell. Both readings hold in every word,
 and the comparison found one omission: a small mark before the struck word on the notebook
-page, which the transcription does not record. The comparison is reported for what it is. It was
-made by the same kind of reader that made the transcription, it covers two sheets of 543, and
-it establishes only that a second reading agreed with the first. The edition reserves the word
-checked for a comparison made by a person, and the comparison is recorded in the transcripts
-as a note that says who made it and that it is not that.
-
+page, which the transcription does not record. The comparison is reported for what it is. It
+was made by the same kind of reader that made the transcription, it covers two sheets of the
+667 transcribed on 19 September 2026, and it establishes only that a second reading agreed
+with the first. The edition reserves the word checked for a comparison made by a person, and
+the comparison is recorded in the transcripts as a note that says who made it and that it is not
+that.
 Table 5: Transcription against image, for the two sheets compared on 13 September 2026. Sheet refs
 98119 (black notebook, page 64) and 16838 (Book III, leaf 19).
 
@@ -801,7 +802,6 @@ changes a sum, so the cash-book figures are floors in a second sense, and no suc
 on the other volumes or the notebooks, about whose omissions nothing is therefore known.
 
 
-
                                                       15
 7.2   Limits of the model as a transcriber and as an encoder
 The experiment identified five limits, none of them a matter of error rate.
@@ -809,7 +809,10 @@ The experiment identified five limits, none of them a matter of error rate.
 batches were transcribed without recording it; the colour was recovered afterwards by an
 image-processing script that classifies each money cell and writes the result into the transcrip-
 tion, on the ground that colour is the one thing on the leaf a machine can see better than the
-hand it is written in. A method that depended on the language model for the ink would have
+hand it is written in. That recovery is partial and its extent should be stated: on 19 September
+2026 eighteen of Book IV’s one hundred and sixty sheets carry an ink mark, the pass having
+been run where a leaf’s rows and the written lines of its photograph align exactly, and stopped
+where they do not. A method that depended on the language model for the ink would have
 produced a cash book without a status field.
     The model carries context forward as a rule, and rules fail at boundaries. The year of a
 Book IV entry is stated once, on a line of its own, and carried down the leaf; where leaf 53’s
@@ -817,11 +820,11 @@ year line reads « 1920 » above entries of 1921, the transcription keeps the li
 the reader carries the year, so that 1921’s income sits under 1920 in every table. This is the
 intended behaviour of both, and it is wrong, and it is listed for correction at source rather than
 repaired in the derived data.
-    The model reads names as language. The archive spells Crowninshield three ways, Saltillo
-four and Keppel two, and the model, left to itself, would settle them. The rule that nothing
-is normalised holds it to the leaf, and the glossary records the variants; but the discipline is
-the rule’s and not the model’s, and a reader who relaxed it would get a tidier and less truthful
-archive.
+    The model reads names as language. The archive spells Crowninshield three ways —
+Crowninshield, Crownenshield, Crowneshield — and Saltillo two, and the model, left to itself,
+would settle them. The rule that nothing is normalised holds it to the leaf, and the glossary
+records the variants; but the discipline is the rule’s and not the model’s, and a reader who
+relaxed it would get a tidier and less truthful archive.
     The model is fluent in TEI, and fluency is the hazard. Asked to produce markup it produces
 plausible markup, and a plausible attribute value is not a schema-valid one. The decision not
 to let the model write TEI at all, and to derive the TEI mechanically from a fourteen-macro
@@ -843,15 +846,15 @@ sheet, are declared in a status file, and that file declares nothing for any bat
 stated in its comment: a hand-kept status table drifts optimistic and nobody notices, so the two
 states no file can prove are the only two a person may write, and the site shows a transcribed
 batch as drafted because that is observed rather than declared.
-     What a human check consists of has been defined as an open question of the edition rather
+    What a human check consists of has been defined as an open question of the edition rather
 than assumed. The protocol under discussion is the one this article’s comparison table per-
 forms in miniature: a person opens the reading beside the photograph, reads each transcribed
-line against the sheet, corrects the transcription at source with a note that names who checked
-it, and only then may the batch be declared checked; the citation of every sheet in that batch
-then changes to say that a person has gone through it, and only a person may declare that.
 
                                                16
-Until then, every citation of the edition names a machine pass and a date, and the address of
+line against the sheet, corrects the transcription at source with a note that names who checked
+it, and only then may the batch be declared checked; the citation of every sheet in that batch
+then changes to say that a person has gone through it, and only a person may declare that.
+Until then, every citation of the edition names a machine pass and a date, and the address of
 the sheet does not move when the reading does.
 
 7.4    What the method permits, and what it does not
@@ -896,14 +899,14 @@ be checked.
     course           by PSL             captions                                  timestamps
 
 
-    What the three siblings taught the method is specific in each case. The Grothendieck fonds
-carries a second register the ledgers refuse: its transcriptions come in pairs, a diplomatic file
-and a modernised one (124 and 53 files), because mathematical notation of 1960 is not read
-today as it was written, whereas « 30 - 1/3 » means in 2026 what it meant in 1927 — the
+     What the three siblings taught the method is specific in each case. The Grothendieck fonds
 
 
                                                   17
-decision against a second edition here (Section 4.2) is a decision this project had to take twice,
+carries a second register the ledgers refuse: its transcriptions come in pairs, a diplomatic file
+and a modernised one (124 and 53 files), because mathematical notation of 1960 is not read
+today as it was written, whereas « 30 - 1/3 » means in 2026 what it meant in 1927 — the
+decision against a second edition here (Section 4.2) is a decision this project had to take twice,
 in opposite directions. The Gallica corpus made the address itself the unit: a volume enters
 only where the library serves the whole of it, and a manuscript that Gallica merely references
 on a partner’s site is in no table and no thumbnail, which is the same rule this edition states
@@ -946,13 +949,13 @@ reference and the edition’s own dated pass.
 is a good one, because a ledger’s errors are measurable and because the museum serves the
 photographs openly. The critical note that accompanies the edition (Hua 2026) reads the
 transcription whole and is offered as a demonstration of what the method produces at first
-pass, its errors left in view.
-    What the experiment opens is a division of labour. The model reads; the scripts derive; the
-schema validates; and the person checks, corrects at source, and declares. The first three have
 
 
                                                18
-been done for this corpus. The fourth has not, and the edition’s own status file, which declares
+pass, its errors left in view.
+    What the experiment opens is a division of labour. The model reads; the scripts derive; the
+schema validates; and the person checks, corrects at source, and declares. The first three have
+been done for this corpus. The fourth has not, and the edition’s own status file, which declares
 nothing, is the measure of how far the method has come and where it stops. Two extensions are
 planned: the deposit of the corpus with a persistent identifier, and the definition and execution
 of the human check that turns a drafted batch into a checked one. Both are tracked as issues
@@ -988,21 +991,23 @@ References
 Crosilla, Giorgia, Lukas Klic, and Giovanni Colavizza. 2025. « Benchmarking Large Language
    Models for Handwritten Text Recognition. » Journal of Documentation 81 (7). Preprint:
    arXiv:2503.15195.
-
-Hua, Michel. 2026. The Books Kept at 3 Washington Square North: A Critical Note. Draft of
-  13 September 2026, drafted with Claude Fable 5.1. https://github.com/Commutator-IO/
-  hopper-project/tree/main/docs/study.
+Hua, Michel. 2026. The Books Kept at 3 Washington Square North: A Critical Note. Unpublished
+  draft of 13 September 2026, drafted with Claude Fable 5.1; LaTeX sources at https://
+  github.com/Commutator-IO/hopper-project/tree/main/docs/study.
 
 Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Is-
   abella Murray, and Elizabeth Spence. 2025. « Unlocking the Archives: Using Large Lan-
   guage Models to Transcribe Handwritten Historical Documents. » Historical Methods: A
-  Journal of Quantitative and Interdisciplinary History 58 (3). https://doi.org/10.1080/
-  01615440.2025.2500309.
-
-
 
                                                19
-Levin, Gail. 1995a. Edward Hopper: A Catalogue Raisonné. New York: Whitney Museum of
+    Journal of Quantitative and Interdisciplinary History 58 (3). https://doi.org/10.1080/
+    01615440.2025.2500309.
+
+Larson, Madeleine. n.d. Josephine N. Hopper’s Diaries, 1933–1956: Typed Transcript. 5 parts.
+   Provincetown Art Association and Museum. Scans consulted through the museum, cited
+   by part and typescript page.
+
+Levin, Gail. 1995a. Edward Hopper: A Catalogue Raisonné. New York: Whitney Museum of
    American Art and W. W. Norton.
 
 Levin, Gail. 1995b. Edward Hopper: An Intimate Biography. New York: Knopf.
@@ -1020,8 +1025,8 @@ TEI Consortium. 2026. TEI P5: Guidelines for Electronic Text Encoding and Interc
 Tomasek, Kathryn, and Syd Bauman. 2013. « Encoding Financial Records for Historical Re-
    search. » Journal of the Text Encoding Initiative 6. https://doi.org/10.4000/jtei.895.
 
-Whitney Museum of American Art. Edward and Josephine Hopper Resources. https://whitney.
-  org/research/edward-and-josephine-hopper-resources.
+Whitney Museum of American Art. n.d. Edward and Josephine Hopper Resources. https://
+  whitney.org/research/edward-and-josephine-hopper-resources.
 
 
 
@@ -1057,7 +1062,10 @@ the restricted language, followed by the note recording the comparison with the 
  \qquad (strictly off the record)}
 
 
- \marginal{bearberry --- above « herbage »; low --- above « clumps »; pale ---
+
+
+                                               20
+ \marginal{bearberry --- above « herbage »; low --- above « clumps »; pale ---
  above « blue at top »}
 
 
@@ -1065,11 +1073,7 @@ the restricted language, followed by the note recording the comparison with the 
  When sold?\\
  R. H. Bresler Co. - payment caught up in Rehn Estate -\\
  \quad Paid by John Clancy, new head of Rehn Gallery. 3000 - 1/3 = 2000
-
-
-
-                                               20
- June 14, 1956.\\
+ June 14, 1956.\\
  Carpenter of Milwaukee - Heavy chain, bolt Co.}
 
 
@@ -1116,99 +1120,99 @@ of 1921 and the reader keeps the year as written; that year’s income is counte
                               Total   14,455.87    14,654.87    -199.00
 
 
-Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
+
+
+                                                  21
+Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
 column, by year. Gross is the price written; the commission is the dealer’s share as the row states it;
 net is what was left. Only rows that put a price in one cell and a date in another are counted, so the
 etchings are largely absent.
 
-                    Year   Sales      Gross   Commission          Net     Receipted
-                    1923       3        970              323      647             0
-                    1924       6      4,500            1,500    3,000             0
+                  Year     Sales     Gross    Commission          Net    Receipted
+                  1923         3      970              323       647             0
+                  1924         6    4,500            1,500     3,000             0
+                  1925         4    2,100              510     1,590           340
+                  1926        11    5,275            1,758     3,517           850
+                  1927        17    3,955            1,318     2,637         1,333
+                  1928        24    5,774            1,919     3,855         1,197
+                  1929        52    7,040            2,342     4,698         4,197
+                  1930        34   18,378            6,126    12,252         3,000
+                  1931        17    2,648              883     1,765         5,600
+                  1932         3    1,380              460       920         2,400
+                  1933         3       85               28        57            20
+                  1934        14    3,980            1,327     2,653           800
+                  1935         1      750              250       500           500
+                  1936         6    4,420            1,473     2,947           267
+                  1937        10    4,670            1,557     3,113            20
+                  1938        11    4,990            1,648     3,342             0
+                  1939         1    2,500              833     1,667             0
+                  1940        14    6,182            2,061     4,121           667
+                  1941         4    1,220              407       813           267
+                  1942         3    2,780              927     1,853             0
+                  1943         4    2,760              920     1,840         1,200
+                  1944         5    4,850            1,617     3,233             0
+                  1945         5    3,080            1,027     2,053             0
+                  1946         6    7,650            2,550     5,100         2,267
+                  1947         7    6,130            2,043     4,087         1,467
+                  1948         4    7,500            2,500     5,000         1,500
+                  1949         5    9,115            3,038     6,077             0
+                  1950        12    4,130            1,377     2,753         1,053
+                  1951        11    7,830            2,610     5,220           333
+                  1952         3    7,750            2,583     5,167         2,667
+                  1953         9    4,500            1,500     3,000           500
+                  1954         6   14,780            4,927     9,853             0
+                  1955         6    5,800            1,933     3,867         2,333
+                  1956        12   22,410            7,470    14,940         5,867
+                  1957        19   26,470            8,823    17,647           667
+                  1958         3   16,000            5,333    10,667         1,800
+                  1959         2   10,800            3,600     7,200         6,000
+                  1960         4   15,600            5,200    10,400             0
+                  1961        10   11,295            3,765     7,530             0
+                  1962         3   31,000           10,333    20,667         3,667
+                  1963         2   31,500           10,500    21,000             0
 
 
-                                                  21
-Year   Sales    Gross   Commission     Net    Receipted
-1925      4     2,100          510    1,590        340
-1926     11     5,275        1,758    3,517        850
-1927     17     3,955        1,318    2,637      1,333
-1928     24     5,774        1,919    3,855      1,197
-1929     52     7,040        2,342    4,698      4,197
-1930     34    18,378        6,126   12,252      3,000
-1931     17     2,648          883    1,765      5,600
-1932      3     1,380          460      920      2,400
-1933      3        85           28       57         20
-1934     14     3,980        1,327    2,653        800
-1935      1       750          250      500        500
-1936      6     4,420        1,473    2,947        267
-1937     10     4,670        1,557    3,113         20
-1938     11     4,990        1,648    3,342          0
-1939      1     2,500          833    1,667          0
-1940     14     6,182        2,061    4,121        667
-1941      4     1,220          407      813        267
-1942      3     2,780          927    1,853          0
-1943      4     2,760          920    1,840      1,200
-1944      5     4,850        1,617    3,233          0
-1945      5     3,080        1,027    2,053          0
-1946      6     7,650        2,550    5,100      2,267
-1947      7     6,130        2,043    4,087      1,467
-1948      4     7,500        2,500    5,000      1,500
-1949      5     9,115        3,038    6,077          0
-1950     12     4,130        1,377    2,753      1,053
-1951     11     7,830        2,610    5,220        333
-1952      3     7,750        2,583    5,167      2,667
-1953      9     4,500        1,500    3,000        500
-1954      6    14,780        4,927    9,853          0
-1955      6     5,800        1,933    3,867      2,333
-1956     12    22,410        7,470   14,940      5,867
-1957     19    26,470        8,823   17,647        667
-1958      3    16,000        5,333   10,667      1,800
-1959      2    10,800        3,600    7,200      6,000
-1960      4    15,600        5,200   10,400          0
-1961     10    11,295        3,765    7,530          0
-1962      3    31,000       10,333   20,667      3,667
-1963      2    31,500       10,500   21,000          0
-1964      2    31,500       10,500   21,000          0
-1965      1    15,000        5,000   10,000     10,000
-1966      1    25,000        8,333   16,667          0
+                                                  22
+                  Year    Sales    Gross    Commission           Net    Receipted
+                  1964        2   31,500         10,500       21,000               0
+                  1965        1   15,000          5,000       10,000          10,000
+                  1966        1   25,000          8,333       16,667               0
 
 
-
-
-                          22
-Table 9: The thirty sales at the highest prices among the rows that name a work, as the work books
+Table 9: The thirty sales at the highest prices among the rows that name a work, as the work books
 write them. Gross is the price; net is after the third.
 
-               Work                                  Price     Net    Year   Volume
-               Intermission                      25,000      16,667   1966   III
-               Sun in an Empty Room              25,000      16,667   1964   III
-               New York Office                   16,500      11,000   1963   III
-               People in the Sun                 15,000      10,000   1962   III
-               A Woman in the Sun                15,000      10,000   1963   III
-               East River                        15,000      10,000   1965   III
-               Excursion into Philosophy         14,500       9,667   1962   III
-               « Girlie Show »                   11,000       7,333   1961   II
-               November, Wash. Square            10,000       6,667   1960   III
-               Sunlight in a Cafeteria            9,000       6,000   1959   III
-               Hotel Window                       7,000       4,667   1957   III
-               Western Motel                      6,500       4,333   1958   III
-               Charleston Slum                    6,500       4,333   1964   III
-               Morning in a City                  6,000       4,000   1949   III
-               Four Lane Road                     6,000       4,000   1957   III
-               Dauphinée House                    5,000       3,333   1956   II
-               Sunlight on Brownstones            5,000       3,333   1958   III
-               Tables for Ladies                  4,500       3,000   1930   I
-               Men, Women + Horses                4,500       3,000   1958   II
-               Sea Watchers                       4,500       3,000   1956   III
-               South Carolina Morning             4,500       3,000   1957   III
-               Cape Cod Morning                   4,050       2,700   1956   III
-               « Bootleggers »                    4,000       2,667   1956   II
-               Rooms by the Sea                   4,000       2,667   1952   III
-               The Martha McKeen of Wellfleet     3,500       2,333   1954   III
-               Portrait of Orleans                3,500       2,333   1953   III
-               First Row Orchestra                3,500       2,333   1954   III
-               Morning Sun                        3,500       2,333   1954   III
-               Hotel by a Railroad                3,500       2,333   1954   III
-               City Sunlight                      3,500       2,333   1955   III
+               Work                                  Price     Net     Year     Volume
+               Intermission                      25,000      16,667    1966     III
+               Sun in an Empty Room              25,000      16,667    1964     III
+               New York Office                   16,500      11,000    1963     III
+               People in the Sun                 15,000      10,000    1962     III
+               A Woman in the Sun                15,000      10,000    1963     III
+               East River                        15,000      10,000    1965     III
+               Excursion into Philosophy         14,500       9,667    1962     III
+               « Girlie Show »                   11,000       7,333    1961     II
+               November, Wash. Square            10,000       6,667    1960     III
+               Sunlight in a Cafeteria            9,000       6,000    1959     III
+               Hotel Window                       7,000       4,667    1957     III
+               Western Motel                      6,500       4,333    1958     III
+               Charleston Slum                    6,500       4,333    1964     III
+               Morning in a City                  6,000       4,000    1949     III
+               Four Lane Road                     6,000       4,000    1957     III
+               Dauphinée House                    5,000       3,333    1956     II
+               Sunlight on Brownstones            5,000       3,333    1958     III
+               Tables for Ladies                  4,500       3,000    1930     I
+               Men, Women + Horses                4,500       3,000    1958     II
+               Sea Watchers                       4,500       3,000    1956     III
+               South Carolina Morning             4,500       3,000    1957     III
+               Cape Cod Morning                   4,050       2,700    1956     III
+               « Bootleggers »                    4,000       2,667    1956     II
+               Rooms by the Sea                   4,000       2,667    1952     III
+               The Martha McKeen of Wellfleet     3,500       2,333    1954     III
+               Portrait of Orleans                3,500       2,333    1953     III
+               First Row Orchestra                3,500       2,333    1954     III
+               Morning Sun                        3,500       2,333    1954     III
+               Hotel by a Railroad                3,500       2,333    1954     III
+               City Sunlight                      3,500       2,333    1955     III
 
 
 
