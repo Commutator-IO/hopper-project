@@ -72,9 +72,7 @@ customisation that validates it (Section 5), the interface and the derived data 
 reading reproducible (Section 6), a discussion of what the method permits and what it does not
 (Section 7), and the same method run against three sibling corpora — two of mathematics, one
 a filmed lecture — which is where the editorial condition either generalises or fails (Section
-8). A longer critical note on the content of the ledgers, drafted by the same model from the
-same transcriptions, accompanies the edition and is cited here where a finding illustrates a
-point of method (Hua 2026).
+8).
 
 
 2    Related work
@@ -93,12 +91,12 @@ output is regenerated on each build (Section 6). The present corpus is also unli
 entry book in that its writer kept no consistent form; the reader that recovers transactions
 from Book IV has to change its rule four times across the volume’s fifty-four years, and Section
 4 describes why.
+     The transcription of handwriting by large language models has moved quickly. Humphries
+and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English
 
 
                                                 2
-    The transcription of handwriting by large language models has moved quickly. Humphries
-and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English
-manuscripts, general-purpose language models achieved character error rates of about six to
+manuscripts, general-purpose language models achieved character error rates of about six to
 seven per cent, an improvement on specialised handwritten text recognition software; Crosilla,
 Klic and Colavizza (2025) benchmark several models on the same task and discuss the con-
 ditions under which the models’ linguistic priors help and hinder. The present experiment
@@ -144,11 +142,11 @@ the photograph can see, and the reference, which is the only thing the museum ca
 about.
     Second, the volumes were written by two people and annotated by more. The inside
 front cover of Book I states the division: « Recorded by Jo N Hopper (Mrs. Edward Hopper)
+at time each work is finished, or before it leaves studio. Drawings in the 3 books done by
+Edward Hopper. » The size in the title line of each work is the one figure Edward Hopper
 
                                                 3
-at time each work is finished, or before it leaves studio. Drawings in the 3 books done by
-Edward Hopper. » The size in the title line of each work is the one figure Edward Hopper
-wrote; everything else in the work books is hers. Book IV is in a hand the edition cannot
+wrote; everything else in the work books is hers. Book IV is in a hand the edition cannot
 place. A transcription that flattened the hands would destroy the archive’s chief documentary
 value, and the encoding of hands is accordingly the one element of the apparatus that has no
 counterpart in ordinary manuscript transcription and that the method treats as mandatory.
@@ -194,6 +192,9 @@ fetched as it is looked at, and the repository refuses image files. The inventor
 harvested by a person in a browser, because the museum’s listing pages sit behind a bot-check
 that the edition does not circumvent, and the harvest is committed as text so that it can be
 reviewed in a diff.
+
+
+
 
                                                  4
 4     The transcription method
@@ -753,16 +754,18 @@ this draws every month. Drawn by Claude Fable 5.1, 13 September 2026, from strea
 7      Discussion
 7.1     The reading against the image
 The transcription is a first pass and has not been checked by a person. For this article, the
-two quotations on which its accompanying critical note leans hardest were compared with the
-museum’s photographs by the model itself on 13 September 2026, at the published resolution
-of 1292 by 2000 pixels; Table 5 gives the result cell by cell. Both readings hold in every word,
-and the comparison found one omission: a small mark before the struck word on the notebook
-page, which the transcription does not record. The comparison is reported for what it is. It
-was made by the same kind of reader that made the transcription, it covers two sheets of the
-667 transcribed on 19 September 2026, and it establishes only that a second reading agreed
-with the first. The edition reserves the word checked for a comparison made by a person, and
-the comparison is recorded in the transcripts as a note that says who made it and that it is not
-that.
+two quotations on which the edition’s own reading of the archive leans hardest — the Goethe
+line closing Book III leaf 19, and Edward Hopper’s one statement of his purpose in the black
+notebook — were compared with the museum’s photographs by the model itself on 13 Septem-
+ber 2026, at the published resolution of 1292 by 2000 pixels; Table 5 gives the result cell by
+cell. Both readings hold in every word, and the comparison found one omission: a small mark
+before the struck word on the notebook page, which the transcription does not record. The
+comparison is reported for what it is. It was made by the same kind of reader that made the
+transcription, it covers two sheets of the 667 transcribed on 19 September 2026, and it estab-
+lishes only that a second reading agreed with the first. The edition reserves the word checked
+for a comparison made by a person, and the comparison is recorded in the transcripts as a
+note that says who made it and that it is not that.
+
 Table 5: Transcription against image, for the two sheets compared on 13 September 2026. Sheet refs
 98119 (black notebook, page 64) and 16838 (Book III, leaf 19).
 
@@ -799,11 +802,12 @@ the volume, with at least one written line the transcription does not have. Many
 alignment’s own noise, and each must be looked at; at least one, an entry of 26 February 1917
 on leaf 21, was a real omission. The consequence is bounded and can be stated: a missing line
 changes a sum, so the cash-book figures are floors in a second sense, and no such pass has run
-on the other volumes or the notebooks, about whose omissions nothing is therefore known.
 
 
                                                       15
-7.2   Limits of the model as a transcriber and as an encoder
+on the other volumes or the notebooks, about whose omissions nothing is therefore known.
+
+7.2   Limits of the model as a transcriber and as an encoder
 The experiment identified five limits, none of them a matter of error rate.
     The model does not see colour reliably. Book IV’s meaning is in its ink, and fourteen
 batches were transcribed without recording it; the colour was recovered afterwards by an
@@ -846,18 +850,19 @@ sheet, are declared in a status file, and that file declares nothing for any bat
 stated in its comment: a hand-kept status table drifts optimistic and nobody notices, so the two
 states no file can prove are the only two a person may write, and the site shows a transcribed
 batch as drafted because that is observed rather than declared.
-    What a human check consists of has been defined as an open question of the edition rather
-than assumed. The protocol under discussion is the one this article’s comparison table per-
-forms in miniature: a person opens the reading beside the photograph, reads each transcribed
+
 
                                                16
-line against the sheet, corrects the transcription at source with a note that names who checked
+     What a human check consists of has been defined as an open question of the edition rather
+than assumed. The protocol under discussion is the one this article’s comparison table per-
+forms in miniature: a person opens the reading beside the photograph, reads each transcribed
+line against the sheet, corrects the transcription at source with a note that names who checked
 it, and only then may the batch be declared checked; the citation of every sheet in that batch
 then changes to say that a person has gone through it, and only a person may declare that.
 Until then, every citation of the edition names a machine pass and a date, and the address of
 the sheet does not move when the reading does.
 
-7.4    What the method permits, and what it does not
+7.4   What the method permits, and what it does not
 The method permits a reading of a five-hundred-sheet archive to be produced in days, cited
 by leaf and reference, exported as valid TEI, and exposed in full to correction beside its source.
 It permits derived data to be regenerated from the reading under published rules and to be
@@ -881,8 +886,22 @@ fails the build, the same reading placed beside its witness — and they were ch
 in the two things that matter: what the document is, and what kind of witness stands behind
 it. Two are archives of art, two of mathematics; three are written and one is spoken. Table 6
 gives their state, read from the four repositories on 19 September 2026.
+    What the three siblings taught the method is specific in each case. The Grothendieck fonds
+carries a second register the ledgers refuse: its transcriptions come in pairs, a diplomatic file
+and a modernised one (124 and 53 files), because mathematical notation of 1960 is not read
+today as it was written, whereas « 30 - 1/3 » means in 2026 what it meant in 1927 — the
+decision against a second edition here (Section 4.2) is a decision this project had to take twice,
+in opposite directions. The Gallica corpus made the address itself the unit: a volume enters
+only where the library serves the whole of it, and a manuscript that Gallica merely references
+on a partner’s site is in no table and no thumbnail, which is the same rule this edition states
+about documents with no public digitisation. And the morphology course made the witness
+something other than an image.
+    That last case is the one that generalises the claim. Debord’s course is seventy-seven hours
+of speech; the first transcription is not the model’s but the platform’s automatic captions, and
+the model’s work is an index — 95 terms, 73 references and 139 digressions, each carrying
 
-Table 6: The four corpora the method has been run against, with the address at which a reading can
+                                               17
+Table 6: The four corpora the method has been run against, with the address at which a reading can
 be checked.
 
     Corpus           Holder             Witness             Verifiable address    Transcribed
@@ -899,22 +918,6 @@ be checked.
     course           by PSL             captions                                  timestamps
 
 
-     What the three siblings taught the method is specific in each case. The Grothendieck fonds
-
-
-                                                  17
-carries a second register the ledgers refuse: its transcriptions come in pairs, a diplomatic file
-and a modernised one (124 and 53 files), because mathematical notation of 1960 is not read
-today as it was written, whereas « 30 - 1/3 » means in 2026 what it meant in 1927 — the
-decision against a second edition here (Section 4.2) is a decision this project had to take twice,
-in opposite directions. The Gallica corpus made the address itself the unit: a volume enters
-only where the library serves the whole of it, and a manuscript that Gallica merely references
-on a partner’s site is in no table and no thumbnail, which is the same rule this edition states
-about documents with no public digitisation. And the morphology course made the witness
-something other than an image.
-    That last case is the one that generalises the claim. Debord’s course is seventy-seven hours
-of speech; the first transcription is not the model’s but the platform’s automatic captions, and
-the model’s work is an index — 95 terms, 73 references and 139 digressions, each carrying
 the second at which the thing is said. The repository publishes no caption and no video: only
 video identifiers, term identifiers and offsets in seconds, the captions themselves staying out of
 version control, as the photographs stay out of this one. The editorial condition is unchanged
@@ -935,7 +938,7 @@ heritage institution’s, since a platform forbids the mirror while promising no
 edition may not copy what nobody undertakes to keep.
 
 
-9    Conclusion
+9     Conclusion
 This article has described an edition in which a language model is the first transcriber and the
 editorial apparatus is designed to make its reading checkable rather than trustworthy. The
 method rests on four decisions: a restricted transcription language whose macros answer one
@@ -947,59 +950,58 @@ that places the reading beside the photograph and cites every sheet by the museu
 reference and the edition’s own dated pass.
     The corpus, the Hopper ledgers and notebooks, was the occasion for the experiment and
 is a good one, because a ledger’s errors are measurable and because the museum serves the
-photographs openly. The critical note that accompanies the edition (Hua 2026) reads the
-transcription whole and is offered as a demonstration of what the method produces at first
 
 
-                                               18
-pass, its errors left in view.
+                                                  18
+photographs openly.
     What the experiment opens is a division of labour. The model reads; the scripts derive; the
 schema validates; and the person checks, corrects at source, and declares. The first three have
 been done for this corpus. The fourth has not, and the edition’s own status file, which declares
-nothing, is the measure of how far the method has come and where it stops. Two extensions are
-planned: the deposit of the corpus with a persistent identifier, and the definition and execution
-of the human check that turns a drafted batch into a checked one. Both are tracked as issues
-of the repository, and the second is the one on which every claim in this article depends.
+nothing, is the measure of how far the method has come and where it stops. One extension is
+done — the corpus is deposited under a persistent identifier — and one is not: the definition
+and execution of the human check that turns a drafted batch into a checked one, which is to
+be settled with the scholars who will do the reading rather than declared here. It is tracked as
+an issue of the repository, and it is the one on which every claim in this article depends.
 
 
 Declaration of Generative AI and AI-assisted technologies in the
 writing process
-During the preparation of this work the author used Claude Opus 5 and Claude Fable 5.1
-(Anthropic), through Claude Code, in order to transcribe the digitised sheets of the corpus
-into the restricted transcription language described in Section 4, to compare two sheets with
-their photographs as reported in Section 7.1, to write the Lean formalisation of the accounts
-described in Section 6.3, and to draft this article and the accompanying critical note from the
-transcriptions and the derived data under the author’s direction. After using these tools, the
-author reviewed and edited the content as needed and takes full responsibility for the content
-of the publication. The transcriptions have not been checked against the photographs by a
-person, and the article says so wherever a claim depends on them.
+During the preparation of this work the author used Claude Opus 5 and Claude Fable 5.1 (An-
+thropic), through Claude Code, in order to transcribe the digitised sheets of the corpus into the
+restricted transcription language described in Section 4, to compare two sheets with their pho-
+tographs as reported in Section 7.1, to write the Lean formalisation of the accounts described
+in Section 6.3, and to draft this article from the transcriptions and the derived data under
+the author’s direction. After using these tools, the author reviewed and edited the content
+as needed and takes full responsibility for the content of the publication. The transcriptions
+have not been checked against the photographs by a person, and the article says so wherever
+a claim depends on them.
 
 
 Data availability
-The transcriptions, the TEI export, the ODD, the scripts, the derived data, the Lean proofs, the
-interface and the sources of this article and of the critical note are in the public repository
-at https://github.com/Commutator-IO/hopper-project; the interface is served at https://
-hopper.commutator.io. The software and the derived data are released under CC0 1.0; this
-article and the critical note under CC BY 4.0. The transcribed words of Josephine and Edward
-Hopper are © Heirs of Josephine N. Hopper, licensed by Artists Rights Society (ARS), New
-York, and are quoted for criticism and study; the photographs are the Whitney Museum’s and
-are not stored by the edition. A deposit with a persistent identifier is planned and tracked as
-issue 16 of the repository.
+The transcriptions, the TEI export, the ODD, the scripts, the derived data, the Lean proofs,
+the interface and the sources of this article are in the public repository at https://github.
+com/Commutator-IO/hopper-project; the interface is served at https://hopper.commutator.
+io. The software and the derived data are released under CC0 1.0; this article under CC BY
+4.0. The transcribed words of Josephine and Edward Hopper are © Heirs of Josephine N.
+Hopper, licensed by Artists Rights Society (ARS), New York, and are quoted for criticism and
+study; the photographs are the Whitney Museum’s and are not stored by the edition. The
+corpus is deposited with a persistent identifier: the concept DOI https://doi.org/10.5281/
+zenodo.22770550, which resolves to the most recent archived version, with a Software Heritage
+snapshot of the repository’s history beside it.
 
 
 References
 Crosilla, Giorgia, Lukas Klic, and Giovanni Colavizza. 2025. « Benchmarking Large Language
    Models for Handwritten Text Recognition. » Journal of Documentation 81 (7). Preprint:
    arXiv:2503.15195.
-Hua, Michel. 2026. The Books Kept at 3 Washington Square North: A Critical Note. Unpublished
-  draft of 13 September 2026, drafted with Claude Fable 5.1; LaTeX sources at https://
-  github.com/Commutator-IO/hopper-project/tree/main/docs/study.
 
 Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Is-
   abella Murray, and Elizabeth Spence. 2025. « Unlocking the Archives: Using Large Lan-
   guage Models to Transcribe Handwritten Historical Documents. » Historical Methods: A
 
-                                               19
+
+
+                                              19
     Journal of Quantitative and Interdisciplinary History 58 (3). https://doi.org/10.1080/
     01615440.2025.2500309.
 
@@ -1031,8 +1033,12 @@ Whitney Museum of American Art. n.d. Edward and Josephine Hopper Resources. http
 
 
 A    A complete transcribed leaf
-The transcription of Book III leaf 19, October on Cape Cod (ref 16838), as the model wrote it in
-the restricted language, followed by the note recording the comparison with the photograph.
+The transcription of Book III leaf 19, October on Cape Cod (ref 16838), as the model wrote it
+in the restricted language, followed by the note recording the comparison with the photograph.
+The note is given verbatim, as the file carries it: the comparison of 13 September 2026 was
+made for a critical note on the ledgers that was abandoned, and the sentence saying so stays
+in the transcription because it is what the file recorded on the day, and the comparison itself
+is unaffected.
  \sheet{16838}{19}
 
 
@@ -1056,16 +1062,17 @@ the restricted language, followed by the note recording the comparison with the 
  pinkish with clumps of green. House fresh painted white, barn left dull\\
  Rooves of both slatey grey. Glimpse of red foundation, chimney dull red.\\
  Edge of locust grove L. dull green. Woods in background with green underfoot\\
- at front Edge. Sky wan, whitish with long strips of grey,. Some blue at top.\\
+
+
+
+                                               20
+ at front Edge. Sky wan, whitish with long strips of grey,. Some blue at top.\\
  "Peace, quiet, no birds sing." "Some day you will be quiet too" - E. H.'s
  favorite Goethe.\\
  \qquad (strictly off the record)}
 
 
-
-
-                                               20
- \marginal{bearberry --- above « herbage »; low --- above « clumps »; pale ---
+ \marginal{bearberry --- above « herbage »; low --- above « clumps »; pale ---
  above « blue at top »}
 
 
@@ -1118,8 +1125,6 @@ of 1921 and the reader keeps the year as written; that year’s income is counte
                               1924     1,015.00       980.00    -199.00
                               1925     1,218.67     1,218.67    -199.00
                               Total   14,455.87    14,654.87    -199.00
-
-
 
 
                                                   21
