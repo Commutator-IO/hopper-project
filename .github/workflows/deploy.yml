@@ -46,6 +46,12 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v5
       - run: npm ci
+      # The prose and the code, before anything is built from either. oxlint
+      # was in package.json and run by nobody; markdownlint-cli2 checks the
+      # conventions CONTRIBUTING states, on the files this repository writes
+      # (#5, and the work #13 was closed without landing).
+      - run: npm run lint
+      - run: npm run lint:md
       - run: npm run catalogue
       # The generated inventory is rebuilt rather than trusted: a catalogue.ts
       # that had drifted from harvest/ is caught here rather than by a reader

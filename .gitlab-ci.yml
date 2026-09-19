@@ -40,3 +40,14 @@ lean:
     - node scripts/lean.mjs
     - git diff --exit-code lean/Hopper/Data
     - cd lean && lake build
+
+# The prose and the code, as on GitHub: oxlint over the scripts and the site,
+# markdownlint over the repository's Markdown against the conventions in
+# CONTRIBUTING.md.
+lint:
+  stage: prove
+  image: node:22-bookworm
+  script:
+    - npm ci
+    - npm run lint
+    - npm run lint:md

@@ -100,9 +100,9 @@ version DOI shown on the record when quoting a specific reading.
 
 ### The form
 
-> Josephine Nivison Hopper and Edward Hopper, Artist's ledger — Book I, leaf 58 (ref 18297).
-> Whitney Museum of American Art, 96.208. Hopper Ledgers, batch-06, first
-> machine pass by Opus 5, 6 September 2026,
+> Josephine Nivison Hopper and Edward Hopper, Artist's ledger — Book I,
+> leaf 58 (ref 18297). Whitney Museum of American Art, 96.208.
+> Hopper Ledgers, batch-06, first machine pass by Opus 5, 6 September 2026,
 > <https://hopper.commutator.io/book-i/#book-i/6/18297> (accessed 10 September
 > 2026).
 
@@ -154,8 +154,8 @@ nothing to anybody holding the book:
 insertion, about one sheet in nine — is cited as an **unnumbered leaf**, with
 its ref:
 
-> Josephine Nivison Hopper and Edward Hopper, Artist's ledger — Book I, unnumbered leaf (ref
-> 16761). Whitney Museum of American Art, 96.208. …
+> Josephine Nivison Hopper and Edward Hopper, Artist's ledger — Book I,
+> unnumbered leaf (ref 16761). Whitney Museum of American Art, 96.208. …
 
 That is the same answer the TEI gives as `n="unnumbered"`, and it is an answer
 rather than an omission: nobody wrote a number on that leaf, and inventing one

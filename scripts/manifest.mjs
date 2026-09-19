@@ -16,7 +16,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { keywordTerms, parseKeyword } from './lib/ledger.mjs';
-import { fileHistory, historyAvailable } from './lib/history.mjs';
+import { fileHistory } from './lib/history.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const out = resolve(root, 'public/transcripts');

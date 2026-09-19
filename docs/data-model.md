@@ -9,7 +9,7 @@ Nothing below is a design. Every one of these units is something the archive or
 the books already have; where this project invented one, the entry says so and
 says why.
 
-```
+```text
 ledger ─┬─ sheet ──── leaf?          the archive's units
         └─ batch ──── transcription  the reading's units
                        ├─ work?

@@ -65,7 +65,8 @@ in the output if it is allowed through:
 
 ## The museum links
 
-A `\work{…}` heading picks up a **see the work** link automatically, from `src/content/works.json`. Do not add links by hand and do
+A `\work{…}` heading picks up a **see the work** link automatically, from
+`src/content/works.json`. Do not add links by hand and do
 not put a URL in a transcription: the index is built by `npm run works`, which
 retrieves every one of them from the Met's and the Art Institute's public APIs
 and checks the artist field, so a link in the site is a link somebody's server
@@ -157,9 +158,12 @@ For the prose itself:
 - **Links** are inline; reference-style links are not used, because a link
   whose target sits forty lines away is a link nobody checks.
 
-There is no Markdown linter to enforce any of this: issue #13 was closed as
-completed without landing one, and until it does, these are conventions kept by
-hand — see #5.
+These are checked: `npm run lint:md` runs markdownlint-cli2 against
+`.markdownlint-cli2.jsonc`, and CI fails on a violation, as it does on
+`npm run lint` for the code. The config disables a rule only where this
+repository's convention differs from the default, and says why in each case.
+`docs/study/` is exempt: those are the article's sources, shaped by the
+journal rather than by this repository.
 
 ## What you can and cannot license to us
 

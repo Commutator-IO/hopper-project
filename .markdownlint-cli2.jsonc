@@ -1,0 +1,46 @@
+// The conventions are written in CONTRIBUTING.md § « Markdown is for the
+// repository's prose »; this is the half a machine can check. Rules are
+// disabled only where the repository's own convention differs from the
+// default, and each one says why (issues #5 and #13).
+{
+  "globs": ["**/*.md"],
+  // Not ours: dependencies, build output, the worktrees Claude Code makes, and
+  // the article sources under docs/study, which are LaTeX with a README beside
+  // them that follows the journal's shape rather than this repository's.
+  "ignores": ["**/node_modules/**", "dist/**", ".claude/**", "docs/study/**"],
+  "config": {
+    "default": true,
+
+    // Line length: 80 columns of prose, and .editorconfig says so too. Tables,
+    // code blocks and headings are exempt — a pipe table wrapped at 80 is
+    // unreadable, and a URL cannot be broken.
+    "MD013": { "line_length": 80, "tables": false, "code_blocks": false, "headings": false },
+
+    // Emphasis style: asterisks, because underscores appear inside the
+    // identifiers this repository is full of.
+    "MD049": { "style": "asterisk" },
+    "MD050": { "style": "asterisk" },
+
+    // One H1 per file, at the top, ATX style.
+    "MD003": { "style": "atx" },
+
+    // Ordered lists are numbered 1. 2. 3., so the source reads like the output.
+    "MD029": { "style": "ordered" },
+
+    // Bare URLs are fine in a footnote-ish line; the convention is inline
+    // links in prose, which no rule can tell apart from a deliberate one.
+    "MD034": false,
+
+    // Duplicate headings are allowed when they are in different sections — the
+    // method notes repeat « Why this exists » under different chapters.
+    "MD024": { "siblings_only": true },
+
+    // First line need not be a heading: CITATION-style files open with a
+    // paragraph, and the badge line in README stands above the title's twin.
+    "MD041": false,
+
+    // HTML is used deliberately in a few places (the badge, a <kbd>), and the
+    // rule cannot tell those from a paste.
+    "MD033": false
+  }
+}

@@ -4,7 +4,7 @@
 `src/content/catalogue.ts`. They are the Whitney's own listing of the six
 ledgers, one line per digitised sheet:
 
-```
+```text
 16853|Page 2 ["Evening Wind"]
 ```
 

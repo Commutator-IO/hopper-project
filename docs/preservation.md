@@ -68,9 +68,11 @@ This is the part a person has to do, and it has an order.
    infers from a tarball. Tag it with the version `npm run citation` reports —
    the date of the most recent transcription pass, `v2026.09.09` at the time of
    writing.
+
    ```bash
    gh release create v2026.09.09 --title "The Hopper ledgers, 2026-09-09" --generate-notes
    ```
+
 3. **Take the concept DOI** — the one Zenodo shows as *« Cite all versions »*,
    not the version DOI — and put it in `CONCEPT_DOI` in
    `scripts/citation.mjs`. Then `npm run citation`, and `CITATION.cff` and
