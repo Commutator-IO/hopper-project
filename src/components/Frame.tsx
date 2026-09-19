@@ -11,6 +11,10 @@ import { isCurrent, url } from '../lib/base.ts';
  */
 
 const OTHER_PAGES: { path: string; label: string }[] = [
+  // The index leads them: the others are readings of the corpus and this one
+  // is the way in to it, which is what a reader who arrived with a name in
+  // mind wants before any of the rest.
+  { path: '/index/', label: 'Index' },
   { path: '/timeline/', label: 'Timeline' },
   { path: '/accounts/', label: 'Accounts' },
   { path: '/technique/', label: 'Technique' },

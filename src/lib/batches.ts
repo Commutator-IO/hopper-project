@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { url } from './base.ts';
 import { shownState, type State } from './progress.ts';
-import type { LedgerKey, Manifest, Sheet } from './types.ts';
+import type { IndexTerm, LedgerKey, Manifest, Sheet } from './types.ts';
 
 /**
  * The twelve-sheet batch, shared by the reading panes and by the skill.
@@ -127,6 +127,29 @@ export function useManifest(): Manifest | null {
     };
   }, []);
   return m;
+}
+
+/**
+ * The keyword index, fetched once. `null` until it arrives, and on any failure.
+ *
+ * A second file rather than a second key in the manifest, and written by the
+ * same script from the same reading of the `.tex` sources: it is about as
+ * large as the manifest's whole `tags` map, every page of the site fetches the
+ * manifest, and one page fetches this.
+ */
+export function useKeywordIndex(): IndexTerm[] | null {
+  const [terms, setTerms] = useState<IndexTerm[] | null>(null);
+  useEffect(() => {
+    let live = true;
+    fetch(url('/transcripts/keywords.json'))
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => live && setTerms(j))
+      .catch(() => {});
+    return () => {
+      live = false;
+    };
+  }, []);
+  return terms;
 }
 
 /**

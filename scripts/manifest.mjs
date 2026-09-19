@@ -287,29 +287,33 @@ for (const [ledger, byLabel] of Object.entries(tags)) {
  *
  * `tags` above is per volume, which is what a ledger page wants — there a term
  * is a filter over that volume's own sheets. It is also why a reader looking
- * for Kraushaar has to know which volume to open first: the dealer runs
- * through five of them and appears five times, as five unrelated pills that
- * nothing joins. Keyed by the label, the term becomes the entry and the
- * volumes become what it points at, which is what an index is.
+ * for Rehn has to know which volume to open first: the dealer is named in seven
+ * of the ten and appears seven times, as seven unrelated pills that nothing
+ * joins. Keyed by the label, the term becomes the entry and the volumes become
+ * what it points at, which is what an index is.
  *
  * ## What it merges, and what it therefore is not
  *
  * **It merges across volumes and nothing else.** The key is the label exactly
- * as somebody wrote it: « Keppel » and « Kepple » are two entries, and so are
- * « Wm. Macbeth » and « Macbeth Gallery ». The spelling as written is how an
- * entry is found, and a build script that folded them would be performing the
- * one thing this edition refuses, in the one place nobody would look for it.
- * So this is **not** an authority file and no entry here is a person: an entry
- * is a string that somebody wrote after reading a leaf, and the leaves are
- * what say whether two of them are the same man.
+ * as somebody wrote it, and the corpus as it stands shows what that costs:
+ * « watercolors » and « watercolours » are two terms, « Mrs. Osgord Blanchard »
+ * and « Mrs. John Osgord Blanchard » are two women, and « Frank K. M. Rehn »
+ * and « Rehn Gallery » are two dealers. None of those pairs is joined here.
+ * The spelling as written is how an entry is found, and a build script that
+ * folded them would be performing the one thing this edition refuses, in the
+ * one place nobody would look for it. So this is **not** an authority file and
+ * no entry here is a person: an entry is a string that somebody wrote after
+ * reading a leaf, and the leaves are what say whether two of them are the same
+ * man.
  *
  * **It does not settle the facet either.** Inside a volume the first batch to
  * declare one fixes it, above. Across volumes two readings may differ —
- * Duncan Phillips is a `person` in Book I and a `collection` in Book III, and
+ * Duncan Phillips is a `person` in Book I and a `collection` in Book IV, and
  * both are true of him — so the entry keeps every facet any volume declared
  * and the page stands the term under each. Picking one would decide from a
- * build script a question only the sheets decide, and seven terms currently
- * turn on it.
+ * build script a question only the sheets decide. The corpus already holds
+ * terms that turn on it, and the page marks each one where it stands rather
+ * than counting them anywhere.
  *
  * ## Why it is written beside the manifest and not into it
  *

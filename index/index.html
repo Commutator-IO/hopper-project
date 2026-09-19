@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          addEventListener('error', function (e) {
+            var el = e.target; var u = el && (el.src || el.href);
+            if (u && /\/assets\//.test(u) && !sessionStorage.getItem('assetReload')) {
+              sessionStorage.setItem('assetReload', '1'); location.reload();
+            }
+          }, true);
+          addEventListener('load', function () { sessionStorage.removeItem('assetReload'); });
+        } catch (_) {}
+      })();
+    </script>
+    <title>Index | Hopper Ledgers</title>
+    <meta name="description" content="Every dealer, buyer, place, museum and subject the transcriptions name, merged across the six ledgers and the four notebooks, each term linking to the batches that name it." />
+    <meta property="og:title" content="Index | Hopper Ledgers" />
+    <meta property="og:description" content="Every dealer, buyer, place, museum and subject the transcriptions name, merged across the six ledgers and the four notebooks, each term linking to the batches that name it." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hopper.commutator.io/index/" />
+    <link rel="canonical" href="https://hopper.commutator.io/index/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/mainIndex.tsx"></script>
+  </body>
+</html>

@@ -81,6 +81,9 @@ export default defineConfig({
         bookIV: resolve(import.meta.dirname, 'book-iv/index.html'),
         bookV: resolve(import.meta.dirname, 'book-v/index.html'),
         dealers: resolve(import.meta.dirname, 'dealers/index.html'),
+        // `index` is the keyword index at /index/, and not this site's front
+        // page — that is `main`, above, from the root index.html.
+        index: resolve(import.meta.dirname, 'index/index.html'),
         timeline: resolve(import.meta.dirname, 'timeline/index.html'),
         accounts: resolve(import.meta.dirname, 'accounts/index.html'),
         technique: resolve(import.meta.dirname, 'technique/index.html'),

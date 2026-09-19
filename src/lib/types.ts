@@ -193,6 +193,53 @@ export type Facet =
   | 'subject'
   | 'feature';
 
+/**
+ * One term of the index: a label, the facets it was placed under, and the
+ * volumes that name it.
+ *
+ * Written by `npm run manifest` into `keywords.json`, beside the manifest
+ * rather than inside it, because every page fetches the manifest and one page
+ * fetches this.
+ *
+ * It is the manifest's `tags` keyed by the label instead of by the volume, and
+ * that is the whole of the transformation. **Nothing is merged but the
+ * volumes**: the key is the spelling as it was written, so « Keppel » and
+ * « Kepple » are two terms here as they are on the leaves. An entry is
+ * therefore not a person and this is not an authority file — it is a string
+ * somebody wrote after reading a sheet, and what makes two strings the same
+ * man is a question for the sheets.
+ */
+export interface IndexTerm {
+  /** The label, exactly as the `\keywords{}` line wrote it. */
+  label: string;
+  /**
+   * Every facet any volume declared for it, in the vocabulary's own order.
+   *
+   * Usually one, and empty where no reading placed the term at all. **More
+   * than one is not a defect**: Duncan Phillips is a `person` in Book I and a
+   * `collection` in Book IV, and both are true of him. The index keeps both
+   * and the page stands the term under each, because choosing between them is
+   * a reading and the index performs none.
+   */
+  facets: Facet[];
+  /** The volumes that name it, with what each called it and where. */
+  volumes: IndexSource[];
+}
+
+/** One volume's share of a term: which batches wrote it, and as what. */
+export interface IndexSource {
+  /** A ledger's id, or a notebook's — the two are keyed alike here. */
+  ledger: string;
+  /** What *this* volume called it; `null` where its reading placed nothing. */
+  facet: Facet | null;
+  /**
+   * The batches of that volume whose `\keywords{}` line carries the term —
+   * or, for a notebook, the sittings its one line covers, since a notebook's
+   * line closes the file rather than a batch.
+   */
+  batches: number[];
+}
+
 export interface Manifest {
   /** Sheets per batch. Twelve — see `src/lib/batches.ts` for why that number. */
   batchSize: number;
