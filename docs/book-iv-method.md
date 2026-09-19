@@ -153,9 +153,9 @@ books need the same rule for a different shape, and Book I leaf 80 is the case.
 Under the Camel's Hump the leaf writes « 2500 + returned water color - Shore
 Acres = 500 » and then three ruled rows — « 1'' payment | 500 »,
 « 2'' '' | 1700 », « 3'' '' | 300 » — each with its third taken off and its own
-date, from January 1932 to January 1934. Read row by row that is three sales of one picture. Read
-as she wrote it, it is one sale of 2500 paid in three parts, and that is how it
-is booked: once, on the first part, at the sum of the parts, with the rate the
+date, from January 1932 to January 1934. Read row by row that is three sales of
+one picture. Read as she wrote it, it is one sale of 2500 paid in three parts,
+and that is how it is booked: once, on the first part, at the sum of the parts, with the rate the
 first row states. The others are reported as instalments and excluded.
 
 What identifies them is her words and not the arithmetic: a row whose first cell
