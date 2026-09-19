@@ -144,6 +144,30 @@ show at least one written line the transcription lacks, thirty of them red;
 many are the alignment's own noise and each has to be looked at. That is the
 re-reading pass, and `npm run ink -- book-iv --why` is its worklist.
 
+## A price paid in parts, in the work books
+
+Book IV collapses instalments already: a title charged more than once, where one
+entry says on account or balance, is one picture at the largest figure. The work
+books need the same rule for a different shape, and Book I leaf 80 is the case.
+
+Under the Camel's Hump the leaf writes « 2500 + returned water color - Shore
+Acres = 500 » and then three ruled rows — « 1'' payment | 500 », « 2'' '' | 1700 »,
+« 3'' '' | 300 » — each with its third taken off and its own date, from January
+1932 to January 1934. Read row by row that is three sales of one picture. Read
+as she wrote it, it is one sale of 2500 paid in three parts, and that is how it
+is booked: once, on the first part, at the sum of the parts, with the rate the
+first row states. The others are reported as instalments and excluded.
+
+What identifies them is her words and not the arithmetic: a row whose first cell
+says « payment », or dittoes one that does. Three figures adding to a fourth
+happen on a leaf without being parts of anything.
+
+The exchange is not added in. The water colour returned toward the purchase is
+valued at 500 here, and leaf 71 shows it sold to the same buyer for 500 in 1930,
+its own 333 1/3 already booked to that year. The price is 2500 because that is
+the figure in her hand; adding the picture's value to it would be this reader
+adding what she did not add.
+
 ## When the ink speaks, and when it does not
 
 Book IV's colour is its status field — receipts red, sums pencil, charges

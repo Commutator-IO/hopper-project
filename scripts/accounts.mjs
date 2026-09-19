@@ -263,10 +263,75 @@ const byReason = (rows, n) => {
  */
 const activityOf = (ledger) => (ledger === 'book-iv' ? 'illustration' : 'art');
 
+/**
+ * The rows of one work's block that are instalments of a single sale.
+ *
+ * Book I leaf 80 is the case, and so far the only one: under the Camel's Hump
+ * the leaf writes « 2500 + returned water color - Shore Acres = 500 » and then
+ * three rows, « 1'' payment | 500 », « 2'' '' | 1700 », « 3'' '' | 300 », each
+ * with its third taken off and its own date, from January 1932 to January
+ * 1934. Read row by row that is three sales of one picture; read as the leaf
+ * writes it, it is one sale of 2500 paid in three parts.
+ *
+ * What identifies them is not the arithmetic alone — three figures adding to a
+ * fourth happen — but the words the writer used: a row whose first cell says
+ * « payment », or dittoes one that does, is a part and not a price. The sum of
+ * the parts is then the price, and the sale is booked once, on the first of
+ * them, at that sum with the rate the first row states.
+ *
+ * The other side of the exchange is not added in. The water colour returned
+ * toward the purchase is valued at 500 on this leaf and was sold for 500 to
+ * the same buyer on leaf 71, where its own 333 1/3 is already booked to 1930;
+ * counting it here would be this reader adding what the writer did not add.
+ * The price is 2500 because that is the figure in her hand.
+ */
+const PAYMENT = /\bpayment\b/i;
+const instalmentRun = (rows) => {
+  const parts = [];
+  for (const row of rows) {
+    const first = (row.plain[0] ?? '').trim();
+    const says = PAYMENT.test(first);
+    const dittoes = parts.length > 0 && isDitto(first.replace(/^\d+\s*(''|")?\s*/, '').trim() || first);
+    if (!says && !dittoes) {
+      if (parts.length) break;
+      continue;
+    }
+    // « 500. - 1/3 »: her full stop after a figure would hide the sale from
+    // `salesIn`, which wants the dash next. The same normalisation the Book III
+    // reader makes, made here for one line.
+    const sale = salesIn(row.plain.join(' ').replace(/(\d)\.\s*-/g, '$1 -'))[0];
+    if (!sale) {
+      if (parts.length) break;
+      continue;
+    }
+    parts.push({ row, sale });
+  }
+  if (parts.length < 2) return null;
+  const price = Number(parts.reduce((a, p) => a + p.sale.gross, 0).toFixed(2));
+  const rate = parts[0].sale.rateWritten;
+  // Every part must state the same rate, or they are not parts of one price.
+  if (parts.some((p) => p.sale.rateWritten !== rate)) return null;
+  const sale = salesIn(`${price} - ${rate} =`)[0];
+  if (!sale) return null;
+  const marks = new Map();
+  const amounts = new Map();
+  parts.forEach((p, i) => {
+    marks.set(p.row, i === 0 ? 'first' : 'part');
+    amounts.set(p.row, p.sale.gross);
+  });
+  return { rows: marks, parts: amounts, price, sale };
+};
+
+/** Rows set aside as instalments of a price written out above them. */
+const workInstalments = [];
+
 for (const file of files) {
   if (activityOf(file.ledger) !== 'art') continue;
   const groups = [...file.works.map((w) => w.rows), file.looseRows];
   for (const rows of groups) {
+    // The rows of this block that are instalments of one sale, and the price
+    // they pay. See `instalmentRun`.
+    const paid = instalmentRun(rows);
     // A ditto in the date column means the row above, and only within one run
     // of rows. It is carried forward here and nowhere else.
     let lastYear = null;
@@ -293,7 +358,35 @@ for (const file of files) {
       // made. The date column or a ditto, or the row is reported unread.
       if (year !== null) lastYear = year;
 
+      // An instalment of a sale written out above it: « 1'' payment | 500 |
+      // - 1/3 = | 333 1/3 | Jan. 19, 32 », and two more beneath. The first
+      // carries the whole price and the rest are set aside, so the picture is
+      // sold once, at what the leaf says it fetched.
+      //
+      // This stands before the test for a sale on the row, because the row
+      // that carries the price need not show one: « 500. - 1/3 » hides its
+      // sale from `salesIn`, which wants the dash next and finds her full
+      // stop. The normalisation is made inside `instalmentRun` and not here,
+      // where it would make Book I leaf 68 read a resale of 1957 as a sale of
+      // 1929 — one line there carries both.
+      if (paid?.rows.has(row)) {
+        const w = {
+          ledger: row.ledger,
+          batch: row.batch,
+          leaf: row.leaf,
+          ref: row.ref,
+          work: row.work,
+          section: row.section,
+        };
+        if (paid.rows.get(row) !== 'first') {
+          workInstalments.push({ of: paid.price, part: paid.parts.get(row), ...w, row: cells });
+          continue;
+        }
+        sales.splice(0, sales.length, paid.sale);
+      }
+
       if (!sales.length) continue;
+
 
       const where = {
         ledger: row.ledger,
@@ -2548,6 +2641,21 @@ const out = {
     ' sale rows name a work at all — the rest carry a price on a line that names no title — so ' +
     'this is a floor that moves with every batch transcribed, and a work absent from it may ' +
     'simply be on a leaf nobody has read.',
+  instalments: {
+    count: workInstalments.length,
+    note:
+      'Rows of a work-book leaf that pay a price written out above them, rather than sell the ' +
+      'picture again. Book I leaf 80 is the case: under the Camel\'s Hump the leaf writes ' +
+      '« 2500 + returned water color - Shore Acres = 500 » and then three rows, « 1\'\' payment | ' +
+      '500 », « 2\'\' \'\' | 1700 », « 3\'\' \'\' | 300 », each with its third taken off and its own ' +
+      'date. Read row by row that is three sales of one picture; read as she wrote it, it is one ' +
+      'sale of 2500 paid in three parts, and the sale is booked once, on the first of them. What ' +
+      'identifies them is her words — a row that says « payment », or dittoes one that does — and ' +
+      'not the arithmetic alone. The water colour returned toward the purchase is not added in: ' +
+      'it is valued at 500 here and was sold for 500 on leaf 71, where its own 333 1/3 is already ' +
+      'booked to 1930, so counting it would be this reader adding what she did not add.',
+    sample: workInstalments,
+  },
   duplicates: {
     count: duplicates.length,
     note:
@@ -2619,7 +2727,8 @@ process.stdout.write(
     `          gross ${tGross.toFixed(2)}, commission ${(tGross - tNet).toFixed(2)}, net ${tNet.toFixed(2)}\n` +
     `          arithmetic checkable on ${checked.length}, ${disagree.length} disagree\n` +
     `          ${works.length} work(s) named, ${duplicates.length} cross-volume duplicate(s) collapsed, ` +
-    `${instalments.length} Book IV instalment(s) collapsed into the price\n` +
+    `${instalments.length} Book IV instalment(s) collapsed into the price, ` +
+    `${workInstalments.length} in the work books\n` +
     `          ${unparsed.length} row(s) the reader could not settle, reported not dropped ` +
     `(${ivUnreadMoney} of them a Book IV money cell that is not a figure in dollars)\n` +
     `          ${dealersRanked.length} dealer(s) and ${buyersRanked.length} named buyer(s) ranked; ` +
