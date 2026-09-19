@@ -1,5 +1,7 @@
 # The books Edward Hopper drew his paintings into, and Josephine Hopper priced
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22770550.svg)](https://doi.org/10.5281/zenodo.22770550)
+
 **A reading and transcription workbench for the six artist's ledgers at the
 Whitney Museum of American Art — 504 digitised sheets, 1907 to 1967.**
 
