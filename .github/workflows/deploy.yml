@@ -105,7 +105,10 @@ jobs:
       # unnoticed — three rows and a day — because it was the one derived file
       # in src/content/ that nothing regenerated and compared here.
       - run: npm run streak
-      - run: git diff --exit-code src/content/streak.json
+      # Its header carries the hour it was written, as every generated file
+      # here does, so the comparison ignores that one line and holds the rest
+      # to the transcriptions.
+      - run: git diff --exit-code -I '"generated"' src/content/streak.json
 
       # Tectonic, pinned, for the transcript PDFs. A static musl binary from
       # the project's own releases rather than a piped install script or the
