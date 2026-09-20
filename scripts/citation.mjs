@@ -62,10 +62,16 @@ const CONCEPT_DOI = '10.5281/zenodo.22770550';
  * it goes on `codemeta.json` and nowhere else; the corpus is cited by the DOI.
  *
  * A snapshot SWHID names one visit, not the newest one: the archive of
- * 15 September 2026, which holds `main` at a5fd672 and the tag v2026.09.13.
- * Replace it only with the SWHID of a later successful visit.
+ * 20 September 2026, which holds `main` at b08abb4 and the tags v2026.09.13
+ * and v2026.09.20. Replace it only with the SWHID of a later successful
+ * visit; one is requested with
+ *
+ *   curl -X POST https://archive.softwareheritage.org/api/1/origin/save/git/url/<repo>/
+ *
+ * and the snapshot is read back from the same URL once the task has
+ * succeeded.
  */
-const SWHID = 'swh:1:snp:4c71f0b7308d7d6c97aceb53f01673a558ee85a3';
+const SWHID = 'swh:1:snp:362cc5e4cbac16e8dd435fc3bd2168e470f30668';
 
 const manifest = read('public/transcripts/manifest.json');
 
@@ -240,10 +246,16 @@ const codemeta = {
   url: SITE,
   license: 'https://spdx.org/licenses/CC0-1.0',
   version,
+  // The first commit; the repository was begun the day the first batch was read.
+  dateCreated: '2026-09-05',
   dateModified: released,
-  programmingLanguage: ['JavaScript', 'TypeScript'],
+  // Lean is a language of the repository, not a dependency of the site: the
+  // certificates under lean/ are checked on every build, without Mathlib.
+  programmingLanguage: ['JavaScript', 'TypeScript', 'Lean', 'LaTeX'],
   runtimePlatform: 'Node.js',
-  developmentStatus: 'active',
+  softwareRequirements: ['Node.js', 'Lean 4.33.1', 'Tectonic'],
+  // CodeMeta expects a repostatus.org URL here, not a word.
+  developmentStatus: 'https://www.repostatus.org/#active',
   keywords: KEYWORDS,
   author: AUTHORS.map((a) => ({
     '@type': 'Person',

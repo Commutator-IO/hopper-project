@@ -4,17 +4,25 @@
   "name": "hopper-project",
   "description": "The reading and transcription workbench behind the Hopper ledgers corpus: the harvester for the museum’s listing, the LaTeX renderer, the TEI P5 exporter and its validator, the accounts and catalogue readers, and the static site that puts a transcription beside the museum’s photograph of the sheet it came from.",
   "codeRepository": "https://github.com/Commutator-IO/hopper-project",
-  "identifier": "swh:1:snp:4c71f0b7308d7d6c97aceb53f01673a558ee85a3",
+  "identifier": "swh:1:snp:362cc5e4cbac16e8dd435fc3bd2168e470f30668",
   "url": "https://hopper.commutator.io",
   "license": "https://spdx.org/licenses/CC0-1.0",
   "version": "2026.09.20",
+  "dateCreated": "2026-09-05",
   "dateModified": "2026-09-20",
   "programmingLanguage": [
     "JavaScript",
-    "TypeScript"
+    "TypeScript",
+    "Lean",
+    "LaTeX"
   ],
   "runtimePlatform": "Node.js",
-  "developmentStatus": "active",
+  "softwareRequirements": [
+    "Node.js",
+    "Lean 4.33.1",
+    "Tectonic"
+  ],
+  "developmentStatus": "https://www.repostatus.org/#active",
   "keywords": [
     "Edward Hopper",
     "Josephine Nivison Hopper",
