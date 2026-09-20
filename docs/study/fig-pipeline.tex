@@ -1,50 +1,62 @@
-% The pipeline, as the edition's own /method/ page draws it.
+% The schema the four editions of Section 8 share, and what it becomes here.
 %
-% Drawn here rather than generated, because it states decisions and not data:
-% what is read, what is derived from what, and the one step no file can vouch
-% for. The sibling editions carry the same drawing with their own corpora in
-% the first box, which is the point of Section 8.
+% Drawn rather than generated, because it states decisions and not data. The
+% upper row is the schema: five stations and one loop, the same in all four
+% editions. The lower row, in grey, is the same schema with this edition's
+% values filled in. The siblings fill it in differently (Table 3), which is
+% the point of Section 8: the stations do not move, the values do.
 \begin{figure}[htbp]\centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   font=\small,
-  box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=9mm, text width=23mm},
-  wide/.style={box, text width=28mm},
-  note/.style={font=\scriptsize\itshape, text=black!55},
+  st/.style={draw, rounded corners=2pt, align=center, inner sep=4pt,
+             minimum height=12mm, text width=27mm},
+  src/.style={st, fill=black!3},
+  inst/.style={font=\scriptsize\itshape, text=black!55, align=center,
+               text width=27mm, anchor=north},
+  lbl/.style={font=\scriptsize, text=black!55, align=center},
   arr/.style={-{Stealth[length=4pt]}, draw=black!55},
   human/.style={arr, dashed},
 ]
 
-\node[box, fill=black!3, text width=22mm] (facs) {\textbf{Photograph}\\[1pt]\scriptsize Whitney, fetched\\\scriptsize never stored};
-\node[wide, right=13mm of facs] (tex) {\textbf{Transcription}\\[1pt]\scriptsize restricted \LaTeX, 14 macros\\\scriptsize \texttt{batch-NN.tex}};
-\node[box, right=7mm of tex, yshift=13mm] (tei) {\textbf{TEI P5}\\[1pt]\scriptsize \texttt{npm run tei}};
-\node[box, right=7mm of tex, yshift=-13mm] (data) {\textbf{Derived data}\\[1pt]\scriptsize accounts, formats,\\\scriptsize materials, days};
-\node[box, right=7mm of tei] (odd) {\textbf{Validated}\\[1pt]\scriptsize against \texttt{hopper.odd}};
-\node[box, right=7mm of data] (lean) {\textbf{Certified}\\[1pt]\scriptsize Lean 4, on every build};
-\node[wide, right=7mm of odd, yshift=-13mm] (site) {\textbf{The reading beside\\the photograph}\\[1pt]\scriptsize cited by leaf and reference};
+% The schema: five stations.
+\node[src] (W) {\textbf{Witness}\\[1pt]\scriptsize held by the institution,\\\scriptsize never stored};
+\node[st, right=17mm of W] (R) {\textbf{Reading}\\[1pt]\scriptsize the one file written,\\\scriptsize in a declared language};
+\node[st, right=17mm of R] (D) {\textbf{Derivations}\\[1pt]\scriptsize computed from the\\\scriptsize reading, on every build};
+\node[st, right=17mm of D] (V) {\textbf{Verifications}\\[1pt]\scriptsize what a machine can\\\scriptsize check of them};
+\node[st, right=17mm of V] (A) {\textbf{Address}\\[1pt]\scriptsize the reading beside\\\scriptsize the witness, cited};
 
-\draw[arr] (facs) -- node[note, above=3pt, midway, text width=16mm, align=center]{the model\\reads} (tex);
-\draw[arr] (tex.east) -- ++(3mm,0) |- (tei.west);
-\draw[arr] (tex.east) -- ++(3mm,0) |- (data.west);
-\draw[arr] (tei) -- (odd);
-\draw[arr] (data) -- (lean);
-\draw[arr] (odd.east) -- ++(3mm,0) |- (site.west);
-\draw[arr] (lean.east) -- ++(3mm,0) |- (site.west);
+\draw[arr] (W) -- node[lbl, above=2pt]{the model} node[lbl, below=2pt]{a pass} (R);
+\draw[arr] (R) -- node[lbl, above=2pt]{scripts} node[lbl, below=2pt]{rebuilt} (D);
+\draw[arr] (D) -- node[lbl, above=2pt]{checkers} node[lbl, below=2pt]{or fail} (V);
+\draw[arr] (V) -- node[lbl, above=2pt]{the site} node[lbl, below=2pt]{cited} (A);
 
-% The step that is not automated, and the only one that changes a batch's state.
-\node[box, below=17mm of tex, fill=black!3, text width=32mm] (check)
-  {\textbf{A person checks}\\[1pt]\scriptsize sheet by sheet, against the photograph};
-\draw[human] (facs.south) |- (check.west);
-\draw[human] (check.north) -- node[note, left=1pt, pos=0.5]{corrected at source} (tex.south);
+% The loop: the only step no file can prove, and the only one that changes the reading.
+\node[st, dashed, fill=black!3, below=10mm of D, text width=52mm, inner sep=5pt] (P)
+  {\textbf{A person}\\[1pt]\scriptsize compares the reading with the witness,\\\scriptsize corrects it at source, and declares};
+\draw[human] (A.south) |- (P.east);
+\draw[human] (P.west) -| node[lbl, above=2pt, pos=0.3]{the correction} (R.south);
 
-\node[note, right=10mm of check, text width=58mm, align=left]
-  {The dashed step is the one no file can prove, and no batch has passed it:
-   \texttt{status.json} declares nothing.};
+% The same schema, with this edition's values.
+\node[inst, below=5mm of P.south, text width=0mm] (anchor) {};
+\node[inst] at (W |- anchor) {Whitney photograph,\\ResourceSpace reference,\\fetched at view time};
+\node[inst] at (R |- anchor) {\texttt{batch-NN.tex}\\twelve sheets a pass,\\14 macros};
+\node[inst] at (D |- anchor) {TEI, PDF, HTML,\\accounts, formats,\\materials, days};
+\node[inst] at (V |- anchor) {\texttt{hopper.odd}\\Lean 4 certificates\\CI regenerates and compares};
+\node[inst] at (A |- anchor) {hopper.commutator.io\\sheet, leaf, pass\\each cited separately};
+\node[lbl, anchor=east, xshift=-3mm] at (W.west |- anchor) {\itshape here:};
 
 \end{tikzpicture}}
-\caption{How a reading is made and what is derived from it. Every arrow but the
-dashed pair is a script that runs on each build and fails loudly; the dashed
-pair is the human check, which alone changes a batch's state and which no file
-can vouch for. The sibling editions of Section~8 run the same pipeline with
-another corpus in the first box.}\label{fig:pipeline}
+\caption{The schema the four editions of Section~8 share, and its values in this
+one. Five stations and one loop: the model turns a witness into a reading, in
+passes whose header names the model and the date; scripts derive everything
+else from the reading and regenerate it on every build; checkers fail the build
+on what a machine can check; the site places the reading beside the witness
+and cites both by reference. The dashed loop is the person, who compares the
+reading with the witness and corrects the reading, which alone changes anything
+downstream. Four invariants hold at every station: the witness is never stored;
+only the reading is written, everything else is derived and compared; every
+assertion carries an address into the witness; and the person's verdict is
+declared, not observed. The grey row gives this edition's values; the siblings'
+are in Table~\ref{tab:params}.}\label{fig:pipeline}
 \end{figure}

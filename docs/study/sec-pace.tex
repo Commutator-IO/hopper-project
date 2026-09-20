@@ -52,3 +52,37 @@ argument of this article, which is that the transcription is no longer the
 bottleneck and the checking is, and that an edition which cannot say which of
 its sheets a person has read is publishing a machine's confidence as though it
 were scholarship.
+
+There is a third cost the traditional account treats as fixed, and it is the
+apparatus itself. Everything in Figure~\ref{fig:pipeline} below the reading
+--- the converters, the censuses, the validators, the site, the workflows
+that rebuild and compare --- is code, and code of that kind was the part of
+an edition that took a developer and a grant. Here it was written by the same
+model that read the sheets, through a code assistant, under one person's
+direction, and the repositories' histories give the pace. This edition's
+apparatus, some twenty-three thousand lines of scripts and interface and
+eighteen hundred of Lean, was written between 5 and 20 September 2026 in 214
+commits. The siblings show what an edition costs once the schema exists: the
+Grothendieck edition, first and therefore longest, 14,500 lines in 246
+commits over six weeks; the Gallica edition, 11,800 lines in 56 commits over
+ten days; the morphology course, 5,700 lines in 104 commits over two days,
+the schema by then known and only its values new. Lines and commits measure
+activity, not quality; what they establish is that the apparatus is no
+longer a fixed cost, and that a stated schema can be filled in for a new
+corpus in days.
+
+That ease has consequences, and two were met here. Code written at that pace
+is written faster than it is read, and what makes it trustworthy is the
+discipline this article has described for the transcription: every derived
+file regenerated and compared on every build, every rule stated where a
+reader can find it, and a build that fails loudly. Two of the reader's rules
+were found by bugs (Section 6.2), and a figure in this article went stale
+because a generator wrote to a path no build checked, until the comparison
+caught it. The assistant does not remove the checks; it makes them the whole
+of the guarantee, since nobody reads the code as an editor reads a leaf. The
+other consequence is the one the method already lives by: when a converter
+or a census costs an afternoon, what remains expensive are the editorial
+decisions --- what a bare figure is, whether three payments are one sale,
+where a colour convention begins --- and those the code cannot take. The
+assistant moves the cost of an edition further toward its rules and its
+checking, which is where this article has argued it belongs.

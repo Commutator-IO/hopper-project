@@ -109,9 +109,49 @@ The edition stores no photograph. The Whitney's download endpoint answers cross-
 
 \input{fig-pipeline.tex}
 
+\subsection{The schema, and its values here}
+
+Figure~\ref{fig:pipeline} gives the whole arrangement at a glance, and it is
+stated generally because it was not designed for this corpus: the same five
+stations and the same loop run the three sibling editions of Section~8, and
+what distinguishes the four is only the values the stations take. A
+\emph{witness} is what the holding institution serves, addressed by the
+holder's own reference, and it is never stored. A \emph{reading} is the one
+file that is written --- by the model first, by a person thereafter --- in a
+language whose every construct is declared, in passes whose header records
+the model and the date. The \emph{derivations} are everything else the
+edition publishes, computed from the reading by scripts and regenerated on
+every build. The \emph{verifications} are whatever a machine can check of
+them: a schema, an arithmetic, the agreement of two readers. The
+\emph{address} is the reading placed beside its witness, each sentence cited
+by the holder's reference and the edition's dated pass. The loop is the
+person, who compares the reading with the witness, corrects the reading, and
+declares that the comparison was made.
+
+Four invariants, each enforced by a script or a rule in every edition, make
+the schema more than a drawing: the witness is never committed; only the
+reading is written, and every other file is recomputed from it and compared
+with the committed copy on each build; every assertion carries an address
+into the witness; and the person's verdict is declared, in a file kept apart
+from everything observed. What a corpus then sets is few things: what the
+witness is and how it is addressed; whether the model is to read it, to read
+and restate it, or to index a reading already made; the language and the
+size of a pass; which derivations are worth publishing; and which
+verifications the material admits. Table~\ref{tab:params} gives the four
+editions' values side by side.
+
+Here the witness is the Whitney's photograph of a sheet, addressed by its
+ResourceSpace reference and fetched by the browser as it is looked at; the
+model reads it, twelve sheets to a pass, into a LaTeX of fourteen macros; the
+derivations are the TEI, the typeset and rendered readings, and four censuses;
+the verifications are the customised schema, the Lean certificates and the
+regeneration on every push; and the address is the site, which cites a sheet,
+a leaf and a pass separately. The person's file is empty. The rest of this
+section takes the stations in turn.
+
 \subsection{The unit of work and the model}
 
-Figure~\ref{fig:pipeline} gives the whole arrangement at a glance, as the edition's own method page draws it: what is read, what is derived from what, and the one step no file can vouch for. A batch is twelve sheets, read in one fresh model context, and written as a single LaTeX file whose header records the model, the date, and what the batch found difficult. The skill that performs the reading accepts three models, Claude Fable 5.1, Claude Fable 5 and Claude Opus 5, and refuses any other, on the ground that a pass made on a model nobody chose produces a file whose provenance is an accident. Every file records the model that read its sheets, so that provenance is a fact about the file and not about the session. Between 5 and 13 September 2026, Opus 5 read most of the ledgers and the first sittings of the notebooks; Fable 5.1 read the last sittings of the black notebook and the Battle of Wash Sq. Where the rule of one context per batch was not kept, the header says so: batches 3 and 4 of Book I shared a context.
+A batch is twelve sheets, read in one fresh model context, and written as a single LaTeX file whose header records the model, the date, and what the batch found difficult. The skill that performs the reading accepts three models, Claude Fable 5.1, Claude Fable 5 and Claude Opus 5, and refuses any other, on the ground that a pass made on a model nobody chose produces a file whose provenance is an accident. Every file records the model that read its sheets, so that provenance is a fact about the file and not about the session. Between 5 and 13 September 2026, Opus 5 read most of the ledgers and the first sittings of the notebooks; Fable 5.1 read the last sittings of the black notebook and the Battle of Wash Sq. Where the rule of one context per batch was not kept, the header says so: batches 3 and 4 of Book I shared a context.
 
 \subsection{The rules}
 
@@ -294,6 +334,27 @@ The interface at \url{https://hopper.commutator.io} was built for this project a
 
 The reading views for the notebooks work the same way and are addressed by the museum's reference rather than by a page number, since an opening photographed whole carries two page numbers and a cover none.
 
+The interface was built before the transcription was finished, and the order
+matters, because a reading that can be seen beside its witness is a reading
+that can be debugged. A misread cell in a file of ruled rows is invisible: it
+is a well-formed number in a well-formed column. It becomes visible in two
+places the site provides, the pane where it stands beside the photograph, and
+the drawings the derivations make of it, where a wrong figure is an outlier
+and a wrong year a hollow. Most of the corrections the repository records
+were found in the second place and settled in the first. The rule that a red
+figure in Book~IV is money received, applied to the volume's opening leaves,
+turned eleven prices into receipts; the rise showed in the accounts before it
+showed in any file, and reading leaf 7 beside its photograph showed the
+convention beginning on that leaf's last line. Three ruled rows under one
+title on Book~I leaf 80 read as three sales until the leaf, in the pane,
+showed a sum written above them and the word \q{payment} in each; the
+accounts now book one sale of 2500 paid in three parts. The absence of 1921
+from the cash book was a hollow in the calendar before it was a year line
+misread on leaf 53. None of this needs the interface to be elaborate; it
+needs the reading and the witness on one screen and the derived figures on
+the next, from the first batch onward. An edition that builds its reading
+view last finds its errors last.
+
 \subsection{Derived data, and the rule that a build must fail}
 
 Everything the interface shows beyond the transcription is derived from the transcription by a script whose header states what it counts and what it therefore is not, and the continuous integration workflow regenerates each derived file and fails if the committed copy differs. The manifest of what is transcribed is observed from the files, never declared, so that a progress figure cannot claim work that was not done; the only declared states, \emph{checked} and \emph{skipped}, are held in a separate file that is empty. The citation metadata is generated from a census of the files, on the ground that a hand-written sheet count is wrong from the next batch onward. The glossary of abbreviations and notations is hand-declared, but each entry carries a pattern that must match a transcribed leaf, and the search runs over the writer's words and never over a transcriber's note, so that an entry cannot cite as evidence the sentence written because of it.
@@ -406,6 +467,28 @@ same in all four; where it falls is set by the source.
 
 \input{fig-sources.tex}
 
+\begin{table}[htbp]\centering\small
+\caption{The schema of Figure~\ref{fig:pipeline}, with each edition's values,
+read from the four repositories on 20 September 2026.}\label{tab:params}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{2.9cm}}\toprule
+ & Hopper & Grothendieck & Gallica & Debord\\\midrule
+Witness & Photograph, fetched at view time & Facsimile, streamed from Montpellier & IIIF view, mirrored and git-ignored & Recording and its captions, downloaded, never versioned\\
+Model's task & Reads the cells & Reads, then restates the mathematics & Reads the page & Indexes a reading the platform made\\
+Reading & \texttt{batch-NN.tex}, twelve sheets a pass & \texttt{batch-NN.tex} and \texttt{.modern.tex}, twenty pages a pass & \texttt{batch-NN.fr.tex} and a modernised file, twenty views a pass & A lexicon of terms, inflections and the recogniser's mistakes; references and digressions\\
+Derivations & TEI, PDF, HTML; accounts, formats, materials, days & TEI, PDF, HTML; folder tags from the keyword line & TEI, PDF, HTML; the typed catalogue & Occurrences: identifiers and seconds, no word of the course\\
+Verifications & Schema; Lean; regenerate and compare & Schema; the two registers kept in step; the linked editions still served & Schema; the sources still served & The index's tests; two aligned texts, accents kept\\
+The person & Empty & Declared in a status file & Declared in a status file & Listens at the second; the verdict enters the lexicon\\\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:params} makes the same point station by station: the five
+stations of Figure~\ref{fig:pipeline} are filled in four times, no edition
+adds one or lacks one, and the values are set by the document --- a
+photograph, a streamed facsimile, a mirrored view, or a recording nobody may
+republish; a model that reads, that reads and restates, or that indexes what
+another machine read; a person who compares against a photograph in three
+editions and against a sound in the fourth.
+
 What the three siblings taught the method is specific in each case. The
 Grothendieck fonds carries a second register the ledgers refuse: its
 transcriptions come in pairs, a diplomatic file and a modernised one (124 and 53
@@ -500,7 +583,7 @@ of a filmed course. \texttt{michel@commutator.io}.
 
 \section*{Declaration of Generative AI and AI-assisted technologies in the writing process}
 
-During the preparation of this work the author used Claude Opus 5 and Claude Fable 5.1 (Anthropic), through Claude Code, in order to transcribe the digitised sheets of the corpus into the restricted transcription language described in Section 4, to compare two sheets with their photographs as reported in Section 7.1, to write the Lean formalisation of the accounts described in Section 6.3, and to draft this article from the transcriptions and the derived data under the author's direction. After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the content of the publication. The transcriptions have not been checked against the photographs by a person, and the article says so wherever a claim depends on them.
+During the preparation of this work the author used Claude Opus 5 and Claude Fable 5.1 (Anthropic), through Claude Code, in order to transcribe the digitised sheets of the corpus into the restricted transcription language described in Section 4, to compare two sheets with their photographs as reported in Section 7.1, to write the scripts, the interface and the continuous-integration workflows described in Sections 5 and 6, to write the Lean formalisation of the accounts described in Section 6.3, and to draft this article from the transcriptions and the derived data under the author's direction. After using these tools, the author reviewed and edited the content as needed and takes full responsibility for the content of the publication. The transcriptions have not been checked against the photographs by a person, and the article says so wherever a claim depends on them.
 
 \section*{Data availability}
 
