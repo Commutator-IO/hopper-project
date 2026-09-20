@@ -504,12 +504,11 @@ export function MethodPage() {
       {/* The article, served rather than described.
           A method page that explains the method at length and then makes a
           reader go to a repository to read the paper about it is withholding
-          the one document written for somebody outside the project. Three
+          the one document written for somebody outside the project. Two
           forms are here because they are not the same thing: the PDF is for
-          reading, the .docx is the file the journal will be sent, and the TEI
-          is the article encoded against the journal's own schema — the
-          argument of the paper applied to the paper, and validated the same
-          way, on every build. */}
+          reading, and the TEI is the file the journal is sent — the article
+          encoded against the journal's own schema, the argument of the paper
+          applied to the paper, and validated the same way, on every build. */}
       <section className="border-b border-ink-200 py-8">
         <h2 className="font-serif text-2xl text-ink-900">The article</h2>
         <div className="mt-3 max-w-3xl space-y-3 text-[14.5px] leading-relaxed text-ink-700">
@@ -537,17 +536,6 @@ export function MethodPage() {
             <span className="text-ink-400"> · to read</span>
             {'   '}
             <a
-              href={url('/article/hopper-jtei.docx')}
-              className="ml-3 rounded-full border border-ink-200 px-3 py-1 text-[13px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
-            >
-              DOCX
-            </a>
-            <span className="text-ink-400">
-              {' '}
-              · the submission file, since the journal takes a word-processor file and not a PDF
-            </span>
-            {'   '}
-            <a
               href={url('/article/hopper-jtei.xml')}
               className="ml-3 rounded-full border border-ink-200 px-3 py-1 text-[13px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
             >
@@ -555,11 +543,11 @@ export function MethodPage() {
             </a>
             <span className="text-ink-400">
               {' '}
-              · encoded against the journal's schema, <code className="font-mono text-[12.5px]">tei_jtei</code>, and valid on every build
+              · the submission file, encoded against the journal's schema, <code className="font-mono text-[12.5px]">tei_jtei</code>, and valid on every build
             </span>
           </p>
           <p className="prose-note">
-            All three are rebuilt from{' '}
+            Both are rebuilt from{' '}
             <code className="font-mono text-[13px]">docs/study/article.tex</code> and are no more
             current than the last build; the figures in them are drawn from the same derived files
             this site shows, and each names the day it was generated.

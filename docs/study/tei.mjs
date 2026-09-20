@@ -50,8 +50,9 @@
  *   centuries are refused in running text. The LaTeX's `'` becomes ’, `---`
  *   and `--` become the dashes they stand for, `~` becomes a space.
  * — A figure's `<graphic>` states width and height in pixels, read from the
- *   PNG that `npm run docx` rasterised, and carries a `<head type="legend">`
- *   for the caption and a `<head type="license">` for the rights line.
+ *   PNG this script rasterises from the figure's TikZ, and carries a
+ *   `<head type="legend">` for the caption and a `<head type="license">` for
+ *   the rights line.
  *
  * ## What is validated, and how the validators are pinned
  *
@@ -62,7 +63,7 @@
  */
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync, copyFileSync, rmSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const here = import.meta.dirname;
@@ -146,6 +147,71 @@ function braced(s, i) {
   throw new Error('article-tei: unbalanced braces');
 }
 
+/* ---------------------------------------------------------- the figures */
+
+const run = (cmd, args, cwd) =>
+  execFileSync(cmd, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'], encoding: 'utf8' });
+
+/**
+ * ImageMagick under whichever name it has here: `magick` since version 7, and
+ * `convert` on the Debian and Ubuntu packages of version 6, which is what the
+ * deploy runner has.
+ */
+const im = () => {
+  for (const c of ['magick', 'convert']) {
+    try {
+      execFileSync(c, ['-version'], { stdio: 'ignore' });
+      return c;
+    } catch {
+      // Try the other name.
+    }
+  }
+  throw new Error('article-tei: neither magick nor convert is on the PATH');
+};
+
+/**
+ * Each figure compiled on its own and rasterised to PNG at 300 dpi, which is
+ * what the journal takes (tif, jpg or png, 72 dpi or better) and what the
+ * TEI's `<graphic>` points at.
+ *
+ * The article's preamble is reused so a figure compiled alone looks as it
+ * does in the article, with its fonts made portable: the article sets Charter
+ * and Menlo, which are on the machine it was written on and on no Linux
+ * runner, so a figure compiled in CI failed on « The font "Charter" cannot be
+ * found ». XCharter is Charter — Bitstream's face, freed and extended — and
+ * is in TeX Live. The caption is stripped from the picture: it belongs in the
+ * document as text, not baked into a picture nobody can search.
+ *
+ * pdftoppm rather than ImageMagick for the PDF, since magick shells out to
+ * Ghostscript for one and fails without it; ImageMagick then trims the page
+ * margins off the PNG, which it reads on its own.
+ */
+const portable = preamble.replace(
+  /\\usepackage\{fontspec\}\\setmainfont\{Charter\}\\setmonofont\{Menlo\}\[[^\]]*\]/,
+  '\\usepackage{XCharter}',
+);
+const figureFiles = readdirSync(here).filter((f) => /^fig-.*\.tex$/.test(f)).sort();
+for (const f of readdirSync(here)) if (/\.(tex|json)$/.test(f)) {
+  writeFileSync(resolve(out, f), readFileSync(resolve(here, f)));
+}
+for (const fig of figureFiles) {
+  const name = fig.replace(/\.tex$/, '');
+  const inner = readFileSync(resolve(here, fig), 'utf8')
+    .replace(/\\begin\{figure\}\[[^\]]*\]\\centering/, '')
+    .replace(/\\caption\{[\s\S]*?\}\\label\{[^}]*\}/, '')
+    .replace(/\\end\{figure\}/, '')
+    .replace(/^%.*$/gm, '');
+  writeFileSync(
+    resolve(out, `${name}.standalone.tex`),
+    `${portable}\\pagestyle{empty}\n\\begin{document}\n\\noindent ${inner}\n\\end{document}\n`,
+  );
+  run('tectonic', ['-X', 'compile', `${name}.standalone.tex`, '--outdir', '.'], out);
+  run('pdftoppm', ['-png', '-r', '300', '-singlefile', `${name}.standalone.pdf`, `${name}.page`], out);
+  run(im(), [`${name}.page.png`, '-bordercolor', 'white', '-border', '20', '-trim', '+repage', `${name}.png`], out);
+  for (const junk of [`${name}.page.png`, `${name}.standalone.tex`, `${name}.standalone.pdf`])
+    rmSync(resolve(out, junk), { force: true });
+}
+
 /* ------------------------------------------------------------ the header */
 
 const titleTex = braced(preamble, preamble.indexOf('\\title{') + 6)[0]
@@ -226,14 +292,14 @@ const labels = new Map(); // \label → { id, kind, number }
 let figureCount = 0;
 let tableCount = 0;
 
-/** The figures, from their TikZ sources: the caption and label, and the PNG beside the .docx. */
+/** The figures, from their TikZ sources: the caption and label, and the PNG rasterised above. */
 function figure(file) {
   const src = readFileSync(resolve(here, file), 'utf8');
   const cap = /\\caption\{([\s\S]*?)\}\\label\{([^}]*)\}/.exec(src);
   if (!cap) throw new Error(`article-tei: ${file} has no caption and label`);
   const name = file.replace(/\.tex$/, '');
   const png = resolve(out, `${name}.png`);
-  if (!existsSync(png)) throw new Error(`article-tei: ${png} missing — run npm run docx first`);
+  if (!existsSync(png)) throw new Error(`article-tei: ${png} was not rasterised`);
   const { width, height } = pngSize(png);
   const id = name;
   labels.set(cap[2], { id, kind: 'Figure', number: ++figureCount });
@@ -363,7 +429,11 @@ function bibliography() {
       let x = item;
       // An emphasised title after an analytic one is the journal's; on its
       // own it is a monograph's.
-      const analytic = /\\q\{/.test(x);
+      // The reference list quotes analytic titles with \qq{} (Chicago's
+      // double quotation marks), the prose with \q{} (the article's
+      // guillemets); either way the title carries no delimiters in the TEI.
+      const analytic = /\\qq?\{/.test(x);
+      x = replaceMacro(x, 'qq', (t) => `<title level="a">${inline(t, { cite: false })}</title>`);
       x = replaceMacro(x, 'q', (t) => `<title level="a">${inline(t, { cite: false })}</title>`);
       x = replaceMacro(x, 'emph', (t) => `<title level="${analytic ? 'j' : 'm'}">${inline(t, { cite: false })}</title>`);
       x = inline(x, { cite: false });
@@ -467,6 +537,7 @@ function inline(tex, { cite = true } = {}) {
   s = replaceMacro(s, 'emph', (a) => `<emph>${inline(a)}</emph>`);
   s = replaceMacro(s, 'textbf', (a) => `<hi rend="bold">${inline(a)}</hi>`);
   s = replaceMacro(s, 'sout', (a) => `<hi rend="strikethrough">${inline(a)}</hi>`);
+  s = replaceMacro(s, 'qq', (a) => `<q>${inline(a)}</q>`);
   s = replaceMacro(s, 'q', (a) => `<q>${inline(a.replace(/^«\s*|\s*»$/g, ''))}</q>`);
   s = replaceMacro(s, 'url', (a) => `<ref target="${a}">${esc(a)}</ref>`);
   s = s.replace(/\\lf\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}/g, (_, book, leaf, label) =>
@@ -705,15 +776,18 @@ if (failures.length) {
   throw new Error(`article-tei: ${failures.length} Schematron failure(s)`);
 }
 
-// Served beside the PDF and the .docx.
+// Served from /method/ beside the PDF, so a reader can have the article
+// without a clone. Both go into public/ like the TEI export of the corpus,
+// rebuilt rather than committed.
 const served = resolve(root, 'public/article');
 mkdirSync(served, { recursive: true });
 copyFileSync(xmlPath, resolve(served, 'hopper-jtei.xml'));
+copyFileSync(resolve(here, 'article.pdf'), resolve(served, 'hopper-jtei.pdf'));
 
 const elements = [...new Set([...xml.matchAll(/<([a-zA-Z]+)[\s>/]/g)].map((m) => m[1]))].sort();
 process.stdout.write(
   `article-tei: ${mainDivs.length} divisions, ${figureCount} figures, ${tableCount} tables, ` +
     `${CITATIONS.length} references, ${elements.length} element types; ` +
     `valid against tei_jtei ${TEI_VERSION} (RELAX NG and ${patterns.length} Schematron patterns)\n` +
-    `      -> docs/study/submission/article.xml, served at /article/hopper-jtei.xml\n`,
+    `      -> docs/study/submission/article.xml with ${figureFiles.length} PNG(s) at 300 dpi; served at /article/hopper-jtei.xml\n`,
 );

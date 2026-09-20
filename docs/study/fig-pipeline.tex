@@ -20,7 +20,7 @@
 ]
 
 % The schema: five stations.
-\node[src] (W) {\textbf{Witness}\\[1pt]\scriptsize held by the institution,\\\scriptsize never stored};
+\node[src] (W) {\textbf{Witness}\\[1pt]\scriptsize held by the institution,\\\scriptsize never committed};
 \node[st, right=17mm of W] (R) {\textbf{Reading}\\[1pt]\scriptsize the one file written,\\\scriptsize in a declared language};
 \node[st, right=17mm of R] (D) {\textbf{Derivations}\\[1pt]\scriptsize computed from the\\\scriptsize reading, on every build};
 \node[st, right=17mm of D] (V) {\textbf{Verifications}\\[1pt]\scriptsize what a machine can\\\scriptsize check of them};
@@ -40,7 +40,7 @@
 % The same schema, with this edition's values.
 \node[inst, below=5mm of P.south, text width=0mm] (anchor) {};
 \node[inst] at (W |- anchor) {Whitney photograph,\\ResourceSpace reference,\\fetched at view time};
-\node[inst] at (R |- anchor) {\texttt{batch-NN.tex}\\twelve sheets a pass,\\14 macros};
+\node[inst] at (R |- anchor) {\texttt{batch-NN.tex}\\twelve sheets a pass,\\16 macros};
 \node[inst] at (D |- anchor) {TEI, PDF, HTML,\\accounts, formats,\\materials, days};
 \node[inst] at (V |- anchor) {\texttt{hopper.odd}\\Lean 4 certificates\\CI regenerates and compares};
 \node[inst] at (A |- anchor) {hopper.commutator.io\\sheet, leaf, pass\\each cited separately};
@@ -54,7 +54,7 @@ else from the reading and regenerate it on every build; checkers fail the build
 on what a machine can check; the site places the reading beside the witness
 and cites both by reference. The dashed loop is the person, who compares the
 reading with the witness and corrects the reading, which alone changes anything
-downstream. Four invariants hold at every station: the witness is never stored;
+downstream. Four invariants hold at every station: the witness is never committed;
 only the reading is written, everything else is derived and compared; every
 assertion carries an address into the witness; and the person's verdict is
 declared, not observed. The grey row gives this edition's values; the siblings'

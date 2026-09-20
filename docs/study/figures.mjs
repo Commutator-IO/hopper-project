@@ -7,7 +7,7 @@ import { SCHEMAS } from './schemas.mjs';
 const C = '/Users/michel/Commutator/hopper-project/src/content/';
 const J = (p) => JSON.parse(readFileSync(C + p, 'utf8'));
 const esc = (t) => String(t).replace(/&/g, '\\&').replace(/%/g, '\\%').replace(/#/g, '\\#').replace(/_/g, '\\_');
-const SIGN = 'Drawn by Claude Fable~5.1, 13 September 2026';
+const SIGN = 'Drawn by Claude Fable~5.1';
 const gen = (f) => J(f).generated?.slice(0, 10) ?? 'undated';
 const out = {};
 
@@ -173,7 +173,7 @@ const S = J('streak.json');
 \\begin{tikzpicture}
 ${parts.join('\n')}
 \\end{tikzpicture}
-\\caption{The days the six books record, one row to a year from ${years[0]} to ${years[years.length - 1]} and one cell to a month, the darker the more days that month carry an entry: ${S.distinctDays} days in all, from ${S.rowsDated} dated rows. A dense cell is a month of transactions, not of painting; the hollow every summer is the Cape, with the dealers behind them in New York. By day of the week: ${dow}, Sunday a sixth of a weekday. After the calendar of the Timeline tab, which draws every day; this draws every month. ${SIGN}, from \\texttt{streak.json} (${gen('streak.json')}).}\\label{fig:days}
+\\caption{The days the six books record, one row to a year from ${years[0]} to ${years[years.length - 1]} and one cell to a month, the darker the more days that month carry an entry: ${S.distinctDays.toLocaleString('en-GB')} days in all, from ${S.rowsDated.toLocaleString('en-GB')} dated rows. A dense cell is a month of transactions, not of painting; the hollow every summer is the Cape, with the dealers behind them in New York. By day of the week: ${dow}, Sunday a sixth of a weekday. After the calendar of the Timeline tab, which draws every day; this draws every month. ${SIGN}, from \\texttt{streak.json} (${gen('streak.json')}).}\\label{fig:days}
 \\end{figure}
 `;
 }

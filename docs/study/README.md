@@ -12,14 +12,16 @@ scripts that draw its figures and tables.
   article's Appendix B, is cut.
 - `schemas.mjs` — the compositional schemas of the abandoned note, kept because
   `figures.mjs` reads it.
-- `docx.mjs` — builds the submission file, since the journal takes a
-  word-processor file or XML and not PDF. `npm run docx` compiles each figure
-  on its own, rasterises it to PNG at 300 dpi, and writes `submission/`, which
-  is not committed. Read the result before sending it.
+- `tei.mjs` — the submission: the article encoded in TEI against the
+  journal's own schema, `tei_jtei`, and validated against it in both halves
+  (RELAX NG with jing, Schematron with SchXslt on Saxon). `npm run article-tei`
+  compiles each figure on its own, rasterises it to PNG at 300 dpi, writes
+  `submission/article.xml` beside the PNGs and the sources, and fails on any
+  error the journal's validator would report. `submission/` is not committed.
 
 ```bash
 cd docs/study && node figures.mjs && node tables.mjs && tectonic article.tex
-npm run docx
+npm run article-tei
 ```
 
 The fonts are Charter and Menlo, as installed on macOS; substitute in the
