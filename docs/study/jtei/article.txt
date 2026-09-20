@@ -935,16 +935,63 @@ then changes to say that a person has gone through it, and only a person may dec
 Until then, every citation of the edition names a machine pass and a date, and the address of
 the sheet does not move when the reading does.
 
-7.4   What the method permits, and what it does not
-The method permits a reading of a five-hundred-sheet archive to be produced in days, cited
-by leaf and reference, exported as valid TEI, and exposed in full to correction beside its source.
-It permits derived data to be regenerated from the reading under published rules and to be
-checked, where the writer left sums, against the writer’s own arithmetic. It permits the rules
-by which that data is derived to be stated as functions in a theorem prover, their properties
-proved for every input, and the script that applies them proved to agree with them on every
-row. It permits the whole to be held in one repository whose every change is a dated commit,
-so that a citation names a version and a later reader can see what was read on the day it was
-cited.
+7.4   The pace, and where the cost went
+An account of this method that did not state its speed would be evasive, since speed is the
+whole of what changed. The figures are in the repository’s own history and can be recovered
+from it.
+    The transcription of 667 sheets took nine days, from 5 to 13 September 2026, in sixty-two
+passes of twelve sheets. Nobody keyed a character: a pass is a photograph read and a file
+written, and the twelve sheets of a batch take the model minutes. In the same period the
+repository received 210 commits across thirteen days — the scripts that derive the accounts,
+the formats, the materials and the calendar (10,900 lines), the site that places the reading
+beside the photograph (15,500 lines), the TEI converter and its validator, and later the 1,800
+lines of Lean that certify the arithmetic. A transcription project of this size, keyed and proofed
+by people, is a year of somebody’s salary; this was a fortnight of one person’s attention and a
+model’s time.
+    That comparison is the easy half, and it is not the interesting one. What the method ac-
+tually changes is the second operation, the one that has no name in the traditional workflow:
+restructuring. Once the transcription is a constrained language rather than a document, every
+question one might put to the archive becomes a script of a few hundred lines — what was
+paid and by whom, which formats recur, when the colourman changed, on what days the
+books were written in. Each of those is a census this edition publishes, each was written in an
+afternoon, and each is regenerated on every build. The cost of asking a new question of the
+corpus has fallen by more than the cost of reading it, because reading is done once and asking
+is done for ever.
+
+
+                                               18
+    The cost did not disappear; it moved, and it moved to the two places this article has been
+describing. The first is the definition of rules. The Book IV reader changed its rule four times
+across the volume’s fifty-four years, and every one of those changes is an editorial decision
+about what the writer meant that no model and no script could take: whether a bare figure
+is a subtotal, whether a « less » line is a deduction, whether three payments are three sales or
+one. Writing them down — in the method note, then as Lean functions proved for every input
+— took longer than transcribing the volume. The second is verification. 667 sheets are read
+and none is checked. A pass costs minutes and a human check costs an hour a batch, so the
+reading has produced, at the pace described above, a debt of some fifty hours that the method
+cannot discharge and does not pretend to.
+    The same arithmetic applies to the sibling corpora, and states the size of what is left. The
+Grothendieck fonds stands at 1,661 pages in 176 passes, nine pages to a pass, against sixteen
+thousand openly accessible pages at Montpellier: at that rate the reading is some 1,700 further
+passes, which is months of machine time and, at an hour a batch, about two thousand hours
+of human checking — that is, a reading a machine can finish this year and a verification no
+individual can. The mathematicians’ manuscripts in Gallica stand at 548 views in 34 passes,
+sixteen views to a pass, against 25,258 views cataloged: some 1,500 further passes. Neither
+number is an argument for doing it; both are the argument of this article, which is that the
+transcription is no longer the bottleneck and the checking is, and that an edition which cannot
+say which of its sheets a person has read is publishing a machine’s confidence as though it
+were scholarship.
+
+7.5   What the method permits, and what it does not
+The method permits a reading of a five-hundred-sheet archive to be produced in days, at the
+pace just described, cited by leaf and reference, exported as valid TEI, and exposed in full
+to correction beside its source. It permits derived data to be regenerated from the reading
+under published rules and to be checked, where the writer left sums, against the writer’s own
+arithmetic. It permits the rules by which that data is derived to be stated as functions in
+a theorem prover, their properties proved for every input, and the script that applies them
+proved to agree with them on every row. It permits the whole to be held in one repository
+whose every change is a dated commit, so that a citation names a version and a later reader
+can see what was read on the day it was cited.
     It does not produce a checked transcription, and it does not claim to. It does not see
 ink, and it does not attribute hands with authority. It does not, in its present form, encode
 transactions, and it cannot produce a text more expressive than its macro language. And it
@@ -957,13 +1004,11 @@ The apparatus described here was not built for this corpus alone. Three sibling 
 the same tooling — the same restricted LaTeX, the same rule that an unrecognised construct
 fails the build, the same reading placed beside its witness — and they were chosen to differ
 in the two things that matter: what the document is, and what kind of witness stands behind
-
-
-                                               18
-it. Two are archives of art, two of mathematics; three are written and one is spoken. Table 6
+it. Two are archives of art, two of mathematics; three are written and one is spoken. Table 6
 gives their state, read from the four repositories on 19 September 2026.
 
-Table 6: The four corpora the method has been run against, with the address at which a reading can
+                                              19
+Table 6: The four corpora the method has been run against, with the address at which a reading can
 be checked.
 
   Corpus                 Holder                    Witness                    Verifiable address         Transcribed
@@ -1016,12 +1061,12 @@ and a modernised one (124 and 53 files), because mathematical notation of 1960 i
 today as it was written, whereas « 30 - 1/3 » means in 2026 what it meant in 1927 — the
 decision against a second edition here (Section 4.2) is a decision this project had to take twice,
 in opposite directions. The Gallica corpus made the address itself the unit: a volume enters
-
-
-                                                               19
-only where the library serves the whole of it, and a manuscript that Gallica merely references
+only where the library serves the whole of it, and a manuscript that Gallica merely references
 on a partner’s site is in no table and no thumbnail, which is the same rule this edition states
-about documents with no public digitisation. And the morphology course made the witness
+
+
+                                                               20
+about documents with no public digitisation. And the morphology course made the witness
 something other than an image.
     That last case is the one that generalises the claim. Debord’s course is seventy-seven hours
 of speech; the first transcription is not the model’s but the platform’s automatic captions, and
@@ -1065,11 +1110,35 @@ been done for this corpus. The fourth has not, and the edition’s own status fi
 nothing, is the measure of how far the method has come and where it stops. One extension is
 done — the corpus is deposited under a persistent identifier — and one is not: the definition
 and execution of the human check that turns a drafted batch into a checked one, which is to
-
-
-                                               20
-be settled with the scholars who will do the reading rather than declared here. It is tracked as
+be settled with the scholars who will do the reading rather than declared here. It is tracked as
 an issue of the repository, and it is the one on which every claim in this article depends.
+
+
+                                               21
+    What it also opens is the range of what can now be read. The four corpora of Section 8 are
+all archives in the ordinary sense — ledgers, manuscripts, working papers, a filmed course —
+and between them they already cross the line that used to bound this kind of work: three are
+written and one is spoken, three are held by institutions that publish facsimiles and one is held
+by a platform that publishes none. Behind that line lies the larger part of what the twentieth
+and twenty-first centuries have left: recorded lectures and interviews, radio and television
+archives, the video collections of national libraries and government agencies, and the vast
+material of social platforms — posts, threads, comments, the captions that accompany millions
+of hours of speech. Most of it has never been read in the sense this article means, because
+reading it by hand was never conceivable and because it does not look like a document.
+    The method described here does not become easier on that material; it becomes more
+necessary, and its conditions become harder to meet. Three in particular. The witness must
+be addressable, which on a platform means an identifier and an offset rather than a page —
+and an address that resolves today may serve something else tomorrow, or nothing. The rights
+usually forbid the mirror while guaranteeing no permanence, so an edition must cite what it
+may not copy, and must record enough — a date of consultation, a fingerprint of what was
+consulted — to prove later that the witness moved. And the first transcription is often not
+the editor’s but the platform’s, made by a recogniser nobody chose and regenerated without
+notice, which turns the model from the first reader into the second and makes the provenance
+statement more important rather than less.
+    None of that changes the condition this article has argued for. An edition is worth what its
+reader can check, whether the checking is done by looking at a photograph, by adding up a
+column, or by listening at a timestamp. What changes is how much there is to read, and how
+badly it needs somebody to say, of each piece of it, who read it and on what day.
 
 
 About the author
@@ -1092,7 +1161,9 @@ tographs as reported in Section 7.1, to write the Lean formalisation of the acco
 in Section 6.3, and to draft this article from the transcriptions and the derived data under
 the author’s direction. After using these tools, the author reviewed and edited the content
 as needed and takes full responsibility for the content of the publication. The transcriptions
-have not been checked against the photographs by a person, and the article says so wherever
+
+                                               22
+have not been checked against the photographs by a person, and the article says so wherever
 a claim depends on them.
 
 
@@ -1114,9 +1185,7 @@ Crosilla, Giorgia, Lukas Klic, and Giovanni Colavizza. 2025. « Benchmarking Lar
    Models for Handwritten Text Recognition. » Journal of Documentation 81 (7). Preprint:
    arXiv:2503.15195.
 
-
-                                              21
-Cummings, James, and Pip Willcox. 2013. « Stationers’ Register Online: A Case Study of
+Cummings, James, and Pip Willcox. 2013. « Stationers’ Register Online: A Case Study of
   a Byte-Reduced TEI Schema for Digitization (tei_corset). » Journal of the Text Encoding
   Initiative 6. https://doi.org/10.4000/jtei.926.
 
@@ -1145,7 +1214,10 @@ Stokes, Peter A. 2015. « Digital Approaches to Paleography and Book History: So
    lenges, Present and Future. » Frontiers in Digital Humanities 2: 5. https://doi.org/10.
    3389/fdigh.2015.00005.
 
-Strutz, Sabrina. 2026. « A Multi-Dimensional Evaluation Framework for Assessing LLM Per-
+
+
+                                            23
+Strutz, Sabrina. 2026. « A Multi-Dimensional Evaluation Framework for Assessing LLM Per-
    formance in TEI Encoding. » Journal of Open Humanities Data 12 (1). https://doi.org/
    10.5334/johd.484.
 
@@ -1170,10 +1242,7 @@ is unaffected.
  \sheet{16838}{19}
 
 
-
-
-                                              22
- \sketch{}
+ \sketch{}
 
 
  \work{October on Cape Cod. \quad 26 x 42. \quad Finished on Cape Cod - in
@@ -1211,7 +1280,10 @@ is unaffected.
  Carpenter of Milwaukee - Heavy chain, bolt Co.}
 
 
- \note{the marginal at the head is at the left here where leaves 13 and 15 put
+
+
+                                               24
+ \note{the marginal at the head is at the left here where leaves 13 and 15 put
  the same note at the right. « When sold? » is in a darker pencil than the line
  it follows and was added to it. The two quotations closing the description are
  hers to place and she places them: the first she gives no source, the second
@@ -1233,30 +1305,25 @@ B The derived tables
 The tables below are regenerated from the edition’s derived files on each build; those given
 here were generated on 13 September 2026 from 46 transcribed batches. Every figure is a
 floor under a stated rule.
-
-
-
-
-                                                23
-Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
+Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
 transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque with
 no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above entries
 of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
 
-                              Year       Charged     Received    Balance
-                              1913        160.00       160.00       0.00
-                              1914      1,225.00     1,225.00       0.00
-                              1915        500.00       500.00       0.00
-                              1916        991.00       991.00       0.00
-                              1917      1,509.00     1,514.00      -5.00
-                              1918      1,556.00     1,916.00    -365.00
-                              1919        977.00       977.00    -365.00
-                              1920      2,950.00     2,794.00    -209.00
-                              1922      1,075.00     1,075.00    -209.00
-                              1923      1,279.20     1,304.20    -234.00
-                              1924      1,015.00       980.00    -199.00
-                              1925      1,218.67     1,218.67    -199.00
-                              Total    14,455.87    14,654.87    -199.00
+                              Year      Charged     Received    Balance
+                              1913       160.00       160.00       0.00
+                              1914     1,225.00     1,225.00       0.00
+                              1915       500.00       500.00       0.00
+                              1916       991.00       991.00       0.00
+                              1917     1,509.00     1,514.00      -5.00
+                              1918     1,556.00     1,916.00    -365.00
+                              1919       977.00       977.00    -365.00
+                              1920     2,950.00     2,794.00    -209.00
+                              1922     1,075.00     1,075.00    -209.00
+                              1923     1,279.20     1,304.20    -234.00
+                              1924     1,015.00       980.00    -199.00
+                              1925     1,218.67     1,218.67    -199.00
+                              Total   14,455.87    14,654.87    -199.00
 
 
 Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
@@ -1264,34 +1331,34 @@ column, by year. Gross is the price written; the commission is the dealer’s sh
 net is what was left. Only rows that put a price in one cell and a date in another are counted, so the
 etchings are largely absent.
 
-                  Year     Sales       Gross   Commission         Net      Receipted
-                  1923         3         970              323      647            0
-                  1924         6       4,500            1,500    3,000            0
-                  1925         4       2,100              510    1,590          340
-                  1926        11       5,275            1,758    3,517          850
-                  1927        17       3,955            1,318    2,637        1,333
-                  1928        24       5,774            1,919    3,855        1,197
-                  1929        52       7,040            2,342    4,698        4,197
-                  1930        34      18,378            6,126   12,252        3,000
-                  1931        17       2,648              883    1,765        5,600
-                  1932         4       3,880            1,293    2,587        2,400
-                  1933         3          85               28       57           20
-                  1934        13       3,680            1,227    2,453          800
-                  1935         1         750              250      500          500
-                  1936         6       4,420            1,473    2,947          267
-                  1937        10       4,670            1,557    3,113           20
-                  1938        11       4,990            1,648    3,342            0
-                  1939         1       2,500              833    1,667            0
-                  1940        14       6,182            2,061    4,121          667
-                  1941         4       1,220              407      813          267
-                  1942         3       2,780              927    1,853            0
-                  1943         4       2,760              920    1,840        1,200
-                  1944         5       4,850            1,617    3,233            0
-                  1945         5       3,080            1,027    2,053            0
+                  Year     Sales      Gross   Commission          Net     Receipted
+                  1923         3        970              323      647            0
+                  1924         6      4,500            1,500    3,000            0
+                  1925         4      2,100              510    1,590          340
+                  1926        11      5,275            1,758    3,517          850
+                  1927        17      3,955            1,318    2,637        1,333
 
 
-                                                   24
+                                                  25
 Year   Sales    Gross   Commission     Net    Receipted
+1928     24     5,774        1,919    3,855      1,197
+1929     52     7,040        2,342    4,698      4,197
+1930     34    18,378        6,126   12,252      3,000
+1931     17     2,648          883    1,765      5,600
+1932      4     3,880        1,293    2,587      2,400
+1933      3        85           28       57         20
+1934     13     3,680        1,227    2,453        800
+1935      1       750          250      500        500
+1936      6     4,420        1,473    2,947        267
+1937     10     4,670        1,557    3,113         20
+1938     11     4,990        1,648    3,342          0
+1939      1     2,500          833    1,667          0
+1940     14     6,182        2,061    4,121        667
+1941      4     1,220          407      813        267
+1942      3     2,780          927    1,853          0
+1943      4     2,760          920    1,840      1,200
+1944      5     4,850        1,617    3,233          0
+1945      5     3,080        1,027    2,053          0
 1946      6     7,650        2,550    5,100      2,267
 1947      7     6,130        2,043    4,087      1,467
 1948      4     7,500        2,500    5,000      1,500
@@ -1317,7 +1384,7 @@ etchings are largely absent.
 
 
 
-                          25
+                          26
 Table 9: The thirty sales at the highest prices among the rows that name a work, as the work books
 write them. Gross is the price; net is after the third.
 
@@ -1356,5 +1423,5 @@ write them. Gross is the price; net is after the third.
 
 
 
-                                                26
+                                                27
 

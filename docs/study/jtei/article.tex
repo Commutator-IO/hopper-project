@@ -366,9 +366,11 @@ The edition distinguishes three states of a batch, and only one of them is obser
 
 What a human check consists of has been defined as an open question of the edition rather than assumed. The protocol under discussion is the one this article's comparison table performs in miniature: a person opens the reading beside the photograph, reads each transcribed line against the sheet, corrects the transcription at source with a note that names who checked it, and only then may the batch be declared checked; the citation of every sheet in that batch then changes to say that a person has gone through it, and only a person may declare that. Until then, every citation of the edition names a machine pass and a date, and the address of the sheet does not move when the reading does.
 
+\input{sec-pace.tex}
+
 \subsection{What the method permits, and what it does not}
 
-The method permits a reading of a five-hundred-sheet archive to be produced in days, cited by leaf and reference, exported as valid TEI, and exposed in full to correction beside its source. It permits derived data to be regenerated from the reading under published rules and to be checked, where the writer left sums, against the writer's own arithmetic. It permits the rules by which that data is derived to be stated as functions in a theorem prover, their properties proved for every input, and the script that applies them proved to agree with them on every row. It permits the whole to be held in one repository whose every change is a dated commit, so that a citation names a version and a later reader can see what was read on the day it was cited.
+The method permits a reading of a five-hundred-sheet archive to be produced in days, at the pace just described, cited by leaf and reference, exported as valid TEI, and exposed in full to correction beside its source. It permits derived data to be regenerated from the reading under published rules and to be checked, where the writer left sums, against the writer's own arithmetic. It permits the rules by which that data is derived to be stated as functions in a theorem prover, their properties proved for every input, and the script that applies them proved to agree with them on every row. It permits the whole to be held in one repository whose every change is a dated commit, so that a citation names a version and a later reader can see what was read on the day it was cited.
 
 It does not produce a checked transcription, and it does not claim to. It does not see ink, and it does not attribute hands with authority. It does not, in its present form, encode transactions, and it cannot produce a text more expressive than its macro language. And it does not remove the need for the person the method was designed around: the reader beside the photograph, whose correction is the only event that changes a batch's state.
 
@@ -451,6 +453,38 @@ This article has described an edition in which a language model is the first tra
 The corpus, the Hopper ledgers and notebooks, was the occasion for the experiment and is a good one, because a ledger's errors are measurable and because the museum serves the photographs openly.
 
 What the experiment opens is a division of labour. The model reads; the scripts derive; the schema validates; and the person checks, corrects at source, and declares. The first three have been done for this corpus. The fourth has not, and the edition's own status file, which declares nothing, is the measure of how far the method has come and where it stops. One extension is done — the corpus is deposited under a persistent identifier — and one is not: the definition and execution of the human check that turns a drafted batch into a checked one, which is to be settled with the scholars who will do the reading rather than declared here. It is tracked as an issue of the repository, and it is the one on which every claim in this article depends.
+
+What it also opens is the range of what can now be read. The four corpora of
+Section~8 are all archives in the ordinary sense --- ledgers, manuscripts,
+working papers, a filmed course --- and between them they already cross the
+line that used to bound this kind of work: three are written and one is spoken,
+three are held by institutions that publish facsimiles and one is held by a
+platform that publishes none. Behind that line lies the larger part of what the
+twentieth and twenty-first centuries have left: recorded lectures and
+interviews, radio and television archives, the video collections of national
+libraries and government agencies, and the vast material of social platforms
+--- posts, threads, comments, the captions that accompany millions of hours of
+speech. Most of it has never been read in the sense this article means, because
+reading it by hand was never conceivable and because it does not look like a
+document.
+
+The method described here does not become easier on that material; it becomes
+more necessary, and its conditions become harder to meet. Three in particular.
+The witness must be addressable, which on a platform means an identifier and an
+offset rather than a page --- and an address that resolves today may serve
+something else tomorrow, or nothing. The rights usually forbid the mirror while
+guaranteeing no permanence, so an edition must cite what it may not copy, and
+must record enough --- a date of consultation, a fingerprint of what was
+consulted --- to prove later that the witness moved. And the first transcription
+is often not the editor's but the platform's, made by a recogniser nobody chose
+and regenerated without notice, which turns the model from the first reader into
+the second and makes the provenance statement more important rather than less.
+
+None of that changes the condition this article has argued for. An edition is
+worth what its reader can check, whether the checking is done by looking at a
+photograph, by adding up a column, or by listening at a timestamp. What changes
+is how much there is to read, and how badly it needs somebody to say, of each
+piece of it, who read it and on what day.
 
 \section*{About the author}
 
