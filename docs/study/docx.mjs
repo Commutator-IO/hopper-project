@@ -28,7 +28,7 @@
  * journal's checklist is not written here either, because it is a claim about
  * an image and not a fact about a file.
  *
- *   node docs/study/jtei/docx.mjs
+ *   node docs/study/docx.mjs
  */
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
@@ -107,7 +107,7 @@ const words = run('pandoc', ['article.docx', '-t', 'plain'], out).split(/\s+/).l
 const media = readdirSync(out).filter((f) => f.endsWith('.png')).length;
 process.stdout.write(
   `docx: ${words} words, ${figures.length} figure(s) as PNG at 300 dpi -> ` +
-    `docs/study/jtei/submission/article.docx\n` +
+    `docs/study/submission/article.docx\n` +
     `      ${media} image file(s); the journal wants tif, jpg or png at 72 dpi or better,\n` +
     `      each captioned with its rights holder — that line is yours to write.\n`,
 );

@@ -22,6 +22,6 @@ public/tei/
 # Lean's build output; the certificate is rebuilt, never committed.
 lean/.lake/
 
-# The submission file and its images, rebuilt by `node docs/study/jtei/docx.mjs`
+# The submission file and its images, rebuilt by `npm run docx`
 # from the article: derived, like everything else here.
-docs/study/jtei/submission/
+docs/study/submission/

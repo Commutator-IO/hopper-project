@@ -1,44 +1,43 @@
-# The jTEI article, and the note it grew out of
+# A machine reads the Hopper ledgers
 
-[`jtei/`](jtei/) holds the article prepared for the *Journal of the Text
-Encoding Initiative* — the piece that is being submitted, and the only one
-maintained here.
+The article prepared for the *Journal of the Text Encoding Initiative*, and the
+scripts that draw its figures and tables.
 
-Beside it, `tex/` holds the LaTeX sources of *The Books Kept at 3 Washington
-Square North*, a book-length critical note on the ledgers drafted from the
-transcriptions on 13 September 2026. **It is abandoned.** Its built PDF is no
-longer kept, the article no longer cites it, and nothing depends on it; the
-sources stay because the figures, the tables and the compositional schemas in
-them were written against the derived data and may be worth reusing.
-
-- `jtei/` — the article, its figures and its tables.
-- `tex/` — the abandoned note: one file per chapter; `tables.mjs` and
-  `figures.mjs` regenerate `tables.tex` and `fig-*.tex` from
-  `src/content/*.json`; `schemas.mjs` holds the compositional schemas.
-
-The journal takes « a word-processor file format (OpenOffice, Microsoft Word,
-RTF, etc.) or an XML format » and does not take PDF, so the file that is
-actually submitted is built by `npm run docx`: it compiles each figure on its
-own, rasterises it to PNG at 300 dpi, and converts the article with pandoc into
-`jtei/submission/`, which is not committed. The result has to be read before it
-is sent.
-
-Rebuild either with [Tectonic](https://tectonic-typesetting.github.io/):
+- `article.tex` — the article; `sec-pace.tex` is its section on the pace, and
+  `fig-*.tex` its figures. `article.pdf` and `article.txt` are built from it.
+- `figures.mjs` — draws the four figures taken from the derived data, and drops
+  nine more it still knows how to draw from the critical note this article grew
+  out of.
+- `tables.mjs` — writes `tables.tex`, from which `tables-subset.tex`, the
+  article's Appendix B, is cut.
+- `schemas.mjs` — the compositional schemas of the abandoned note, kept because
+  `figures.mjs` reads it.
+- `docx.mjs` — builds the submission file, since the journal takes a
+  word-processor file or XML and not PDF. `npm run docx` compiles each figure
+  on its own, rasterises it to PNG at 300 dpi, and writes `submission/`, which
+  is not committed. Read the result before sending it.
 
 ```bash
-cd jtei && tectonic article.tex
+cd docs/study && node figures.mjs && node tables.mjs && tectonic article.tex
+npm run docx
 ```
 
-The fonts are Charter and Helvetica Neue, as installed on macOS; substitute in
-the preamble on another system.
+The fonts are Charter and Menlo, as installed on macOS; substitute in the
+preamble on another system.
+
+## The note this grew out of
+
+*The Books Kept at 3 Washington Square North*, a book-length critical note on
+the ledgers drafted on 13 September 2026, is **abandoned**. Its chapters were
+removed on 20 September; git holds them. What survives is what the article
+uses: the two generators above, and the figures they draw.
 
 ## Licence
 
-The article and these sources are © 2026 Michel Hua and licensed under
-[Creative Commons Attribution 4.0 International (CC BY
-4.0)](https://creativecommons.org/licenses/by/4.0/). This is an exception to
-the repository's [`LICENSE`](../../LICENSE), which dedicates the software and
-the generated data to the public domain under CC0 — those remain CC0.
+The article and these sources are © 2026 Michel Hua, licensed
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — an exception to the
+repository's [`LICENSE`](../../LICENSE), which dedicates the software and the
+generated data to the public domain under CC0.
 
 The transcribed words of Josephine and Edward Hopper are © Heirs of Josephine
 N. Hopper, licensed by Artists Rights Society (ARS), New York, and are quoted
