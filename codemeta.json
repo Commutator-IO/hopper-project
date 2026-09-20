@@ -4,7 +4,7 @@
   "name": "hopper-project",
   "description": "The reading and transcription workbench behind the Hopper ledgers corpus: the harvester for the museum’s listing, the LaTeX renderer, the TEI P5 exporter and its validator, the accounts and catalogue readers, and the static site that puts a transcription beside the museum’s photograph of the sheet it came from.",
   "codeRepository": "https://github.com/Commutator-IO/hopper-project",
-  "identifier": "swh:1:snp:362cc5e4cbac16e8dd435fc3bd2168e470f30668",
+  "identifier": "swh:1:snp:663c1ec325c7f6c4008429de499c404626c4e20b",
   "url": "https://hopper.commutator.io",
   "license": "https://spdx.org/licenses/CC0-1.0",
   "version": "2026.09.20",
