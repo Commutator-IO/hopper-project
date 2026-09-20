@@ -31,7 +31,7 @@
  *   node docs/study/docx.mjs
  */
 import { execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, copyFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const here = import.meta.dirname;
@@ -40,6 +40,23 @@ mkdirSync(out, { recursive: true });
 
 const run = (cmd, args, cwd) =>
   execFileSync(cmd, args, { cwd, stdio: ['ignore', 'pipe', 'pipe'], encoding: 'utf8' });
+
+/**
+ * ImageMagick under whichever name it has here: `magick` since version 7, and
+ * `convert` on the Debian and Ubuntu packages of version 6, which is what the
+ * deploy runner has.
+ */
+const im = () => {
+  for (const c of ['magick', 'convert']) {
+    try {
+      execFileSync(c, ['-version'], { stdio: 'ignore' });
+      return c;
+    } catch {
+      // Try the other name.
+    }
+  }
+  throw new Error('docx: neither magick nor convert is on the PATH');
+};
 
 /** The article's preamble, so a figure compiled alone looks as it does in the article. */
 const article = readFileSync(resolve(here, 'article.tex'), 'utf8');
@@ -75,7 +92,7 @@ for (const fig of figures) {
   run('pdftoppm', ['-png', '-r', '300', '-singlefile', `${name}.standalone.pdf`, `${name}.page`], out);
   // The page is mostly margin; ImageMagick trims it. It reads a PNG without
   // Ghostscript, which is why the PDF was rasterised first.
-  run('magick', [`${name}.page.png`, '-bordercolor', 'white', '-border', '20',
+  run(im(), [`${name}.page.png`, '-bordercolor', 'white', '-border', '20',
     '-trim', '+repage', `${name}.png`], out);
   // The whole-page rasterisation and the standalone sources are scaffolding;
   // only the trimmed PNG is part of the submission.
@@ -103,11 +120,21 @@ writeFileSync(resolve(out, 'article.submission.tex'), tex);
 run('pandoc', ['article.submission.tex', '-o', 'article.docx', '--standalone',
   '--extract-media', '.'], out);
 
+// The site serves both files from /method/, so a reader can have the article
+// without a clone: the PDF to read and the .docx that the journal will be sent.
+// They go into public/ like the TEI export and the transcripts, and are
+// rebuilt rather than committed.
+const served = resolve(here, '../../public/article');
+mkdirSync(served, { recursive: true });
+copyFileSync(resolve(out, 'article.docx'), resolve(served, 'hopper-jtei.docx'));
+copyFileSync(resolve(here, 'article.pdf'), resolve(served, 'hopper-jtei.pdf'));
+
 const words = run('pandoc', ['article.docx', '-t', 'plain'], out).split(/\s+/).length;
 const media = readdirSync(out).filter((f) => f.endsWith('.png')).length;
 process.stdout.write(
   `docx: ${words} words, ${figures.length} figure(s) as PNG at 300 dpi -> ` +
     `docs/study/submission/article.docx\n` +
     `      ${media} image file(s); the journal wants tif, jpg or png at 72 dpi or better,\n` +
-    `      each captioned with its rights holder — that line is yours to write.\n`,
+    `      each captioned with its rights holder — that line is yours to write.\n` +
+    `      served at /article/hopper-jtei.pdf and .docx\n`,
 );

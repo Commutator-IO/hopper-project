@@ -25,3 +25,7 @@ lean/.lake/
 # The submission file and its images, rebuilt by `npm run docx`
 # from the article: derived, like everything else here.
 docs/study/submission/
+
+# The article as the site serves it, rebuilt by `npm run docx` from
+# docs/study/article.tex — derived, like the TEI export beside it.
+public/article/

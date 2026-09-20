@@ -501,6 +501,59 @@ export function MethodPage() {
         </p>
       </section>
 
+      {/* The article, served rather than described.
+          A method page that explains the method at length and then makes a
+          reader go to a repository to read the paper about it is withholding
+          the one document written for somebody outside the project. Both forms
+          are here because they are not the same thing: the PDF is for reading,
+          the .docx is the file the journal will be sent, and a reader who
+          wants to see what a submission looks like can have it. */}
+      <section className="border-b border-ink-200 py-8">
+        <h2 className="font-serif text-2xl text-ink-900">The article</h2>
+        <div className="mt-3 max-w-3xl space-y-3 text-[14.5px] leading-relaxed text-ink-700">
+          <p>
+            <em>A Machine Reads the Hopper Ledgers: Constrained Transcription, Mechanical TEI
+            Export, and Checkability as the Editorial Condition</em> — the paper this edition was
+            built to test, prepared for the{' '}
+            <a
+              href="https://journal.tei-c.org/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-600"
+            >Journal of the Text Encoding Initiative</a>. It describes the corpus, the
+            transcription rules, the TEI customisation, the derived data and the interface, and
+            then what the method does not do — which is the half worth reading. Licensed CC BY
+            4.0.
+          </p>
+          <p>
+            <a
+              href={url('/article/hopper-jtei.pdf')}
+              className="rounded-full border border-ink-200 px-3 py-1 text-[13px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
+            >
+              PDF
+            </a>
+            <span className="text-ink-400"> · to read</span>
+            {'   '}
+            <a
+              href={url('/article/hopper-jtei.docx')}
+              className="ml-3 rounded-full border border-ink-200 px-3 py-1 text-[13px] text-ink-700 transition hover:border-brand-400 hover:text-brand-700"
+            >
+              DOCX
+            </a>
+            <span className="text-ink-400">
+              {' '}
+              · the submission file, since the journal takes a word-processor file and not a PDF
+            </span>
+          </p>
+          <p className="prose-note">
+            Both are rebuilt from{' '}
+            <code className="font-mono text-[13px]">docs/study/article.tex</code> and are no more
+            current than the last build; the figures in them are drawn from the same derived files
+            this site shows, and each names the day it was generated.
+          </p>
+        </div>
+      </section>
+
       {/* Who is behind this, and where a rights holder writes.
           An archive that asks to be trusted with readings of a copyrighted
           manuscript, and that calls its own transcriptions unauthorised working

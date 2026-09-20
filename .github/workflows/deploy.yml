@@ -128,6 +128,14 @@ jobs:
           restore-keys: tectonic-bundle-
       # Fails on an overfull box, which in a transcription hides content.
       - run: npm run pdf
+      # pandoc for the conversion, poppler for the rasterisation, ImageMagick
+      # to trim the page margins off each figure.
+      - name: Install pandoc, poppler and ImageMagick
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq pandoc poppler-utils imagemagick
+      # The article the site serves from /method/, in both forms: the PDF to
+      # read and the .docx the journal is sent. Built here rather than
+      # committed, like the TEI export and the transcripts.
+      - run: npm run docx
 
       - run: npm run build
         env:
