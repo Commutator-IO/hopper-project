@@ -2,37 +2,36 @@
     Constrained Transcription, Mechanical TEI Export, and Checkability
                         as the Editorial Condition
 
-                                             Michel Hua
-                                           Commutator, Paris
-                                        michel@commutator.io
+                                            Michel Hua
+                                         Commutator, Paris
+                                       michel@commutator.io
 
          Draft of 19 September 2026, prepared for the Journal of the Text Encoding Initiative
 
 
 
-                                                Abstract
+                                              Abstract
       This article reports an experiment in the transcription and encoding of an artist’s record
-      books by a large language model under editorial constraints, using the six ledgers of Ed-
-      ward and Josephine Hopper at the Whitney Museum of American Art (504 digitised sheets,
-      1907–1967) and four of Josephine Hopper’s notebooks from the Sanborn Hopper Archive
-      as its corpus. The model (Claude Opus 5 and Claude Fable 5.1) transcribed the sheets from
-      the museum’s published photographs into a deliberately restricted LaTeX whose macros
-      correspond one to one with elements of a TEI P5 customisation; a mechanical conversion
-      produces TEI files that are validated against the customisation in continuous integration;
-      scripts derive from the transcriptions, under published rules, an account of prices, mate-
-      rials, formats and dated days; and an interface built for the purpose places the reading
-      beside the photograph so that any sentence can be checked against the hand it was read
-      from. The article describes the corpus, the transcription rules, the encoding and its schema,
-      the derived data and the interface, and then discusses the limits of the method: the read-
-      ing remains a first pass unchecked by a person, an image-alignment pass on one volume
-      reports seventy-four leaves with at least one line the transcription lacks, and the model can-
-      not see the colour of ink that carries the cash book’s meaning. The contribution claimed is
-      not a finding about Hopper but an editorial condition: a machine reading that is fully cited,
-      fully derived and fully exposed to correction. The use of generative AI in the transcription
-      and in the drafting of this article is declared.
+      books by a large language model under editorial constraints, using as its corpus the
+      six ledgers of Edward and Josephine Hopper at the Whitney Museum of American Art
+      (504 digitised sheets, 1907–1967) and four of Josephine Hopper’s notebooks. The model
+      (Claude Opus 5 and Claude Fable 5.1) transcribed the sheets from the museum’s published
+      photographs into a deliberately restricted LaTeX whose macros correspond one to one
+      with elements of a TEI P5 customisation; a mechanical conversion produces TEI files that
+      are validated against the customisation in continuous integration; scripts derive from the
+      transcriptions, under published rules, an account of prices, materials, formats and dated
+      days; and an interface built for the purpose places the reading beside the photograph so
+      that any sentence can be checked against the hand it was read from. The article describes
+      the corpus, the transcription rules, the encoding and its schema, the derived data and
+      the interface, and then the limits: the reading is a first pass unchecked by a person,
+      an alignment pass on one volume reports seventy-four leaves with at least one line the
+      transcription lacks, and the model cannot see the ink colour that carries the cash book’s
+      meaning. The contribution is not a finding about Hopper but an editorial condition: a
+      machine reading fully cited, fully derived and fully exposed to correction. The use of
+      generative AI in the transcription and in the drafting is declared.
 
-Keywords. TEI; artist’s ledgers; large language models; transcription; critical apparatus; Ed-
-ward Hopper; reproducibility.
+Keywords. artist’s ledgers; large language models; transcription; critical apparatus; hand
+attribution; Edward Hopper; reproducibility.
 
 
 1     Introduction
@@ -45,10 +44,10 @@ books in which Edward Hopper drew a small ink record of each finished picture wi
 and size, and Josephine Hopper wrote everything else: the paint used, a description, the
 buyer, the price, the dealer’s commission, the exhibitions and their verdicts, and the date the
 cheque cleared. One is a pocket cash book kept without a gap from 15 November 1913 to
+23 March 1967, in a hand that predates the marriage by eleven years and that the present
 
-                                                    1
-23 March 1967, in a hand that predates the marriage by eleven years and that the present
-edition does not attribute. One is a book of drawings and etching stock-takes, and one is a
+                                                  1
+edition does not attribute. One is a book of drawings and etching stock-takes, and one is a
 cash book indexed by dealer. Beside them, the Whitney’s Sanborn Hopper Archive holds some
 ninety notebooks of Josephine Hopper’s, four of which have been digitised: a diary of the
 marriage as it bore on her own painting, two working files from the 1947 fight against New
@@ -93,11 +92,11 @@ from Book IV has to change its rule four times across the volume’s fifty-four 
 4 describes why.
      The transcription of handwriting by large language models has moved quickly. Humphries
 and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English
+manuscripts, general-purpose language models achieved character error rates of about six to
 
 
                                                 2
-manuscripts, general-purpose language models achieved character error rates of about six to
-seven per cent, an improvement on specialised handwritten text recognition software; Crosilla,
+seven per cent, an improvement on specialised handwritten text recognition software; Crosilla,
 Klic and Colavizza (2025) benchmark several models on the same task and discuss the con-
 ditions under which the models’ linguistic priors help and hinder. The present experiment
 differs from that work in its object and in its measure. Its object is not running prose but
@@ -144,10 +143,10 @@ about.
 front cover of Book I states the division: « Recorded by Jo N Hopper (Mrs. Edward Hopper)
 at time each work is finished, or before it leaves studio. Drawings in the 3 books done by
 Edward Hopper. » The size in the title line of each work is the one figure Edward Hopper
+wrote; everything else in the work books is hers. Book IV is in a hand the edition cannot
 
                                                 3
-wrote; everything else in the work books is hers. Book IV is in a hand the edition cannot
-place. A transcription that flattened the hands would destroy the archive’s chief documentary
+place. A transcription that flattened the hands would destroy the archive’s chief documentary
 value, and the encoding of hands is accordingly the one element of the apparatus that has no
 counterpart in ordinary manuscript transcription and that the method treats as mandatory.
     Third, the colour of ink carries information. In Book IV, from leaf 7 onward, charges are
@@ -1031,6 +1030,15 @@ be settled with the scholars who will do the reading rather than declared here. 
 an issue of the repository, and it is the one on which every claim in this article depends.
 
 
+About the author
+Michel Hua is an engineer at Commutator, Paris, where he builds reading and transcrip-
+tion workbenches for archives that institutions have digitised and nobody has read: the
+Hopper ledgers described here, the Grothendieck fonds at Montpellier, the mathematicians’
+manuscripts in Gallica, and an index of a filmed course in morphology. He can be reached at
+michel@commutator.io.
+
+
+
 Declaration of Generative AI and AI-assisted technologies in the
 writing process
 During the preparation of this work the author used Claude Opus 5 and Claude Fable 5.1 (An-
@@ -1057,7 +1065,10 @@ zenodo.22770550, which resolves to the most recent archived version, with a Soft
 snapshot of the repository’s history beside it.
 
 
-References
+
+
+                                              20
+References
 Crosilla, Giorgia, Lukas Klic, and Giovanni Colavizza. 2025. « Benchmarking Large Language
    Models for Handwritten Text Recognition. » Journal of Documentation 81 (7). Preprint:
    arXiv:2503.15195.
@@ -1068,11 +1079,7 @@ Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell
   Journal of Quantitative and Interdisciplinary History 58 (3). https://doi.org/10.1080/
   01615440.2025.2500309.
 
-
-
-
-                                              20
-Larson, Madeleine. n.d. Josephine N. Hopper’s Diaries, 1933–1956: Typed Transcript. 5 parts.
+Larson, Madeleine. n.d. Josephine N. Hopper’s Diaries, 1933–1956: Typed Transcript. 5 parts.
    Provincetown Art Association and Museum. Scans consulted through the museum, cited
    by part and typescript page.
 
@@ -1116,7 +1123,10 @@ is unaffected.
  studio - Oct. 1946.}
 
 
- \marginal{To Rehn Gallery Nov. 26, 46 --- in the margin at the left of the title
+
+
+                                               21
+ \marginal{To Rehn Gallery Nov. 26, 46 --- in the margin at the left of the title
  and paint lines}
 
 
@@ -1132,11 +1142,7 @@ is unaffected.
  at front Edge. Sky wan, whitish with long strips of grey,. Some blue at top.\\
  "Peace, quiet, no birds sing." "Some day you will be quiet too" - E. H.'s
  favorite Goethe.\\
-
-
-
-                                               21
- \qquad (strictly off the record)}
+ \qquad (strictly off the record)}
 
 
  \marginal{bearberry --- above « herbage »; low --- above « clumps »; pale ---
@@ -1173,123 +1179,122 @@ B The derived tables
 The tables below are regenerated from the edition’s derived files on each build; those given
 here were generated on 13 September 2026 from 46 transcribed batches. Every figure is a
 floor under a stated rule.
-Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
-transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque with
-no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above entries
-of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
-
-                              Year      Charged     Received    Balance
-                              1913       160.00       160.00       0.00
-                              1914     1,225.00     1,225.00       0.00
-                              1915       500.00       500.00       0.00
-                              1916       991.00       991.00       0.00
-                              1917     1,509.00     1,514.00      -5.00
-                              1918     1,556.00     1,916.00    -365.00
-                              1919       977.00       977.00    -365.00
-                              1920     2,950.00     2,794.00    -209.00
-                              1922     1,075.00     1,075.00    -209.00
-                              1923     1,279.20     1,304.20    -234.00
-                              1924     1,015.00       980.00    -199.00
-                              1925     1,218.67     1,218.67    -199.00
-                              Total   14,455.87    14,654.87    -199.00
-
-
-
-
-                                                  22
-Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
+Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
 column, by year. Gross is the price written; the commission is the dealer’s share as the row states it;
 net is what was left. Only rows that put a price in one cell and a date in another are counted, so the
 etchings are largely absent.
 
-                  Year     Sales     Gross    Commission          Net    Receipted
-                  1923         3      970              323       647             0
-                  1924         6    4,500            1,500     3,000             0
-                  1925         4    2,100              510     1,590           340
-                  1926        11    5,275            1,758     3,517           850
-                  1927        17    3,955            1,318     2,637         1,333
-                  1928        24    5,774            1,919     3,855         1,197
-                  1929        52    7,040            2,342     4,698         4,197
-                  1930        34   18,378            6,126    12,252         3,000
-                  1931        17    2,648              883     1,765         5,600
-                  1932         3    1,380              460       920         2,400
-                  1933         3       85               28        57            20
-                  1934        14    3,980            1,327     2,653           800
-                  1935         1      750              250       500           500
-                  1936         6    4,420            1,473     2,947           267
-                  1937        10    4,670            1,557     3,113            20
-                  1938        11    4,990            1,648     3,342             0
-                  1939         1    2,500              833     1,667             0
-                  1940        14    6,182            2,061     4,121           667
-                  1941         4    1,220              407       813           267
-                  1942         3    2,780              927     1,853             0
-                  1943         4    2,760              920     1,840         1,200
-                  1944         5    4,850            1,617     3,233             0
-                  1945         5    3,080            1,027     2,053             0
-                  1946         6    7,650            2,550     5,100         2,267
-                  1947         7    6,130            2,043     4,087         1,467
-                  1948         4    7,500            2,500     5,000         1,500
-                  1949         5    9,115            3,038     6,077             0
-                  1950        12    4,130            1,377     2,753         1,053
-                  1951        11    7,830            2,610     5,220           333
-                  1952         3    7,750            2,583     5,167         2,667
-                  1953         9    4,500            1,500     3,000           500
-                  1954         6   14,780            4,927     9,853             0
-                  1955         6    5,800            1,933     3,867         2,333
-                  1956        12   22,410            7,470    14,940         5,867
-                  1957        19   26,470            8,823    17,647           667
-                  1958         3   16,000            5,333    10,667         1,800
-                  1959         2   10,800            3,600     7,200         6,000
-                  1960         4   15,600            5,200    10,400             0
-                  1961        10   11,295            3,765     7,530             0
-                  1962         3   31,000           10,333    20,667         3,667
-                  1963         2   31,500           10,500    21,000             0
+                    Year   Sales     Gross    Commission          Net    Receipted
+                    1923       3       970               323     647              0
+                    1924       6     4,500             1,500   3,000              0
 
 
-                                                  23
-                  Year    Sales    Gross    Commission           Net    Receipted
-                  1964        2   31,500         10,500       21,000               0
-                  1965        1   15,000          5,000       10,000          10,000
-                  1966        1   25,000          8,333       16,667               0
+                                                  22
+Year   Sales    Gross   Commission     Net    Receipted
+1925      4     2,100          510    1,590        340
+1926     11     5,275        1,758    3,517        850
+1927     17     3,955        1,318    2,637      1,333
+1928     24     5,774        1,919    3,855      1,197
+1929     52     7,040        2,342    4,698      4,197
+1930     34    18,378        6,126   12,252      3,000
+1931     17     2,648          883    1,765      5,600
+1932      3     1,380          460      920      2,400
+1933      3        85           28       57         20
+1934     14     3,980        1,327    2,653        800
+1935      1       750          250      500        500
+1936      6     4,420        1,473    2,947        267
+1937     10     4,670        1,557    3,113         20
+1938     11     4,990        1,648    3,342          0
+1939      1     2,500          833    1,667          0
+1940     14     6,182        2,061    4,121        667
+1941      4     1,220          407      813        267
+1942      3     2,780          927    1,853          0
+1943      4     2,760          920    1,840      1,200
+1944      5     4,850        1,617    3,233          0
+1945      5     3,080        1,027    2,053          0
+1946      6     7,650        2,550    5,100      2,267
+1947      7     6,130        2,043    4,087      1,467
+1948      4     7,500        2,500    5,000      1,500
+1949      5     9,115        3,038    6,077          0
+1950     12     4,130        1,377    2,753      1,053
+1951     11     7,830        2,610    5,220        333
+1952      3     7,750        2,583    5,167      2,667
+1953      9     4,500        1,500    3,000        500
+1954      6    14,780        4,927    9,853          0
+1955      6     5,800        1,933    3,867      2,333
+1956     12    22,410        7,470   14,940      5,867
+1957     19    26,470        8,823   17,647        667
+1958      3    16,000        5,333   10,667      1,800
+1959      2    10,800        3,600    7,200      6,000
+1960      4    15,600        5,200   10,400          0
+1961     10    11,295        3,765    7,530          0
+1962      3    31,000       10,333   20,667      3,667
+1963      2    31,500       10,500   21,000          0
+1964      2    31,500       10,500   21,000          0
+1965      1    15,000        5,000   10,000     10,000
+1966      1    25,000        8,333   16,667          0
+
+
+
+
+                          23
+Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
+transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque with
+no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above entries
+of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
+
+                              Year      Charged     Received     Balance
+                              1913       160.00       160.00        0.00
+                              1914     1,225.00     1,225.00        0.00
+                              1915       500.00       500.00        0.00
+                              1916       991.00       991.00        0.00
+                              1917     1,509.00     1,514.00       -5.00
+                              1918     1,556.00     1,916.00     -365.00
+                              1919       977.00       977.00     -365.00
+                              1920     2,950.00     2,794.00     -209.00
+                              1922     1,075.00     1,075.00     -209.00
+                              1923     1,279.20     1,304.20     -234.00
+                              1924     1,015.00       980.00     -199.00
+                              1925     1,218.67     1,218.67     -199.00
+                              Total   14,455.87    14,654.87     -199.00
 
 
 Table 9: The thirty sales at the highest prices among the rows that name a work, as the work books
 write them. Gross is the price; net is after the third.
 
-               Work                                  Price     Net     Year     Volume
-               Intermission                      25,000      16,667    1966     III
-               Sun in an Empty Room              25,000      16,667    1964     III
-               New York Office                   16,500      11,000    1963     III
-               People in the Sun                 15,000      10,000    1962     III
-               A Woman in the Sun                15,000      10,000    1963     III
-               East River                        15,000      10,000    1965     III
-               Excursion into Philosophy         14,500       9,667    1962     III
-               « Girlie Show »                   11,000       7,333    1961     II
-               November, Wash. Square            10,000       6,667    1960     III
-               Sunlight in a Cafeteria            9,000       6,000    1959     III
-               Hotel Window                       7,000       4,667    1957     III
-               Western Motel                      6,500       4,333    1958     III
-               Charleston Slum                    6,500       4,333    1964     III
-               Morning in a City                  6,000       4,000    1949     III
-               Four Lane Road                     6,000       4,000    1957     III
-               Dauphinée House                    5,000       3,333    1956     II
-               Sunlight on Brownstones            5,000       3,333    1958     III
-               Tables for Ladies                  4,500       3,000    1930     I
-               Men, Women + Horses                4,500       3,000    1958     II
-               Sea Watchers                       4,500       3,000    1956     III
-               South Carolina Morning             4,500       3,000    1957     III
-               Cape Cod Morning                   4,050       2,700    1956     III
-               « Bootleggers »                    4,000       2,667    1956     II
-               Rooms by the Sea                   4,000       2,667    1952     III
-               The Martha McKeen of Wellfleet     3,500       2,333    1954     III
-               Portrait of Orleans                3,500       2,333    1953     III
-               First Row Orchestra                3,500       2,333    1954     III
-               Morning Sun                        3,500       2,333    1954     III
-               Hotel by a Railroad                3,500       2,333    1954     III
-               City Sunlight                      3,500       2,333    1955     III
+                Work                                   Price     Net    Year   Volume
+                Intermission                       25,000      16,667   1966   III
+                Sun in an Empty Room               25,000      16,667   1964   III
+                New York Office                    16,500      11,000   1963   III
+                People in the Sun                  15,000      10,000   1962   III
+                A Woman in the Sun                 15,000      10,000   1963   III
+                East River                         15,000      10,000   1965   III
+                Excursion into Philosophy          14,500       9,667   1962   III
+                « Girlie Show »                    11,000       7,333   1961   II
+                November, Wash. Square             10,000       6,667   1960   III
+                Sunlight in a Cafeteria             9,000       6,000   1959   III
+                Hotel Window                        7,000       4,667   1957   III
+                Western Motel                       6,500       4,333   1958   III
+                Charleston Slum                     6,500       4,333   1964   III
+                Morning in a City                   6,000       4,000   1949   III
+                Four Lane Road                      6,000       4,000   1957   III
+                Dauphinée House                     5,000       3,333   1956   II
+                Sunlight on Brownstones             5,000       3,333   1958   III
+                Tables for Ladies                   4,500       3,000   1930   I
+                Men, Women + Horses                 4,500       3,000   1958   II
+                Sea Watchers                        4,500       3,000   1956   III
+                South Carolina Morning              4,500       3,000   1957   III
+                Cape Cod Morning                    4,050       2,700   1956   III
+                « Bootleggers »                     4,000       2,667   1956   II
+                Rooms by the Sea                    4,000       2,667   1952   III
+                The Martha McKeen of Wellfleet      3,500       2,333   1954   III
+                Portrait of Orleans                 3,500       2,333   1953   III
+                First Row Orchestra                 3,500       2,333   1954   III
+                Morning Sun                         3,500       2,333   1954   III
+                Hotel by a Railroad                 3,500       2,333   1954   III
+                City Sunlight                       3,500       2,333   1955   III
 
 
 
-
-                                                24
+                                                  24
 

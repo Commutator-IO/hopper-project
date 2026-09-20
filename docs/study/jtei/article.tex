@@ -21,10 +21,10 @@
 \maketitle
 
 \begin{abstract}
-\noindent This article reports an experiment in the transcription and encoding of an artist's record books by a large language model under editorial constraints, using the six ledgers of Edward and Josephine Hopper at the Whitney Museum of American Art (504 digitised sheets, 1907--1967) and four of Josephine Hopper's notebooks from the Sanborn Hopper Archive as its corpus. The model (Claude Opus 5 and Claude Fable 5.1) transcribed the sheets from the museum's published photographs into a deliberately restricted LaTeX whose macros correspond one to one with elements of a TEI P5 customisation; a mechanical conversion produces TEI files that are validated against the customisation in continuous integration; scripts derive from the transcriptions, under published rules, an account of prices, materials, formats and dated days; and an interface built for the purpose places the reading beside the photograph so that any sentence can be checked against the hand it was read from. The article describes the corpus, the transcription rules, the encoding and its schema, the derived data and the interface, and then discusses the limits of the method: the reading remains a first pass unchecked by a person, an image-alignment pass on one volume reports seventy-four leaves with at least one line the transcription lacks, and the model cannot see the colour of ink that carries the cash book's meaning. The contribution claimed is not a finding about Hopper but an editorial condition: a machine reading that is fully cited, fully derived and fully exposed to correction. The use of generative AI in the transcription and in the drafting of this article is declared.
+\noindent This article reports an experiment in the transcription and encoding of an artist's record books by a large language model under editorial constraints, using as its corpus the six ledgers of Edward and Josephine Hopper at the Whitney Museum of American Art (504 digitised sheets, 1907--1967) and four of Josephine Hopper's notebooks. The model (Claude Opus 5 and Claude Fable 5.1) transcribed the sheets from the museum's published photographs into a deliberately restricted LaTeX whose macros correspond one to one with elements of a TEI P5 customisation; a mechanical conversion produces TEI files that are validated against the customisation in continuous integration; scripts derive from the transcriptions, under published rules, an account of prices, materials, formats and dated days; and an interface built for the purpose places the reading beside the photograph so that any sentence can be checked against the hand it was read from. The article describes the corpus, the transcription rules, the encoding and its schema, the derived data and the interface, and then the limits: the reading is a first pass unchecked by a person, an alignment pass on one volume reports seventy-four leaves with at least one line the transcription lacks, and the model cannot see the ink colour that carries the cash book's meaning. The contribution is not a finding about Hopper but an editorial condition: a machine reading fully cited, fully derived and fully exposed to correction. The use of generative AI in the transcription and in the drafting is declared.
 \end{abstract}
 
-\noindent\textbf{Keywords.} TEI; artist's ledgers; large language models; transcription; critical apparatus; Edward Hopper; reproducibility.
+\noindent\textbf{Keywords.} artist's ledgers; large language models; transcription; critical apparatus; hand attribution; Edward Hopper; reproducibility.
 
 \section{Introduction}
 
@@ -285,7 +285,7 @@ The exercise refined one rule, since the proof required the exception that a \q{
 
 \subsection{What the data shows, as an illustration of the condition}
 
-Figures~\ref{fig:scatter} to \ref{fig:days} reproduce four of the interface's drawings from the derived files, and are given here not for their findings but to show what a fully derived figure looks like: each names its source file and that file's generation date, and each is regenerable by anyone with a clone of the repository.
+Figures~\ref{fig:scatter} to~\ref{fig:days} reproduce four of the interface's drawings from the derived files, and are given here not for their findings but to show what a fully derived figure looks like: each names its source file and that file's generation date, and each is regenerable by anyone with a clone of the repository.
 
 \input{fig-formats-scatter.tex}
 \input{fig-materials.tex}
@@ -424,6 +424,14 @@ This article has described an edition in which a language model is the first tra
 The corpus, the Hopper ledgers and notebooks, was the occasion for the experiment and is a good one, because a ledger's errors are measurable and because the museum serves the photographs openly.
 
 What the experiment opens is a division of labour. The model reads; the scripts derive; the schema validates; and the person checks, corrects at source, and declares. The first three have been done for this corpus. The fourth has not, and the edition's own status file, which declares nothing, is the measure of how far the method has come and where it stops. One extension is done — the corpus is deposited under a persistent identifier — and one is not: the definition and execution of the human check that turns a drafted batch into a checked one, which is to be settled with the scholars who will do the reading rather than declared here. It is tracked as an issue of the repository, and it is the one on which every claim in this article depends.
+
+\section*{About the author}
+
+Michel Hua is an engineer at Commutator, Paris, where he builds reading and
+transcription workbenches for archives that institutions have digitised and
+nobody has read: the Hopper ledgers described here, the Grothendieck fonds at
+Montpellier, the mathematicians' manuscripts in Gallica, and an index of a
+filmed course in morphology. He can be reached at \texttt{michel@commutator.io}.
 
 \section*{Declaration of Generative AI and AI-assisted technologies in the writing process}
 
