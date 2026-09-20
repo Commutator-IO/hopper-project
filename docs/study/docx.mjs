@@ -60,7 +60,21 @@ const im = () => {
 
 /** The article's preamble, so a figure compiled alone looks as it does in the article. */
 const article = readFileSync(resolve(here, 'article.tex'), 'utf8');
-const preamble = article.slice(0, article.indexOf('\\begin{document}'));
+
+/**
+ * The same preamble with its fonts made portable.
+ *
+ * The article sets Charter and Menlo, which are the fonts on the machine it
+ * was written on and are on no Linux runner, so a figure compiled in CI failed
+ * on « The font "Charter" cannot be found ». XCharter is Charter — Bitstream's
+ * face, freed and extended — and is in TeX Live; the monospace falls back to
+ * the default. The figures the site serves are therefore set in the free twin
+ * of the face the PDF uses, which is as close as portability gets.
+ */
+const preamble = article
+  .slice(0, article.indexOf('\\begin{document}'))
+  .replace(/\\usepackage\{fontspec\}\\setmainfont\{Charter\}\\setmonofont\{Menlo\}\[[^\]]*\]/,
+    '\\usepackage{XCharter}');
 
 const figures = readdirSync(here).filter((f) => /^fig-.*\.tex$/.test(f)).sort();
 if (!figures.length) throw new Error('docx: no fig-*.tex beside article.tex');
