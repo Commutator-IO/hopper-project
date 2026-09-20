@@ -136,6 +136,11 @@ jobs:
       # read and the .docx the journal is sent. Built here rather than
       # committed, like the TEI export and the transcripts.
       - run: npm run docx
+      # The article encoded in TEI against the journal's own schema, and
+      # validated in both halves — RELAX NG with jing, Schematron with SchXslt
+      # on Saxon — so that the file the site serves is one the journal's
+      # validator accepts. Java is on the runner already.
+      - run: npm run article-tei
 
       - run: npm run build
         env:
