@@ -745,7 +745,11 @@ export function AccountsPage() {
         </p>
         <p className="prose-note mt-2 max-w-3xl">{A.parties.note}</p>
 
-        <div className="mt-5 grid gap-x-10 gap-y-8 lg:grid-cols-2">
+        {/* One table to a row, on every screen. Side by side they each had
+            half the width, and « Sales » ran into « Years »: « 4 » followed by
+            « 1930–1961 » reads as 41930. A table of figures is worth its own
+            line. */}
+        <div className="mt-5 grid gap-y-10">
           {[
             {
               heading: 'Through whom it sold',
@@ -770,9 +774,9 @@ export function AccountsPage() {
                   <thead>
                     <tr className="border-b border-ink-300 text-[11px] uppercase tracking-wider text-ink-400">
                       <th className="py-1.5 text-left font-normal">Name</th>
-                      <th className="py-1.5 text-right font-normal">Sales</th>
-                      <th className="py-1.5 text-right font-normal">Years</th>
-                      <th className="py-1.5 text-right font-normal">Net</th>
+                      <th className="py-1.5 pl-4 text-right font-normal">Sales</th>
+                      <th className="py-1.5 pl-4 text-right font-normal">Years</th>
+                      <th className="py-1.5 pl-4 text-right font-normal">Net</th>
                       <th className="w-1/5 py-1.5 text-left font-normal" />
                     </tr>
                   </thead>
@@ -790,11 +794,11 @@ export function AccountsPage() {
                             </span>
                           )}
                         </td>
-                        <td className="py-1.5 text-right tabular text-ink-500">{p.sales}</td>
-                        <td className="py-1.5 text-right tabular text-ink-500">
+                        <td className="py-1.5 pl-4 text-right tabular text-ink-500">{p.sales}</td>
+                        <td className="py-1.5 pl-4 text-right tabular text-ink-500">
                           {p.first === p.last ? p.first : `${p.first}–${p.last}`}
                         </td>
-                        <td className="py-1.5 text-right tabular text-ink-900">
+                        <td className="py-1.5 pl-4 text-right tabular text-ink-900">
                           ${money(p.net)}
                         </td>
                         <td className="py-1.5 pl-3">
