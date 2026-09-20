@@ -180,8 +180,24 @@
 % of the TEI will look for it.
 \NewDocumentCommand{\uncertain}{om}{\uline{#2}}
 
-% An editorial addition — an expanded abbreviation, an implied dollar sign.
-\newcommand{\add}[1]{\textcolor{blue!50!black}{[#1]}}
+% The transcriber supplies what the leaf does not carry: a letter completing a
+% word written short or cut by the binding, an implied dollar sign, a column
+% heading the writer ruled but never labelled. The authority is the editor's
+% and the TEI says so, with @resp.
+\newcommand{\supplied}[1]{\textcolor{blue!50!black}{[#1]}}
+
+% The writer's own insertion — a price revised above the line, a buyer written
+% over a struck one, an afterthought squeezed under a row. It is her text and
+% not the transcriber's, and the TEI encodes it as such.
+%
+% The two were one macro until 21 September 2026, when a reader of the article
+% pointed out that the TEI was crediting Josephine Hopper's afterthoughts to
+% the editor. They were separated by a rule that can be checked in the file:
+% an insertion glued to the word it completes, or standing in a table's header
+% row, is the transcriber's; one standing free in a cell is hers. The free
+% ones have not been read again against the photographs, so a few may yet be
+% the transcriber's — issue #33 holds that reading.
+\newcommand{\add}[1]{\textcolor{blue!50!black}{\textlangle #1\textrangle}}
 
 % Struck out in the book. Jo Hopper struck a great deal: a price revised, a
 % buyer who withdrew, an exhibition that fell through. What she crossed out is

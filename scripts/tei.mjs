@@ -10,7 +10,8 @@
  * |---|---|
  * | `\ill{}` | `<gap reason="illegible"/>` |
  * | `\uncertain{…}` | `<unclear>` |
- * | `\add{…}` | `<supplied>` |
+ * | `\supplied{…}` | `<supplied>` |
+ * | `\add{…}` | `<add>` |
  * | `\struck{…}` | `<del>` |
  * | `\note{…}` | an editorial `<note>` |
  * | `\marginal{…}` | an authorial `<note place="margin">` |
@@ -223,7 +224,8 @@ function inline(s) {
     }
     const WRAP = {
       uncertain: ['<unclear>', '</unclear>'],
-      add: ['<supplied resp="#editor">', '</supplied>'],
+      supplied: ['<supplied resp="#editor">', '</supplied>'],
+      add: ['<add>', '</add>'],
       struck: ['<del>', '</del>'],
       emph: ['<hi rend="italic">', '</hi>'],
       textit: ['<hi rend="italic">', '</hi>'],
