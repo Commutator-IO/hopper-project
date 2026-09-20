@@ -813,11 +813,17 @@ The experiment identified five limits, none of them a matter of error rate.
 batches were transcribed without recording it; the colour was recovered afterwards by an
 image-processing script that classifies each money cell and writes the result into the transcrip-
 tion, on the ground that colour is the one thing on the leaf a machine can see better than the
-hand it is written in. That recovery is partial and its extent should be stated: on 19 September
-2026 eighteen of Book IV’s one hundred and sixty sheets carry an ink mark, the pass having
+hand it is written in. That recovery is partial and its extent should be stated: on 20 September
+2026 thirty-two of Book IV’s one hundred and sixty sheets carry an ink mark, the pass having
 been run where a leaf’s rows and the written lines of its photograph align exactly, and stopped
-where they do not. A method that depended on the language model for the ink would have
-produced a cash book without a status field.
+where they do not. The stop is mechanical rather than palaeographic — a marginal counts as
+a written line, two rows may share one — so the remaining leaves await the human reading
+rather than a better classifier. The colour also disclosed where its own convention begins: on
+the volume’s first leaves it is the prices that are written in red and the receipts in black, and
+the last line of leaf 7 is the first receipt in red, so a rule read off the middle of the volume
+and applied to its opening turned eleven prices into money received until it was bounded. A
+method that depended on the language model for the ink would have produced a cash book
+without a status field.
     The model carries context forward as a rule, and rules fail at boundaries. The year of a
 Book IV entry is stated once, on a line of its own, and carried down the leaf; where leaf 53’s
 year line reads « 1920 » above entries of 1921, the transcription keeps the line as written and
@@ -845,15 +851,14 @@ would do better, and the edition says so on the leaf.
 7.3   Human validation
 The edition distinguishes three states of a batch, and only one of them is observed from the
 files. Drafted is what a file’s existence proves. Skipped, for a batch judged to hold nothing to
-transcribe, and checked, for a batch that a person has compared with the photographs sheet by
+
+                                               16
+transcribe, and checked, for a batch that a person has compared with the photographs sheet by
 sheet, are declared in a status file, and that file declares nothing for any batch. The reason is
 stated in its comment: a hand-kept status table drifts optimistic and nobody notices, so the two
 states no file can prove are the only two a person may write, and the site shows a transcribed
 batch as drafted because that is observed rather than declared.
-
-
-                                               16
-     What a human check consists of has been defined as an open question of the edition rather
+     What a human check consists of has been defined as an open question of the edition rather
 than assumed. The protocol under discussion is the one this article’s comparison table per-
 forms in miniature: a person opens the reading beside the photograph, reads each transcribed
 line against the sheet, corrects the transcription at source with a note that names who checked
@@ -894,11 +899,6 @@ decision against a second edition here (Section 4.2) is a decision this project 
 in opposite directions. The Gallica corpus made the address itself the unit: a volume enters
 only where the library serves the whole of it, and a manuscript that Gallica merely references
 on a partner’s site is in no table and no thumbnail, which is the same rule this edition states
-about documents with no public digitisation. And the morphology course made the witness
-something other than an image.
-    That last case is the one that generalises the claim. Debord’s course is seventy-seven hours
-of speech; the first transcription is not the model’s but the platform’s automatic captions, and
-the model’s work is an index — 95 terms, 73 references and 139 digressions, each carrying
 
                                                17
 Table 6: The four corpora the method has been run against, with the address at which a reading can
@@ -918,6 +918,11 @@ be checked.
     course           by PSL             captions                                  timestamps
 
 
+about documents with no public digitisation. And the morphology course made the witness
+something other than an image.
+    That last case is the one that generalises the claim. Debord’s course is seventy-seven hours
+of speech; the first transcription is not the model’s but the platform’s automatic captions, and
+the model’s work is an index — 95 terms, 73 references and 139 digressions, each carrying
 the second at which the thing is said. The repository publishes no caption and no video: only
 video identifiers, term identifiers and offsets in seconds, the captions themselves staying out of
 version control, as the photographs stay out of this one. The editorial condition is unchanged
@@ -945,15 +950,15 @@ method rests on four decisions: a restricted transcription language whose macros
 editorial question each; a mechanical derivation of TEI from that language, validated on every
 build against a customisation that declares exactly what the converter emits; a derivation of all
 counts and figures from the transcription under published rules, checked against the writer’s
-own sums and, for the accounts, certified in Lean against the rules as stated; and an interface
+
+
+                                                  18
+own sums and, for the accounts, certified in Lean against the rules as stated; and an interface
 that places the reading beside the photograph and cites every sheet by the museum’s own
 reference and the edition’s own dated pass.
     The corpus, the Hopper ledgers and notebooks, was the occasion for the experiment and
 is a good one, because a ledger’s errors are measurable and because the museum serves the
-
-
-                                                  18
-photographs openly.
+photographs openly.
     What the experiment opens is a division of labour. The model reads; the scripts derive; the
 schema validates; and the person checks, corrects at source, and declares. The first three have
 been done for this corpus. The fourth has not, and the edition’s own status file, which declares
@@ -995,15 +1000,12 @@ Crosilla, Giorgia, Lukas Klic, and Giovanni Colavizza. 2025. « Benchmarking Lar
    Models for Handwritten Text Recognition. » Journal of Documentation 81 (7). Preprint:
    arXiv:2503.15195.
 
-Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Is-
+                                              19
+Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Is-
   abella Murray, and Elizabeth Spence. 2025. « Unlocking the Archives: Using Large Lan-
   guage Models to Transcribe Handwritten Historical Documents. » Historical Methods: A
-
-
-
-                                              19
-    Journal of Quantitative and Interdisciplinary History 58 (3). https://doi.org/10.1080/
-    01615440.2025.2500309.
+  Journal of Quantitative and Interdisciplinary History 58 (3). https://doi.org/10.1080/
+  01615440.2025.2500309.
 
 Larson, Madeleine. n.d. Josephine N. Hopper’s Diaries, 1933–1956: Typed Transcript. 5 parts.
    Provincetown Art Association and Museum. Scans consulted through the museum, cited
@@ -1058,15 +1060,15 @@ is unaffected.
 
 
  \hand{jo}{Beyond slatey grey road a strip of very pale (yellowish) sand across\\
- length of canvas. Low herbage digging in green. Tall grass beyond slightly\\
- pinkish with clumps of green. House fresh painted white, barn left dull\\
- Rooves of both slatey grey. Glimpse of red foundation, chimney dull red.\\
- Edge of locust grove L. dull green. Woods in background with green underfoot\\
 
 
 
                                                20
- at front Edge. Sky wan, whitish with long strips of grey,. Some blue at top.\\
+ length of canvas. Low herbage digging in green. Tall grass beyond slightly\\
+ pinkish with clumps of green. House fresh painted white, barn left dull\\
+ Rooves of both slatey grey. Glimpse of red foundation, chimney dull red.\\
+ Edge of locust grove L. dull green. Woods in background with green underfoot\\
+ at front Edge. Sky wan, whitish with long strips of grey,. Some blue at top.\\
  "Peace, quiet, no birds sing." "Some day you will be quiet too" - E. H.'s
  favorite Goethe.\\
  \qquad (strictly off the record)}
@@ -1106,121 +1108,122 @@ B The derived tables
 The tables below are regenerated from the edition’s derived files on each build; those given
 here were generated on 13 September 2026 from 46 transcribed batches. Every figure is a
 floor under a stated rule.
-Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
-transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque with
-no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above entries
-of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
-
-                              Year      Charged     Received    Balance
-                              1913       160.00       160.00       0.00
-                              1914     1,225.00     1,225.00       0.00
-                              1915       500.00       500.00       0.00
-                              1916       991.00       991.00       0.00
-                              1917     1,509.00     1,514.00      -5.00
-                              1918     1,556.00     1,916.00    -365.00
-                              1919       977.00       977.00    -365.00
-                              1920     2,950.00     2,794.00    -209.00
-                              1922     1,075.00     1,075.00    -209.00
-                              1923     1,279.20     1,304.20    -234.00
-                              1924     1,015.00       980.00    -199.00
-                              1925     1,218.67     1,218.67    -199.00
-                              Total   14,455.87    14,654.87    -199.00
-
-
-                                                  21
-Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
+Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
 column, by year. Gross is the price written; the commission is the dealer’s share as the row states it;
 net is what was left. Only rows that put a price in one cell and a date in another are counted, so the
 etchings are largely absent.
 
-                  Year     Sales     Gross    Commission          Net    Receipted
-                  1923         3      970              323       647             0
-                  1924         6    4,500            1,500     3,000             0
-                  1925         4    2,100              510     1,590           340
-                  1926        11    5,275            1,758     3,517           850
-                  1927        17    3,955            1,318     2,637         1,333
-                  1928        24    5,774            1,919     3,855         1,197
-                  1929        52    7,040            2,342     4,698         4,197
-                  1930        34   18,378            6,126    12,252         3,000
-                  1931        17    2,648              883     1,765         5,600
-                  1932         3    1,380              460       920         2,400
-                  1933         3       85               28        57            20
-                  1934        14    3,980            1,327     2,653           800
-                  1935         1      750              250       500           500
-                  1936         6    4,420            1,473     2,947           267
-                  1937        10    4,670            1,557     3,113            20
-                  1938        11    4,990            1,648     3,342             0
-                  1939         1    2,500              833     1,667             0
-                  1940        14    6,182            2,061     4,121           667
-                  1941         4    1,220              407       813           267
-                  1942         3    2,780              927     1,853             0
-                  1943         4    2,760              920     1,840         1,200
-                  1944         5    4,850            1,617     3,233             0
-                  1945         5    3,080            1,027     2,053             0
-                  1946         6    7,650            2,550     5,100         2,267
-                  1947         7    6,130            2,043     4,087         1,467
-                  1948         4    7,500            2,500     5,000         1,500
-                  1949         5    9,115            3,038     6,077             0
-                  1950        12    4,130            1,377     2,753         1,053
-                  1951        11    7,830            2,610     5,220           333
-                  1952         3    7,750            2,583     5,167         2,667
-                  1953         9    4,500            1,500     3,000           500
-                  1954         6   14,780            4,927     9,853             0
-                  1955         6    5,800            1,933     3,867         2,333
-                  1956        12   22,410            7,470    14,940         5,867
-                  1957        19   26,470            8,823    17,647           667
-                  1958         3   16,000            5,333    10,667         1,800
-                  1959         2   10,800            3,600     7,200         6,000
-                  1960         4   15,600            5,200    10,400             0
-                  1961        10   11,295            3,765     7,530             0
-                  1962         3   31,000           10,333    20,667         3,667
-                  1963         2   31,500           10,500    21,000             0
+                    Year   Sales     Gross    Commission          Net    Receipted
+                    1923       3      970                323      647            0
+                    1924       6    4,500              1,500    3,000            0
+                    1925       4    2,100                510    1,590          340
+                    1926      11    5,275              1,758    3,517          850
+                    1927      17    3,955              1,318    2,637        1,333
+                    1928      24    5,774              1,919    3,855        1,197
+                    1929      52    7,040              2,342    4,698        4,197
+                    1930      34   18,378              6,126   12,252        3,000
 
 
-                                                  22
-                  Year    Sales    Gross    Commission           Net    Receipted
-                  1964        2   31,500         10,500       21,000               0
-                  1965        1   15,000          5,000       10,000          10,000
-                  1966        1   25,000          8,333       16,667               0
+                                                  21
+Year   Sales    Gross   Commission     Net    Receipted
+1931     17     2,648          883    1,765      5,600
+1932      3     1,380          460      920      2,400
+1933      3        85           28       57         20
+1934     14     3,980        1,327    2,653        800
+1935      1       750          250      500        500
+1936      6     4,420        1,473    2,947        267
+1937     10     4,670        1,557    3,113         20
+1938     11     4,990        1,648    3,342          0
+1939      1     2,500          833    1,667          0
+1940     14     6,182        2,061    4,121        667
+1941      4     1,220          407      813        267
+1942      3     2,780          927    1,853          0
+1943      4     2,760          920    1,840      1,200
+1944      5     4,850        1,617    3,233          0
+1945      5     3,080        1,027    2,053          0
+1946      6     7,650        2,550    5,100      2,267
+1947      7     6,130        2,043    4,087      1,467
+1948      4     7,500        2,500    5,000      1,500
+1949      5     9,115        3,038    6,077          0
+1950     12     4,130        1,377    2,753      1,053
+1951     11     7,830        2,610    5,220        333
+1952      3     7,750        2,583    5,167      2,667
+1953      9     4,500        1,500    3,000        500
+1954      6    14,780        4,927    9,853          0
+1955      6     5,800        1,933    3,867      2,333
+1956     12    22,410        7,470   14,940      5,867
+1957     19    26,470        8,823   17,647        667
+1958      3    16,000        5,333   10,667      1,800
+1959      2    10,800        3,600    7,200      6,000
+1960      4    15,600        5,200   10,400          0
+1961     10    11,295        3,765    7,530          0
+1962      3    31,000       10,333   20,667      3,667
+1963      2    31,500       10,500   21,000          0
+1964      2    31,500       10,500   21,000          0
+1965      1    15,000        5,000   10,000     10,000
+1966      1    25,000        8,333   16,667          0
+
+
+
+
+                          22
+Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
+transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque with
+no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above entries
+of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
+
+                              Year      Charged     Received     Balance
+                              1913       160.00       160.00        0.00
+                              1914     1,225.00     1,225.00        0.00
+                              1915       500.00       500.00        0.00
+                              1916       991.00       991.00        0.00
+                              1917     1,509.00     1,514.00       -5.00
+                              1918     1,556.00     1,916.00     -365.00
+                              1919       977.00       977.00     -365.00
+                              1920     2,950.00     2,794.00     -209.00
+                              1922     1,075.00     1,075.00     -209.00
+                              1923     1,279.20     1,304.20     -234.00
+                              1924     1,015.00       980.00     -199.00
+                              1925     1,218.67     1,218.67     -199.00
+                              Total   14,455.87    14,654.87     -199.00
 
 
 Table 9: The thirty sales at the highest prices among the rows that name a work, as the work books
 write them. Gross is the price; net is after the third.
 
-               Work                                  Price     Net     Year     Volume
-               Intermission                      25,000      16,667    1966     III
-               Sun in an Empty Room              25,000      16,667    1964     III
-               New York Office                   16,500      11,000    1963     III
-               People in the Sun                 15,000      10,000    1962     III
-               A Woman in the Sun                15,000      10,000    1963     III
-               East River                        15,000      10,000    1965     III
-               Excursion into Philosophy         14,500       9,667    1962     III
-               « Girlie Show »                   11,000       7,333    1961     II
-               November, Wash. Square            10,000       6,667    1960     III
-               Sunlight in a Cafeteria            9,000       6,000    1959     III
-               Hotel Window                       7,000       4,667    1957     III
-               Western Motel                      6,500       4,333    1958     III
-               Charleston Slum                    6,500       4,333    1964     III
-               Morning in a City                  6,000       4,000    1949     III
-               Four Lane Road                     6,000       4,000    1957     III
-               Dauphinée House                    5,000       3,333    1956     II
-               Sunlight on Brownstones            5,000       3,333    1958     III
-               Tables for Ladies                  4,500       3,000    1930     I
-               Men, Women + Horses                4,500       3,000    1958     II
-               Sea Watchers                       4,500       3,000    1956     III
-               South Carolina Morning             4,500       3,000    1957     III
-               Cape Cod Morning                   4,050       2,700    1956     III
-               « Bootleggers »                    4,000       2,667    1956     II
-               Rooms by the Sea                   4,000       2,667    1952     III
-               The Martha McKeen of Wellfleet     3,500       2,333    1954     III
-               Portrait of Orleans                3,500       2,333    1953     III
-               First Row Orchestra                3,500       2,333    1954     III
-               Morning Sun                        3,500       2,333    1954     III
-               Hotel by a Railroad                3,500       2,333    1954     III
-               City Sunlight                      3,500       2,333    1955     III
+                Work                                   Price     Net    Year   Volume
+                Intermission                       25,000      16,667   1966   III
+                Sun in an Empty Room               25,000      16,667   1964   III
+                New York Office                    16,500      11,000   1963   III
+                People in the Sun                  15,000      10,000   1962   III
+                A Woman in the Sun                 15,000      10,000   1963   III
+                East River                         15,000      10,000   1965   III
+                Excursion into Philosophy          14,500       9,667   1962   III
+                « Girlie Show »                    11,000       7,333   1961   II
+                November, Wash. Square             10,000       6,667   1960   III
+                Sunlight in a Cafeteria             9,000       6,000   1959   III
+                Hotel Window                        7,000       4,667   1957   III
+                Western Motel                       6,500       4,333   1958   III
+                Charleston Slum                     6,500       4,333   1964   III
+                Morning in a City                   6,000       4,000   1949   III
+                Four Lane Road                      6,000       4,000   1957   III
+                Dauphinée House                     5,000       3,333   1956   II
+                Sunlight on Brownstones             5,000       3,333   1958   III
+                Tables for Ladies                   4,500       3,000   1930   I
+                Men, Women + Horses                 4,500       3,000   1958   II
+                Sea Watchers                        4,500       3,000   1956   III
+                South Carolina Morning              4,500       3,000   1957   III
+                Cape Cod Morning                    4,050       2,700   1956   III
+                « Bootleggers »                     4,000       2,667   1956   II
+                Rooms by the Sea                    4,000       2,667   1952   III
+                The Martha McKeen of Wellfleet      3,500       2,333   1954   III
+                Portrait of Orleans                 3,500       2,333   1953   III
+                First Row Orchestra                 3,500       2,333   1954   III
+                Morning Sun                         3,500       2,333   1954   III
+                Hotel by a Railroad                 3,500       2,333   1954   III
+                City Sunlight                       3,500       2,333   1955   III
 
 
 
-
-                                                23
+                                                  23
 
