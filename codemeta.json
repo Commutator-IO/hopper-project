@@ -7,8 +7,8 @@
   "identifier": "swh:1:snp:4c71f0b7308d7d6c97aceb53f01673a558ee85a3",
   "url": "https://hopper.commutator.io",
   "license": "https://spdx.org/licenses/CC0-1.0",
-  "version": "2026.09.13",
-  "dateModified": "2026-09-13",
+  "version": "2026.09.20",
+  "dateModified": "2026-09-20",
   "programmingLanguage": [
     "JavaScript",
     "TypeScript"

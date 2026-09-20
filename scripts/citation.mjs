@@ -80,8 +80,20 @@ const passes = Object.values(manifest.transcripts)
   .flatMap((t) => t.passes ?? (t.pass ? [t.pass] : []))
   .filter(Boolean);
 const dates = passes.map((p) => p.date).filter(Boolean).sort();
-const released = dates[dates.length - 1];
-if (!released) throw new Error('citation: no Pass: date anywhere — run npm run manifest first');
+const lastPass = dates[dates.length - 1];
+if (!lastPass) throw new Error('citation: no Pass: date anywhere — run npm run manifest first');
+
+// A correction at source changes the corpus as much as a pass does: a foot sum
+// added, an ink mark recorded, a hand attributed. The manifest carries each
+// file's last commit (`changed.last`, from git), so the corpus is dated by the
+// later of the last pass and the last change to a transcript. On a shallow
+// clone `changed` is absent and the pass date stands alone.
+const changed = Object.values(manifest.transcripts)
+  .map((t) => t.changed?.last?.slice(0, 10))
+  .filter(Boolean)
+  .sort();
+const lastChange = changed[changed.length - 1];
+const released = lastChange && lastChange > lastPass ? lastChange : lastPass;
 
 const models = [...new Set(passes.map((p) => p.model).filter(Boolean))].sort();
 const batches = Object.keys(manifest.transcripts).length;
@@ -103,9 +115,10 @@ if (sheetsAll === 0) throw new Error('citation: no sheets in catalogue.ts — ru
  * There is no software release here to number. What changes is how much of the
  * archive has been read, and that advances a batch at a time on no schedule at
  * all, so a semantic version would be three digits of theatre. The date of the
- * most recent pass says the one true thing: this is the corpus as it stood on
- * that day. A second pass on the same day makes the same version, which is
- * correct — the corpus is the same size and was read by the same model.
+ * most recent pass, or of the most recent correction to a transcript if that is
+ * later, says the one true thing: this is the corpus as it stood on that day.
+ * A second pass on the same day makes the same version, which is correct — the
+ * corpus is the same size and was read by the same model.
  */
 const version = released.replace(/-/g, '.');
 
