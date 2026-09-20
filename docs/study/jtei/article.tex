@@ -36,9 +36,24 @@ The objective is methodological. The Hopper corpus was chosen because it is the 
 
 \section{Related work}
 
-Three bodies of work bear on this experiment: the encoding of financial and account records in TEI, the transcription of handwritten historical documents by large language models, and the evaluation of such models as producers of TEI markup.
+Four bodies of work bear on this experiment: the encoding of financial and account records in TEI, editions of artists' and writers' working notebooks, the transcription of handwritten historical documents by large language models, and the evaluation of such models as producers of TEI markup. A fifth, the attribution of hands, is taken up in Section~7 where the article's own attributions are made.
 
 The TEI encoding of account books has a small but explicit literature. Tomasek and Bauman (2013), writing in this journal, proposed a stand-off model of financial records, the \q{transactionography}, in which transfers between parties are represented as data linked by pointers to the transcribed document rather than embedded in its markup, so that a transaction can be encoded once even where the document records it in several places. That distinction between the document and the transaction is the one the present edition adopts, with a different division of labour: the transcription encodes the document and nothing but the document, and every transaction is recovered from it by a script whose rules are published and whose output is regenerated on each build (Section 6). The present corpus is also unlike a double-entry book in that its writer kept no consistent form; the reader that recovers transactions from Book IV has to change its rule four times across the volume's fifty-four years, and Section 4 describes why.
+
+Working notebooks have a literature of their own, and it is the nearest to this
+corpus. Scholger (2020), in this journal, encodes the thirty-five notebooks of
+the conceptual artist Hartmut Skerbisch --- some 2,100 inscribed pages, about
+450 of them carrying drawings --- and argues that a plain \texttt{<graphic>}
+loses what the drawing states: her model separates the graphical component, the
+textual functions attached to it, and an interpretative layer addressed through
+\texttt{@ana}, so that the stages by which a sketch became a work can be
+followed across the corpus. The present edition does markedly less with its
+drawings, and the difference is one of ambition rather than of means: Edward
+Hopper's 205 record sketches are memoranda of finished pictures and not stages
+of them, so each is marked as a figure, attributed, and left undescribed, on the
+ground stated in Section~4.2 that a description of a drawing one pane away
+competes with looking at it. Scholger's model is what this edition would need if
+the sketches were ever read as drawings rather than recorded as present.
 
 The transcription of handwriting by large language models has moved quickly. Humphries and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English manuscripts, general-purpose language models achieved character error rates of about six to seven per cent, an improvement on specialised handwritten text recognition software; Crosilla, Klic and Colavizza (2025) benchmark several models on the same task and discuss the conditions under which the models' linguistic priors help and hinder. The present experiment differs from that work in its object and in its measure. Its object is not running prose but ruled tables of figures, names and abbreviations, where a language model's prior is of little use and may be a liability, since a plausible name is not a correct one and a rounded figure is a false transaction; and its measure is not an error rate against a ground truth, which does not exist for these sheets, but the reconciliation of the transcribed figures with the sums the writer herself pencilled at the foot of the leaves.
 
@@ -166,6 +181,18 @@ returns it in 1942 in part payment for Night Hawks. [...]</note>
 The TEI files are produced by a script from the transcriptions alone. The script re-reads no sheet, and the method requires that it must not: the macros map one to one onto TEI elements, the conversion is mechanical, and a difference between a transcription and its TEI is by construction a defect in the converter and not an editorial decision. This is the reverse of the usual division, in which the TEI is the source of record and a display is derived from it, and it was chosen for three reasons.
 
 The first is the model. A language model can be asked to write TEI and will do so fluently, and its fluency is the problem: it will produce well-formed markup whose structure is plausible and whose attribute values are invented, and the failure has no structural signature. A fourteen-macro language has a small surface, each macro answers one editorial question, and a macro used wrongly is visible as a wrong answer to that question rather than as a subtly wrong element.
+
+That decision has a precedent worth naming, because it makes the fourteen
+macros an editorial move rather than an idiosyncrasy. Cummings and Willcox
+(2013), digitising the Stationers' Register of 1557 to 1708 with a keying
+company that charged by the kilobyte, defined \texttt{tei\_corset}: a
+deliberately reduced customisation of thirty-four elements with abbreviated
+names and constrained attribute values, not itself TEI-conformant, which XSLT
+converted up into conformant TEI while promoting presentational features into
+semantic markup. The shape is the same as this edition's and the motive is not:
+they shrank the markup to lower a bill, and these macros shrink it to bound what
+a model may write. The consequence is shared --- an intermediate language has to
+be converted by something that can be tested, and the test is the schema.
 
 The second is the checker. The transcription is read by people beside the photograph, in a rendering the converter also produces from the same file, and the rendering has to be legible to a reader who knows nothing of XML. A LaTeX source with fourteen macros is also readable in itself, in the way a diplomatic transcription in a printed edition is, and can be corrected by a person with a text editor.
 
@@ -331,7 +358,7 @@ The model reads names as language. The archive spells Crowninshield three ways ‚
 
 The model is fluent in TEI, and fluency is the hazard. Asked to produce markup it produces plausible markup, and a plausible attribute value is not a schema-valid one. The decision not to let the model write TEI at all, and to derive the TEI mechanically from a fourteen-macro language it can hardly misuse, is the central encoding decision of the edition. Its cost is that the encoding is only as expressive as the macro set, and the macro set was designed for what these ten books contain; the transactionography of Tomasek and Bauman (2013), for instance, has no place in the transcription and lives entirely in the reader.
 
-The model is confident about hands. The attribution of a hand on the letterforms is the one judgement in the apparatus that no arithmetic can check, and the model attributes readily. The rule that \emph{unidentified} is a permitted answer, and the decision to attribute the whole of Book IV to nobody, are the method's response; a human palaeographer with the physical volumes would do better, and the edition says so on the leaf.
+The model is confident about hands. The attribution of a hand on the letterforms is the one judgement in the apparatus that no arithmetic can check, and the model attributes readily. That difficulty is not the model's alone: Stokes (2015) argues that computational measures of similarity cannot on their own establish that two specimens were written by one person, since there is rarely any independent ground truth to verify the claim against, and that such output should direct an expert's attention rather than stand as a verdict. The rule that \emph{unidentified} is a permitted answer, and the decision to attribute the whole of Book IV --- a hand that predates the marriage by eleven years --- to nobody, are the method's response. Where the edition does attribute, it does so on a document and not on the letterforms: the 205 record sketches of Books I, II and III carry \texttt{@hand} because the inside front cover of Book I declares, in Josephine Hopper's writing, that the drawings in the three books are Edward Hopper's, and the twenty-four sketches of Book V carry none, because that sentence does not name Book V. A human palaeographer with the physical volumes would do better than either, and the edition says so on the leaf.
 
 \subsection{Human validation}
 
@@ -444,11 +471,14 @@ The transcriptions, the TEI export, the ODD, the scripts, the derived data, the 
 \section*{References}
 \begin{list}{}{\setlength{\leftmargin}{1.5em}\setlength{\itemindent}{-1.5em}\setlength{\itemsep}{3pt}}
 \item Crosilla, Giorgia, Lukas Klic, and Giovanni Colavizza. 2025. \q{Benchmarking Large Language Models for Handwritten Text Recognition.} \emph{Journal of Documentation} 81 (7). Preprint: arXiv:2503.15195.
+\item Cummings, James, and Pip Willcox. 2013. \q{Stationers' Register Online: A Case Study of a Byte-Reduced TEI Schema for Digitization (tei\_corset).} \emph{Journal of the Text Encoding Initiative} 6. \url{https://doi.org/10.4000/jtei.926}.
 \item Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Isabella Murray, and Elizabeth Spence. 2025. \q{Unlocking the Archives: Using Large Language Models to Transcribe Handwritten Historical Documents.} \emph{Historical Methods: A Journal of Quantitative and Interdisciplinary History} 58 (3). \url{https://doi.org/10.1080/01615440.2025.2500309}.
 \item Larson, Madeleine. n.d. \emph{Josephine N. Hopper's Diaries, 1933--1956: Typed Transcript}. 5 parts. Provincetown Art Association and Museum. Scans consulted through the museum, cited by part and typescript page.
 \item Levin, Gail. 1995a. \emph{Edward Hopper: A Catalogue Raisonn√©}. New York: Whitney Museum of American Art and W. W. Norton.
 \item Levin, Gail. 1995b. \emph{Edward Hopper: An Intimate Biography}. New York: Knopf.
 \item Lyons, Deborah. 1997. \emph{Edward Hopper: A Journal of His Work}. New York: Whitney Museum of American Art and W. W. Norton.
+\item Scholger, Martina. 2020. \q{Taking Note: Challenges of Dealing with Graphical Content in TEI.} \emph{Journal of the Text Encoding Initiative} 12. \url{https://doi.org/10.4000/jtei.2800}.
+\item Stokes, Peter A. 2015. \q{Digital Approaches to Paleography and Book History: Some Challenges, Present and Future.} \emph{Frontiers in Digital Humanities} 2: 5. \url{https://doi.org/10.3389/fdigh.2015.00005}.
 \item Strutz, Sabrina. 2026. \q{A Multi-Dimensional Evaluation Framework for Assessing LLM Performance in TEI Encoding.} \emph{Journal of Open Humanities Data} 12 (1). \url{https://doi.org/10.5334/johd.484}.
 \item TEI Consortium. 2026. \emph{TEI P5: Guidelines for Electronic Text Encoding and Interchange}. \url{https://tei-c.org/guidelines/p5/}.
 \item Tomasek, Kathryn, and Syd Bauman. 2013. \q{Encoding Financial Records for Historical Research.} \emph{Journal of the Text Encoding Initiative} 6. \url{https://doi.org/10.4000/jtei.895}.
