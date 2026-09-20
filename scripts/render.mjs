@@ -107,7 +107,7 @@ function findWork(rawTitle) {
   if (!WORKS) return null;
   const plainTitle = rawTitle
     .replace(/\\ill\{\}|\\ill\b/g, '')
-    .replace(/\\(uncertain|add|struck|emph|textit|textbf|texttt)\{/g, '{')
+    .replace(/\\(uncertain|add|supplied|struck|emph|textit|textbf|texttt)\{/g, '{')
     .replace(/\\hand\{[a-z]+\}\{/g, '{')
     .replace(/\\ink\{[a-z]+\}\{/g, '{')
     .replace(/\\quad|\\qquad/g, ' ')
@@ -277,7 +277,8 @@ const INLINE = {
         ctx?.opt === 'low' ? 'offered rather than read' : 'doubtful reading'
       }">${a[0]}</span>`,
   ],
-  add: [1, (a) => `<span class="add" title="editorial addition">[${a[0]}]</span>`],
+  supplied: [1, (a) => `<span class="add" title="supplied by the transcriber">[${a[0]}]</span>`],
+  add: [1, (a) => `<span class="ins" title="the writer's own insertion">\u27e8${a[0]}\u27e9</span>`],
   struck: [1, (a) => `<del title="struck out in the book">${a[0]}</del>`],
   hand: [
     2,
@@ -843,6 +844,7 @@ p { margin: 0 0 .85rem; }
 .uncertain { border-bottom: 1px solid var(--uncertain); color: var(--uncertain); }
 .ill { color: var(--ill); }
 .add { color: var(--add); }
+.ins { color: var(--add); }
 del { color: var(--dim); }
 .note, .marginal {
   font-size: .87rem; color: var(--dim); margin: .8rem 0; padding-left: .9rem;
@@ -935,7 +937,8 @@ function page(meta, html) {
   <div class="legend">
     <span class="uncertain">underlined</span> a doubtful reading &middot;
     <span class="ill">[&hellip;]</span> illegible, and never guessed &middot;
-    <span class="add">[bracketed]</span> supplied by the editor &middot;
+    <span class="add">[bracketed]</span> supplied by the transcriber &middot;
+    <span class="ins">&#x27e8;angled&#x27e9;</span> the writer's own insertion &middot;
     <del>struck</del> crossed out in the book &middot;
     <span class="ink-red">red</span>, <span class="ink-pencil">grey</span> and
     <span class="ink-blue">blue</span> the ink it is written in, where the leaf records it, and a

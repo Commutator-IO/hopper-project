@@ -165,7 +165,7 @@ Table~\ref{tab:params} gives the four editions' values side by side.
 
 Here the witness is the Whitney's photograph of a sheet, addressed by its
 ResourceSpace reference and fetched by the browser as it is looked at; the
-model reads it, twelve sheets to a pass, into a LaTeX of sixteen macros; the
+model reads it, twelve sheets to a pass, into a LaTeX of seventeen macros; the
 derivations are the TEI, the typeset and rendered readings, and four censuses;
 the verifications are the customised schema, the Lean certificates and the
 regeneration on every push; and the address is the site, which cites a sheet,
@@ -188,7 +188,7 @@ There is one edition and no second register. The Grothendieck edition this metho
 
 \subsection{What the model wrote}
 
-The model writes a restricted LaTeX defined in a preamble of sixteen macros (Table~\ref{tab:macros}). The restriction is deliberate. A converter that accepted arbitrary LaTeX would silently mangle what it did not understand, and a silently mangled ledger is a table of numbers that look right; the renderer accepts only the subset, with ordinary line breaks and spacing, and fails loudly outside it, naming the file, the line and the construct. It also refuses a resource reference that is not in the harvested inventory and a file that omits the rights notice.
+The model writes a restricted LaTeX defined in a preamble of seventeen macros (Table~\ref{tab:macros}). The restriction is deliberate. A converter that accepted arbitrary LaTeX would silently mangle what it did not understand, and a silently mangled ledger is a table of numbers that look right; the renderer accepts only the subset, with ordinary line breaks and spacing, and fails loudly outside it, naming the file, the line and the construct. It also refuses a resource reference that is not in the harvested inventory and a file that omits the rights notice.
 
 \begin{table}[htbp]\centering\small
 \caption{The transcription macros and the TEI elements the converter maps them to.}\label{tab:macros}
@@ -199,7 +199,8 @@ Macro & Meaning & TEI\\\midrule
 \texttt{\textbackslash ill\{\}} & Illegible; never guessed & \texttt{gap reason="illegible"}\\
 \texttt{\textbackslash uncertain\{…\}} & A reading offered and flagged & \texttt{unclear}\\
 \texttt{\textbackslash struck\{…\}} & Struck out in the book & \texttt{del}\\
-\texttt{\textbackslash add\{…\}} & Declared as the transcriber's supply, an expanded abbreviation or an implied sign; used by the model also for the writer's own later insertions (Section 7.2) & \texttt{supplied}\\
+\texttt{\textbackslash supplied\{…\}} & What the transcriber supplies and the leaf does not carry: a letter completing a word, an implied sign, a column heading the writer ruled but never labelled & \texttt{supplied} with \texttt{@resp}\\
+\texttt{\textbackslash add\{…\}} & The writer's own insertion: a price revised above the line, a buyer written over a struck one & \texttt{add}\\
 \texttt{\textbackslash note\{…\}} & The transcriber's note & \texttt{note type="editorial"}\\
 \texttt{\textbackslash marginal\{…\}} & The writer's marginal note & \texttt{note place="margin"}\\
 \texttt{\textbackslash work\{…\}} & A work heading, title and size & \texttt{div type="work"} with \texttt{head}\\
@@ -265,14 +266,14 @@ The third is validation. Because the TEI is derived, it can be validated on ever
 
 \subsection{The customisation}
 
-The customisation is an ODD, \texttt{hopper.odd}, in the form the Guidelines define for one (TEI Consortium 2026), served at the URL every exported file names, from which both the schema and its documentation derive. It declares fifty-eight elements, and the fifty-eight are not a sample of TEI's six hundred but the exact reach of the conversion: every element exists because a macro maps onto it. The modules and elements included are shown in Table~\ref{tab:odd}. Seven attribute value lists are declared closed, so that a \texttt{@type} on a division, a figure, a head, a note or a term, and a \texttt{@rend} on a highlighted cell or a ruled row, is drawn from a list and not invented per file, and the validator refuses any other value. The value lists are: division types (\texttt{leaf}, \texttt{part}, \texttt{work}, \texttt{entry}); figure types (\texttt{record-sketch}, \texttt{clipping}); head types (\texttt{work}); note types (\texttt{editorial}); the keyword facets (\texttt{medium}, \texttt{place}, \texttt{work}, \texttt{person}, \texttt{dealer}, \texttt{collection}, \texttt{society}, \texttt{publication}, \texttt{prize}, \texttt{client}, \texttt{subject}, \texttt{feature}); renditions on a cell (\texttt{italic}, \texttt{bold}, \texttt{mono}, \texttt{ink-red}, \texttt{ink-pencil}, \texttt{ink-blue}); and the one rendition a row may carry (\texttt{rule-above}).
+The customisation is an ODD, \texttt{hopper.odd}, in the form the Guidelines define for one (TEI Consortium 2026), served at the URL every exported file names, from which both the schema and its documentation derive. It declares fifty-nine elements, and the fifty-nine are not a sample of TEI's six hundred but the exact reach of the conversion: every element exists because a macro maps onto it. The modules and elements included are shown in Table~\ref{tab:odd}. Seven attribute value lists are declared closed, so that a \texttt{@type} on a division, a figure, a head, a note or a term, and a \texttt{@rend} on a highlighted cell or a ruled row, is drawn from a list and not invented per file, and the validator refuses any other value. The value lists are: division types (\texttt{leaf}, \texttt{part}, \texttt{work}, \texttt{entry}); figure types (\texttt{record-sketch}, \texttt{clipping}); head types (\texttt{work}); note types (\texttt{editorial}); the keyword facets (\texttt{medium}, \texttt{place}, \texttt{work}, \texttt{person}, \texttt{dealer}, \texttt{collection}, \texttt{society}, \texttt{publication}, \texttt{prize}, \texttt{client}, \texttt{subject}, \texttt{feature}); renditions on a cell (\texttt{italic}, \texttt{bold}, \texttt{mono}, \texttt{ink-red}, \texttt{ink-pencil}, \texttt{ink-blue}); and the one rendition a row may carry (\texttt{rule-above}).
 
 \begin{table}[htbp]\centering\small
 \caption{The modules and elements the ODD includes; nothing else validates.}\label{tab:odd}
 \begin{tabular}{lp{10cm}}\toprule
 Module & Elements included\\\midrule
 textstructure & TEI, body, div, text\\
-core & author, bibl, date, del, gap, head, hi, item, lb, list, name, note, p, pb, publisher, resp, respStmt, term, title, unclear\\
+core & add, author, bibl, date, del, gap, head, hi, item, lb, list, name, note, p, pb, publisher, resp, respStmt, term, title, unclear\\
 header & availability, catDesc, category, change, classDecl, edition, editionStmt, editorialDecl, encodingDesc, fileDesc, handNote, idno, keywords, profileDesc, publicationStmt, revisionDesc, sourceDesc, taxonomy, teiHeader, textClass, titleStmt\\
 msdescription & history, institution, msDesc, msIdentifier, origDate, origin\\
 figures & cell, figure, row, table\\
@@ -383,7 +384,7 @@ onward; an edition that builds its reading view last finds its errors last.
 
 Everything the interface shows beyond the transcription is derived from the transcription by a script whose header states what it counts and what it therefore is not, and the continuous integration workflow regenerates each derived file and fails if the committed copy differs. The manifest of what is transcribed is observed from the files, never declared, so that a progress figure cannot claim work that was not done; the only declared states, \emph{checked} and \emph{skipped}, are held in a separate file that is empty. The citation metadata is generated from a census of the files, on the ground that a hand-written sheet count is wrong from the next batch onward. The glossary of abbreviations and notations is hand-declared, but each entry carries a pattern that must match a transcribed leaf, and the search runs over the writer's words and never over a transcriber's note, so that an entry cannot cite as evidence the sentence written because of it.
 
-The accounts reader recovers transactions from the ruled rows. It counts a row only where the leaf puts a price in one cell and a date in another, because the column a date stands in is what says whether it dates the sale or the cheque; on the etching leaves of Book I the first column dates the exhibition, so those rows are set aside rather than dated wrongly. Where a row states a price, a rate and a receipt, the receipt is checked against the price less the commission; of ninety-five such rows, ninety agree to the cent, and the five that do not are reported and not corrected. For Book IV the reader has a second set of rules, set out period by period in a method note, because the writer's form changes four times across the volume: items are the charge; a bill counts only where nothing was itemised since the last settlement; a bare figure is a subtotal where the arithmetic of the lines above it says so, since the leaf rules a line above a subtotal and the transcription does not record the rule; a \q{less} line is a deduction whichever thing it names; a title charged more than once with a payment on account is one picture at the largest figure. The check on the reader is the book's own pencil totals, and the reader's receipts reconcile to them to the cent wherever the leaf's arithmetic closes.
+The accounts reader recovers transactions from the ruled rows. It counts a row only where the leaf puts a price in one cell and a date in another, since the column a date stands in says whether it dates the sale or the cheque; on Book I's etching leaves the first column dates the exhibition, so those rows are set aside rather than dated wrongly. Where a row states a price, a rate and a receipt, the receipt is checked against the price less the commission; of ninety-five such rows, ninety agree to the cent, and the five that do not are reported and not corrected. For Book IV the reader has a second set of rules, set out period by period in a method note, because the writer's form changes four times across the volume: items are the charge; a bill counts only where nothing was itemised since the last settlement; a bare figure is a subtotal where the arithmetic of the lines above it says so, since the leaf rules a line above a subtotal and the transcription does not record the rule; a \q{less} line is a deduction whichever thing it names; a title charged more than once with a payment on account is one picture at the largest figure. The check on the reader is the book's own pencil totals, and the reader's receipts reconcile to them to the cent wherever the leaf's arithmetic closes.
 
 Two of the reader's rules were found by bugs, and the method note records them: an unanchored match on the word \emph{bill} took a story title, \q{Wild Bill in Deadwood Gulch}, for an invoice and lost a drawing of 1915; a header rule read \q{May 25th Initial Letters} as a new client and counted a bill of 225 twice. Both were caught by comparing per-year totals with leaves read by hand. A faithful transcription can surface a reader bug without containing one.
 
@@ -393,7 +394,7 @@ A reader whose rules are written in prose and applied by a script can drift from
 
 Two certificates are proved. The first concerns the accounts as published: each activity's years are recomputed from its rows, and the identity that what accrued equals what was collected plus what is outstanding plus what was not recorded is derived from the rows rather than read off the totals; the reader's two-cent tolerance is proved to accept every figure written to the cent after a truncated third and to reject a slip of a third of a dollar; the ninety-five checkable rows are proved to yield ninety agreements and exactly the five disagreements the reader reports; and each hand-declared pencil total is proved equal to the reader's receipts for that year plus the declared omissions. The second concerns the Book IV reader. Its four passes are stated as Lean functions, and the properties the method note asserts in prose are proved of them for every input: a bill is charged only where nothing was itemised since the last settlement, so no commission is counted twice; a \q{less} line is never a charge; a bare figure is a subtotal exactly when the answering line or the arithmetic says so; a picture paid in instalments is charged once; the year does not carry across a gap between batches. The kernel then evaluates the functions over all 3,281 transcribed rows of the volume and proves that each row is decided exactly once and that the Lean reader and the JavaScript reader agree on every row's kind, year and disposition: the JavaScript exports the lexical features it recognised and the decisions it took, Lean recomputes the decisions from the features, and altering a single disposition in the export fails the build.
 
-The exercise refined one rule, since the proof required the exception that a \q{less} line which is also a ditto immediately under a receipt reads as that receipt, and it turned a known gap into a theorem: the absence of 1921 from the cash book follows from a year line on leaf 53 that reads 1920 over entries of 1921, and the corresponding theorem is written to fail once that line is corrected at source. The limits are those of the method as a whole. The certificates say nothing about a reading, and a figure misread consistently in the rows and in the sums would pass; the regular expressions that recognise a row's words are inputs, not proved; and what is proved is that the script agrees with its stated rules, not that the rules are the right interpretation of the writer's practice. The certificates are checked on every push by the workflow that builds the site, and an equivalent GitLab CI configuration is provided.
+The exercise refined one rule --- a \q{less} line that dittoes the receipt above it reads as that receipt --- and turned the missing year of Section 6.1 into a theorem written to fail once leaf 53 is corrected at source. The limits are the method's own: the certificates say nothing about a reading, a figure misread consistently in the rows and in the sums would pass, the regular expressions that recognise a row's words are inputs rather than proved, and what is proved is that the script agrees with its stated rules and not that the rules read the writer's practice rightly. They are checked on every push, and an equivalent GitLab CI configuration is provided.
 
 \subsection{What the data shows, as an illustration of the condition}
 
@@ -439,18 +440,27 @@ The model does not see colour reliably. Book IV's meaning is in its ink, and fou
 
 The model carries context forward as a rule, and rules fail at boundaries. The year of a Book IV entry is stated once, on a line of its own, and carried down the leaf; the year line of leaf 53 (Section 6.1) is the case, where the transcription keeps the line as written and the reader carries the wrong year. That is the intended behaviour of both, and it is wrong, and it is listed for correction at source rather than repaired in the derived data.
 
-The model stretches a macro to the nearest meaning. \texttt{\textbackslash
-add} is declared as the transcriber's supply and mapped to
-\texttt{supplied}; read in context, most of its 260 uses are Josephine
-Hopper's own later insertions --- a buyer's name over a struck one, a
-\q{later sent \$5} under a line --- which TEI encodes as \texttt{add} in the
-writer's hand. Given one macro for an insertion, the model used it for both
-kinds, and the converter encoded her afterthoughts as the editor's. The two
-senses are to be separated at source and every use reviewed.
+The model stretches a macro to the nearest meaning, and the apparatus has to
+be read for where it did. \texttt{\textbackslash add} was declared as the
+transcriber's supply and mapped to \texttt{supplied}; read in context, a
+majority of its 329 uses were Josephine Hopper's own insertions --- a buyer's
+name over a struck one, a \q{later sent \$5} under a line --- which TEI
+encodes as \texttt{add} in the writer's hand. Given one macro for an
+insertion, the model used it for both kinds, and the converter credited her
+afterthoughts to the editor.
+
+The two senses are now two macros, and the corpus was divided between them by
+a rule checkable in the file rather than by a fresh reading: an insertion
+glued to the word it completes, or standing in a table's header row where the
+writer ruled a column and never labelled it, is the transcriber's; one
+standing free in a cell is hers. That assigns 137 uses to
+\texttt{\textbackslash supplied} and leaves 192 as \texttt{\textbackslash
+add}. The residue is honest rather than certain: a free-standing supply still
+reads as the writer's, and only the photographs will settle those.
 
 The model reads names as language. The archive spells Crowninshield three ways — Crowninshield, Crownenshield, Crowneshield — and Saltillo two, and the model, left to itself, would settle them. The rule that nothing is normalised holds it to the leaf; the discipline is the rule's and not the model's.
 
-The model is fluent in TEI, and that fluency is the hazard Section 5.1 describes. The decision not to let the model write TEI at all, and to derive the TEI mechanically from a sixteen-macro language it can hardly misuse, is the central encoding decision of the edition. Its cost is that the encoding is only as expressive as the macro set, and the macro set was designed for what these ten books contain; the transactionography of Tomasek and Bauman (2013), for instance, has no place in the transcription and lives entirely in the reader.
+The model is fluent in TEI, and that fluency is the hazard Section 5.1 describes. The decision not to let the model write TEI at all, and to derive the TEI mechanically from a seventeen-macro language it can hardly misuse, is the central encoding decision of the edition. Its cost is that the encoding is only as expressive as the macro set, and the macro set was designed for what these ten books contain; the transactionography of Tomasek and Bauman (2013), for instance, has no place in the transcription and lives entirely in the reader.
 
 The model is confident about hands. The attribution of a hand on the letterforms is the one judgement in the apparatus that no arithmetic can check, and the model attributes readily. That difficulty is not the model's alone: Stokes (2015) argues that computational measures of similarity cannot on their own establish that two specimens were written by one person, since there is rarely any independent ground truth to verify the claim against, and that such output should direct an expert's attention rather than stand as a verdict. The rule that \emph{unidentified} is a permitted answer, and the decision to attribute the whole of Book IV --- a hand that predates the marriage by eleven years --- to nobody, are the method's response. Where the edition does attribute, it does so on a document and not on the letterforms: the 205 record sketches of Books I, II and III carry \texttt{@hand} because the inside front cover of Book I declares, in Josephine Hopper's writing, that the drawings in the three books are Edward Hopper's, and the twenty-four sketches of Book V carry none, because that sentence does not name Book V. A human palaeographer with the physical volumes would do better than either, and the edition says so on the leaf.
 
