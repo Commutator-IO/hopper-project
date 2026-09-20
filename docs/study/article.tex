@@ -36,7 +36,7 @@ The objective is methodological. The Hopper corpus was chosen because it is the 
 
 \section{Related work}
 
-Four bodies of work bear on this experiment: the encoding of financial and account records in TEI, editions of artists' and writers' working notebooks, the transcription of handwritten historical documents by large language models, and the evaluation of such models as producers of TEI markup. A fifth, the attribution of hands, is taken up in Section~7 where the article's own attributions are made.
+Four bodies of work bear on this experiment: account records in TEI, editions of working notebooks, the transcription of handwriting by large language models, and the evaluation of such models as producers of TEI. A fifth, the attribution of hands, is taken up in Section~7.
 
 The TEI encoding of account books has a small but explicit literature. Tomasek and Bauman (2013), writing in this journal, proposed a stand-off model of financial records, the \q{transactionography}, in which transfers between parties are represented as data linked by pointers to the transcribed document rather than embedded in its markup, so that a transaction can be encoded once even where the document records it in several places. That distinction between the document and the transaction is the one the present edition adopts, with a different division of labour: the transcription encodes the document and nothing but the document, and every transaction is recovered from it by a script whose rules are published and whose output is regenerated on each build (Section 6). The present corpus is also unlike a double-entry book in that its writer kept no consistent form; the reader that recovers transactions from Book IV has to change its rule four times across the volume's fifty-four years, and Section 4 describes why.
 
@@ -52,12 +52,12 @@ drawings, and the difference is one of ambition rather than of means: Edward
 Hopper's 205 record sketches are memoranda of finished pictures and not stages
 of them, so each is marked as a figure, attributed, and left undescribed, on the
 ground stated in Section~4.2 that a description of a drawing one pane away
-competes with looking at it. Scholger's model is what this edition would need if
-the sketches were ever read as drawings rather than recorded as present.
+competes with looking at it. Scholger's model is what this edition would need were the sketches read as
+drawings.
 
-The transcription of handwriting by large language models has moved quickly. Humphries and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English manuscripts, general-purpose language models achieved character error rates of about six to seven per cent, an improvement on specialised handwritten text recognition software; Crosilla, Klic and Colavizza (2025) benchmark several models on the same task and discuss the conditions under which the models' linguistic priors help and hinder. The present experiment differs from that work in its object and in its measure. Its object is not running prose but ruled tables of figures, names and abbreviations, where a language model's prior is of little use and may be a liability, since a plausible name is not a correct one and a rounded figure is a false transaction; and its measure is not an error rate against a ground truth, which does not exist for these sheets, but the reconciliation of the transcribed figures with the sums the writer herself pencilled at the foot of the leaves.
+The transcription of handwriting by large language models has moved quickly. Humphries and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English manuscripts, general-purpose language models achieved character error rates of about six to seven per cent, an improvement on specialised handwritten text recognition software; Crosilla, Klic and Colavizza (2025) benchmark several models on the same task and discuss the conditions under which the models' linguistic priors help and hinder. The present experiment differs in its object and its measure: not running prose but ruled tables of figures, names and abbreviations, where a language model's prior is a liability, since a plausible name is not a correct one and a rounded figure is a false transaction; and not an error rate against a ground truth, which does not exist for these sheets, but the reconciliation of the transcribed figures with the sums the writer pencilled at the foot of the leaves.
 
-The evaluation of language models as producers of TEI is more recent. Strutz (2026) proposes a multi-dimensional framework for assessing model-generated TEI, from syntactic validity to semantic accuracy, on historical correspondence. The present edition takes a different position on the question that framework addresses: it does not ask the model to produce TEI at all. The model writes a restricted transcription language of fourteen macros, and the TEI is produced from it mechanically, so that the validity of the encoding is a property of the converter and not of the model, and a difference between the two files is a bug rather than a judgement. Section 5 sets out the reasoning and Section 7 its cost.
+The evaluation of language models as producers of TEI is more recent. Strutz (2026) proposes a multi-dimensional framework for assessing model-generated TEI, from syntactic validity to semantic accuracy, on historical correspondence. The present edition does not ask the model to produce TEI at all: it writes a restricted language of fourteen macros from which the TEI is derived mechanically, so that the encoding's validity is a property of the converter and a difference between the two files is a bug rather than a judgement. Section 5 sets out the reasoning and Section 7 its cost.
 
 \section{The corpus}
 
@@ -128,12 +128,8 @@ by the holder's reference and the edition's dated pass. The loop is the
 person, who compares the reading with the witness, corrects the reading, and
 declares that the comparison was made.
 
-Four invariants, each enforced by a script or a rule in every edition, make
-the schema more than a drawing: the witness is never committed; only the
-reading is written, and every other file is recomputed from it and compared
-with the committed copy on each build; every assertion carries an address
-into the witness; and the person's verdict is declared, in a file kept apart
-from everything observed. What a corpus then sets is few things: what the
+The four invariants the caption states are each enforced by a script or a
+rule in every edition, and they leave a corpus few things to set: what the
 witness is and how it is addressed; whether the model is to read it, to read
 and restate it, or to index a reading already made; the language and the
 size of a pass; which derivations are worth publishing; and which
@@ -220,7 +216,7 @@ returns it in 1942 in part payment for Night Hawks. [...]</note>
 
 The TEI files are produced by a script from the transcriptions alone. The script re-reads no sheet, and the method requires that it must not: the macros map one to one onto TEI elements, the conversion is mechanical, and a difference between a transcription and its TEI is by construction a defect in the converter and not an editorial decision. This is the reverse of the usual division, in which the TEI is the source of record and a display is derived from it, and it was chosen for three reasons.
 
-The first is the model. A language model can be asked to write TEI and will do so fluently, and its fluency is the problem: it will produce well-formed markup whose structure is plausible and whose attribute values are invented, and the failure has no structural signature. A fourteen-macro language has a small surface, each macro answers one editorial question, and a macro used wrongly is visible as a wrong answer to that question rather than as a subtly wrong element.
+The first is the model. Asked to write TEI it does so fluently, and its fluency is the problem: well-formed markup, plausible structure, invented attribute values, and no structural signature to the failure. A fourteen-macro language has a small surface, each macro answers one editorial question, and a macro used wrongly is a visibly wrong answer rather than a subtly wrong element.
 
 That decision has a precedent worth naming, because it makes the fourteen
 macros an editorial move rather than an idiosyncrasy. Cummings and Willcox
@@ -229,12 +225,12 @@ company that charged by the kilobyte, defined \texttt{tei\_corset}: a
 deliberately reduced customisation of thirty-four elements with abbreviated
 names and constrained attribute values, not itself TEI-conformant, which XSLT
 converted up into conformant TEI while promoting presentational features into
-semantic markup. The shape is the same as this edition's and the motive is not:
-they shrank the markup to lower a bill, and these macros shrink it to bound what
-a model may write. The consequence is shared --- an intermediate language has to
-be converted by something that can be tested, and the test is the schema.
+semantic markup. The shape is the same as this edition's and the motive is not: they shrank
+the markup to lower a bill, these macros to bound what a model may write; the
+consequence is shared, that an intermediate language must be converted by
+something testable, and the test is the schema.
 
-The second is the checker. The transcription is read by people beside the photograph, in a rendering the converter also produces from the same file, and the rendering has to be legible to a reader who knows nothing of XML. A LaTeX source with fourteen macros is also readable in itself, in the way a diplomatic transcription in a printed edition is, and can be corrected by a person with a text editor.
+The second is the checker. The transcription is read by people beside the photograph, in a rendering produced from the same file, and a LaTeX source with fourteen macros is also readable in itself, as a diplomatic transcription in a printed edition is, and can be corrected with a text editor.
 
 The third is validation. Because the TEI is derived, it can be validated on every build against a customisation that declares exactly the elements the converter emits, and a validation failure identifies a converter bug or a macro misuse without any ambiguity about whose judgement is at fault.
 
@@ -350,10 +346,9 @@ title on Book~I leaf 80 read as three sales until the leaf, in the pane,
 showed a sum written above them and the word \q{payment} in each; the
 accounts now book one sale of 2500 paid in three parts. The absence of 1921
 from the cash book was a hollow in the calendar before it was a year line
-misread on leaf 53. None of this needs the interface to be elaborate; it
-needs the reading and the witness on one screen and the derived figures on
-the next, from the first batch onward. An edition that builds its reading
-view last finds its errors last.
+misread on leaf 53. None of this needs an elaborate interface, only the reading and the witness
+on one screen and the derived figures on the next, from the first batch
+onward; an edition that builds its reading view last finds its errors last.
 
 \subsection{Derived data, and the rule that a build must fail}
 
@@ -367,7 +362,7 @@ Two of the reader's rules were found by bugs, and the method note records them: 
 
 A reader whose rules are written in prose and applied by a script can drift from them unnoticed, and a total can reconcile by accident. The derived accounts are therefore also restated in the Lean 4 theorem prover, in a directory of the repository that depends on nothing but Lean, so that the continuous integration build fails if the script and its stated rules disagree. The formalisation was written by Claude Opus 5 under the author's direction, on 14 September 2026. Every figure in the ledgers is dollars and cents and every commission a third, a quarter, a tenth or fifteen per cent, so money is represented as integers in sixtieths of a cent, where all of them are exact. General lemmas are proved for every input by decision procedures for linear arithmetic; the data is checked by evaluation in the kernel (\texttt{decide +kernel}) and never by compiled code; and warnings are errors, so an unfinished proof fails the build.
 
-Two certificates are proved. The first concerns the accounts as published: each activity's years are recomputed from its rows, and the identity that what accrued equals what was collected plus what is outstanding plus what was not recorded is derived from the rows rather than read off the totals; the reader's two-cent tolerance is proved to accept every figure written to the cent after a truncated third and to reject a slip of a third of a dollar; the ninety-five checkable rows are proved to yield ninety agreements and exactly the five disagreements the reader reports; and each hand-declared pencil total is proved equal to the reader's receipts for that year plus the declared omissions. The second concerns the Book IV reader. Its four passes are stated as Lean functions, and the properties the method note asserts in prose are proved of them for every input: a bill is charged only where nothing was itemised since the last settlement, so no commission is counted twice; a \q{less} line is never a charge; a bare figure is a subtotal exactly when the answering line or the arithmetic says so; a picture paid in instalments is charged once; the year does not carry across a gap between batches. The kernel then evaluates the functions over all 3,281 transcribed rows of the volume and proves that each row is decided exactly once, that the Lean reader and the JavaScript reader agree on every row's kind, year and disposition, and that the published counters are counts of those decisions. The JavaScript exports, for each row, the lexical features it recognised and the decisions it took; Lean recomputes the decisions from the features and proves equality row by row. Altering a single disposition in the exported data causes the build to fail.
+Two certificates are proved. The first concerns the accounts as published: each activity's years are recomputed from its rows, and the identity that what accrued equals what was collected plus what is outstanding plus what was not recorded is derived from the rows rather than read off the totals; the reader's two-cent tolerance is proved to accept every figure written to the cent after a truncated third and to reject a slip of a third of a dollar; the ninety-five checkable rows are proved to yield ninety agreements and exactly the five disagreements the reader reports; and each hand-declared pencil total is proved equal to the reader's receipts for that year plus the declared omissions. The second concerns the Book IV reader. Its four passes are stated as Lean functions, and the properties the method note asserts in prose are proved of them for every input: a bill is charged only where nothing was itemised since the last settlement, so no commission is counted twice; a \q{less} line is never a charge; a bare figure is a subtotal exactly when the answering line or the arithmetic says so; a picture paid in instalments is charged once; the year does not carry across a gap between batches. The kernel then evaluates the functions over all 3,281 transcribed rows of the volume and proves that each row is decided exactly once and that the Lean reader and the JavaScript reader agree on every row's kind, year and disposition: the JavaScript exports the lexical features it recognised and the decisions it took, Lean recomputes the decisions from the features, and altering a single disposition in the export fails the build.
 
 The exercise refined one rule, since the proof required the exception that a \q{less} line which is also a ditto immediately under a receipt reads as that receipt, and it turned a known gap into a theorem: the absence of 1921 from the cash book follows from a year line on leaf 53 that reads 1920 over entries of 1921, and the corresponding theorem is written to fail once that line is corrected at source. The limits are those of the method as a whole. The certificates say nothing about a reading, and a figure misread consistently in the rows and in the sums would pass; the regular expressions that recognise a row's words are inputs, not proved; and what is proved is that the script agrees with its stated rules, not that the rules are the right interpretation of the writer's practice. The certificates are checked on every push by the workflow that builds the site, and an equivalent GitLab CI configuration is provided.
 
@@ -411,11 +406,11 @@ A more systematic comparison exists for one volume and shows the limit of the re
 
 The experiment identified five limits, none of them a matter of error rate.
 
-The model does not see colour reliably. Book IV's meaning is in its ink, and fourteen batches were transcribed without recording it; the colour was recovered afterwards by an image-processing script that classifies each money cell and writes the result into the transcription, on the ground that colour is the one thing on the leaf a machine can see better than the hand it is written in. That recovery is partial and its extent should be stated: on 20 September 2026 thirty-two of Book IV's one hundred and sixty sheets carry an ink mark, the pass having been run where a leaf's rows and the written lines of its photograph align exactly, and stopped where they do not. The stop is mechanical rather than palaeographic — a marginal counts as a written line, two rows may share one — so the remaining leaves await the human reading rather than a better classifier. The colour also disclosed where its own convention begins: on the volume's first leaves it is the prices that are written in red and the receipts in black, and the last line of leaf 7 is the first receipt in red, so a rule read off the middle of the volume and applied to its opening turned eleven prices into money received until it was bounded. A method that depended on the language model for the ink would have produced a cash book without a status field.
+The model does not see colour reliably. Book IV's meaning is in its ink, and fourteen batches were transcribed without recording it; the colour was recovered afterwards by an image-processing script that classifies each money cell and writes the result into the transcription, on the ground that colour is the one thing on the leaf a machine can see better than the hand it is written in. That recovery is partial and its extent should be stated: on 20 September 2026 thirty-two of Book IV's one hundred and sixty sheets carry an ink mark, the pass having been run where a leaf's rows and the written lines of its photograph align exactly, and stopped where they do not. The stop is mechanical rather than palaeographic, so the remaining leaves await the human reading rather than a better classifier; where the convention itself begins, and how that was found, is told in Section 6.1. A method that depended on the language model for the ink would have produced a cash book without a status field.
 
 The model carries context forward as a rule, and rules fail at boundaries. The year of a Book IV entry is stated once, on a line of its own, and carried down the leaf; where leaf 53's year line reads \q{1920} above entries of 1921, the transcription keeps the line as written and the reader carries the year, so that 1921's income sits under 1920 in every table. This is the intended behaviour of both, and it is wrong, and it is listed for correction at source rather than repaired in the derived data.
 
-The model reads names as language. The archive spells Crowninshield three ways — Crowninshield, Crownenshield, Crowneshield — and Saltillo two, and the model, left to itself, would settle them. The rule that nothing is normalised holds it to the leaf, and the glossary records the variants; but the discipline is the rule's and not the model's, and a reader who relaxed it would get a tidier and less truthful archive.
+The model reads names as language. The archive spells Crowninshield three ways — Crowninshield, Crownenshield, Crowneshield — and Saltillo two, and the model, left to itself, would settle them. The rule that nothing is normalised holds it to the leaf; the discipline is the rule's and not the model's.
 
 The model is fluent in TEI, and fluency is the hazard. Asked to produce markup it produces plausible markup, and a plausible attribute value is not a schema-valid one. The decision not to let the model write TEI at all, and to derive the TEI mechanically from a fourteen-macro language it can hardly misuse, is the central encoding decision of the edition. Its cost is that the encoding is only as expressive as the macro set, and the macro set was designed for what these ten books contain; the transactionography of Tomasek and Bauman (2013), for instance, has no place in the transcription and lives entirely in the reader.
 
@@ -431,9 +426,9 @@ What a human check consists of has been defined as an open question of the editi
 
 \subsection{What the method permits, and what it does not}
 
-The method permits a reading of a five-hundred-sheet archive to be produced in days, at the pace just described, cited by leaf and reference, exported as valid TEI, and exposed in full to correction beside its source. It permits derived data to be regenerated from the reading under published rules and to be checked, where the writer left sums, against the writer's own arithmetic. It permits the rules by which that data is derived to be stated as functions in a theorem prover, their properties proved for every input, and the script that applies them proved to agree with them on every row. It permits the whole to be held in one repository whose every change is a dated commit, so that a citation names a version and a later reader can see what was read on the day it was cited.
+The method permits a reading of a five-hundred-sheet archive to be produced in days, cited by leaf and reference, exported as valid TEI, and exposed in full to correction beside its source; its derived data to be regenerated under published rules and checked against the writer's own sums; those rules to be proved of the script that applies them; and the whole to be held in one repository whose every change is a dated commit, so that a citation names a version.
 
-It does not produce a checked transcription, and it does not claim to. It does not see ink, and it does not attribute hands with authority. It does not, in its present form, encode transactions, and it cannot produce a text more expressive than its macro language. And it does not remove the need for the person the method was designed around: the reader beside the photograph, whose correction is the only event that changes a batch's state.
+It does not produce a checked transcription, and does not claim to. It does not see ink, does not attribute hands with authority, does not encode transactions, and cannot produce a text more expressive than its macro language. And it does not remove the need for the person it was designed around: the reader beside the photograph, whose correction is the only event that changes a batch's state.
 
 \section{The method against four corpora}
 
@@ -458,12 +453,8 @@ Debord's morphology course & Beaux-Arts de Paris, published by PSL & A filmed le
 \end{table}
 
 Figure~\ref{fig:sources} sets out what may be asked of a machine in each of
-them, and the answer is not a matter of the model's quality. What moves the
-line between the model, the scripts and the person is the document: a ruled
-table of figures is read cell by cell and its colour not at all; a filmed
-lecture is transcribed by the platform before the model sees it, so what the
-model adds is an index rather than a reading. The division of labour is the
-same in all four; where it falls is set by the source.
+them, and the answer is not a matter of the model's quality: what moves the
+line between the model, the scripts and the person is the document.
 
 \input{fig-sources.tex}
 
@@ -520,14 +511,13 @@ to the same reference in twenty years; a video can be withdrawn, re-edited, or
 have its captions regenerated by a newer recogniser that yields different words
 at different seconds. The address survives and what it serves does not, and
 nothing in the citation announces the change. Three things follow, none of them
-solved here: a citation of such a witness has to carry the date it was consulted
-and a fingerprint of what was consulted — a hash of the caption file, a
-duration, a count of segments — enough to prove that the witness moved without
-republishing what may not be republished; a verification of this kind is
-revocable, and an interface that keeps a dead timestamp on screen is asserting
-something it can no longer support; and the rights run the opposite way from a
-heritage institution's, since a platform forbids the mirror while promising no
-permanence. An edition may not copy what nobody undertakes to keep.
+solved here, and the conclusion returns to them: such a citation must carry the
+date it was consulted and a fingerprint of what was consulted — a hash of the
+caption file, a duration, a count of segments — to prove that the witness moved
+without republishing it; a verification of this kind is revocable, and an
+interface that keeps a dead timestamp on screen asserts what it can no longer
+support; and a platform forbids the mirror while promising no permanence. An
+edition may not copy what nobody undertakes to keep.
 
 \section{Conclusion}
 
@@ -535,7 +525,7 @@ This article has described an edition in which a language model is the first tra
 
 The corpus, the Hopper ledgers and notebooks, was the occasion for the experiment and is a good one, because a ledger's errors are measurable and because the museum serves the photographs openly.
 
-What the experiment opens is a division of labour. The model reads; the scripts derive; the schema validates; and the person checks, corrects at source, and declares. The first three have been done for this corpus. The fourth has not, and the edition's own status file, which declares nothing, is the measure of how far the method has come and where it stops. One extension is done — the corpus is deposited under a persistent identifier — and one is not: the definition and execution of the human check that turns a drafted batch into a checked one, which is to be settled with the scholars who will do the reading rather than declared here. It is tracked as an issue of the repository, and it is the one on which every claim in this article depends.
+What the experiment opens is a division of labour. The model reads; the scripts derive; the schema validates; and the person checks, corrects at source, and declares. The first three have been done for this corpus; the fourth has not, and the edition's status file, which declares nothing, measures where the method stops. The corpus is deposited under a persistent identifier. The human check that turns a drafted batch into a checked one is to be settled with the scholars who will do the reading, is tracked as an issue of the repository, and is the one on which every claim in this article depends.
 
 What it also opens is the range of what can now be read. The four corpora of
 Section~8 are all archives in the ordinary sense --- ledgers, manuscripts,
@@ -548,8 +538,7 @@ interviews, radio and television archives, the video collections of national
 libraries and government agencies, and the vast material of social platforms
 --- posts, threads, comments, the captions that accompany millions of hours of
 speech. Most of it has never been read in the sense this article means, because
-reading it by hand was never conceivable and because it does not look like a
-document.
+reading it by hand was never conceivable.
 
 The method described here does not become easier on that material; it becomes
 more necessary, and its conditions become harder to meet. Three in particular.
