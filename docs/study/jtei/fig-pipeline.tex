@@ -5,24 +5,25 @@
 % for. The sibling editions carry the same drawing with their own corpora in
 % the first box, which is the point of Section 8.
 \begin{figure}[htbp]\centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   font=\small,
-  box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=9mm, text width=24mm},
-  wide/.style={box, text width=30mm},
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=4pt, minimum height=9mm, text width=23mm},
+  wide/.style={box, text width=28mm},
   note/.style={font=\scriptsize\itshape, text=black!55},
   arr/.style={-{Stealth[length=4pt]}, draw=black!55},
   human/.style={arr, dashed},
 ]
 
-\node[box, fill=black!3] (facs) {\textbf{Photograph}\\[1pt]\scriptsize Whitney, fetched\\\scriptsize never stored};
-\node[wide, right=9mm of facs] (tex) {\textbf{Transcription}\\[1pt]\scriptsize restricted \LaTeX, 14 macros\\\scriptsize \texttt{batch-NN.tex}};
-\node[box, right=9mm of tex, yshift=13mm] (tei) {\textbf{TEI P5}\\[1pt]\scriptsize \texttt{npm run tei}};
-\node[box, right=9mm of tex, yshift=-13mm] (data) {\textbf{Derived data}\\[1pt]\scriptsize accounts, formats,\\\scriptsize materials, days};
-\node[box, right=9mm of tei] (odd) {\textbf{Validated}\\[1pt]\scriptsize against \texttt{hopper.odd}};
-\node[box, right=9mm of data] (lean) {\textbf{Certified}\\[1pt]\scriptsize Lean 4, on every build};
-\node[wide, right=9mm of odd, yshift=-13mm] (site) {\textbf{The reading beside\\the photograph}\\[1pt]\scriptsize cited by leaf and reference};
+\node[box, fill=black!3, text width=22mm] (facs) {\textbf{Photograph}\\[1pt]\scriptsize Whitney, fetched\\\scriptsize never stored};
+\node[wide, right=13mm of facs] (tex) {\textbf{Transcription}\\[1pt]\scriptsize restricted \LaTeX, 14 macros\\\scriptsize \texttt{batch-NN.tex}};
+\node[box, right=7mm of tex, yshift=13mm] (tei) {\textbf{TEI P5}\\[1pt]\scriptsize \texttt{npm run tei}};
+\node[box, right=7mm of tex, yshift=-13mm] (data) {\textbf{Derived data}\\[1pt]\scriptsize accounts, formats,\\\scriptsize materials, days};
+\node[box, right=7mm of tei] (odd) {\textbf{Validated}\\[1pt]\scriptsize against \texttt{hopper.odd}};
+\node[box, right=7mm of data] (lean) {\textbf{Certified}\\[1pt]\scriptsize Lean 4, on every build};
+\node[wide, right=7mm of odd, yshift=-13mm] (site) {\textbf{The reading beside\\the photograph}\\[1pt]\scriptsize cited by leaf and reference};
 
-\draw[arr] (facs) -- node[note, above, midway]{model} (tex);
+\draw[arr] (facs) -- node[note, above=3pt, midway, text width=16mm, align=center]{the model\\reads} (tex);
 \draw[arr] (tex.east) -- ++(3mm,0) |- (tei.west);
 \draw[arr] (tex.east) -- ++(3mm,0) |- (data.west);
 \draw[arr] (tei) -- (odd);
@@ -34,13 +35,13 @@
 \node[box, below=17mm of tex, fill=black!3, text width=32mm] (check)
   {\textbf{A person checks}\\[1pt]\scriptsize sheet by sheet, against the photograph};
 \draw[human] (facs.south) |- (check.west);
-\draw[human] (check.north) -- node[note, right, pos=0.45]{correction at source} (tex.south);
+\draw[human] (check.north) -- node[note, left=1pt, pos=0.5]{corrected at source} (tex.south);
 
 \node[note, right=10mm of check, text width=58mm, align=left]
   {The dashed step is the one no file can prove, and no batch has passed it:
    \texttt{status.json} declares nothing.};
 
-\end{tikzpicture}
+\end{tikzpicture}}
 \caption{How a reading is made and what is derived from it. Every arrow but the
 dashed pair is a script that runs on each build and fails loudly; the dashed
 pair is the human check, which alone changes a batch's state and which no file

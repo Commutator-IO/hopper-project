@@ -199,24 +199,28 @@ reviewed in a diff.
                                                  4
 4      The transcription method
 
-                                                                       TEI P5                     Validated
-                                                                     npm run tei               against hopper.odd
-                                                                                                                        The read-
-    Photograph                   Transcription                                                                         ing beside
-                       model       restricted LATEX,
-    Whitney, fetched
-                                     14 macros
-                                                                                                                    the photograph
-      never stored                                                                                                    cited by leaf
-                                   batch-NN.tex
-                                                                   Derived data                    Certified          and reference
-                                                                   accounts, formats,              Lean 4, on
-                                            correction at source    materials, days                every build
+                                                                                       Validated
+                                                              TEI P5
+                                                                                          against
+                                                            npm run tei
+                    the model
+                                                                                        hopper.odd               The read-
+ Photograph                       Transcription                                                                 ing beside
+                      reads
+                                    restricted LATEX,
+ Whitney, fetched
+                                      14 macros
+                                                                                                             the photograph
+    never stored                                                                                               cited by leaf
+                                    batch-NN.tex
+                                                          Derived data                 Certified               and reference
+                                                          accounts, formats,            Lean 4, on
+                       corrected at source                 materials, days              every build
 
 
-                               A person checks                     The dashed step is the one no file can prove,
-                               sheet by sheet, against             and no batch has passed it: status.json de-
-                                  the photograph                   clares nothing.
+                                A person checks              The dashed step is the one no file can prove,
+                                sheet by sheet, against      and no batch has passed it: status.json de-
+                                   the photograph            clares nothing.
 
 
 Figure 1: How a reading is made and what is derived from it. Every arrow but the dashed pair is a
@@ -252,10 +256,10 @@ a name spelt four ways in the archive stays spelt four ways, because a corrected
 claim about who bought a picture that the leaf did not make. A key to the abbreviations
 and notations is published separately, and each of its entries must match a transcribed leaf or
 the build fails. What the writer struck out is kept and marked struck, since a crossing-out is
+often the more informative half of an entry. Marginal additions are transcribed as marginal,
 
                                                                5
-often the more informative half of an entry. Marginal additions are transcribed as marginal,
-with their position. The transcriber’s own observations are confined to a note element that is
+with their position. The transcriber’s own observations are confined to a note element that is
 typographically and structurally distinct from the writer’s text, so that a count over the corpus
 can exclude it; the materials census, for example, reads only the writer’s words, because the
 transcriber’s notes discuss materials constantly and a count that read them would report a rare
@@ -301,16 +305,15 @@ that omits the rights notice.
  ledgertable                 The ruled columns                           table, row, cell
 
 
-    The choice of LaTeX rather than XML as the model’s output language was practical and is
+     The choice of LaTeX rather than XML as the model’s output language was practical and is
 discussed in Section 7. Its consequence for encoding is that the model never writes an element
 name, an attribute or a namespace, and cannot therefore produce ill-formed or invalid markup;
 what it can do is misapply a macro, and the converter’s checks and the schema’s closed value
+lists are designed to catch the misapplications that have a structural signature.
 
 
                                                  6
-lists are designed to catch the misapplications that have a structural signature.
-
-4.4   A transcribed leaf
+4.4   A transcribed leaf
 The following is the writer’s description of Nighthawks, from Book II leaf 95, as the model
 read it, given here in the TEI that the converter produces from the transcription (the sheet is
 ref 17982). The struck word, the marginal additions with their positions, the hand and the
@@ -358,13 +361,12 @@ in itself, in the way a diplomatic transcription in a printed edition is, and ca
 a person with a text editor.
     The third is validation. Because the TEI is derived, it can be validated on every build against
 a customisation that declares exactly the elements the converter emits, and a validation failure
+identifies a converter bug or a macro misuse without any ambiguity about whose judgement
+is at fault.
 
 
                                                    7
-identifies a converter bug or a macro misuse without any ambiguity about whose judgement
-is at fault.
-
-5.2   The customisation
+5.2   The customisation
 The customisation is an ODD, hopper.odd, in the form the Guidelines define for one (TEI
 Consortium 2026), served at the URL every exported file names, from which both the schema
 and its documentation derive. It declares fifty-eight elements, and the fifty-eight are not a
@@ -412,15 +414,15 @@ hands; and the text classification carries the keywords, typed by facet.
  </titleStmt>
  [...]
  <handNotes>
+   <handNote xml:id="edward"><p>Edward Hopper</p></handNote>
+   <handNote xml:id="jo"><p>Josephine Nivison Hopper</p></handNote>
+   <handNote xml:id="later"><p>A later hand, after 1967</p></handNote>
+   <handNote xml:id="unidentified"><p>Unidentified</p></handNote>
 
 
 
                                                    8
-   <handNote xml:id="edward"><p>Edward Hopper</p></handNote>
-   <handNote xml:id="jo"><p>Josephine Nivison Hopper</p></handNote>
-   <handNote xml:id="later"><p>A later hand, after 1967</p></handNote>
-   <handNote xml:id="unidentified"><p>Unidentified</p></handNote>
- </handNotes>
+ </handNotes>
 
 
 
@@ -441,7 +443,7 @@ receipt whose day and word could not be read.
  <row><cell><hi rend="ink-red">" 12</hi></cell><cell><hi rend="ink-red">rec'd by check</hi></cell>
    <cell><hi rend="ink-red">500</hi></cell><cell><hi rend="ink-red">00</hi></cell></row>
  [...]
- <row><cell></cell><cell><hi rend="ink-pencil">1800   +   560</hi></cell>
+ <row><cell></cell><cell><hi rend="ink-pencil">1800    +   560</hi></cell>
    <cell><hi rend="ink-pencil">53</hi></cell><cell></cell></row>
  <row rend="rule-above"><cell></cell><cell></cell>
    <cell><hi rend="ink-pencil">2360</hi></cell><cell><hi rend="ink-pencil">53</hi></cell></row>
@@ -465,19 +467,19 @@ of it below and the transcriber’s note distinguishing the two.
       -98119"/>
  <div type="entry">
  <head><date when="1946-01">Jan 1946</date></head>
- <p><seg hand="#jo">Jan 1946.   <hi rend="italic">Quoting E. H.</hi> <lb/>
+ <p><seg hand="#jo">Jan 1946.    <hi rend="italic">Quoting E. H.</hi> <lb/>
  Cruelly pinned down to definition <lb/>
  of his purpose generally, I extract: <lb/>
  " the arrestation of a moment <lb/>
-
-
-
-                                                9
- in time - with the most acute <lb/>
+ in time - with the most acute <lb/>
  realization.</seg></p>
  <p><seg hand="#jo">   to arrest <lb/>
-    a moment in time <lb/>
- <del>with</del> that moment <lb/>
+   a moment in time <lb/>
+
+
+
+                                                 9
+ <del>with</del> that moment <lb/>
  most acutely realized. "</seg></p>
  <note type="editorial" resp="#editor">both blocks are enclosed in red crayon — the first
  from « I extract » down, the second entire — and the second is her own recasting of the
@@ -522,11 +524,13 @@ figure cannot claim work that was not done; the only declared states, checked an
 held in a separate file that is empty. The citation metadata is generated from a census of the
 files, on the ground that a hand-written sheet count is wrong from the next batch onward. The
 glossary of abbreviations and notations is hand-declared, but each entry carries a pattern that
+must match a transcribed leaf, and the search runs over the writer’s words and never over a
+transcriber’s note, so that an entry cannot cite as evidence the sentence written because of it.
+
+
 
                                                 10
-must match a transcribed leaf, and the search runs over the writer’s words and never over a
-transcriber’s note, so that an entry cannot cite as evidence the sentence written because of it.
-    The accounts reader recovers transactions from the ruled rows. It counts a row only where
+    The accounts reader recovers transactions from the ruled rows. It counts a row only where
 the leaf puts a price in one cell and a date in another, because the column a date stands in
 is what says whether it dates the sale or the cheque; on the etching leaves of Book I the first
 column dates the exhibition, so those rows are set aside rather than dated wrongly. Where
@@ -570,12 +574,12 @@ proved of them for every input: a bill is charged only where nothing was itemise
 last settlement, so no commission is counted twice; a « less » line is never a charge; a bare
 figure is a subtotal exactly when the answering line or the arithmetic says so; a picture paid
 in instalments is charged once; the year does not carry across a gap between batches. The
+kernel then evaluates the functions over all 3,281 transcribed rows of the volume and proves
+that each row is decided exactly once, that the Lean reader and the JavaScript reader agree
 
 
                                                 11
-kernel then evaluates the functions over all 3,281 transcribed rows of the volume and proves
-that each row is decided exactly once, that the Lean reader and the JavaScript reader agree
-on every row’s kind, year and disposition, and that the published counters are counts of those
+on every row’s kind, year and disposition, and that the published counters are counts of those
 decisions. The JavaScript exports, for each row, the lexical features it recognised and the
 decisions it took; Lean recomputes the decisions from the features and proves equality row by
 row. Altering a single disposition in the exported data causes the build to fail.
@@ -612,8 +616,9 @@ the repository.
                                 30                                                  30 × 40
                                                                                     28 × 40
 
-                                                                 24 1/2
-                                                                 23 × 29× 28 3/4
+                                                                 24 ×
+                                                                 23 1/229
+                                                                        × 28 3/4
                                                                  21 × 29
                                 20                         20 × 20
                                                                 25 × 28
@@ -636,7 +641,8 @@ the Technique tab of hopper.commutator.io. Drawn by Claude Fable 5.1, 13 Septemb
 formats.json (undated).
 
 
-
+   The format census reads only the size in the title line, in Edward Hopper’s hand: 199 of 270
+work headings state one, they make 78 formats, 72 of them wider than tall and none square.
 
                                                              12
                                  zinc white
@@ -763,9 +769,7 @@ this draws every month. Drawn by Claude Fable 5.1, 13 September 2026, from strea
 
 
                                                        14
-    The format census reads only the size in the title line, in Edward Hopper’s hand: 199 of 270
-work headings state one, they make 78 formats, 72 of them wider than tall and none square.
-The materials census reads only the paint formula in Josephine Hopper’s hand, counted once
+The materials census reads only the paint formula in Josephine Hopper’s hand, counted once
 per work and never from a transcriber’s note: 77 headings carry one, and the succession they
 state, Rembrandt colours and zinc white in poppy oil in 1932, Winsor & Newton and flake
 white in linseed from the middle 1940s, the canvas turning from National to Herga and the
@@ -808,6 +812,8 @@ batches were transcribed without recording it; the colour was recovered afterwar
 image-processing script that classifies each money cell and writes the result into the transcrip-
 tion, on the ground that colour is the one thing on the leaf a machine can see better than the
 hand it is written in. That recovery is partial and its extent should be stated: on 20 September
+2026 thirty-two of Book IV’s one hundred and sixty sheets carry an ink mark, the pass having
+been run where a leaf’s rows and the written lines of its photograph align exactly, and stopped
 
 
                                                15
@@ -840,8 +846,6 @@ hand it is written in. That recovery is partial and its extent should be stated:
   16838, sale        « 3000 - 1/3 = 2000 June 14, 1956. »          Agrees
 
 
-2026 thirty-two of Book IV’s one hundred and sixty sheets carry an ink mark, the pass having
-been run where a leaf’s rows and the written lines of its photograph align exactly, and stopped
 where they do not. The stop is mechanical rather than palaeographic — a marginal counts as
 a written line, two rows may share one — so the remaining leaves await the human reading
 rather than a better classifier. The colour also disclosed where its own convention begins: on
@@ -863,11 +867,11 @@ records the variants; but the discipline is the rule’s and not the model’s, 
 relaxed it would get a tidier and less truthful archive.
     The model is fluent in TEI, and fluency is the hazard. Asked to produce markup it produces
 plausible markup, and a plausible attribute value is not a schema-valid one. The decision not
+to let the model write TEI at all, and to derive the TEI mechanically from a fourteen-macro
+language it can hardly misuse, is the central encoding decision of the edition. Its cost is that
 
                                                     16
-to let the model write TEI at all, and to derive the TEI mechanically from a fourteen-macro
-language it can hardly misuse, is the central encoding decision of the edition. Its cost is that
-the encoding is only as expressive as the macro set, and the macro set was designed for what
+the encoding is only as expressive as the macro set, and the macro set was designed for what
 these ten books contain; the transactionography of Tomasek and Bauman (2013), for instance,
 has no place in the transcription and lives entirely in the reader.
     The model is confident about hands. The attribution of a hand on the letterforms is the
