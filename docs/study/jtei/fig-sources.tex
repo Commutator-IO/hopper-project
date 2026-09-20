@@ -1,0 +1,57 @@
+% What may be asked of a machine, by what the source is.
+%
+% The claim the four corpora support: the division of labour does not change —
+% the model reads, the scripts derive, the schema validates, the person checks
+% — but where the line between them falls is set by the document rather than by
+% the model.
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[
+  font=\small,
+  lane/.style={draw=black!25, rounded corners=2pt, inner sep=5pt, align=left,
+               text width=30mm, anchor=north west},
+  arr/.style={-{Stealth[length=4pt]}, draw=black!45},
+]
+
+\node[lane] (a) at (0,0)
+  {\textbf{Hopper ledgers}\\[2pt]
+   {\scriptsize\itshape ruled tables, two hands, ink}\\[5pt]
+   {\scriptsize \textbf{machine:} reads the cells; cannot see the colour that
+    carries their meaning}\\[3pt]
+   {\scriptsize \textbf{person:} the reading, and the colour the machine missed}};
+
+\node[lane] (b) at (3.5,0)
+  {\textbf{Gallica manuscripts}\\[2pt]
+   {\scriptsize\itshape fair copies and working papers, 16th to 19th century}\\[5pt]
+   {\scriptsize \textbf{machine:} reads the page; the notation is where it stops}\\[3pt]
+   {\scriptsize \textbf{person:} the reading}};
+
+\node[lane] (c) at (7,0)
+  {\textbf{Grothendieck fonds}\\[2pt]
+   {\scriptsize\itshape mathematical prose and notation, 16,000 pages}\\[5pt]
+   {\scriptsize \textbf{machine:} reads, and restates the mathematics in a
+    second register}\\[3pt]
+   {\scriptsize \textbf{person:} the reading, and the restatement}};
+
+\node[lane] (d) at (10.5,0)
+  {\textbf{Debord's course}\\[2pt]
+   {\scriptsize\itshape speech, filmed; captions already made by machine}\\[5pt]
+   {\scriptsize \textbf{machine:} indexes what is said, addressable to the
+    second}\\[3pt]
+   {\scriptsize \textbf{person:} whether the index hears what was said}};
+
+\draw[arr] ([yshift=-3mm]a.south west) -- ([yshift=-3mm]d.south east);
+\node[font=\scriptsize\itshape, text=black!55, anchor=north west]
+  at ([yshift=-4mm]a.south west) {ruled, repetitive, checkable by arithmetic};
+\node[font=\scriptsize\itshape, text=black!55, anchor=north east]
+  at ([yshift=-4mm]d.south east) {continuous, spoken, checkable only by listening};
+
+\end{tikzpicture}
+\caption{What may be asked of a machine, by what the source is. The division of
+labour is the same in all four editions — the model reads, the scripts derive,
+the schema validates, the person checks — and what moves between them is the
+document: a ruled table is read cell by cell and its colour not at all; a
+filmed lecture is transcribed by the platform before the model sees it, and
+what the model adds is an index addressable to the second. The editorial
+condition does not move with them: nothing is asserted that a reader cannot
+address.}\label{fig:sources}
+\end{figure}

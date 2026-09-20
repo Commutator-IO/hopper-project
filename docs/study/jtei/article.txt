@@ -197,32 +197,64 @@ reviewed in a diff.
 
 
                                                  4
-4     The transcription method
-4.1   The unit of work and the model
-A batch is twelve sheets, read in one fresh model context, and written as a single LaTeX file
-whose header records the model, the date, and what the batch found difficult. The skill that
-performs the reading accepts three models, Claude Fable 5.1, Claude Fable 5 and Claude Opus
-5, and refuses any other, on the ground that a pass made on a model nobody chose produces a
-file whose provenance is an accident. Every file records the model that read its sheets, so that
-provenance is a fact about the file and not about the session. Between 5 and 13 September
-2026, Opus 5 read most of the ledgers and the first sittings of the notebooks; Fable 5.1 read
-the last sittings of the black notebook and the Battle of Wash Sq. Where the rule of one context
-per batch was not kept, the header says so: batches 3 and 4 of Book I shared a context.
+4      The transcription method
 
-4.2   The rules
+                                                                       TEI P5                     Validated
+                                                                     npm run tei               against hopper.odd
+                                                                                                                        The read-
+    Photograph                   Transcription                                                                         ing beside
+                       model       restricted LATEX,
+    Whitney, fetched
+                                     14 macros
+                                                                                                                    the photograph
+      never stored                                                                                                    cited by leaf
+                                   batch-NN.tex
+                                                                   Derived data                    Certified          and reference
+                                                                   accounts, formats,              Lean 4, on
+                                            correction at source    materials, days                every build
+
+
+                               A person checks                     The dashed step is the one no file can prove,
+                               sheet by sheet, against             and no batch has passed it: status.json de-
+                                  the photograph                   clares nothing.
+
+
+Figure 1: How a reading is made and what is derived from it. Every arrow but the dashed pair is a
+script that runs on each build and fails loudly; the dashed pair is the human check, which alone changes
+a batch’s state and which no file can vouch for. The sibling editions of Section 8 run the same pipeline
+with another corpus in the first box.
+
+
+
+4.1      The unit of work and the model
+Figure 1 gives the whole arrangement at a glance, as the edition’s own method page draws
+it: what is read, what is derived from what, and the one step no file can vouch for. A batch is
+twelve sheets, read in one fresh model context, and written as a single LaTeX file whose header
+records the model, the date, and what the batch found difficult. The skill that performs the
+reading accepts three models, Claude Fable 5.1, Claude Fable 5 and Claude Opus 5, and refuses
+any other, on the ground that a pass made on a model nobody chose produces a file whose
+provenance is an accident. Every file records the model that read its sheets, so that provenance
+is a fact about the file and not about the session. Between 5 and 13 September 2026, Opus 5
+read most of the ledgers and the first sittings of the notebooks; Fable 5.1 read the last sittings
+of the black notebook and the Battle of Wash Sq. Where the rule of one context per batch was
+not kept, the header says so: batches 3 and 4 of Book I shared a context.
+
+4.2      The rules
 The governing rule is stated in the edition’s method and is specific to ledgers: a guessed figure
 is a sale that did not happen. An invented word in a letter is a bad reading; an invented price
 in a ledger is a transaction at a price nobody paid, to a buyer who never bought, and it will be
 cited, because a table looks like data in a way that prose does not. From that rule follow the
 others.
-     Nothing illegible is guessed. A passage that cannot be read is marked illegible, and the mark
+    Nothing illegible is guessed. A passage that cannot be read is marked illegible, and the mark
 is never replaced by a plausible reading. A reading offered with doubt is marked doubtful.
 Nothing is expanded or normalised: « Inv. » stays « Inv. », « 30 - 1/3 » stays as written, and
 a name spelt four ways in the archive stays spelt four ways, because a corrected name is a
 claim about who bought a picture that the leaf did not make. A key to the abbreviations
 and notations is published separately, and each of its entries must match a transcribed leaf or
 the build fails. What the writer struck out is kept and marked struck, since a crossing-out is
-often the more informative half of an entry. Marginal additions are transcribed as marginal,
+
+                                                               5
+often the more informative half of an entry. Marginal additions are transcribed as marginal,
 with their position. The transcriber’s own observations are confined to a note element that is
 typographically and structurally distinct from the writer’s text, so that a count over the corpus
 can exclude it; the materials census, for example, reads only the writer’s words, because the
@@ -241,42 +273,42 @@ its columns are already a table, and a second text would be a second artefact to
 The model writes a restricted LaTeX defined in a preamble of fourteen macros (Table 3). The
 restriction is deliberate. A converter that accepted arbitrary LaTeX would silently mangle what
 it did not understand, and a silently mangled ledger is a table of numbers that look right; the
-
-
-                                                5
-renderer accepts only the subset and fails loudly outside it, naming the file, the line and the
+renderer accepts only the subset and fails loudly outside it, naming the file, the line and the
 construct. It also refuses a resource reference that is not in the harvested inventory and a file
 that omits the rights notice.
 
          Table 3: The transcription macros and the TEI elements the converter maps them to.
 
- Macro                       Meaning                                       TEI
- \sheet{ref}{leaf}           A sheet begins: the museum’s reference,       pb with @n, @facs, @xml:id
+ Macro                       Meaning                                     TEI
+ \sheet{ref}{leaf}           A sheet begins: the museum’s reference,     pb with @n, @facs, @xml:id
                              the leaf written on the paper
- \hand{who}{…}               Whose hand: jo, edward, later, unidenti-      seg with @hand, and handNote
+ \hand{who}{…}               Whose hand: jo, edward, later, unidenti-    seg with @hand, and handNote
                              fied
- \ill{}                      Illegible; never guessed                      gap reason="illegible"
- \uncertain{…}               A reading offered and flagged                 unclear
- \struck{…}                  Struck out in the book                        del
- \add{…}                     An editorial addition                         supplied
- \note{…}                    The transcriber’s note                        note type="editorial"
- \marginal{…}                The writer’s marginal note                    note place="margin"
- \work{…}                    A work heading, title and size                div type="work" with head
- \sketch{…}                  Edward Hopper’s ink record drawing            figure type="record-sketch"
+ \ill{}                      Illegible; never guessed                    gap reason="illegible"
+ \uncertain{…}               A reading offered and flagged               unclear
+ \struck{…}                  Struck out in the book                      del
+ \add{…}                     An editorial addition                       supplied
+ \note{…}                    The transcriber’s note                      note type="editorial"
+ \marginal{…}                The writer’s marginal note                  note place="margin"
+ \work{…}                    A work heading, title and size              div type="work" with head
+ \sketch{…}                  Edward Hopper’s ink record drawing          figure type="record-sketch"
                              stands here
- \clipping{…}                Something printed and pasted to the leaf      figure type="clipping"
- \ink{colour}{…}             The colour a cell is written in, where it     hi rend="ink-red" etc.
+ \clipping{…}                Something printed and pasted to the leaf    figure type="clipping"
+ \ink{colour}{…}             The colour a cell is written in, where it   hi rend="ink-red" etc.
                              means something
- \entry{as written}{ISO}     A diary entry begins; the writer’s date       div type="entry" with head/date@when
+ \entry{as written}{ISO}     A diary entry begins; the writer’s date     div type="entry" with head/date@when
                              and the assigned date kept apart
- ledgertable                 The ruled columns                             table, row, cell
+ ledgertable                 The ruled columns                           table, row, cell
 
 
-     The choice of LaTeX rather than XML as the model’s output language was practical and is
+    The choice of LaTeX rather than XML as the model’s output language was practical and is
 discussed in Section 7. Its consequence for encoding is that the model never writes an element
 name, an attribute or a namespace, and cannot therefore produce ill-formed or invalid markup;
 what it can do is misapply a macro, and the converter’s checks and the schema’s closed value
-lists are designed to catch the misapplications that have a structural signature.
+
+
+                                                 6
+lists are designed to catch the misapplications that have a structural signature.
 
 4.4   A transcribed leaf
 The following is the writer’s description of Nighthawks, from Book II leaf 95, as the model
@@ -297,12 +329,7 @@ transcriber’s note are all present, and the museum’s reference is carried in
  dark - Phillies 5¢ Cigar, picture of cigar.</seg></p>
  <note place="margin">curving      — above « window », with a caret beneath the line</note>
  <note place="margin">restaurant      — above the struck « shop »</note>
-
-
-
-
-                                                   6
- <note type="editorial" resp="#editor">this is the other side of the transaction batch 2
+ <note type="editorial" resp="#editor">this is the other side of the transaction batch 2
  transcribed at leaf 25, where the Art Institute buys Compartment C in 1938 and
  returns it in 1942 in part payment for Night Hawks. [...]</note>
  </div>
@@ -331,7 +358,10 @@ in itself, in the way a diplomatic transcription in a printed edition is, and ca
 a person with a text editor.
     The third is validation. Because the TEI is derived, it can be validated on every build against
 a customisation that declares exactly the elements the converter emits, and a validation failure
-identifies a converter bug or a macro misuse without any ambiguity about whose judgement
+
+
+                                                   7
+identifies a converter bug or a macro misuse without any ambiguity about whose judgement
 is at fault.
 
 5.2   The customisation
@@ -347,12 +377,8 @@ types (leaf, part, work, entry); figure types (record-sketch, clipping); head ty
 note types (editorial); the keyword facets (medium, place, work, person, dealer, collection,
 society, publication, prize, client, subject, feature); renditions on a cell (italic, bold,
 mono, ink-red, ink-pencil, ink-blue); and the one rendition a row may carry (rule-above).
-    The header of each file carries the provenance that the method requires. The two au-
-thors are named in the order the inside cover gives them; the responsibility statement names
 
-
-                                                7
-            Table 4: The modules and elements the ODD includes; nothing else validates.
+            Table 4: The modules and elements the ODD includes; nothing else validates.
 
          Module           Elements included
          textstructure    TEI, body, div, text
@@ -368,6 +394,8 @@ thors are named in the order the inside cover gives them; the responsibility sta
          linking          seg
 
 
+    The header of each file carries the provenance that the method requires. The two au-
+thors are named in the order the inside cover gives them; the responsibility statement names
 the model that read the sheets and the date, and states that the pass is a first machine pass
 unchecked by a person; the availability statement records that the transcribed text is in copy-
 right and that the file is an unauthorised working document; the manuscript description car-
@@ -384,7 +412,11 @@ hands; and the text classification carries the keywords, typed by facet.
  </titleStmt>
  [...]
  <handNotes>
-   <handNote xml:id="edward"><p>Edward Hopper</p></handNote>
+
+
+
+                                                   8
+   <handNote xml:id="edward"><p>Edward Hopper</p></handNote>
    <handNote xml:id="jo"><p>Josephine Nivison Hopper</p></handNote>
    <handNote xml:id="later"><p>A later hand, after 1967</p></handNote>
    <handNote xml:id="unidentified"><p>Unidentified</p></handNote>
@@ -401,19 +433,15 @@ the money column above a row is a rendition on the row. The following rows from 
 leaf 121 show a charge in black, a receipt in red, a sum in pencil and a ruled subtotal, and one
 receipt whose day and word could not be read.
  <row><cell>June 12</cell><cell>Frank K. M. Rehn</cell><cell></cell><cell></cell></row>
- <row><cell></cell><cell>Sattillo Roof Tops     w.c</cell><cell>750</cell><cell>00</cell></row>
+ <row><cell></cell><cell>Sattillo Roof Tops   w.c</cell><cell>750</cell><cell>00</cell></row>
  <row><cell></cell><cell>less commission</cell><cell>250</cell><cell>00</cell></row>
  <row rend="rule-above"><cell><hi rend="ink-red">" <unclear>12</unclear></hi></cell>
    <cell><hi rend="ink-red"><unclear>rec'd</unclear> <gap reason="illegible"/></hi></cell>
    <cell>500</cell><cell>00</cell></row>
  <row><cell><hi rend="ink-red">" 12</hi></cell><cell><hi rend="ink-red">rec'd by check</hi></cell>
-
-
-
-                                                   8
-   <cell><hi rend="ink-red">500</hi></cell><cell><hi rend="ink-red">00</hi></cell></row>
+   <cell><hi rend="ink-red">500</hi></cell><cell><hi rend="ink-red">00</hi></cell></row>
  [...]
- <row><cell></cell><cell><hi rend="ink-pencil">1800    +   560</hi></cell>
+ <row><cell></cell><cell><hi rend="ink-pencil">1800   +   560</hi></cell>
    <cell><hi rend="ink-pencil">53</hi></cell><cell></cell></row>
  <row rend="rule-above"><cell></cell><cell></cell>
    <cell><hi rend="ink-pencil">2360</hi></cell><cell><hi rend="ink-pencil">53</hi></cell></row>
@@ -437,14 +465,18 @@ of it below and the transcriber’s note distinguishing the two.
       -98119"/>
  <div type="entry">
  <head><date when="1946-01">Jan 1946</date></head>
- <p><seg hand="#jo">Jan 1946.    <hi rend="italic">Quoting E. H.</hi> <lb/>
+ <p><seg hand="#jo">Jan 1946.   <hi rend="italic">Quoting E. H.</hi> <lb/>
  Cruelly pinned down to definition <lb/>
  of his purpose generally, I extract: <lb/>
  " the arrestation of a moment <lb/>
- in time - with the most acute <lb/>
+
+
+
+                                                9
+ in time - with the most acute <lb/>
  realization.</seg></p>
  <p><seg hand="#jo">   to arrest <lb/>
-   a moment in time <lb/>
+    a moment in time <lb/>
  <del>with</del> that moment <lb/>
  most acutely realized. "</seg></p>
  <note type="editorial" resp="#editor">both blocks are enclosed in red crayon — the first
@@ -454,7 +486,7 @@ of it below and the transcriber’s note distinguishing the two.
 
 
 
-5.5   Validation
+5.5    Validation
 The converter’s output is validated in continuous integration against the schema derived from
 the ODD, and the workflow fails on any invalid file. The validator exists because of a defect
 it found: for as long as the export was checked only for well-formedness, every file in the
@@ -464,10 +496,7 @@ heads. Nothing had said so because nothing had asked. The lesson is general and 
 in the validator’s own header: a deposit of unvalidated TEI is a deposit of XML.
 
 
-
-
-                                                 9
-6     Interface and reproducibility
+6     Interface and reproducibility
 6.1    The reading beside the photograph
 The interface at https://hopper.commutator.io was built for this project and does one thing
 that no general tool did: it renders the transcription in a left pane and the Whitney’s photo-
@@ -493,7 +522,9 @@ figure cannot claim work that was not done; the only declared states, checked an
 held in a separate file that is empty. The citation metadata is generated from a census of the
 files, on the ground that a hand-written sheet count is wrong from the next batch onward. The
 glossary of abbreviations and notations is hand-declared, but each entry carries a pattern that
-must match a transcribed leaf, and the search runs over the writer’s words and never over a
+
+                                                10
+must match a transcribed leaf, and the search runs over the writer’s words and never over a
 transcriber’s note, so that an entry cannot cite as evidence the sentence written because of it.
     The accounts reader recovers transactions from the ruled rows. It counts a row only where
 the leaf puts a price in one cell and a date in another, because the column a date stands in
@@ -512,10 +543,7 @@ reader’s receipts reconcile to them to the cent wherever the leaf’s arithmet
     Two of the reader’s rules were found by bugs, and the method note records them: an
 unanchored match on the word bill took a story title, « Wild Bill in Deadwood Gulch », for an
 invoice and lost a drawing of 1915; a header rule read « May 25th Initial Letters » as a new
-
-
-                                                10
-client and counted a bill of 225 twice. Both were caught by comparing per-year totals with
+client and counted a bill of 225 twice. Both were caught by comparing per-year totals with
 leaves read by hand. A faithful transcription can surface a reader bug without containing one.
 
 6.3   The rules, stated as proofs
@@ -542,7 +570,10 @@ proved of them for every input: a bill is charged only where nothing was itemise
 last settlement, so no commission is counted twice; a « less » line is never a charge; a bare
 figure is a subtotal exactly when the answering line or the arithmetic says so; a picture paid
 in instalments is charged once; the year does not carry across a gap between batches. The
-kernel then evaluates the functions over all 3,281 transcribed rows of the volume and proves
+
+
+                                                11
+kernel then evaluates the functions over all 3,281 transcribed rows of the volume and proves
 that each row is decided exactly once, that the Lean reader and the JavaScript reader agree
 on every row’s kind, year and disposition, and that the published counters are counts of those
 decisions. The JavaScript exports, for each row, the lexical features it recognised and the
@@ -559,12 +590,8 @@ proved; and what is proved is that the script agrees with its stated rules, not 
 the right interpretation of the writer’s practice. The certificates are checked on every push by
 the workflow that builds the site, and an equivalent GitLab CI configuration is provided.
 
-
-
-
-                                               11
-6.4    What the data shows, as an illustration of the condition
-Figures 1 to 4 reproduce four of the interface’s drawings from the derived files, and are given
+6.4    What the data shows, as an illustration of the condition
+Figures 2 to 5 reproduce four of the interface’s drawings from the derived files, and are given
 here not for their findings but to show what a fully derived figure looks like: each names its
 source file and that file’s generation date, and each is regenerable by anyone with a clone of
 the repository.
@@ -601,27 +628,12 @@ the repository.
                                      0   10   20               30              40             50   60
                                                    width, in inches as written
 
-Figure 1: Every format, plotted: width across, height up, one dot to a format and its area standing for
+Figure 2: Every format, plotted: width across, height up, one dot to a format and its area standing for
 how many works were made at it, 78 formats from 199 work headings that state a size. The diagonal
 is where a picture would be square; 190 of the 199 works lie below it, 9 above, none on it. The etching
 plates are in the corner, the watercolour sheets through the middle, the late oils at the top right. After
 the Technique tab of hopper.commutator.io. Drawn by Claude Fable 5.1, 13 September 2026, from
 formats.json (undated).
-
-
-    The format census reads only the size in the title line, in Edward Hopper’s hand: 199 of 270
-work headings state one, they make 78 formats, 72 of them wider than tall and none square.
-The materials census reads only the paint formula in Josephine Hopper’s hand, counted once
-per work and never from a transcriber’s note: 77 headings carry one, and the succession they
-state, Rembrandt colours and zinc white in poppy oil in 1932, Winsor & Newton and flake
-white in linseed from the middle 1940s, the canvas turning from National to Herga and the
-priming from double to single across the 1950s, is dated by the leaves themselves for 43 works
-and by nothing else. The money is given three ways, from the work books and from the cash
-book, because the two are different records and should not be added. The days on which the
-books record a transaction number 1,204 over fifty-four years, with a sixth of a weekday’s days
-on Sundays and a hollow every summer, which is the Cape; the drawing is captioned to say
-that a dense month is a month of transactions and not of painting, because a grid of squares
-reads as productivity and here that is backwards.
 
 
 
@@ -647,7 +659,7 @@ reads as productivity and here that is backwards.
                                               1930          1935      1940          1945        1950        1955          1960     1965
 
 
-Figure 2: A succession, not a preference: each material against the years the leaves date it to, earliest
+Figure 3: A succession, not a preference: each material against the years the leaves date it to, earliest
 first, one dot to a year and its size standing for how many works that year names it. Rembrandt colours
 and zinc white in poppy oil at the start; Winsor & Newton and flake white in linseed oil and turpentine
 from the middle 1940s; the canvas turning from National to Herga and the priming from double to
@@ -679,7 +691,7 @@ Drawn by Claude Fable 5.1, 13 September 2026, from materials.json (undated).
                                           1915       1920    1925   1930     1935     1940     1945     1950       1955   1960   1965
                                                                                       year
 
-Figure 3: The money, three ways: what the pocket book receipts each year from 1920 (dark bars),
+Figure 4: The money, three ways: what the pocket book receipts each year from 1920 (dark bars),
 what the work books state as the net of sales dated in that year (line), and the illustration receipts
 of the first decade (pale bars). The two art series are not the same number and should not be: one
 is the dealer’s cheques as they arrived, the other the studio’s record of what left. Every figure is a
@@ -739,7 +751,7 @@ of hopper.commutator.io. Drawn by Claude Fable 5.1, 13 September 2026, from acco
 
 
 
-Figure 4: The days the six books record, one row to a year from 1913 to 1967 and one cell to a month,
+Figure 5: The days the six books record, one row to a year from 1913 to 1967 and one cell to a month,
 the darker the more days that month carry an entry: 1204 days in all, from 2146 dated rows. A dense
 cell is a month of transactions, not of painting; the hollow every summer is the Cape, with the dealers
 behind them in New York. By day of the week: Sun 34, Mon 197, Tue 197, Wed 179, Thu 215, Fri 207,
@@ -751,8 +763,23 @@ this draws every month. Drawn by Claude Fable 5.1, 13 September 2026, from strea
 
 
                                                        14
-7      Discussion
-7.1     The reading against the image
+    The format census reads only the size in the title line, in Edward Hopper’s hand: 199 of 270
+work headings state one, they make 78 formats, 72 of them wider than tall and none square.
+The materials census reads only the paint formula in Josephine Hopper’s hand, counted once
+per work and never from a transcriber’s note: 77 headings carry one, and the succession they
+state, Rembrandt colours and zinc white in poppy oil in 1932, Winsor & Newton and flake
+white in linseed from the middle 1940s, the canvas turning from National to Herga and the
+priming from double to single across the 1950s, is dated by the leaves themselves for 43 works
+and by nothing else. The money is given three ways, from the work books and from the cash
+book, because the two are different records and should not be added. The days on which the
+books record a transaction number 1,204 over fifty-four years, with a sixth of a weekday’s days
+on Sundays and a hollow every summer, which is the Cape; the drawing is captioned to say
+that a dense month is a month of transactions and not of painting, because a grid of squares
+reads as productivity and here that is backwards.
+
+
+7     Discussion
+7.1   The reading against the image
 The transcription is a first pass and has not been checked by a person. For this article, the
 two quotations on which the edition’s own reading of the archive leans hardest — the Goethe
 line closing Book III leaf 19, and Edward Hopper’s one statement of his purpose in the black
@@ -765,36 +792,6 @@ transcription, it covers two sheets of the 667 transcribed on 19 September 2026,
 lishes only that a second reading agreed with the first. The edition reserves the word checked
 for a comparison made by a person, and the comparison is recorded in the transcripts as a
 note that says who made it and that it is not that.
-
-Table 5: Transcription against image, for the two sheets compared on 13 September 2026. Sheet refs
-98119 (black notebook, page 64) and 16838 (Book III, leaf 19).
-
-    Sheet, place       As transcribed                                As seen in the photograph
-    98119, head        « Jan 1946. Quoting E. H. »                   Agrees; the second phrase under-
-                                                                     lined
-    98119, l. 2–3      « Cruelly pinned down to definition / of      Agrees
-                       his purpose generally, I extract: »
-    98119, l. 4–6      « ” the arrestation of a moment / in time     Agrees; « acute » underlined; block
-                       - with the most acute / realization. »        enclosed in red crayon from « I ex-
-                                                                     tract » down
-    98119, block 2     « to arrest / a moment in time / with that    Agrees; « acutely » underlined; a
-                       moment / most acutely realized. ” »           small cross before the struck « with »
-                                                                     is not recorded
-    16838, title       « October on Cape Cod. 26 x 42. Fin-          Agrees
-                       ished on Cape Cod - in studio - Oct.
-                       1946. »
-    16838, margin      « To Rehn Gallery Nov. 26, 46 » at the left   Agrees
-    16838, paint       « Windsor + Newton linen canvas + Col-        Agrees
-                       ors; flake white, linseed + turpentine. »
-    16838,    inter-   « bearberry » above « herbage »; « low »      Agrees, all three
-    lined              above « clumps »; « pale » above « blue at
-                       top »
-    16838, close       « ”Peace, quiet, no birds sing.” ”Some day    Agrees
-                       you will be quiet too” - E. H.’s favorite
-                       Goethe. (strictly off the record) »
-    16838, sale        « 3000 - 1/3 = 2000 June 14, 1956. »          Agrees
-
-
     A more systematic comparison exists for one volume and shows the limit of the reading.
 A pass that aligns each transcribed row of Book IV with the written lines of its photograph,
 in order to read the ink colour the model cannot see, reports seventy-four leaves, about half
@@ -802,10 +799,7 @@ the volume, with at least one written line the transcription does not have. Many
 alignment’s own noise, and each must be looked at; at least one, an entry of 26 February 1917
 on leaf 21, was a real omission. The consequence is bounded and can be stated: a missing line
 changes a sum, so the cash-book figures are floors in a second sense, and no such pass has run
-
-
-                                                      15
-on the other volumes or the notebooks, about whose omissions nothing is therefore known.
+on the other volumes or the notebooks, about whose omissions nothing is therefore known.
 
 7.2   Limits of the model as a transcriber and as an encoder
 The experiment identified five limits, none of them a matter of error rate.
@@ -814,6 +808,38 @@ batches were transcribed without recording it; the colour was recovered afterwar
 image-processing script that classifies each money cell and writes the result into the transcrip-
 tion, on the ground that colour is the one thing on the leaf a machine can see better than the
 hand it is written in. That recovery is partial and its extent should be stated: on 20 September
+
+
+                                               15
+Table 5: Transcription against image, for the two sheets compared on 13 September 2026. Sheet refs
+98119 (black notebook, page 64) and 16838 (Book III, leaf 19).
+
+  Sheet, place       As transcribed                                As seen in the photograph
+  98119, head        « Jan 1946. Quoting E. H. »                   Agrees; the second phrase under-
+                                                                   lined
+  98119, l. 2–3      « Cruelly pinned down to definition / of      Agrees
+                     his purpose generally, I extract: »
+  98119, l. 4–6      « ” the arrestation of a moment / in time     Agrees; « acute » underlined; block
+                     - with the most acute / realization. »        enclosed in red crayon from « I ex-
+                                                                   tract » down
+  98119, block 2     « to arrest / a moment in time / with that    Agrees; « acutely » underlined; a
+                     moment / most acutely realized. ” »           small cross before the struck « with »
+                                                                   is not recorded
+  16838, title       « October on Cape Cod. 26 x 42. Fin-          Agrees
+                     ished on Cape Cod - in studio - Oct.
+                     1946. »
+  16838, margin      « To Rehn Gallery Nov. 26, 46 » at the left   Agrees
+  16838, paint       « Windsor + Newton linen canvas + Col-        Agrees
+                     ors; flake white, linseed + turpentine. »
+  16838,    inter-   « bearberry » above « herbage »; « low »      Agrees, all three
+  lined              above « clumps »; « pale » above « blue at
+                     top »
+  16838, close       « ”Peace, quiet, no birds sing.” ”Some day    Agrees
+                     you will be quiet too” - E. H.’s favorite
+                     Goethe. (strictly off the record) »
+  16838, sale        « 3000 - 1/3 = 2000 June 14, 1956. »          Agrees
+
+
 2026 thirty-two of Book IV’s one hundred and sixty sheets carry an ink mark, the pass having
 been run where a leaf’s rows and the written lines of its photograph align exactly, and stopped
 where they do not. The stop is mechanical rather than palaeographic — a marginal counts as
@@ -837,7 +863,9 @@ records the variants; but the discipline is the rule’s and not the model’s, 
 relaxed it would get a tidier and less truthful archive.
     The model is fluent in TEI, and fluency is the hazard. Asked to produce markup it produces
 plausible markup, and a plausible attribute value is not a schema-valid one. The decision not
-to let the model write TEI at all, and to derive the TEI mechanically from a fourteen-macro
+
+                                                    16
+to let the model write TEI at all, and to derive the TEI mechanically from a fourteen-macro
 language it can hardly misuse, is the central encoding decision of the edition. Its cost is that
 the encoding is only as expressive as the macro set, and the macro set was designed for what
 these ten books contain; the transactionography of Tomasek and Bauman (2013), for instance,
@@ -851,9 +879,7 @@ would do better, and the edition says so on the leaf.
 7.3   Human validation
 The edition distinguishes three states of a batch, and only one of them is observed from the
 files. Drafted is what a file’s existence proves. Skipped, for a batch judged to hold nothing to
-
-                                               16
-transcribe, and checked, for a batch that a person has compared with the photographs sheet by
+transcribe, and checked, for a batch that a person has compared with the photographs sheet by
 sheet, are declared in a status file, and that file declares nothing for any batch. The reason is
 stated in its comment: a hand-kept status table drifts optimistic and nobody notices, so the two
 states no file can prove are the only two a person may write, and the site shows a transcribed
@@ -884,40 +910,72 @@ does not remove the need for the person the method was designed around: the read
 the photograph, whose correction is the only event that changes a batch’s state.
 
 
-8     The method against four corpora
+
+
+                                               17
+8     The method against four corpora
 The apparatus described here was not built for this corpus alone. Three sibling editions run on
 the same tooling — the same restricted LaTeX, the same rule that an unrecognised construct
 fails the build, the same reading placed beside its witness — and they were chosen to differ
 in the two things that matter: what the document is, and what kind of witness stands behind
 it. Two are archives of art, two of mathematics; three are written and one is spoken. Table 6
 gives their state, read from the four repositories on 19 September 2026.
-    What the three siblings taught the method is specific in each case. The Grothendieck fonds
-carries a second register the ledgers refuse: its transcriptions come in pairs, a diplomatic file
+Table 6: The four corpora the method has been run against, with the address at which a reading can
+be checked.
+
+    Corpus                Holder                    Witness                    Verifiable address         Transcribed
+    Hopper ledgers        Whitney                   Ruled tables, two          ResourceSpace              667 sheets of 673
+    and notebooks         Museum                    hands                      reference
+    Grothendieck          University of             Mathematical               Folder and page            1,663 pages in
+    fonds                 Montpellier               prose and                                             63 folders
+                                                    notation
+    Mathematicians        Bibliothèque              Manuscripts,               Gallica view (IIIF)        549 views in 10
+    in Gallica            nationale de              16th to 19th                                          volumes
+                          France                    century
+    Debord’s              Beaux-Arts de             A filmed lecture,          Timestamp in the           45 sessions,
+    morphology            Paris, published          with automatic             session                    10,810
+    course                by PSL                    captions                                              timestamps
+
+    Figure 6 sets out what may be asked of a machine in each of them, and the answer is not
+a matter of the model’s quality. What moves the line between the model, the scripts and the
+person is the document: a ruled table of figures is read cell by cell and its colour not at all; a
+filmed lecture is transcribed by the platform before the model sees it, so what the model adds
+is an index rather than a reading. The division of labour is the same in all four; where it falls
+is set by the source.
+
+       Hopper ledgers                 Gallica                        Grothendieck                 Debord’s course
+       ruled tables, two hands,       manuscripts                    fonds                        speech, filmed; captions
+       ink                            fair copies and working        mathematical prose and       already made by ma-
+                                      papers, 16th to 19th           notation, 16,000 pages       chine
+       machine: reads the
+                                      century
+       cells; cannot see the                                         machine: reads, and          machine: indexes
+       colour that carries their      machine: reads the             restates the mathemat-       what is said, address-
+       meaning                        page; the notation is          ics in a second register     able to the second
+       person: the reading,          where it stops                  person: the reading,         person: whether the
+       and the colour the             person: the reading            and the restatement          index hears what was
+       machine missed                                                                             said
+
+
+       ruled, repetitive, checkable by arithmetic                            continuous, spoken, checkable only by listening
+
+Figure 6: What may be asked of a machine, by what the source is. The division of labour is the same in
+all four editions — the model reads, the scripts derive, the schema validates, the person checks — and
+what moves between them is the document: a ruled table is read cell by cell and its colour not at all; a
+filmed lecture is transcribed by the platform before the model sees it, and what the model adds is an
+index addressable to the second. The editorial condition does not move with them: nothing is asserted
+that a reader cannot address.
+
+     What the three siblings taught the method is specific in each case. The Grothendieck fonds
+
+                                                                18
+carries a second register the ledgers refuse: its transcriptions come in pairs, a diplomatic file
 and a modernised one (124 and 53 files), because mathematical notation of 1960 is not read
 today as it was written, whereas « 30 - 1/3 » means in 2026 what it meant in 1927 — the
 decision against a second edition here (Section 4.2) is a decision this project had to take twice,
 in opposite directions. The Gallica corpus made the address itself the unit: a volume enters
 only where the library serves the whole of it, and a manuscript that Gallica merely references
 on a partner’s site is in no table and no thumbnail, which is the same rule this edition states
-
-                                               17
-Table 6: The four corpora the method has been run against, with the address at which a reading can
-be checked.
-
-    Corpus           Holder             Witness             Verifiable address    Transcribed
-    Hopper ledgers   Whitney            Ruled tables, two   ResourceSpace         667 sheets of 673
-    and notebooks    Museum             hands               reference
-    Grothendieck     University of      Mathematical        Folder and page       1,663 pages in
-    fonds            Montpellier        prose and                                 63 folders
-                                        notation
-    Mathematicians   Bibliothèque       Manuscripts,        Gallica view (IIIF)   549 views in 10
-    in Gallica       nationale de       16th to 19th                              volumes
-                     France             century
-    Debord’s         Beaux-Arts de      A filmed lecture,   Timestamp in the      45 sessions,
-    morphology       Paris, published   with automatic      session               10,810
-    course           by PSL             captions                                  timestamps
-
-
 about documents with no public digitisation. And the morphology course made the witness
 something other than an image.
     That last case is the one that generalises the claim. Debord’s course is seventy-seven hours
@@ -943,24 +1001,24 @@ heritage institution’s, since a platform forbids the mirror while promising no
 edition may not copy what nobody undertakes to keep.
 
 
-9     Conclusion
+9    Conclusion
 This article has described an edition in which a language model is the first transcriber and the
 editorial apparatus is designed to make its reading checkable rather than trustworthy. The
 method rests on four decisions: a restricted transcription language whose macros answer one
 editorial question each; a mechanical derivation of TEI from that language, validated on every
 build against a customisation that declares exactly what the converter emits; a derivation of all
 counts and figures from the transcription under published rules, checked against the writer’s
-
-
-                                                  18
-own sums and, for the accounts, certified in Lean against the rules as stated; and an interface
+own sums and, for the accounts, certified in Lean against the rules as stated; and an interface
 that places the reading beside the photograph and cites every sheet by the museum’s own
 reference and the edition’s own dated pass.
     The corpus, the Hopper ledgers and notebooks, was the occasion for the experiment and
 is a good one, because a ledger’s errors are measurable and because the museum serves the
 photographs openly.
     What the experiment opens is a division of labour. The model reads; the scripts derive; the
-schema validates; and the person checks, corrects at source, and declares. The first three have
+
+
+                                               19
+schema validates; and the person checks, corrects at source, and declares. The first three have
 been done for this corpus. The fourth has not, and the edition’s own status file, which declares
 nothing, is the measure of how far the method has come and where it stops. One extension is
 done — the corpus is deposited under a persistent identifier — and one is not: the definition
@@ -1000,14 +1058,17 @@ Crosilla, Giorgia, Lukas Klic, and Giovanni Colavizza. 2025. « Benchmarking Lar
    Models for Handwritten Text Recognition. » Journal of Documentation 81 (7). Preprint:
    arXiv:2503.15195.
 
-                                              19
-Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Is-
+Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Is-
   abella Murray, and Elizabeth Spence. 2025. « Unlocking the Archives: Using Large Lan-
   guage Models to Transcribe Handwritten Historical Documents. » Historical Methods: A
   Journal of Quantitative and Interdisciplinary History 58 (3). https://doi.org/10.1080/
   01615440.2025.2500309.
 
-Larson, Madeleine. n.d. Josephine N. Hopper’s Diaries, 1933–1956: Typed Transcript. 5 parts.
+
+
+
+                                              20
+Larson, Madeleine. n.d. Josephine N. Hopper’s Diaries, 1933–1956: Typed Transcript. 5 parts.
    Provincetown Art Association and Museum. Scans consulted through the museum, cited
    by part and typescript page.
 
@@ -1060,18 +1121,18 @@ is unaffected.
 
 
  \hand{jo}{Beyond slatey grey road a strip of very pale (yellowish) sand across\\
-
-
-
-                                               20
- length of canvas. Low herbage digging in green. Tall grass beyond slightly\\
+ length of canvas. Low herbage digging in green. Tall grass beyond slightly\\
  pinkish with clumps of green. House fresh painted white, barn left dull\\
  Rooves of both slatey grey. Glimpse of red foundation, chimney dull red.\\
  Edge of locust grove L. dull green. Woods in background with green underfoot\\
  at front Edge. Sky wan, whitish with long strips of grey,. Some blue at top.\\
  "Peace, quiet, no birds sing." "Some day you will be quiet too" - E. H.'s
  favorite Goethe.\\
- \qquad (strictly off the record)}
+
+
+
+                                               21
+ \qquad (strictly off the record)}
 
 
  \marginal{bearberry --- above « herbage »; low --- above « clumps »; pale ---
@@ -1108,122 +1169,123 @@ B The derived tables
 The tables below are regenerated from the edition’s derived files on each build; those given
 here were generated on 13 September 2026 from 46 transcribed batches. Every figure is a
 floor under a stated rule.
-Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
-column, by year. Gross is the price written; the commission is the dealer’s share as the row states it;
-net is what was left. Only rows that put a price in one cell and a date in another are counted, so the
-etchings are largely absent.
-
-                    Year   Sales     Gross    Commission          Net    Receipted
-                    1923       3      970                323      647            0
-                    1924       6    4,500              1,500    3,000            0
-                    1925       4    2,100                510    1,590          340
-                    1926      11    5,275              1,758    3,517          850
-                    1927      17    3,955              1,318    2,637        1,333
-                    1928      24    5,774              1,919    3,855        1,197
-                    1929      52    7,040              2,342    4,698        4,197
-                    1930      34   18,378              6,126   12,252        3,000
-
-
-                                                  21
-Year   Sales    Gross   Commission     Net    Receipted
-1931     17     2,648          883    1,765      5,600
-1932      3     1,380          460      920      2,400
-1933      3        85           28       57         20
-1934     14     3,980        1,327    2,653        800
-1935      1       750          250      500        500
-1936      6     4,420        1,473    2,947        267
-1937     10     4,670        1,557    3,113         20
-1938     11     4,990        1,648    3,342          0
-1939      1     2,500          833    1,667          0
-1940     14     6,182        2,061    4,121        667
-1941      4     1,220          407      813        267
-1942      3     2,780          927    1,853          0
-1943      4     2,760          920    1,840      1,200
-1944      5     4,850        1,617    3,233          0
-1945      5     3,080        1,027    2,053          0
-1946      6     7,650        2,550    5,100      2,267
-1947      7     6,130        2,043    4,087      1,467
-1948      4     7,500        2,500    5,000      1,500
-1949      5     9,115        3,038    6,077          0
-1950     12     4,130        1,377    2,753      1,053
-1951     11     7,830        2,610    5,220        333
-1952      3     7,750        2,583    5,167      2,667
-1953      9     4,500        1,500    3,000        500
-1954      6    14,780        4,927    9,853          0
-1955      6     5,800        1,933    3,867      2,333
-1956     12    22,410        7,470   14,940      5,867
-1957     19    26,470        8,823   17,647        667
-1958      3    16,000        5,333   10,667      1,800
-1959      2    10,800        3,600    7,200      6,000
-1960      4    15,600        5,200   10,400          0
-1961     10    11,295        3,765    7,530          0
-1962      3    31,000       10,333   20,667      3,667
-1963      2    31,500       10,500   21,000          0
-1964      2    31,500       10,500   21,000          0
-1965      1    15,000        5,000   10,000     10,000
-1966      1    25,000        8,333   16,667          0
-
-
-
-
-                          22
-Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
+Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
 transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque with
 no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above entries
 of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
 
-                              Year      Charged     Received     Balance
-                              1913       160.00       160.00        0.00
-                              1914     1,225.00     1,225.00        0.00
-                              1915       500.00       500.00        0.00
-                              1916       991.00       991.00        0.00
-                              1917     1,509.00     1,514.00       -5.00
-                              1918     1,556.00     1,916.00     -365.00
-                              1919       977.00       977.00     -365.00
-                              1920     2,950.00     2,794.00     -209.00
-                              1922     1,075.00     1,075.00     -209.00
-                              1923     1,279.20     1,304.20     -234.00
-                              1924     1,015.00       980.00     -199.00
-                              1925     1,218.67     1,218.67     -199.00
-                              Total   14,455.87    14,654.87     -199.00
+                              Year      Charged     Received    Balance
+                              1913       160.00       160.00       0.00
+                              1914     1,225.00     1,225.00       0.00
+                              1915       500.00       500.00       0.00
+                              1916       991.00       991.00       0.00
+                              1917     1,509.00     1,514.00      -5.00
+                              1918     1,556.00     1,916.00    -365.00
+                              1919       977.00       977.00    -365.00
+                              1920     2,950.00     2,794.00    -209.00
+                              1922     1,075.00     1,075.00    -209.00
+                              1923     1,279.20     1,304.20    -234.00
+                              1924     1,015.00       980.00    -199.00
+                              1925     1,218.67     1,218.67    -199.00
+                              Total   14,455.87    14,654.87    -199.00
+
+
+
+
+                                                  22
+Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
+column, by year. Gross is the price written; the commission is the dealer’s share as the row states it;
+net is what was left. Only rows that put a price in one cell and a date in another are counted, so the
+etchings are largely absent.
+
+                  Year     Sales     Gross    Commission          Net    Receipted
+                  1923         3      970              323       647             0
+                  1924         6    4,500            1,500     3,000             0
+                  1925         4    2,100              510     1,590           340
+                  1926        11    5,275            1,758     3,517           850
+                  1927        17    3,955            1,318     2,637         1,333
+                  1928        24    5,774            1,919     3,855         1,197
+                  1929        52    7,040            2,342     4,698         4,197
+                  1930        34   18,378            6,126    12,252         3,000
+                  1931        17    2,648              883     1,765         5,600
+                  1932         3    1,380              460       920         2,400
+                  1933         3       85               28        57            20
+                  1934        14    3,980            1,327     2,653           800
+                  1935         1      750              250       500           500
+                  1936         6    4,420            1,473     2,947           267
+                  1937        10    4,670            1,557     3,113            20
+                  1938        11    4,990            1,648     3,342             0
+                  1939         1    2,500              833     1,667             0
+                  1940        14    6,182            2,061     4,121           667
+                  1941         4    1,220              407       813           267
+                  1942         3    2,780              927     1,853             0
+                  1943         4    2,760              920     1,840         1,200
+                  1944         5    4,850            1,617     3,233             0
+                  1945         5    3,080            1,027     2,053             0
+                  1946         6    7,650            2,550     5,100         2,267
+                  1947         7    6,130            2,043     4,087         1,467
+                  1948         4    7,500            2,500     5,000         1,500
+                  1949         5    9,115            3,038     6,077             0
+                  1950        12    4,130            1,377     2,753         1,053
+                  1951        11    7,830            2,610     5,220           333
+                  1952         3    7,750            2,583     5,167         2,667
+                  1953         9    4,500            1,500     3,000           500
+                  1954         6   14,780            4,927     9,853             0
+                  1955         6    5,800            1,933     3,867         2,333
+                  1956        12   22,410            7,470    14,940         5,867
+                  1957        19   26,470            8,823    17,647           667
+                  1958         3   16,000            5,333    10,667         1,800
+                  1959         2   10,800            3,600     7,200         6,000
+                  1960         4   15,600            5,200    10,400             0
+                  1961        10   11,295            3,765     7,530             0
+                  1962         3   31,000           10,333    20,667         3,667
+                  1963         2   31,500           10,500    21,000             0
+
+
+                                                  23
+                  Year    Sales    Gross    Commission           Net    Receipted
+                  1964        2   31,500         10,500       21,000               0
+                  1965        1   15,000          5,000       10,000          10,000
+                  1966        1   25,000          8,333       16,667               0
 
 
 Table 9: The thirty sales at the highest prices among the rows that name a work, as the work books
 write them. Gross is the price; net is after the third.
 
-                Work                                   Price     Net    Year   Volume
-                Intermission                       25,000      16,667   1966   III
-                Sun in an Empty Room               25,000      16,667   1964   III
-                New York Office                    16,500      11,000   1963   III
-                People in the Sun                  15,000      10,000   1962   III
-                A Woman in the Sun                 15,000      10,000   1963   III
-                East River                         15,000      10,000   1965   III
-                Excursion into Philosophy          14,500       9,667   1962   III
-                « Girlie Show »                    11,000       7,333   1961   II
-                November, Wash. Square             10,000       6,667   1960   III
-                Sunlight in a Cafeteria             9,000       6,000   1959   III
-                Hotel Window                        7,000       4,667   1957   III
-                Western Motel                       6,500       4,333   1958   III
-                Charleston Slum                     6,500       4,333   1964   III
-                Morning in a City                   6,000       4,000   1949   III
-                Four Lane Road                      6,000       4,000   1957   III
-                Dauphinée House                     5,000       3,333   1956   II
-                Sunlight on Brownstones             5,000       3,333   1958   III
-                Tables for Ladies                   4,500       3,000   1930   I
-                Men, Women + Horses                 4,500       3,000   1958   II
-                Sea Watchers                        4,500       3,000   1956   III
-                South Carolina Morning              4,500       3,000   1957   III
-                Cape Cod Morning                    4,050       2,700   1956   III
-                « Bootleggers »                     4,000       2,667   1956   II
-                Rooms by the Sea                    4,000       2,667   1952   III
-                The Martha McKeen of Wellfleet      3,500       2,333   1954   III
-                Portrait of Orleans                 3,500       2,333   1953   III
-                First Row Orchestra                 3,500       2,333   1954   III
-                Morning Sun                         3,500       2,333   1954   III
-                Hotel by a Railroad                 3,500       2,333   1954   III
-                City Sunlight                       3,500       2,333   1955   III
+               Work                                  Price     Net     Year     Volume
+               Intermission                      25,000      16,667    1966     III
+               Sun in an Empty Room              25,000      16,667    1964     III
+               New York Office                   16,500      11,000    1963     III
+               People in the Sun                 15,000      10,000    1962     III
+               A Woman in the Sun                15,000      10,000    1963     III
+               East River                        15,000      10,000    1965     III
+               Excursion into Philosophy         14,500       9,667    1962     III
+               « Girlie Show »                   11,000       7,333    1961     II
+               November, Wash. Square            10,000       6,667    1960     III
+               Sunlight in a Cafeteria            9,000       6,000    1959     III
+               Hotel Window                       7,000       4,667    1957     III
+               Western Motel                      6,500       4,333    1958     III
+               Charleston Slum                    6,500       4,333    1964     III
+               Morning in a City                  6,000       4,000    1949     III
+               Four Lane Road                     6,000       4,000    1957     III
+               Dauphinée House                    5,000       3,333    1956     II
+               Sunlight on Brownstones            5,000       3,333    1958     III
+               Tables for Ladies                  4,500       3,000    1930     I
+               Men, Women + Horses                4,500       3,000    1958     II
+               Sea Watchers                       4,500       3,000    1956     III
+               South Carolina Morning             4,500       3,000    1957     III
+               Cape Cod Morning                   4,050       2,700    1956     III
+               « Bootleggers »                    4,000       2,667    1956     II
+               Rooms by the Sea                   4,000       2,667    1952     III
+               The Martha McKeen of Wellfleet     3,500       2,333    1954     III
+               Portrait of Orleans                3,500       2,333    1953     III
+               First Row Orchestra                3,500       2,333    1954     III
+               Morning Sun                        3,500       2,333    1954     III
+               Hotel by a Railroad                3,500       2,333    1954     III
+               City Sunlight                      3,500       2,333    1955     III
 
 
 
-                                                  23
+
+                                                24
 

@@ -4,7 +4,7 @@
 \usepackage[a4paper,margin=27mm]{geometry}
 \usepackage{booktabs,longtable,array}
 \usepackage{setspace}\setstretch{1.08}
-\usepackage{tikz}\usetikzlibrary{arrows.meta}\usepackage{pgfplots}\pgfplotsset{compat=1.18}
+\usepackage{tikz}\usetikzlibrary{arrows.meta,positioning}\usepackage{pgfplots}\pgfplotsset{compat=1.18}
 \usepackage[normalem]{ulem}
 \usepackage[hidelinks]{hyperref}
 \usepackage[font=small,labelfont=sc]{caption}
@@ -92,9 +92,11 @@ The edition stores no photograph. The Whitney's download endpoint answers cross-
 
 \section{The transcription method}
 
+\input{fig-pipeline.tex}
+
 \subsection{The unit of work and the model}
 
-A batch is twelve sheets, read in one fresh model context, and written as a single LaTeX file whose header records the model, the date, and what the batch found difficult. The skill that performs the reading accepts three models, Claude Fable 5.1, Claude Fable 5 and Claude Opus 5, and refuses any other, on the ground that a pass made on a model nobody chose produces a file whose provenance is an accident. Every file records the model that read its sheets, so that provenance is a fact about the file and not about the session. Between 5 and 13 September 2026, Opus 5 read most of the ledgers and the first sittings of the notebooks; Fable 5.1 read the last sittings of the black notebook and the Battle of Wash Sq. Where the rule of one context per batch was not kept, the header says so: batches 3 and 4 of Book I shared a context.
+Figure~\ref{fig:pipeline} gives the whole arrangement at a glance, as the edition's own method page draws it: what is read, what is derived from what, and the one step no file can vouch for. A batch is twelve sheets, read in one fresh model context, and written as a single LaTeX file whose header records the model, the date, and what the batch found difficult. The skill that performs the reading accepts three models, Claude Fable 5.1, Claude Fable 5 and Claude Opus 5, and refuses any other, on the ground that a pass made on a model nobody chose produces a file whose provenance is an accident. Every file records the model that read its sheets, so that provenance is a fact about the file and not about the session. Between 5 and 13 September 2026, Opus 5 read most of the ledgers and the first sittings of the notebooks; Fable 5.1 read the last sittings of the black notebook and the Battle of Wash Sq. Where the rule of one context per batch was not kept, the header says so: batches 3 and 4 of Book I shared a context.
 
 \subsection{The rules}
 
@@ -364,6 +366,16 @@ Mathematicians in Gallica & Bibliothèque nationale de France & Manuscripts, 16t
 Debord's morphology course & Beaux-Arts de Paris, published by PSL & A filmed lecture, with automatic captions & Timestamp in the session & 45 sessions, 10,810 timestamps\\\bottomrule
 \end{tabular}
 \end{table}
+
+Figure~\ref{fig:sources} sets out what may be asked of a machine in each of
+them, and the answer is not a matter of the model's quality. What moves the
+line between the model, the scripts and the person is the document: a ruled
+table of figures is read cell by cell and its colour not at all; a filmed
+lecture is transcribed by the platform before the model sees it, so what the
+model adds is an index rather than a reading. The division of labour is the
+same in all four; where it falls is set by the source.
+
+\input{fig-sources.tex}
 
 What the three siblings taught the method is specific in each case. The
 Grothendieck fonds carries a second register the ledgers refuse: its
