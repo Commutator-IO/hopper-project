@@ -21,6 +21,7 @@
     "framing": "node scripts/framing.mjs framing",
     "spending": "node scripts/framing.mjs spending",
     "pdf": "node scripts/pdf.mjs",
+    "docx": "node docs/study/jtei/docx.mjs",
     "sitemap": "node scripts/sitemap.mjs",
     "tiles": "node scripts/tiles.mjs",
     "accounts": "node scripts/accounts.mjs",

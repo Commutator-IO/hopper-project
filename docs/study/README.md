@@ -16,6 +16,13 @@ them were written against the derived data and may be worth reusing.
   `figures.mjs` regenerate `tables.tex` and `fig-*.tex` from
   `src/content/*.json`; `schemas.mjs` holds the compositional schemas.
 
+The journal takes « a word-processor file format (OpenOffice, Microsoft Word,
+RTF, etc.) or an XML format » and does not take PDF, so the file that is
+actually submitted is built by `npm run docx`: it compiles each figure on its
+own, rasterises it to PNG at 300 dpi, and converts the article with pandoc into
+`jtei/submission/`, which is not committed. The result has to be read before it
+is sent.
+
 Rebuild either with [Tectonic](https://tectonic-typesetting.github.io/):
 
 ```bash
