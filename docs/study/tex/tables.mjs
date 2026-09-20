@@ -1,5 +1,6 @@
 // Generates LaTeX tables from src/content/*.json for the draft study.
 import { readFileSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 const J = (p) => JSON.parse(readFileSync(`/Users/michel/Commutator/hopper-project/src/content/${p}`, 'utf8'));
 const a = J('accounts.json'), f = J('formats.json'), m = J('materials.json'), s = J('streak.json');
 const esc = (t) => String(t).replace(/&/g, '\\&').replace(/%/g, '\\%').replace(/\$/g, '\\$').replace(/#/g, '\\#').replace(/_/g, '\\_');
@@ -55,6 +56,6 @@ const ys = s.years; const n = Math.ceil(ys.length / 3);
 for (let i = 0; i < n; i++) { const row = [0, 1, 2].map(k => ys[i + k * n]).map(y => y ? `${y[0]} & ${y[1]} & ${y[2]}` : ' & & '); out += row.join(' & ') + '\\\\\n'; }
 out += `\\bottomrule\\end{tabular}\\end{table}\n\n`;
 
-writeFileSync('/private/tmp/claude-501/-Users-michel-Commutator-hopper-project/66694244-1a45-46b1-b049-fa0dfbd64294/scratchpad/book/tables.tex', out);
+writeFileSync(resolve(import.meta.dirname, 'tables.tex'), out);
 console.log('written', out.length);
 console.log('dow', s.dow, 'mon', s.mon, 'longestRun', s.longestRun);

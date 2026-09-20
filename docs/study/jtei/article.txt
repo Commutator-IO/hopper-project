@@ -676,7 +676,7 @@ white in linseed from the middle 1940s, the canvas turning from National to Herg
 priming from double to single across the 1950s, is dated by the leaves themselves for 43 works
 and by nothing else. The money is given three ways, from the work books and from the cash
 book, because the two are different records and should not be added. The days on which the
-books record a transaction number 1,204 over fifty-four years, with a sixth of a weekday’s days
+books record a transaction number 1,203 over fifty-four years, with a sixth of a weekday’s days
 on Sundays and a hollow every summer, which is the Cape; the drawing is captioned to say
 that a dense month is a month of transactions and not of painting, because a grid of squares
 reads as productivity and here that is backwards.
@@ -743,7 +743,7 @@ of the first decade (pale bars). The two art series are not the same number and 
 is the dealer’s cheques as they arrived, the other the studio’s record of what left. Every figure is a
 floor, read from the transcribed rows under the rules of the accounts chapter. After the Accounts tab
 of hopper.commutator.io. Drawn by Claude Fable 5.1, 13 September 2026, from accounts.json (2026-
-09-11).
+09-19).
 
 
 
@@ -798,12 +798,12 @@ of hopper.commutator.io. Drawn by Claude Fable 5.1, 13 September 2026, from acco
 
 
 Figure 5: The days the six books record, one row to a year from 1913 to 1967 and one cell to a month,
-the darker the more days that month carry an entry: 1204 days in all, from 2146 dated rows. A dense
+the darker the more days that month carry an entry: 1203 days in all, from 2143 dated rows. A dense
 cell is a month of transactions, not of painting; the hollow every summer is the Cape, with the dealers
-behind them in New York. By day of the week: Sun 34, Mon 197, Tue 197, Wed 179, Thu 215, Fri 207,
+behind them in New York. By day of the week: Sun 34, Mon 197, Tue 197, Wed 179, Thu 214, Fri 207,
 Sat 175, Sunday a sixth of a weekday. After the calendar of the Timeline tab, which draws every day;
 this draws every month. Drawn by Claude Fable 5.1, 13 September 2026, from streak.json (2026-09-
-13).
+19).
 
 
 
@@ -1073,12 +1073,14 @@ an issue of the repository, and it is the one on which every claim in this artic
 
 
 About the author
-Michel Hua is an engineer at Commutator, Paris, where he builds reading and transcrip-
-tion workbenches for archives that institutions have digitised and nobody has read: the
-Hopper ledgers described here, the Grothendieck fonds at Montpellier, the mathematicians’
-manuscripts in Gallica, and an index of a filmed course in morphology. He can be reached at
-michel@commutator.io.
-
+Michel Hua is an independent consultant at Commutator, Paris, working with large organi-
+sations on data and cloud applications: platform migrations, data governance, and the adop-
+tion of generative AI. The working assumption there is that failures occur at the interfaces
+between systems rather than inside them, and that a deliverable must be legible enough
+for the client’s own engineers to take over. The editions described here apply that disci-
+pline to archives institutions have digitised and nobody has read: the Hopper ledgers, the
+Grothendieck fonds, the mathematicians’ manuscripts in Gallica, and an index of a filmed
+course. michel@commutator.io.
 
 
 Declaration of Generative AI and AI-assisted technologies in the
@@ -1111,12 +1113,14 @@ References
 Crosilla, Giorgia, Lukas Klic, and Giovanni Colavizza. 2025. « Benchmarking Large Language
    Models for Handwritten Text Recognition. » Journal of Documentation 81 (7). Preprint:
    arXiv:2503.15195.
-Cummings, James, and Pip Willcox. 2013. « Stationers’ Register Online: A Case Study of
+
+
+                                              21
+Cummings, James, and Pip Willcox. 2013. « Stationers’ Register Online: A Case Study of
   a Byte-Reduced TEI Schema for Digitization (tei_corset). » Journal of the Text Encoding
   Initiative 6. https://doi.org/10.4000/jtei.926.
 
-                                              21
-Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Is-
+Humphries, Mark, Lianne C. Leddy, Quinn Downton, Meredith Legace, John McConnell, Is-
   abella Murray, and Elizabeth Spence. 2025. « Unlocking the Archives: Using Large Lan-
   guage Models to Transcribe Handwritten Historical Documents. » Historical Methods: A
   Journal of Quantitative and Interdisciplinary History 58 (3). https://doi.org/10.1080/
@@ -1125,13 +1129,18 @@ Cummings, James, and Pip Willcox. 2013. « Stationers’ Register Online: A Case
 Larson, Madeleine. n.d. Josephine N. Hopper’s Diaries, 1933–1956: Typed Transcript. 5 parts.
    Provincetown Art Association and Museum. Scans consulted through the museum, cited
    by part and typescript page.
+
 Levin, Gail. 1995a. Edward Hopper: A Catalogue Raisonné. New York: Whitney Museum of
    American Art and W. W. Norton.
+
 Levin, Gail. 1995b. Edward Hopper: An Intimate Biography. New York: Knopf.
+
 Lyons, Deborah. 1997. Edward Hopper: A Journal of His Work. New York: Whitney Museum
    of American Art and W. W. Norton.
+
 Scholger, Martina. 2020. « Taking Note: Challenges of Dealing with Graphical Content in
    TEI. » Journal of the Text Encoding Initiative 12. https://doi.org/10.4000/jtei.2800.
+
 Stokes, Peter A. 2015. « Digital Approaches to Paleography and Book History: Some Chal-
    lenges, Present and Future. » Frontiers in Digital Humanities 2: 5. https://doi.org/10.
    3389/fdigh.2015.00005.
@@ -1145,6 +1154,7 @@ TEI Consortium. 2026. TEI P5: Guidelines for Electronic Text Encoding and Interc
 
 Tomasek, Kathryn, and Syd Bauman. 2013. « Encoding Financial Records for Historical Re-
    search. » Journal of the Text Encoding Initiative 6. https://doi.org/10.4000/jtei.895.
+
 Whitney Museum of American Art. n.d. Edward and Josephine Hopper Resources. https://
   whitney.org/research/edward-and-josephine-hopper-resources.
 
@@ -1160,17 +1170,17 @@ is unaffected.
  \sheet{16838}{19}
 
 
- \sketch{}
+
+
+                                              22
+ \sketch{}
 
 
  \work{October on Cape Cod. \quad 26 x 42. \quad Finished on Cape Cod - in
  studio - Oct. 1946.}
 
 
-
-
-                                               22
- \marginal{To Rehn Gallery Nov. 26, 46 --- in the margin at the left of the title
+ \marginal{To Rehn Gallery Nov. 26, 46 --- in the margin at the left of the title
  and paint lines}
 
 
@@ -1223,39 +1233,65 @@ B The derived tables
 The tables below are regenerated from the edition’s derived files on each build; those given
 here were generated on 13 September 2026 from 46 transcribed batches. Every figure is a
 floor under a stated rule.
+
+
+
+
+                                                23
+Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
+transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque with
+no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above entries
+of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
+
+                              Year       Charged     Received    Balance
+                              1913        160.00       160.00       0.00
+                              1914      1,225.00     1,225.00       0.00
+                              1915        500.00       500.00       0.00
+                              1916        991.00       991.00       0.00
+                              1917      1,509.00     1,514.00      -5.00
+                              1918      1,556.00     1,916.00    -365.00
+                              1919        977.00       977.00    -365.00
+                              1920      2,950.00     2,794.00    -209.00
+                              1922      1,075.00     1,075.00    -209.00
+                              1923      1,279.20     1,304.20    -234.00
+                              1924      1,015.00       980.00    -199.00
+                              1925      1,218.67     1,218.67    -199.00
+                              Total    14,455.87    14,654.87    -199.00
+
+
 Table 8: The work books (Books I, II, III and Dealers/Etchings): sales dated in the leaf’s own date
 column, by year. Gross is the price written; the commission is the dealer’s share as the row states it;
 net is what was left. Only rows that put a price in one cell and a date in another are counted, so the
 etchings are largely absent.
 
-                    Year   Sales     Gross    Commission          Net    Receipted
-                    1923       3       970               323     647              0
-                    1924       6     4,500             1,500   3,000              0
+                  Year     Sales       Gross   Commission         Net      Receipted
+                  1923         3         970              323      647            0
+                  1924         6       4,500            1,500    3,000            0
+                  1925         4       2,100              510    1,590          340
+                  1926        11       5,275            1,758    3,517          850
+                  1927        17       3,955            1,318    2,637        1,333
+                  1928        24       5,774            1,919    3,855        1,197
+                  1929        52       7,040            2,342    4,698        4,197
+                  1930        34      18,378            6,126   12,252        3,000
+                  1931        17       2,648              883    1,765        5,600
+                  1932         4       3,880            1,293    2,587        2,400
+                  1933         3          85               28       57           20
+                  1934        13       3,680            1,227    2,453          800
+                  1935         1         750              250      500          500
+                  1936         6       4,420            1,473    2,947          267
+                  1937        10       4,670            1,557    3,113           20
+                  1938        11       4,990            1,648    3,342            0
+                  1939         1       2,500              833    1,667            0
+                  1940        14       6,182            2,061    4,121          667
+                  1941         4       1,220              407      813          267
+                  1942         3       2,780              927    1,853            0
+                  1943         4       2,760              920    1,840        1,200
+                  1944         5       4,850            1,617    3,233            0
+                  1945         5       3,080            1,027    2,053            0
 
 
-                                                  23
+                                                   24
 Year   Sales    Gross   Commission     Net    Receipted
-1925      4     2,100          510    1,590        340
-1926     11     5,275        1,758    3,517        850
-1927     17     3,955        1,318    2,637      1,333
-1928     24     5,774        1,919    3,855      1,197
-1929     52     7,040        2,342    4,698      4,197
-1930     34    18,378        6,126   12,252      3,000
-1931     17     2,648          883    1,765      5,600
-1932      3     1,380          460      920      2,400
-1933      3        85           28       57         20
-1934     14     3,980        1,327    2,653        800
-1935      1       750          250      500        500
-1936      6     4,420        1,473    2,947        267
-1937     10     4,670        1,557    3,113         20
-1938     11     4,990        1,648    3,342          0
-1939      1     2,500          833    1,667          0
-1940     14     6,182        2,061    4,121        667
-1941      4     1,220          407      813        267
-1942      3     2,780          927    1,853          0
-1943      4     2,760          920    1,840      1,200
-1944      5     4,850        1,617    3,233          0
-1945      5     3,080        1,027    2,053          0
 1946      6     7,650        2,550    5,100      2,267
 1947      7     6,130        2,043    4,087      1,467
 1948      4     7,500        2,500    5,000      1,500
@@ -1281,64 +1317,44 @@ etchings are largely absent.
 
 
 
-                          24
-Table 7: Book IV, the illustration decade: what was charged and what was received, by year, as the
-transcribed leaves state it. Accrual at the leaf’s own date column; a negative balance is a cheque with
-no charge line behind it. There is no row for 1921 because leaf 53’s year line reads 1920 above entries
-of 1921 and the reader keeps the year as written; that year’s income is counted under 1920.
-
-                              Year      Charged     Received     Balance
-                              1913       160.00       160.00        0.00
-                              1914     1,225.00     1,225.00        0.00
-                              1915       500.00       500.00        0.00
-                              1916       991.00       991.00        0.00
-                              1917     1,509.00     1,514.00       -5.00
-                              1918     1,556.00     1,916.00     -365.00
-                              1919       977.00       977.00     -365.00
-                              1920     2,950.00     2,794.00     -209.00
-                              1922     1,075.00     1,075.00     -209.00
-                              1923     1,279.20     1,304.20     -234.00
-                              1924     1,015.00       980.00     -199.00
-                              1925     1,218.67     1,218.67     -199.00
-                              Total   14,455.87    14,654.87     -199.00
-
-
-Table 9: The thirty sales at the highest prices among the rows that name a work, as the work books
+                          25
+Table 9: The thirty sales at the highest prices among the rows that name a work, as the work books
 write them. Gross is the price; net is after the third.
 
-                Work                                   Price     Net    Year   Volume
-                Intermission                       25,000      16,667   1966   III
-                Sun in an Empty Room               25,000      16,667   1964   III
-                New York Office                    16,500      11,000   1963   III
-                People in the Sun                  15,000      10,000   1962   III
-                A Woman in the Sun                 15,000      10,000   1963   III
-                East River                         15,000      10,000   1965   III
-                Excursion into Philosophy          14,500       9,667   1962   III
-                « Girlie Show »                    11,000       7,333   1961   II
-                November, Wash. Square             10,000       6,667   1960   III
-                Sunlight in a Cafeteria             9,000       6,000   1959   III
-                Hotel Window                        7,000       4,667   1957   III
-                Western Motel                       6,500       4,333   1958   III
-                Charleston Slum                     6,500       4,333   1964   III
-                Morning in a City                   6,000       4,000   1949   III
-                Four Lane Road                      6,000       4,000   1957   III
-                Dauphinée House                     5,000       3,333   1956   II
-                Sunlight on Brownstones             5,000       3,333   1958   III
-                Tables for Ladies                   4,500       3,000   1930   I
-                Men, Women + Horses                 4,500       3,000   1958   II
-                Sea Watchers                        4,500       3,000   1956   III
-                South Carolina Morning              4,500       3,000   1957   III
-                Cape Cod Morning                    4,050       2,700   1956   III
-                « Bootleggers »                     4,000       2,667   1956   II
-                Rooms by the Sea                    4,000       2,667   1952   III
-                The Martha McKeen of Wellfleet      3,500       2,333   1954   III
-                Portrait of Orleans                 3,500       2,333   1953   III
-                First Row Orchestra                 3,500       2,333   1954   III
-                Morning Sun                         3,500       2,333   1954   III
-                Hotel by a Railroad                 3,500       2,333   1954   III
-                City Sunlight                       3,500       2,333   1955   III
+               Work                                  Price     Net    Year   Volume
+               Intermission                      25,000      16,667   1966   III
+               Sun in an Empty Room              25,000      16,667   1964   III
+               New York Office                   16,500      11,000   1963   III
+               People in the Sun                 15,000      10,000   1962   III
+               A Woman in the Sun                15,000      10,000   1963   III
+               East River                        15,000      10,000   1965   III
+               Excursion into Philosophy         14,500       9,667   1962   III
+               « Girlie Show »                   11,000       7,333   1961   II
+               November, Wash. Square            10,000       6,667   1960   III
+               Sunlight in a Cafeteria            9,000       6,000   1959   III
+               Hotel Window                       7,000       4,667   1957   III
+               Western Motel                      6,500       4,333   1958   III
+               Charleston Slum                    6,500       4,333   1964   III
+               Morning in a City                  6,000       4,000   1949   III
+               Four Lane Road                     6,000       4,000   1957   III
+               Dauphinée House                    5,000       3,333   1956   II
+               Sunlight on Brownstones            5,000       3,333   1958   III
+               Tables for Ladies                  4,500       3,000   1930   I
+               Men, Women + Horses                4,500       3,000   1958   II
+               Sea Watchers                       4,500       3,000   1956   III
+               South Carolina Morning             4,500       3,000   1957   III
+               Cape Cod Morning                   4,050       2,700   1956   III
+               « Bootleggers »                    4,000       2,667   1956   II
+               Rooms by the Sea                   4,000       2,667   1952   III
+               The Martha McKeen of Wellfleet     3,500       2,333   1954   III
+               Portrait of Orleans                3,500       2,333   1953   III
+               First Row Orchestra                3,500       2,333   1954   III
+               Morning Sun                        3,500       2,333   1954   III
+               Hotel by a Railroad                3,500       2,333   1954   III
+               City Sunlight                      3,500       2,333   1955   III
 
 
 
-                                                  25
+
+                                                26
 
