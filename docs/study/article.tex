@@ -22,7 +22,7 @@
 \maketitle
 
 \begin{abstract}
-\noindent This article reports an experiment in the transcription and encoding of an artist's record books by a large language model under editorial constraints, using as its corpus the six ledgers of Edward and Josephine Hopper at the Whitney Museum of American Art (504 digitised sheets, 1907--1967) and four of Josephine Hopper's notebooks. The model (Claude Opus 5 and Claude Fable 5.1) transcribed the sheets from the museum's published photographs into a deliberately restricted LaTeX whose macros correspond one to one with elements of a TEI P5 customisation; a mechanical conversion produces TEI files that are validated against the customisation in continuous integration; scripts derive from the transcriptions, under published rules, an account of prices, materials, formats and dated days; and an interface built for the purpose places the reading beside the photograph so that any sentence can be checked against the hand it was read from. The article describes the corpus, the transcription rules, the encoding and its schema, the derived data and the interface, and then the limits: the reading is a first pass unchecked by a person, an alignment pass on one volume reports seventy-four leaves with at least one line the transcription lacks, and the model cannot see the ink colour that carries the cash book's meaning. The contribution is not a finding about Hopper but an editorial condition: a machine reading fully cited, fully derived and fully exposed to correction. The use of generative AI in the transcription and in the drafting is declared.
+\noindent This article reports an experiment in the transcription and encoding of an artist's record books by a large language model under editorial constraints, using as its corpus the six ledgers of Edward and Josephine Hopper at the Whitney Museum of American Art (504 digitised sheets, 1907--1967) and four of Josephine Hopper's notebooks. The model (Claude Opus 5 and Claude Fable 5.1) transcribed the sheets from the museum's published photographs into a deliberately restricted LaTeX whose macros correspond one to one with elements of a TEI P5 customisation; a mechanical conversion produces TEI files that are validated against the customisation in continuous integration; scripts derive from the transcriptions, under published rules, an account of prices, materials, formats and dated days; and an interface built for the purpose places the reading beside the photograph so that any sentence can be checked against the hand it was read from. The article describes the corpus, the transcription rules, the encoding and its schema, the derived data and the interface, and then the limits: the reading is a first pass unchecked by a person, an alignment pass on one volume reports seventy-four leaves with at least one line the transcription lacks, and the language model's pass did not record the ink colour that carries the cash book's meaning, which an image pass recovered only in part. The contribution is not a finding about Hopper but an editorial condition: a machine reading fully cited, fully derived and fully exposed to correction. The use of generative AI in the transcription and in the drafting is declared.
 \end{abstract}
 
 \noindent\textbf{Keywords.} artist's ledgers; large language models; transcription; critical apparatus; hand attribution; Edward Hopper; reproducibility.
@@ -33,7 +33,14 @@ Edward Hopper (1882--1967) recorded his finished work in a set of ledgers that h
 
 The ledgers have been used before. Gail Levin's catalogue raisonné was written from the record books and her biography from the diaries (Levin 1995a, 1995b); Deborah Lyons published the record books in 1997 (Lyons 1997); Madeleine Larson's typescript of the Provincetown diaries exists in five parts (Larson n.d.). What has not existed is a transcription of the digitised sheets that can be placed beside the photograph of each sheet and checked against it, with an apparatus that states what was read, what was doubted, what could not be read and whose hand wrote it. This article reports an experiment in producing such a transcription with a large language model as the first transcriber, under constraints designed to make its output checkable rather than trustworthy.
 
-The objective is methodological. The Hopper corpus was chosen because it is the right size for a test, because the museum serves its photographs openly at a resolution at which Josephine Hopper's figures are legible, and because a ledger is a document in which errors are measurable: a price either adds up or it does not. The article therefore presents the corpus (Section 3), the transcription method and its rules (Section 4), the TEI encoding and the customisation that validates it (Section 5), the interface and the derived data that make the reading reproducible (Section 6), a discussion of what the method permits and what it does not (Section 7), and the same method run against three sibling corpora — two of mathematics, one a filmed lecture — which is where the editorial condition either generalises or fails (Section 8).
+The objective is methodological, and the object of the article is the method and its apparatus: the transcription is their demonstration, and no claim about Hopper is made here that the demonstration would need to be correct for. The Hopper corpus was chosen because it is the right size for a test, because the museum serves its photographs openly at a resolution at which Josephine Hopper's figures are legible, and because a ledger is a document in which errors are measurable: a price either adds up or it does not. The article therefore presents the corpus (Section 3), the transcription method and its rules (Section 4), the TEI encoding and the customisation that validates it (Section 5), the interface and the derived data that make the reading reproducible (Section 6), a discussion of what the method permits and what it does not (Section 7), and the same method run against three sibling corpora — two of mathematics, one a filmed lecture — which is where the editorial condition either generalises or fails (Section 8).
+
+Four words are kept apart throughout. A reading is \emph{reproducible} when
+the process that made it can be rerun; \emph{auditable} when a reader can
+find the evidence for each sentence; \emph{reliable} when like cases are
+treated alike; and \emph{valid} when it is right. This edition claims the
+first three and not the fourth: nothing below makes a wrong reading right,
+only findable.
 
 \section{Related work}
 
@@ -49,14 +56,13 @@ loses what the drawing states: her model separates the graphical component, the
 textual functions attached to it, and an interpretative layer addressed through
 \texttt{@ana}, so that the stages by which a sketch became a work can be
 followed across the corpus. The present edition does markedly less with its
-drawings, and the difference is one of ambition rather than of means: Edward
-Hopper's 205 record sketches are memoranda of finished pictures and not stages
-of them, so each is marked as a figure, attributed, and left undescribed, on the
-ground that a description of a drawing one pane away competes with looking at
-it. Scholger's model is what this edition would need were the sketches read as
+drawings: Edward Hopper's 205 record sketches are memoranda of finished
+pictures and not stages of them, so each is marked as a figure, attributed,
+and left undescribed, since a description of a drawing one pane away competes
+with looking at it. Scholger's model is what this edition would need were the sketches read as
 drawings.
 
-The transcription of handwriting by large language models has moved quickly. Humphries and colleagues (2025) report that, on a corpus of eighteenth- and nineteenth-century English manuscripts, general-purpose language models achieved character error rates of about six to seven per cent, an improvement on specialised handwritten text recognition software; Crosilla, Klic and Colavizza (2025) benchmark several models on the same task and discuss the conditions under which the models' linguistic priors help and hinder. The present experiment differs in its object and its measure: not running prose but ruled tables of figures, names and abbreviations, where a language model's prior is a liability, since a plausible name is not a correct one and a rounded figure is a false transaction; and not an error rate against a ground truth, which does not exist for these sheets, but the reconciliation of the transcribed figures with the sums the writer pencilled at the foot of the leaves.
+The transcription of handwriting by large language models has moved quickly. Humphries and colleagues (2025) report character error rates of about six to seven per cent for general-purpose language models on eighteenth- and nineteenth-century English manuscripts, an improvement on specialised handwritten text recognition; Crosilla, Klic and Colavizza (2025) benchmark several models on the same task and discuss when the models' linguistic priors help and when they hinder. The present experiment differs in its object and its measure: not running prose but ruled tables of figures, names and abbreviations, where a language model's prior is a liability, since a plausible name is not a correct one and a rounded figure is a false transaction; and not an error rate against a ground truth, which does not exist for these sheets, but the reconciliation of the transcribed figures with the sums the writer pencilled at the foot of the leaves.
 
 The evaluation of language models as producers of TEI is more recent. Strutz (2026) proposes a multi-dimensional framework for assessing model-generated TEI, from syntactic validity to semantic accuracy, on historical correspondence. The present edition does not ask the model to produce TEI at all: it writes a restricted language of sixteen macros from which the TEI is derived mechanically, so that the encoding's validity is a property of the converter and a difference between the two files is a bug rather than a judgement. Section 5 sets out the reasoning and Section 7 its cost.
 
@@ -97,6 +103,26 @@ Garrulities + Grouch & 1924--1950 & 1927--1958 & 42\\
 Re: 3 Wash Sq & 1947 & January--June 1947 & 51\\
 Battle of Wash Sq. (EJHA.1597) & 1947 & 1947--1955 & 8\\
 Black two-ring notebook & c.\,1952--1961 & 1937--1964 & 68\\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{What was read, and what was not}
+
+Table~\ref{tab:coverage} keeps the article's counts apart: sheets digitised,
+sheets transcribed, and the files and passes the reading took. The six sheets
+without a transcription are five back covers or chipboard and one notebook's
+front cover, none carrying writing, recorded as not transcribed rather than
+as empty. A batch is a file; a pass is one sitting of the model on it. No
+batch is declared checked.
+
+\begin{table}[htbp]\centering\small
+\caption{The corpus as counted, on 20 September 2026: sheets digitised by the
+museum, sheets transcribed, and the files and passes the reading took.}\label{tab:coverage}
+\begin{tabular}{lrrrr}\toprule
+ & Digitised & Transcribed & Files & Passes\\\midrule
+Six ledgers & 504 & 499 & 44 & 46\\
+Four notebooks & 169 & 168 & 4 & 16\\
+\midrule Total & 673 & 667 & 48 & 62\\\bottomrule
 \end{tabular}
 \end{table}
 
@@ -173,13 +199,13 @@ Macro & Meaning & TEI\\\midrule
 \texttt{\textbackslash ill\{\}} & Illegible; never guessed & \texttt{gap reason="illegible"}\\
 \texttt{\textbackslash uncertain\{…\}} & A reading offered and flagged & \texttt{unclear}\\
 \texttt{\textbackslash struck\{…\}} & Struck out in the book & \texttt{del}\\
-\texttt{\textbackslash add\{…\}} & An editorial addition & \texttt{supplied}\\
+\texttt{\textbackslash add\{…\}} & Declared as the transcriber's supply, an expanded abbreviation or an implied sign; used by the model also for the writer's own later insertions (Section 7.2) & \texttt{supplied}\\
 \texttt{\textbackslash note\{…\}} & The transcriber's note & \texttt{note type="editorial"}\\
 \texttt{\textbackslash marginal\{…\}} & The writer's marginal note & \texttt{note place="margin"}\\
 \texttt{\textbackslash work\{…\}} & A work heading, title and size & \texttt{div type="work"} with \texttt{head}\\
 \texttt{\textbackslash sketch\{…\}} & Edward Hopper's ink record drawing stands here & \texttt{figure type="record-sketch"}\\
 \texttt{\textbackslash clipping\{…\}} & Something printed and pasted to the leaf & \texttt{figure type="clipping"}\\
-\texttt{\textbackslash ink\{colour\}\{…\}} & The colour a cell is written in, where it means something & \texttt{hi rend="ink-red"} etc.\\
+\texttt{\textbackslash ink\{colour\}\{…\}} & The colour a cell is written in, where it means something; classified from the photograph by a script, never by the language model (Section 7.2) & \texttt{hi rend="ink-red"} etc.\\
 \texttt{\textbackslash entry\{as written\}\{ISO\}} & A diary entry begins; the writer's date and the assigned date kept apart & \texttt{div type="entry"} with \texttt{head/date@when}\\
 \texttt{\textbackslash ruledoff} & The writer's rule under a sum, in the cash book & \texttt{row rend="rule-above"} on the row beneath\\
 \texttt{\textbackslash keywords\{…\}} & The batch's index terms, one facet each & \texttt{keywords} in \texttt{textClass}\\
@@ -187,7 +213,7 @@ Macro & Meaning & TEI\\\midrule
 \end{tabular}
 \end{table}
 
-The choice of LaTeX rather than XML as the model's output language was practical and is discussed in Section 7. Its consequence for encoding is that the model never writes an element name, an attribute or a namespace, and cannot therefore produce ill-formed or invalid markup; what it can do is misapply a macro, and the converter's checks and the schema's closed value lists are designed to catch the misapplications that have a structural signature.
+The choice of LaTeX rather than XML as the model's output language was practical and is discussed in Section 7. Its consequence for encoding is that the model never writes an element name, an attribute or a namespace, and cannot therefore produce ill-formed or invalid markup itself --- the converter can, which is what the validation of Section 5.5 exists to catch; what the model can do is misapply a macro, and the converter's checks and the schema's closed value lists are designed to catch the misapplications that have a structural signature.
 
 \subsection{A transcribed leaf}
 
@@ -378,13 +404,13 @@ Figures~\ref{fig:scatter} to~\ref{fig:days} reproduce four of the interface's dr
 \input{fig-money.tex}
 \input{fig-days.tex}
 
-The format census reads only the size in the title line, in Edward Hopper's hand: 199 of 270 work headings state one, they make 78 formats, 72 of them wider than tall and none square. The materials census reads only the paint formula in Josephine Hopper's hand, counted once per work and never from a transcriber's note: 77 headings carry one, and the succession they state, Rembrandt colours and zinc white in poppy oil in 1932, Winsor \& Newton and flake white in linseed from the middle 1940s, the canvas turning from National to Herga and the priming from double to single across the 1950s, is dated by the leaves themselves for 43 works and by nothing else. The money is given three ways, from the work books and from the cash book, because the two are different records and should not be added. The days on which the books record a transaction number 1,203 over fifty-four years, with a sixth of a weekday's days on Sundays and a hollow every summer, which is the Cape; the drawing is captioned to say that a dense month is a month of transactions and not of painting, because a grid of squares reads as productivity and here that is backwards.
+The format census reads only the size in the title line, in Edward Hopper's hand: 199 of 270 work headings state one, they make 78 formats, 72 of them wider than tall and none square. The materials census reads only the paint formula in Josephine Hopper's hand, counted once per work and never from a transcriber's note: 77 headings carry one, and the succession they state (the caption of Figure~\ref{fig:materials} gives it) is dated by the leaves themselves for 43 works and by nothing else. The money is given three ways, as the caption of Figure~\ref{fig:money} enumerates, because the work books and the cash book are different records and should not be added. The days on which the books record a transaction number 1,203 over fifty-four years, Sundays carrying a sixth of a weekday's count, with a hollow every summer, which is the Cape; the drawing is captioned to say that a dense month is a month of transactions and not of painting, because a grid of squares reads as productivity and here that is backwards.
 
 \section{Discussion}
 
 \subsection{The reading against the image}
 
-The transcription is a first pass and has not been checked by a person. For this article, the two quotations on which the edition's own reading of the archive leans hardest — the Goethe line closing Book III leaf 19, and Edward Hopper's one statement of his purpose in the black notebook — were compared with the museum's photographs by the model itself on 13 September 2026, at the published resolution of 1292 by 2000 pixels; Table~\ref{tab:compare} gives the result cell by cell. Both readings hold in every word, and the comparison found one omission: a small mark before the struck word on the notebook page, which the transcription does not record. The comparison is reported for what it is. It was made by the same kind of reader that made the transcription, it covers two of the 667 sheets transcribed by 13 September 2026, and it establishes only that a second reading agreed with the first. The edition reserves the word \emph{checked} for a comparison made by a person, and the comparison is recorded in the transcripts as a note that says who made it and that it is not a human check.
+The transcription is a first pass and has not been checked by a person. For this article, the two quotations on which the edition's own reading of the archive most depends — the Goethe line closing Book III leaf 19, and Edward Hopper's one statement of his purpose in the black notebook — were compared with the museum's photographs by the model itself on 13 September 2026, at the published resolution of 1292 by 2000 pixels; Table~\ref{tab:compare} gives the result cell by cell. Both readings hold in every word, and the comparison found one omission: a small mark before the struck word on the notebook page, which the transcription does not record. The comparison is reported for what it is. It was made by the same kind of reader that made the transcription, it covers two of the 667 sheets transcribed by 13 September 2026, and it establishes only that a second reading agreed with the first. The edition reserves the word \emph{checked} for a comparison made by a person, and the comparison is recorded in the transcripts as a note that says who made it and that it is not a human check.
 
 \begin{table}[htbp]\centering\small
 \caption{Transcription against image, for the two sheets compared on 13 September 2026. Sheet refs 98119 (black notebook, page 64) and 16838 (Book III, leaf 19).}\label{tab:compare}
@@ -413,6 +439,15 @@ The model does not see colour reliably. Book IV's meaning is in its ink, and fou
 
 The model carries context forward as a rule, and rules fail at boundaries. The year of a Book IV entry is stated once, on a line of its own, and carried down the leaf; the year line of leaf 53 (Section 6.1) is the case, where the transcription keeps the line as written and the reader carries the wrong year. That is the intended behaviour of both, and it is wrong, and it is listed for correction at source rather than repaired in the derived data.
 
+The model stretches a macro to the nearest meaning. \texttt{\textbackslash
+add} is declared as the transcriber's supply and mapped to
+\texttt{supplied}; read in context, most of its 260 uses are Josephine
+Hopper's own later insertions --- a buyer's name over a struck one, a
+\q{later sent \$5} under a line --- which TEI encodes as \texttt{add} in the
+writer's hand. Given one macro for an insertion, the model used it for both
+kinds, and the converter encoded her afterthoughts as the editor's. The two
+senses are to be separated at source and every use reviewed.
+
 The model reads names as language. The archive spells Crowninshield three ways — Crowninshield, Crownenshield, Crowneshield — and Saltillo two, and the model, left to itself, would settle them. The rule that nothing is normalised holds it to the leaf; the discipline is the rule's and not the model's.
 
 The model is fluent in TEI, and that fluency is the hazard Section 5.1 describes. The decision not to let the model write TEI at all, and to derive the TEI mechanically from a sixteen-macro language it can hardly misuse, is the central encoding decision of the edition. Its cost is that the encoding is only as expressive as the macro set, and the macro set was designed for what these ten books contain; the transactionography of Tomasek and Bauman (2013), for instance, has no place in the transcription and lives entirely in the reader.
@@ -429,9 +464,9 @@ What a human check consists of has been defined as an open question of the editi
 
 \subsection{What the method permits, and what it does not}
 
-The method permits a reading of a seven-hundred-sheet archive to be produced in days, cited by leaf and reference, exported as valid TEI, and exposed in full to correction beside its source; its derived data to be regenerated under published rules and checked against the writer's own sums; those rules to be proved of the script that applies them; and the whole to be held in one repository whose every change is a dated commit, so that a citation names a version.
+The method permits a reading of a seven-hundred-sheet archive to be produced in days, cited by leaf and reference, exported as valid TEI, exposed to correction beside its source, its derived data regenerated under published rules and its rules proved of the script that applies them.
 
-It does not produce a checked transcription, and does not claim to. It does not see ink, does not attribute hands with authority, does not encode transactions, and cannot produce a text more expressive than its macro language. And it does not remove the need for the person it was designed around: the reader beside the photograph, whose correction is the only event that changes a batch's state.
+It does not produce a checked transcription, does not see ink, does not attribute hands with authority, does not encode transactions, and cannot produce a text more expressive than its macro language. And it does not remove the need for the person it was designed around, whose correction is the only event that changes a batch's state.
 
 \section{The method against four corpora}
 
@@ -535,11 +570,10 @@ line that used to bound this kind of work: three are written and one is spoken,
 three are held by institutions that publish facsimiles and one is held by a
 platform that publishes none. Behind that line lies the larger part of what the
 twentieth and twenty-first centuries have left: recorded lectures and
-interviews, radio and television archives, the video collections of national
-libraries and government agencies, and the vast material of social platforms
---- posts, threads, comments, the captions that accompany millions of hours of
-speech. Most of it has never been read in the sense this article means, because
-reading it by hand was never conceivable.
+interviews, broadcast archives, the video collections of national libraries,
+and the material of social platforms --- posts, threads, the captions that
+accompany millions of hours of speech --- most of it never read in the sense
+this article means, because reading it by hand was never conceivable.
 
 The method described here does not become easier on that material; it becomes
 more necessary, and its conditions become harder to meet, in the three ways
@@ -648,7 +682,7 @@ edition reserves « checked » for}
 
 \section{The derived tables}
 
-The tables below are regenerated from the edition's derived files on each build; those given here were generated on 13 September 2026 from 46 transcribed batches. Every figure is a floor under a stated rule.
+The tables below are regenerated from the edition's derived files on each build; those given here were generated on 13 September 2026, when 46 of the 48 transcription files existed. Every figure is a floor under a stated rule.
 
 \input{tables-subset.tex}
 
